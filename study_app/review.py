@@ -1,18 +1,25 @@
 from __future__ import annotations
 
+import hashlib
 import json
+import math
 import os
+import stat
 import uuid
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from .review_calibration import (
+    CALIBRATION_VERSION,
+    MAX_INTERVAL_DAYS,
+    apply_recorded_observation,
     calibration_summary,
     new_calibration_state,
     observe_review,
     schedule_interval,
     validate_calibration_state,
+    validate_recorded_observation,
 )
 from .store import LibraryStore, StoreError
 
@@ -25,6 +32,7 @@ MODE_LABELS = {
     "solve": "Solve problem",
     "transfer": "Transfer",
 }
+RECENT_LOG_CACHE_SIZE = 64
 
 
 def _now() -> datetime:
@@ -44,14 +52,32 @@ def _atomic_json(path: Path, value: Any) -> None:
         temporary.unlink(missing_ok=True)
 
 
+def _extend_log_digest(previous: str | None, encoded_record: str) -> str:
+    """Extend a chain digest so a persisted checkpoint can accept new suffixes."""
+    digest = hashlib.sha256()
+    if previous is not None:
+        digest.update(bytes.fromhex(previous))
+    digest.update(encoded_record.strip().encode("utf-8"))
+    return digest.hexdigest()
+
+
 class ReviewEngine:
-    """A conservative adaptive scheduler; spacing is evidence-based, exact constants are not."""
+    """A bounded self-calibrating scheduler; its target is the learner's self-grade."""
 
     def __init__(self, store: LibraryStore):
         self.store = store
         self.state_path = store.data_dir / "review.json"
         self.log_path = store.data_dir / "review-log.jsonl"
         self._lock = store.mutation_lock
+        self._calibration_verified = False
+        self._log_signature_cache: tuple[int, int, int, int] | None = None
+        self._log_checkpoint_cache: tuple[int, str | None, str | None] = (
+            0,
+            None,
+            None,
+        )
+        self._recent_logged_attempts: dict[str, dict[str, Any]] = {}
+        self._recent_log_order: list[str] = []
         if self.state_path.is_symlink() or self.log_path.is_symlink():
             raise StoreError("review-state files cannot be symbolic links")
         if not self.state_path.exists():
@@ -67,92 +93,407 @@ class ReviewEngine:
             raise StoreError("unsupported review-state version")
         result.setdefault("cards", {})
         result.setdefault("pending_attempts", {})
+        if not isinstance(result["cards"], dict) or not isinstance(
+            result["pending_attempts"], dict
+        ):
+            raise StoreError("review state has invalid card or attempt data")
+        for card_id, card_state in result["cards"].items():
+            self._validate_card_state(card_id, card_state)
+        for attempt_id, attempt in result["pending_attempts"].items():
+            self._validate_pending_attempt(attempt_id, attempt)
         return result
 
     def _write(self, state: dict[str, Any]) -> None:
         state["updated_at"] = _now().isoformat()
         _atomic_json(self.state_path, state)
 
-    def _logged_attempt(self, attempt_id: str) -> dict[str, Any] | None:
-        """Return a durable grade record, if one exists, for idempotent recovery."""
-        if not self.log_path.exists():
+    def _log_signature(self) -> tuple[int, int, int, int] | None:
+        try:
+            details = self.log_path.lstat()
+        except FileNotFoundError:
             return None
-        try:
-            with self.log_path.open(encoding="utf-8") as stream:
-                for line in stream:
-                    if not line.strip():
-                        continue
-                    record = json.loads(line)
-                    if record.get("id") == attempt_id:
-                        return record
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-            raise StoreError("review-log.jsonl is unreadable or invalid") from exc
-        return None
+        except OSError as exc:
+            raise StoreError("review-log.jsonl cannot be inspected") from exc
+        if stat.S_ISLNK(details.st_mode) or not stat.S_ISREG(details.st_mode):
+            raise StoreError("review-log.jsonl is not a safe regular file")
+        return (details.st_dev, details.st_ino, details.st_size, details.st_mtime_ns)
 
-    def _rebuild_calibration(self) -> dict[str, Any]:
-        """Replay the append-only log to reconstruct derived calibration state."""
-        calibration = new_calibration_state()
-        previous_cards: dict[str, dict[str, Any]] = {}
-        if not self.log_path.exists():
-            return calibration
+    def _remember_logged_attempt(self, record: dict[str, Any]) -> None:
+        attempt_id = record["id"]
+        if attempt_id in self._recent_logged_attempts:
+            self._recent_log_order.remove(attempt_id)
+        self._recent_logged_attempts[attempt_id] = record
+        self._recent_log_order.append(attempt_id)
+        while len(self._recent_log_order) > RECENT_LOG_CACHE_SIZE:
+            expired = self._recent_log_order.pop(0)
+            self._recent_logged_attempts.pop(expired, None)
+
+    def _cache_complete_log(
+        self,
+        signature: tuple[int, int, int, int] | None,
+        calibration: dict[str, Any],
+        recent_records: list[dict[str, Any]],
+    ) -> None:
+        self._log_signature_cache = signature
+        self._log_checkpoint_cache = (
+            calibration["processed_log_records"],
+            calibration["last_log_attempt_id"],
+            calibration["processed_log_digest"],
+        )
+        self._recent_logged_attempts = {}
+        self._recent_log_order = []
+        for record in recent_records:
+            self._remember_logged_attempt(record)
+
+    def _cache_appended_record(
+        self,
+        record: dict[str, Any],
+        encoded_record: str,
+        calibration: dict[str, Any],
+    ) -> None:
+        """Advance the verified in-process cache after both durable writes succeed."""
+        current_signature = self._log_signature()
+        previous_signature = self._log_signature_cache
+        added_bytes = len((encoded_record + "\n").encode("utf-8"))
+        file_append_matches = current_signature is not None and (
+            (
+                previous_signature is None
+                and current_signature[2] == added_bytes
+            )
+            or (
+                previous_signature is not None
+                and current_signature[:2] == previous_signature[:2]
+                and current_signature[2] == previous_signature[2] + added_bytes
+            )
+        )
+        expected_digest = _extend_log_digest(
+            self._log_checkpoint_cache[2], encoded_record
+        )
+        checkpoint_matches = (
+            calibration["processed_log_records"]
+            == self._log_checkpoint_cache[0] + 1
+            and calibration["last_log_attempt_id"] == record["id"]
+            and calibration["processed_log_digest"] == expected_digest
+        )
+        if not file_append_matches or not checkpoint_matches:
+            self._calibration_verified = False
+            return
+        self._log_signature_cache = current_signature
+        self._log_checkpoint_cache = (
+            calibration["processed_log_records"],
+            calibration["last_log_attempt_id"],
+            calibration["processed_log_digest"],
+        )
+        self._remember_logged_attempt(record)
+        self._calibration_verified = True
+
+    @staticmethod
+    def _aware_datetime(value: Any, label: str) -> datetime:
+        if not isinstance(value, str):
+            raise StoreError(f"{label} is not a timestamp")
         try:
-            with self.log_path.open(encoding="utf-8") as stream:
-                for line_number, line in enumerate(stream, start=1):
-                    if not line.strip():
-                        continue
-                    record = json.loads(line)
-                    if not isinstance(record, dict):
-                        raise StoreError(
-                            f"review log line {line_number} is not an object"
-                        )
-                    card_id = record.get("card_id")
-                    schedule = record.get("schedule")
-                    grade = record.get("grade")
-                    observed_text = record.get("started_at", record.get("graded_at"))
-                    if (
-                        not isinstance(card_id, str)
-                        or not isinstance(schedule, dict)
-                        or isinstance(grade, bool)
-                        or not isinstance(grade, int)
-                        or grade not in range(4)
-                        or not isinstance(observed_text, str)
-                    ):
-                        raise StoreError(
-                            f"review log line {line_number} cannot be calibrated"
-                        )
-                    try:
-                        _, mode = self.split_card_id(card_id)
-                        observed_at = datetime.fromisoformat(observed_text)
-                    except (StoreError, ValueError) as exc:
-                        raise StoreError(
-                            f"review log line {line_number} cannot be calibrated"
-                        ) from exc
-                    previous = previous_cards.get(card_id)
-                    if previous is not None:
-                        observe_review(calibration, mode, previous, observed_at, grade)
-                    previous_cards[card_id] = schedule
-        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-            raise StoreError("review-log.jsonl is unreadable or invalid") from exc
-        return calibration
+            parsed = datetime.fromisoformat(value)
+        except ValueError as exc:
+            raise StoreError(f"{label} is not a timestamp") from exc
+        if parsed.tzinfo is None:
+            raise StoreError(f"{label} has no timezone")
+        return parsed
+
+    @staticmethod
+    def _finite_card_number(
+        value: Any, label: str, *, minimum: float, maximum: float | None = None
+    ) -> float:
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            raise StoreError(f"{label} is not numeric")
+        result = float(value)
+        if (
+            not math.isfinite(result)
+            or result < minimum
+            or (maximum is not None and result > maximum)
+        ):
+            raise StoreError(f"{label} is outside its valid range")
+        return result
+
+    @staticmethod
+    def _card_count(value: Any, label: str) -> int:
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise StoreError(f"{label} is outside its valid range")
+        return value
+
+    @classmethod
+    def _validate_card_state(
+        cls, card_id: Any, value: Any, *, require_complete: bool = False
+    ) -> None:
+        if not isinstance(card_id, str) or not isinstance(value, dict):
+            raise StoreError("review card state is invalid")
+        cls.split_card_id(card_id)
+        if not value and not require_complete:
+            return
+        required = {
+            "due_at",
+            "last_reviewed_at",
+            "last_grade",
+            "last_elapsed_ms",
+            "stability_days",
+            "difficulty",
+            "repetitions",
+            "lapses",
+        }
+        if (require_complete or value) and not required.issubset(value):
+            raise StoreError("review card schedule is incomplete")
+        if "due_at" in value:
+            cls._aware_datetime(value["due_at"], "review due time")
+        if "last_reviewed_at" in value:
+            cls._aware_datetime(value["last_reviewed_at"], "review time")
+        if "last_grade" in value:
+            grade = value["last_grade"]
+            if isinstance(grade, bool) or not isinstance(grade, int) or grade not in range(4):
+                raise StoreError("review grade is outside its valid range")
+        if "last_elapsed_ms" in value:
+            cls._card_count(value["last_elapsed_ms"], "review elapsed time")
+        if "stability_days" in value:
+            stability = cls._finite_card_number(
+                value["stability_days"], "review stability", minimum=0.0
+            )
+            if stability == 0.0:
+                raise StoreError("review stability must be positive")
+        if "difficulty" in value:
+            cls._finite_card_number(
+                value["difficulty"], "review difficulty", minimum=1.0, maximum=10.0
+            )
+        if "repetitions" in value:
+            cls._card_count(value["repetitions"], "review repetitions")
+        if "lapses" in value:
+            cls._card_count(value["lapses"], "review lapses")
+        if "scheduler" in value and not isinstance(value["scheduler"], dict):
+            raise StoreError("review scheduler diagnostics are invalid")
+
+    @classmethod
+    def _validate_pending_attempt(cls, attempt_id: Any, value: Any) -> None:
+        if not isinstance(attempt_id, str) or not isinstance(value, dict):
+            raise StoreError("pending review attempt is invalid")
+        if value.get("id") != attempt_id:
+            raise StoreError("pending review attempt ID is inconsistent")
+        card_id = value.get("card_id")
+        if not isinstance(card_id, str):
+            raise StoreError("pending review attempt has no card")
+        entry_id, mode = cls.split_card_id(card_id)
+        if value.get("entry_id") != entry_id or value.get("mode") != mode:
+            raise StoreError("pending review attempt does not match its card")
+        cls._aware_datetime(value.get("started_at"), "review attempt time")
+        cls._card_count(value.get("elapsed_ms", 0), "review attempt elapsed time")
+
+    @classmethod
+    def _validate_log_record(
+        cls, value: Any, line_number: int
+    ) -> tuple[str, str, dict[str, Any], int, datetime]:
+        label = f"review log line {line_number}"
+        if not isinstance(value, dict):
+            raise StoreError(f"{label} is not an object")
+        attempt_id = value.get("id")
+        if (
+            not isinstance(attempt_id, str)
+            or len(attempt_id) != 32
+            or any(character not in "0123456789abcdef" for character in attempt_id)
+        ):
+            raise StoreError(f"{label} has an invalid attempt ID")
+        card_id = value.get("card_id")
+        if not isinstance(card_id, str):
+            raise StoreError(f"{label} has an invalid card")
+        try:
+            entry_id, mode = cls.split_card_id(card_id)
+        except StoreError as exc:
+            raise StoreError(f"{label} has an invalid card") from exc
+        if value.get("entry_id") != entry_id or value.get("mode") != mode:
+            raise StoreError(f"{label} does not match its card")
+        grade = value.get("grade")
+        if isinstance(grade, bool) or not isinstance(grade, int) or grade not in range(4):
+            raise StoreError(f"{label} has an invalid grade")
+        schedule = value.get("schedule")
+        try:
+            cls._validate_card_state(card_id, schedule, require_complete=True)
+        except StoreError as exc:
+            raise StoreError(f"{label} has an invalid schedule") from exc
+        if schedule["last_grade"] != grade:
+            raise StoreError(f"{label} schedule does not match its grade")
+        observed_text = value.get("started_at", value.get("graded_at"))
+        try:
+            observed_at = cls._aware_datetime(observed_text, "review observation time")
+        except StoreError as exc:
+            raise StoreError(f"{label} has an invalid observation time") from exc
+        event_version = value.get("calibration_event_version")
+        if event_version is not None and (
+            isinstance(event_version, bool) or event_version != CALIBRATION_VERSION
+        ):
+            raise StoreError(f"{label} has an unsupported calibration event")
+        observation = value.get("calibration_observation")
+        if observation is not None:
+            try:
+                validate_recorded_observation(observation, mode=mode, grade=grade)
+            except (TypeError, ValueError) as exc:
+                raise StoreError(f"{label} has an invalid calibration observation") from exc
+        return attempt_id, mode, schedule, grade, observed_at
+
+    def _sync_state_with_log(
+        self,
+        state: dict[str, Any],
+        attempt_id: str | None = None,
+        *,
+        force_rebuild: bool = False,
+    ) -> tuple[dict[str, Any] | None, dict[str, Any], bool]:
+        """Use a verified cache or rebuild derived state from authoritative history."""
+        stored_calibration = state.get("calibration")
+        try:
+            stored_validated = validate_calibration_state(stored_calibration)
+        except (TypeError, ValueError):
+            stored_validated = None
+        signature_before = self._log_signature()
+        if (
+            not force_rebuild
+            and self._calibration_verified
+            and stored_validated is not None
+            and signature_before == self._log_signature_cache
+            and (
+                stored_validated["processed_log_records"],
+                stored_validated["last_log_attempt_id"],
+                stored_validated["processed_log_digest"],
+            )
+            == self._log_checkpoint_cache
+        ):
+            logged_attempt = self._recent_logged_attempts.get(attempt_id or "")
+            if (
+                attempt_id is None
+                or logged_attempt is not None
+                or attempt_id in state["pending_attempts"]
+            ):
+                state["calibration"] = stored_validated
+                return logged_attempt, stored_validated, False
+
+        # Startup, external file changes, old idempotency lookups, and explicit
+        # validation all take the deterministic full-replay path.
+        self._calibration_verified = False
+        calibration = new_calibration_state()
+        current_digest: str | None = None
+        record_count = 0
+        last_attempt_id: str | None = None
+        logged_attempt: dict[str, Any] | None = None
+        previous_cards: dict[str, dict[str, Any]] = {}
+        latest_schedules: dict[str, dict[str, Any]] = {}
+        logged_pending_attempts: set[str] = set()
+        seen_attempts: set[str] = set()
+        recent_records: list[dict[str, Any]] = []
+
+        if signature_before is not None:
+            try:
+                with self.log_path.open(encoding="utf-8") as stream:
+                    for line_number, line in enumerate(stream, start=1):
+                        if not line.strip():
+                            continue
+                        record = json.loads(line)
+                        (
+                            record_attempt,
+                            mode,
+                            schedule,
+                            grade,
+                            observed_at,
+                        ) = self._validate_log_record(record, line_number)
+                        if record_attempt in seen_attempts:
+                            raise StoreError(
+                                f"review log line {line_number} duplicates an attempt ID"
+                            )
+                        seen_attempts.add(record_attempt)
+                        record_count += 1
+                        current_digest = _extend_log_digest(current_digest, line)
+                        last_attempt_id = record_attempt
+                        recent_records.append(record)
+                        if len(recent_records) > RECENT_LOG_CACHE_SIZE:
+                            recent_records.pop(0)
+
+                        if record_attempt == attempt_id:
+                            logged_attempt = record
+                        if record_attempt in state["pending_attempts"]:
+                            logged_pending_attempts.add(record_attempt)
+
+                        previous = previous_cards.get(record["card_id"])
+                        observation = record.get("calibration_observation")
+                        if observation is not None:
+                            apply_recorded_observation(
+                                calibration,
+                                observation,
+                                mode=mode,
+                                grade=grade,
+                                observed_at=observed_at,
+                            )
+                        elif (
+                            record.get("calibration_event_version") is None
+                            and previous is not None
+                        ):
+                            # Old records predate explicit observation data.
+                            observe_review(
+                                calibration, mode, previous, observed_at, grade
+                            )
+                        previous_cards[record["card_id"]] = schedule
+                        latest_schedules[record["card_id"]] = schedule
+            except StoreError:
+                raise
+            except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+                raise StoreError("review-log.jsonl is unreadable or invalid") from exc
+
+        signature_after = self._log_signature()
+        if signature_after != signature_before:
+            raise StoreError("review-log.jsonl changed while it was being validated")
+
+        calibration["processed_log_records"] = record_count
+        calibration["last_log_attempt_id"] = last_attempt_id
+        calibration["processed_log_digest"] = current_digest
+
+        changed = stored_calibration != calibration
+        for card_id, schedule in latest_schedules.items():
+            if state["cards"].get(card_id) != schedule:
+                state["cards"][card_id] = schedule
+                changed = True
+        for logged_id in logged_pending_attempts:
+            state["pending_attempts"].pop(logged_id, None)
+            changed = True
+        state["calibration"] = calibration
+        self._cache_complete_log(signature_after, calibration, recent_records)
+        return logged_attempt, calibration, changed
+
+    def validate_log(self) -> dict[str, Any]:
+        """Fully validate state and replayable history without changing either file."""
+        with self._lock:
+            state = self._read()
+            _, calibration, _ = self._sync_state_with_log(state, force_rebuild=True)
+            return calibration_summary(calibration)
+
+    def rebuild_calibration(self) -> dict[str, Any]:
+        """Rebuild and persist all derived review state from authoritative history."""
+        with self._lock:
+            state = self._read()
+            _, calibration, changed = self._sync_state_with_log(
+                state, force_rebuild=True
+            )
+            if changed:
+                self._write(state)
+            self._calibration_verified = True
+            return calibration_summary(calibration)
 
     def _calibration_for_state(self, state: dict[str, Any]) -> dict[str, Any]:
-        candidate = state.get("calibration")
-        if candidate is not None:
-            try:
-                calibration = validate_calibration_state(candidate)
-            except (TypeError, ValueError):
-                calibration = self._rebuild_calibration()
-        else:
-            calibration = self._rebuild_calibration()
+        try:
+            calibration = validate_calibration_state(state.get("calibration"))
+        except (TypeError, ValueError):
+            _, calibration, _ = self._sync_state_with_log(state, force_rebuild=True)
         state["calibration"] = calibration
         return calibration
 
-    def _append_log(self, record: dict[str, Any]) -> None:
+    def _append_log(self, record: dict[str, Any]) -> str:
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
+        encoded = json.dumps(record, ensure_ascii=False)
         with self.log_path.open("a", encoding="utf-8") as stream:
-            stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+            stream.write(encoded + "\n")
             stream.flush()
             os.fsync(stream.fileno())
+        return encoded
 
     @staticmethod
     def _grade_response(card_state: dict[str, Any], grade: int) -> dict[str, Any]:
@@ -220,6 +561,12 @@ class ReviewEngine:
         now = _now()
         with self._lock:
             state = self._read()
+            _, _, changed = self._sync_state_with_log(state)
+            if changed:
+                # A durable log entry wins over stale state after an interrupted
+                # atomic write, even if the browser never retries that request.
+                self._write(state)
+            self._calibration_verified = True
             queue: list[dict[str, Any]] = []
             for entry in self.store.ordered_entries(review_only=True):
                 for mode in entry.get("review_modes") or self.store.default_review_modes(
@@ -285,8 +632,10 @@ class ReviewEngine:
         }
         with self._lock:
             state = self._read()
+            self._sync_state_with_log(state)
             state["pending_attempts"][attempt_id] = created
             self._write(state)
+            self._calibration_verified = True
         if mode == "statement":
             answer_variants = entry["formulations"]
         else:
@@ -317,38 +666,50 @@ class ReviewEngine:
 
     def grade(self, card_id: str, attempt_id: str, grade: int) -> dict[str, Any]:
         self.split_card_id(card_id)
+        if isinstance(grade, bool) or not isinstance(grade, int) or grade not in range(4):
+            raise StoreError("review grade is outside its valid range")
         now = _now()
         with self._lock:
             state = self._read()
+            logged, model_calibration, changed = self._sync_state_with_log(
+                state, attempt_id
+            )
             pending = state["pending_attempts"].get(attempt_id)
-            logged = self._logged_attempt(attempt_id)
             if logged is not None:
                 if logged.get("card_id") != card_id or logged.get("grade") != grade:
                     raise StoreError("review attempt was already graded differently")
                 schedule = logged.get("schedule")
                 if not isinstance(schedule, dict):
                     raise StoreError("review log contains an invalid schedule")
-                if pending is not None:
-                    state["cards"][card_id] = schedule
-                    # The log is authoritative. Replaying it recovers a model
-                    # update if the prior atomic state write was interrupted.
-                    state["calibration"] = self._rebuild_calibration()
-                    state["pending_attempts"].pop(attempt_id, None)
+                if changed:
                     self._write(state)
+                self._calibration_verified = True
                 return self._grade_response(schedule, grade)
             if pending is None or pending["card_id"] != card_id:
                 raise StoreError("review attempt is missing, expired, or belongs to another card")
             previous = state["cards"].get(card_id, {})
-            old_stability = float(previous.get("stability_days", 0.5))
-            old_difficulty = float(previous.get("difficulty", 5.0))
-            repetitions = int(previous.get("repetitions", 0))
-            lapses = int(previous.get("lapses", 0))
+            old_stability = self._finite_card_number(
+                previous.get("stability_days", 0.5),
+                "review stability",
+                minimum=0.0,
+            )
+            if old_stability == 0.0:
+                raise StoreError("review stability must be positive")
+            old_difficulty = self._finite_card_number(
+                previous.get("difficulty", 5.0),
+                "review difficulty",
+                minimum=1.0,
+                maximum=10.0,
+            )
+            repetitions = self._card_count(
+                previous.get("repetitions", 0), "review repetitions"
+            )
+            lapses = self._card_count(previous.get("lapses", 0), "review lapses")
 
-            model_calibration = self._calibration_for_state(state)
             _, mode = self.split_card_id(card_id)
 
             if grade == 0:
-                stability = max(0.25, old_stability * 0.45)
+                stability = min(MAX_INTERVAL_DAYS, max(0.25, old_stability * 0.45))
                 difficulty = min(10.0, old_difficulty + 0.7)
                 due = now + timedelta(minutes=10)
                 _, scheduler = schedule_interval(model_calibration, mode, stability, 1)
@@ -362,21 +723,27 @@ class ReviewEngine:
                 )
                 lapses += 1
             elif grade == 1:
-                stability = max(1.0, old_stability * 1.35)
+                stability = min(MAX_INTERVAL_DAYS, max(1.0, old_stability * 1.35))
                 difficulty = min(10.0, old_difficulty + 0.2)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
                 due = now + timedelta(days=interval_days)
                 scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             elif grade == 2:
-                stability = max(2.0, old_stability * (2.25 - old_difficulty * 0.035))
+                stability = min(
+                    MAX_INTERVAL_DAYS,
+                    max(2.0, old_stability * (2.25 - old_difficulty * 0.035)),
+                )
                 difficulty = max(1.0, old_difficulty - 0.15)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
                 due = now + timedelta(days=interval_days)
                 scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             else:
-                stability = max(4.0, old_stability * (3.1 - old_difficulty * 0.045))
+                stability = min(
+                    MAX_INTERVAL_DAYS,
+                    max(4.0, old_stability * (3.1 - old_difficulty * 0.045)),
+                )
                 difficulty = max(1.0, old_difficulty - 0.35)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 2)
                 due = now + timedelta(days=interval_days)
@@ -387,6 +754,8 @@ class ReviewEngine:
                 observation_at = datetime.fromisoformat(str(pending["started_at"]))
             except (KeyError, TypeError, ValueError) as exc:
                 raise StoreError("review attempt has an invalid timestamp") from exc
+            if observation_at.tzinfo is None:
+                raise StoreError("review attempt timestamp has no timezone")
             calibration_observation = observe_review(
                 model_calibration, mode, previous, observation_at, grade
             )
@@ -417,15 +786,24 @@ class ReviewEngine:
                 "graded_at": now.isoformat(),
                 "grade": grade,
                 "schedule": card_state,
+                "calibration_event_version": CALIBRATION_VERSION,
             }
             if calibration_observation:
                 log_record["calibration_observation"] = calibration_observation
             # Make the audit record durable before consuming the pending attempt.
             # If the following atomic state write fails, retrying this request
             # recovers from the log without appending a duplicate event.
-            self._append_log(log_record)
+            encoded_record = self._append_log(log_record)
+            model_calibration["processed_log_records"] += 1
+            model_calibration["last_log_attempt_id"] = attempt_id
+            model_calibration["processed_log_digest"] = _extend_log_digest(
+                model_calibration["processed_log_digest"], encoded_record
+            )
             state["cards"][card_id] = card_state
             state["calibration"] = model_calibration
             state["pending_attempts"].pop(attempt_id, None)
             self._write(state)
+            self._cache_appended_record(
+                log_record, encoded_record, model_calibration
+            )
         return self._grade_response(card_state, grade)

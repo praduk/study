@@ -78,7 +78,27 @@ export interface Bootstrap {
   entries: EntrySummary[];
   tree: FolderNode[];
   macros: Record<string, string | (string | number)[]>;
-  review: { due: number; completed_today: number; minutes_today: number };
+  review: {
+    due: number;
+    completed_today: number;
+    minutes_today: number;
+    calibration: {
+      model: string;
+      target_grade: 'good-or-easy';
+      target_probability: number;
+      minimum_observations: number;
+      minimum_delay_hours: number;
+      processed_log_records: number;
+      models: Record<string, {
+        observations: number;
+        successes: number;
+        effective_observations: number;
+        effective_exposure: number;
+        posterior_log_scale_sd: number;
+        ready: boolean;
+      }>;
+    };
+  };
   git: GitStatus;
   capabilities: Record<string, boolean>;
 }

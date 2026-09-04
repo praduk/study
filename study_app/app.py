@@ -232,7 +232,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         candidate_store.reload_search_index()
         candidate_store.get_macros()
         candidate_review = ReviewEngine(candidate_store)
-        candidate_review.queue(include_not_due=True, limit=500)
 
         log_path = candidate_data / "review-log.jsonl"
         if log_path.exists():
@@ -247,6 +246,11 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                             )
             except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
                 raise StoreError("upstream review log is unreadable or invalid") from exc
+
+        # Rebuild from the candidate's complete history so malformed schedules,
+        # observations, or checkpoints are rejected before Git advances HEAD.
+        candidate_review.validate_log()
+        candidate_review.queue(include_not_due=True, limit=500)
 
         library_path = candidate_data / "excalidraw" / "library.excalidrawlib"
         if library_path.exists():
@@ -807,6 +811,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             result = git.pull_fast_forward(validate_candidate_data)
             store.ensure_layout()
             store.reload_search_index()
+            review.rebuild_calibration()
             review.stats()
             return result
 

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import {
-  BookOpen, Braces, Check, ChevronDown, ChevronRight, Download, FilePlus2, FolderInput,
+  BookOpen, Braces, ChevronDown, ChevronRight, Download, FilePlus2, FolderInput,
   FolderPen, FolderPlus, FolderTree, GitBranch, Library, LoaderCircle, LogIn, LogOut, Menu,
   Moon, PanelLeftClose, PanelLeftOpen, Search, Plus, Sigma, Sun, Trash2,
 } from 'lucide-react';
@@ -226,7 +226,6 @@ function ReadingPane({ entry, folders, canEdit, selectedVariantId, onSelectVaria
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
     {!!entry.supplements.length && <section className="supplement-list"><h2>{entry.kind === 'th' ? 'Proofs' : 'Solutions'}</h2>{entry.supplements.map((item) => <details key={item.id} open={target.supplementId ? target.supplementId === item.id : item.main}><summary><span>{item.label}</span><code>{item.canonical_tag}</code></summary><MathMarkdown content={item.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} /></details>)}</section>}
-    <section className="recall-cue"><div className="recall-icon"><Check /></div><div><strong>Reading is not review</strong><span>Test recall or solve before revealing the stored answer.</span></div></section>
   </article>;
 }
 

@@ -249,9 +249,14 @@ order of eligible cards. Disabling a folder excludes that folder and all descend
 descendant's own checkbox is enabled.
 
 An Again grade sets the next due time to ten minutes and also inserts a retry after up to three
-currently available intervening cards. Hard, Good, and Easy update a per-card stability estimate
-and schedule an integer-day interval. The formulas and constants are transparent in
-[`docs/LEARNING_SCIENCE.md`](docs/LEARNING_SCIENCE.md); they are a product heuristic, not a
+currently available intervening cards. Hard, Good, and Easy update a per-card stability estimate and
+schedule an integer-day interval. After enough genuinely delayed observations, a bounded Bayesian
+forgetting model adjusts those intervals toward a 90% probability that this learner will self-grade
+the next attempt Good or Easy, as estimated by the model. It learns pooled behavior and separate
+statement, proof, and problem behavior, slightly discounts old observations, and falls back exactly
+to the prior intervals while evidence is sparse. The model predicts self-grades, not correctness or
+mastery. Its formulas, gates, and constants are transparent in
+[`docs/LEARNING_SCIENCE.md`](docs/LEARNING_SCIENCE.md); they remain engineering choices rather than a
 scientifically validated optimum.
 
 The scientific distinction matters: spacing has robust direct evidence in mathematics, with a
@@ -270,8 +275,8 @@ All library data is rooted at `data/` relative to `study.py`:
 data/
   library.json                 folder, entry, variant, order, and asset metadata
   macros.json                  global MathJax macros
-  review.json                  current per-card schedule and pending attempts
-  review-log.jsonl             append-only graded-attempt history, created on first grade
+  review.json                  current schedules, pending attempts, and cached calibration state
+  review-log.jsonl             append-only graded attempts and calibration observations
   content/<entry>/<variant>.md Markdown formulations, proofs, and solutions
   media/                       normalized image and drawing previews
   diagrams/                    Excalidraw and commutative-diagram sources

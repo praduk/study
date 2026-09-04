@@ -307,6 +307,33 @@ heterogeneity, and domain transfer. “Remaining gap” states what Study would 
 - **Remaining gap:** Prospective calibration of predicted recall and transfer, comparison with a
   fixed spaced baseline, and validation by mathematical content type.
 
+## P15 — Fit forgetting predictions, but calibrate them only to the observed target
+
+- **Claim:** Study may use delayed review history to fit a transparent forgetting curve to the
+  learner's probability of self-grading Good or Easy, provided the app does not relabel that target
+  as objective recall, correctness, or mastery.
+- **Evidence summary:** Half-life regression combined an explicit exponential forgetting curve with
+  trainable parameters and improved recall prediction over several baselines on large-scale
+  language-learning data. A separate longitudinal memory experiment found that an exponential curve
+  fit individual data well while Bayesian model comparison favored a power function, demonstrating
+  that plausible forgetting-curve forms can imitate one another. These results support fitting and
+  comparing explicit predictive models; they do not validate Study's curve, prior, threshold, or
+  safety bounds.
+- **Sources:** *A Trainable Spaced Repetition Model for Language Learning* — Burr Settles and Brendan
+  Meeder; Association for Computational Linguistics, 2016;
+  [DOI](https://doi.org/10.18653/v1/P16-1174). *The Form of the Forgetting Curve and the Fate of
+  Memories* — Lee Averell and Andrew Heathcote; Elsevier, 2011;
+  [DOI](https://doi.org/10.1016/j.jmp.2010.08.009).
+- **Confidence:** Moderate that delayed outcomes can train an explicit forgetting model; Low for
+  Study's exact discounted Bayesian implementation and its transfer to mathematical review.
+- **Contradictions/limits:** The trainable deployment concerned language items, not theorem proofs
+  or problem solving. Study observes self-grades, its cards vary substantially in scope, and a good
+  retrospective fit can still be poorly calibrated prospectively. The exponential curve is an
+  engineering choice rather than an established universal law.
+- **Remaining gap:** Chronological calibration results for this learner, adequate observations by
+  task mode, comparison with the prior fixed scheduler, and separately scored mathematical outcomes
+  if claims beyond self-grading behavior are ever desired.
+
 ## Evidence-to-feature audit
 
 | Current Study behavior | Ledger support | Honest status |
@@ -322,6 +349,7 @@ heterogeneity, and domain transfer. “Remaining gap” states what Study would 
 | Optional written response on larger screens; fixed think-only review on phones | P4 | Overt retrieval has a small average advantage; the device rule is a usability choice, not an evidence-derived breakpoint |
 | No streak or universal target failure rate | P12 | Appropriate guardrail |
 | No sleep-derived scheduling | P13 | Appropriate evidentiary and privacy boundary |
+| Bayesian interval calibration to delayed Good/Easy self-grades | P14, P15 | Transparent personalized prediction; exact model unvalidated and not an objective mastery measure |
 
 ## Research maintenance rules
 

@@ -30,7 +30,7 @@ The levels describe confidence in a product claim, not a quality score for a pap
 | Mix deliberately chosen confusable problem types | Moderate | Mathematics interleaving can improve delayed discrimination, but arbitrary mixing can be harmful. |
 | Give novices worked solutions, then fade support | Moderate-to-high | Worked examples help mathematics on average; the right amount of assistance depends on prior knowledge. |
 | Prompt explanation and transfer | Moderate | These prompts can deepen learning, but delayed and classroom mathematics evidence is less secure. |
-| Use the current interval formula | Low | The formula is a transparent product heuristic, not an empirically optimal schedule. |
+| Self-calibrate intervals to delayed self-grades | Low | Study fits a transparent Bayesian forgetting model to the learner's own grading behavior; this predicts self-grades, not objective mastery. |
 
 ## The exact review flow
 
@@ -108,18 +108,52 @@ One current consequence is that all due modes for an entry are adjacent. If a fu
 modes or dynamically interleaves entries, it must preserve a user-controlled order option and be
 evaluated against delayed mathematical performance, not just session completion.
 
-## The scheduling heuristic
+## The self-calibrating scheduling model
 
-The scheduler stores a per-card stability estimate `S` in days and difficulty `D` on a nominal
-`1`–`10` scale. A new card starts from `S = 0.5` and `D = 5.0`. Formulas use the prior values of `S`
-and `D`:
+The scheduler retains a per-card stability estimate `S` in days and difficulty `D` on a nominal
+`1`–`10` scale. A new card starts from `S = 0.5` and `D = 5.0`. The grade-specific state update is:
 
-| Grade | New stability `S'` | New difficulty `D'` | Due interval | Other state |
+| Grade | New stability `S'` | New difficulty `D'` | Minimum interval | Other state |
 | --- | --- | --- | --- | --- |
-| Again (`0`) | `max(0.25, 0.45 S)` | `min(10, D + 0.7)` | 10 minutes | increment lapses; retry after up to three available intervening cards |
-| Hard (`1`) | `max(1, 1.35 S)` | `min(10, D + 0.2)` | `max(1, round(S'))` days | increment repetitions |
-| Good (`2`) | `max(2, S(2.25 - 0.035 D))` | `max(1, D - 0.15)` | `max(1, round(S'))` days | increment repetitions |
-| Easy (`3`) | `max(4, S(3.1 - 0.045 D))` | `max(1, D - 0.35)` | `max(2, round(S'))` days | increment repetitions |
+| Again (`0`) | `min(3650, max(0.25, 0.45 S))` | `min(10, D + 0.7)` | exactly 10 minutes | increment lapses; retry after up to three available intervening cards |
+| Hard (`1`) | `min(3650, max(1, 1.35 S))` | `min(10, D + 0.2)` | 1 day | increment repetitions |
+| Good (`2`) | `min(3650, max(2, S(2.25 - 0.035 D)))` | `max(1, D - 0.15)` | 1 day | increment repetitions |
+| Easy (`3`) | `min(3650, max(4, S(3.1 - 0.045 D)))` | `max(1, D - 0.35)` | 2 days | increment repetitions |
+
+For Hard, Good, and Easy, Study multiplies `S'` by a learned interval factor before rounding to an
+integer day. The learned target is the probability that the learner will self-grade the next
+retrieval **Good or Easy**. Again and Hard are observations below that target; Good and Easy are
+observations at or above it. The model does not infer correctness from the written attempt.
+
+For an actual delay `t`, normalized delay `x = t / S`, and positive interval-scale parameter `c`,
+the model is
+
+$$
+P(\text{Good or Easy}\mid x,c)
+= \epsilon + (1-2\epsilon)\exp\!\left(-\gamma\frac{x}{c}\right),
+$$
+
+where `epsilon = 0.02`, the target `q = 0.90`, and
+`gamma = -log((q-epsilon)/(1-2 epsilon))`. Thus `c = 1` predicts 90% at `t = S`, while every finite
+`c` retains strictly positive forgetting. Study represents uncertainty in `log(c)` on a fixed grid
+with a centered normal prior. It updates both a pooled posterior and separate posteriors for
+statement, theorem-proof, and problem-solution tasks. A task-specific posterior is preferred when
+ready; otherwise a ready pooled posterior is used.
+
+Calibration activates only after at least 24 eligible observations, 20 effective observations,
+enough cumulative delayed exposure, and some reduction in posterior uncertainty. Until then, the
+factor is exactly `1`, preserving the prior scheduler's intervals. First reviews and delays under six
+hours are excluded, so ordinary same-session Again retries do not masquerade as long-term retention
+evidence. A tab left open for six hours is not explicitly classified as an in-session retry.
+The fitted factor is bounded to `0.5`–`2.0`; both retained stability and scheduled intervals are
+capped at 3,650 days.
+
+Before each eligible observation, Study applies a `0.995` power-prior discount. This is a small
+amount of statistical forgetting: recent grading behavior can eventually outweigh very old
+behavior, while evidence changes gradually. Scheduling uses the posterior available before the
+current grade; the current grade updates subsequent schedules. The pre-outcome probability is
+written to the append-only review log, and the derived posterior can be reconstructed from that log
+after an interrupted state write.
 
 If a learner chooses Confident (`3`) and then grades Again, Study adds another `0.35` to difficulty,
 capped at `10`. It stores a simple calibration value:
@@ -134,9 +168,10 @@ but do not change scheduling. Again's ten-minute due timestamp and its in-sessio
 behaviors: the retry is inserted after up to three available intervening cards even if ten minutes
 have not elapsed.
 
-These constants were not estimated from Study data, do not target a calibrated recall probability,
-and do not encode the lag effects reported in the literature. They provide bounded, increasing
-spacing and faster recovery after failure. Calling them optimal would be false.
+The prior, target, activation gates, discount, and safety bounds are transparent engineering choices,
+not empirically optimal constants. A fitted model is calibrated only to this learner's self-grades.
+It must not be described as measuring objective correctness, durable mathematical competence, or
+transfer.
 
 ## Why the design uses these practices
 
@@ -303,7 +338,8 @@ Sources: [Soderstrom and Bjork (2015)](https://doi.org/10.1177/1745691615569000)
 
 ## What Study deliberately does not claim
 
-- The current scheduler is not an optimal-memory algorithm.
+- The self-calibrating scheduler is not an optimal-memory algorithm.
+- A calibrated self-grade probability is not a calibrated probability of objective correctness.
 - Completing the due queue is not proof of mastery.
 - Self-grades are not objective correctness labels.
 - Confidence is not knowledge.
