@@ -27,6 +27,45 @@ def _settings(tmp_path: Path, *, password_hash: str = "", port: int = 8123) -> S
     )
 
 
+def test_set_password_accepts_one_character(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    settings = _settings(tmp_path)
+    prompts = iter(["x", "x"])
+    written: dict[str, object] = {}
+
+    class FakeSessionStore:
+        def __init__(self, path: Path, session_days: int, generation: str):
+            written["session_store"] = (path, session_days, generation)
+
+        def revoke_all(self) -> None:
+            written["revoked"] = True
+
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli.getpass, "getpass", lambda _prompt: next(prompts))
+    monkeypatch.setattr(cli, "make_password_hash", lambda password: f"hash:{password}")
+    monkeypatch.setattr(
+        cli,
+        "write_password_override",
+        lambda password_hash, _path=None: written.update(password_hash=password_hash)
+        or tmp_path / "config.local.toml",
+    )
+    monkeypatch.setattr(cli, "SessionStore", FakeSessionStore)
+
+    cli._set_password()
+
+    assert written["password_hash"] == "hash:x"
+    assert written["revoked"] is True
+
+
+def test_set_password_rejects_empty_password(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    settings = _settings(tmp_path)
+    prompts = iter(["", ""])
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli.getpass, "getpass", lambda _prompt: next(prompts))
+
+    with pytest.raises(SystemExit, match="cannot be empty"):
+        cli._set_password()
+
+
 def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ):

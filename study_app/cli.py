@@ -34,8 +34,8 @@ def _set_password(config_path: Path | None = None) -> None:
     second = getpass.getpass("Repeat password: ")
     if first != second:
         raise SystemExit("Passwords did not match.")
-    if len(first) < 12:
-        raise SystemExit("Use at least 12 characters.")
+    if not first:
+        raise SystemExit("Password cannot be empty.")
     target = write_password_override(make_password_hash(first), config_path)
     settings = load_settings(config_path)
     SessionStore(

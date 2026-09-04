@@ -91,8 +91,8 @@ First create a password hash:
 python study.py --set-password
 ```
 
-Study requires at least 12 characters and writes only an Argon2 hash to the ignored,
-owner-readable `config.local.toml`. Add the exact LAN host or HTTPS hostname used by the browser to
+Study accepts any non-empty password and writes only an Argon2 hash to the ignored, owner-readable
+`config.local.toml`. Add the exact LAN host or HTTPS hostname used by the browser to
 `allowed_hosts`, then start server mode:
 
 ```sh
