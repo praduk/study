@@ -169,9 +169,9 @@ behaviors: the retry is inserted after up to three available intervening cards e
 have not elapsed.
 
 The prior, target, activation gates, discount, and safety bounds are transparent engineering choices,
-not empirically optimal constants. A fitted model is calibrated only to this learner's self-grades.
-It must not be described as measuring objective correctness, durable mathematical competence, or
-transfer.
+not empirically optimal constants. The model is fitted only to this learner's self-grades;
+prospective calibration has not been established. It must not be described as measuring objective
+correctness, durable mathematical competence, or transfer.
 
 ## Why the design uses these practices
 

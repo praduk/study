@@ -61,6 +61,17 @@ def _extend_log_digest(previous: str | None, encoded_record: str) -> str:
     return digest.hexdigest()
 
 
+def _calibration_digest(calibration: dict[str, Any]) -> str:
+    encoded = json.dumps(
+        calibration,
+        ensure_ascii=False,
+        allow_nan=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
 class ReviewEngine:
     """A bounded self-calibrating scheduler; its target is the learner's self-grade."""
 
@@ -76,6 +87,7 @@ class ReviewEngine:
             None,
             None,
         )
+        self._calibration_digest_cache: str | None = None
         self._recent_logged_attempts: dict[str, dict[str, Any]] = {}
         self._recent_log_order: list[str] = []
         if self.state_path.is_symlink() or self.log_path.is_symlink():
@@ -140,6 +152,7 @@ class ReviewEngine:
             calibration["last_log_attempt_id"],
             calibration["processed_log_digest"],
         )
+        self._calibration_digest_cache = _calibration_digest(calibration)
         self._recent_logged_attempts = {}
         self._recent_log_order = []
         for record in recent_records:
@@ -184,6 +197,7 @@ class ReviewEngine:
             calibration["last_log_attempt_id"],
             calibration["processed_log_digest"],
         )
+        self._calibration_digest_cache = _calibration_digest(calibration)
         self._remember_logged_attempt(record)
         self._calibration_verified = True
 
@@ -353,6 +367,8 @@ class ReviewEngine:
             and self._calibration_verified
             and stored_validated is not None
             and signature_before == self._log_signature_cache
+            and _calibration_digest(stored_validated)
+            == self._calibration_digest_cache
             and (
                 stored_validated["processed_log_records"],
                 stored_validated["last_log_attempt_id"],

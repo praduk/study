@@ -325,6 +325,22 @@ def test_new_engine_rebuilds_a_tampered_but_well_formed_calibration_cache(
     assert repaired["observations"] == 0
     assert repaired["effective_observations"] == 0.0
 
+    same_process = restarted._read()
+    same_process["calibration"]["models"]["statement"].update(
+        {
+            "observations": 1,
+            "successes": 1,
+            "effective_observations": 1.0,
+            "effective_successes": 1.0,
+            "effective_exposure": 1.0,
+            "last_observed_at": current.isoformat(),
+        }
+    )
+    restarted._write(same_process)
+    restarted.queue(include_not_due=True)
+    repaired_again = restarted._read()["calibration"]["models"]["statement"]
+    assert repaired_again["observations"] == 0
+
 
 def test_verified_restart_and_forced_rebuild_do_not_rewrite_unchanged_state(
     tmp_path, monkeypatch: pytest.MonkeyPatch

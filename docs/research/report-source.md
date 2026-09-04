@@ -349,7 +349,7 @@ heterogeneity, and domain transfer. “Remaining gap” states what Study would 
 | Optional written response on larger screens; fixed think-only review on phones | P4 | Overt retrieval has a small average advantage; the device rule is a usability choice, not an evidence-derived breakpoint |
 | No streak or universal target failure rate | P12 | Appropriate guardrail |
 | No sleep-derived scheduling | P13 | Appropriate evidentiary and privacy boundary |
-| Bayesian interval calibration to delayed Good/Easy self-grades | P14, P15 | Transparent personalized prediction; exact model unvalidated and not an objective mastery measure |
+| Bayesian interval fitting to delayed Good/Easy self-grades | P14, P15 | Transparent personalized prediction; prospective calibration unestablished and not an objective mastery measure |
 
 ## Research maintenance rules
 
