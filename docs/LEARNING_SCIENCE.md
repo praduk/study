@@ -1,0 +1,324 @@
+# Learning science in Study
+
+Study is designed to make durable mathematical learning more likely. It cannot certify that a
+theorem is understood, a proof is valid, or a skill will transfer. The strongest relevant evidence
+supports distributing practice over time. Evidence for retrieval practice is broad and substantial
+in general education, but the direct mathematics-specific comparison with restudy is presently
+small and inconclusive. Product language and decisions must preserve that distinction.
+
+This document describes the implemented behavior and the reasoning behind it. The auditable source
+ledger is in [`research/report-source.md`](research/report-source.md). The evidence was last reviewed
+on 2026-09-04.
+
+## Evidence posture
+
+Study uses three confidence levels:
+
+- **High:** replicated evidence or a directly relevant meta-analysis supports the broad intervention.
+- **Moderate:** evidence is useful but indirect, heterogeneous, or dependent on learner/task design.
+- **Low:** a plausible product heuristic has not been validated for this application.
+
+The levels describe confidence in a product claim, not a quality score for a paper.
+
+| Design commitment | Evidence confidence | What Study may honestly claim |
+| --- | --- | --- |
+| Space encounters across days | High | Spaced practice improves delayed mathematics performance on average, though effects are not uniform. |
+| Attempt retrieval before revealing | High in general education; low-to-moderate for mathematics specifically | Retrieval is a defensible practice mechanism, but a math-specific advantage over restudy is not established. |
+| Show corrective, explanatory feedback | Moderate-to-high | Feedback is generally more useful when it supplies the answer and explanation rather than correctness alone. |
+| Prefer an overt answer while allowing think-only review | Moderate | Covert retrieval can help, but overt retrieval has a small average advantage and is easier to audit. |
+| Record confidence after an attempt | Moderate as a diagnostic; low as a causal intervention | Confidence can expose calibration errors; it is not proof of knowledge. |
+| Mix deliberately chosen confusable problem types | Moderate | Mathematics interleaving can improve delayed discrimination, but arbitrary mixing can be harmful. |
+| Give novices worked solutions, then fade support | Moderate-to-high | Worked examples help mathematics on average; the right amount of assistance depends on prior knowledge. |
+| Prompt explanation and transfer | Moderate | These prompts can deepen learning, but delayed and classroom mathematics evidence is less secure. |
+| Use the current interval formula | Low | The formula is a transparent product heuristic, not an empirically optimal schedule. |
+
+## The exact review flow
+
+A review card is the pair `<entry-id>::<mode>`. Alternative formulations, proofs, and solutions do
+not receive independent cards. They are feedback attached to the entry-mode card.
+
+Starting Review loads an in-memory batch of at most 200 cards. A card is included when it has no
+`due_at` timestamp or when `due_at` is at or before the current UTC time. After the batch is exhausted,
+Study requests the next due batch and only reports completion after a fresh request is empty. A card
+that becomes due during a long session can therefore join a later batch. An Again retry is also
+inserted after up to three currently available intervening cards in the in-memory batch.
+
+For each card, Study does the following:
+
+1. Shows the canonical tag, title, custom header, mode, and prompt. `solve` and `proof-plan` also show
+   the main formulation as the prompt body, so the problem or theorem statement is available.
+2. Requests an attempt. The default requires written text; think-only review permits an empty text
+   field but still asks the learner to retrieve. Hint use can be counted.
+3. Requires a retrospective confidence rating—Unsure (`1`), Somewhat (`2`), or Confident (`3`)—after
+   the attempt and before answer exposure. The browser submits attempt, confidence, elapsed time,
+   overt/covert status, and hint count together.
+4. Reveals only the answer family for the active task and its alternatives: formulations for a
+   statement, proofs for a theorem proof task, or solutions for a problem. The written attempt is
+   rendered with Markdown and MathJax for direct comparison.
+5. Requests a self-grade:
+
+   | Key | Grade | UI criterion |
+   | --- | --- | --- |
+   | `1` | Again (`0`) | Major gap or no valid method |
+   | `2` | Hard (`1`) | Partial, slow, or needed a hint |
+   | `3` | Good (`2`) | Correct and unaided |
+   | `4` | Easy (`3`) | Fluent, precise, and transferable |
+
+6. Stores the schedule state and appends the full graded attempt to `data/review-log.jsonl`.
+
+Study does not parse the attempt, check a proof, or infer correctness. The learner's self-grade drives
+the schedule. That is a material limitation, not an implementation detail.
+
+### Fixed review tasks
+
+- **Axiom, definition, remark:** state the content precisely.
+- **Theorem:** state the theorem; when a main proof exists, a second task asks for the complete proof.
+- **Problem:** solve the displayed problem; the task exists only when a main solution is stored.
+
+These tasks are intentionally not configurable. The internal `proof-plan` card ID is retained for
+schedule compatibility, but the prompt and visible label require a proof, not merely a plan.
+
+## Authored-order review
+
+Study intentionally uses authored order as curricular control. The queue traverses the library in
+preorder:
+
+1. root folders by stored `order`;
+2. each folder's direct entries by stored `order`;
+3. each entry's fixed tasks—statement before theorem proof;
+4. then the folder's child folders recursively, each by stored `order`.
+
+Only eligible due/new cards are emitted, so skipping a not-due card does not alter the relative order
+of those that remain. Disabling a folder excludes its direct entries and all descendant folders. A
+child marked enabled is still excluded while an ancestor is disabled.
+
+Authored order is not the same as blocked practice. An author can deliberately alternate confusable
+problem families or place a definition before the theorem that depends on it. Study does not
+automatically identify confusability, randomize items, or optimize interleaving. That restraint is
+intentional: interleaving benefits depend on category similarity and task design, and arbitrary
+mixing can increase irrelevant load or even favor blocking.
+
+One current consequence is that all due modes for an entry are adjacent. If a future change scatters
+modes or dynamically interleaves entries, it must preserve a user-controlled order option and be
+evaluated against delayed mathematical performance, not just session completion.
+
+## The scheduling heuristic
+
+The scheduler stores a per-card stability estimate `S` in days and difficulty `D` on a nominal
+`1`–`10` scale. A new card starts from `S = 0.5` and `D = 5.0`. Formulas use the prior values of `S`
+and `D`:
+
+| Grade | New stability `S'` | New difficulty `D'` | Due interval | Other state |
+| --- | --- | --- | --- | --- |
+| Again (`0`) | `max(0.25, 0.45 S)` | `min(10, D + 0.7)` | 10 minutes | increment lapses; retry after up to three available intervening cards |
+| Hard (`1`) | `max(1, 1.35 S)` | `min(10, D + 0.2)` | `max(1, round(S'))` days | increment repetitions |
+| Good (`2`) | `max(2, S(2.25 - 0.035 D))` | `max(1, D - 0.15)` | `max(1, round(S'))` days | increment repetitions |
+| Easy (`3`) | `max(4, S(3.1 - 0.045 D))` | `max(1, D - 0.35)` | `max(2, round(S'))` days | increment repetitions |
+
+If a learner chooses Confident (`3`) and then grades Again, Study adds another `0.35` to difficulty,
+capped at `10`. It stores a simple calibration value:
+
+```text
+calibration = confidence - expected-confidence-for-grade
+expected confidence: Again=1, Hard=2, Good=2, Easy=3
+```
+
+Confidence otherwise does not affect the interval. Hint count, overt/covert status, and elapsed time
+are logged but do not change scheduling. Again's ten-minute due timestamp and its in-session retry
+are separate behaviors: the retry is inserted after up to three available intervening cards even if
+ten minutes have not elapsed.
+
+These constants were not estimated from Study data, do not target a calibrated recall probability,
+and do not encode the lag effects reported in the literature. They provide bounded, increasing
+spacing and faster recovery after failure. Calling them optimal would be false.
+
+## Why the design uses these practices
+
+### Spacing: strongest direct mathematics evidence
+
+The 2025 mathematics meta-analysis by Murray, Horner, and Göbel found a robust overall advantage of
+spaced over massed practice, `g = 0.28`, across 27 studies and 53 effects. The course-embedded subset
+was smaller (`g = 0.24`) than isolated learning (`g = 0.43`). This supports returning on later days,
+not a particular interval multiplier. General spacing syntheses also show that the useful gap depends
+on the desired retention interval; one fixed cadence cannot be optimal for every horizon.
+
+Product implications:
+
+- Make due dates visible and allow forgetting between successful sessions.
+- Do not reward same-session repetition as if it were equivalent to relearning later.
+- Keep interval constants inspectable and versioned.
+- Evaluate any scheduler against delayed outcomes at more than one retention horizon.
+
+Sources: [Murray, Horner, and Göbel (2025)](https://doi.org/10.1007/s10648-025-10035-1),
+[Cepeda et al. (2006)](https://doi.org/10.1037/0033-2909.132.3.354), and
+[Cepeda et al. (2008)](https://doi.org/10.1111/j.1467-9280.2008.02209.x).
+
+### Retrieval: broad support, weaker mathematics-specific support
+
+A large classroom meta-analysis found an average benefit of quizzing across 222 independent studies
+and 48,478 students (`g = 0.499`), with important moderators including control activity, feedback,
+format, repetition, and design. However, the 2025 math-specific review found only seven studies (32
+effects) comparing retrieval with restudy; its weighted mean was `g = 0.18`, but the 95% confidence
+interval crossed zero. The appropriate conclusion is not “retrieval does not work in mathematics.” It
+is that the direct math literature is too small and inconsistent to establish a reliable average
+advantage.
+
+Study therefore requires an attempt before reveal and separates statement, theorem-proof, and
+problem-solution retrieval. It does not claim that statement recall alone establishes proof or
+problem-solving mastery.
+
+Sources: [Yang et al. (2021)](https://doi.org/10.1037/bul0000309),
+[Rowland (2014)](https://doi.org/10.1037/a0037559), and
+[Murray, Horner, and Göbel (2025)](https://doi.org/10.1007/s10648-025-10035-1).
+
+### Overt attempts and think-only review
+
+A 2025 meta-analysis found a small benefit of covert retrieval over no retrieval (`g = 0.23`) across
+18 studies and 2,560 participants, and a small advantage of overt over covert retrieval (`g = 0.17`).
+Effects varied by how covert retrieval was elicited, feedback, material, and delay. Study defaults to
+writing because it externalizes omissions and makes comparison honest, but retains think-only review
+for accessibility and high-friction contexts.
+
+Source: [Yu et al. (2025)](https://doi.org/10.1007/s10648-025-10024-4).
+
+### Feedback and error correction
+
+In a meta-analysis of computer-based learning, elaborated feedback had a larger average effect
+(`0.49`) than showing the correct answer (`0.32`) or correctness alone (`0.05`). Other experiments
+show that feedback can correct multiple-choice lure errors and improve retention of low-confidence
+correct answers. Study reveals canonical content and explicit comparison cues rather than a bare
+right/wrong flag.
+
+This is only as good as the stored answer. Incorrect canonical content can consolidate error, which
+is why mathematical verification rules in `AGENTS.md` are strict.
+
+Sources: [Van der Kleij, Feskens, and Eggen (2015)](https://doi.org/10.3102/0034654314564881),
+[Butler and Roediger (2008)](https://doi.org/10.3758/MC.36.3.604), and
+[Butler, Karpicke, and Roediger (2008)](https://doi.org/10.1037/0278-7393.34.4.918).
+
+### Confidence is calibration data, not correctness
+
+Delayed judgments of learning are generally better calibrated than immediate post-study judgments,
+and retrospective confidence after retrieval may predict later performance slightly better in some
+settings. The advantage was much smaller in two of three preregistered experiments, and metacognitive
+ratings can themselves change performance in inconsistent directions. Study collects a coarse
+post-attempt confidence rating to expose high-confidence failures and support future analysis. It
+does not treat confidence as correctness or let confidence broadly control the interval.
+
+Sources: [Rhodes and Tauber (2011)](https://doi.org/10.1037/a0021705),
+[Putnam, Deng, and DeSoto (2022)](https://doi.org/10.1080/09658211.2022.2026973), and
+[Double and Birney (2019)](https://doi.org/10.3389/fpsyg.2019.02755).
+
+### Successive relearning
+
+Successive relearning combines successful retrieval with relearning in later sessions. In one study,
+one correct recall in each of three spaced sessions produced much better one-week retention than
+three correct recalls in one session (68% versus 26%). Reviews describe large and promising effects,
+but the literature is much smaller and more homogeneous than the broad spacing literature and offers
+little direct evidence for advanced mathematics.
+
+Study's later due dates and same-session Again retry approximate parts of this method; they do not
+enforce an objective accuracy criterion or a fixed number of successful sessions. The app therefore
+must not claim to implement a validated successive-relearning protocol.
+
+Sources: [Rawson and Dunlosky (2022)](https://doi.org/10.1177/09637214221100484) and
+[Rawson et al. (2018)](https://doi.org/10.1037/xap0000146).
+
+### Interleaving and authored order
+
+A preregistered cluster-randomized trial in 54 seventh-grade mathematics classes reported 61% versus
+38% on an unannounced test one month later for interleaved versus blocked practice (`d = 0.83`). A
+broader meta-analysis found a positive but heterogeneous mathematics effect; it also found a blocking
+advantage in word learning. A systematic review emphasizes similarity and category structure: mixing
+is useful when choosing the correct strategy among confusable categories, not as random variety.
+
+Study leaves sequence with the author. Arrange discriminations and problem families deliberately;
+do not infer that any shuffle is beneficial.
+
+Sources: [Rohrer et al. (2020)](https://doi.org/10.1037/edu0000367),
+[Brunmair and Richter (2019)](https://doi.org/10.1037/bul0000209), and
+[Firth, Rivers, and Boyle (2021)](https://doi.org/10.1002/rev3.3266).
+
+### Worked examples and expertise
+
+A mathematics meta-analysis covering 43 articles, 55 studies, and 181 effects found an average worked
+example benefit of `g = 0.48`. Correct examples performed better than incorrect-only or mixed examples;
+adding self-explanation prompts was a negative moderator in that synthesis. A separate meta-analysis
+of the expertise-reversal effect found that high assistance favored low-prior-knowledge learners
+(`d = 0.505`), while high-prior-knowledge learners did better with lower assistance (`d = -0.428`),
+with substantial heterogeneity.
+
+Product/content implications:
+
+- Store a correct worked solution for novice feedback.
+- Keep the problem visible before its solution and require an attempt first.
+- Fade scaffolding when repeated performance—not confidence alone—supports it.
+- Do not force explanation prompts into every worked example.
+
+Sources: [Barbieri et al. (2023)](https://doi.org/10.1007/s10648-023-09745-1) and
+[Tetzlaff et al. (2025)](https://doi.org/10.1016/j.learninstruc.2025.102142).
+
+### Generation, self-explanation, and transfer
+
+Generation and self-explanation have positive average effects, but task design matters. A general
+self-explanation meta-analysis reported `g = 0.55`. A mathematics synthesis found small-to-moderate
+immediate effects for procedural knowledge (`0.28`), conceptual knowledge (`0.33`), and transfer
+(`0.46`), but only nine experiments included delayed tests; delayed procedural (`0.13`) and conceptual
+(`-0.05`) effects were nonsignificant, while delayed transfer was `0.32`. A transfer meta-analysis of
+retrieval practice found `d = 0.40` across 192 effects, with marked variation by transfer type and
+practice design.
+
+This can support separately designed exercises asking for reasons, examples, proof plans, and new
+applications. Study's fixed review queue does not currently add those prompts, and one fluent
+explanation or nearby variant must not be treated as broad transfer.
+
+Sources: [Bertsch et al. (2007)](https://doi.org/10.3758/BF03193441),
+[Bisra et al. (2018)](https://doi.org/10.1007/s10648-018-9434-x),
+[Rittle-Johnson, Loehr, and Durkin (2017)](https://doi.org/10.1007/s11858-017-0834-z), and
+[Pan and Rickard (2018)](https://doi.org/10.1037/bul0000151).
+
+### Difficulty and sleep are boundaries, not scheduler tricks
+
+“Desirable difficulty” is conditional: manipulations that depress current performance can improve
+later learning, but high element interactivity and cognitive load can reverse the effect. Study should
+not chase a universal failure rate or make sessions hard for their own sake. Failure is useful only
+when the task remains interpretable and corrective feedback closes the gap.
+
+Sleep deprivation before learning has a larger average association with impaired memory than sleep
+deprivation after learning, and even partial restriction shows a smaller but reliable average harm.
+These findings justify avoiding product language that glorifies late-night cramming. They do not
+justify sleep-stage-aware scheduling, medical advice, or inferring sleep from response time.
+
+Sources: [Soderstrom and Bjork (2015)](https://doi.org/10.1177/1745691615569000),
+[Chen et al. (2018)](https://doi.org/10.3389/fpsyg.2018.01483),
+[Newbury et al. (2021)](https://doi.org/10.1037/bul0000348), and
+[Crowley et al. (2024)](https://doi.org/10.1016/j.neubiorev.2024.105929).
+
+## What Study deliberately does not claim
+
+- The current scheduler is not an optimal-memory algorithm.
+- Completing the due queue is not proof of mastery.
+- Self-grades are not objective correctness labels.
+- Confidence is not knowledge.
+- Remembering a statement is not the same as understanding or proving it.
+- Reconstructing a stored proof is not the same as solving a novel problem.
+- Interleaving is not equivalent to randomization.
+- A same-session retry is not a substitute for relearning on a later day.
+- Effect sizes from vocabulary, prose, school algebra, or laboratory tasks do not transfer unchanged
+  to advanced mathematics.
+- Population-average effects do not guarantee benefit for one learner or one topic.
+
+## How to evaluate future review changes
+
+Prefer delayed, behavior-based outcomes over engagement metrics. A credible evaluation should:
+
+1. Predefine a retention horizon and a primary outcome.
+2. Include unseen but structurally related problems, not only repeated prompts.
+3. Separate statement retention, proof reconstruction, routine procedure, and transfer.
+4. Stratify by prior knowledge and task family where sample size permits.
+5. Compare against a plausible alternative such as restudy, existing scheduling, or blocked practice.
+6. Preserve authored order unless sequence is the tested intervention.
+7. Report uncertainty, attrition, exposure time, hints, and missing attempts.
+8. Avoid tuning and evaluating on the same review history.
+
+Until Study has such evidence, scheduler changes should be described as engineering hypotheses.

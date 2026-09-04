@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "macros": {
+    "Hom": "\\operatorname{Hom}",
+    "Obj": "\\operatorname{Obj}",
+    "End": "\\operatorname{End}",
+    "Mor": "\\operatorname{Mor}",
+    "Ring": "\\operatorname{Ring}",
+    "CRing": "\\operatorname{CRing}",
+    "Set": "\\operatorname{Set}",
+    "Cat": "\\operatorname{Cat}",
+    "Grp": "\\operatorname{Grp}",
+    "AbGrp": "\\operatorname{AbGrp}",
+    "Top": "\\operatorname{Top}",
+    "Mod": "\\operatorname{Mod}",
+    "Vect": "\\operatorname{Vect}",
+    "Poset": "\\operatorname{Poset}",
+    "Rel": "\\operatorname{Rel}",
+    "SMan": "\\operatorname{SMan}",
+    "id": "\\operatorname{id}",
+    "im": "\\operatorname{im}",
+    "nulset": "\\emptyset",
+    "isect": "\\bigcap",
+    "union": "\\bigcup",
+    "isoto": "\\cong",
+    "dto": "\\Rightarrow",
+    "Dt": "{\\Delta t}",
+    "dt": "{\\Delta\\theta}",
+    "de": "{\\Delta\\epsilon}",
+    "e": "{\\epsilon}",
+    "R": "\\mathbb{R}",
+    "RP": "\\mathbb{RP}",
+    "CP": "\\mathbb{CP}",
+    "Z": "\\mathbb{Z}",
+    "Q": "\\mathbb{Q}",
+    "N": "\\mathbb{N}",
+    "C": "\\mathbb{C}",
+    "Quat": "\\mathbb{H}",
+    "F": "\\mathbb{F}",
+    "B": "\\mathbb{B}",
+    "injectto": "\\hookrightarrow",
+    "surjectto": "\\twoheadrightarrow",
+    "bijectto": "\\hookrightarrow\\mathrel{\\mspace{-15mu}}\\rightarrow",
+    "true": "\\top",
+    "false": "\\bot",
+    "spanvs": "\\operatorname{span}",
+    "tensor": "\\otimes",
+    "bmat": [
+      "\\begin{bmatrix}#1\\end{bmatrix}",
+      1
+    ],
+    "diag": [
+      "\\operatorname{diag}\\left(#1\\right)",
+      1
+    ],
+    "rank": "\\operatorname{rank}",
+    "conj": [
+      "\\overline{#1}",
+      1
+    ],
+    "cmat": [
+      "\\left[#1\\right]_{\\times}",
+      1
+    ],
+    "icmat": [
+      "\\left[#1\\right]^{\\times}",
+      1
+    ],
+    "logx": [
+      "\\icmat{\\log\\left(#1\\right)}",
+      1
+    ],
+    "expx": [
+      "\\exp\\left(\\cmat{#1}\\right)",
+      1
+    ],
+    "expp": [
+      "\\exp\\left(#1\\right)",
+      1
+    ],
+    "eps": "\\epsilon",
+    "GL": "\\operatorname{GL}",
+    "SU": "\\operatorname{SU}",
+    "SO": "\\operatorname{SO}",
+    "so": "\\operatorname{so}",
+    "su": "\\operatorname{su}",
+    "gl": "\\operatorname{gl}",
+    "Sym": "\\operatorname{Sym}",
+    "SPD": "\\operatorname{SPD}",
+    "Skew": "\\operatorname{Skew}",
+    "Ad": "\\operatorname{Ad}",
+    "E": [
+      "\\mathbb{E}\\left[#1\\right]",
+      1
+    ],
+    "P": [
+      "\\mathbb{P}\\left[#1\\right]",
+      1
+    ],
+    "Var": [
+      "\\operatorname{Var}\\left(#1\\right)",
+      1
+    ],
+    "Tr": "\\operatorname{Tr}",
+    "tr": "\\operatorname{tr}",
+    "dd": [
+      "\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}",
+      2
+    ],
+    "pd": [
+      "\\frac{\\partial #1}{\\partial #2}",
+      2
+    ],
+    "evalat": [
+      "\\left.#1\\right|_{#2}",
+      2
+    ],
+    "pdman": [
+      "\\left.\\pd{}{#1}\\right|_{#2}",
+      2
+    ],
+    "iprod": [
+      "\\left\\langle #1,#2\\right\\rangle",
+      2
+    ],
+    "Cl": "\\operatorname{\\mathcal{Cl}}",
+    "w": "\\wedge",
+    "sgn": "\\operatorname{sgn}",
+    "ndist": [
+      "\\mathcal{N}\\left(#1\\right)",
+      1
+    ],
+    "Int": "\\operatorname{Int}",
+    "supp": "\\operatorname{supp}",
+    "closure": [
+      "\\overline{#1}",
+      1
+    ],
+    "norm": [
+      "\\left\\|{#1}\\right\\|",
+      1
+    ],
+    "abs": [
+      "\\left|{#1}\\right|",
+      2
+    ]
+  },
+  "updated_at": "2026-09-04T08:52:58.824125+00:00"
+}

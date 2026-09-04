@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "cards": {
+    "group-definition::statement": {
+      "due_at": "2026-09-08T09:07:15.940367+00:00",
+      "last_reviewed_at": "2026-09-04T09:07:15.940367+00:00",
+      "last_grade": 3,
+      "last_elapsed_ms": 135891,
+      "stability_days": 4.0,
+      "difficulty": 4.65,
+      "repetitions": 1,
+      "lapses": 0,
+      "last_confidence": 3,
+      "last_calibration": 0
+    },
+    "group-definition::discriminate": {
+      "due_at": "2026-09-08T09:07:34.543080+00:00",
+      "last_reviewed_at": "2026-09-04T09:07:34.543080+00:00",
+      "last_grade": 3,
+      "last_elapsed_ms": 7498,
+      "stability_days": 4.0,
+      "difficulty": 4.65,
+      "repetitions": 1,
+      "lapses": 0,
+      "last_confidence": 3,
+      "last_calibration": 0
+    },
+    "group-definition::example": {
+      "due_at": "2026-09-06T09:08:22.002009+00:00",
+      "last_reviewed_at": "2026-09-04T09:08:22.002009+00:00",
+      "last_grade": 2,
+      "last_elapsed_ms": 20162,
+      "stability_days": 2.0,
+      "difficulty": 4.85,
+      "repetitions": 1,
+      "lapses": 0,
+      "last_confidence": 1,
+      "last_calibration": -1
+    },
+    "group-definition::transfer": {
+      "due_at": "2026-09-06T09:09:05.764855+00:00",
+      "last_reviewed_at": "2026-09-04T09:09:05.764855+00:00",
+      "last_grade": 2,
+      "last_elapsed_ms": 32919,
+      "stability_days": 2.0,
+      "difficulty": 4.85,
+      "repetitions": 1,
+      "lapses": 0,
+      "last_confidence": 2,
+      "last_calibration": 0
+    }
+  },
+  "pending_attempts": {},
+  "updated_at": "2026-09-04T09:09:05.766605+00:00"
+}

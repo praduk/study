@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "folders": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "slug": "math",
+      "parent_id": null,
+      "order": 0,
+      "review_enabled": true,
+      "created_at": "2026-09-04T00:00:00+00:00",
+      "updated_at": "2026-09-04T09:25:48.793563+00:00"
+    },
+    {
+      "id": "59efcc295e5849ee9c2fc47ea7f75e39",
+      "name": "University of Colorado, Boulder",
+      "slug": "cu",
+      "parent_id": null,
+      "order": 1,
+      "review_enabled": true,
+      "created_at": "2026-09-04T10:14:58.133187+00:00",
+      "updated_at": "2026-09-04T10:31:00.086917+00:00"
+    },
+    {
+      "id": "3308b94624884f92a3d7290dce7ff54e",
+      "name": "Algebra",
+      "slug": "algebra",
+      "parent_id": "59efcc295e5849ee9c2fc47ea7f75e39",
+      "order": 0,
+      "review_enabled": true,
+      "created_at": "2026-09-04T10:16:17.202209+00:00"
+    },
+    {
+      "id": "ef4430e4353b444bad05daef6c0d45c7",
+      "name": "Propositional Logic",
+      "slug": "prop",
+      "parent_id": "mathematics",
+      "order": 0,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:16:39.713425+00:00",
+      "updated_at": "2026-09-04T10:40:16.228835+00:00"
+    },
+    {
+      "id": "9e42b2c3b5d94346921f832ff8137f44",
+      "name": "First Order Logic",
+      "slug": "fol",
+      "parent_id": "mathematics",
+      "order": 1,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:16:53.977387+00:00",
+      "updated_at": "2026-09-04T10:40:15.540836+00:00"
+    },
+    {
+      "id": "215740f0804f42d1aac23acbf8cb47fe",
+      "name": "Set Theory",
+      "slug": "set",
+      "parent_id": "mathematics",
+      "order": 2,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:17:32.666685+00:00",
+      "updated_at": "2026-09-04T10:40:14.565122+00:00"
+    },
+    {
+      "id": "aab70e098c3d45b3bf890687136556a3",
+      "name": "Category Theory",
+      "slug": "cat",
+      "parent_id": "mathematics",
+      "order": 3,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:18:04.799255+00:00",
+      "updated_at": "2026-09-04T10:40:13.612609+00:00"
+    },
+    {
+      "id": "a1ffd7eade8b447b8fbedd499800e990",
+      "name": "Number Theory",
+      "slug": "num",
+      "parent_id": "mathematics",
+      "order": 4,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:18:49.542552+00:00",
+      "updated_at": "2026-09-04T10:40:12.984389+00:00"
+    },
+    {
+      "id": "fba05deb732a439181ae5da7d0eb8404",
+      "name": "Undergraduate Real Analysis",
+      "slug": "uganalysis",
+      "parent_id": "mathematics",
+      "order": 5,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:19:22.006279+00:00",
+      "updated_at": "2026-09-04T10:40:12.258425+00:00"
+    },
+    {
+      "id": "d2a777b0fed145388a13865af55473a9",
+      "name": "Complex Analysis",
+      "slug": "complex",
+      "parent_id": "mathematics",
+      "order": 8,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:19:55.400408+00:00",
+      "updated_at": "2026-09-04T10:40:08.628581+00:00"
+    },
+    {
+      "id": "95b1d3d2dc944b0191a1781fc3f3f2af",
+      "name": "Point Set Topology",
+      "slug": "pst",
+      "parent_id": "mathematics",
+      "order": 7,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:20:26.855340+00:00",
+      "updated_at": "2026-09-04T10:40:10.764326+00:00"
+    },
+    {
+      "id": "3aae68e9d17d4ac399f59109eebb7f9d",
+      "name": "Algebra",
+      "slug": "algebra",
+      "parent_id": "mathematics",
+      "order": 9,
+      "review_enabled": true,
+      "created_at": "2026-09-04T10:20:39.193078+00:00",
+      "updated_at": "2026-09-04T10:40:09.931886+00:00"
+    },
+    {
+      "id": "43733a64a1144865af3df0fa0d97720c",
+      "name": "Analysis",
+      "slug": "analysis",
+      "parent_id": "mathematics",
+      "order": 10,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:20:45.921225+00:00",
+      "updated_at": "2026-09-04T10:40:07.532923+00:00"
+    },
+    {
+      "id": "122db3f30a124d2b817f80891808990e",
+      "name": "Topology",
+      "slug": "top",
+      "parent_id": "mathematics",
+      "order": 11,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:20:55.357869+00:00",
+      "updated_at": "2026-09-04T10:40:06.959296+00:00"
+    },
+    {
+      "id": "16229426d6a9434180d5ea3a24f0f431",
+      "name": "Differential Equations",
+      "slug": "diffeq",
+      "parent_id": "mathematics",
+      "order": 6,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:21:09.907635+00:00",
+      "updated_at": "2026-09-04T10:40:11.632853+00:00"
+    },
+    {
+      "id": "6c07fb7c24c144f7af1237f27766082b",
+      "name": "Differential Geometry",
+      "slug": "diffgeo",
+      "parent_id": "mathematics",
+      "order": 12,
+      "review_enabled": false,
+      "created_at": "2026-09-04T10:21:23.908447+00:00",
+      "updated_at": "2026-09-04T10:40:06.363209+00:00"
+    }
+  ],
+  "entries": [],
+  "updated_at": "2026-09-04T10:40:32.574309+00:00"
+}

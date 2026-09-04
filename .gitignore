@@ -1,0 +1,37 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Local secrets and machine-specific configuration
+*.local.toml
+.env
+.env.*
+
+# Frontend dependencies and generated output
+frontend/node_modules/
+frontend/dist/
+frontend/.vinext/
+frontend/.next/
+frontend/public/vendor/
+*.tsbuildinfo
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Runtime credentials are never content. All other data/ material is tracked.
+data/runtime/sessions.sqlite3
+data/runtime/sessions.sqlite3-*
+data/runtime/*.tmp
+data/runtime/export-*.pdf

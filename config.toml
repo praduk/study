@@ -1,0 +1,15 @@
+[study]
+# All authored material and review history live in data/ beside study.py.
+port = 8765
+
+# Used only with --server. Add the exact LAN IP or HTTPS hostname you use.
+server_host = "0.0.0.0"
+allowed_hosts = ["127.0.0.1", "localhost", "[::1]"]
+
+# Keep the real hash in config.local.toml. Run: python study.py --set-password
+password_hash = ""
+session_days = 30
+secure_cookie = false
+
+max_upload_mb = 12
+max_image_megapixels = 32

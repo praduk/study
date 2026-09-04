@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.toml text eol=lf
+*.excalidraw text eol=lf
+*.excalidrawlib text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "study-math"
+version = "0.1.0"
+description = "A local-first mathematics library and evidence-informed review system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "pwdlib[argon2]>=0.2,<1",
+  "python-multipart>=0.0.20,<1",
+  "pillow>=11,<13",
+  "markdown-it-py>=3,<5",
+  "mdit-py-plugins>=0.4,<1",
+  "playwright>=1.52,<2",
+  "tomli>=2.2; python_version < '3.11'",
+  "tomli-w>=1.2,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28,<1",
+  "pytest>=8,<10",
+  "ruff>=0.11,<1",
+]
+
+[project.scripts]
+study = "study_app.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["study_app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
