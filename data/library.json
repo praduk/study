@@ -7,9 +7,9 @@
       "slug": "math",
       "parent_id": null,
       "order": 0,
-      "review_enabled": true,
+      "review_enabled": false,
       "created_at": "2026-09-04T00:00:00+00:00",
-      "updated_at": "2026-09-04T09:25:48.793563+00:00"
+      "updated_at": "2026-09-04T14:21:21.026057+00:00"
     },
     {
       "id": "59efcc295e5849ee9c2fc47ea7f75e39",
@@ -29,7 +29,7 @@
       "order": 0,
       "review_enabled": true,
       "created_at": "2026-09-04T10:16:17.202209+00:00",
-      "updated_at": "2026-09-04T11:38:00.257830+00:00"
+      "updated_at": "2026-09-04T14:45:29.754626+00:00"
     },
     {
       "id": "ef4430e4353b444bad05daef6c0d45c7",
@@ -398,7 +398,8 @@
       "parent_id": "3308b94624884f92a3d7290dce7ff54e",
       "order": 1,
       "review_enabled": true,
-      "created_at": "2026-09-04T13:51:26.845174+00:00"
+      "created_at": "2026-09-04T13:51:26.845174+00:00",
+      "updated_at": "2026-09-04T14:32:15.738359+00:00"
     },
     {
       "id": "fd47f9cc598340d99ee7fbe28bbedb55",
@@ -6989,7 +6990,176 @@
       "assets": [],
       "created_at": "2026-09-04T12:51:45.844288+00:00",
       "updated_at": "2026-09-04T12:51:45.878638+00:00"
+    },
+    {
+      "id": "57d6f2ab1c8847519f8932749dce0c11",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Group Action",
+      "tag": "group-action",
+      "header": "",
+      "order": 0,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "32c3a8ef2f304a0b8bb29b5856f8913b",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/57d6f2ab1c8847519f8932749dce0c11/32c3a8ef2f304a0b8bb29b5856f8913b.md",
+          "main": true
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:11:48.620700+00:00",
+      "updated_at": "2026-09-04T14:12:30.064329+00:00"
+    },
+    {
+      "id": "0edb913ab5e54826b108b87a11eb8406",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Field",
+      "tag": "field",
+      "header": "",
+      "order": 1,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "dcfce0abdaf442b18cafbb66d49ce616",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/0edb913ab5e54826b108b87a11eb8406/dcfce0abdaf442b18cafbb66d49ce616.md",
+          "main": true
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:15:43.037280+00:00",
+      "updated_at": "2026-09-04T14:16:59.654133+00:00"
+    },
+    {
+      "id": "eecb200ab5694ee2b08a66080bcf5bb1",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Vector Space",
+      "tag": "vector-space",
+      "header": "",
+      "order": 2,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "4a8fa38678274491b90f0c0a72d5eb0d",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/eecb200ab5694ee2b08a66080bcf5bb1/4a8fa38678274491b90f0c0a72d5eb0d.md",
+          "main": true
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:19:34.793539+00:00",
+      "updated_at": "2026-09-04T14:21:08.709931+00:00"
+    },
+    {
+      "id": "c58321af7ee94497a0af97894c93fff1",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Maximal Subgroup",
+      "tag": "maximal-subgroup",
+      "header": "",
+      "order": 3,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "97cc306c5dad4fd197902ec2351b9c9a",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/c58321af7ee94497a0af97894c93fff1/97cc306c5dad4fd197902ec2351b9c9a.md",
+          "main": true
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:24:02.026578+00:00",
+      "updated_at": "2026-09-04T14:24:10.686255+00:00"
+    },
+    {
+      "id": "09f140181bbf4eff8c34a681cd78cbe6",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Stabilizer",
+      "tag": "stabilizer",
+      "header": "",
+      "order": 4,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "436ac152bff44dceb64971258b591862",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/09f140181bbf4eff8c34a681cd78cbe6/436ac152bff44dceb64971258b591862.md",
+          "main": true
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:27:29.119332+00:00",
+      "updated_at": "2026-09-04T14:30:00.033349+00:00"
+    },
+    {
+      "id": "42fa599ff2424fe689a58c88fd30d0a3",
+      "folder_id": "84baadc8de0a4048b1b0471cf82f7530",
+      "kind": "df",
+      "title": "Weak Stabilizer",
+      "tag": "wstab",
+      "header": "",
+      "order": 5,
+      "review_modes": [
+        "statement"
+      ],
+      "problem_family": "",
+      "confusable_with": [],
+      "formulations": [
+        {
+          "id": "e62bcd1d6dde414f98b9f9e3267ef35b",
+          "label": "Main",
+          "subtag": null,
+          "file": "content/42fa599ff2424fe689a58c88fd30d0a3/e62bcd1d6dde414f98b9f9e3267ef35b.md",
+          "main": true
+        },
+        {
+          "id": "9ad6825a5ed24e4d92cf42f9b5a2f3e0",
+          "label": "in terms of stabilizer",
+          "subtag": "stab",
+          "file": "content/42fa599ff2424fe689a58c88fd30d0a3/9ad6825a5ed24e4d92cf42f9b5a2f3e0.md",
+          "main": false
+        }
+      ],
+      "supplements": [],
+      "assets": [],
+      "created_at": "2026-09-04T14:31:54.503693+00:00",
+      "updated_at": "2026-09-04T14:47:04.290155+00:00"
     }
   ],
-  "updated_at": "2026-09-04T13:54:55.654191+00:00"
+  "updated_at": "2026-09-04T14:47:04.290673+00:00"
 }
