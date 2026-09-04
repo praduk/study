@@ -27,7 +27,8 @@ Server mode is password-protected and stores revocable sessions.
 - Confirmed deletion for entries and folders. Deleting a non-empty folder requires typing its name
   and removes the complete subtree; shared media files are retained while anything still uses them.
 - Scoped `@tag` references that expand from the current folder through progressively broader
-  subtrees, with fully rendered hover/focus/tap previews and a `Cmd/Ctrl+Shift+K` insertion picker.
+  subtrees, then fall back across the full library, with fully rendered hover/focus/tap previews
+  and a `Cmd/Ctrl+Shift+K` insertion picker.
 - A hideable, resizable library panel and an uncluttered single reading panel.
 - Fast full-library search over titles, tags, headers, formulations, proofs, and solutions.
 - PDF export for the whole library or a folder, recursively or not, filtered by entry type, in the
@@ -159,16 +160,18 @@ which keeps every valid canonical reference within the bounded API and prevents 
 
 In ordinary Markdown prose, `@group` resolves in the entry's own folder first, then its descendant
 subtree. Study next checks the direct parent and the sibling subtrees exposed at that level, and
-repeats outward through real ancestors. The first nonempty stage wins; unrelated top-level
-namespaces remain isolated. Alternative formulations and supplements use the same concise syntax,
-such as `@group:category`, `@lagrange:pf`, or `@lagrange:pf:action`.
+repeats outward through real ancestors. If the originating top-level tree has no match, one final
+stage checks every other top-level tree. The first nonempty stage wins, so a local or higher-level
+target always shadows global matches. Alternative formulations and supplements use the same
+concise syntax, such as `@group:category`, `@lagrange:pf`, or `@lagrange:pf:action`.
 
 If the first nonempty stage contains more than one matching target, Study marks the reference
-ambiguous and does not guess or continue outward. The insertion picker uses a fully qualified tag such as
-`@math:algebra:df:group` in that case. Missing and ambiguous references remain visible as their exact
-source text. References are recognized only in Markdown text—not in code, links, email addresses,
-or mathematics. Resolved hover previews use the same Markdown, MathJax, image, Excalidraw, and
-commutative-diagram renderer as the reader.
+ambiguous and does not guess or continue outward. The insertion picker uses a fully qualified tag
+such as `@math:algebra:df:group` in that case. A resolved reference displays the entry title while
+leaving the authored `@tag` unchanged; missing and ambiguous references remain visible as their
+exact source text. References are recognized only in Markdown text—not in code, links, email
+addresses, or mathematics. Resolved hover previews use the same Markdown, MathJax, image,
+Excalidraw, and commutative-diagram renderer as the reader.
 
 Global search and the insertion picker use an immutable in-memory index. Study precomputes folder
 ancestry, preorder subtree intervals, direct/canonical reference buckets, and trigram posting lists;

@@ -124,8 +124,8 @@ class TargetDocument:
 @dataclass(frozen=True)
 class VisibleReference:
     local_reference: str
-    matched_folder_id: str
-    scope_distance: int
+    matched_folder_id: str | None
+    scope_distance: int | None
     precedence: int
     resolution: str
     target_keys: tuple[str, ...]
@@ -466,6 +466,27 @@ class LibrarySearchIndex:
                 )
             branch_start = scope_start
             branch_end = scope_end
+
+        # Nothing in the originating top-level tree matched. Treat every other
+        # top-level tree as one final global stage so local scopes still shadow
+        # the rest of the library without making unrelated content unreachable.
+        root_id = self._root_by_folder[folder_id]
+        root_start = self._folder_rank[root_id]
+        root_end = self._subtree_end[root_id]
+        global_keys = self._keys_in_rank_ranges(
+            reference,
+            ((0, root_start), (root_end, len(self._folder_rank))),
+        )
+        if global_keys:
+            ancestry_length = len(self.ancestry_by_folder[folder_id])
+            return VisibleReference(
+                local_reference=reference,
+                matched_folder_id=None,
+                scope_distance=None,
+                precedence=ancestry_length * 2,
+                resolution="global",
+                target_keys=global_keys,
+            )
         return None
 
     @staticmethod
@@ -594,18 +615,12 @@ class LibrarySearchIndex:
             )
         else:
             candidates = set(self.target_documents)
-        root_id = self._root_by_folder[folder_id]
-        root_start = self._folder_rank[root_id]
-        root_end = self._subtree_end[root_id]
         rows: list[tuple[tuple[Any, ...], str]] = []
         for key in candidates:
             document = self.target_documents[key]
             if query and query not in document.search_text:
                 continue
             target = document.target
-            target_rank = self._folder_rank[target.folder_id]
-            if not root_start <= target_rank < root_end:
-                continue
             group = self._cached_visible_group(folder_id, target.local_reference)
             if group is None or key not in group.target_keys:
                 continue

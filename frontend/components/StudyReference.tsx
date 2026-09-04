@@ -11,6 +11,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { api } from '@/lib/api';
+import { referenceDisplayText } from '@/lib/reference-display';
 import { cn } from '@/lib/utils';
 
 export type StudyReferenceStatus =
@@ -305,6 +306,7 @@ export function StudyReference({
   const target = displayedResolution.target ?? {};
   const label = kindLabel(target.kind);
   const preview = target.preview;
+  const displayText = referenceDisplayText(literalTag, target.title);
 
   return (
     <Popover>
@@ -316,10 +318,10 @@ export function StudyReference({
           'inline cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-primary underline decoration-dotted underline-offset-[3px] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2',
           className,
         )}
-        aria-label={`Preview reference ${literalTag}${target.title ? `: ${target.title}` : ''}`}
+        aria-label={`Preview reference ${displayText}${displayText !== literalTag ? ` (${literalTag})` : ''}`}
         data-study-reference-status="resolved"
       >
-        {literalTag}
+        {displayText}
       </PopoverTrigger>
       <PopoverContent
         align="start"
@@ -333,7 +335,7 @@ export function StudyReference({
             </span>
           )}
           <PopoverTitle className="font-semibold leading-snug">
-            {target.title ?? target.canonicalTag ?? literalTag}
+            {displayText}
           </PopoverTitle>
           {target.canonicalTag && target.canonicalTag !== target.title && (
             <PopoverDescription className="break-all font-mono text-[0.7rem]">

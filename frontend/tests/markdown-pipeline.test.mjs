@@ -15,6 +15,7 @@ import {
   normalizeMathJaxDelimiters,
   remarkStudyMath,
 } from '../lib/markdown-math.ts';
+import { referenceDisplayText } from '../lib/reference-display.ts';
 import { readingVariantSelection } from '../lib/reference-navigation.ts';
 import {
   remarkStudyDiagrams,
@@ -209,4 +210,15 @@ test('exact reference variants select their formulation or supplement', () => {
     formulationId: 'main-form',
     supplementId: null,
   });
+});
+
+test('resolved references display the entry title instead of the authored tag', () => {
+  assert.equal(
+    referenceDisplayText('@cauchy-schwarz', 'Cauchy–Schwarz inequality'),
+    'Cauchy–Schwarz inequality',
+  );
+  assert.equal(
+    referenceDisplayText('@cauchy-schwarz', undefined),
+    '@cauchy-schwarz',
+  );
 });

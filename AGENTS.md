@@ -163,7 +163,8 @@ math:algebra:pb:z12-subgroups:sl:generators
 
 - A short reference resolves in deterministic stages: direct current folder, current descendants,
   direct parent, newly visible sibling subtrees, then the same two stages at each higher parent.
-  Stop at the highest real folder; unrelated top-level namespaces are not implicitly global.
+  If the originating top-level tree has no match, use one final repository-wide stage over all other
+  top-level trees. Local and higher-level stages always shadow this global fallback.
 - The first nonempty stage shadows every farther stage. If it contains multiple targets, the
   reference is deliberately ambiguous. Never choose by title, depth, or authored order; use a
   canonical tag.

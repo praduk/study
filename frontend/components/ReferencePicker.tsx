@@ -82,7 +82,8 @@ function ReferencePickerSession({ open, folderId, onClose, onInsert }: Props) {
           <DialogTitle>Insert a reference</DialogTitle>
           <p className="dialog-subtitle">
             Study searches the nearest folder first, then progressively broader
-            subtrees. Ambiguous names are inserted canonically.
+            subtrees, then the whole library. Ambiguous names are inserted
+            canonically.
           </p>
         </DialogHeader>
         <Input

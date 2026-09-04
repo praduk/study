@@ -30,12 +30,17 @@ def test_reference_resolution_expands_through_nearest_subtrees(tmp_path: Path):
     root_field = store.create_entry(
         root["id"], "df", "Field", "field", "", "A field has two operations."
     )
+    global_root = store.create_folder("Physics", "physics", None)
+    store.create_entry(
+        global_root["id"], "df", "Global field", "field", "", "A physical field."
+    )
     store.create_entry(sibling["id"], "th", "Sibling only", "compactness", "", "Body")
 
     nearest = store.resolve_reference(linear["id"], "@group")
     assert nearest["status"] == "resolved"
     assert nearest["scope_distance"] == 1
     assert nearest["match"]["entry_id"] == local_group["id"]
+    assert nearest["match"]["title"] == "Algebra group"
     assert nearest["match"]["content"] == "Local formulation\n"
     assert nearest["match"]["main_formulation"]["id"] == local_group["formulations"][0]["id"]
 
@@ -43,6 +48,9 @@ def test_reference_resolution_expands_through_nearest_subtrees(tmp_path: Path):
     assert parent_fallback["status"] == "resolved"
     assert parent_fallback["scope_distance"] == 2
     assert parent_fallback["match"]["entry_id"] == root_field["id"]
+    assert [
+        item["entry_id"] for item in store.reference_candidates(linear["id"], "field")
+    ] == [root_field["id"]]
 
     sibling_fallback = store.resolve_reference(linear["id"], "compactness")
     assert sibling_fallback["status"] == "resolved"
@@ -67,7 +75,9 @@ def test_subtree_resolution_stops_at_first_nonempty_stage_and_never_guesses(
     second = store.create_entry(
         second_child["id"], "th", "Ring object", "object", "", "Second"
     )
-    store.create_entry(unrelated["id"], "df", "Outside", "outside", "", "Outside")
+    outside = store.create_entry(
+        unrelated["id"], "df", "Outside", "outside", "", "Outside"
+    )
 
     ambiguous = store.resolve_reference(current["id"], "object")
     assert ambiguous["status"] == "ambiguous"
@@ -77,7 +87,44 @@ def test_subtree_resolution_stops_at_first_nonempty_stage_and_never_guesses(
         second["id"],
     }
     assert far["id"] not in {candidate["entry_id"] for candidate in ambiguous["candidates"]}
-    assert store.resolve_reference(current["id"], "outside")["status"] == "missing"
+    global_match = store.resolve_reference(current["id"], "outside")
+    assert global_match["status"] == "resolved"
+    assert global_match["resolution"] == "global"
+    assert global_match["matched_folder_id"] is None
+    assert global_match["scope_distance"] is None
+    assert global_match["match"]["entry_id"] == outside["id"]
+    global_candidates = store.reference_candidates(current["id"], "outside")
+    assert [item["entry_id"] for item in global_candidates] == [outside["id"]]
+    assert global_candidates[0]["insert_text"] == "@outside"
+
+    other_root = store.create_folder("Chemistry", "chemistry", None)
+    other_outside = store.create_entry(
+        other_root["id"], "th", "Other outside", "outside", "", "Other"
+    )
+    global_ambiguity = store.resolve_reference(current["id"], "outside")
+    assert global_ambiguity["status"] == "ambiguous"
+    assert global_ambiguity["resolution"] == "global"
+    assert {item["entry_id"] for item in global_ambiguity["candidates"]} == {
+        outside["id"],
+        other_outside["id"],
+    }
+    ambiguous_global_candidates = store.reference_candidates(current["id"], "outside")
+    assert len(ambiguous_global_candidates) == 2
+    assert all(
+        item["insert_text"] == f"@{item['canonical_tag']}"
+        for item in ambiguous_global_candidates
+    )
+
+    local_outside = store.create_entry(
+        current["id"], "rk", "Local outside", "outside", "", "Local"
+    )
+    local_global_shadow = store.resolve_reference(current["id"], "outside")
+    assert local_global_shadow["status"] == "resolved"
+    assert local_global_shadow["resolution"] == "scoped"
+    assert local_global_shadow["match"]["entry_id"] == local_outside["id"]
+    shadowed_candidates = store.reference_candidates(current["id"], "outside")
+    assert [item["entry_id"] for item in shadowed_candidates] == [local_outside["id"]]
+    assert shadowed_candidates[0]["insert_text"] == "@outside"
     assert store.resolve_reference(current["id"], far["canonical_tag"])["match"][
         "entry_id"
     ] == far["id"]
