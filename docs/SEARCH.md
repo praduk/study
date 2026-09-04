@@ -11,8 +11,11 @@ Entries of different kinds may intentionally share a raw tag in one folder becau
 tags remain distinct. A short reference to that raw tag is **ambiguous**; Study reports every match
 at that stage and does not guess or continue outward. A fully qualified canonical tag such as
 `@math:algebra:df:group` resolves exactly and is the safe insertion offered for an ambiguous match.
-Resolved references render as the entry title without rewriting the authored `@tag`. Missing and
-ambiguous references remain ordinary source text.
+Resolved references render as the entry title without rewriting the authored `@tag`. The labeled
+form `@[replacement text]tag` resolves exactly the same tag while using the replacement text inline;
+its preview heading remains the resolved entry title. The replacement must be nonempty, single-line
+plain text without square brackets. Missing and ambiguous references remain as their complete
+authored source text, including the label when present.
 
 Alternative formulations and supplements are addressable in the same way:
 

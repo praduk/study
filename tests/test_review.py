@@ -35,6 +35,29 @@ def test_review_queue_preserves_authored_order_and_inherits_folder_exclusion(tmp
     assert [card["entry_id"] for card in review.queue()] == [second["id"]]
 
 
+def test_statement_prompts_name_the_definition_axiom_or_theorem(tmp_path: Path):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    definition = store.create_entry(
+        folder["id"], "df", "Set", "set", "", "A set is a collection."
+    )
+    axiom = store.create_entry(
+        folder["id"], "ax", "Axiom of extensionality", "extensionality", "", "Axiom statement"
+    )
+    theorem = store.create_entry(
+        folder["id"], "th", "Cantor's theorem", "cantor", "", "Theorem statement"
+    )
+
+    cards = {
+        card["entry_id"]: card for card in ReviewEngine(store).queue()
+    }
+
+    assert cards[definition["id"]]["prompt"] == "Define Set."
+    assert cards[axiom["id"]]["prompt"] == "State Axiom of extensionality."
+    assert cards[theorem["id"]]["prompt"] == "State Cantor's theorem."
+    assert all(card["prompt_body"] == "" for card in cards.values())
+
+
 def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
@@ -74,6 +97,12 @@ def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Pat
         (theorem["id"], "proof-plan"),
         (problem["id"], "solve"),
     ]
+    assert cards[0]["prompt"] == "State Orbit theorem."
+    assert cards[0]["prompt_body"] == ""
+    assert cards[1]["prompt"] == "Prove Orbit theorem."
+    assert cards[1]["prompt_body"] == "Main statement\n"
+    assert cards[2]["prompt"] == "Solve the following problem."
+    assert cards[2]["prompt_body"] == "Problem statement\n"
     statement = review.reveal(
         cards[0]["id"], {"attempt": "statement", "confidence": 2, "overt": True}
     )

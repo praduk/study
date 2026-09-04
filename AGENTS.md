@@ -170,6 +170,10 @@ math:algebra:pb:z12-subgroups:sl:generators
   canonical tag.
 - Fully qualified canonical references resolve exactly. Alternatives, proofs, and solutions may be
   addressed with their subtag components.
+- `@[replacement text]tag` resolves the same tag while displaying the replacement text inline. The
+  replacement is nonempty, single-line plain text without square brackets. It never replaces the
+  resolved entry title in the preview, and missing or ambiguous references show the full authored
+  form.
 - Parse references only from Markdown text nodes. Never interpret an `@` inside code, a link, an
   email address, or mathematics.
 - Search and resolution are read-only. Normal writes must invalidate the in-memory index; Git Pull

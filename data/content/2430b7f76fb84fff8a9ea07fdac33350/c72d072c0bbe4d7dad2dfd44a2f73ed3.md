@@ -1,0 +1,1 @@
+Define $A\mathbin{\uparrow}B$ (NAND) to mean $\neg(A\land B)$ and $A\mathbin{\downarrow}B$ (NOR) to mean $\neg(A\lor B)$. The singleton bases $\{\uparrow\}$ and $\{\downarrow\}$ are each functionally complete.

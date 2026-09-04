@@ -1,0 +1,3 @@
+First prove by induction on a term $s$ that $s[t/x]^𝔐[g]=s^𝔐[g[x↦t^𝔐[g]]]$. The variable cases split into $s=x$ and $s≠x$; constants are immediate; function applications follow componentwise.
+
+Now induct on $φ$. Atomic relation and equality cases use the term result; Boolean cases use the induction hypotheses. Let $φ=∀yψ$. If $y=x$, neither legal substitution nor assignment update penetrates the binder, and coincidence gives the result. If $y≠x$, admissibility ensures either $y$ is absent from $t$ or the binder has first been renamed fresh. Thus $t^𝔐[g[y↦a]]=t^𝔐[g]$, and the two assignment updates commute. Apply the induction hypothesis to $ψ$ for every $a∈M$. The existential case is the same with an existential choice of $a$.

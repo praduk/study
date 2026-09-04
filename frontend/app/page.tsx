@@ -28,9 +28,10 @@ import {
 } from '@/components/ui/popover';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { api, setCsrfToken } from '@/lib/api';
+import { folderPathIds, libraryPathForEntry, resolveLibraryPath } from '@/lib/library-path';
 import { configureMathJax } from '@/lib/mathjax';
 import { readingVariantSelection } from '@/lib/reference-navigation';
-import type { Bootstrap, EntryDetail, EntryKind, Folder, FolderNode, GitStatus } from '@/lib/types';
+import type { Bootstrap, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus } from '@/lib/types';
 
 const KIND_LABEL: Record<EntryKind, string> = { ax: 'Axiom', df: 'Definition', rk: 'Remark', th: 'Theorem', pb: 'Problem' };
 const ENTRY_KINDS = Object.entries(KIND_LABEL) as [EntryKind, string][];
@@ -215,7 +216,7 @@ function LoginScreen({ onLogin }: { onLogin: (csrf: string) => void }) {
   return <main className="login-screen"><form className="login-card" onSubmit={submit}><span className="brand-mark large"><Sigma /></span><h1>Study</h1><p>Your mathematical library is password protected.</p><label className="field-label" htmlFor="study-password">Password<Input id="study-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} /></label>{error && <div className="form-error">{error}</div>}<Button type="submit" disabled={busy || !password}><LogIn /> {busy ? 'Opening…' : 'Open library'}</Button></form></main>;
 }
 
-function ReadingPane({ entry, folders, canEdit, selectedVariantId, onSelectVariant, onEdit, onDelete, onReview, onOpenEntry }: { entry: EntryDetail | null; folders: Folder[]; canEdit: boolean; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onReview: () => void; onOpenEntry: (entryId: string, variantId?: string) => void }) {
+function ReadingPane({ entry, folders, canEdit, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry }: { entry: EntryDetail | null; folders: Folder[]; canEdit: boolean; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void }) {
   if (!entry) return <article className="reading-pane empty-library"><div><span className="brand-mark large"><Library /></span><h1>Your study library</h1><p>Select an entry, or create one in a folder. Content is stored as ordinary Markdown under <code>data/</code>.</p></div></article>;
   const target = readingVariantSelection(entry, selectedVariantId);
   const folder = folders.find((item) => item.id === entry.folder_id); const active = entry.formulations.find((item) => item.id === target.formulationId) || entry.formulations[0];
@@ -225,7 +226,7 @@ function ReadingPane({ entry, folders, canEdit, selectedVariantId, onSelectVaria
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
     {!!entry.supplements.length && <section className="supplement-list"><h2>{entry.kind === 'th' ? 'Proofs' : 'Solutions'}</h2>{entry.supplements.map((item) => <details key={item.id} open={target.supplementId ? target.supplementId === item.id : item.main}><summary><span>{item.label}</span><code>{item.canonical_tag}</code></summary><MathMarkdown content={item.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} /></details>)}</section>}
-    <section className="recall-cue"><div className="recall-icon"><Check /></div><div><strong>Reading is not review</strong><span>Test recall or solve before revealing the stored answer.</span></div><Button variant="ghost" onClick={onReview}>Practice</Button></section>
+    <section className="recall-cue"><div className="recall-icon"><Check /></div><div><strong>Reading is not review</strong><span>Test recall or solve before revealing the stored answer.</span></div></section>
   </article>;
 }
 
@@ -235,10 +236,99 @@ export default function Home() {
   const [data, setData] = useState<Bootstrap | null>(null); const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null); const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null); const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null); const [entry, setEntry] = useState<EntryDetail | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set()); const dark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => false); const [mode, setMode] = useState<'library' | 'review'>('library'); const [editorOpen, setEditorOpen] = useState(false); const [createEntry, setCreateEntry] = useState(false); const [createKind, setCreateKind] = useState<EntryKind>('df'); const [createIndex, setCreateIndex] = useState<number | null>(null);
   const [gitOpen, setGitOpen] = useState(false); const [exportOpen, setExportOpen] = useState(false); const [macrosOpen, setMacrosOpen] = useState(false); const [moveFolderOpen, setMoveFolderOpen] = useState(false); const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null); const [mobileLibrary, setMobileLibrary] = useState(false); const [libraryOpen, setLibraryOpen] = useState(true); const [libraryWidth, setLibraryWidth] = useState(270); const [query, setQuery] = useState(''); const [searchResults, setSearchResults] = useState<SearchResult[]>([]); const [searching, setSearching] = useState(false); const [notice, setNotice] = useState(''); const [error, setError] = useState(''); const searchRef = useRef<HTMLInputElement>(null);
-  const [librarySynchronized, setLibrarySynchronized] = useState(true); const [pullReloadError, setPullReloadError] = useState('');
+  const [librarySynchronized, setLibrarySynchronized] = useState(true); const [pullReloadError, setPullReloadError] = useState(''); const [locationError, setLocationError] = useState('');
+  const dataRef = useRef<Bootstrap | null>(null);
+  const locationInitialized = useRef(false);
+  const editorOpenRef = useRef(false);
+  const pendingPopstate = useRef(false);
 
-  const load = useCallback(async () => { try { const next = await api<Bootstrap>('/api/bootstrap'); setData(next); configureMathJax(next.macros); setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); } catch (reason) { setError((reason as Error).message); } }, []);
+  const writeEntryPath = useCallback((target: EntrySummary, variantId: string | null, mode: 'push' | 'replace') => {
+    if (pendingPopstate.current) return;
+    const path = libraryPathForEntry(target, variantId);
+    if (window.location.pathname === path) return;
+    if (mode === 'push') window.history.pushState(null, '', path);
+    else window.history.replaceState(null, '', path);
+  }, []);
+
+  const selectFromPath = useCallback((snapshot: Bootstrap, pathname: string) => {
+    const resolution = resolveLibraryPath(pathname, snapshot.entries);
+    if (resolution.kind === 'missing') {
+      setEntry(null);
+      setSelectedEntryId(null);
+      setSelectedFolderId(null);
+      setSelectedVariantId(null);
+      setExpanded(new Set());
+      setLocationError('No Study entry matches this URL.');
+      return;
+    }
+
+    const target = resolution.kind === 'root' ? snapshot.entries[0] : resolution.entry;
+    if (!target) {
+      setEntry(null);
+      setSelectedEntryId(null);
+      setSelectedFolderId(snapshot.folders[0]?.id || null);
+      setSelectedVariantId(null);
+      setExpanded(new Set());
+      setLocationError('');
+      return;
+    }
+
+    const variantId = resolution.kind === 'entry' ? resolution.variantId : null;
+    const path = resolution.kind === 'entry'
+      ? resolution.canonicalPath
+      : libraryPathForEntry(target);
+    setEntry((current) => current?.id === target.id ? current : null);
+    setSelectedEntryId(target.id);
+    setSelectedFolderId(target.folder_id);
+    setSelectedVariantId(variantId);
+    setExpanded(folderPathIds(target.folder_id, snapshot.folders));
+    setLocationError('');
+    if (window.location.pathname !== path) window.history.replaceState(null, '', path);
+  }, []);
+
+  const chooseEntry = useCallback((id: string, folderId: string, variantId: string | null = null) => {
+    setEntry((current) => current?.id === id ? current : null);
+    setSelectedEntryId(id);
+    setSelectedFolderId(folderId);
+    setSelectedVariantId(variantId);
+    setExpanded((current) => {
+      const next = new Set(current);
+      folderPathIds(folderId, dataRef.current?.folders || []).forEach((folder) => next.add(folder));
+      return next;
+    });
+    setLocationError('');
+    setMobileLibrary(false);
+    const target = dataRef.current?.entries.find((item) => item.id === id);
+    if (target) writeEntryPath(target, variantId, 'push');
+  }, [writeEntryPath]);
+
+  const load = useCallback(async () => { try { const next = await api<Bootstrap>('/api/bootstrap'); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
   useEffect(() => { api<{ authenticated: boolean; auth_required: boolean; csrf: string | null }>('/api/session').then((result) => { setCsrfToken(result.csrf); setSession({ loading: false, authenticated: result.authenticated, authRequired: result.auth_required }); if (result.authenticated) return load(); }).catch((reason: Error) => { setSession({ loading: false, authenticated: false, authRequired: true }); setError(reason.message); }); }, [load]);
+  useEffect(() => { dataRef.current = data; }, [data]);
+  useEffect(() => {
+    const handlePopstate = () => {
+      const snapshot = dataRef.current;
+      if (!snapshot || !locationInitialized.current) return;
+      if (editorOpenRef.current) {
+        pendingPopstate.current = true;
+        return;
+      }
+      selectFromPath(snapshot, window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopstate);
+    return () => window.removeEventListener('popstate', handlePopstate);
+  }, [selectFromPath]);
+  useEffect(() => {
+    editorOpenRef.current = editorOpen;
+    if (editorOpen || !pendingPopstate.current || !dataRef.current) return;
+    pendingPopstate.current = false;
+    selectFromPath(dataRef.current, window.location.pathname);
+  }, [editorOpen, selectFromPath]);
+  useEffect(() => {
+    if (!locationInitialized.current || !data || !selectedEntryId) return;
+    const target = data.entries.find((item) => item.id === selectedEntryId);
+    if (target) writeEntryPath(target, selectedVariantId, 'replace');
+  }, [data, selectedEntryId, selectedVariantId, writeEntryPath]);
   useEffect(() => {
     if (!selectedEntryId || !session.authenticated || !librarySynchronized) return;
     const controller = new AbortController();
@@ -265,23 +355,23 @@ export default function Home() {
   useEffect(() => { const context = document.modelContext; if (!context?.registerTool || !data) return; const lifecycle = new AbortController(); const report = (reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)); const registrations = [
     context.registerTool({ name: 'read_study_library_summary', title: 'Read Study library summary', description: 'Return folder, entry, and due-review counts without changing the library.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: true, untrustedContentHint: false }, execute: () => api('/api/webmcp/library-summary') }, { signal: lifecycle.signal }),
     context.registerTool({ name: 'start_study_review', title: 'Start review', description: 'Open the visible due-review flow in authored library order.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: () => { setMode('review'); return { status: 'opened', due: data.review.due }; } }, { signal: lifecycle.signal }),
-    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); setSelectedEntryId(created.id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
-  ]; registrations.forEach((registration) => void Promise.resolve(registration).catch(report)); return () => lifecycle.abort(); }, [data, isMobile, librarySynchronized, load]);
+    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); chooseEntry(created.id, created.folder_id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
+  ]; registrations.forEach((registration) => void Promise.resolve(registration).catch(report)); return () => lifecycle.abort(); }, [chooseEntry, data, isMobile, librarySynchronized, load]);
 
   const toggleTheme = () => { const next = !dark; document.documentElement.classList.toggle('dark', next); localStorage.setItem('study-theme', next ? 'dark' : 'light'); };
-  const chooseEntry = useCallback((id: string, folderId: string, variantId: string | null = null) => { setEntry((current) => current?.id === id ? current : null); setSelectedEntryId(id); setSelectedFolderId(folderId); setSelectedVariantId(variantId); setMobileLibrary(false); }, []);
   const openEntryReference = useCallback((entryId: string, variantId?: string) => {
-    const target = data?.entries.find((item) => item.id === entryId);
+    const target = dataRef.current?.entries.find((item) => item.id === entryId);
     if (target) chooseEntry(target.id, target.folder_id, variantId ?? null);
-  }, [chooseEntry, data?.entries]);
+  }, [chooseEntry]);
   const chooseSearchResult = (result: SearchResult) => {
-    const folderId = result.folder_id || data?.entries.find((item) => item.id === result.id)?.folder_id;
-    setEntry((current) => current?.id === result.id ? current : null);
-    setSelectedEntryId(result.id);
-    setSelectedVariantId(null);
-    if (folderId) setSelectedFolderId(folderId);
+    const folderId = result.folder_id || dataRef.current?.entries.find((item) => item.id === result.id)?.folder_id;
+    if (folderId) chooseEntry(result.id, folderId);
     setQuery(''); setSearchResults([]); setSearching(false);
   };
+  const chooseVariant = useCallback((variantId: string) => {
+    const target = dataRef.current?.entries.find((item) => item.id === selectedEntryId);
+    if (target) chooseEntry(target.id, target.folder_id, variantId);
+  }, [chooseEntry, selectedEntryId]);
   const reloadAfterPull = useCallback(async (status: GitStatus) => {
     setLibrarySynchronized(false);
     setPullReloadError('');
@@ -302,15 +392,19 @@ export default function Home() {
         || next.folders[0]?.id
         || null;
       configureMathJax(next.macros);
+      dataRef.current = next;
       setData({ ...next, git: status });
       setExpanded((current) => {
         const valid = new Set(next.folders.map((folder) => folder.id));
-        return new Set([...current].filter((id) => valid.has(id)));
+        const expandedFolders = new Set([...current].filter((id) => valid.has(id)));
+        if (nextEntry) folderPathIds(nextEntry.folder_id, next.folders).forEach((id) => expandedFolders.add(id));
+        return expandedFolders;
       });
       setSelectedEntryId(nextEntryId);
       setSelectedFolderId(nextFolderId);
       setSelectedVariantId(null);
       setEntry(nextEntry);
+      setLocationError('');
       setLibrarySynchronized(true);
     } catch (reason) {
       const detail = reason instanceof Error ? reason.message : String(reason);
@@ -320,7 +414,7 @@ export default function Home() {
     }
   }, [selectedEntryId, selectedFolderId]);
   const updateFolderReview = async (id: string, enabled: boolean) => { if (isMobile || !librarySynchronized) return; try { await api(`/api/folders/${id}`, { method: 'PATCH', body: JSON.stringify({ review_enabled: enabled }) }); await load(); } catch (reason) { setError((reason as Error).message); } };
-  const refreshSelectedEntry = async (syncFolder: boolean) => { if (!selectedEntryId) return; const refreshed = await api<EntryDetail>(`/api/entries/${selectedEntryId}`); setEntry(refreshed); if (syncFolder) setSelectedFolderId(refreshed.folder_id); };
+  const refreshSelectedEntry = async (syncFolder: boolean) => { if (!selectedEntryId) return; const refreshed = await api<EntryDetail>(`/api/entries/${selectedEntryId}`); setEntry(refreshed); if (syncFolder) setSelectedFolderId(refreshed.folder_id); setExpanded((current) => { const next = new Set(current); folderPathIds(refreshed.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); return refreshed; };
   const moveItem = async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } };
   const addFolder = async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } };
   const renameFolder = async () => { if (isMobile || !librarySynchronized || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
@@ -350,7 +444,10 @@ export default function Home() {
     const selectedEntryDeleted = target.type === 'entry' && selectedEntryId === target.id;
     const selectedEntrySummary = data?.entries.find((item) => item.id === selectedEntryId);
     const selectedEntryFolder = selectedEntrySummary?.folder_id;
-    if (selectedEntryDeleted || (selectedEntryFolder && deletedFolders?.has(selectedEntryFolder))) {
+    const selectionDeleted = Boolean(
+      selectedEntryDeleted || (selectedEntryFolder && deletedFolders?.has(selectedEntryFolder)),
+    );
+    if (selectionDeleted) {
       setEntry(null);
       const nextEntryId = target.type === 'entry' ? response.deletion.next_entry_id || null : null;
       const nextEntryFolder = data?.entries.find((item) => item.id === nextEntryId)?.folder_id || null;
@@ -369,16 +466,20 @@ export default function Home() {
       });
     }
     setSearchResults([]);
-    await load();
+    const next = await load();
+    if (selectionDeleted && next && !next.entries.length) {
+      window.history.replaceState(null, '', '/');
+      setLocationError('');
+    }
     setNotice(`${target.type === 'folder' ? 'Folder' : 'Entry'} deleted.`);
   };
   const beginCreateEntry = (folderId: string, index: number | null, kind: EntryKind = 'df') => { if (isMobile || !librarySynchronized) return; setSelectedFolderId(folderId); setCreateKind(kind); setCreateIndex(index); setCreateEntry(true); setEditorOpen(true); };
-  const handleSaved = async (saved: EntryDetail) => { setSelectedEntryId(saved.id); setSelectedFolderId(saved.folder_id); setCreateEntry(false); setCreateIndex(null); await load(); setEntry(saved); setNotice('Saved.'); };
-  const logout = async () => { await api('/api/logout', { method: 'POST' }); setCsrfToken(null); setSession({ loading: false, authenticated: false, authRequired: true }); setData(null); };
+  const handleSaved = async (saved: EntryDetail) => { const existed = Boolean(dataRef.current?.entries.some((item) => item.id === saved.id)); const savedVariantIds = new Set([...saved.formulations, ...saved.supplements].map((item) => item.id)); const nextVariantId = existed && selectedVariantId && savedVariantIds.has(selectedVariantId) ? selectedVariantId : null; writeEntryPath(saved, nextVariantId, existed ? 'replace' : 'push'); setSelectedEntryId(saved.id); setSelectedFolderId(saved.folder_id); setSelectedVariantId(nextVariantId); setEntry(saved); setExpanded((current) => { const next = new Set(current); folderPathIds(saved.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); setLocationError(''); await load(); setNotice('Saved.'); };
+  const logout = async () => { await api('/api/logout', { method: 'POST' }); setCsrfToken(null); setSession({ loading: false, authenticated: false, authRequired: true }); dataRef.current = null; locationInitialized.current = false; setData(null); };
 
   if (session.loading) return <div className="app-loading"><LoaderCircle className="spin" /><span>Opening Study…</span></div>;
   if (!session.authenticated && session.authRequired) return <LoginScreen onLogin={(csrf) => { setCsrfToken(csrf); setSession({ loading: false, authenticated: true, authRequired: true }); void load(); }} />;
-  if (mode === 'review' && data) return <ReviewView initialDue={data.review.due} onExit={() => { setMode('library'); void load(); }} onChanged={() => void load()} />;
+  if (mode === 'review' && data) return <ReviewView initialDue={data.review.due} isMobile={isMobile} onExit={() => { setMode('library'); void load(); }} onChanged={() => void load()} />;
 
   const resizeLibrary = (width: number) => setLibraryWidth(width);
   const selectedFolder = data?.folders.find((folder) => folder.id === selectedFolderId) || null;
@@ -388,8 +489,8 @@ export default function Home() {
     <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized} onClick={() => setMacrosOpen(true)}><Braces /></Button><Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button><Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button className="review-button" onClick={() => setMode('review')}><BookOpen /> Review <span>{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
     <aside className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`}><div className="sidebar-heading"><span>Library</span><Button className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => setMobileLibrary(false)}><Menu /></Button></div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
     {libraryOpen && <LibraryResizeHandle value={libraryWidth} onChange={resizeLibrary} />}
-    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized} selectedVariantId={selectedVariantId} onSelectVariant={setSelectedVariantId} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onReview={() => setMode('review')} onOpenEntry={openEntryReference} />
-    {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
+    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} />
+    {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : locationError ? <button className="toast-error" onClick={() => setLocationError('')}>{locationError}</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
     <EditorDialog open={editorOpen} entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} />
     <DeleteItemDialog target={deleteTarget} onClose={() => setDeleteTarget(null)} onDelete={deleteItem} />
     {data && <MoveFolderDialog open={moveFolderOpen} folder={selectedFolder} folders={data.folders} tree={data.tree} onClose={() => setMoveFolderOpen(false)} onMove={async (destinationId, index) => {

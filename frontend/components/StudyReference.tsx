@@ -43,6 +43,8 @@ export interface StudyReferenceResolution {
 
 export interface StudyReferenceProps {
   literalTag: string;
+  sourceText?: string;
+  replacementText?: string;
   currentFolderId: string;
   className?: string;
   onActivate?: (target: StudyReferenceTarget) => void;
@@ -180,6 +182,8 @@ function kindLabel(kind: string | undefined): string | undefined {
 
 export function StudyReference({
   literalTag,
+  sourceText = literalTag,
+  replacementText,
   currentFolderId,
   className,
   onActivate,
@@ -187,6 +191,7 @@ export function StudyReference({
   resolveReference = resolveStudyReference,
 }: StudyReferenceProps) {
   const queryTag = queryTagFromLiteral(literalTag);
+  const authoredText = sourceText || literalTag;
   const requestKey = `${currentFolderId}\u0000${queryTag}`;
   const [result, setResult] = useState<{
     requestKey: string;
@@ -245,16 +250,16 @@ export function StudyReference({
             'inline cursor-help border-0 bg-transparent p-0 font-[inherit] underline decoration-amber/80 decoration-dotted underline-offset-[3px] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2',
             className,
           )}
-          aria-label={`${literalTag}: ambiguous reference; choose an exact tag`}
+          aria-label={`${authoredText}: ambiguous reference; choose an exact tag`}
           data-study-reference-status="ambiguous"
         >
-          {literalTag}
+          {authoredText}
         </PopoverTrigger>
         <PopoverContent align="start" side="top" className="reference-ambiguity-popover">
           <PopoverHeader>
             <PopoverTitle>Choose an exact reference</PopoverTitle>
             <PopoverDescription>
-              More than one item matches here. Replace {literalTag} with one of these canonical tags.
+              More than one item matches here. Replace {authoredText} with one of these canonical tags.
             </PopoverDescription>
           </PopoverHeader>
           <div className="reference-ambiguity-list">
@@ -295,10 +300,10 @@ export function StudyReference({
           className,
         )}
         data-study-reference-status={status}
-        aria-label={`${literalTag} (${description.toLowerCase()})`}
+        aria-label={`${authoredText} (${description.toLowerCase()})`}
         title={displayedResolution?.message ?? description}
       >
-        {literalTag}
+        {authoredText}
       </span>
     );
   }
@@ -306,7 +311,12 @@ export function StudyReference({
   const target = displayedResolution.target ?? {};
   const label = kindLabel(target.kind);
   const preview = target.preview;
-  const displayText = referenceDisplayText(literalTag, target.title);
+  const displayText = referenceDisplayText(
+    literalTag,
+    target.title,
+    replacementText,
+  );
+  const previewTitle = target.title?.trim() || target.canonicalTag || literalTag;
 
   return (
     <Popover>
@@ -318,7 +328,7 @@ export function StudyReference({
           'inline cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-primary underline decoration-dotted underline-offset-[3px] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2',
           className,
         )}
-        aria-label={`Preview reference ${displayText}${displayText !== literalTag ? ` (${literalTag})` : ''}`}
+        aria-label={`Preview reference ${previewTitle}${displayText !== previewTitle ? `, displayed as ${displayText}` : ''}${authoredText !== previewTitle ? ` (${authoredText})` : ''}`}
         data-study-reference-status="resolved"
       >
         {displayText}
@@ -335,7 +345,7 @@ export function StudyReference({
             </span>
           )}
           <PopoverTitle className="font-semibold leading-snug">
-            {displayText}
+            {previewTitle}
           </PopoverTitle>
           {target.canonicalTag && target.canonicalTag !== target.title && (
             <PopoverDescription className="break-all font-mono text-[0.7rem]">
@@ -382,6 +392,8 @@ export interface StudyReferenceMarkdownSpanProps extends Omit<
   ) => Promise<StudyReferenceResolution>;
   renderPreview?: (content: string, target: StudyReferenceTarget) => ReactNode;
   'data-study-reference'?: string;
+  'data-study-reference-source'?: string;
+  'data-study-reference-label'?: string;
 }
 
 /** Adapter for ReactMarkdown's `components.span` renderer. */
@@ -393,6 +405,8 @@ export function StudyReferenceMarkdownSpan({
   resolveReference,
   renderPreview,
   'data-study-reference': literalTag,
+  'data-study-reference-source': sourceText,
+  'data-study-reference-label': replacementText,
   ...spanProps
 }: StudyReferenceMarkdownSpanProps) {
   if (!literalTag) return <span {...spanProps}>{children}</span>;
@@ -400,6 +414,8 @@ export function StudyReferenceMarkdownSpan({
   return (
     <StudyReference
       literalTag={literalTag}
+      sourceText={sourceText}
+      replacementText={replacementText}
       currentFolderId={currentFolderId}
       className={spanProps.className}
       onActivate={onActivate}

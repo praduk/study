@@ -16,8 +16,8 @@ Server mode is password-protected and stores revocable sessions.
 - Proofs (`pf`) for theorems and solutions (`sl`) for problems, including tagged alternatives.
 - GitHub-flavored Markdown in the web reader, local MathJax, global LaTeX macros, and custom
   Markdown headers. PDF export currently uses portable CommonMark.
-- A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:q` closes
-  the editor explicitly.
+- A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:w` saves
+  without closing, and `:q` closes the editor explicitly.
 - Image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
 - Embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,
@@ -27,14 +27,17 @@ Server mode is password-protected and stores revocable sessions.
 - Confirmed deletion for entries and folders. Deleting a non-empty folder requires typing its name
   and removes the complete subtree; shared media files are retained while anything still uses them.
 - Scoped `@tag` references that expand from the current folder through progressively broader
-  subtrees, then fall back across the full library, with fully rendered hover/focus/tap previews
-  and a `Cmd/Ctrl+Shift+K` insertion picker.
+  subtrees, then fall back across the full library. `@[replacement text]tag` customizes the inline
+  wording while previews retain the entry title. References include fully rendered hover/focus/tap
+  previews and a `Cmd/Ctrl+Shift+K` insertion picker.
 - A hideable, resizable library panel and an uncluttered single reading panel.
+- Canonical entry URLs that survive reloads and browser Back/Forward navigation. The library tree
+  starts collapsed except for the folders needed to show the entry in the current URL.
 - Fast full-library search over titles, tags, headers, formulations, proofs, and solutions.
 - PDF export for the whole library or a folder, recursively or not, filtered by entry type, in the
   same authored order as the library.
-- A phone layout intended for reading and review. Editing controls are deliberately hidden on
-  narrow screens.
+- A phone layout intended for reading and think-only review. Editing controls are deliberately
+  hidden on narrow screens.
 - Local Git controls that commit only authored `data/`, plus fast-forward-only pull when the entire
   worktree is clean. Fetched Study data is validated in a detached checkout before the current
   branch advances, and the browser reloads the library before editing is re-enabled.
@@ -151,6 +154,13 @@ math:algebra:pb:z12-subgroups:sl
 math:algebra:pb:z12-subgroups:sl:generators
 ```
 
+Each canonical tag also has a browser path with colons replaced by slashes. For example,
+`math:algebra:th:lagrange:pf` is available at `/library/math/algebra/th/lagrange/pf`. Main and
+alternative formulations, proofs, and solutions can be linked directly. Loading one of these URLs
+opens only its folder ancestry in the source tree; unrelated branches stay collapsed. Because the
+path is canonical and human-readable, changing an entry tag or moving or renaming its folder also
+changes its URL.
+
 Slugs, tags, and subtags start with a lowercase letter and then use lowercase letters, digits, or
 hyphens. Moving or renaming a folder changes computed canonical tags for its descendants; references
 written inside Markdown are not rewritten automatically. Folder nesting is capped at 64 levels,
@@ -165,13 +175,18 @@ stage checks every other top-level tree. The first nonempty stage wins, so a loc
 target always shadows global matches. Alternative formulations and supplements use the same
 concise syntax, such as `@group:category`, `@lagrange:pf`, or `@lagrange:pf:action`.
 
+Use `@[replacement text]tag` when the surrounding sentence needs different wording. For example,
+`@[this definition]group` resolves `@group` but displays “this definition.” Replacement text must
+be nonempty, single-line plain text without square brackets. It changes only the inline wording;
+the preview heading remains the resolved entry title.
+
 If the first nonempty stage contains more than one matching target, Study marks the reference
 ambiguous and does not guess or continue outward. The insertion picker uses a fully qualified tag
-such as `@math:algebra:df:group` in that case. A resolved reference displays the entry title while
-leaving the authored `@tag` unchanged; missing and ambiguous references remain visible as their
-exact source text. References are recognized only in Markdown text—not in code, links, email
-addresses, or mathematics. Resolved hover previews use the same Markdown, MathJax, image,
-Excalidraw, and commutative-diagram renderer as the reader.
+such as `@math:algebra:df:group` in that case. A resolved plain reference displays the entry title
+while leaving the authored `@tag` unchanged; missing and ambiguous references, including labeled
+ones, remain visible as their exact source text. References are recognized only in Markdown
+text—not in code, links, email addresses, or mathematics. Resolved hover previews use the same
+Markdown, MathJax, image, Excalidraw, and commutative-diagram renderer as the reader.
 
 Global search and the insertion picker use an immutable in-memory index. Study precomputes folder
 ancestry, preorder subtree intervals, direct/canonical reference buckets, and trigram posting lists;
@@ -213,10 +228,12 @@ Solve once a main solution exists. Review loads new or due cards in authored
 order in batches of at most 200. After a batch is exhausted, it fetches the next due batch and only
 reports completion after a fresh request returns no cards. The flow for each card is:
 
-1. Read the prompt and, for `solve` or `proof-plan`, the main problem or theorem statement.
-2. Make an attempt. Writing it is the default; its Markdown/MathJax preview can be toggled before
-   submission. “Think-only review” is available but must still be an honest retrieval attempt.
-   Record any hint use.
+1. Read the kind-specific prompt: definitions say “Define,” axioms and theorems say “State,” theorem
+   proofs say “Prove,” and problems say “Solve.” Proof and problem tasks also display the main
+   theorem or problem statement.
+2. Make an attempt. Larger screens provide an optional Markdown answer and preview; leaving it empty
+   records a think-only attempt. Phone review is always think-only. Study does not currently provide
+   hints.
 3. Rate confidence as Unsure, Somewhat, or Confident before revealing the stored answer.
 4. Reveal only the matching answer and its alternatives: formulations, proofs, or solutions.
 5. Compare hypotheses, conclusions, dependencies, strategy, and justification—not wording alone.

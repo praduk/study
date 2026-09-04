@@ -242,6 +242,30 @@ def test_csp_tracks_frontend_rebuild_without_server_restart(settings_factory):
     assert f"'sha256-{old_digest}'" not in script_policy
 
 
+def test_canonical_library_path_serves_spa_without_capturing_reserved_routes(settings_factory):
+    settings = settings_factory()
+    settings.built_frontend.mkdir(parents=True)
+    index = settings.built_frontend / "index.html"
+    index.write_text("<!doctype html><title>Study</title>", encoding="utf-8")
+    app = create_app(settings, local_mode=True)
+
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        response = client.get("/library/math/algebra/th/lagrange/pf")
+        missing_api = client.get("/api/not-a-route")
+        missing_media = client.get("/media/not-a-file")
+
+    assert response.status_code == 200
+    assert response.content == index.read_bytes()
+    assert response.headers["cache-control"] == "no-cache"
+    assert "content-security-policy" in response.headers
+    assert missing_api.status_code == 404
+    assert missing_media.status_code == 404
+
+
 def test_image_upload_normalizes_and_rejects_unapproved_formats(settings_factory):
     settings = settings_factory(max_image_megapixels=1)
     app = create_app(settings, local_mode=True)

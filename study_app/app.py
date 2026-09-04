@@ -785,7 +785,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         if payload.overt and not payload.attempt.strip():
             raise HTTPException(
                 status_code=422,
-                detail="write an honest attempt before revealing, or choose think-only review",
+                detail="a written attempt cannot be empty",
             )
         return review.reveal(card_id, payload.model_dump())
 

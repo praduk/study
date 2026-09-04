@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import CodeMirror, { ReactCodeMirrorRef } from '@uiw/react-codemirror';
 import { markdown } from '@codemirror/lang-markdown';
 import { EditorView } from '@codemirror/view';
@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { api } from '@/lib/api';
+import { activateEditorVimActions, editorVimCommands } from '@/lib/editor-vim-commands';
 import type { EntryDetail, EntryKind } from '@/lib/types';
 
 const KINDS: { value: EntryKind; label: string }[] = [
@@ -22,8 +23,7 @@ const KINDS: { value: EntryKind; label: string }[] = [
   { value: 'th', label: 'Theorem' }, { value: 'pb', label: 'Problem' },
 ];
 
-let activeEditorClose: (() => void) | null = null;
-Vim.defineEx('quit', 'q', () => activeEditorClose?.());
+editorVimCommands.forEach(({ name, prefix, run }) => Vim.defineEx(name, prefix, run));
 
 interface Props {
   open: boolean;
@@ -57,6 +57,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   const [referenceOpen, setReferenceOpen] = useState(false);
   const editorRef = useRef<ReactCodeMirrorRef>(null);
   const fileInput = useRef<HTMLInputElement>(null);
+  const savingRef = useRef(false);
   const editorExtensions = useMemo(
     () => [vim({ status: true }), markdown(), EditorView.lineWrapping],
     [],
@@ -85,15 +86,6 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
     window.addEventListener('keydown', handler, { capture: true });
     return () => window.removeEventListener('keydown', handler, { capture: true });
   }, [folderId, open, working?.folder_id]);
-
-  useEffect(() => {
-    if (!open) return;
-    const close = () => onClose();
-    activeEditorClose = close;
-    return () => {
-      if (activeEditorClose === close) activeEditorClose = null;
-    };
-  }, [onClose, open]);
 
   const insertAtCursor = (text: string) => {
     const view = editorRef.current?.view;
@@ -129,10 +121,12 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
     void uploadImage(image);
   };
 
-  const save = async () => {
+  const save = useCallback(async ({ closeAfter = true }: { closeAfter?: boolean } = {}) => {
+    if (savingRef.current) return;
     setError('');
     if (!folderId && !working) { setError('Choose a folder first.'); return; }
     if (!title.trim() || !tag.trim()) { setError('Title and tag are required.'); return; }
+    savingRef.current = true;
     setSaving(true);
     try {
       if (!working) {
@@ -140,8 +134,16 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
           method: 'POST',
           body: JSON.stringify({ folder_id: folderId, index: insertIndex, kind, title, tag, header, content: drafts.new || '' }),
         });
+        const createdVariants = [...created.formulations, ...created.supplements];
+        const createdActiveId = created.formulations.find((item) => item.main)?.id || created.formulations[0]?.id || 'new';
+        setWorking(created);
+        setDrafts((current) => Object.fromEntries(createdVariants.map((item) => [
+          item.id,
+          item.id === createdActiveId ? (current.new ?? item.content ?? '') : (item.content || ''),
+        ])));
+        setActiveId(createdActiveId);
         onSaved(created);
-        onClose();
+        if (closeAfter) onClose();
         return;
       }
       await api<EntryDetail>(`/api/entries/${working.id}`, {
@@ -154,13 +156,22 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
       const refreshed = await api<EntryDetail>(`/api/entries/${working.id}`);
       setWorking(refreshed);
       onSaved(refreshed);
-      onClose();
+      if (closeAfter) onClose();
     } catch (reason) {
       setError((reason as Error).message);
     } finally {
+      savingRef.current = false;
       setSaving(false);
     }
-  };
+  }, [drafts, folderId, header, insertIndex, kind, onClose, onSaved, tag, title, variants, working]);
+
+  useEffect(() => {
+    if (!open) return;
+    return activateEditorVimActions({
+      close: onClose,
+      save: () => void save({ closeAfter: false }),
+    });
+  }, [onClose, open, save]);
 
   const addFormulation = async () => {
     if (!working) return;
@@ -273,7 +284,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
         </div>
         <div className="review-policy"><strong>Review</strong><span>{reviewPolicy}</span></div>
         <div className="editor-error-slot">{error && <div className="form-error" role="alert">{error}</div>}</div>
-        <div className="dialog-actions editor-actions"><Button variant="ghost" onClick={onClose}>Cancel</Button><Button onClick={save} disabled={saving}><Save /> {saving ? 'Saving…' : 'Save'}</Button></div>
+        <div className="dialog-actions editor-actions"><Button variant="ghost" onClick={onClose}>Cancel</Button><Button onClick={() => void save()} disabled={saving}><Save /> {saving ? 'Saving…' : 'Save'}</Button></div>
         {working && <ExcalidrawDialog open={drawingOpen} entryId={working.id} dark={dark} onClose={() => setDrawingOpen(false)} onInsert={insertAtCursor} />}
         {working && <CommutativeDiagramDialog open={diagramOpen} entryId={working.id} onClose={() => setDiagramOpen(false)} onInsert={insertAtCursor} />}
         <ReferencePicker open={referenceOpen} folderId={working?.folder_id || folderId} onClose={() => setReferenceOpen(false)} onInsert={insertAtCursor} />

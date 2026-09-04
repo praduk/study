@@ -45,13 +45,15 @@ inserted after up to three currently available intervening cards in the in-memor
 
 For each card, Study does the following:
 
-1. Shows the canonical tag, title, custom header, mode, and prompt. `solve` and `proof-plan` also show
-   the main formulation as the prompt body, so the problem or theorem statement is available.
-2. Requests an attempt. The default requires written text; think-only review permits an empty text
-   field but still asks the learner to retrieve. Hint use can be counted.
+1. Shows the canonical tag, title, custom header, mode, and kind-specific prompt. `solve` and
+   `proof-plan` also show the main formulation as the prompt body, so the problem or theorem
+   statement is available.
+2. Requests an attempt. Larger screens provide an optional written response; an empty response is
+   recorded as think-only. Phone layouts are always think-only and do not show a text field. Study
+   does not currently provide hints.
 3. Requires a retrospective confidence rating—Unsure (`1`), Somewhat (`2`), or Confident (`3`)—after
    the attempt and before answer exposure. The browser submits attempt, confidence, elapsed time,
-   overt/covert status, and hint count together.
+   overt/covert status together.
 4. Reveals only the answer family for the active task and its alternatives: formulations for a
    statement, proofs for a theorem proof task, or solutions for a problem. The written attempt is
    rendered with Markdown and MathJax for direct comparison.
@@ -60,7 +62,7 @@ For each card, Study does the following:
    | Key | Grade | UI criterion |
    | --- | --- | --- |
    | `1` | Again (`0`) | Major gap or no valid method |
-   | `2` | Hard (`1`) | Partial, slow, or needed a hint |
+   | `2` | Hard (`1`) | Partial, slow, or needed help |
    | `3` | Good (`2`) | Correct and unaided |
    | `4` | Easy (`3`) | Fluent, precise, and transferable |
 
@@ -71,9 +73,13 @@ the schedule. That is a material limitation, not an implementation detail.
 
 ### Fixed review tasks
 
-- **Axiom, definition, remark:** state the content precisely.
-- **Theorem:** state the theorem; when a main proof exists, a second task asks for the complete proof.
-- **Problem:** solve the displayed problem; the task exists only when a main solution is stored.
+- **Definition:** “Define `<title>`.”
+- **Axiom:** “State `<title>`.”
+- **Remark:** state the content precisely.
+- **Theorem:** “State `<title>`.” When a main proof exists, a second task says “Prove
+  `<title>`.” and displays the theorem statement.
+- **Problem:** “Solve the following problem.” The problem statement is displayed, and the task
+  exists only when a main solution is stored.
 
 These tasks are intentionally not configurable. The internal `proof-plan` card ID is retained for
 schedule compatibility, but the prompt and visible label require a proof, not merely a plan.
@@ -123,10 +129,10 @@ calibration = confidence - expected-confidence-for-grade
 expected confidence: Again=1, Hard=2, Good=2, Easy=3
 ```
 
-Confidence otherwise does not affect the interval. Hint count, overt/covert status, and elapsed time
-are logged but do not change scheduling. Again's ten-minute due timestamp and its in-session retry
-are separate behaviors: the retry is inserted after up to three available intervening cards even if
-ten minutes have not elapsed.
+Confidence otherwise does not affect the interval. Overt/covert status and elapsed time are logged
+but do not change scheduling. Again's ten-minute due timestamp and its in-session retry are separate
+behaviors: the retry is inserted after up to three available intervening cards even if ten minutes
+have not elapsed.
 
 These constants were not estimated from Study data, do not target a calibrated recall probability,
 and do not encode the lag effects reported in the literature. They provide bounded, increasing
@@ -175,9 +181,10 @@ Sources: [Yang et al. (2021)](https://doi.org/10.1037/bul0000309),
 
 A 2025 meta-analysis found a small benefit of covert retrieval over no retrieval (`g = 0.23`) across
 18 studies and 2,560 participants, and a small advantage of overt over covert retrieval (`g = 0.17`).
-Effects varied by how covert retrieval was elicited, feedback, material, and delay. Study defaults to
-writing because it externalizes omissions and makes comparison honest, but retains think-only review
-for accessibility and high-friction contexts.
+Effects varied by how covert retrieval was elicited, feedback, material, and delay. Study offers a
+written response on larger screens because it externalizes omissions and makes comparison easier,
+while an empty response records think-only retrieval. Phone review is fixed to think-only as a
+usability choice; the evidence does not validate that device breakpoint.
 
 Source: [Yu et al. (2025)](https://doi.org/10.1007/s10648-025-10024-4).
 
@@ -318,7 +325,7 @@ Prefer delayed, behavior-based outcomes over engagement metrics. A credible eval
 4. Stratify by prior knowledge and task family where sample size permits.
 5. Compare against a plausible alternative such as restudy, existing scheduling, or blocked practice.
 6. Preserve authored order unless sequence is the tested intervention.
-7. Report uncertainty, attrition, exposure time, hints, and missing attempts.
+7. Report uncertainty, attrition, exposure time, external assistance, and missing attempts.
 8. Avoid tuning and evaluating on the same review history.
 
 Until Study has such evidence, scheduler changes should be described as engineering hypotheses.

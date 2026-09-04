@@ -1,12 +1,13 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { AlertTriangle, ArrowLeft, Brain, Check, ChevronRight, Eye, Lightbulb, Pencil, RotateCcw } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, Brain, Check, ChevronRight, Eye, Pencil, RotateCcw } from 'lucide-react';
 
 import { MathMarkdown } from '@/components/MathMarkdown';
 import { Button } from '@/components/ui/button';
 import { api } from '@/lib/api';
-import { advanceReviewQueue } from '@/lib/review-session';
+import { advanceReviewQueue, reviewAttemptSubmission } from '@/lib/review-session';
+import type { ReviewAttemptSubmission } from '@/lib/review-session';
 import type { ReviewCard, Variant } from '@/lib/types';
 
 interface RevealResult {
@@ -17,27 +18,27 @@ interface RevealResult {
 
 interface Props {
   initialDue: number;
+  isMobile: boolean;
   onExit: () => void;
   onChanged: () => void;
 }
 
 const GRADES = [
   { grade: 0, key: '1', label: 'Again', note: 'Major gap or no valid method', className: 'grade-again' },
-  { grade: 1, key: '2', label: 'Hard', note: 'Partial, slow, or needed a hint', className: 'grade-hard' },
+  { grade: 1, key: '2', label: 'Hard', note: 'Partial, slow, or needed help', className: 'grade-hard' },
   { grade: 2, key: '3', label: 'Good', note: 'Correct and unaided', className: 'grade-good' },
   { grade: 3, key: '4', label: 'Easy', note: 'Fluent and precise', className: 'grade-easy' },
 ];
 
 const REVIEW_BATCH_SIZE = 200;
 
-export function ReviewView({ initialDue, onExit, onChanged }: Props) {
+export function ReviewView({ initialDue, isMobile, onExit, onChanged }: Props) {
   const [cards, setCards] = useState<ReviewCard[]>([]);
   const [index, setIndex] = useState(0);
   const [attempt, setAttempt] = useState('');
   const [attemptPreview, setAttemptPreview] = useState(false);
+  const [submittedAttempt, setSubmittedAttempt] = useState<ReviewAttemptSubmission | null>(null);
   const [confidence, setConfidence] = useState<number | null>(null);
-  const [overt, setOvert] = useState(true);
-  const [hints, setHints] = useState(0);
   const [revealed, setRevealed] = useState<RevealResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -84,15 +85,16 @@ export function ReviewView({ initialDue, onExit, onChanged }: Props) {
   const reveal = async () => {
     if (!card || actionInFlight.current) return;
     if (confidence === null) { setError('Rate your confidence before revealing the answer.'); return; }
-    if (overt && !attempt.trim()) { setError('Write an honest attempt, or choose think-only review.'); return; }
     actionInFlight.current = 'reveal';
     setPendingAction('reveal');
     setError('');
+    const submission = reviewAttemptSubmission(attempt, isMobile);
     try {
       const result = await api<RevealResult>(`/api/review/${encodeURIComponent(card.id)}/reveal`, {
         method: 'POST',
-        body: JSON.stringify({ attempt, confidence, overt, hints_used: hints, elapsed_ms: startedAt.current ? Date.now() - startedAt.current : 0 }),
+        body: JSON.stringify({ ...submission, confidence, elapsed_ms: startedAt.current ? Date.now() - startedAt.current : 0 }),
       });
+      setSubmittedAttempt(submission);
       setRevealed(result);
     } catch (reason) {
       setError((reason as Error).message);
@@ -123,8 +125,8 @@ export function ReviewView({ initialDue, onExit, onChanged }: Props) {
       setIndex(advance.nextIndex);
       setAttempt('');
       setAttemptPreview(false);
+      setSubmittedAttempt(null);
       setConfidence(null);
-      setHints(0);
       setRevealed(null);
       startedAt.current = Date.now();
       onChanged();
@@ -191,32 +193,31 @@ export function ReviewView({ initialDue, onExit, onChanged }: Props) {
         {!revealed ? (
           <section className="attempt-panel">
             <div className="attempt-heading">
-              <label htmlFor="review-attempt">Your attempt</label>
-              <Button variant="ghost" size="sm" onClick={() => setAttemptPreview((value) => !value)} disabled={!overt || (!attempt.trim() && !attemptPreview) || pendingAction !== null}>
+              {isMobile ? <span>Think-only attempt</span> : <label htmlFor="review-attempt">Your attempt</label>}
+              {!isMobile && <Button variant="ghost" size="sm" onClick={() => setAttemptPreview((value) => !value)} disabled={(!attempt.trim() && !attemptPreview) || pendingAction !== null}>
                 {attemptPreview ? <Pencil /> : <Eye />} {attemptPreview ? 'Edit' : 'Preview'}
-              </Button>
+              </Button>}
             </div>
-            {attemptPreview ? (
+            {isMobile ? (
+              <p className="think-only-guidance">Think through the complete answer before revealing it.</p>
+            ) : attemptPreview ? (
               <div className="attempt-preview"><MathMarkdown content={attempt} folderId={card.folder_id} interactive={false} /></div>
             ) : (
-              <textarea id="review-attempt" value={attempt} onChange={(event) => setAttempt(event.target.value)} placeholder={overt ? 'Write your statement, proof, or solution in Markdown…' : 'Think it through before revealing…'} disabled={!overt || pendingAction !== null} />
+              <textarea id="review-attempt" value={attempt} onChange={(event) => setAttempt(event.target.value)} placeholder="Write your statement, proof, or solution in Markdown—or leave this empty for think-only review…" disabled={pendingAction !== null} />
             )}
-            <div className="attempt-options">
-              <label className="tiny-check"><input type="checkbox" checked={!overt} onChange={(event) => {
-                const thinkOnly = event.target.checked;
-                setOvert(!thinkOnly);
-                if (thinkOnly) setAttemptPreview(false);
-              }} disabled={pendingAction !== null} /> think-only review</label>
-              <Button variant="ghost" size="sm" onClick={() => setHints((count) => count + 1)} disabled={pendingAction !== null}><Lightbulb /> {hints ? 'Hint counted' : 'I used a hint'}</Button>
-            </div>
-            <div className="confidence-row"><span>How confident are you in that answer?</span>{[1, 2, 3].map((value) => <button key={value} className={confidence === value ? 'selected' : ''} onClick={() => setConfidence(value)} disabled={pendingAction !== null}>{value === 1 ? 'Unsure' : value === 2 ? 'Somewhat' : 'Confident'}</button>)}</div>
+            <fieldset className="confidence-row">
+              <legend>How confident are you in that answer?</legend>
+              <div className="confidence-options">
+                {[1, 2, 3].map((value) => <button key={value} type="button" aria-pressed={confidence === value} className={confidence === value ? 'selected' : ''} onClick={() => setConfidence(value)} disabled={pendingAction !== null}>{value === 1 ? 'Unsure' : value === 2 ? 'Somewhat' : 'Confident'}</button>)}
+              </div>
+            </fieldset>
             {error && <div className="form-error" role="alert">{error}</div>}
             <Button className="reveal-button" onClick={reveal} disabled={pendingAction !== null} aria-busy={pendingAction === 'reveal'}><Eye /> {pendingAction === 'reveal' ? 'Revealing…' : 'Reveal and compare'}</Button>
           </section>
         ) : (
           <section className="feedback-panel">
             <div className="comparison-grid">
-              <div><div className="answer-label">Your attempt</div>{attempt ? <MathMarkdown content={attempt} folderId={card.folder_id} interactive={false} /> : <em>Think-only attempt</em>}</div>
+              <div><div className="answer-label">Your attempt</div>{submittedAttempt?.overt ? <MathMarkdown content={submittedAttempt.attempt} folderId={card.folder_id} interactive={false} /> : <em>Think-only attempt</em>}</div>
               <div><div className="answer-label">Canonical answer</div><MathMarkdown content={revealed.answer.primary.content || ''} folderId={card.folder_id} /></div>
             </div>
             {revealed.answer.alternatives.map((item) => <details className="review-supplement" key={item.id}><summary>Alternative {card.mode === 'proof-plan' ? 'proof' : card.mode === 'solve' ? 'solution' : 'formulation'}: {item.label}</summary><MathMarkdown content={item.content || ''} folderId={card.folder_id} /></details>)}

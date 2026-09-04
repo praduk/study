@@ -4,6 +4,20 @@ export interface ReviewQueueAdvance<T> {
   batchExhausted: boolean;
 }
 
+export interface ReviewAttemptSubmission {
+  attempt: string;
+  overt: boolean;
+}
+
+/** Phone and blank desktop responses are recorded as think-only retrieval. */
+export function reviewAttemptSubmission(
+  attempt: string,
+  isMobile: boolean,
+): ReviewAttemptSubmission {
+  const overt = !isMobile && Boolean(attempt.trim());
+  return { attempt: overt ? attempt : '', overt };
+}
+
 /** Advance one graded card and place an Again retry later in the current batch. */
 export function advanceReviewQueue<T>(
   cards: readonly T[],

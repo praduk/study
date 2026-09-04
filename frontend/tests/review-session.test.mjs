@@ -1,7 +1,25 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { advanceReviewQueue } from '../lib/review-session.ts';
+import {
+  advanceReviewQueue,
+  reviewAttemptSubmission,
+} from '../lib/review-session.ts';
+
+test('phone and blank desktop responses are think-only attempts', () => {
+  assert.deepEqual(reviewAttemptSubmission('written on a phone', true), {
+    attempt: '',
+    overt: false,
+  });
+  assert.deepEqual(reviewAttemptSubmission('   ', false), {
+    attempt: '',
+    overt: false,
+  });
+  assert.deepEqual(reviewAttemptSubmission('A written answer', false), {
+    attempt: 'A written answer',
+    overt: true,
+  });
+});
 
 test('the end of a review batch requires a fresh queue check', () => {
   const result = advanceReviewQueue(['first', 'last'], 1, null);

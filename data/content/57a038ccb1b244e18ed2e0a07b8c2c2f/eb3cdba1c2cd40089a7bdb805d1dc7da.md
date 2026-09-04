@@ -1,0 +1,3 @@
+If $R$ is an $n$-ary relation symbol and $t_1,…,t_n$ are terms, then $R(t_1,…,t_n)$ is atomic. If $s,t$ are terms, then $s=t$ is atomic. The formulas are generated from atomic formulas and $⊥$ by: if $φ,ψ$ are formulas, then $¬φ$, $(φ∧ψ)$, $(φ∨ψ)$, and $(φ→ψ)$ are formulas; if $x$ is a variable and $φ$ is a formula, then $∀xφ$ and $∃xφ$ are formulas. Nothing else is a formula.
+
+This course takes $¬$ as primitive but uses the standard natural-deduction rules that make $¬φ$ interderivable with $φ→⊥$. The biconditional $φ↔ψ$ abbreviates $(φ→ψ)∧(ψ→φ)$. Choosing a different primitive basis changes the grammar, not classical expressive power.

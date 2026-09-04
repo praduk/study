@@ -31,6 +31,16 @@ export function typesetWithMathJax(element: HTMLElement) {
   return typesetChain;
 }
 
+export function clearMathJax(element: HTMLElement) {
+  typesetChain = typesetChain
+    .catch(() => undefined)
+    .then(async () => {
+      await waitForMathJax();
+      window.MathJax?.typesetClear?.([element]);
+    });
+  return typesetChain;
+}
+
 export function configureMathJax(macros: Record<string, string | (string | number)[]>) {
   if (typeof window === 'undefined') return;
   const existing = document.getElementById('study-mathjax') as HTMLScriptElement | null;

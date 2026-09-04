@@ -1,11 +1,17 @@
 import { decodeNamedCharacterReference } from 'decode-named-character-reference';
 
 export const STUDY_REFERENCE_ATTRIBUTE = 'data-study-reference';
+export const STUDY_REFERENCE_SOURCE_ATTRIBUTE = 'data-study-reference-source';
+export const STUDY_REFERENCE_LABEL_ATTRIBUTE = 'data-study-reference-label';
 
-export interface StudyReferenceTextPart {
-  kind: 'text' | 'reference';
-  value: string;
-}
+export type StudyReferenceTextPart =
+  | { kind: 'text'; value: string }
+  | {
+      kind: 'reference';
+      value: string;
+      literalTag: string;
+      replacementText?: string;
+    };
 
 interface MarkdownNode {
   type: string;
@@ -21,10 +27,12 @@ interface MarkdownNode {
 interface StudyReferenceNode extends MarkdownNode {
   type: 'studyReference';
   literalTag: string;
+  sourceText: string;
+  replacementText?: string;
   children: MarkdownNode[];
 }
 
-const REFERENCE_PATTERN = /@[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*/g;
+const REFERENCE_PATTERN = /@(?:\[([^\x5b\x5d\r\n]+)\])?([a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*)/g;
 const EMAIL_OR_IDENTIFIER_CHARACTER = /[\p{L}\p{N}\p{M}.!#$%&'*+/=?^_`{|}~@-]/u;
 const TAG_CONTINUATION_CHARACTER = /[A-Za-z0-9:_-]/;
 const MARKDOWN_ESCAPABLE = /[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/;
@@ -62,7 +70,9 @@ function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
     const next = raw[rawIndex + 1];
 
     if (character === '\\' && next && MARKDOWN_ESCAPABLE.test(next)) {
-      if (next === '@') protectedStarts.add(outputIndex);
+      if (next === '@' || next === '[' || next === ']') {
+        protectedStarts.add(outputIndex);
+      }
       reconstructed += next;
       rawIndex += 2;
       continue;
@@ -76,7 +86,9 @@ function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
           ? decodeNumericReference(entity)
           : decodeNamedCharacterReference(entity);
         if (decoded !== false) {
-          if (decoded === '@') protectedStarts.add(outputIndex);
+          if (decoded === '@' || decoded === '[' || decoded === ']') {
+            protectedStarts.add(outputIndex);
+          }
           reconstructed += decoded;
           rawIndex += match[0].length;
           continue;
@@ -96,14 +108,12 @@ function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
   // encountered so escaped syntax cannot accidentally become interactive.
   if (reconstructed !== rendered) {
     const fallback = new Set<number>();
-    if (raw.includes('\\@')) {
-      const pattern = new RegExp(
-        REFERENCE_PATTERN.source,
-        REFERENCE_PATTERN.flags,
-      );
-      for (const match of rendered.matchAll(pattern)) {
-        fallback.add(match.index ?? 0);
-      }
+    const pattern = new RegExp(
+      REFERENCE_PATTERN.source,
+      REFERENCE_PATTERN.flags,
+    );
+    for (const match of rendered.matchAll(pattern)) {
+      fallback.add(match.index ?? 0);
     }
     return fallback;
   }
@@ -126,14 +136,24 @@ export function splitStudyReferenceText(
 
   for (const match of value.matchAll(pattern)) {
     const index = match.index ?? 0;
-    const literalTag = match[0];
+    const sourceText = match[0];
+    const hasReplacementText = match[1] !== undefined;
+    const replacementText = match[1]?.trim();
+    const literalTag = `@${match[2]}`;
     const previous = value[index - 1];
-    const next = value[index + literalTag.length];
+    const next = value[index + sourceText.length];
+    const closingBracket = hasReplacementText
+      ? index + sourceText.indexOf(']')
+      : -1;
 
     // Do not reinterpret addresses/identifiers such as person@example.com,
     // or the valid prefix of an invalid tag.
     if (
+      (hasReplacementText && !replacementText) ||
       nonLiteralStarts.has(index) ||
+      (hasReplacementText &&
+        (nonLiteralStarts.has(index + 1) ||
+          nonLiteralStarts.has(closingBracket))) ||
       previous === '\\' ||
       (previous !== undefined &&
         EMAIL_OR_IDENTIFIER_CHARACTER.test(previous)) ||
@@ -144,8 +164,13 @@ export function splitStudyReferenceText(
 
     if (index > cursor)
       parts.push({ kind: 'text', value: value.slice(cursor, index) });
-    parts.push({ kind: 'reference', value: literalTag });
-    cursor = index + literalTag.length;
+    parts.push({
+      kind: 'reference',
+      value: sourceText,
+      literalTag,
+      ...(replacementText ? { replacementText } : {}),
+    });
+    cursor = index + sourceText.length;
   }
 
   if (cursor < value.length || parts.length === 0) {
@@ -155,15 +180,27 @@ export function splitStudyReferenceText(
   return parts;
 }
 
-function referenceNode(literalTag: string): StudyReferenceNode {
+function referenceNode(
+  sourceText: string,
+  literalTag: string,
+  replacementText?: string,
+): StudyReferenceNode {
   return {
     type: 'studyReference',
     literalTag,
+    sourceText,
+    ...(replacementText ? { replacementText } : {}),
     data: {
       hName: 'span',
-      hProperties: { [STUDY_REFERENCE_ATTRIBUTE]: literalTag },
+      hProperties: {
+        [STUDY_REFERENCE_ATTRIBUTE]: literalTag,
+        [STUDY_REFERENCE_SOURCE_ATTRIBUTE]: sourceText,
+        ...(replacementText
+          ? { [STUDY_REFERENCE_LABEL_ATTRIBUTE]: replacementText }
+          : {}),
+      },
     },
-    children: [{ type: 'text', value: literalTag }],
+    children: [{ type: 'text', value: sourceText }],
   };
 }
 
@@ -209,7 +246,11 @@ export function transformStudyReferences(
     for (const part of parts) {
       children.push(
         part.kind === 'reference'
-          ? referenceNode(part.value)
+          ? referenceNode(
+              part.value,
+              part.literalTag,
+              part.replacementText,
+            )
           : { type: 'text', value: part.value },
       );
     }

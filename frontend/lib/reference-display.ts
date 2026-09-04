@@ -1,7 +1,8 @@
-/** Use a resolved entry's title while preserving literal text until resolution. */
+/** Use an explicit label, then a resolved title, while preserving literal text as fallback. */
 export function referenceDisplayText(
   literalTag: string,
   title: string | undefined,
+  replacementText?: string,
 ): string {
-  return title?.trim() ? title : literalTag;
+  return replacementText?.trim() || title?.trim() || literalTag;
 }

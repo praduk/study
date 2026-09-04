@@ -318,7 +318,8 @@ heterogeneity, and domain transfer. “Remaining gap” states what Study would 
 | Again retry after up to three available cards and ten-minute due time | P7 | Engineering approximation; not a validated criterion schedule |
 | Authored-order queue | P8 | Enables deliberate sequencing; not automatic interleaving |
 | Matching statement, proof, or solution revealed after attempt | P5, P9 | Useful feedback/novice support; no automatic fading |
-| Fixed statement, theorem-proof, and problem-solve tasks | P3, P5, P11 | Clear retrieval targets; repeated success does not establish transfer |
+| Fixed kind-specific define/state, theorem-proof, and problem-solve tasks | P3, P5, P11 | Clear retrieval targets; exact prompt verbs are product copy, and repeated success does not establish transfer |
+| Optional written response on larger screens; fixed think-only review on phones | P4 | Overt retrieval has a small average advantage; the device rule is a usability choice, not an evidence-derived breakpoint |
 | No streak or universal target failure rate | P12 | Appropriate guardrail |
 | No sleep-derived scheduling | P13 | Appropriate evidentiary and privacy boundary |
 

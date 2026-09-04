@@ -12,7 +12,7 @@ import {
   type StudyReferenceTarget,
 } from '@/components/StudyReference';
 import { mathJaxMarkdownHandlers, normalizeMathJaxDelimiters, remarkStudyMath } from '@/lib/markdown-math';
-import { typesetWithMathJax } from '@/lib/mathjax';
+import { clearMathJax, typesetWithMathJax } from '@/lib/mathjax';
 import {
   remarkStudyDiagrams,
   STUDY_COMMUTATIVE_ATTRIBUTE,
@@ -54,12 +54,16 @@ function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, in
     const element = container.current;
     if (!element) return;
     void typesetWithMathJax(element).catch(() => undefined);
-  }, [content, dark, interactive]);
+    return () => { void clearMathJax(element).catch(() => undefined); };
+  }, [content, dark, folderId, interactive, onOpenEntry]);
 
   return (
-    <div ref={container} className={className}>
+    <div
+      key={`${dark ? 'dark' : 'light'}:${interactive ? 'interactive' : 'static'}:${folderId}:${normalizedContent}`}
+      ref={container}
+      className={className}
+    >
       <ReactMarkdown
-        key={`${dark ? 'dark' : 'light'}:${interactive ? 'interactive' : 'static'}:${normalizedContent}`}
         remarkPlugins={remarkPlugins}
         remarkRehypeOptions={{ handlers: mathJaxMarkdownHandlers }}
         components={{

@@ -7,6 +7,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from .review_calibration import (
+    calibration_summary,
+    new_calibration_state,
+    observe_review,
+    schedule_interval,
+    validate_calibration_state,
+)
 from .store import LibraryStore, StoreError
 
 MODE_LABELS = {
@@ -82,6 +89,64 @@ class ReviewEngine:
             raise StoreError("review-log.jsonl is unreadable or invalid") from exc
         return None
 
+    def _rebuild_calibration(self) -> dict[str, Any]:
+        """Replay the append-only log to reconstruct derived calibration state."""
+        calibration = new_calibration_state()
+        previous_cards: dict[str, dict[str, Any]] = {}
+        if not self.log_path.exists():
+            return calibration
+        try:
+            with self.log_path.open(encoding="utf-8") as stream:
+                for line_number, line in enumerate(stream, start=1):
+                    if not line.strip():
+                        continue
+                    record = json.loads(line)
+                    if not isinstance(record, dict):
+                        raise StoreError(
+                            f"review log line {line_number} is not an object"
+                        )
+                    card_id = record.get("card_id")
+                    schedule = record.get("schedule")
+                    grade = record.get("grade")
+                    observed_text = record.get("started_at", record.get("graded_at"))
+                    if (
+                        not isinstance(card_id, str)
+                        or not isinstance(schedule, dict)
+                        or isinstance(grade, bool)
+                        or not isinstance(grade, int)
+                        or grade not in range(4)
+                        or not isinstance(observed_text, str)
+                    ):
+                        raise StoreError(
+                            f"review log line {line_number} cannot be calibrated"
+                        )
+                    try:
+                        _, mode = self.split_card_id(card_id)
+                        observed_at = datetime.fromisoformat(observed_text)
+                    except (StoreError, ValueError) as exc:
+                        raise StoreError(
+                            f"review log line {line_number} cannot be calibrated"
+                        ) from exc
+                    previous = previous_cards.get(card_id)
+                    if previous is not None:
+                        observe_review(calibration, mode, previous, observed_at, grade)
+                    previous_cards[card_id] = schedule
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise StoreError("review-log.jsonl is unreadable or invalid") from exc
+        return calibration
+
+    def _calibration_for_state(self, state: dict[str, Any]) -> dict[str, Any]:
+        candidate = state.get("calibration")
+        if candidate is not None:
+            try:
+                calibration = validate_calibration_state(candidate)
+            except (TypeError, ValueError):
+                calibration = self._rebuild_calibration()
+        else:
+            calibration = self._rebuild_calibration()
+        state["calibration"] = calibration
+        return calibration
+
     def _append_log(self, record: dict[str, Any]) -> None:
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         with self.log_path.open("a", encoding="utf-8") as stream:
@@ -95,7 +160,7 @@ class ReviewEngine:
             **card_state,
             "retry_in_session": grade == 0,
             "retry_after_items": 3 if grade == 0 else None,
-            "note": "Spacing is supported by evidence; these adaptive constants are a transparent product heuristic, not a scientifically optimal formula.",
+            "note": "Intervals self-calibrate to delayed self-grades after enough evidence; this remains an engineering model, not a validated measure of mastery.",
         }
 
     @staticmethod
@@ -114,13 +179,20 @@ class ReviewEngine:
 
     def _prompt(self, entry: dict[str, Any], mode: str) -> dict[str, Any]:
         title = entry["title"]
+        statement_prompt = (
+            f"Define {title}."
+            if entry["kind"] == "df"
+            else f"State {title}."
+            if entry["kind"] in {"ax", "th"}
+            else f"State {title} precisely from memory. Include every hypothesis and conclusion."
+        )
         prompts = {
-            "statement": f"State {title} precisely from memory. Include every hypothesis and conclusion.",
+            "statement": statement_prompt,
             "example": f"Give an example of {title} and a near-miss. Explain the decisive difference.",
             "discriminate": f"State {title}, then give an example and a nonexample with justification.",
             "explain": f"Explain {title} in your own words. Why does it matter, and what would fail without it?",
-            "proof-plan": f"Prove {title} from memory. Give the complete argument and justify every major step.",
-            "solve": f"Solve {title} without looking at the stored solution. Show the strategy and work.",
+            "proof-plan": f"Prove {title}.",
+            "solve": "Solve the following problem.",
             "transfer": f"Give a genuinely new application of {title}, or explain how it changes when one assumption is removed.",
         }
         prompt_body = ""
@@ -173,6 +245,7 @@ class ReviewEngine:
         due = self.queue(limit=10000)
         with self._lock:
             state = self._read()
+            calibration = self._calibration_for_state(state)
             today = _now().date().isoformat()
             completed_today = sum(
                 1
@@ -187,7 +260,12 @@ class ReviewEngine:
                 )
                 / 60_000
             )
-        return {"due": len(due), "completed_today": completed_today, "minutes_today": minutes}
+        return {
+            "due": len(due),
+            "completed_today": completed_today,
+            "minutes_today": minutes,
+            "calibration": calibration_summary(calibration),
+        }
 
     def reveal(self, card_id: str, attempt: dict[str, Any]) -> dict[str, Any]:
         entry_id, mode = self.split_card_id(card_id)
@@ -252,6 +330,9 @@ class ReviewEngine:
                     raise StoreError("review log contains an invalid schedule")
                 if pending is not None:
                     state["cards"][card_id] = schedule
+                    # The log is authoritative. Replaying it recovers a model
+                    # update if the prior atomic state write was interrupted.
+                    state["calibration"] = self._rebuild_calibration()
                     state["pending_attempts"].pop(attempt_id, None)
                     self._write(state)
                 return self._grade_response(schedule, grade)
@@ -263,32 +344,58 @@ class ReviewEngine:
             repetitions = int(previous.get("repetitions", 0))
             lapses = int(previous.get("lapses", 0))
 
+            model_calibration = self._calibration_for_state(state)
+            _, mode = self.split_card_id(card_id)
+
             if grade == 0:
                 stability = max(0.25, old_stability * 0.45)
                 difficulty = min(10.0, old_difficulty + 0.7)
                 due = now + timedelta(minutes=10)
+                _, scheduler = schedule_interval(model_calibration, mode, stability, 1)
+                scheduler.update(
+                    {
+                        "calibrated_interval_used": False,
+                        "interval_days": None,
+                        "interval_minutes": 10,
+                        "reason": "again",
+                    }
+                )
                 lapses += 1
             elif grade == 1:
                 stability = max(1.0, old_stability * 1.35)
                 difficulty = min(10.0, old_difficulty + 0.2)
-                due = now + timedelta(days=max(1, round(stability)))
+                interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
+                due = now + timedelta(days=interval_days)
+                scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             elif grade == 2:
                 stability = max(2.0, old_stability * (2.25 - old_difficulty * 0.035))
                 difficulty = max(1.0, old_difficulty - 0.15)
-                due = now + timedelta(days=max(1, round(stability)))
+                interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
+                due = now + timedelta(days=interval_days)
+                scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             else:
                 stability = max(4.0, old_stability * (3.1 - old_difficulty * 0.045))
                 difficulty = max(1.0, old_difficulty - 0.35)
-                due = now + timedelta(days=max(2, round(stability)))
+                interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 2)
+                due = now + timedelta(days=interval_days)
+                scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
 
+            try:
+                observation_at = datetime.fromisoformat(str(pending["started_at"]))
+            except (KeyError, TypeError, ValueError) as exc:
+                raise StoreError("review attempt has an invalid timestamp") from exc
+            calibration_observation = observe_review(
+                model_calibration, mode, previous, observation_at, grade
+            )
+
             confidence = pending.get("confidence")
-            calibration = None
+            confidence_calibration = None
             if confidence is not None:
                 expected = 1 if grade == 0 else 2 if grade < 3 else 3
-                calibration = int(confidence) - expected
+                confidence_calibration = int(confidence) - expected
                 if grade == 0 and confidence == 3:
                     difficulty = min(10.0, difficulty + 0.35)
 
@@ -302,7 +409,8 @@ class ReviewEngine:
                 "repetitions": repetitions,
                 "lapses": lapses,
                 "last_confidence": confidence,
-                "last_calibration": calibration,
+                "last_calibration": confidence_calibration,
+                "scheduler": scheduler,
             }
             log_record = {
                 **pending,
@@ -310,11 +418,14 @@ class ReviewEngine:
                 "grade": grade,
                 "schedule": card_state,
             }
+            if calibration_observation:
+                log_record["calibration_observation"] = calibration_observation
             # Make the audit record durable before consuming the pending attempt.
             # If the following atomic state write fails, retrying this request
             # recovers from the log without appending a duplicate event.
             self._append_log(log_record)
             state["cards"][card_id] = card_state
+            state["calibration"] = model_calibration
             state["pending_attempts"].pop(attempt_id, None)
             self._write(state)
         return self._grade_response(card_state, grade)

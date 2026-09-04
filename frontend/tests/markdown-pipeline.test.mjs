@@ -15,13 +15,20 @@ import {
   normalizeMathJaxDelimiters,
   remarkStudyMath,
 } from '../lib/markdown-math.ts';
+import {
+  activateEditorVimActions,
+  editorVimCommands,
+} from '../lib/editor-vim-commands.ts';
 import { referenceDisplayText } from '../lib/reference-display.ts';
 import { readingVariantSelection } from '../lib/reference-navigation.ts';
 import {
   remarkStudyDiagrams,
   STUDY_COMMUTATIVE_ATTRIBUTE,
 } from '../lib/remark-study-diagrams.ts';
-import { remarkStudyReferences } from '../lib/remark-study-references.ts';
+import {
+  remarkStudyReferences,
+  splitStudyReferenceText,
+} from '../lib/remark-study-references.ts';
 
 function renderMarkdown(source) {
   return renderToStaticMarkup(
@@ -146,6 +153,95 @@ test('@tags are recognized only in Markdown prose', async () => {
   assert.deepEqual(references, ['@group', '@math:algebra:th:lagrange']);
 });
 
+test('replacement-text references keep their authored label separate from the query tag', async () => {
+  const source = 'See @[all sets]set and @[the orbit result]math:algebra:th:orbit.';
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkMath)
+    .use(remarkStudyReferences);
+  const tree = await processor.run(processor.parse(source), { value: source });
+  const references = [];
+  const walk = (node) => {
+    if (node.type === 'studyReference') {
+      references.push({
+        literalTag: node.literalTag,
+        sourceText: node.sourceText,
+        replacementText: node.replacementText,
+      });
+    }
+    for (const child of node.children ?? []) walk(child);
+  };
+  walk(tree);
+
+  assert.deepEqual(references, [
+    {
+      literalTag: '@set',
+      sourceText: '@[all sets]set',
+      replacementText: 'all sets',
+    },
+    {
+      literalTag: '@math:algebra:th:orbit',
+      sourceText: '@[the orbit result]math:algebra:th:orbit',
+      replacementText: 'the orbit result',
+    },
+  ]);
+
+  const html = renderMarkdown(source);
+  assert.match(html, /data-study-reference="@set"/);
+  assert.match(html, /data-study-reference-source="@\[all sets\]set"/);
+  assert.match(html, /data-study-reference-label="all sets"/);
+});
+
+test('replacement-text reference delimiters must be literal Markdown prose', async () => {
+  const source = [
+    String.raw`Active @[all sets]set.`,
+    String.raw`Escaped at \@[escaped]set.`,
+    String.raw`Escaped open @\[escaped]set.`,
+    String.raw`Escaped close @[escaped\]set.`,
+    'Entity at &#64;[entity]set.',
+    'Entity open @&#91;entity]set.',
+    'Entity close @[entity&#93;set.',
+    '`@[code]set`',
+    '[link @[label]set](https://example.com)',
+    '$@[math]set$',
+  ].join('\n\n');
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkMath)
+    .use(remarkStudyReferences);
+  const tree = await processor.run(processor.parse(source), { value: source });
+  const references = [];
+  const walk = (node) => {
+    if (node.type === 'studyReference') references.push(node.literalTag);
+    for (const child of node.children ?? []) walk(child);
+  };
+  walk(tree);
+
+  assert.deepEqual(references, ['@set']);
+});
+
+test('malformed replacement-text references remain literal', () => {
+  const source = '@[]set @[   ]set @[nested[label]set @[x]Set @[x]set_more';
+  assert.deepEqual(splitStudyReferenceText(source), [
+    { kind: 'text', value: source },
+  ]);
+
+  const longUnclosedAlias = `@[${'x'.repeat(30_000)}`;
+  assert.deepEqual(splitStudyReferenceText(longUnclosedAlias), [
+    { kind: 'text', value: longUnclosedAlias },
+  ]);
+});
+
+test('replacement text is safely carried through HTML attributes', () => {
+  const html = renderMarkdown('See @[A "set" & collection]set.');
+
+  assert.match(html, /data-study-reference="@set"/);
+  assert.match(
+    html,
+    /data-study-reference-label="A &quot;set&quot; &amp; collection"/,
+  );
+});
+
 test('escaped and entity-encoded @tags stay literal', async () => {
   const source = String.raw`Escaped \@group. Entity &#64;ring. Named &commat;field. Active @module.`;
   const processor = unified()
@@ -221,4 +317,32 @@ test('resolved references display the entry title instead of the authored tag', 
     referenceDisplayText('@cauchy-schwarz', undefined),
     '@cauchy-schwarz',
   );
+  assert.equal(
+    referenceDisplayText('@cauchy-schwarz', 'Cauchy–Schwarz inequality', 'the bound'),
+    'the bound',
+  );
+});
+
+test('Vim :w saves the active editor without closing it', () => {
+  let saves = 0;
+  let closes = 0;
+  const deactivate = activateEditorVimActions({
+    save: () => { saves += 1; },
+    close: () => { closes += 1; },
+  });
+  const write = editorVimCommands.find((command) => command.name === 'write');
+  const quit = editorVimCommands.find((command) => command.name === 'quit');
+
+  assert.equal(write?.prefix, 'w');
+  write?.run();
+  assert.equal(saves, 1);
+  assert.equal(closes, 0);
+
+  assert.equal(quit?.prefix, 'q');
+  quit?.run();
+  assert.equal(closes, 1);
+
+  deactivate();
+  write?.run();
+  assert.equal(saves, 1);
 });
