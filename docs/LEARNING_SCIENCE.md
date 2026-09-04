@@ -64,7 +64,7 @@ For each card, Study does the following:
    | `1` | Again (`0`) | Major gap or no valid method |
    | `2` | Hard (`1`) | Partial, slow, or needed help |
    | `3` | Good (`2`) | Correct and unaided |
-   | `4` | Easy (`3`) | Fluent, precise, and transferable |
+   | `4` | Easy (`3`) | Fluent and precise |
 
 6. Stores the schedule state and appends the full graded attempt to `data/review-log.jsonl`.
 
@@ -120,6 +120,8 @@ The scheduler retains a per-card stability estimate `S` in days and difficulty `
 | Good (`2`) | `min(3650, max(2, S(2.25 - 0.035 D)))` | `max(1, D - 0.15)` | 1 day | increment repetitions |
 | Easy (`3`) | `min(3650, max(4, S(3.1 - 0.045 D)))` | `max(1, D - 0.35)` | 2 days | increment repetitions |
 
+Study persists stability to three decimal days after this update.
+
 For Hard, Good, and Easy, Study multiplies `S'` by a learned interval factor before rounding to an
 integer day. The learned target is the probability that the learner will self-grade the next
 retrieval **Good or Easy**. Again and Hard are observations below that target; Good and Easy are
@@ -135,25 +137,44 @@ $$
 
 where `epsilon = 0.02`, the target `q = 0.90`, and
 `gamma = -log((q-epsilon)/(1-2 epsilon))`. Thus `c = 1` predicts 90% at `t = S`, while every finite
-`c` retains strictly positive forgetting. Study represents uncertainty in `log(c)` on a fixed grid
-with a centered normal prior. It updates both a pooled posterior and separate posteriors for
-statement, theorem-proof, and problem-solution tasks. A task-specific posterior is preferred when
-ready; otherwise a ready pooled posterior is used.
+`c` retains strictly positive forgetting. Study represents `c` with 161 logarithmically spaced
+values from `1/8` through `8`. Its prior is `log(c) ~ Normal(0, 0.70^2)`.
 
-Calibration activates only after at least 24 eligible observations, 20 effective observations,
-enough cumulative delayed exposure, and some reduction in posterior uncertainty. Until then, the
-factor is exactly `1`, preserving the prior scheduler's intervals. First reviews and delays under six
-hours are excluded, so ordinary same-session Again retries do not masquerade as long-term retention
-evidence. A tab left open for six hours is not explicitly classified as an in-session retry.
-The fitted factor is bounded to `0.5`–`2.0`; both retained stability and scheduled intervals are
-capped at 3,650 days.
+For a repeat review, `t` runs from the previous completed review to the start of the new retrieval.
+First reviews and delays under six hours are excluded. For an eligible review, the model input is
+`x* = min(t/S, 64)` and the binary outcome is `y = 1` for Good or Easy and `0` for Again or Hard.
+A tab left open for six hours is not explicitly classified as an in-session retry. The cap prevents
+one extremely overdue review from having unbounded leverage and is recorded in the audit event.
 
-Before each eligible observation, Study applies a `0.995` power-prior discount. This is a small
-amount of statistical forgetting: recent grading behavior can eventually outweigh very old
-behavior, while evidence changes gradually. Scheduling uses the posterior available before the
-current grade; the current grade updates subsequent schedules. The pre-outcome probability is
-written to the append-only review log, and the derived posterior can be reconstructed from that log
-after an interrupted state write.
+For grid point `c_i`, prior mass `pi_i`, current posterior mass `w_i`, and discount `delta = 0.995`,
+the next posterior is the normalized discrete distribution
+
+$$
+w'_i \propto w_i^\delta\,\pi_i^{1-\delta}
+P(y\mid x^*,c_i).
+$$
+
+Study applies that update to both a pooled model and the matching statement, theorem-proof, or
+problem-solution model. It also updates `N_eff' = delta N_eff + 1`, successful effective weight
+`K_eff' = delta K_eff + y`, and exposure `E' = delta E + min(x*, 4)`. A model becomes ready only when
+all four gates hold: at least 24 raw observations, `N_eff >= 20`, `E >= 12`, and posterior standard
+deviation `SD(log(c)) <= 0.65`. A ready task-specific posterior is preferred; otherwise Study uses a
+ready pooled posterior. Until either is ready, the interval factor is exactly `1`, preserving the
+prior scheduler's intervals.
+
+For scheduling, Study computes the posterior predictive probability
+`p_bar(f) = sum_i w_i P(Good or Easy | x=f, c_i)`. It chooses the root `p_bar(f) = 0.90` by bisection,
+bounded to `0.5 <= f <= 2.0`; if no root lies inside that range, it uses the nearer boundary. For
+Hard, Good, or Easy, the integer-day interval is
+`min(3650, max(grade minimum, round(S' f)))`. Again remains exactly ten minutes and does not use the
+learned factor. Both retained stability and scheduled intervals are capped at 3,650 days.
+
+The `0.995` power-prior discount is a small amount of statistical forgetting: recent grading
+behavior can eventually outweigh very old behavior, while evidence changes gradually. Scheduling
+uses the posterior available before the current grade; the current grade updates subsequent
+schedules. The pre-outcome probability and full-precision normalized delay are written to the
+append-only review log, and the derived posterior can be reconstructed from that log after an
+interrupted state write.
 
 If a learner chooses Confident (`3`) and then grades Again, Study adds another `0.35` to difficulty,
 capped at `10`. It stores a simple calibration value:

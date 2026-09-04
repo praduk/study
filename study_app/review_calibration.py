@@ -89,7 +89,10 @@ def new_calibration_state() -> dict[str, Any]:
 def _finite_number(value: Any, name: str, *, minimum: float = 0.0) -> float:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise TypeError(f"{name} is not numeric")
-    result = float(value)
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} is outside its valid range") from exc
     if not math.isfinite(result) or result < minimum:
         raise ValueError(f"{name} is outside its valid range")
     return result
@@ -255,7 +258,7 @@ def observe_review(
     try:
         stability = float(previous_card_state["stability_days"])
         previous_time = datetime.fromisoformat(str(previous_card_state["last_reviewed_at"]))
-    except (KeyError, TypeError, ValueError):
+    except (KeyError, TypeError, ValueError, OverflowError):
         return None
     if (
         not math.isfinite(stability)

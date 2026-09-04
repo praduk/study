@@ -72,6 +72,17 @@ def _calibration_digest(calibration: dict[str, Any]) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 
+def _cards_digest(cards: dict[str, Any]) -> str:
+    encoded = json.dumps(
+        cards,
+        ensure_ascii=False,
+        allow_nan=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
 class ReviewEngine:
     """A bounded self-calibrating scheduler; its target is the learner's self-grade."""
 
@@ -88,6 +99,7 @@ class ReviewEngine:
             None,
         )
         self._calibration_digest_cache: str | None = None
+        self._cards_digest_cache: str | None = None
         self._recent_logged_attempts: dict[str, dict[str, Any]] = {}
         self._recent_log_order: list[str] = []
         if self.state_path.is_symlink() or self.log_path.is_symlink():
@@ -144,6 +156,7 @@ class ReviewEngine:
         self,
         signature: tuple[int, int, int, int] | None,
         calibration: dict[str, Any],
+        cards: dict[str, Any],
         recent_records: list[dict[str, Any]],
     ) -> None:
         self._log_signature_cache = signature
@@ -153,6 +166,7 @@ class ReviewEngine:
             calibration["processed_log_digest"],
         )
         self._calibration_digest_cache = _calibration_digest(calibration)
+        self._cards_digest_cache = _cards_digest(cards)
         self._recent_logged_attempts = {}
         self._recent_log_order = []
         for record in recent_records:
@@ -162,12 +176,13 @@ class ReviewEngine:
         self,
         record: dict[str, Any],
         encoded_record: str,
+        added_bytes: int,
         calibration: dict[str, Any],
+        cards: dict[str, Any],
     ) -> None:
         """Advance the verified in-process cache after both durable writes succeed."""
         current_signature = self._log_signature()
         previous_signature = self._log_signature_cache
-        added_bytes = len((encoded_record + "\n").encode("utf-8"))
         file_append_matches = current_signature is not None and (
             (
                 previous_signature is None
@@ -198,6 +213,7 @@ class ReviewEngine:
             calibration["processed_log_digest"],
         )
         self._calibration_digest_cache = _calibration_digest(calibration)
+        self._cards_digest_cache = _cards_digest(cards)
         self._remember_logged_attempt(record)
         self._calibration_verified = True
 
@@ -219,7 +235,10 @@ class ReviewEngine:
     ) -> float:
         if isinstance(value, bool) or not isinstance(value, (int, float)):
             raise StoreError(f"{label} is not numeric")
-        result = float(value)
+        try:
+            result = float(value)
+        except OverflowError as exc:
+            raise StoreError(f"{label} is outside its valid range") from exc
         if (
             not math.isfinite(result)
             or result < minimum
@@ -335,6 +354,20 @@ class ReviewEngine:
             observed_at = cls._aware_datetime(observed_text, "review observation time")
         except StoreError as exc:
             raise StoreError(f"{label} has an invalid observation time") from exc
+        try:
+            reviewed_at = cls._aware_datetime(
+                schedule["last_reviewed_at"], "review completion time"
+            )
+            due_at = cls._aware_datetime(schedule["due_at"], "review due time")
+            graded_at = (
+                cls._aware_datetime(value["graded_at"], "review grade time")
+                if "graded_at" in value
+                else observed_at
+            )
+        except StoreError as exc:
+            raise StoreError(f"{label} has an invalid review chronology") from exc
+        if reviewed_at < max(observed_at, graded_at) or due_at <= reviewed_at:
+            raise StoreError(f"{label} has an invalid review chronology")
         event_version = value.get("calibration_event_version")
         if event_version is not None and (
             isinstance(event_version, bool) or event_version != CALIBRATION_VERSION
@@ -369,6 +402,7 @@ class ReviewEngine:
             and signature_before == self._log_signature_cache
             and _calibration_digest(stored_validated)
             == self._calibration_digest_cache
+            and _cards_digest(state["cards"]) == self._cards_digest_cache
             and (
                 stored_validated["processed_log_records"],
                 stored_validated["last_log_attempt_id"],
@@ -431,6 +465,19 @@ class ReviewEngine:
                             logged_pending_attempts.add(record_attempt)
 
                         previous = previous_cards.get(record["card_id"])
+                        if previous is not None:
+                            previous_reviewed_at = self._aware_datetime(
+                                previous["last_reviewed_at"],
+                                f"review log line {line_number} previous review time",
+                            )
+                            current_reviewed_at = self._aware_datetime(
+                                schedule["last_reviewed_at"],
+                                f"review log line {line_number} review time",
+                            )
+                            if current_reviewed_at < previous_reviewed_at:
+                                raise StoreError(
+                                    f"review log line {line_number} moves its card backward in time"
+                                )
                         observation = record.get("calibration_observation")
                         if observation is not None:
                             apply_recorded_observation(
@@ -472,7 +519,9 @@ class ReviewEngine:
             state["pending_attempts"].pop(logged_id, None)
             changed = True
         state["calibration"] = calibration
-        self._cache_complete_log(signature_after, calibration, recent_records)
+        self._cache_complete_log(
+            signature_after, calibration, state["cards"], recent_records
+        )
         return logged_attempt, calibration, changed
 
     def validate_log(self) -> dict[str, Any]:
@@ -502,14 +551,24 @@ class ReviewEngine:
         state["calibration"] = calibration
         return calibration
 
-    def _append_log(self, record: dict[str, Any]) -> str:
+    def _append_log(self, record: dict[str, Any]) -> tuple[str, int]:
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         encoded = json.dumps(record, ensure_ascii=False)
-        with self.log_path.open("a", encoding="utf-8") as stream:
-            stream.write(encoded + "\n")
+        encoded_bytes = encoded.encode("utf-8")
+        with self.log_path.open("ab+") as stream:
+            stream.seek(0, os.SEEK_END)
+            size = stream.tell()
+            separator = b""
+            if size:
+                stream.seek(-1, os.SEEK_END)
+                if stream.read(1) != b"\n":
+                    separator = b"\n"
+                stream.seek(0, os.SEEK_END)
+            payload = separator + encoded_bytes + b"\n"
+            stream.write(payload)
             stream.flush()
             os.fsync(stream.fileno())
-        return encoded
+        return encoded, len(payload)
 
     @staticmethod
     def _grade_response(card_state: dict[str, Any], grade: int) -> dict[str, Any]:
@@ -703,7 +762,19 @@ class ReviewEngine:
                 return self._grade_response(schedule, grade)
             if pending is None or pending["card_id"] != card_id:
                 raise StoreError("review attempt is missing, expired, or belongs to another card")
+            try:
+                observation_at = datetime.fromisoformat(str(pending["started_at"]))
+            except (KeyError, TypeError, ValueError) as exc:
+                raise StoreError("review attempt has an invalid timestamp") from exc
+            if observation_at.tzinfo is None:
+                raise StoreError("review attempt timestamp has no timezone")
             previous = state["cards"].get(card_id, {})
+            completion_at = max(now, observation_at)
+            if previous:
+                previous_reviewed_at = self._aware_datetime(
+                    previous["last_reviewed_at"], "previous review time"
+                )
+                completion_at = max(completion_at, previous_reviewed_at)
             old_stability = self._finite_card_number(
                 previous.get("stability_days", 0.5),
                 "review stability",
@@ -727,7 +798,7 @@ class ReviewEngine:
             if grade == 0:
                 stability = min(MAX_INTERVAL_DAYS, max(0.25, old_stability * 0.45))
                 difficulty = min(10.0, old_difficulty + 0.7)
-                due = now + timedelta(minutes=10)
+                due = completion_at + timedelta(minutes=10)
                 _, scheduler = schedule_interval(model_calibration, mode, stability, 1)
                 scheduler.update(
                     {
@@ -742,7 +813,7 @@ class ReviewEngine:
                 stability = min(MAX_INTERVAL_DAYS, max(1.0, old_stability * 1.35))
                 difficulty = min(10.0, old_difficulty + 0.2)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
-                due = now + timedelta(days=interval_days)
+                due = completion_at + timedelta(days=interval_days)
                 scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             elif grade == 2:
@@ -752,7 +823,7 @@ class ReviewEngine:
                 )
                 difficulty = max(1.0, old_difficulty - 0.15)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 1)
-                due = now + timedelta(days=interval_days)
+                due = completion_at + timedelta(days=interval_days)
                 scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
             else:
@@ -762,16 +833,10 @@ class ReviewEngine:
                 )
                 difficulty = max(1.0, old_difficulty - 0.35)
                 interval_days, scheduler = schedule_interval(model_calibration, mode, stability, 2)
-                due = now + timedelta(days=interval_days)
+                due = completion_at + timedelta(days=interval_days)
                 scheduler["calibrated_interval_used"] = scheduler["calibrated"]
                 repetitions += 1
 
-            try:
-                observation_at = datetime.fromisoformat(str(pending["started_at"]))
-            except (KeyError, TypeError, ValueError) as exc:
-                raise StoreError("review attempt has an invalid timestamp") from exc
-            if observation_at.tzinfo is None:
-                raise StoreError("review attempt timestamp has no timezone")
             calibration_observation = observe_review(
                 model_calibration, mode, previous, observation_at, grade
             )
@@ -786,7 +851,7 @@ class ReviewEngine:
 
             card_state = {
                 "due_at": due.isoformat(),
-                "last_reviewed_at": now.isoformat(),
+                "last_reviewed_at": completion_at.isoformat(),
                 "last_grade": grade,
                 "last_elapsed_ms": int(pending.get("elapsed_ms", 0)),
                 "stability_days": round(stability, 3),
@@ -809,7 +874,7 @@ class ReviewEngine:
             # Make the audit record durable before consuming the pending attempt.
             # If the following atomic state write fails, retrying this request
             # recovers from the log without appending a duplicate event.
-            encoded_record = self._append_log(log_record)
+            encoded_record, added_bytes = self._append_log(log_record)
             model_calibration["processed_log_records"] += 1
             model_calibration["last_log_attempt_id"] = attempt_id
             model_calibration["processed_log_digest"] = _extend_log_digest(
@@ -820,6 +885,10 @@ class ReviewEngine:
             state["pending_attempts"].pop(attempt_id, None)
             self._write(state)
             self._cache_appended_record(
-                log_record, encoded_record, model_calibration
+                log_record,
+                encoded_record,
+                added_bytes,
+                model_calibration,
+                state["cards"],
             )
         return self._grade_response(card_state, grade)

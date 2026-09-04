@@ -225,7 +225,7 @@ export function ReviewView({ initialDue, isMobile, onExit, onChanged }: Props) {
             <div className="grade-prompt">Grade the retrieval, not familiarity after seeing the answer.</div>
             <div className="grade-grid">{GRADES.map((item) => <button key={item.grade} className={item.className} onClick={() => void grade(item.grade)} disabled={pendingAction !== null} aria-busy={pendingAction === 'grade'}><kbd>{item.key}</kbd><strong>{item.label}</strong><span>{item.note}</span></button>)}</div>
             {error && <div className="form-error" role="alert">{error}</div>}
-            <p className="scheduler-disclosure"><RotateCcw size={13} /> “Again” returns later in this session; later spacing self-calibrates to your delayed grades once enough evidence exists. It predicts your grading behavior, not objective mastery.</p>
+            <p className="scheduler-disclosure"><RotateCcw size={13} /> “Again” returns later in this session; later spacing self-calibrates to grades from delayed reviews once enough evidence exists. It predicts your grading behavior, not objective mastery.</p>
           </section>
         )}
       </main>

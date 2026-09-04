@@ -237,6 +237,101 @@ def test_reload_reconciles_logged_grade_without_retrying_original_request(
     assert len(reloaded.log_path.read_text(encoding="utf-8").splitlines()) == 3
 
 
+def test_log_order_recovers_schedule_even_if_wall_clock_moves_backward(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 10, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "A collection")
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+    first = review.reveal(
+        card["id"], {"attempt": "first", "confidence": 2, "overt": True}
+    )
+    review.grade(card["id"], first["attempt_id"], 2)
+    first_reviewed_at = current.isoformat()
+
+    current -= timedelta(days=1)
+    second = review.reveal(
+        card["id"], {"attempt": "second", "confidence": 2, "overt": True}
+    )
+
+    def fail_write(_state):
+        raise OSError("simulated interrupted state write")
+
+    monkeypatch.setattr(review, "_write", fail_write)
+    with pytest.raises(OSError, match="interrupted"):
+        review.grade(card["id"], second["attempt_id"], 2)
+
+    restarted = ReviewEngine(store)
+    restarted.queue(include_not_due=True)
+    recovered = restarted._read()
+    assert recovered["cards"][card["id"]]["repetitions"] == 2
+    assert recovered["cards"][card["id"]]["last_reviewed_at"] == first_reviewed_at
+    assert recovered["pending_attempts"] == {}
+
+
+def test_grade_never_schedules_before_retrieval_when_clock_rolls_back(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 10, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "A collection")
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+    attempt = review.reveal(
+        card["id"], {"attempt": "first", "confidence": 2, "overt": True}
+    )
+    retrieval_at = current
+
+    current -= timedelta(days=1)
+    scheduled = review.grade(card["id"], attempt["attempt_id"], 2)
+
+    assert scheduled["last_reviewed_at"] == retrieval_at.isoformat()
+    assert scheduled["due_at"] == (retrieval_at + timedelta(days=2)).isoformat()
+    record = json.loads(review.log_path.read_text(encoding="utf-8"))
+    assert record["graded_at"] == current.isoformat()
+    assert record["schedule"]["last_reviewed_at"] == retrieval_at.isoformat()
+    assert review.validate_log()["processed_log_records"] == 1
+
+
+def test_log_validation_rejects_a_card_moving_backward_between_records(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 10, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "A collection")
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+
+    for label in ("first", "second"):
+        attempt = review.reveal(
+            card["id"], {"attempt": label, "confidence": 2, "overt": True}
+        )
+        review.grade(card["id"], attempt["attempt_id"], 2)
+        current += timedelta(days=2)
+
+    records = [json.loads(line) for line in review.log_path.read_text().splitlines()]
+    reversed_at = datetime(2026, 1, 5, 12, 0, tzinfo=timezone.utc)
+    records[1]["started_at"] = reversed_at.isoformat()
+    records[1]["graded_at"] = reversed_at.isoformat()
+    records[1]["schedule"]["last_reviewed_at"] = reversed_at.isoformat()
+    records[1]["schedule"]["due_at"] = (reversed_at + timedelta(days=1)).isoformat()
+    review.log_path.write_text(
+        "".join(json.dumps(record) + "\n" for record in records),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(StoreError, match="moves its card backward in time"):
+        ReviewEngine(store).validate_log()
+
+
 def test_explicit_observation_survives_rebuild_when_earlier_log_is_missing(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
@@ -342,6 +437,30 @@ def test_new_engine_rebuilds_a_tampered_but_well_formed_calibration_cache(
     assert repaired_again["observations"] == 0
 
 
+def test_same_engine_repairs_a_tampered_card_schedule_from_the_log(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "A collection")
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+    attempt = review.reveal(
+        card["id"], {"attempt": "first", "confidence": 2, "overt": True}
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+
+    tampered = review._read()
+    tampered["cards"][card["id"]]["stability_days"] = 1000.0
+    review._write(tampered)
+    review.queue(include_not_due=True)
+
+    repaired = review._read()
+    assert repaired["cards"][card["id"]]["stability_days"] == 2.0
+
+
 def test_verified_restart_and_forced_rebuild_do_not_rewrite_unchanged_state(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
@@ -385,7 +504,84 @@ def test_verified_restart_and_forced_rebuild_do_not_rewrite_unchanged_state(
     assert validated_records == 0
 
 
-@pytest.mark.parametrize("stability", [math.nan, math.inf, -math.inf])
+def test_append_repairs_a_valid_log_without_a_final_newline(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "A collection")
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+    first = review.reveal(
+        card["id"], {"attempt": "first", "confidence": 2, "overt": True}
+    )
+    review.grade(card["id"], first["attempt_id"], 2)
+    review.log_path.write_bytes(review.log_path.read_bytes().rstrip(b"\n"))
+
+    current += timedelta(days=5)
+    restarted = ReviewEngine(store)
+    restarted.queue(include_not_due=True)
+    second = restarted.reveal(
+        card["id"], {"attempt": "second", "confidence": 2, "overt": True}
+    )
+    restarted.grade(card["id"], second["attempt_id"], 2)
+
+    assert len(restarted.log_path.read_text(encoding="utf-8").splitlines()) == 2
+    assert ReviewEngine(store).validate_log()["processed_log_records"] == 2
+
+
+def test_mixed_live_updates_match_authoritative_full_replay(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Mathematics", "mathematics", None)
+    store.create_entry(folder["id"], "df", "Set", "set", "", "Definition")
+    theorem = store.create_entry(
+        folder["id"], "th", "Small theorem", "small-theorem", "", "Statement"
+    )
+    store.add_supplement(
+        theorem["id"],
+        {"kind": "pf", "label": "Proof", "content": "Proof", "main": True},
+    )
+    problem = store.create_entry(
+        folder["id"], "pb", "Small problem", "small-problem", "", "Problem"
+    )
+    store.add_supplement(
+        problem["id"],
+        {"kind": "sl", "label": "Solution", "content": "Solution", "main": True},
+    )
+    review = ReviewEngine(store)
+    cards = {
+        card["mode"]: card for card in review.queue(include_not_due=True)
+    }
+    modes = ("statement", "proof-plan", "solve")
+    grades = (2, 3, 1, 2, 0, 3)
+
+    for index in range(36):
+        current += timedelta(days=2 + index % 4)
+        card = cards[modes[index % len(modes)]]
+        attempt = review.reveal(
+            card["id"],
+            {"attempt": f"attempt {index}", "confidence": 2, "overt": True},
+        )
+        review.grade(card["id"], attempt["attempt_id"], grades[index % len(grades)])
+
+    live = review._read()["calibration"]
+    live_interval = schedule_interval(live, "statement", 10.0, 1)
+    review.rebuild_calibration()
+    replayed = review._read()["calibration"]
+    replayed_interval = schedule_interval(replayed, "statement", 10.0, 1)
+
+    assert replayed["processed_log_records"] == 36
+    assert replayed == live
+    assert replayed_interval == live_interval
+
+
+@pytest.mark.parametrize("stability", [math.nan, math.inf, -math.inf, 10**400])
 def test_interval_scheduler_rejects_nonfinite_stability(stability):
     with pytest.raises(ValueError, match="stability"):
         schedule_interval(new_calibration_state(), "statement", stability, 1)
