@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Study: a local-first mathematics library and review system">
+    <title>Study</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <div id="loading" class="center-state" role="status">Opening Study…</div>
+    <div id="app" class="app" hidden>
+      <header class="topbar">
+        <button id="library-toggle" class="icon-button" type="button" aria-label="Toggle library">☰</button>
+        <button id="brand" class="brand" type="button" aria-label="Open library"><span aria-hidden="true">∑</span> Study</button>
+        <div class="search-wrap">
+          <label class="sr-only" for="search">Search the library</label>
+          <input id="search" type="search" autocomplete="off" placeholder="Search titles, tags, and content…">
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+        <nav class="primary-actions" aria-label="Study views">
+          <button id="calendar-button" type="button">Calendar</button>
+          <button id="review-button" class="primary" type="button">Review <span id="due-count">0</span></button>
+          <button id="theme-button" class="icon-button" type="button" aria-label="Toggle dark mode">◐</button>
+        </nav>
+      </header>
+
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-heading">
+          <div><strong>Library</strong><small id="library-count"></small></div>
+          <div class="row-actions">
+            <button id="new-folder-button" class="icon-button desktop-author" type="button" title="New folder" aria-label="New folder">＋</button>
+            <button id="new-entry-button" class="icon-button desktop-author" type="button" title="New entry" aria-label="New entry">✎</button>
+          </div>
+        </div>
+        <nav id="tree" class="tree" aria-label="Content library"></nav>
+        <div class="sidebar-footer">
+          <button id="git-button" type="button">Git status</button>
+          <button id="logout-button" type="button" hidden>Log out</button>
+          <span id="frontend-badge" title="No Node.js or frontend build is required">no-build UI</span>
+        </div>
+      </aside>
+
+      <main id="main" class="main" tabindex="-1"></main>
+    </div>
+
+    <dialog id="dialog">
+      <form method="dialog" class="dialog-card">
+        <button class="dialog-close icon-button" value="cancel" aria-label="Close">×</button>
+        <div id="dialog-content"></div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" hidden></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
