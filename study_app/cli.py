@@ -14,6 +14,8 @@ import uvicorn
 from .app import create_app
 from .auth import SessionStore, make_password_hash
 from .config import load_settings, write_password_override
+from .git_ops import GitError, GitRepository
+from .store import LibraryStore, StoreError
 
 
 def _open_when_ready(url: str) -> None:
@@ -49,26 +51,86 @@ def _set_password(config_path: Path | None = None) -> None:
     )
 
 
+def _check_data(config_path: Path | None = None) -> None:
+    settings = load_settings(config_path)
+    try:
+        result = LibraryStore(settings.data_dir).check_data()
+    except StoreError as exc:
+        raise SystemExit(f"Study data check failed: {exc}") from exc
+    print(
+        "Study data is valid: "
+        f"format v{result['version']}, {result['folders']} folders, "
+        f"{result['entries']} entries, {result['markdown_files']} Markdown files."
+    )
+
+
+def _migrate_storage(config_path: Path | None = None) -> None:
+    settings = load_settings(config_path)
+    store = LibraryStore(settings.data_dir)
+    git = GitRepository(settings.root, settings.data_dir, store.mutation_lock)
+    with store.mutation_lock:
+        try:
+            git.ensure_no_operation_in_progress()
+        except GitError as exc:
+            raise SystemExit(f"Storage migration requires idle Git state: {exc}") from exc
+        status = git.status()
+        if not status.get("available"):
+            raise SystemExit(
+                f"Storage migration requires Git: {status.get('message', 'unavailable')}"
+            )
+        if status.get("dirty"):
+            raise SystemExit("Storage migration requires a clean Git worktree.")
+        try:
+            result = store.migrate_to_v2()
+        except StoreError as exc:
+            raise SystemExit(f"Storage migration failed: {exc}") from exc
+    print(
+        "Storage migration completed and verified: "
+        f"{result['folders']} folders, {result['entries']} entries, "
+        f"{result['markdown_files']} Markdown files. Review and commit the Git diff."
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the Study mathematics application.")
-    parser.add_argument(
+    actions = parser.add_mutually_exclusive_group()
+    actions.add_argument(
         "--server", action="store_true", help="serve without opening a browser; password required"
     )
-    parser.add_argument("--set-password", action="store_true", help="set the server-mode password")
+    actions.add_argument("--set-password", action="store_true", help="set the server-mode password")
+    actions.add_argument(
+        "--check-data", action="store_true", help="validate authored Study data and exit"
+    )
+    actions.add_argument(
+        "--migrate-storage",
+        action="store_true",
+        help="explicitly migrate a clean version 1 library to sharded version 2 storage",
+    )
     parser.add_argument("--config", type=Path, help="use a different TOML configuration file")
     args = parser.parse_args()
 
     if args.set_password:
         _set_password(args.config)
         return
+    if args.check_data:
+        _check_data(args.config)
+        return
+    if args.migrate_storage:
+        _migrate_storage(args.config)
+        return
 
     settings = load_settings(args.config)
     local_mode = not args.server
     if args.server and not settings.password_hash:
         raise SystemExit("Server mode requires a password. Run: python study.py --set-password")
-    if not settings.built_frontend.joinpath("index.html").exists():
+    selected_frontend = (
+        settings.built_frontend
+        if settings.rich_frontend and settings.built_frontend.joinpath("index.html").is_file()
+        else settings.no_build_frontend
+    )
+    if not selected_frontend.joinpath("index.html").is_file():
         raise SystemExit(
-            "The frontend is not built. Run: cd frontend && npm install && npm run build"
+            "The Study interface is missing. Reinstall Study or build the frontend."
         )
 
     host = "127.0.0.1" if local_mode else settings.server_host

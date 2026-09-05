@@ -359,7 +359,7 @@ def build_export_html(
     return f'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>{html.escape(title)}</title>
-<script>window.MathJax={{loader:{{paths:{{mathjax:'/vendor/mathjax','mathjax-newcm':'/vendor/mathjax-newcm-font'}},load:['ui/safe']}},tex:{{inlineMath:[['$','$'],['\\\\(','\\\\)']],displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true,macros:{macros}}},options:{{enableMenu:false}},svg:{{displayOverflow:'linebreak',fontCache:'local'}}}};</script>
+<script>window.MathJax={{loader:{{paths:{{mathjax:'/vendor/mathjax','mathjax-newcm':'/vendor/mathjax-newcm-font'}},load:['ui/safe']}},tex:{{inlineMath:[['$','$'],['\\\\(','\\\\)']],displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true,macros:{macros}}},options:{{enableMenu:false}},chtml:{{displayOverflow:'linebreak'}},svg:{{displayOverflow:'linebreak',fontCache:'local'}}}};</script>
 <script id="MathJax-script" src="{script_src}"></script>
 <style>
 @page {{ size: Letter; margin: .72in .7in .78in; }}
@@ -407,9 +407,9 @@ async def export_pdf(
     mathjax_root = mathjax_script.parent
     font_root = mathjax_root.parent / "mathjax-newcm-font"
     if not mathjax_script.is_file():
-        raise StoreError("the local MathJax bundle is missing; rebuild the frontend")
+        raise StoreError("the local MathJax bundle is missing")
     if not font_root.is_dir():
-        raise StoreError("the local MathJax font data is missing; rebuild the frontend")
+        raise StoreError("the local MathJax font data is missing")
     try:
         from playwright.async_api import Error as PlaywrightError
         from playwright.async_api import async_playwright

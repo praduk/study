@@ -37,9 +37,9 @@ def _initialize_repository(root: Path) -> None:
 
 def test_content_paths_and_mathjax_macros_are_strictly_validated(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
-    with pytest.raises(StoreError, match="inside data/content"):
+    with pytest.raises(StoreError, match="inside"):
         store._safe_content_path("runtime/stolen.md")
-    with pytest.raises(StoreError, match="inside data/content"):
+    with pytest.raises(StoreError, match="inside"):
         store._safe_content_path("content/../../outside.md")
     with pytest.raises(StoreError, match="argument count"):
         store.set_macros({"bad": ["#1", 12]})

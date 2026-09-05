@@ -6,17 +6,21 @@ import math
 import os
 import stat
 import uuid
+from collections.abc import Callable
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from .review_calibration import (
     CALIBRATION_VERSION,
     MAX_INTERVAL_DAYS,
     apply_recorded_observation,
+    calibration_reporting_summary,
     calibration_summary,
     new_calibration_state,
     observe_review,
+    reporting_model_estimate,
     schedule_interval,
     validate_calibration_state,
     validate_recorded_observation,
@@ -33,6 +37,10 @@ MODE_LABELS = {
     "transfer": "Transfer",
 }
 RECENT_LOG_CACHE_SIZE = 64
+MAX_REPORT_RANGE = timedelta(days=366)
+DEFAULT_CALENDAR_RANGE = timedelta(days=90)
+GRADE_NAMES = ("again", "hard", "good", "easy")
+MAX_TIME_ZONE_LENGTH = 128
 
 
 def _now() -> datetime:
@@ -81,6 +89,23 @@ def _cards_digest(cards: dict[str, Any]) -> str:
         separators=(",", ":"),
     )
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _equivalent_derived_value(left: Any, right: Any) -> bool:
+    """Compare replayed derived state without rewriting harmless float roundoff."""
+    if isinstance(left, bool) or isinstance(right, bool):
+        return left is right
+    if isinstance(left, (int, float)) and isinstance(right, (int, float)):
+        return math.isclose(float(left), float(right), rel_tol=1e-12, abs_tol=1e-15)
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(
+            _equivalent_derived_value(left[key], right[key]) for key in left
+        )
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(
+            _equivalent_derived_value(a, b) for a, b in zip(left, right, strict=True)
+        )
+    return left == right
 
 
 class ReviewEngine:
@@ -370,7 +395,8 @@ class ReviewEngine:
             raise StoreError(f"{label} has an invalid review chronology")
         event_version = value.get("calibration_event_version")
         if event_version is not None and (
-            isinstance(event_version, bool) or event_version != CALIBRATION_VERSION
+            isinstance(event_version, bool)
+            or event_version not in {1, CALIBRATION_VERSION}
         ):
             raise StoreError(f"{label} has an unsupported calibration event")
         observation = value.get("calibration_observation")
@@ -387,6 +413,7 @@ class ReviewEngine:
         attempt_id: str | None = None,
         *,
         force_rebuild: bool = False,
+        record_visitor: Callable[[dict[str, Any]], None] | None = None,
     ) -> tuple[dict[str, Any] | None, dict[str, Any], bool]:
         """Use a verified cache or rebuild derived state from authoritative history."""
         stored_calibration = state.get("calibration")
@@ -397,6 +424,7 @@ class ReviewEngine:
         signature_before = self._log_signature()
         if (
             not force_rebuild
+            and record_visitor is None
             and self._calibration_verified
             and stored_validated is not None
             and signature_before == self._log_signature_cache
@@ -478,22 +506,46 @@ class ReviewEngine:
                                 raise StoreError(
                                     f"review log line {line_number} moves its card backward in time"
                                 )
+                        if record_visitor is not None:
+                            record_visitor(record)
                         observation = record.get("calibration_observation")
                         if observation is not None:
-                            apply_recorded_observation(
-                                calibration,
-                                observation,
-                                mode=mode,
-                                grade=grade,
-                                observed_at=observed_at,
-                            )
+                            if (
+                                previous is None
+                                and observation.get("version") == CALIBRATION_VERSION
+                            ):
+                                raise StoreError(
+                                    f"review log line {line_number} has calibration evidence "
+                                    "without a previous review"
+                                )
+                            try:
+                                apply_recorded_observation(
+                                    calibration,
+                                    observation,
+                                    mode=mode,
+                                    grade=grade,
+                                    observed_at=observed_at,
+                                    card_id=record["card_id"],
+                                    previous_card_state=previous,
+                                )
+                            except (TypeError, ValueError) as exc:
+                                raise StoreError(
+                                    f"review log line {line_number} has inconsistent "
+                                    "calibration evidence"
+                                ) from exc
                         elif (
                             record.get("calibration_event_version") is None
                             and previous is not None
                         ):
                             # Old records predate explicit observation data.
                             observe_review(
-                                calibration, mode, previous, observed_at, grade
+                                calibration,
+                                mode,
+                                previous,
+                                observed_at,
+                                grade,
+                                card_id=record["card_id"],
+                                evaluate_forecast=False,
                             )
                         previous_cards[record["card_id"]] = schedule
                         latest_schedules[record["card_id"]] = schedule
@@ -510,7 +562,15 @@ class ReviewEngine:
         calibration["last_log_attempt_id"] = last_attempt_id
         calibration["processed_log_digest"] = current_digest
 
-        changed = stored_calibration != calibration
+        calibration_changed = not (
+            stored_validated is not None
+            and _equivalent_derived_value(stored_validated, calibration)
+        )
+        if not calibration_changed:
+            # Retain the already persisted representation so a read does not
+            # create a Git diff from platform-level floating-point roundoff.
+            calibration = stored_validated
+        changed = calibration_changed
         for card_id, schedule in latest_schedules.items():
             if state["cards"].get(card_id) != schedule:
                 state["cards"][card_id] = schedule
@@ -662,6 +722,250 @@ class ReviewEngine:
                         if len(queue) >= limit:
                             return queue
             return queue
+
+    @staticmethod
+    def _bounded_report_range(
+        start: datetime | None,
+        end: datetime | None,
+        *,
+        now: datetime,
+    ) -> tuple[datetime, datetime]:
+        if now.tzinfo is None or now.utcoffset() is None:
+            raise StoreError("the reporting clock has no timezone")
+        now = now.astimezone(timezone.utc)
+        try:
+            if start is None and end is None:
+                start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+                end = start + DEFAULT_CALENDAR_RANGE
+            elif start is None:
+                start = end - DEFAULT_CALENDAR_RANGE if end is not None else None
+            elif end is None:
+                end = start + DEFAULT_CALENDAR_RANGE
+        except OverflowError as exc:
+            raise StoreError("review calendar range is outside supported dates") from exc
+        if start is None or end is None:
+            raise StoreError("review calendar range is incomplete")
+        if start.tzinfo is None or start.utcoffset() is None:
+            raise StoreError("review calendar start must include a timezone")
+        if end.tzinfo is None or end.utcoffset() is None:
+            raise StoreError("review calendar end must include a timezone")
+        start = start.astimezone(timezone.utc)
+        end = end.astimezone(timezone.utc)
+        if end <= start:
+            raise StoreError("review calendar end must be after start")
+        if end - start > MAX_REPORT_RANGE:
+            raise StoreError("review calendar range cannot exceed 366 days")
+        return start, end
+
+    @staticmethod
+    def _reporting_zone(name: str) -> ZoneInfo:
+        if (
+            not isinstance(name, str)
+            or not name
+            or name != name.strip()
+            or len(name) > MAX_TIME_ZONE_LENGTH
+        ):
+            raise StoreError("review calendar timezone is invalid")
+        try:
+            return ZoneInfo(name)
+        except (ZoneInfoNotFoundError, ValueError, UnicodeError) as exc:
+            raise StoreError("review calendar timezone is unknown") from exc
+
+    @staticmethod
+    def _empty_history_bucket() -> dict[str, Any]:
+        return {
+            "attempts": 0,
+            "elapsed_ms": 0,
+            "grades": {name: 0 for name in GRADE_NAMES},
+            "good_or_easy_self_grades": 0,
+            "again_lapses": 0,
+        }
+
+    @staticmethod
+    def _reported_history_bucket(bucket: dict[str, Any]) -> dict[str, Any]:
+        attempts = bucket["attempts"]
+        return {
+            **bucket,
+            "minutes": round(bucket["elapsed_ms"] / 60_000, 2),
+            "good_or_easy_self_grade_rate": (
+                round(bucket["good_or_easy_self_grades"] / attempts, 6)
+                if attempts
+                else None
+            ),
+        }
+
+    @classmethod
+    def _schedule_delay(
+        cls, point: datetime, schedule: dict[str, Any]
+    ) -> tuple[float, float] | None:
+        last_reviewed = cls._aware_datetime(
+            schedule.get("last_reviewed_at"), "review time"
+        )
+        stability_days = cls._finite_card_number(
+            schedule.get("stability_days"), "review stability", minimum=0.0
+        )
+        if stability_days <= 0.0 or point < last_reviewed:
+            return None
+        delay_days = (point - last_reviewed).total_seconds() / 86_400.0
+        return delay_days, delay_days / stability_days
+
+    def calendar(
+        self,
+        *,
+        start: datetime | None = None,
+        end: datetime | None = None,
+        include_inactive: bool = False,
+        timezone_name: str = "UTC",
+    ) -> dict[str, Any]:
+        """Report current due events and validated attempt history without changing files."""
+        now = _now()
+        start, end = self._bounded_report_range(start, end, now=now)
+        now = now.astimezone(timezone.utc)
+        reporting_zone = self._reporting_zone(timezone_name)
+
+        daily: dict[str, dict[str, Any]] = {}
+        day = start.astimezone(reporting_zone).date()
+        final_day = (end - timedelta(microseconds=1)).astimezone(reporting_zone).date()
+        while day <= final_day:
+            daily[day.isoformat()] = self._empty_history_bucket()
+            if day == final_day:
+                break
+            day += timedelta(days=1)
+        total = self._empty_history_bucket()
+
+        def record_history(record: dict[str, Any]) -> None:
+            schedule = record["schedule"]
+            completed_at = self._aware_datetime(
+                schedule["last_reviewed_at"], "review completion time"
+            ).astimezone(timezone.utc)
+            if not start <= completed_at < end:
+                return
+            grade = record["grade"]
+            elapsed_ms = schedule["last_elapsed_ms"]
+            local_date = completed_at.astimezone(reporting_zone).date().isoformat()
+            for bucket in (total, daily[local_date]):
+                bucket["attempts"] += 1
+                bucket["elapsed_ms"] += elapsed_ms
+                bucket["grades"][GRADE_NAMES[grade]] += 1
+                if grade >= 2:
+                    bucket["good_or_easy_self_grades"] += 1
+                if grade == 0:
+                    bucket["again_lapses"] += 1
+
+        with self._lock:
+            state = self._read()
+            _, calibration, _ = self._sync_state_with_log(
+                state,
+                force_rebuild=True,
+                record_visitor=record_history,
+            )
+            all_entries = self.store.ordered_entries(review_only=False)
+            active_entries = self.store.ordered_entries(review_only=True)
+            entry_by_id = {entry["id"]: entry for entry in all_entries}
+            active_entry_ids = {entry["id"] for entry in active_entries}
+            authored_order = {
+                entry["id"]: index for index, entry in enumerate(all_entries)
+            }
+
+            current_cards: set[str] = set()
+            active_cards: set[str] = set()
+            mode_order: dict[str, int] = {}
+            for entry in all_entries:
+                modes = entry.get("review_modes") or self.store.default_review_modes(
+                    entry["kind"]
+                )
+                for index, mode in enumerate(modes):
+                    if not self.store.review_mode_available(entry, mode):
+                        continue
+                    card_id = self.card_id(entry["id"], mode)
+                    current_cards.add(card_id)
+                    mode_order[card_id] = index
+                    if entry["id"] in active_entry_ids:
+                        active_cards.add(card_id)
+
+            events: list[tuple[datetime, int, int, str, dict[str, Any]]] = []
+            for card_id, schedule in state["cards"].items():
+                if not schedule:
+                    continue
+                due_at = self._aware_datetime(
+                    schedule["due_at"], "review due time"
+                ).astimezone(timezone.utc)
+                if not start <= due_at < end:
+                    continue
+                active = card_id in active_cards
+                if not active and not include_inactive:
+                    continue
+                entry_id, mode = self.split_card_id(card_id)
+                entry = entry_by_id.get(entry_id)
+                review_enabled = entry_id in active_entry_ids
+                if active:
+                    inactive_reason = None
+                elif entry is None:
+                    inactive_reason = "entry-missing"
+                elif card_id not in current_cards:
+                    inactive_reason = "mode-unavailable"
+                else:
+                    inactive_reason = "review-disabled"
+                last_reviewed = self._aware_datetime(
+                    schedule["last_reviewed_at"], "review time"
+                )
+                delay_now = self._schedule_delay(now, schedule)
+                delay_at_due = self._schedule_delay(due_at, schedule)
+                model_estimate = reporting_model_estimate(
+                    calibration,
+                    mode,
+                    delay_days_now=delay_now[0] if delay_now is not None else None,
+                    normalized_delay_now=delay_now[1] if delay_now is not None else None,
+                    delay_days_at_due=(
+                        delay_at_due[0] if delay_at_due is not None else None
+                    ),
+                    normalized_delay_at_due=(
+                        delay_at_due[1] if delay_at_due is not None else None
+                    ),
+                )
+                event = {
+                    "card_id": card_id,
+                    "entry_id": entry_id,
+                    "folder_id": entry["folder_id"] if entry is not None else None,
+                    "title": entry["title"] if entry is not None else None,
+                    "canonical_tag": (
+                        entry["canonical_tag"] if entry is not None else None
+                    ),
+                    "kind": entry["kind"] if entry is not None else None,
+                    "mode": mode,
+                    "mode_label": MODE_LABELS[mode],
+                    "due_at": due_at.isoformat(),
+                    "last_reviewed_at": last_reviewed.astimezone(timezone.utc).isoformat(),
+                    "active": active,
+                    "review_enabled": review_enabled,
+                    "orphaned": inactive_reason in {"entry-missing", "mode-unavailable"},
+                    "inactive_reason": inactive_reason,
+                    "schedule_at_last_grade": dict(schedule),
+                    "model_estimate": model_estimate,
+                }
+                events.append(
+                    (
+                        due_at,
+                        authored_order.get(entry_id, len(authored_order)),
+                        mode_order.get(card_id, len(MODE_LABELS)),
+                        card_id,
+                        event,
+                    )
+                )
+
+        events.sort(key=lambda item: item[:4])
+        statistics = self._reported_history_bucket(total)
+        statistics["daily_timezone"] = reporting_zone.key
+        statistics["daily"] = [
+            {"date": date, **self._reported_history_bucket(bucket)}
+            for date, bucket in daily.items()
+        ]
+        return {
+            "range": {"start": start.isoformat(), "end": end.isoformat()},
+            "events": [item[4] for item in events],
+            "statistics": statistics,
+            "calibration": calibration_reporting_summary(calibration),
+        }
 
     def stats(self) -> dict[str, Any]:
         due = self.queue(limit=10000)
@@ -838,7 +1142,12 @@ class ReviewEngine:
                 repetitions += 1
 
             calibration_observation = observe_review(
-                model_calibration, mode, previous, observation_at, grade
+                model_calibration,
+                mode,
+                previous,
+                observation_at,
+                grade,
+                card_id=card_id,
             )
 
             confidence = pending.get("confidence")

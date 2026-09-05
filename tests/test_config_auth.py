@@ -91,6 +91,18 @@ def test_data_directory_is_fixed_beside_study_launcher(tmp_path: Path, monkeypat
         load_settings(config_path)
 
 
+def test_rich_frontend_is_an_explicit_boolean_opt_in(tmp_path: Path, monkeypatch):
+    monkeypatch.setattr(config_module, "ROOT", tmp_path)
+    config_path = tmp_path / "custom.toml"
+    config_path.write_text("[study]\nrich_frontend = true\n", encoding="utf-8")
+
+    assert load_settings(config_path).rich_frontend is True
+
+    config_path.write_text('[study]\nrich_frontend = "yes"\n', encoding="utf-8")
+    with pytest.raises(TypeError, match="rich_frontend must be true or false"):
+        load_settings(config_path)
+
+
 def test_same_session_generation_survives_store_restart(tmp_path: Path):
     path = tmp_path / "runtime" / "sessions.sqlite3"
     first = SessionStore(path, 30, "unchanged")

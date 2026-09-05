@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import hmac
+import importlib.util
 import io
 import ipaddress
 import json
@@ -9,6 +10,7 @@ import re
 import time
 import uuid
 import warnings
+from datetime import datetime
 from pathlib import Path
 from typing import Annotated, Any
 from urllib.parse import urlsplit
@@ -43,6 +45,7 @@ from .models import (
     GitCommitRequest,
     LoginRequest,
     MacrosUpdate,
+    MarkdownRenderRequest,
     MoveRequest,
     ReorderRequest,
     ReviewGrade,
@@ -53,6 +56,7 @@ from .models import (
 )
 from .review import ReviewEngine
 from .store import LibraryStore, StoreError
+from .web_render import render_markdown_fragment
 
 SAFE_FILE = re.compile(r"^[a-f0-9]{64}\.(?:png|jpe?g|webp)$")
 SAFE_DIAGRAM = re.compile(r"^[a-f0-9]{32}\.excalidraw$")
@@ -155,6 +159,10 @@ def _safe_existing_file(directory: Path, filename: str) -> Path | None:
     if root not in candidate.parents or not candidate.is_file():
         return None
     return candidate
+
+
+def _pdf_export_available() -> bool:
+    return importlib.util.find_spec("playwright") is not None
 
 
 def _atomic_bytes(path: Path, value: bytes) -> None:
@@ -416,7 +424,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "git": git.status(),
             "capabilities": {
                 "editing": True,
-                "pdf_export": True,
+                "pdf_export": _pdf_export_available(),
                 "excalidraw": True,
                 "commutative_diagrams": True,
                 "local_mode": local_mode,
@@ -521,6 +529,10 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     @app.put("/api/macros")
     def update_macros(payload: MacrosUpdate, _session: Mutation):
         return store.set_macros(payload.macros)
+
+    @app.post("/api/render/markdown")
+    def render_markdown(payload: MarkdownRenderRequest, _session: Auth) -> dict[str, str]:
+        return {"html": render_markdown_fragment(store, payload.source)}
 
     async def prepare_image(upload: UploadFile) -> tuple[str, int, int, bytes]:
         limit = settings.max_upload_mb * 1024 * 1024
@@ -784,6 +796,23 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "cards": review.queue(include_not_due=include_not_due, limit=min(500, max(1, limit)))
         }
 
+    @app.get("/api/review/calendar")
+    def review_calendar(
+        _session: Auth,
+        start: datetime | None = None,
+        end: datetime | None = None,
+        include_inactive: bool = False,
+        timezone_name: Annotated[
+            str, Query(alias="timezone", min_length=1, max_length=128)
+        ] = "UTC",
+    ):
+        return review.calendar(
+            start=start,
+            end=end,
+            include_inactive=include_inactive,
+            timezone_name=timezone_name,
+        )
+
     @app.post("/api/review/{card_id:path}/reveal")
     def reveal(card_id: str, payload: ReviewReveal, _session: Mutation):
         if payload.overt and not payload.attempt.strip():
@@ -823,7 +852,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             kinds=set(payload.kinds),
         )
         title = payload.title or "Study export"
-        mathjax = settings.frontend_public / "vendor" / "mathjax" / "tex-svg.js"
+        built_mathjax = settings.frontend_public / "vendor" / "mathjax" / "tex-svg.js"
+        fallback_mathjax = (
+            settings.no_build_frontend / "vendor" / "mathjax" / "tex-chtml.js"
+        )
+        mathjax = (
+            built_mathjax
+            if settings.rich_frontend and built_mathjax.is_file()
+            else fallback_mathjax
+        )
         target = await export_pdf(store, entries, title, payload.include_supplements, mathjax)
         safe_title = re.sub(r"[^A-Za-z0-9._-]+", "-", title).strip("-") or "study"
         return FileResponse(target, media_type="application/pdf", filename=f"{safe_title}.pdf")
@@ -841,7 +878,12 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def frontend(path: str):
         if path in {"api", "media"} or path.startswith(("api/", "media/")):
             raise HTTPException(status_code=404, detail="API route not found")
-        root = settings.built_frontend
+        built_index = (
+            _safe_existing_file(settings.built_frontend, "index.html")
+            if settings.rich_frontend
+            else None
+        )
+        root = settings.built_frontend if built_index is not None else settings.no_build_frontend
         candidate = (root / path).resolve()
         if root.exists() and root.resolve() in candidate.parents and candidate.is_file():
             if candidate.suffix.casefold() == ".html":
@@ -850,9 +892,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         index = _safe_existing_file(root, "index.html")
         if index is not None:
             return _frontend_html_response(index, cache_control="no-cache")
-        return HTMLResponse(
-            "<h1>Study frontend is not built</h1><p>Run <code>cd frontend &amp;&amp; npm install &amp;&amp; npm run build</code>.</p>",
-            status_code=503,
-        )
+        return HTMLResponse("<h1>Study interface is missing</h1>", status_code=503)
 
     return app

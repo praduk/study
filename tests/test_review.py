@@ -126,6 +126,10 @@ def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Pat
 
 
 def test_legacy_review_modes_load_without_reentering_the_queue(tmp_path: Path):
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "library.json").write_text(
+        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
+    )
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     entry = _entry(store, folder["id"], "Group", "group")

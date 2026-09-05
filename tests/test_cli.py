@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -8,6 +9,7 @@ import pytest
 
 from study_app import cli
 from study_app.config import Settings
+from study_app.store import LibraryStore
 
 
 def _settings(tmp_path: Path, *, password_hash: str = "", port: int = 8123) -> Settings:
@@ -99,6 +101,90 @@ def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
     assert calls["thread"][1] == ("http://127.0.0.1:8123",)
     assert calls["thread"][2] is True
     assert calls["thread_started"] is True
+
+
+def test_no_arguments_starts_with_packaged_frontend_when_dist_is_absent(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    settings = _settings(tmp_path)
+    (settings.built_frontend / "index.html").unlink()
+    fallback = settings.root / "study_app" / "web"
+    fallback.mkdir(parents=True)
+    (fallback / "index.html").write_text("Study without a build", encoding="utf-8")
+    calls: dict[str, Any] = {}
+
+    class FakeThread:
+        def __init__(self, **_kwargs: Any):
+            pass
+
+        def start(self) -> None:
+            calls["thread_started"] = True
+
+    monkeypatch.setattr(sys, "argv", ["study.py"])
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli.threading, "Thread", FakeThread)
+    monkeypatch.setattr(cli, "create_app", lambda actual, local_mode: (actual, local_mode))
+    monkeypatch.setattr(
+        cli.uvicorn,
+        "run",
+        lambda app, **kwargs: calls.update(app=app, uvicorn=kwargs),
+    )
+
+    cli.main()
+
+    assert calls["app"] == (settings, True)
+    assert calls["thread_started"] is True
+
+
+def test_storage_migration_cli_requires_idle_clean_git_and_migrates(tmp_path: Path, monkeypatch):
+    settings = _settings(tmp_path)
+    subprocess.run(["git", "init", "-b", "main", str(settings.root)], check=True, capture_output=True)
+    subprocess.run(
+        ["git", "-C", str(settings.root), "config", "user.name", "Study Tests"], check=True
+    )
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(settings.root),
+            "config",
+            "user.email",
+            "study-tests@example.invalid",
+        ],
+        check=True,
+    )
+    (settings.root / ".gitignore").write_text("data/runtime/*.tmp\n", encoding="utf-8")
+    settings.data_dir.mkdir()
+    (settings.data_dir / "library.json").write_text(
+        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
+    )
+    store = LibraryStore(settings.data_dir)
+    folder = store.create_folder("Algebra", "algebra", None)
+    store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
+    subprocess.run(
+        ["git", "-C", str(settings.root), "add", "."], check=True, capture_output=True
+    )
+    subprocess.run(
+        ["git", "-C", str(settings.root), "commit", "-m", "version 1"],
+        check=True,
+        capture_output=True,
+    )
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+
+    rebase_marker = settings.root / ".git" / "rebase-merge"
+    rebase_marker.mkdir()
+    with pytest.raises(SystemExit, match="idle Git state"):
+        cli._migrate_storage()
+    rebase_marker.rmdir()
+
+    (settings.root / "dirty.txt").write_text("dirty", encoding="utf-8")
+    with pytest.raises(SystemExit, match="clean Git worktree"):
+        cli._migrate_storage()
+    (settings.root / "dirty.txt").unlink()
+
+    cli._migrate_storage()
+
+    assert LibraryStore(settings.data_dir).format_version == 2
 
 
 def test_server_mode_requires_password_and_does_not_start_browser_waiter(

@@ -32,6 +32,7 @@ class Settings:
     max_upload_mb: int
     max_image_megapixels: int
     setup_nonce: str = ""
+    rich_frontend: bool = False
 
     @property
     def data_dir(self) -> Path:
@@ -41,6 +42,12 @@ class Settings:
     @property
     def built_frontend(self) -> Path:
         return self.root / "frontend" / "dist" / "client"
+
+    @property
+    def no_build_frontend(self) -> Path:
+        packaged = Path(__file__).resolve().parent / "web"
+        source_checkout = self.root / "study_app" / "web"
+        return source_checkout if source_checkout.is_dir() else packaged
 
     @property
     def frontend_public(self) -> Path:
@@ -106,6 +113,7 @@ def load_settings(config_path: Path | None = None) -> Settings:
         "max_upload_mb": 12,
         "max_image_megapixels": 32,
         "setup_nonce": "",
+        "rich_frontend": False,
     }
     configured_values = _read_toml(path)
     local_values = _read_toml(_local_config_for(path))
@@ -160,6 +168,8 @@ def load_settings(config_path: Path | None = None) -> Settings:
         raise TypeError("setup_nonce must be a string of at most 256 characters")
     if not isinstance(values["secure_cookie"], bool):
         raise TypeError("secure_cookie must be true or false")
+    if not isinstance(values["rich_frontend"], bool):
+        raise TypeError("rich_frontend must be true or false")
 
     return Settings(
         root=ROOT,
@@ -172,6 +182,7 @@ def load_settings(config_path: Path | None = None) -> Settings:
         max_upload_mb=max_upload_mb,
         max_image_megapixels=max_image_megapixels,
         setup_nonce=values["setup_nonce"],
+        rich_frontend=values["rich_frontend"],
     )
 
 
@@ -198,6 +209,7 @@ def write_password_override(password_hash: str, config_path: Path | None = None)
         "max_upload_mb",
         "max_image_megapixels",
         "setup_nonce",
+        "rich_frontend",
     }
     if "study" in document:
         study = document["study"]

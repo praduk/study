@@ -143,6 +143,11 @@ class ContentUpdate(BaseModel):
     content: str = Field(max_length=8_000_000)
 
 
+class MarkdownRenderRequest(BaseModel):
+    source: str = Field(max_length=8_000_000)
+    folder_id: str | None = Field(default=None, max_length=128)
+
+
 class MoveRequest(BaseModel):
     destination_folder_id: str | None
     index: int = Field(default=0, ge=0)

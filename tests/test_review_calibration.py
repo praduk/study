@@ -11,14 +11,23 @@ import study_app.review as review_module
 from study_app.app import create_app
 from study_app.review import ReviewEngine
 from study_app.review_calibration import (
+    CALIBRATION_MODEL,
+    CALIBRATION_VERSION,
     HISTORY_DISCOUNT,
+    MAX_BOUNDARY_MASS,
+    MAX_NORMALIZED_DELAY,
+    MIN_DISTINCT_CARDS,
     TARGET_SUCCESS,
+    apply_recorded_observation,
+    calibration_reporting_summary,
     calibration_summary,
     new_calibration_state,
     observe_review,
     posterior_predictive_success,
+    reporting_model_estimate,
     schedule_interval,
     success_probability,
+    validate_calibration_state,
 )
 from study_app.store import LibraryStore, StoreError
 
@@ -31,7 +40,12 @@ def _previous(at: datetime, stability_days: float = 2.0) -> dict[str, object]:
 
 
 def _add_observations(
-    calibration: dict[str, object], *, grade: int, normalized_delay: float, count: int
+    calibration: dict[str, object],
+    *,
+    grade: int,
+    normalized_delay: float,
+    count: int,
+    distinct_cards: int | None = None,
 ) -> None:
     beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
     previous = _previous(beginning)
@@ -40,7 +54,12 @@ def _add_observations(
             days=2.0 * normalized_delay, seconds=index
         )
         assert observe_review(
-            calibration, "statement", previous, observed_at, grade
+            calibration,
+            "statement",
+            previous,
+            observed_at,
+            grade,
+            card_id=f"card-{index % (distinct_cards or count)}::statement",
         ) is not None
 
 
@@ -65,7 +84,8 @@ def test_calibration_falls_back_then_success_and_failure_move_intervals():
     assert longer_details["calibrated"] is True
 
     failures = new_calibration_state()
-    _add_observations(failures, grade=0, normalized_delay=1.0, count=30)
+    _add_observations(failures, grade=2, normalized_delay=1.0, count=25)
+    _add_observations(failures, grade=0, normalized_delay=1.0, count=5)
     shorter, shorter_details = schedule_interval(failures, "statement", 10.0, 1)
     assert shorter < 10
     assert shorter_details["calibrated"] is True
@@ -87,6 +107,7 @@ def test_the_observation_that_unlocks_calibration_only_changes_later_schedules()
         _previous(beginning),
         beginning + timedelta(days=2),
         3,
+        card_id="card-23::statement",
     )
     later_interval, later_details = schedule_interval(calibration, "statement", 10.0, 1)
     assert later_interval > current_interval
@@ -108,7 +129,17 @@ def test_short_retries_and_first_reviews_do_not_train_the_model():
     calibration = new_calibration_state()
     reviewed_at = datetime(2026, 1, 1, tzinfo=timezone.utc)
 
-    assert observe_review(calibration, "statement", {}, reviewed_at, 2) is None
+    assert (
+        observe_review(
+            calibration,
+            "statement",
+            {},
+            reviewed_at,
+            2,
+            card_id="first::statement",
+        )
+        is None
+    )
     assert (
         observe_review(
             calibration,
@@ -116,6 +147,7 @@ def test_short_retries_and_first_reviews_do_not_train_the_model():
             _previous(reviewed_at),
             reviewed_at + timedelta(hours=5, minutes=59),
             0,
+            card_id="short::statement",
         )
         is None
     )
@@ -134,6 +166,263 @@ def test_power_prior_slightly_discounts_old_observations():
     assert model["effective_observations"] == pytest.approx(1.0 + HISTORY_DISCOUNT)
     assert model["effective_observations"] < model["observations"]
     assert posterior_predictive_success(model, 1.0) > prior_prediction
+
+
+def test_readiness_requires_eight_distinct_cards():
+    calibration = new_calibration_state()
+    _add_observations(
+        calibration,
+        grade=2,
+        normalized_delay=1.0,
+        count=30,
+        distinct_cards=7,
+    )
+
+    collecting = calibration_reporting_summary(calibration)["models"]["statement"]
+    assert collecting["observations"] == 30
+    assert collecting["distinct_cards"] == 7
+    assert collecting["ready"] is False
+    assert schedule_interval(calibration, "statement", 10.0, 1)[1]["source"] == "fallback"
+
+    beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    observe_review(
+        calibration,
+        "statement",
+        _previous(beginning),
+        beginning + timedelta(days=2),
+        2,
+        card_id="card-7::statement",
+    )
+
+    ready = calibration_reporting_summary(calibration)["models"]["statement"]
+    assert ready["distinct_cards"] == MIN_DISTINCT_CARDS
+    assert ready["ready"] is True
+
+
+def test_boundary_limited_posterior_is_not_ready_or_presented_as_target_attainable():
+    calibration = new_calibration_state()
+    _add_observations(calibration, grade=0, normalized_delay=1.0, count=30)
+
+    report = calibration_reporting_summary(calibration)["models"]["statement"]
+    interval, scheduler = schedule_interval(calibration, "statement", 10.0, 1)
+
+    assert report["posterior_boundary_mass"]["lower"] >= MAX_BOUNDARY_MASS
+    assert report["boundary_limited"] is True
+    assert report["suggested_interval_factor"] == 0.5
+    assert report["bounded_direction"] == "shorter"
+    assert report["target_attainable"] is False
+    assert report["ready"] is False
+    assert interval == 10
+    assert scheduler["source"] == "fallback"
+    assert scheduler["target_attainable"] is None
+
+    upper = new_calibration_state()
+    _add_observations(upper, grade=3, normalized_delay=64.0, count=30)
+    upper_report = calibration_reporting_summary(upper)["models"]["statement"]
+    assert upper_report["posterior_boundary_mass"]["upper"] >= MAX_BOUNDARY_MASS
+    assert upper_report["boundary_limited"] is True
+    assert upper_report["bounded_direction"] == "longer"
+    assert upper_report["target_attainable"] is False
+    assert upper_report["ready"] is False
+
+
+def test_reporting_predictions_are_labeled_and_omitted_outside_training_domain():
+    calibration = new_calibration_state()
+    estimate = reporting_model_estimate(
+        calibration,
+        "statement",
+        delay_days_now=10 / 60 / 24,
+        normalized_delay_now=10 / 60 / 24 / 0.25,
+        delay_days_at_due=65.0,
+        normalized_delay_at_due=MAX_NORMALIZED_DELAY + 1.0,
+    )
+
+    assert estimate["predicted_good_or_easy_now"] is None
+    assert estimate["prediction_status_now"] == "short-delay-excluded"
+    assert estimate["predicted_good_or_easy_at_due"] is None
+    assert estimate["prediction_status_at_due"] == "beyond-model-range"
+    assert estimate["prediction_domain"] == {
+        "minimum_delay_days": 0.25,
+        "minimum_delay_hours": 6,
+        "maximum_normalized_delay": 64.0,
+    }
+
+    available = reporting_model_estimate(
+        calibration,
+        "statement",
+        delay_days_now=1.0,
+        normalized_delay_now=1.0,
+        delay_days_at_due=None,
+        normalized_delay_at_due=None,
+    )
+    assert available["prediction_status_now"] == "available"
+    assert available["predicted_good_or_easy_now"] is not None
+    assert available["prediction_status_at_due"] == "unavailable"
+
+
+def test_forecast_evaluation_uses_logged_pre_outcome_probabilities():
+    calibration = new_calibration_state()
+    beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    previous = _previous(beginning, stability_days=1.0)
+    observations = [
+        observe_review(
+            calibration,
+            "statement",
+            previous,
+            beginning + timedelta(days=1, seconds=index),
+            grade,
+            card_id=f"forecast-{index}::statement",
+        )
+        for index, grade in enumerate((2, 0))
+    ]
+    probabilities = [item["predicted_good_or_easy"] for item in observations if item]
+    expected_brier = ((probabilities[0] - 1.0) ** 2 + probabilities[1] ** 2) / 2
+    expected_log_loss = (-math.log(probabilities[0]) - math.log1p(-probabilities[1])) / 2
+
+    evaluation = calibration_reporting_summary(calibration)["forecast_evaluation"]
+
+    assert evaluation["count"] == 2
+    assert evaluation["brier_score"] == pytest.approx(expected_brier, abs=5e-7)
+    assert evaluation["log_loss"] == pytest.approx(expected_log_loss, abs=5e-7)
+    assert sum(bucket["count"] for bucket in evaluation["reliability_bins"]) == 2
+    assert "self-grade forecasts" in evaluation["interpretation"]
+    assert "objective remembering" in evaluation["interpretation"]
+
+
+def test_v1_recorded_observation_replays_and_contributes_to_v2_statistics():
+    calibration = new_calibration_state()
+    beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    previous = _previous(beginning, stability_days=1.0)
+    prediction = round(
+        posterior_predictive_success(calibration["models"]["pooled"], 1.0), 6
+    )
+    observation = {
+        "version": 1,
+        "model": "discounted-bayesian-retention-v1",
+        "mode": "statement",
+        "source": "pooled-collecting",
+        "delay_days": 1.0,
+        "normalized_delay": 1.0,
+        "delay_was_capped": False,
+        "predicted_good_or_easy": prediction,
+        "good_or_easy": True,
+    }
+
+    apply_recorded_observation(
+        calibration,
+        observation,
+        mode="statement",
+        grade=2,
+        observed_at=beginning + timedelta(days=1),
+        card_id="legacy::statement",
+        previous_card_state=previous,
+    )
+
+    assert calibration["models"]["statement"]["observations"] == 1
+    assert calibration["models"]["statement"]["observed_card_ids"] == [
+        "legacy::statement"
+    ]
+    assert calibration_reporting_summary(calibration)["forecast_evaluation"]["count"] == 1
+
+    v1_without_previous = new_calibration_state()
+    apply_recorded_observation(
+        v1_without_previous,
+        observation,
+        mode="statement",
+        grade=2,
+        observed_at=beginning + timedelta(days=1),
+        card_id="legacy-without-previous::statement",
+        previous_card_state=None,
+    )
+    assert v1_without_previous["models"]["statement"]["observations"] == 1
+
+    pre_version = dict(observation)
+    pre_version.pop("version")
+    pre_version.pop("delay_was_capped")
+    pre_version["model"] = "discounted-bayesian-half-life-v1"
+    pre_version_calibration = new_calibration_state()
+    apply_recorded_observation(
+        pre_version_calibration,
+        pre_version,
+        mode="statement",
+        grade=2,
+        observed_at=beginning + timedelta(days=1),
+        card_id="pre-version::statement",
+        previous_card_state=previous,
+    )
+    assert pre_version_calibration["models"]["statement"]["observations"] == 1
+    assert (
+        calibration_reporting_summary(pre_version_calibration)["forecast_evaluation"][
+            "count"
+        ]
+        == 1
+    )
+
+
+def test_unlogged_legacy_observation_does_not_create_a_retrospective_forecast_score():
+    calibration = new_calibration_state()
+    beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
+
+    observation = observe_review(
+        calibration,
+        "statement",
+        _previous(beginning, stability_days=1.0),
+        beginning + timedelta(days=1),
+        2,
+        card_id="legacy-unlogged::statement",
+        evaluate_forecast=False,
+    )
+
+    assert observation is not None
+    assert calibration["models"]["pooled"]["observations"] == 1
+    assert calibration["forecast_evaluation"]["count"] == 0
+    assert validate_calibration_state(calibration) == calibration
+
+
+@pytest.mark.parametrize(
+    ("field", "value", "match"),
+    [
+        ("delay_days", 2.0, "delay does not match"),
+        ("normalized_delay", 2.0, "normalized delay does not match"),
+        ("delay_was_capped", True, "capped delay is inconsistent"),
+        ("source", "statement", "prediction does not match"),
+        ("predicted_good_or_easy", 0.5, "prediction does not match"),
+        ("card_id", "other::statement", "does not match its review card"),
+    ],
+)
+def test_v2_recorded_observation_rejects_semantic_tampering(field, value, match):
+    beginning = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    previous = _previous(beginning, stability_days=1.0)
+    source = new_calibration_state()
+    observation = observe_review(
+        source,
+        "statement",
+        previous,
+        beginning + timedelta(days=1),
+        2,
+        card_id="card::statement",
+    )
+    assert observation is not None
+    observation[field] = value
+
+    with pytest.raises(ValueError, match=match):
+        apply_recorded_observation(
+            new_calibration_state(),
+            observation,
+            mode="statement",
+            grade=2,
+            observed_at=beginning + timedelta(days=1),
+            card_id="card::statement",
+            previous_card_state=previous,
+        )
+
+
+def test_calibration_state_version_and_model_are_bumped():
+    calibration = new_calibration_state()
+
+    assert calibration["version"] == CALIBRATION_VERSION == 2
+    assert calibration_summary(calibration)["model"] == CALIBRATION_MODEL
+    assert validate_calibration_state(calibration) == calibration
 
 
 def test_interrupted_state_write_recovers_one_calibration_observation(
@@ -332,7 +621,7 @@ def test_log_validation_rejects_a_card_moving_backward_between_records(
         ReviewEngine(store).validate_log()
 
 
-def test_explicit_observation_survives_rebuild_when_earlier_log_is_missing(
+def test_v2_observation_requires_its_previous_schedule_during_replay(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
     current = datetime(2026, 1, 3, 12, 0, tzinfo=timezone.utc)
@@ -365,13 +654,8 @@ def test_explicit_observation_survives_rebuild_when_earlier_log_is_missing(
     rebuilt.pop("calibration")
     review._write(rebuilt)
 
-    assert review.validate_log()["models"]["statement"]["observations"] == 1
-    current += timedelta(days=5)
-    second = review.reveal(
-        card["id"], {"attempt": "second logged", "confidence": 2, "overt": True}
-    )
-    review.grade(card["id"], second["attempt_id"], 2)
-    assert review._read()["calibration"]["models"]["statement"]["observations"] == 2
+    with pytest.raises(StoreError, match="without a previous review"):
+        review.validate_log()
 
 
 def test_semantic_log_validation_rejects_incomplete_records(tmp_path):
@@ -630,5 +914,5 @@ def test_review_api_preserves_queue_reveal_grade_contract(settings_factory):
     assert datetime.fromisoformat(payload["due_at"])
     assert payload["retry_in_session"] is False
     assert payload["retry_after_items"] is None
-    assert payload["scheduler"]["model"] == "discounted-bayesian-retention-v1"
+    assert payload["scheduler"]["model"] == "discounted-bayesian-self-grade-v2"
     assert payload["scheduler"]["source"] == "fallback"

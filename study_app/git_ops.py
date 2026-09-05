@@ -285,6 +285,12 @@ class GitRepository:
             "behind": behind,
         }
 
+    def ensure_no_operation_in_progress(self) -> None:
+        """Fail before an out-of-band data rewrite during an unfinished Git operation."""
+        with self._lock:
+            self._ensure_repository()
+            self._ensure_no_operation_in_progress()
+
     def commit_content(self, message: str) -> dict[str, Any]:
         with self._lock:
             self._ensure_repository()

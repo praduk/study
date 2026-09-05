@@ -12,6 +12,14 @@ from study_app.models import FolderUpdate
 from study_app.store import LibraryStore, StoreError
 
 
+def _v1_store(data_dir: Path) -> LibraryStore:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "library.json").write_text(
+        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
+    )
+    return LibraryStore(data_dir)
+
+
 def _library(store: LibraryStore) -> dict:
     return json.loads(store.library_path.read_text(encoding="utf-8"))
 
@@ -21,7 +29,7 @@ def _write_library(store: LibraryStore, value: dict) -> None:
 
 
 def _store_with_entry(root: Path) -> tuple[LibraryStore, dict]:
-    store = LibraryStore(root / "data")
+    store = _v1_store(root / "data")
     folder = store.create_folder("Geometry", "geometry", None)
     entry = store.create_entry(folder["id"], "df", "Object", "object", "", "Body")
     return store, entry
@@ -47,7 +55,7 @@ def test_folder_update_omits_slug_but_rejects_explicit_null() -> None:
 
 
 def test_missing_markdown_is_rejected_instead_of_becoming_empty_content(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
     (store.data_dir / entry["formulations"][0]["file"]).unlink()
@@ -58,7 +66,7 @@ def test_missing_markdown_is_rejected_instead_of_becoming_empty_content(tmp_path
 
 @pytest.mark.parametrize("corruption", ["missing-parent", "cycle", "duplicate-sibling"])
 def test_invalid_folder_graph_is_rejected(tmp_path: Path, corruption: str):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     first = store.create_folder("First", "first", None)
     second = store.create_folder("Second", "second", first["id"])
     library = _library(store)
@@ -77,7 +85,7 @@ def test_invalid_folder_graph_is_rejected(tmp_path: Path, corruption: str):
 
 
 def test_folder_nesting_is_bounded_before_recursive_consumers(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     parent_id = None
     for index in range(64):
         folder = store.create_folder(f"Level {index}", f"level-{index}", parent_id)
@@ -89,7 +97,7 @@ def test_folder_nesting_is_bounded_before_recursive_consumers(tmp_path: Path):
 
 
 def test_duplicate_tags_and_invalid_main_formulations_are_rejected(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     first = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
     second = store.create_entry(folder["id"], "df", "Ring", "ring", "", "Body")
@@ -110,7 +118,7 @@ def test_duplicate_tags_and_invalid_main_formulations_are_rejected(tmp_path: Pat
 
 
 def test_invalid_review_mode_dependency_is_rejected(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     theorem = store.create_entry(folder["id"], "th", "Result", "result", "", "Body")
     library = _library(store)

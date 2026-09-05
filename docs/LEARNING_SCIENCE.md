@@ -138,13 +138,19 @@ $$
 where `epsilon = 0.02`, the target `q = 0.90`, and
 `gamma = -log((q-epsilon)/(1-2 epsilon))`. Thus `c = 1` predicts 90% at `t = S`, while every finite
 `c` retains strictly positive forgetting. Study represents `c` with 161 logarithmically spaced
-values from `1/8` through `8`. Its prior is `log(c) ~ Normal(0, 0.70^2)`.
+values from `1/8` through `8`. The normalized prior masses on those points form a bounded, discrete
+approximation to a log-normal prior with `log(c) ~ Normal(0, 0.70^2)`, truncated to the grid. It is
+not an unbounded continuous log-normal distribution.
 
-For a repeat review, `t` runs from the previous completed review to the start of the new retrieval.
-First reviews and delays under six hours are excluded. For an eligible review, the model input is
-`x* = min(t/S, 64)` and the binary outcome is `y = 1` for Good or Easy and `0` for Again or Hard.
-A tab left open for six hours is not explicitly classified as an in-session retry. The cap prevents
-one extremely overdue review from having unbounded leverage and is recorded in the audit event.
+For a repeat review, `t` runs from completion of the previous graded review to the recorded start of
+the new retrieval. Qualification therefore uses retrieval start, not the later time at which the
+learner submits a grade. First reviews and delays under six hours are excluded. For an eligible
+review, the model input is `x* = min(t/S, 64)` and the binary outcome is `y = 1` for Good or Easy and
+`0` for Again or Hard. A tab left open for six hours is not explicitly classified as an in-session
+retry. The cap prevents one extremely overdue review from having unbounded leverage and is recorded
+in the audit event. Reporting is stricter than the capped update: it omits a numerical forecast and
+returns a status explaining why when the delay is under six hours or the uncapped normalized delay
+exceeds `64`.
 
 For grid point `c_i`, prior mass `pi_i`, current posterior mass `w_i`, and discount `delta = 0.995`,
 the next posterior is the normalized discrete distribution
@@ -157,24 +163,32 @@ $$
 Study applies that update to both a pooled model and the matching statement, theorem-proof, or
 problem-solution model. It also updates `N_eff' = delta N_eff + 1`, successful effective weight
 `K_eff' = delta K_eff + y`, and exposure `E' = delta E + min(x*, 4)`. A model becomes ready only when
-all four gates hold: at least 24 raw observations, `N_eff >= 20`, `E >= 12`, and posterior standard
-deviation `SD(log(c)) <= 0.65`. A ready task-specific posterior is preferred; otherwise Study uses a
-ready pooled posterior. Until either is ready, the interval factor is exactly `1`, preserving the
-prior scheduler's intervals.
+all six gates hold: at least 24 raw observations, observations from at least eight distinct cards,
+`N_eff >= 20`, `E >= 12`, posterior standard deviation `SD(log(c)) <= 0.65`, and strictly less than
+5% posterior mass at each endpoint of the bounded grid. The distinct-card and endpoint gates guard
+against one repeatedly reviewed card creating false precision and against a credible interval being
+artificially narrowed by a grid boundary. They do not make repeated observations independent. A
+ready task-specific posterior is preferred; otherwise Study uses a ready pooled posterior. Until
+either is ready, the interval factor is exactly `1`, preserving the prior scheduler's intervals.
 
 For scheduling, Study computes the posterior predictive probability
 `p_bar(f) = sum_i w_i P(Good or Easy | x=f, c_i)`. It chooses the root `p_bar(f) = 0.90` by bisection,
 bounded to `0.5 <= f <= 2.0`; if no root lies inside that range, it uses the nearer boundary. For
 Hard, Good, or Easy, the integer-day interval is
 `min(3650, max(grade minimum, round(S' f)))`. Again remains exactly ten minutes and does not use the
-learned factor. Both retained stability and scheduled intervals are capped at 3,650 days.
+learned factor. Both retained stability and scheduled intervals are capped at 3,650 days. Reporting
+includes the suggested factor, whether the 90% target is attainable inside the permitted factor
+range, and whether the suggestion is boundary-limited in the shorter or longer direction. A
+boundary suggestion is an operational safety limit, not a claim that the target probability was
+achieved.
 
-The `0.995` power-prior discount is a small amount of statistical forgetting: recent grading
-behavior can eventually outweigh very old behavior, while evidence changes gradually. Scheduling
-uses the posterior available before the current grade; the current grade updates subsequent
-schedules. The pre-outcome probability and full-precision normalized delay are written to the
-append-only review log, and the derived posterior can be reconstructed from that log after an
-interrupted state write.
+The `0.995` power-prior discount is applied once per qualified observation. It is observation-count
+discounting, not wall-clock decay: the posterior does not change merely because days or years pass.
+As new qualified observations arrive, recent grading behavior can eventually outweigh older
+behavior while evidence changes gradually. Scheduling uses the posterior available before the
+current grade; the current grade updates subsequent schedules. The pre-outcome probability and
+full-precision normalized delay are written to the append-only review log, and the derived posterior
+can be reconstructed from that log after an interrupted state write.
 
 If a learner chooses Confident (`3`) and then grades Again, Study adds another `0.35` to difficulty,
 capped at `10`. It stores a simple calibration value:
@@ -189,10 +203,60 @@ but do not change scheduling. Again's ten-minute due timestamp and its in-sessio
 behaviors: the retry is inserted after up to three available intervening cards even if ten minutes
 have not elapsed.
 
-The prior, target, activation gates, discount, and safety bounds are transparent engineering choices,
-not empirically optimal constants. The model is fitted only to this learner's self-grades;
-prospective calibration has not been established. It must not be described as measuring objective
-correctness, durable mathematical competence, or transfer.
+The prior, curve, target, activation gates, discount, and safety bounds are transparent engineering
+choices, not empirically optimal constants. The model treats qualified observations as conditionally
+independent given `c`, even though repeated reviews of one card and results from the same learner are
+correlated. The distinct-card gate is a safeguard, not a hierarchical or repeated-measures model.
+Its 90% credible interval is conditional on this curve, prior, bounded grid, independence
+approximation, and observed data; it is not a general guarantee about learner uncertainty.
+
+The observed data are also selected: only reviews the learner completes can produce a self-grade.
+Skipped, delayed, or selectively avoided reviews have no outcome, so the estimates are conditional
+on completed reviews and may be biased by that selection. The model is fitted only to this learner's
+Good-or-Easy self-grades. It must not be described as measuring objective remembering, correctness,
+durable mathematical competence, mastery, or transfer.
+
+### Read-only calendar and history reporting
+
+`GET /api/review/calendar` reports current schedule snapshots and validated review history over a
+half-open, timezone-aware interval: `start` is inclusive and `end` is exclusive. The interval is
+limited to 366 days. With neither bound supplied, it starts at the current UTC day and spans 90
+days; supplying only one bound creates the same 90-day span on the other side.
+
+Each event is the one currently stored next-due time for a reviewed card, not a generated recurrence.
+Active cards are derived from the current library, fixed task availability, and inherited folder
+review setting. New cards have no stored schedule and are omitted. Review-disabled schedules and
+orphaned schedules for deleted entries or removed tasks are omitted unless `include_inactive=true`.
+The stored schedule at the last grade is returned with the current entry title, canonical tag, task
+label, and active-state classification. The endpoint reconstructs state in memory from the complete
+log and fails closed on malformed history; it does not write either review file.
+
+Statistics count every validated log record completed within the interval, so repeated same-day
+attempts remain distinct. They include elapsed minutes, the four self-grade counts, Again lapses,
+the Good-or-Easy self-grade rate, and zero-filled daily buckets. Buckets use UTC by default; an
+optional bounded `timezone` query accepts an IANA time-zone name for local calendar labels without
+changing the instant-based range or totals. These history totals retain attempts for content that is
+now review-disabled or deleted, consistent with the append-only log.
+
+Bayesian reporting includes each posterior interval-scale median and equal-tail 90% credible
+interval, endpoint mass, distinct-card count, readiness gates, suggested interval factor, target
+attainability, and any boundary-limited direction. Per-event output identifies the scheduling source
+and posterior used for forecasts. A numerical `predicted_good_or_easy_now` or
+`predicted_good_or_easy_at_due` is returned only inside the reporting domain: at least six hours
+since the prior completed review and an uncapped normalized delay no greater than `64`. Otherwise a
+prediction status explains that the estimate was omitted. While readiness gates are unmet, the
+source remains `fallback` and the task posterior is explicitly marked as collecting; those posterior
+outputs are diagnostics, not calibrated scheduling inputs.
+
+Forecast evaluation uses validated probabilities written before their outcomes were known. It
+reports the eligible forecast count, mean Brier score, mean log loss, and reliability bins containing
+the number of forecasts, their mean predicted probability, and their observed Good-or-Easy
+self-grade rate. The aggregate includes compatible logged forecasts from earlier model versions;
+legacy observations without a recorded pre-outcome probability are excluded rather than scored with
+a reconstructed forecast. These are retrospective diagnostics conditional on completed reviews.
+Small or selectively observed samples can be misleading, and neither a posterior credible interval
+nor a good in-sample score establishes prospective calibration. Every forecast is about a future
+Good-or-Easy self-grade, never objective remembering, correctness, mastery, or transfer.
 
 ## Why the design uses these practices
 

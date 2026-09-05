@@ -2,8 +2,9 @@
 
 Study is a local-first web application for writing, organizing, reading, and reviewing
 mathematics. Its Python backend stores the library as Markdown and JSON under `data/`; the
-responsive web interface supplies MathJax, Vim editing, diagrams, image handling, PDF export,
-and an evidence-informed review workflow.
+responsive web interface supplies local MathJax, editing, review, and review-calendar statistics.
+A richer optional interface adds Vim editing, Excalidraw, advanced image handling, resolved
+`@tag` links and previews, and PDF controls.
 
 Study has one library and no user accounts. Local mode is loopback-only and skips the password.
 Server mode is password-protected and stores revocable sessions.
@@ -16,17 +17,18 @@ Server mode is password-protected and stores revocable sessions.
 - Proofs (`pf`) for theorems and solutions (`sl`) for problems, including tagged alternatives.
 - GitHub-flavored Markdown in the web reader, local MathJax, global LaTeX macros, and custom
   Markdown headers. PDF export currently uses portable CommonMark.
-- A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:w` saves
+- In the optional rich interface, a CodeMirror editor with Vim keybindings and a live preview.
+  Escape stays inside Vim; `:w` saves
   without closing, and `:q` closes the editor explicitly.
-- Image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
+- In the optional rich interface, image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
-- Embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,
+- In the optional rich interface, embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,
   and a grid-based commutative-diagram editor.
 - Exact-position insertion controls for entries and folders, drag-and-drop ordering, and a tree
   picker for moving a folder under another folder. Canonical namespaces are recomputed after a move.
 - Confirmed deletion for entries and folders. Deleting a non-empty folder requires typing its name
   and removes the complete subtree; shared media files are retained while anything still uses them.
-- Scoped `@tag` references that expand from the current folder through progressively broader
+- In the optional rich interface, scoped `@tag` references that expand from the current folder through progressively broader
   subtrees, then fall back across the full library. `@[replacement text]tag` customizes the inline
   wording while previews retain the entry title. References include fully rendered hover/focus/tap
   previews and a `Cmd/Ctrl+Shift+K` insertion picker.
@@ -38,36 +40,56 @@ Server mode is password-protected and stores revocable sessions.
   same authored order as the library.
 - A phone layout intended for reading and think-only review. Editing controls are deliberately
   hidden on narrow screens.
+- A review calendar with one next-due event per previously reviewed card, the scheduling decision
+  that produced it, validated history statistics, and Bayesian self-grade diagnostics.
 - Local Git controls that commit only authored `data/`, plus fast-forward-only pull when the entire
   worktree is clean. Fetched Study data is validated in a detached checkout before the current
   branch advances, and the browser reloads the library before editing is re-enabled.
 
 ## Install
 
-Requirements:
-
-- Python 3.10 or newer
-- Node.js 22.13 or newer and npm
-- A Chromium browser installed for Playwright PDF export
-
-From the repository root:
+The core application requires only Python 3.10 or newer. From the repository root:
 
 ```sh
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python -m pip install -e .
+```
 
-cd frontend
-npm ci
-npm run build
-cd ..
+That is enough for reading, basic authoring, review, the calendar, statistics, and local math
+typesetting. The core interface and its pinned MathJax runtime are shipped with Study, so Node.js,
+npm, and a frontend build are not required. The core reader displays authored `@tag` text as text;
+resolved links, previews, and the reference picker belong to the optional rich interface.
 
+PDF export is optional because its browser runtime is comparatively large:
+
+```sh
+python -m pip install -e '.[pdf]'
 python -m playwright install chromium
 ```
 
-`npm ci` and `npm run build` copy the pinned MathJax package and Excalidraw fonts into the ignored
-`frontend/public/vendor/` directory. Study serves those assets locally; normal reading, review, and
-typesetting do not depend on a CDN.
+The richer CodeMirror/Vim and Excalidraw interface is also optional. It requires Node.js 22.13 or
+newer and npm:
+
+```sh
+cd frontend
+npm ci
+npm run build
+```
+
+Then opt into that build in the ignored `config.local.toml`:
+
+```toml
+[study]
+rich_frontend = true
+```
+
+The shipped interface remains the default so an old ignored build cannot unexpectedly override a
+newer core interface. If the selected rich build is absent, Study safely falls back to the core.
+
+That build copies pinned MathJax and Excalidraw runtime assets into the ignored
+`frontend/public/vendor/` directory. Both interfaces serve math assets locally; neither depends on
+a CDN. For development and tests, install `.[dev]` instead of the core package.
 
 On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1` instead.
 
@@ -122,6 +144,7 @@ session_days = 30
 secure_cookie = false
 max_upload_mb = 12
 max_image_megapixels = 32
+rich_frontend = false
 ```
 
 The data location is intentionally not configurable: authored material and runtime state always
@@ -168,7 +191,9 @@ which keeps every valid canonical reference within the bounded API and prevents 
 
 ### Scoped references and search
 
-In ordinary Markdown prose, `@group` resolves in the entry's own folder first, then its descendant
+The optional rich interface renders resolved references, previews, and the insertion picker. The
+core interface leaves their exact authored text visible. In ordinary Markdown prose, `@group`
+resolves in the entry's own folder first, then its descendant
 subtree. Study next checks the direct parent and the sibling subtrees exposed at that level, and
 repeats outward through real ancestors. If the originating top-level tree has no match, one final
 stage checks every other top-level tree. The first nonempty stage wins, so a local or higher-level
@@ -251,13 +276,26 @@ descendant's own checkbox is enabled.
 An Again grade sets the next due time to ten minutes and also inserts a retry after up to three
 currently available intervening cards. Hard, Good, and Easy update a per-card stability estimate and
 schedule an integer-day interval. After enough genuinely delayed observations, a bounded Bayesian
-forgetting model adjusts those intervals toward a 90% probability that this learner will self-grade
-the next attempt Good or Easy, as estimated by the model. It learns pooled behavior and separate
-statement, proof, and problem behavior, slightly discounts old observations, and falls back exactly
-to the prior intervals while evidence is sparse. The model predicts self-grades, not correctness or
-mastery. Its formulas, gates, and constants are transparent in
+self-grade delay model adjusts those intervals toward a 90% probability that this learner will
+self-grade the next attempt Good or Easy, as estimated by the model. It learns pooled behavior and separate
+statement, proof, and problem behavior, slightly discounts evidence per qualified observation, and
+falls back exactly to the prior intervals while evidence is sparse, concentrated in fewer than eight
+cards, or pressed against a model boundary. The model predicts self-grades, not correctness or
+mastery. Its formulas, gates, assumptions, and constants are transparent in
 [`docs/LEARNING_SCIENCE.md`](docs/LEARNING_SCIENCE.md); they remain engineering choices rather than a
 scientifically validated optimum.
+
+The Calendar view reports the next scheduled due time for every active, previously reviewed card in
+the selected month; a toggle also reveals disabled or unavailable scheduled cards. Selecting an
+event shows the stability and difficulty heuristics, repetitions, lapses, scheduling source,
+posterior interval-scale median and 90% model-conditional credible interval, boundary checks,
+distinct-card evidence, and predicted Good-or-Easy self-grade probability now and at the due time.
+Predictions are omitted for sub-six-hour or beyond-cap delays rather than extrapolated. The report
+also includes Brier score, log loss, reliability bins, and every validated attempt in the selected
+period, including multiple attempts on the same day. Future recurrences are not projected because
+the next self-grade changes the schedule. These predictions and scores are not probabilities or
+measurements of remembering correctly, accuracy, or mastery; Study does not collect an objective
+correctness label from which to estimate those quantities.
 
 The scientific distinction matters: spacing has robust direct evidence in mathematics, with a
 recent meta-analysis finding a small-to-medium benefit. General retrieval-practice evidence is
@@ -273,11 +311,13 @@ All library data is rooted at `data/` relative to `study.py`:
 
 ```text
 data/
-  library.json                 folder, entry, variant, order, and asset metadata
+  library.json                 v1 aggregate metadata or the tiny v2 format marker
+  library/                     v2 folder/entry sidecars and colocated Markdown
+    _library.json              v2 root sentinel, including for an empty library
   macros.json                  global MathJax macros
   review.json                  current schedules, pending attempts, and cached calibration state
   review-log.jsonl             append-only graded attempts and calibration observations
-  content/<entry>/<variant>.md Markdown formulations, proofs, and solutions
+  content/<entry>/<variant>.md v1 Markdown formulations, proofs, and solutions
   media/                       normalized image and drawing previews
   diagrams/                    Excalidraw and commutative-diagram sources
   excalidraw/                  shared Excalidraw library
@@ -288,7 +328,8 @@ data/
 The `data/` directory is intentionally not ignored. Authored content, diagrams, macros, and review
 history can be committed. The sole persistent exception is the session SQLite database and its
 journal files, because they contain live authentication tokens. `config.local.toml`, dependencies,
-build output, and copied vendor assets are also ignored.
+the rich-interface build output, and its copied vendor assets are also ignored. The small core
+interface and its pinned local MathJax assets are tracked under `study_app/web/`.
 
 The in-app Commit action commits only `data/` while preserving unrelated staged work. To make that
 scope enforceable, this narrowly scoped action does not run repository hooks; use normal Git when a
@@ -297,6 +338,14 @@ transient runtime files, and uses fast-forward-only mode; it never creates a mer
 discards work.
 Study validates folder, entry, variant, review-mode, asset, and Markdown-file invariants when loading
 the library so a broken manual edit or pull fails visibly instead of silently becoming empty content.
+
+Existing aggregate libraries continue to be read and written without an automatic format change.
+New data roots use v2, which keeps each folder's metadata in `_folder.json` and each entry's metadata
+and Markdown together under its slug-derived path. This makes ordinary entry edits local in Git.
+`python study.py --check-data` validates either format; the explicit
+`python study.py --migrate-storage` command requires idle, clean Git state, performs a lossless
+checked migration, and leaves the result for you to review and commit. See the
+[storage format and migration guide](docs/STORAGE.md).
 
 ## Development checks
 

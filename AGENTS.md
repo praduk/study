@@ -41,16 +41,17 @@ Read `README.md`, `docs/SEARCH.md`, `docs/LEARNING_SCIENCE.md`, and
 - `study_app/export.py`: Markdown-to-HTML and Playwright PDF rendering.
 - `frontend/app/` and `frontend/components/`: responsive UI, editor, reader, and review flow.
 - `frontend/scripts/copy-vendor.mjs`: offline MathJax and Excalidraw asset generation.
-- `data/library.json`: folder and entry metadata.
+- `data/library.json`: v1 aggregate metadata or the tiny v2 storage marker.
+- `data/library/`: v2 folder/entry sidecars and colocated Markdown.
 - `data/macros.json`: global LaTeX macros.
-- `data/content/`: Markdown formulations, proofs, and solutions.
+- `data/content/`: v1 Markdown formulations, proofs, and solutions.
 - `data/media/`, `data/diagrams/`, and `data/excalidraw/`: media and editable diagram sources.
 - `data/review.json` and `data/review-log.jsonl`: review state and history.
 
 ## Before changing mathematical content
 
-1. Read the target entry in `data/library.json` and every Markdown file named by its formulations
-   and supplements.
+1. Identify the active format from `data/library.json`. Read the target entry in the v1 aggregate
+   file or its v2 `_entry.json` sidecar, plus every Markdown formulation and supplement it names.
 2. Read `data/macros.json`; reuse the author's notation instead of introducing duplicate commands.
 3. Resolve every `@tag`, canonical tag, and prerequisite in the existing library from the entry's
    folder. Missing or ambiguous references are errors to investigate, not names to guess.
@@ -145,8 +146,9 @@ Each entry must have at least one formulation. Maintain exactly one main formula
   unique subtag.
 - Promoting a variant to main removes its subtag. The application assigns `standard` to a displaced
   former main that lacked one; direct edits must preserve the same invariant.
-- A variant's `file` must remain below `data/`, normally
-  `content/<entry-id>/<variant-id>.md`, and must name an existing UTF-8 Markdown file.
+- A variant's `file` must remain below `data/` and name an existing UTF-8 Markdown file. Version 1
+  normally uses `content/<entry-id>/<variant-id>.md`; version 2 colocates the file beside its
+  `_entry.json` sidecar under `data/library/`.
 
 Examples:
 
@@ -218,8 +220,8 @@ IDs are `<entry-id>::<mode>`; changing an entry ID or mode can orphan historical
   does not make color-dependent meaning ambiguous.
 - Use the application endpoints/editor to add images and diagrams. Handwritten media paths,
   Excalidraw comments, commutative tokens, or asset records can easily become orphaned.
-- Before deleting or replacing an asset, search `data/library.json` and all Markdown for its source,
-  preview, ID, and filename.
+- Before deleting or replacing an asset, search the active v1 aggregate or all v2 `_entry.json`
+  sidecars and Markdown for its source, preview, ID, and filename.
 
 ## Mathematics quality standard
 
@@ -286,7 +288,8 @@ queue order, folder inheritance, attempt/reveal gating, formula boundaries, and 
 
 For any content change:
 
-1. Parse `data/library.json` and `data/macros.json`.
+1. Run `python study.py --check-data`, which parses the active v1/v2 library and
+   `data/macros.json` without migrating it.
 2. Confirm every folder, entry, variant, supplement, and asset reference resolves under `data/`.
 3. Confirm sibling slug uniqueness, per-folder/per-kind entry tag uniqueness, acyclic parents, one
    main per formulation/supplement group, and unique required subtags.

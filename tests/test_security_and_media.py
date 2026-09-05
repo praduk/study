@@ -184,7 +184,7 @@ def test_delete_api_requires_csrf_and_explicit_recursive_folder_confirmation(
 
 
 def test_csp_authorizes_exact_inline_bootstrap_scripts(settings_factory):
-    settings = settings_factory()
+    settings = settings_factory(rich_frontend=True)
     settings.built_frontend.mkdir(parents=True)
     script_bodies = ("window.first = 1;", "\nwindow.second = '<tag>';\n")
     settings.built_frontend.joinpath("index.html").write_text(
@@ -213,7 +213,7 @@ def test_csp_authorizes_exact_inline_bootstrap_scripts(settings_factory):
 
 
 def test_csp_tracks_frontend_rebuild_without_server_restart(settings_factory):
-    settings = settings_factory()
+    settings = settings_factory(rich_frontend=True)
     settings.built_frontend.mkdir(parents=True)
     index = settings.built_frontend / "index.html"
     old_body = "window.bootstrap = 'old';"
@@ -243,7 +243,7 @@ def test_csp_tracks_frontend_rebuild_without_server_restart(settings_factory):
 
 
 def test_canonical_library_path_serves_spa_without_capturing_reserved_routes(settings_factory):
-    settings = settings_factory()
+    settings = settings_factory(rich_frontend=True)
     settings.built_frontend.mkdir(parents=True)
     index = settings.built_frontend / "index.html"
     index.write_text("<!doctype html><title>Study</title>", encoding="utf-8")
