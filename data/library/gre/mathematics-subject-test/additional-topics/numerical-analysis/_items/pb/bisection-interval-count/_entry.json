@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "dcc4f683105f42718e4127fa57908e35",
+  "title": "Bisection Iteration Count",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "563d2b8baa2848e5af69ffb4421a1df6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.563d2b8baa2848e5af69ffb4421a1df6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "44298e15b5be4c038cd0870263e2539c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.44298e15b5be4c038cd0870263e2539c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:49.615197+00:00",
+  "updated_at": "2026-09-06T07:43:38.787374+00:00"
+}

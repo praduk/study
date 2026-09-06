@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e928d2f78dda45f5b7701f588fc83ab4",
+  "title": "Linear Algebra Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c4371d2287794d45ba3d0948c718fc24",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c4371d2287794d45ba3d0948c718fc24.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:08.187009+00:00",
+  "updated_at": "2026-09-06T07:15:08.187016+00:00"
+}

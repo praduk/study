@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "22b638f4694940669d1a83404c647f1c",
+  "title": "An Improper $p$-Integral at the Origin",
+  "rank": 9222246136947933184,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "82bf5e513cd044599c8a7893c43d0ffe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.82bf5e513cd044599c8a7893c43d0ffe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e8866600487c4b699e9b42e8e03ac22c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e8866600487c4b699e9b42e8e03ac22c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:14.737767+00:00",
+  "updated_at": "2026-09-06T07:40:04.633120+00:00"
+}

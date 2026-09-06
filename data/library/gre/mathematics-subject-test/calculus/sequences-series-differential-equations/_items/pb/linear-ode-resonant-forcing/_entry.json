@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "edfc360184644d78a86fe676f5274d00",
+  "title": "Solve a First-Order Linear IVP",
+  "rank": 9223354444668731392,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be15e5d19af74597a99131716350e1c8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be15e5d19af74597a99131716350e1c8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "57bdce5e346c4ad3b2dc09dd424e4013",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.57bdce5e346c4ad3b2dc09dd424e4013.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:47.195482+00:00",
+  "updated_at": "2026-09-06T07:40:47.598679+00:00"
+}

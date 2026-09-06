@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "60a23798ff064980aaa0645c720b849b",
+  "title": "Exactly Two Successes in Four Trials",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90b084042f184f388dd18bf471c6ed46",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90b084042f184f388dd18bf471c6ed46.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3569668bb1f94bb2a2ea07cdea965555",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.3569668bb1f94bb2a2ea07cdea965555.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:44.035150+00:00",
+  "updated_at": "2026-09-06T07:43:33.052841+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "13fa87d9190248bd89935ed254dcfff5",
+  "title": "Solve a Logarithm Equation",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ea63d8c28b34b3b8cafd63c2612e1b0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ea63d8c28b34b3b8cafd63c2612e1b0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "162a5ef33c844929ab01ec322f80e337",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.162a5ef33c844929ab01ec322f80e337.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:25.224924+00:00",
+  "updated_at": "2026-09-06T07:41:26.175524+00:00"
+}

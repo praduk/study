@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cc66fb095b694b2eb18eed2da7ded29e",
+  "title": "Geometry Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48e79bcee21e4f03a1559531c40824cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48e79bcee21e4f03a1559531c40824cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:13.693212+00:00",
+  "updated_at": "2026-09-06T07:15:13.693218+00:00"
+}

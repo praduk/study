@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "640cb08d3895425f86dc6221a6a0cb86",
+  "title": "Volume by Washers",
+  "rank": 9223231299366420480,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "55263c38bff84a60a7d5f138b6ae2aed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.55263c38bff84a60a7d5f138b6ae2aed.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8f269ba995474b5ba9d38a1a99163396",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8f269ba995474b5ba9d38a1a99163396.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:19.039142+00:00",
+  "updated_at": "2026-09-06T07:40:10.526675+00:00"
+}

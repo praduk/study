@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c98d3ebe2ce24e51b2f5f055d3063094",
+  "title": "Complete the Square for a Circle",
+  "rank": 9223090561878065152,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fbf270fbff4c4eb1a147acbded80fd67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fbf270fbff4c4eb1a147acbded80fd67.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5a2f6e216db44601a02163ef5eb1d14a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5a2f6e216db44601a02163ef5eb1d14a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:36.172802+00:00",
+  "updated_at": "2026-09-06T07:39:10.247916+00:00"
+}

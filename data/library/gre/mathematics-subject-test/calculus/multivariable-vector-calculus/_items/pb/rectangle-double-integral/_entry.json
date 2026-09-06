@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9c4a824308b8436196429736139ba622",
+  "title": "Evaluate a Rectangular Double Integral",
+  "rank": 9222246136947933184,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a1a021ec2bac45ee8fb9ec87433a32ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a1a021ec2bac45ee8fb9ec87433a32ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "30714e3c99b64fb4b6fb10d6a8ab82a3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.30714e3c99b64fb4b6fb10d6a8ab82a3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:59.431350+00:00",
+  "updated_at": "2026-09-06T07:41:03.091333+00:00"
+}

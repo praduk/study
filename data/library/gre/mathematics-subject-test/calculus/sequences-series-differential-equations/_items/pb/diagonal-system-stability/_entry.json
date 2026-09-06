@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "91bdebf671bc416683c5691dba3e4124",
+  "title": "Classify a Linear System",
+  "rank": 9223367638808264704,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36862704cf7a4436b41e1e0ecaef10a8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36862704cf7a4436b41e1e0ecaef10a8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8eb37a496e8b4d06b1b7eea689d87aa7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8eb37a496e8b4d06b1b7eea689d87aa7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:50.228283+00:00",
+  "updated_at": "2026-09-06T07:40:51.416915+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "631b0bb78f4d42e682d8bb16f8539325",
+  "title": "An Improper $p$-Integral at Infinity",
+  "rank": 9221120237041090560,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fc909ba5c14943359585793554cb5126",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fc909ba5c14943359585793554cb5126.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d9543798a38f479197df918c852d425d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d9543798a38f479197df918c852d425d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:13.295770+00:00",
+  "updated_at": "2026-09-06T07:40:02.718106+00:00"
+}

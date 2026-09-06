@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6cb8b9c2a4604514a7fb761cac281424",
+  "title": "Detect a Nondiagonalizable Matrix",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d116c516bd204ecbb23eaffc2b593ef4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d116c516bd204ecbb23eaffc2b593ef4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e052c518f2ef45b49ea54ed1277a1ad5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e052c518f2ef45b49ea54ed1277a1ad5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:36.245939+00:00",
+  "updated_at": "2026-09-06T07:41:39.624852+00:00"
+}

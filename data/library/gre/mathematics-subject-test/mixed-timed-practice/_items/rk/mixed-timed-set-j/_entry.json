@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c3c9f01c3f274b0b9fc751f737a4ac6c",
+  "title": "Mixed Timed Set J",
+  "rank": 9214364837600034816,
+  "header": "Unofficial mixed practice. Derived target: 49 minutes for 19 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fd9bcdede9d243e9af093bb4e6414651",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fd9bcdede9d243e9af093bb4e6414651.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:34:04.254371+00:00",
+  "updated_at": "2026-09-06T07:34:04.254377+00:00"
+}

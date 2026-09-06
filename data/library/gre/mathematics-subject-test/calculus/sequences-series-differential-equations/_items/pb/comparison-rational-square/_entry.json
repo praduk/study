@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "22d128b26edb46b2b137969df10bada9",
+  "title": "Compare a Positive Rational Series",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "264f79027c86411f845d81aba64253e3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.264f79027c86411f845d81aba64253e3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d931a96a4df440d3aacd5a437fad8529",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d931a96a4df440d3aacd5a437fad8529.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:32.210878+00:00",
+  "updated_at": "2026-09-06T07:40:28.185205+00:00"
+}

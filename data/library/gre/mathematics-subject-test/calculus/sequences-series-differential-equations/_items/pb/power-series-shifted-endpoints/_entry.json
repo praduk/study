@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "018c325012d1444fa4ab1793885d4b78",
+  "title": "Interval of Convergence with One Endpoint",
+  "rank": 9223231299366420480,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "08e087b915c14a1dbafbaa473c0fbee9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.08e087b915c14a1dbafbaa473c0fbee9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dce6bc78023e4fb8a53690f250f2f1d3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.dce6bc78023e4fb8a53690f250f2f1d3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:42.634311+00:00",
+  "updated_at": "2026-09-06T07:40:41.778996+00:00"
+}

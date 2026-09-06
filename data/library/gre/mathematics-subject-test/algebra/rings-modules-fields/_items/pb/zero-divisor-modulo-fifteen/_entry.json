@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "80fac4dfb35f4ca28bdc375e8dae6eef",
+  "title": "Recognize a Zero Divisor",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aa4aa725549442d9ac24238f3d10827d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aa4aa725549442d9ac24238f3d10827d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d50acca299c146229c5d0593db46a18f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d50acca299c146229c5d0593db46a18f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:57.331430+00:00",
+  "updated_at": "2026-09-06T07:42:04.551725+00:00"
+}

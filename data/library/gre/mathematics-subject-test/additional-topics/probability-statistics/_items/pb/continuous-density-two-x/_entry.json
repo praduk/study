@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "25ca56e8fce3476da29692c2c3b9895c",
+  "title": "Probability from a Density",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bad11c3aa3e742ee912aec8118152416",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bad11c3aa3e742ee912aec8118152416.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cef0459c601447c8a79fee8347ee476f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.cef0459c601447c8a79fee8347ee476f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:47.771486+00:00",
+  "updated_at": "2026-09-06T07:43:36.871224+00:00"
+}

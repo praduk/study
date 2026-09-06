@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "383ee9005c34499fa27c477a79774427",
+  "title": "Number Theory Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "69b05ffe7afb4b8ba338043730dc557d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.69b05ffe7afb4b8ba338043730dc557d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:09.986362+00:00",
+  "updated_at": "2026-09-06T07:15:09.986370+00:00"
+}

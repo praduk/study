@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "982021dddca24a4ebcc706741cd21e4e",
+  "title": "Constrained Minimum on a Line",
+  "rank": 9221120237041090560,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "66ce26ab7a0e47999ff85f9a6baa8959",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.66ce26ab7a0e47999ff85f9a6baa8959.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dc4b0113d1f7424f844b7139cbcf4eff",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.dc4b0113d1f7424f844b7139cbcf4eff.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:57.896691+00:00",
+  "updated_at": "2026-09-06T07:41:01.176294+00:00"
+}

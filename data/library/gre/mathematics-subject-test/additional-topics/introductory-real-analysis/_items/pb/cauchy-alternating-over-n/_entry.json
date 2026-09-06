@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a721bab176214d6894e942a991db7665",
+  "title": "Recognize a Cauchy Sequence",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e717ebdfb76a41fba59af8e990a9ddef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e717ebdfb76a41fba59af8e990a9ddef.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6cf64573132945ef98813274d3b88318",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6cf64573132945ef98813274d3b88318.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:51.405028+00:00",
+  "updated_at": "2026-09-06T07:42:35.248509+00:00"
+}

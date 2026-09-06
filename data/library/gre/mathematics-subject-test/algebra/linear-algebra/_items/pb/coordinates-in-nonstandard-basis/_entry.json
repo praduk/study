@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd32fcd3fbed4191abcb6b9a3c6d3aeb",
+  "title": "Coordinates in a Nonstandard Basis",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "622e1bb5424746329cdc118030558db3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.622e1bb5424746329cdc118030558db3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ac1956ea85d34b76ac474d73ea0c2d73",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ac1956ea85d34b76ac474d73ea0c2d73.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:39.440698+00:00",
+  "updated_at": "2026-09-06T07:41:43.532956+00:00"
+}

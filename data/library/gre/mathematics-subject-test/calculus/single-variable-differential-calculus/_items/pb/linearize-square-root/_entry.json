@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eadc5238cade4ce78be6ee8fdd0def2a",
+  "title": "Linear Approximation of a Square Root",
+  "rank": 9223301668110598144,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f362e3abadff45ec8b889bc9bbb54d6c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f362e3abadff45ec8b889bc9bbb54d6c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "917987b050b54b7f92d67df0a4717d44",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.917987b050b54b7f92d67df0a4717d44.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:59.292819+00:00",
+  "updated_at": "2026-09-06T07:39:42.826104+00:00"
+}

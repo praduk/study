@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e89b112af100414795a75db31f676b8e",
+  "title": "Use an Exponential Substitution",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b2bc4bd32bd3470dbeefddf6759261d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b2bc4bd32bd3470dbeefddf6759261d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b93ce54a21074ab0bc9b22bb903b3c7b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b93ce54a21074ab0bc9b22bb903b3c7b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:28.253629+00:00",
+  "updated_at": "2026-09-06T07:38:59.225188+00:00"
+}

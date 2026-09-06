@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1f259fa812c441879fd93adaf222352d",
+  "title": "Maximum Directional Derivative",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b8ce8e1eee4b4e6d8273f96d626ebb4a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b8ce8e1eee4b4e6d8273f96d626ebb4a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "47794077e23243399f69e787a62488d4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.47794077e23243399f69e787a62488d4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:54.811079+00:00",
+  "updated_at": "2026-09-06T07:40:57.330889+00:00"
+}

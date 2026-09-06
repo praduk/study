@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "05da32be0908444ba4c3c228fc337eac",
+  "title": "Introductory Real Analysis Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "518ea29ad6ea46b89772dc4ddd546e85",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.518ea29ad6ea46b89772dc4ddd546e85.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:10.603860+00:00",
+  "updated_at": "2026-09-06T07:15:10.603867+00:00"
+}

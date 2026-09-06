@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ce02bbec754944a18b69302d25048b54",
+  "title": "Normal Vector to a Level Surface",
+  "rank": 9223367638808264704,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f832c49407c146f6823afcd2216efc63",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f832c49407c146f6823afcd2216efc63.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ec9cd3524eda4c3b800b4a3c56b371c0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ec9cd3524eda4c3b800b4a3c56b371c0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:11.931872+00:00",
+  "updated_at": "2026-09-06T07:41:18.474264+00:00"
+}

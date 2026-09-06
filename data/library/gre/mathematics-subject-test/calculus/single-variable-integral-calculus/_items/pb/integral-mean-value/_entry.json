@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5785312e13c54791a9a6681e67fd781c",
+  "title": "Use the Mean Value Theorem for Integrals",
+  "rank": 9223367638808264704,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "54873bb64fcb49c4b71706817c002f2a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.54873bb64fcb49c4b71706817c002f2a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9363fc79a07045f58e2c96afdc4807c3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.9363fc79a07045f58e2c96afdc4807c3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:26.279323+00:00",
+  "updated_at": "2026-09-06T07:40:20.230853+00:00"
+}

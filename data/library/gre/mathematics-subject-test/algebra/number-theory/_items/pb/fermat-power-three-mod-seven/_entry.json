@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "132903d4df42413189de9cf163476053",
+  "title": "Reduce a Large Power Modulo Seven",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7414a6c75f8b4b258060bf0c6dd8634a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7414a6c75f8b4b258060bf0c6dd8634a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1dac8b600a5e467990d9da20cc3cb726",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1dac8b600a5e467990d9da20cc3cb726.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:15.827721+00:00",
+  "updated_at": "2026-09-06T07:42:25.642352+00:00"
+}

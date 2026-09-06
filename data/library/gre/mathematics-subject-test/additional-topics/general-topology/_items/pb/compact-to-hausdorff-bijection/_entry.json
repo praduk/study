@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "42f31e8b7b3d4fcdbce7b38be873ed90",
+  "title": "When a Continuous Bijection Is a Homeomorphism",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e809bc6a1f344534973c2113d8ca1e18",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e809bc6a1f344534973c2113d8ca1e18.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2029afe63aad4bb39d93385f98452ef4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2029afe63aad4bb39d93385f98452ef4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:24.259104+00:00",
+  "updated_at": "2026-09-06T07:43:11.856985+00:00"
+}

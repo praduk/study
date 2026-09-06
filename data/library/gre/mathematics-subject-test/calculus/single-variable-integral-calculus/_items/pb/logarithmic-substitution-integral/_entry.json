@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a013802501a441b1aa9b76d16062b169",
+  "title": "A Logarithmic Substitution Integral",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a15decc32e1e458cb03aaac2a531dfad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a15decc32e1e458cb03aaac2a531dfad.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8b2ccf292fec44ba819657049e1e3da9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8b2ccf292fec44ba819657049e1e3da9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:06.282471+00:00",
+  "updated_at": "2026-09-06T07:39:52.867087+00:00"
+}

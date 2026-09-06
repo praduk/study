@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fe36729db7b74b99a14215ffc715e5b1",
+  "title": "Sum of Vertex Degrees",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "73d252a6413741fd9ed0cf45cb81ee55",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.73d252a6413741fd9ed0cf45cb81ee55.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5684e0632dc44b1aa63510665dfe58c5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5684e0632dc44b1aa63510665dfe58c5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:11.942703+00:00",
+  "updated_at": "2026-09-06T07:42:58.385522+00:00"
+}

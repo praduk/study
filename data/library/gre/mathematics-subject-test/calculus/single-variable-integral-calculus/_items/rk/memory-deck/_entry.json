@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "61d914c56bff45d08b9608497e92e4c0",
+  "title": "Single-Variable Integral Calculus Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ac124dc494cf49a8a30662b9d3dbdd19",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ac124dc494cf49a8a30662b9d3dbdd19.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:05.842462+00:00",
+  "updated_at": "2026-09-06T07:15:05.842470+00:00"
+}

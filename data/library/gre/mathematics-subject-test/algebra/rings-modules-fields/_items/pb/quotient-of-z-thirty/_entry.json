@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1002a5209f584806959d97a38b4e7937",
+  "title": "Cardinality of a Quotient Ring",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a8d1799ae9964d9fa736f076751ada70",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a8d1799ae9964d9fa736f076751ada70.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ec7f25f8c97a4fcb91ed5e7ae466d2af",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ec7f25f8c97a4fcb91ed5e7ae466d2af.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:00.633621+00:00",
+  "updated_at": "2026-09-06T07:42:08.384676+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c8d89559e4ec4baeabb2ccbe26a7a595",
+  "title": "Connectedness of a Product",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1277e2333ba549b0aba07c64d9e6efb8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1277e2333ba549b0aba07c64d9e6efb8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b2d0f744b13b4f0fbf51c2a862957628",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b2d0f744b13b4f0fbf51c2a862957628.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:26.033250+00:00",
+  "updated_at": "2026-09-06T07:43:13.809870+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d9d58ef141e440049a3b5976841d42f1",
+  "title": "Graph Theory and Algorithms Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "262a2845e27c463494b4c2fcb8be318c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.262a2845e27c463494b4c2fcb8be318c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:12.458203+00:00",
+  "updated_at": "2026-09-06T07:15:12.458210+00:00"
+}

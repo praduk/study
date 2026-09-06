@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fe2933fe671043f7b32b4075eacdd8f5",
+  "title": "A Maximal Ideal in a Polynomial Ring",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93975b413f9e42beb07b49af8eaa9e14",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93975b413f9e42beb07b49af8eaa9e14.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "12633c5bb5b34436b0a3d4bbf613fa68",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.12633c5bb5b34436b0a3d4bbf613fa68.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:58.974142+00:00",
+  "updated_at": "2026-09-06T07:42:06.470201+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4a5ccd87424d479283846ff9c790e3fb",
+  "title": "Limit of a Rational Sequence",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "caeffc5a7b8b4d9fade3798a0d6f3d51",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.caeffc5a7b8b4d9fade3798a0d6f3d51.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0b51b14d14c94baeb0e7a1a892ee229b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0b51b14d14c94baeb0e7a1a892ee229b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:27.745207+00:00",
+  "updated_at": "2026-09-06T07:40:22.292646+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1caa82ab76784235a0aebe2406928c87",
+  "title": "Possible Element Order by Lagrange",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "52f8303424d242589ea7ab6db3d0f6f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.52f8303424d242589ea7ab6db3d0f6f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "063a2801631049f1b6f011288890908f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.063a2801631049f1b6f011288890908f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:45.873514+00:00",
+  "updated_at": "2026-09-06T07:41:51.201518+00:00"
+}

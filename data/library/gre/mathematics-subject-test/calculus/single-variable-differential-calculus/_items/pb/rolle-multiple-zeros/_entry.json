@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "54ee49937cdb493ab565ba54594fa632",
+  "title": "Force Multiple Critical Points with Rolle's Theorem",
+  "rank": 9223336852482686976,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3b66d5f043a1444ba44cea7e9a1a538f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3b66d5f043a1444ba44cea7e9a1a538f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7679f0ec69b24bd0a8509528d9ed087d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.7679f0ec69b24bd0a8509528d9ed087d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:00.680812+00:00",
+  "updated_at": "2026-09-06T07:39:44.824082+00:00"
+}

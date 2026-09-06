@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "579707c96bcc4b65a9c4cc7ccc5fed9f",
+  "title": "Jacobian of a Linear Change of Variables",
+  "rank": 9223090561878065152,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "749c9d6cf9f348bc82b7a898009cda53",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.749c9d6cf9f348bc82b7a898009cda53.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5caf62ca4ab648e991cae15f57b6ce14",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5caf62ca4ab648e991cae15f57b6ce14.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:02.528572+00:00",
+  "updated_at": "2026-09-06T07:41:06.922173+00:00"
+}

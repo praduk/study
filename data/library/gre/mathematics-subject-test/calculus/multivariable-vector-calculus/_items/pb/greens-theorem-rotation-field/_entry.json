@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "47d09c3d41c24ee3bbbe6a2c94076615",
+  "title": "Green's Theorem on the Unit Circle",
+  "rank": 9223301668110598144,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d0738aa0364c4a62aefb2bb4c10b000a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d0738aa0364c4a62aefb2bb4c10b000a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "91c7d1f545c34642b67b322eeb7da86b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.91c7d1f545c34642b67b322eeb7da86b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:05.650285+00:00",
+  "updated_at": "2026-09-06T07:41:10.769943+00:00"
+}

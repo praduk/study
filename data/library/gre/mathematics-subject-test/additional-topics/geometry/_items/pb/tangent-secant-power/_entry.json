@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "09452a3cfe8847ffb6888f3ec6ed73e7",
+  "title": "Tangent-Secant Power of a Point",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be628481c7f24ebaa9a5963d840a1117",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be628481c7f24ebaa9a5963d840a1117.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1060aed89872435d87c6d2baf41d284e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1060aed89872435d87c6d2baf41d284e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:29.563434+00:00",
+  "updated_at": "2026-09-06T07:43:17.636421+00:00"
+}

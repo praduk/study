@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6e2998ba1f1f4790a85157e8e6b62d62",
+  "title": "Surface Area of a Rotated Line",
+  "rank": 9223354444668731392,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a90bf861ab024fec96d366141656f6a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a90bf861ab024fec96d366141656f6a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ba991e10cd5f4e5792c990bf5a4779c7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ba991e10cd5f4e5792c990bf5a4779c7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:23.367783+00:00",
+  "updated_at": "2026-09-06T07:40:16.311883+00:00"
+}

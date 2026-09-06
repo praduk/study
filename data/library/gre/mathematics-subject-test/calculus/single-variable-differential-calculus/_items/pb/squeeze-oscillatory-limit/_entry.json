@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1893735753174a8591d70b750b86ac6d",
+  "title": "Squeeze an Oscillatory Limit",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "33da1b774e9540dfa929fabb03bbb44d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.33da1b774e9540dfa929fabb03bbb44d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "695ac3d44e284546a697d3ba6e7641e7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.695ac3d44e284546a697d3ba6e7641e7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:48.227009+00:00",
+  "updated_at": "2026-09-06T07:39:27.397424+00:00"
+}

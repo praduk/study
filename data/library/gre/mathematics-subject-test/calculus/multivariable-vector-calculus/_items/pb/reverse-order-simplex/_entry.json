@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6a4c447a207e4f2fa3613e48f495648c",
+  "title": "Reverse the Order of Integration",
+  "rank": 9223363240761753600,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5a2deae38afb4468a0839c61bfaae7f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5a2deae38afb4468a0839c61bfaae7f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ad3477acf589419d891297085fd49b1e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ad3477acf589419d891297085fd49b1e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:10.344222+00:00",
+  "updated_at": "2026-09-06T07:41:16.528695+00:00"
+}

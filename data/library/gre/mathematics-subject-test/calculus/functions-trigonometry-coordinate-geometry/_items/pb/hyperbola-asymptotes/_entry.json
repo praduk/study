@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e688923e699e46bb980e45e272b6867b",
+  "title": "Asymptotes of a Hyperbola",
+  "rank": 9223336852482686976,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a1932cd4f39a46b9a53dd5c7361d2adf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a1932cd4f39a46b9a53dd5c7361d2adf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a1a3200def8b460aa28ed198da6638ed",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a1a3200def8b460aa28ed198da6638ed.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:40.163228+00:00",
+  "updated_at": "2026-09-06T07:39:15.802085+00:00"
+}

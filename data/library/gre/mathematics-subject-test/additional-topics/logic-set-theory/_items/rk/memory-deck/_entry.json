@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5a9241ac6bf24f0d9223c8b641700ba0",
+  "title": "Logic and Set Theory Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "81fc4279a4674c60afb146cc60a335f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.81fc4279a4674c60afb146cc60a335f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:11.217176+00:00",
+  "updated_at": "2026-09-06T07:15:11.217182+00:00"
+}

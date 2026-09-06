@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b49128edf4e2410aa5671cb8c04b7d6b",
+  "title": "Implicit Slope on a Quadratic Curve",
+  "rank": 9221120237041090560,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e32caee1c9ff419c8938646e9a6f5e93",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e32caee1c9ff419c8938646e9a6f5e93.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6d6cbee748e849e8ba0f37f8c32eed6c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6d6cbee748e849e8ba0f37f8c32eed6c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:52.324517+00:00",
+  "updated_at": "2026-09-06T07:39:33.284752+00:00"
+}

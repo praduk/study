@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ee1e9c89bcb943959b9d155fede608d8",
+  "title": "Mixed Timed Set E",
+  "rank": 8935141660703064064,
+  "header": "Unofficial mixed practice. Derived target: 49 minutes for 19 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "baa25335ae5c447db9cb33665839a734",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.baa25335ae5c447db9cb33665839a734.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:33:59.571383+00:00",
+  "updated_at": "2026-09-06T07:33:59.571390+00:00"
+}

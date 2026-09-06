@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ef2d2fe606284a45a5a1a2fe9bcf1770",
+  "title": "Moments under an Affine Transformation",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "505f8f6a5213460e86bb8fd1f6a70922",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.505f8f6a5213460e86bb8fd1f6a70922.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2075b22c61fe471589ca3f11280d21f8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2075b22c61fe471589ca3f11280d21f8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:45.856352+00:00",
+  "updated_at": "2026-09-06T07:43:34.949579+00:00"
+}

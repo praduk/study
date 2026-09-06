@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "75ff9f327b704367abf963c3c1c5cd4c",
+  "title": "Numerical Analysis Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ccdf7fc70d345af9aa1df402081f71b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ccdf7fc70d345af9aa1df402081f71b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:15.606227+00:00",
+  "updated_at": "2026-09-06T07:15:15.606234+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "11071415240c449693b268dcdaa30918",
+  "title": "Compute Euler's Totient",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "898f38b30a4b40089a75d983c5f20157",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.898f38b30a4b40089a75d983c5f20157.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5a7b179316e1446d8e2681041d5b6e9e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5a7b179316e1446d8e2681041d5b6e9e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:14.083391+00:00",
+  "updated_at": "2026-09-06T07:42:23.671418+00:00"
+}

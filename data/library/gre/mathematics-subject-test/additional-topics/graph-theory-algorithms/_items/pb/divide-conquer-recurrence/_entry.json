@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1f7e316c883f4ce3a912d92925d630ee",
+  "title": "Asymptotic Solution of a Divide-and-Conquer Recurrence",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8340836126ad4c6bbc482cd96db8a730",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8340836126ad4c6bbc482cd96db8a730.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ea63afb7113749b79557fded76512fa9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ea63afb7113749b79557fded76512fa9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:18.991575+00:00",
+  "updated_at": "2026-09-06T07:43:06.124421+00:00"
+}

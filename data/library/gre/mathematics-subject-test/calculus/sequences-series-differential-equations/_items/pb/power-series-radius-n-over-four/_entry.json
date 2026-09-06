@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0e06b822cfb6420cad89af0a4aab25ed",
+  "title": "Radius of a Power Series",
+  "rank": 9223090561878065152,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9bb785eeba27495a946c0895ad67e1d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9bb785eeba27495a946c0895ad67e1d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c04126c4382849c28830ec66a2113816",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c04126c4382849c28830ec66a2113816.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:41.148576+00:00",
+  "updated_at": "2026-09-06T07:40:39.883211+00:00"
+}

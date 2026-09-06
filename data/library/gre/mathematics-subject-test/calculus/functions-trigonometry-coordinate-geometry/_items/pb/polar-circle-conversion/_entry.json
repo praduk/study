@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "96233910c08249ef9e8410a7ac24d2b3",
+  "title": "Convert a Polar Curve to a Circle",
+  "rank": 9223363240761753600,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6bd1bb812c6b4c3dabdef0cfb23d3683",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6bd1bb812c6b4c3dabdef0cfb23d3683.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "44191792725e447fa1d58abd1145c503",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.44191792725e447fa1d58abd1145c503.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:42.800189+00:00",
+  "updated_at": "2026-09-06T07:39:19.589757+00:00"
+}

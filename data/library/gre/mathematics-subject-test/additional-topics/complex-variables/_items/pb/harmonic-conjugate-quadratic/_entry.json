@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5beafc982ead4e17a56eca2dd4e42640",
+  "title": "Find a Harmonic Conjugate",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f4e4d9dc93d84c8cb2eb0f52eb74ff1d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f4e4d9dc93d84c8cb2eb0f52eb74ff1d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "303da01aba60473d8386d3223b16e427",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.303da01aba60473d8386d3223b16e427.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:36.665548+00:00",
+  "updated_at": "2026-09-06T07:43:25.351461+00:00"
+}

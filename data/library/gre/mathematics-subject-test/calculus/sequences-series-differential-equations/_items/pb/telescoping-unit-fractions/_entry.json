@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d1fef4e6e780441db579e4776e55fb4a",
+  "title": "Sum a Telescoping Series",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cfd4082591734110ba7c16199e744c92",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cfd4082591734110ba7c16199e744c92.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a3abd5e6e705443daca3952794e0b08a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a3abd5e6e705443daca3952794e0b08a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:30.711172+00:00",
+  "updated_at": "2026-09-06T07:40:26.205059+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "64a67a2956e34fc6b1d6f9b12aa57c0f",
+  "title": "Rationalize a Radical Limit",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3dd862385a1d4d17a9955c3263a945c2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3dd862385a1d4d17a9955c3263a945c2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "291ecbbdc22046cc9ed8544eedfa0bc7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.291ecbbdc22046cc9ed8544eedfa0bc7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:46.850924+00:00",
+  "updated_at": "2026-09-06T07:39:25.481437+00:00"
+}

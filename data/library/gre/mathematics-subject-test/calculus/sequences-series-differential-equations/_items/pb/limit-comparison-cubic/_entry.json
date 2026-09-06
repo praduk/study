@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "11b974fc4aff400bb94ec774f7a97d70",
+  "title": "Use Limit Comparison",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b186ba7d4708453489e9142c31239ccf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b186ba7d4708453489e9142c31239ccf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1c0e39eecc54473db259c0c00c209af8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1c0e39eecc54473db259c0c00c209af8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:33.727388+00:00",
+  "updated_at": "2026-09-06T07:40:30.169811+00:00"
+}

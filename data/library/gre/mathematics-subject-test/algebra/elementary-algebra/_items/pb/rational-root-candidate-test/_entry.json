@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2ac8d61e7e1c405d84bbdfbe36d765ab",
+  "title": "Test a Rational Root Efficiently",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6283666a35e0459381eec0bfd5c95941",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6283666a35e0459381eec0bfd5c95941.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6efd2deea35d41c7932746c3a365e995",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6efd2deea35d41c7932746c3a365e995.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:22.124277+00:00",
+  "updated_at": "2026-09-06T07:41:22.349300+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "32ec9c1783d24dbf934490ce5ee8fdfd",
+  "title": "Order in an Additive Cyclic Group",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b11b981aee564d0cba32b6bf37d08380",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b11b981aee564d0cba32b6bf37d08380.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d0c139191ffc4c1a82ac904e1718af6a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d0c139191ffc4c1a82ac904e1718af6a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:42.637583+00:00",
+  "updated_at": "2026-09-06T07:41:47.369936+00:00"
+}

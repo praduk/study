@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d4e5939564e0426ca43a3c91646290a1",
+  "title": "Recognize a Topology",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2cde3f7b08ca44c48f86b206f26eaa2b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2cde3f7b08ca44c48f86b206f26eaa2b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "16ffbbcd6d3346acbef65ec7a0b754aa",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.16ffbbcd6d3346acbef65ec7a0b754aa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:20.730083+00:00",
+  "updated_at": "2026-09-06T07:43:08.026180+00:00"
+}

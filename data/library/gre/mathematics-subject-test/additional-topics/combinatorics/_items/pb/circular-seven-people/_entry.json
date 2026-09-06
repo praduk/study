@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b08b12a645234ba18bc3271bb01a8af3",
+  "title": "Circular Arrangements up to Rotation",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a28db455bf54d3382f705cab1b0adb2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a28db455bf54d3382f705cab1b0adb2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5028212e79b54c7d8f3dc3d10b73243e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5028212e79b54c7d8f3dc3d10b73243e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:04.991594+00:00",
+  "updated_at": "2026-09-06T07:42:50.678505+00:00"
+}

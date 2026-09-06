@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f9aa59b33ac14d84bedbb9d1dfb98c80",
+  "title": "Limit of a Recursive Sequence",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5dd6ddcae718484abcbbb0743880b50c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5dd6ddcae718484abcbbb0743880b50c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "39871d4e6bef4fa5899438fc4f85712c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.39871d4e6bef4fa5899438fc4f85712c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:29.230244+00:00",
+  "updated_at": "2026-09-06T07:40:24.232190+00:00"
+}

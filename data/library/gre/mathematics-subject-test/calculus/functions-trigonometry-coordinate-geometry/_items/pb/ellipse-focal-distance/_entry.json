@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6dc19df7a77a4bd0922f2c039fe1986a",
+  "title": "Foci of an Ellipse",
+  "rank": 9223301668110598144,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90d2ab5a12da4e629e039b6f56e8f06a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90d2ab5a12da4e629e039b6f56e8f06a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8e47fdb8185045079d02d9f99303eaa0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8e47fdb8185045079d02d9f99303eaa0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:38.857945+00:00",
+  "updated_at": "2026-09-06T07:39:13.938237+00:00"
+}

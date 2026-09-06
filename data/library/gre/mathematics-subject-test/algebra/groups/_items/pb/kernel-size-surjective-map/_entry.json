@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8da42357d95a4d708695f30cc5340b94",
+  "title": "Kernel Size of a Surjective Homomorphism",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44be04cba6e34acb8055bacc1b1f8b2f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44be04cba6e34acb8055bacc1b1f8b2f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a1301957369b4ee1ac9e5fb94a8eb79a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a1301957369b4ee1ac9e5fb94a8eb79a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:49.117904+00:00",
+  "updated_at": "2026-09-06T07:41:54.998673+00:00"
+}

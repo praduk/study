@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ddad51588d1040cab438e0c3b4821ff8",
+  "title": "Area Scaling in Similar Triangles",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d535150f3ca84670a1c4d804cc03377c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d535150f3ca84670a1c4d804cc03377c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "648cf0333d3d4385b405c0d577501f5c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.648cf0333d3d4385b405c0d577501f5c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:27.798893+00:00",
+  "updated_at": "2026-09-06T07:43:15.716645+00:00"
+}

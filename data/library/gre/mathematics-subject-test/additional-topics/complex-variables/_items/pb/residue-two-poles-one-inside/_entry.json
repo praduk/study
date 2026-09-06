@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8d5a64963a5147daa4670d27f9fa30b6",
+  "title": "Residue with One Enclosed Pole",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95e064d714f743e9ad58f8e34feea244",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95e064d714f743e9ad58f8e34feea244.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8b76a1ed92f7463389ab911c7f355755",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8b76a1ed92f7463389ab911c7f355755.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:38.488099+00:00",
+  "updated_at": "2026-09-06T07:43:27.292200+00:00"
+}

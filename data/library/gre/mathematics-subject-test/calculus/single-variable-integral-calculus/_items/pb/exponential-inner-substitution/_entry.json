@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "35111b152e004ee6b8c9bb0aa6313df2",
+  "title": "Substitute into an Exponential",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "532ca28abb5e4d21b243dd42a0850d58",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.532ca28abb5e4d21b243dd42a0850d58.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "724d597acbc541eeb981e9d0614a4dbc",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.724d597acbc541eeb981e9d0614a4dbc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:07.740895+00:00",
+  "updated_at": "2026-09-06T07:39:54.838748+00:00"
+}

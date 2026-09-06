@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "732bacf39a2748e6985c3e263afa4cd9",
+  "title": "Edges in a Complete Bipartite Graph",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e9960ef9cd744a7bf5a5cc9a754c3cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e9960ef9cd744a7bf5a5cc9a754c3cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "19ad63f98cdd49789488bd9e0ddd8e96",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.19ad63f98cdd49789488bd9e0ddd8e96.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:15.459610+00:00",
+  "updated_at": "2026-09-06T07:43:02.201002+00:00"
+}

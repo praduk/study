@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6d506add60d04f5798cf06f9259648f7",
+  "title": "Track Determinant through Row Operations",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "496e0a5b6cf34270b75f8b338a670978",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.496e0a5b6cf34270b75f8b338a670978.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1a0adf3823504f51bd1c2ad77d7d9b45",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1a0adf3823504f51bd1c2ad77d7d9b45.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:33.058720+00:00",
+  "updated_at": "2026-09-06T07:41:35.764078+00:00"
+}

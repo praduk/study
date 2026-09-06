@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f86ff65a1592486a972227c292c8b700",
+  "title": "Maclaurin Coefficient in a Product",
+  "rank": 9223363240761753600,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c9e50b7c98b4cd2a957e2c27ecfac82",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c9e50b7c98b4cd2a957e2c27ecfac82.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f15fb1e57b6244af9ba9883bae868fa3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f15fb1e57b6244af9ba9883bae868fa3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:03.455913+00:00",
+  "updated_at": "2026-09-06T07:39:48.927500+00:00"
+}

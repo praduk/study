@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9f43e77a5d15469790d7c04c96f41d0d",
+  "title": "Sum the First Odd Numbers",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8ac48b479d0548ec81462bd433ae00b1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8ac48b479d0548ec81462bd433ae00b1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "45e08bb9d78e482f99b6603f3575edca",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.45e08bb9d78e482f99b6603f3575edca.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:28.342951+00:00",
+  "updated_at": "2026-09-06T07:41:29.999261+00:00"
+}

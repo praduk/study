@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a90cc0389b5243218d4bdf07364720ff",
+  "title": "Evaluate a Linear Recurrence",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c7a03a1d6e8f4992a072294700692921",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c7a03a1d6e8f4992a072294700692921.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ce0ba88d18d643f6ada2d4dec31458b6",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ce0ba88d18d643f6ada2d4dec31458b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:10.214207+00:00",
+  "updated_at": "2026-09-06T07:42:56.492373+00:00"
+}

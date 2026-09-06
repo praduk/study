@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "123061062b7e445abb27df149cff5c2b",
+  "title": "Inclusion-Exclusion for Divisibility",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2554cde3c1384e9a93f70c7d3a952d8e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2554cde3c1384e9a93f70c7d3a952d8e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "35dd160eab6a49a1acc72e0f6c8d2e86",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.35dd160eab6a49a1acc72e0f6c8d2e86.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:08.461800+00:00",
+  "updated_at": "2026-09-06T07:42:54.529694+00:00"
+}

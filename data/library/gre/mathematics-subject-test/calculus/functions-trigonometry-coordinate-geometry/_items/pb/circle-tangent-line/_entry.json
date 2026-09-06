@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "97ab0dcb2ee14bd383fb8613c77285c5",
+  "title": "Tangent Line to a Circle",
+  "rank": 9223231299366420480,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd918861576b439dbce01cbc9a6610c9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd918861576b439dbce01cbc9a6610c9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f86c24d3d79b44ad941f965f46a598e6",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f86c24d3d79b44ad941f965f46a598e6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:37.560623+00:00",
+  "updated_at": "2026-09-06T07:39:12.091448+00:00"
+}

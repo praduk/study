@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "04ec8a959e6b4456bf2a5f9a77ecb92b",
+  "title": "Angle between Two Vectors",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "65306ebc038b4c33a66b129c68564005",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.65306ebc038b4c33a66b129c68564005.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "febc095c9d1a4cfe935488170c527e49",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.febc095c9d1a4cfe935488170c527e49.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:33.118814+00:00",
+  "updated_at": "2026-09-06T07:43:21.477267+00:00"
+}

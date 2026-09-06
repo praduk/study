@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8f5706b678fe4393b4d184485bdbd85f",
+  "title": "Uniform Convergence of $x^n$",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "674bad9d8eb8478b949c0f3dfad924ca",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.674bad9d8eb8478b949c0f3dfad924ca.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "75e398f998e1454c9e7f7f215c402b53",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.75e398f998e1454c9e7f7f215c402b53.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:54.717065+00:00",
+  "updated_at": "2026-09-06T07:42:39.094852+00:00"
+}

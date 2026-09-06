@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9991ff66d54c4ed7b4fa362bfcf6ff3a",
+  "title": "Negate Nested Quantifiers",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "158146af690b41e684b4c127d77d710e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.158146af690b41e684b4c127d77d710e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4754c0f48240406499aabfefa9ebb62b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4754c0f48240406499aabfefa9ebb62b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:56.420404+00:00",
+  "updated_at": "2026-09-06T07:42:40.993729+00:00"
+}

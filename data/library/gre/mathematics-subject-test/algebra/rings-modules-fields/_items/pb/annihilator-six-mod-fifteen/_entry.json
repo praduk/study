@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c674f355754a4d25a84fb8a9bce0b412",
+  "title": "Annihilator in a Cyclic Module",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9575b268bae4683971be57740fc5fc4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9575b268bae4683971be57740fc5fc4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "997f0c5275944f9cb1a743aa01726440",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.997f0c5275944f9cb1a743aa01726440.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:05.642570+00:00",
+  "updated_at": "2026-09-06T07:42:14.122914+00:00"
+}

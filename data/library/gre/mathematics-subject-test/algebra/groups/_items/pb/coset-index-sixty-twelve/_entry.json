@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a5f41786938a47ddbfb4f5af5749ba4d",
+  "title": "Compute a Subgroup Index",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "72c950b6fdf04df0b012130ee77c78c2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.72c950b6fdf04df0b012130ee77c78c2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a972c01f5876438eac8c97eb71e3fde1",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a972c01f5876438eac8c97eb71e3fde1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:47.487086+00:00",
+  "updated_at": "2026-09-06T07:41:53.101599+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "85960212e9d0490b8706643cd8519ed0",
+  "title": "Flux through a Unit Cube",
+  "rank": 9223354444668731392,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3225cd3af67a4f58b5ba719bbbbc9870",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3225cd3af67a4f58b5ba719bbbbc9870.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c9efbc948de842a793a2e7a7894028c6",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c9efbc948de842a793a2e7a7894028c6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:08.777979+00:00",
+  "updated_at": "2026-09-06T07:41:14.614372+00:00"
+}

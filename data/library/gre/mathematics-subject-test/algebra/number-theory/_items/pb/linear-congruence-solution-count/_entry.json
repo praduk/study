@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9ed516fa34094f5896d0709a46782fdc",
+  "title": "Count Solutions of a Linear Congruence",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "03df82ed93174d0d8107b929f603d5cb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.03df82ed93174d0d8107b929f603d5cb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "89ac733f2ffd47f9897efcb5ce61b5e3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.89ac733f2ffd47f9897efcb5ce61b5e3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:12.382705+00:00",
+  "updated_at": "2026-09-06T07:42:21.770545+00:00"
+}

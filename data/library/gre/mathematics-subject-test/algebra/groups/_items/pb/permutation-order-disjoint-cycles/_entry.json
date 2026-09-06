@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8923fc1ff08343a0bdc828fc4d6a3e93",
+  "title": "Order of a Permutation",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e0614ff37c844a2982a992e74ac70fab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e0614ff37c844a2982a992e74ac70fab.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cabe5b4c1510482eb3fd3afc104082dc",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.cabe5b4c1510482eb3fd3afc104082dc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:50.746983+00:00",
+  "updated_at": "2026-09-06T07:41:56.915033+00:00"
+}

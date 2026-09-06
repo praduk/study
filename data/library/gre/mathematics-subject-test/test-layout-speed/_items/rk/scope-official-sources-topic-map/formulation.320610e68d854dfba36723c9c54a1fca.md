@@ -4,7 +4,7 @@ This branch prepares for the **GRE Mathematics Subject Test**, not the Quantitat
 
 All practice questions, worked solutions, summaries, and timing recommendations in this Study branch are independently authored and unofficial. They are not ETS questions and should not be presented as endorsed by ETS.
 
-The facts below were checked against official ETS material on September 5, 2026. Test specifications and policies can change, so recheck the linked ETS pages before registering and again shortly before test day.
+The facts below were checked against official ETS material on September 6, 2026. Test specifications and policies can change, so recheck the linked ETS pages before registering and again shortly before test day.
 
 # Official topic map
 

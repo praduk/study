@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c3304b771a934f9e9b037d08183af8b7",
+  "title": "Mixed Timed Set G",
+  "rank": 9151314442816847872,
+  "header": "Unofficial mixed practice. Derived target: 49 minutes for 19 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "77127b91d7684ab2b3f35eb92d722819",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.77127b91d7684ab2b3f35eb92d722819.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:34:01.425156+00:00",
+  "updated_at": "2026-09-06T07:34:01.425162+00:00"
+}

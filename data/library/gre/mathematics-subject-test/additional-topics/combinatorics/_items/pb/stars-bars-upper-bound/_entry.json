@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2f58f69f8eb44a559ef3f442cd9ac0cc",
+  "title": "Stars and Bars with an Upper Bound",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bf2359a146df45c39e8202a262b5fa89",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bf2359a146df45c39e8202a262b5fa89.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8af5d15226244327a9d3134814f8e7b0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8af5d15226244327a9d3134814f8e7b0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:06.704534+00:00",
+  "updated_at": "2026-09-06T07:42:52.626998+00:00"
+}

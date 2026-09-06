@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ac2e0535d7f34fb890e598cffea32c5d",
+  "title": "Mixed Timed Set H",
+  "rank": 9187343239835811840,
+  "header": "Unofficial mixed practice. Derived target: 49 minutes for 19 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d05a669b6f743979fa656f0c26dec0a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d05a669b6f743979fa656f0c26dec0a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:34:02.377947+00:00",
+  "updated_at": "2026-09-06T07:34:02.377953+00:00"
+}

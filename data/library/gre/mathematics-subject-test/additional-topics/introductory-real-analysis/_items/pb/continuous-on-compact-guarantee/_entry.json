@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b17a02970d514f9199c6aa085137b779",
+  "title": "Continuous Function on a Compact Interval",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da670fd893f34b02a26f16c017511aa5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da670fd893f34b02a26f16c017511aa5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7e150a9ffbcd40539e8e208346cf455c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.7e150a9ffbcd40539e8e208346cf455c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:53.063010+00:00",
+  "updated_at": "2026-09-06T07:42:37.142487+00:00"
+}

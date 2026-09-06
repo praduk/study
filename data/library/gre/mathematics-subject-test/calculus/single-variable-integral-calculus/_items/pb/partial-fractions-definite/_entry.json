@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4c708c3c0cac4916a39719ec60ea8576",
+  "title": "A Definite Integral by Partial Fractions",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bbeb5f6b65a0419595ef182a02171f4e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bbeb5f6b65a0419595ef182a02171f4e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "baf989fad30342338fc9a2f2ab28e2b1",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.baf989fad30342338fc9a2f2ab28e2b1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:10.483715+00:00",
+  "updated_at": "2026-09-06T07:39:58.794978+00:00"
+}

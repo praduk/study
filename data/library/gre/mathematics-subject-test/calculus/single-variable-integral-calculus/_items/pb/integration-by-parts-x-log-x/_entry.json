@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eead7a89f31a4ff0b2d36934deb14201",
+  "title": "Integrate $x\\ln x$",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ed5c81d0589f48d99cd075abf3be3df9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ed5c81d0589f48d99cd075abf3be3df9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f8faacd3b27a432e94abad3402b5e43f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f8faacd3b27a432e94abad3402b5e43f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:09.111273+00:00",
+  "updated_at": "2026-09-06T07:39:56.784030+00:00"
+}

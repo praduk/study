@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e8f2a0d8233d43e59436591dda8f4059",
+  "title": "Count Injections Between Finite Sets",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a9812a69fa444bd798c79186287bf1b7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a9812a69fa444bd798c79186287bf1b7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "605a0b6393bf487a9ddd2aeb6303ef0a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.605a0b6393bf487a9ddd2aeb6303ef0a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:58.139967+00:00",
+  "updated_at": "2026-09-06T07:42:42.907821+00:00"
+}

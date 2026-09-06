@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1f67a485d6e84d30a301626193bbf905",
+  "title": "Area Between a Line and a Parabola",
+  "rank": 9223090561878065152,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "556f2c39d7964fb288042083d9228202",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.556f2c39d7964fb288042083d9228202.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "49e7fa823df74b8c86ef070d36069019",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.49e7fa823df74b8c86ef070d36069019.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:17.603868+00:00",
+  "updated_at": "2026-09-06T07:40:08.568028+00:00"
+}

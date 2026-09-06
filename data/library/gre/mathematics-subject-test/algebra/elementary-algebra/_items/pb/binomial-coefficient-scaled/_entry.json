@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b0953156e6ff46a8a1e93e525741f1e0",
+  "title": "Extract a Binomial Coefficient",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7ec27ef1a6174cb19c6b1060180da842",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7ec27ef1a6174cb19c6b1060180da842.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f527dcf38e9444d0a393eabaa1be228f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f527dcf38e9444d0a393eabaa1be228f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:29.902622+00:00",
+  "updated_at": "2026-09-06T07:41:31.917780+00:00"
+}

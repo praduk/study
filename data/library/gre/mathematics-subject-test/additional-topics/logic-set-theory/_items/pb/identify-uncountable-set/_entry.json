@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "02fe29372d0c40378cf2170b9e0ffb1d",
+  "title": "Identify an Uncountable Set",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44ae6e8853534714af6a49e99b13b385",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44ae6e8853534714af6a49e99b13b385.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "28b43fc5f87b476baba5436f6254cdd7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.28b43fc5f87b476baba5436f6254cdd7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:01.538612+00:00",
+  "updated_at": "2026-09-06T07:42:46.745977+00:00"
+}

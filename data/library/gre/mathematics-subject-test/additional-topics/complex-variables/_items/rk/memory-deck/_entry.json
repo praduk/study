@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "37ce5fbf2b5b4661bc44ca4c7d2ee0a2",
+  "title": "Complex Variables Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c23518c63961494a95f77e004fcf32be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c23518c63961494a95f77e004fcf32be.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:14.325065+00:00",
+  "updated_at": "2026-09-06T07:15:14.325072+00:00"
+}

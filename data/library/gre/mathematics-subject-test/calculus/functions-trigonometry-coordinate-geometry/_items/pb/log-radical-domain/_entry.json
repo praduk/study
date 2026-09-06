@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e6489ab1e27e46788eca78b1c6bf6e64",
+  "title": "Domain with a Logarithm, Radical, and Pole",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1f5fb772106412e8b2ff72c9863ed87",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1f5fb772106412e8b2ff72c9863ed87.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "68b7eff53bf04cdcb87d9e959d1eeb8b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.68b7eff53bf04cdcb87d9e959d1eeb8b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:24.571281+00:00",
+  "updated_at": "2026-09-06T07:38:53.708852+00:00"
+}

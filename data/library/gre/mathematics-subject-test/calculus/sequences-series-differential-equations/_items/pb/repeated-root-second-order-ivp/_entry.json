@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e8060a8e88614221972912e59235c56a",
+  "title": "A Repeated-Root Second-Order IVP",
+  "rank": 9223363240761753600,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4ad1b5eab1b487393e76f1845be5142",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4ad1b5eab1b487393e76f1845be5142.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0d3feba0e5bd434a9e3dc57302a95e3e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0d3feba0e5bd434a9e3dc57302a95e3e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:48.726590+00:00",
+  "updated_at": "2026-09-06T07:40:49.502607+00:00"
+}

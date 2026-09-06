@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d2c6dd1b1a2d4bd19af6cf6550348b0c",
+  "title": "Distance from a Point to a Line",
+  "rank": 9223354444668731392,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d56262b376154c14bf533a7e4438b699",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d56262b376154c14bf533a7e4438b699.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eaf9820760a547489795ebc3366e4553",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.eaf9820760a547489795ebc3366e4553.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:41.455566+00:00",
+  "updated_at": "2026-09-06T07:39:17.684495+00:00"
+}

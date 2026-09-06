@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "22f41bbbfc294ceb9ac22097757173d4",
+  "title": "Count Zeros Using Sum-to-Product",
+  "rank": 9222246136947933184,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b74a6cb0e2a44355b673d814f5307a4c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b74a6cb0e2a44355b673d814f5307a4c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8014702bb8b242efb3e169b448fb9705",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8014702bb8b242efb3e169b448fb9705.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:33.323256+00:00",
+  "updated_at": "2026-09-06T07:39:06.536767+00:00"
+}

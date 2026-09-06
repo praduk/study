@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "696a62f60a0f437daf254faee4334508",
+  "title": "Use Orbit-Stabilizer",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0e0800898cf243a1805f48763d939756",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0e0800898cf243a1805f48763d939756.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7748e3a2006b45d085a44a778dad5c10",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.7748e3a2006b45d085a44a778dad5c10.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:52.364750+00:00",
+  "updated_at": "2026-09-06T07:41:58.818216+00:00"
+}

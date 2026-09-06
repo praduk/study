@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "896ebc1767524cf1856b88c73b4e5859",
+  "title": "Simpson's Rule on a Cubic",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd97c4ed237b455eb6b0ebbd1cde5d1a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd97c4ed237b455eb6b0ebbd1cde5d1a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1e8b3ab5a55b45b0b0ea5bd42f6e5c70",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1e8b3ab5a55b45b0b0ea5bd42f6e5c70.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:55.151583+00:00",
+  "updated_at": "2026-09-06T07:43:44.842505+00:00"
+}

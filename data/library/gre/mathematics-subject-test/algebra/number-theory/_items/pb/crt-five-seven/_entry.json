@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5ef203b133b1437cb179ec02fb806dd5",
+  "title": "A Two-Modulus CRT Problem",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3570be83d5ff4d3abdbb1e2060de86dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3570be83d5ff4d3abdbb1e2060de86dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2b3548d9caf54c2ebded17ad9dac62c1",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2b3548d9caf54c2ebded17ad9dac62c1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:17.542442+00:00",
+  "updated_at": "2026-09-06T07:42:27.558345+00:00"
+}

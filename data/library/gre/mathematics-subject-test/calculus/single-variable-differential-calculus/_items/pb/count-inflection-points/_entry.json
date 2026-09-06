@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "946f5270a97e455e87f53fd5c7cc8b41",
+  "title": "Count Genuine Inflection Points",
+  "rank": 9223231299366420480,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2947d34cf83c433a82f7fdec6a7c4583",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2947d34cf83c433a82f7fdec6a7c4583.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c22cbdeb429b40c0b01c759acedc0ce1",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c22cbdeb429b40c0b01c759acedc0ce1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:57.875159+00:00",
+  "updated_at": "2026-09-06T07:39:40.889994+00:00"
+}

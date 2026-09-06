@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "722d15fa0e6f450eaad6910591c2bc90",
+  "title": "Stokes' Theorem with Constant Curl",
+  "rank": 9223336852482686976,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0fb2b1cfd28b4673b77f302d0e6b571d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0fb2b1cfd28b4673b77f302d0e6b571d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6d3f37096cbc43b9842c30ac84cb54f1",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6d3f37096cbc43b9842c30ac84cb54f1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:23:07.203145+00:00",
+  "updated_at": "2026-09-06T07:41:12.679345+00:00"
+}

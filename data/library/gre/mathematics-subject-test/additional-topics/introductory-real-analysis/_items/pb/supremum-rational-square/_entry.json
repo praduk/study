@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "337dfb8c2fc04a91a281dea8cac7b074",
+  "title": "Supremum of a Rational Set",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c54cc66a106241c583fcb849fa2cc00f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c54cc66a106241c583fcb849fa2cc00f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f5c09d6004a54c65a79afa84794e6f98",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f5c09d6004a54c65a79afa84794e6f98.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:31:49.709816+00:00",
+  "updated_at": "2026-09-06T07:42:33.348727+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4e18351c7cd7411ea32ed7c52389abd1",
+  "title": "Related Rate for an Expanding Sphere",
+  "rank": 9222809086901354496,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c4c5820a929d49b5a494aa3bc00c4af4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c4c5820a929d49b5a494aa3bc00c4af4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ce118bceaa134584947f9272efca3453",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ce118bceaa134584947f9272efca3453.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:55.062938+00:00",
+  "updated_at": "2026-09-06T07:39:37.086306+00:00"
+}

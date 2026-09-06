@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "07a842eb5e724fb38bf5625f27ae8e11",
+  "title": "Volume by Cylindrical Shells",
+  "rank": 9223301668110598144,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "407df6cd2c67403d85346620d4f5b91c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.407df6cd2c67403d85346620d4f5b91c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4865df7d59cd4ac1a45e82bbfd8abf54",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4865df7d59cd4ac1a45e82bbfd8abf54.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:20.476145+00:00",
+  "updated_at": "2026-09-06T07:40:12.462197+00:00"
+}

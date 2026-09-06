@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4df9632e2b964f8ea33bea3e80d7cb5d",
+  "title": "Classify a Complex Singularity",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e44f64e6003e40f28d7a8aaf9bee954e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e44f64e6003e40f28d7a8aaf9bee954e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1e4b968157954ad4860390fb9bafd184",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1e4b968157954ad4860390fb9bafd184.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:40.301886+00:00",
+  "updated_at": "2026-09-06T07:43:29.199550+00:00"
+}

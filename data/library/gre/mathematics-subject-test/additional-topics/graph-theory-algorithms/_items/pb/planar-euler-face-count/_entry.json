@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3458f03ca2ce4c05897596c9150f8588",
+  "title": "Faces of a Connected Planar Graph",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2ea8048f474d4e7ea95ff1135e31ae5e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2ea8048f474d4e7ea95ff1135e31ae5e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21a2f2eae59f44089a670043ba1d19e4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.21a2f2eae59f44089a670043ba1d19e4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:17.197312+00:00",
+  "updated_at": "2026-09-06T07:43:04.210689+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c3c38f96204e42f29c5296250f12a30d",
+  "title": "Linear Interpolation at a Midpoint",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e4a3ea4d2db4a3e9fb75e8932554bbc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e4a3ea4d2db4a3e9fb75e8932554bbc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ce2dccd62d694e29b14f154d2d9c89e4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ce2dccd62d694e29b14f154d2d9c89e4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:53.279589+00:00",
+  "updated_at": "2026-09-06T07:43:42.875136+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3b5ca99dacbf4bf093cedbc3242b4243",
+  "title": "Recognize a Trigonometric Product",
+  "rank": 9221120237041090560,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ab7292e4d3984639b22a68ffe1faf2ec",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ab7292e4d3984639b22a68ffe1faf2ec.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "de54d83fcef544a8b8e0cd7a94537c71",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.de54d83fcef544a8b8e0cd7a94537c71.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:32.034951+00:00",
+  "updated_at": "2026-09-06T07:39:04.687129+00:00"
+}

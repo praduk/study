@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6be5394c37504c119c246cb45ae486f4",
+  "title": "Solve a Separable Initial-Value Problem",
+  "rank": 9223336852482686976,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "31dcd426c852414092b6a82206362930",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.31dcd426c852414092b6a82206362930.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3780bca45301452caff61b3f79ea1d4d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.3780bca45301452caff61b3f79ea1d4d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:45.644526+00:00",
+  "updated_at": "2026-09-06T07:40:45.651463+00:00"
+}

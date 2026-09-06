@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d877502ec98945a1821ae75d73b42f5a",
+  "title": "Single-Variable Differential Calculus Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "56943288902f4e48a4ed68e0e2ea3960",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.56943288902f4e48a4ed68e0e2ea3960.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:05.274849+00:00",
+  "updated_at": "2026-09-06T07:15:05.274856+00:00"
+}

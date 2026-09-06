@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b56ff7001986403a9af4b11d6af7de1e",
+  "title": "Multivariable and Vector Calculus Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba221c128ff341f685e39d16bc58a44c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba221c128ff341f685e39d16bc58a44c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:07.000835+00:00",
+  "updated_at": "2026-09-06T07:15:07.000841+00:00"
+}

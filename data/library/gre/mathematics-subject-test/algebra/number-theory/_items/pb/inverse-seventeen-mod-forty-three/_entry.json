@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0daa9f0f5c7244d9807c1aa66744c3e9",
+  "title": "A Modular Inverse",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "08a43b59780f4f46ac3a9515790134a5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.08a43b59780f4f46ac3a9515790134a5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6e1f9f4697de43b2839dd9546df06b25",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6e1f9f4697de43b2839dd9546df06b25.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:10.688025+00:00",
+  "updated_at": "2026-09-06T07:42:19.823181+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eb6fcc2f027a4f8580e2b192a03e3395",
+  "title": "Choose a Parameter for Continuity",
+  "rank": 9214364837600034816,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f5f289c4ef946428a385684e971e2e0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f5f289c4ef946428a385684e971e2e0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c68c913c29dc4b528c596c8b4d127741",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c68c913c29dc4b528c596c8b4d127741.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:49.621618+00:00",
+  "updated_at": "2026-09-06T07:39:29.358229+00:00"
+}

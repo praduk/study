@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8e6905709a2e44e98bceac3993391b69",
+  "title": "Group Theory Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9e8b14143cc749888dea78a807582120",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9e8b14143cc749888dea78a807582120.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:08.787036+00:00",
+  "updated_at": "2026-09-06T07:15:08.787044+00:00"
+}

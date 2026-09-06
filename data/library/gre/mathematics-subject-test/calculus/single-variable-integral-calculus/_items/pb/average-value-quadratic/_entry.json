@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4b254164288d4e0b994bf9769c8426b5",
+  "title": "Average Value of a Quadratic",
+  "rank": 9222809086901354496,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "455518c2af244104b077bead2288c6ea",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.455518c2af244104b077bead2288c6ea.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "672f25d95ff246e4aa50b036bbe9e050",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.672f25d95ff246e4aa50b036bbe9e050.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:16.179344+00:00",
+  "updated_at": "2026-09-06T07:40:06.612979+00:00"
+}

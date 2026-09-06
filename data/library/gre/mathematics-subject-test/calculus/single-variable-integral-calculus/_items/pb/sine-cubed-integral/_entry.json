@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "765c3bec68bd46858a15857f491b14b4",
+  "title": "Integrate an Odd Power of Sine",
+  "rank": 9218868437227405312,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99a217b9af9d412782489deb9ce5461e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99a217b9af9d412782489deb9ce5461e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "83265948c7594c0a94bffc3fcdb8af67",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.83265948c7594c0a94bffc3fcdb8af67.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:11.889880+00:00",
+  "updated_at": "2026-09-06T07:40:00.743879+00:00"
+}

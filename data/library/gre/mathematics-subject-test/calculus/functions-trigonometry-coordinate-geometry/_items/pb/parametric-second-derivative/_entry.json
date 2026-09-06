@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7f283f169fef41e3abd254f8dc2daed0",
+  "title": "Second Derivative of a Parametric Curve",
+  "rank": 9223367638808264704,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b9d2191ba03242ef9153d333c8d5a417",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b9d2191ba03242ef9153d333c8d5a417.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "521ff9eef9fc41ffaeb6f3ec0c7f9b75",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.521ff9eef9fc41ffaeb6f3ec0c7f9b75.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:44.122851+00:00",
+  "updated_at": "2026-09-06T07:39:21.594068+00:00"
+}

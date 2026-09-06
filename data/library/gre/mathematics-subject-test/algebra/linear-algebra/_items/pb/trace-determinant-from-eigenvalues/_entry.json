@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6b35682099324f5d9d42c372a64e840b",
+  "title": "Trace and Determinant from Eigenvalues",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b1f5dbb4036b425390163089859d8fca",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b1f5dbb4036b425390163089859d8fca.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "964be4416e6a4199b79663439f072c4c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.964be4416e6a4199b79663439f072c4c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:34.649993+00:00",
+  "updated_at": "2026-09-06T07:41:37.702993+00:00"
+}

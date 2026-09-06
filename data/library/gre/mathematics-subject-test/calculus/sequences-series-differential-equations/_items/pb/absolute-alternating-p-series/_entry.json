@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e628aabb4561456582c55be23261b8c8",
+  "title": "Absolute versus Conditional Convergence",
+  "rank": 9222246136947933184,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b8b85368e6074ca9b9b953a8f4488129",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b8b85368e6074ca9b9b953a8f4488129.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "295f6a6eae3f46c980bb12c3a3c1207e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.295f6a6eae3f46c980bb12c3a3c1207e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:38.182155+00:00",
+  "updated_at": "2026-09-06T07:40:36.026172+00:00"
+}

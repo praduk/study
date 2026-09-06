@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "95fc4e7e8f0944be981f1bcca3ff2661",
+  "title": "Solve an Absolute-Value Inequality",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f7bce71b5ed49e1b3fd1507c393c4fa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f7bce71b5ed49e1b3fd1507c393c4fa.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "de3963e372b54681bd8e526aee09917d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.de3963e372b54681bd8e526aee09917d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:23.667450+00:00",
+  "updated_at": "2026-09-06T07:41:24.251434+00:00"
+}

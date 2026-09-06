@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0e3988717e4d45d78566d4bdd60d9bcc",
+  "title": "Use the Tower Law",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 45 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d763878066564189845bbb48703f6959",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d763878066564189845bbb48703f6959.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d24d36db48854a95a8b1bf06b22ac352",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d24d36db48854a95a8b1bf06b22ac352.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:03.968678+00:00",
+  "updated_at": "2026-09-06T07:42:12.209042+00:00"
+}

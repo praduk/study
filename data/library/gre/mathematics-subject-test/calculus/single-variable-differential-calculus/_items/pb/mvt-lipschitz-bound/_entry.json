@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6b1452abd69243d19cf6d9a4fccad759",
+  "title": "Use a Derivative Bound",
+  "rank": 9223367638808264704,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "547f18d634cc4ba2abbf38a6f04396d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.547f18d634cc4ba2abbf38a6f04396d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c0b4ae0e8ef248d48a96eb4d5b5032ab",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c0b4ae0e8ef248d48a96eb4d5b5032ab.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:04.842233+00:00",
+  "updated_at": "2026-09-06T07:39:50.935871+00:00"
+}

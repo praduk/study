@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "283fd34669fe42e1ab5ee06b66779892",
+  "title": "Solve a Logarithm Equation with a Domain Check",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2888841cc80c47979f1a59c4444c5e9a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2888841cc80c47979f1a59c4444c5e9a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a4de852b2bb2417e937649ce57b7edd7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a4de852b2bb2417e937649ce57b7edd7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:27.022590+00:00",
+  "updated_at": "2026-09-06T07:38:57.391821+00:00"
+}

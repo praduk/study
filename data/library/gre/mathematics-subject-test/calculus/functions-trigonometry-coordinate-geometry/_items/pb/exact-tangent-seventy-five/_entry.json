@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5ca2fed2e4964c4582482ea080e216b1",
+  "title": "Exact Value of Tangent Seventy-Five Degrees",
+  "rank": 9218868437227405312,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "141bdd5985854fd3b0ce466731addd0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.141bdd5985854fd3b0ce466731addd0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6e286cbbd2154153afde27b9bac261d6",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6e286cbbd2154153afde27b9bac261d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:30.738236+00:00",
+  "updated_at": "2026-09-06T07:39:02.865084+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ee4e4ee71ff140d2abfde2730c70d4b3",
+  "title": "Use AM-GM for a Minimum",
+  "rank": 9187343239835811840,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a02f8e91e7884defba0c7d5001d22d78",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a02f8e91e7884defba0c7d5001d22d78.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4473075021484cc68fa60af26bd765f8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4473075021484cc68fa60af26bd765f8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:26.795121+00:00",
+  "updated_at": "2026-09-06T07:41:28.084893+00:00"
+}

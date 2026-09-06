@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c693f5c26d7148ad899dc524a2996513",
+  "title": "Probability and Statistics Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f61792b062b4dfdb0b7532091b09335",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f61792b062b4dfdb0b7532091b09335.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:14.951531+00:00",
+  "updated_at": "2026-09-06T07:15:14.951538+00:00"
+}

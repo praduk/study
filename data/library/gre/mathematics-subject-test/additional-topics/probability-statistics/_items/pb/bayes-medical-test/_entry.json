@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b005d49512f9445998b8a6a821d17538",
+  "title": "Bayes' Theorem for a Diagnostic Test",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8b5cf2d43587482592947b10cc86c115",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8b5cf2d43587482592947b10cc86c115.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ed2d1970924c4a91943df1ce3f8d095f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ed2d1970924c4a91943df1ce3f8d095f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:42.121113+00:00",
+  "updated_at": "2026-09-06T07:43:31.127787+00:00"
+}

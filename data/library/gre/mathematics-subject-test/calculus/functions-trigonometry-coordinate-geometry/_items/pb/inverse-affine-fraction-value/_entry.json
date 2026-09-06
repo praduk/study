@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "69f6fca63b8e48c9a929f386b3fb8c1a",
+  "title": "Invert a Fractional Linear Function",
+  "rank": 9151314442816847872,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7ffb80b8ea3045e3a74138b1207cd578",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7ffb80b8ea3045e3a74138b1207cd578.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d7d90108e7c04f1c8383881778437523",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d7d90108e7c04f1c8383881778437523.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:21:25.796521+00:00",
+  "updated_at": "2026-09-06T07:38:55.558737+00:00"
+}

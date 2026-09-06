@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "39b47c0df867439f8f16205294562293",
+  "title": "Elementary Algebra and Precalculus Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aa8e0007a1394d8dad7d2016c866c006",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aa8e0007a1394d8dad7d2016c866c006.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:07.592158+00:00",
+  "updated_at": "2026-09-06T07:15:07.592165+00:00"
+}

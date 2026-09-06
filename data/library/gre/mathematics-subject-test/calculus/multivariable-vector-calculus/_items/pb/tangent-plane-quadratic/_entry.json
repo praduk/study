@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c488c9d2cf054ce9b1b592f750e40cd2",
+  "title": "Tangent Plane to a Graph",
+  "rank": 9205357638345293824,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e314108c31d348deb20cae5c9bdc7487",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e314108c31d348deb20cae5c9bdc7487.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2bfd42055b3a47af9ef859c83055bb00",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2bfd42055b3a47af9ef859c83055bb00.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:53.290197+00:00",
+  "updated_at": "2026-09-06T07:40:55.379455+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ffcb893cb3474a53bf12d6c186b24fd4",
+  "title": "One Newton Step for $\\sqrt3$",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb6a84ed6d03465cb6608c8ff761cd7a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb6a84ed6d03465cb6608c8ff761cd7a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c2d33a42bb4c4ea2bc21c72db913a79c",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c2d33a42bb4c4ea2bc21c72db913a79c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:51.456668+00:00",
+  "updated_at": "2026-09-06T07:43:40.863719+00:00"
+}

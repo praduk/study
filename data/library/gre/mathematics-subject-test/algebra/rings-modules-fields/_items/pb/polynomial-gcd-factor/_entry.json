@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ce586d9b77624778b86c35392d7c8946",
+  "title": "Greatest Common Divisor of Polynomials",
+  "rank": 9218868437227405312,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f46889e4fb914acebbbaf665e91316f0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f46889e4fb914acebbbaf665e91316f0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8dff341c75a34a5287772dc18c077c8e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8dff341c75a34a5287772dc18c077c8e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:07.317044+00:00",
+  "updated_at": "2026-09-06T07:42:16.033912+00:00"
+}

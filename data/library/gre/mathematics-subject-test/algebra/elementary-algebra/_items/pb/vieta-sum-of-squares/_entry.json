@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1453c646e1e243f59dc5797826a425da",
+  "title": "Vieta and the Sum of Squared Roots",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b85b9c8d0bf549a491149073b9bd91fb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b85b9c8d0bf549a491149073b9bd91fb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ea41e0abff4f43b79cc9275e57b4dbda",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ea41e0abff4f43b79cc9275e57b4dbda.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:26:20.609096+00:00",
+  "updated_at": "2026-09-06T07:41:20.405757+00:00"
+}

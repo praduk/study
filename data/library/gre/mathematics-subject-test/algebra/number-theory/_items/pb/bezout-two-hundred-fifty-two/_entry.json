@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "839a7ececf874e1da8aee7bf3a3563a3",
+  "title": "A Bézout Identity",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4795fa94425f4c11a7666e0369314c70",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4795fa94425f4c11a7666e0369314c70.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "304bcd8c2b4f4fbf906ceef865e8b4fa",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.304bcd8c2b4f4fbf906ceef865e8b4fa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:27:08.993237+00:00",
+  "updated_at": "2026-09-06T07:42:17.924097+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "479066e652ee4c7083041f45d26f42b4",
+  "title": "Trigonometry, Functions, and Coordinate Geometry Memory Deck",
+  "rank": 5764607523034234880,
+  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a1ce611973594180a1be8f4940171bad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a1ce611973594180a1be8f4940171bad.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T07:15:04.713790+00:00",
+  "updated_at": "2026-09-06T07:15:04.714835+00:00"
+}

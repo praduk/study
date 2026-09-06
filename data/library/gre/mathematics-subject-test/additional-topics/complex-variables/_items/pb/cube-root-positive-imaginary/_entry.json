@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a3e48fa07ad5456a9218c96653796f0f",
+  "title": "A Nonreal Cube Root",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f4384d7f5984129a48ea3cab6788064",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f4384d7f5984129a48ea3cab6788064.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "22aa010de1c44a889caabeb9985d54b0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.22aa010de1c44a889caabeb9985d54b0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:34.885833+00:00",
+  "updated_at": "2026-09-06T07:43:23.399882+00:00"
+}

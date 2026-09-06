@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c635383eae4e48298b81fdbfed750b11",
+  "title": "Arrange a Word with Repeated Letters",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "793c10a08cf743a8891586b016b79a3e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.793c10a08cf743a8891586b016b79a3e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "db56a287a84f48868916acbfb9f1eaff",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.db56a287a84f48868916acbfb9f1eaff.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:32:03.247610+00:00",
+  "updated_at": "2026-09-06T07:42:48.648665+00:00"
+}

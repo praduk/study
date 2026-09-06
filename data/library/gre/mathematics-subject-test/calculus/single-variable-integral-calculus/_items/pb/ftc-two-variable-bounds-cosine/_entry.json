@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f38df56fd7e44310a6c7021668e88dbc",
+  "title": "Differentiate an Integral with Two Moving Bounds",
+  "rank": 9223363240761753600,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6124ced81a71443ea8639920c178b6b2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6124ced81a71443ea8639920c178b6b2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4108a6c831a843dc94beda217b9f5434",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4108a6c831a843dc94beda217b9f5434.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T07:22:24.805165+00:00",
+  "updated_at": "2026-09-06T07:40:18.233722+00:00"
+}
