@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d0a432e9c57d4c79a778b0391da92dff",
+  "title": "A Forced Mean Value",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "mean-value-theorem",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0e4c5b0b9e6240219c5e6a5b7287f081",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0e4c5b0b9e6240219c5e6a5b7287f081.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "34257d6f55754864abc2f5a9c74b5499",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.34257d6f55754864abc2f5a9c74b5499.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:01.033778+00:00",
+  "updated_at": "2026-09-06T04:45:02.330959+00:00"
+}

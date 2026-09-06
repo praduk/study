@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "186dbdde06e649f6866bb4dd0752b9ea",
+  "title": "Use Symmetry in a Definite Integral",
+  "rank": 6917529027641081856,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "definite-integrals",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "228d0e9824ca4c5b99218c7ea53afd0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.228d0e9824ca4c5b99218c7ea53afd0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "22048af30f754edb90b6617dbc3b4bf7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.22048af30f754edb90b6617dbc3b4bf7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:05.220282+00:00",
+  "updated_at": "2026-09-06T04:45:06.523330+00:00"
+}

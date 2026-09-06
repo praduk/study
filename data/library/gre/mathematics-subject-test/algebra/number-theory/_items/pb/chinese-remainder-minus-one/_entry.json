@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ec8fd9b271694077beb35f58c325ea35",
+  "title": "Spot a Chinese-Remainder Pattern",
+  "rank": 8070450532247928832,
+  "header": "GRE-style congruence practice. Target: 60 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6fe9309046ec4f01a0411b1447d8a259",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6fe9309046ec4f01a0411b1447d8a259.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "afca0f5b40da4374b59631c05382702a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.afca0f5b40da4374b59631c05382702a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:37:03.513916+00:00",
+  "updated_at": "2026-09-06T04:37:04.102558+00:00"
+}

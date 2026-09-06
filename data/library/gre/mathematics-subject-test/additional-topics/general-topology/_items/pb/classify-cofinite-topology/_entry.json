@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8a04d612aa4d40adb1c4fd62b220df9b",
+  "title": "Classifying the Cofinite Topology",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 2:00. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6994fa062a4d45d69f4f81a28e087329",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6994fa062a4d45d69f4f81a28e087329.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "553d3865ab0443c089175d8212426104",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.553d3865ab0443c089175d8212426104.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:45.841773+00:00",
+  "updated_at": "2026-09-06T04:39:46.498144+00:00"
+}

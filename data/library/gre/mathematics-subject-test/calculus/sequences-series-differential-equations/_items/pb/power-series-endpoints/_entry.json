@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d3355c129ddf4913acfe880b9c33d060",
+  "title": "Power-Series Endpoint Check",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 150 seconds. Choose one answer.",
+  "problem_family": "power-series",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "01a352f5a3fd432f964d135d2e848174",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.01a352f5a3fd432f964d135d2e848174.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c44aa639e02f4283bab52b15c090ef0d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c44aa639e02f4283bab52b15c090ef0d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:16.970298+00:00",
+  "updated_at": "2026-09-06T04:45:18.300340+00:00"
+}

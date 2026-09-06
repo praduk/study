@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "892425ad80154844a0f4052e7a3e0b2d",
+  "title": "Invert an Element in a Polynomial Quotient Field",
+  "rank": 6917529027641081856,
+  "header": "GRE-style ring and field practice. Target: 90 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d9acfa600364ddd9fe429cd3957ac8a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d9acfa600364ddd9fe429cd3957ac8a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f8ead84899ad4236908766c58bee848a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f8ead84899ad4236908766c58bee848a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:37:00.258041+00:00",
+  "updated_at": "2026-09-06T04:37:00.837779+00:00"
+}

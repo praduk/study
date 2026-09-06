@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a6b74c9290524d09aed0fb3bf3d4de56",
+  "title": "Nondifferentiability of an Absolute Value",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "differentiability",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "46bf84a58a084282be2b34f98895e8df",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.46bf84a58a084282be2b34f98895e8df.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bee0c1bb6e804fedaf627f5809cbd528",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.bee0c1bb6e804fedaf627f5809cbd528.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:02.816622+00:00",
+  "updated_at": "2026-09-06T04:45:04.077215+00:00"
+}

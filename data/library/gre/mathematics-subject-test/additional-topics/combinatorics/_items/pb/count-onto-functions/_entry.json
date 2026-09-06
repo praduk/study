@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "58ec59f9179c43b8a520fd04304cb9a4",
+  "title": "Counting Onto Functions",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 2:15. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "224f0d280a5944c894215837398361c3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.224f0d280a5944c894215837398361c3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "40f56e365cbf46ebb990fb080893b0a9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.40f56e365cbf46ebb990fb080893b0a9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:41.715944+00:00",
+  "updated_at": "2026-09-06T04:39:42.337787+00:00"
+}

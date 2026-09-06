@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cf882c72612c4e39a5ddd30c383b3fe3",
+  "title": "Course Map and How to Use This Guide",
+  "rank": 4611686018427387904,
+  "header": "Orientation to the unofficial GRE Mathematics Subject Test guide and its representative practice bank.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c178656f516a4a71910b194f877066b7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c178656f516a4a71910b194f877066b7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:48:58.714056+00:00",
+  "updated_at": "2026-09-06T04:49:22.684215+00:00"
+}

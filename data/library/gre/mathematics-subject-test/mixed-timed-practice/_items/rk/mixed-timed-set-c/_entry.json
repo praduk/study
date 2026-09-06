@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b027a6d45cfb4b7f90bdfdd475d16fd6",
+  "title": "Mixed Timed Set C",
+  "rank": 8070450532247928832,
+  "header": "Unofficial mixed practice. Derived target: 41 minutes for 16 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4cc485e30294483ebb5e3da95979c03e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4cc485e30294483ebb5e3da95979c03e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:49:01.488273+00:00",
+  "updated_at": "2026-09-06T04:49:01.488279+00:00"
+}

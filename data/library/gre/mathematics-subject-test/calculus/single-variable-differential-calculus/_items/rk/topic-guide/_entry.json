@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6e412e8b6e2e4bd2810193baedafddc6",
+  "title": "Single-Variable Differential Calculus Guide",
+  "rank": 4611686018427387904,
+  "header": "Limits, derivatives, local behavior, and applications.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d8217e03b925498da3a1d1c807ad2f95",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d8217e03b925498da3a1d1c807ad2f95.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:54.982616+00:00",
+  "updated_at": "2026-09-06T04:44:54.982623+00:00"
+}

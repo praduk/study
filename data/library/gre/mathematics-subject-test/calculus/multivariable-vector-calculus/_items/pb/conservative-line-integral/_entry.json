@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d3eba80d763c44028c25355e009ec1ab",
+  "title": "Conservative Line Integral",
+  "rank": 9079256848778919936,
+  "header": "GRE-style original practice. Suggested target: 120 seconds. Choose one answer.",
+  "problem_family": "line-integrals",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8eb7d5677dce4cfd92759bba5a2128f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8eb7d5677dce4cfd92759bba5a2128f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9a740768b78a42ee8dd6c9a392eaf741",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.9a740768b78a42ee8dd6c9a392eaf741.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:31.394765+00:00",
+  "updated_at": "2026-09-06T04:45:32.833584+00:00"
+}

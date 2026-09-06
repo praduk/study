@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "75607d97abcb4bfa8d51072b41b9fe43",
+  "title": "Conditional Sampling from an Urn",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 1:45. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "83168fbb56c64783b0fc571b1974912f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.83168fbb56c64783b0fc571b1974912f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "de4542cfd6144ce4a928187889e5635f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.de4542cfd6144ce4a928187889e5635f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:50.277210+00:00",
+  "updated_at": "2026-09-06T04:39:50.909585+00:00"
+}

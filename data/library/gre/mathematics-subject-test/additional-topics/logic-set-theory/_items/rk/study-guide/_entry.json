@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "245e870a572d4473a8bd49f6e1c0b92d",
+  "title": "Logic and Set Theory Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: logic, sets, relations, functions, and cardinality.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6be77cfe03ed4d90a3add07a9cb7701f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6be77cfe03ed4d90a3add07a9cb7701f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:39.876537+00:00",
+  "updated_at": "2026-09-06T04:39:39.876544+00:00"
+}

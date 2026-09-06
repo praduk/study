@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b3313a0fcbad4a37a0859b2e1cad2601",
+  "title": "A Coefficient with Bounded Choices",
+  "rank": 8070450532247928832,
+  "header": "Suggested time: 1:30. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "add2e42972944242a86e3cbbda7f535e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.add2e42972944242a86e3cbbda7f535e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cf585e3a338444c0a17012798399daf5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.cf585e3a338444c0a17012798399daf5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:42.684173+00:00",
+  "updated_at": "2026-09-06T04:39:43.456871+00:00"
+}

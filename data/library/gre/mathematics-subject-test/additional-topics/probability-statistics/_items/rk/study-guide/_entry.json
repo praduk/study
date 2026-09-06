@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ef8c56b59a36423aaf4d02326bb6d0e9",
+  "title": "Probability and Statistics Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: probability models, random variables, moments, distributions, and elementary inference.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "935f587882e94c479065a82e2dde2f16",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.935f587882e94c479065a82e2dde2f16.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:49.783808+00:00",
+  "updated_at": "2026-09-06T04:39:49.783815+00:00"
+}

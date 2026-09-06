@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "54b9443eaf5840e0a33b92bca397b7bf",
+  "title": "Use Rank-Nullity on Polynomial Space",
+  "rank": 8070450532247928832,
+  "header": "GRE-style vector spaces and transformations practice. Target: 75 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "06a63286b44545999bdb353a4845268b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.06a63286b44545999bdb353a4845268b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "faa76bced4644ca58f1f51588b825594",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.faa76bced4644ca58f1f51588b825594.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:54.948168+00:00",
+  "updated_at": "2026-09-06T04:36:55.528384+00:00"
+}

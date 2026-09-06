@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "825d34f5afbe4a3091f0421765afe96b",
+  "title": "Roots Without Solving the Cubic",
+  "rank": 6917529027641081856,
+  "header": "GRE-style elementary algebra practice. Target: 75 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "78c535cc9faa4a09ad557eb3c5020c2a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.78c535cc9faa4a09ad557eb3c5020c2a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a83f40fdc3de44ec89fa96d72ff43c98",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a83f40fdc3de44ec89fa96d72ff43c98.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:51.990731+00:00",
+  "updated_at": "2026-09-06T04:36:52.519135+00:00"
+}

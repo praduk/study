@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f3d42ad19b634894b5d26ae388e3e3a0",
+  "title": "Slope of a Parametric Curve",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "parametric-curves",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93fb351a9b434c8ba2fa37c83b6845a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93fb351a9b434c8ba2fa37c83b6845a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c3fad9e92abc46ecb882cc3a8504a1bc",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c3fad9e92abc46ecb882cc3a8504a1bc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:53.233772+00:00",
+  "updated_at": "2026-09-06T04:44:54.498947+00:00"
+}

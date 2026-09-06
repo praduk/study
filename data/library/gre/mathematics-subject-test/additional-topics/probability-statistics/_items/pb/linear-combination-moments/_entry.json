@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f7a0e77f52044b448250cdb67dced7f3",
+  "title": "Moments of a Linear Combination",
+  "rank": 8070450532247928832,
+  "header": "Suggested time: 1:30. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "08f30a18366d4a1fa8a5edd37d7ea9dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.08f30a18366d4a1fa8a5edd37d7ea9dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fb8b2565294b4fa2b4c0ad077196a2f3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.fb8b2565294b4fa2b4c0ad077196a2f3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:51.262679+00:00",
+  "updated_at": "2026-09-06T04:39:51.898544+00:00"
+}

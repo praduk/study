@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7718235df19d4f4499d92eaf8e59d00d",
+  "title": "Tangent to an Ellipse",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "coordinate-geometry",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5c3d96954bd4415b991c7d003923f8cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5c3d96954bd4415b991c7d003923f8cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0f10706b1298479a9dc7a6caad4ed797",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0f10706b1298479a9dc7a6caad4ed797.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:51.511282+00:00",
+  "updated_at": "2026-09-06T04:44:52.740558+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e084c8d7eba9423e8111225f110dc778",
+  "title": "Elementary Algebra: Fast Review",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test algebra review: core tools, recognition cues, and common traps.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a66ebdb55174892b2c9ba24a4edfe68",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a66ebdb55174892b2c9ba24a4edfe68.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:51.588404+00:00",
+  "updated_at": "2026-09-06T04:36:51.588726+00:00"
+}

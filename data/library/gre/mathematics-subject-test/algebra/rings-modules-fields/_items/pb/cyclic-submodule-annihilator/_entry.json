@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "29f0e46f12494a0cbdf0202428dcfdc1",
+  "title": "Read a Cyclic Submodule and Its Annihilator",
+  "rank": 8070450532247928832,
+  "header": "GRE-style module practice. Target: 75 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a9bfe8d8a004cad99eb0ff943c57f85",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a9bfe8d8a004cad99eb0ff943c57f85.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7f0e189283174d258d436b30838ec210",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.7f0e189283174d258d436b30838ec210.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:37:01.169339+00:00",
+  "updated_at": "2026-09-06T04:37:01.764022+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c47de695fa0d4f5fa34353cf4d6575db",
+  "title": "Solve a First-Order Initial Value Problem",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 150 seconds. Choose one answer.",
+  "problem_family": "first-order-linear-odes",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9e083aef3404ac59cc50398fdff519b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9e083aef3404ac59cc50398fdff519b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "893f411f8f9448efb60e0815c725053e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.893f411f8f9448efb60e0815c725053e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:20.714541+00:00",
+  "updated_at": "2026-09-06T04:45:22.069193+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0af51f93a90f443793974ed2ac57413d",
+  "title": "Differentiate Variable Integral Bounds",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 120 seconds. Choose one answer.",
+  "problem_family": "fundamental-theorem-of-calculus",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8974f474f73d46bfabb8dea7135159b8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8974f474f73d46bfabb8dea7135159b8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "abc5a122104440e9bffae7e35f866ae2",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.abc5a122104440e9bffae7e35f866ae2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:08.849537+00:00",
+  "updated_at": "2026-09-06T04:45:10.181378+00:00"
+}

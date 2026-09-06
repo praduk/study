@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9b8fa4d22371488cb7b884be21727e71",
+  "title": "General Topology Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: topological spaces, continuity, compactness, connectedness, and separation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f458d34a163d4ac08c5e84c01f99505a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f458d34a163d4ac08c5e84c01f99505a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:45.358242+00:00",
+  "updated_at": "2026-09-06T04:39:45.358248+00:00"
+}

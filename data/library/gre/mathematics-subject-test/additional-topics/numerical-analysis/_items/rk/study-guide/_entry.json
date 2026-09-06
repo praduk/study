@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "866301df7cb24ad8b9220fd0cd6789f5",
+  "title": "Numerical Analysis Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: error, conditioning, root finding, approximation, linear systems, and numerical integration.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c51f9d6f07584069b5abc470c30ddba1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c51f9d6f07584069b5abc470c30ddba1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:52.253391+00:00",
+  "updated_at": "2026-09-06T04:39:52.253398+00:00"
+}

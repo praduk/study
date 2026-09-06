@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "fc265f8683484a7e8cd283792917150c",
+  "title": "Combinatorics Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: systematic counting, inclusion-exclusion, recurrences, and generating functions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1774a6ab391c4adf9df81eaf7c416a32",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1774a6ab391c4adf9df81eaf7c416a32.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:41.256848+00:00",
+  "updated_at": "2026-09-06T04:39:41.256856+00:00"
+}

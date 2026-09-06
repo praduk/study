@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "daaa4403760b4843861688daf7412b45",
+  "title": "Geometry Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: Euclidean, analytic, vector, transformation, and solid geometry.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0fb5405335a4173aeb8b59c34e03659",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0fb5405335a4173aeb8b59c34e03659.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:46.833162+00:00",
+  "updated_at": "2026-09-06T04:41:07.031090+00:00"
+}

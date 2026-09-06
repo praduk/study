@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b746ad72570c4a6cbff93de5e9c8d967",
+  "title": "Sequences, Series, and Differential Equations Guide",
+  "rank": 4611686018427387904,
+  "header": "Computational convergence tools, power series, and elementary ODEs.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f99f4461a71a4d0580286b85177bdd3e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f99f4461a71a4d0580286b85177bdd3e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:14.469861+00:00",
+  "updated_at": "2026-09-06T04:45:14.469867+00:00"
+}

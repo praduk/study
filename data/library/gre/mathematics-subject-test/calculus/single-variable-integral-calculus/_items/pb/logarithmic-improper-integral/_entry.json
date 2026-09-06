@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "75c4637f79b24821be68b5ed2b612a5e",
+  "title": "A Logarithmic Improper Integral",
+  "rank": 8935141660703064064,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "improper-integrals",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4ce6ac791984af48f8e011d69dc8653",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4ce6ac791984af48f8e011d69dc8653.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d4409238b0b34a0dbe353ef01a989597",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d4409238b0b34a0dbe353ef01a989597.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:10.688440+00:00",
+  "updated_at": "2026-09-06T04:45:12.038992+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6d63153b218840c29b0c2af067e4a985",
+  "title": "Exploit a Short Modular Power Cycle",
+  "rank": 6917529027641081856,
+  "header": "GRE-style elementary number theory practice. Target: 60 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cde9e4499bde4916bc8852cd644c1ef6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cde9e4499bde4916bc8852cd644c1ef6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "527357c9c35a4a3ea8fcd611b9d86ece",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.527357c9c35a4a3ea8fcd611b9d86ece.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:37:02.578934+00:00",
+  "updated_at": "2026-09-06T04:37:03.176681+00:00"
+}

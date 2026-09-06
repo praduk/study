@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9493a32573c444e3902f776afeb03763",
+  "title": "Finding a Triangle Inradius",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 1:45. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b441fea647d42f4a0dfaea555b47f1d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b441fea647d42f4a0dfaea555b47f1d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c25ffd3da9ce4ce692a36f8c3b853a82",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c25ffd3da9ce4ce692a36f8c3b853a82.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:47.322148+00:00",
+  "updated_at": "2026-09-06T04:39:47.950231+00:00"
+}

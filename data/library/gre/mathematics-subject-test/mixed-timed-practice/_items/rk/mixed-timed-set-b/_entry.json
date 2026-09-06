@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3335351d71b4492d8540239d3e702348",
+  "title": "Mixed Timed Set B",
+  "rank": 6917529027641081856,
+  "header": "Unofficial mixed practice. Derived target: 41 minutes for 16 questions; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f8e63b7346d34527a6feb375029f7174",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f8e63b7346d34527a6feb375029f7174.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:49:00.929446+00:00",
+  "updated_at": "2026-09-06T04:49:00.929453+00:00"
+}

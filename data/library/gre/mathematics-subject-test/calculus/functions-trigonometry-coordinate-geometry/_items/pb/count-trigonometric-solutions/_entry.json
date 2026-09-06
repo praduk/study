@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "78470ad4337540daa0a20762bb9312f2",
+  "title": "Count the Trigonometric Solutions",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "trigonometric-equations",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a5df6b89239426e95b393fe71613503",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a5df6b89239426e95b393fe71613503.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "30f4792ae4844cd58eb47e892cc1b13e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.30f4792ae4844cd58eb47e892cc1b13e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:49.859856+00:00",
+  "updated_at": "2026-09-06T04:44:51.039030+00:00"
+}

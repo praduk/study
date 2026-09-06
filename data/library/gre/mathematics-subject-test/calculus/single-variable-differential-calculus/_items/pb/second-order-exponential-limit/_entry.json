@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e3dbd32af926419595f5fb8581a9c1ce",
+  "title": "Second-Order Exponential Limit",
+  "rank": 6917529027641081856,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "limits",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c60fa1cf80b44280b7843f2ab0acaae4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c60fa1cf80b44280b7843f2ab0acaae4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0efaa18c85714c46a007cd47cfe7b3b4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0efaa18c85714c46a007cd47cfe7b3b4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:55.643181+00:00",
+  "updated_at": "2026-09-06T04:44:56.944935+00:00"
+}

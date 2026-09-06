@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "834866cf8f4742f4884f8ea7bb0122a5",
+  "title": "Multivariable and Vector Calculus Guide",
+  "rank": 4611686018427387904,
+  "header": "Partial derivatives, multiple integrals, and vector calculus.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ac2f87aa82854f0694e0cd02c934d23e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ac2f87aa82854f0694e0cd02c934d23e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:22.591348+00:00",
+  "updated_at": "2026-09-06T04:45:22.591354+00:00"
+}

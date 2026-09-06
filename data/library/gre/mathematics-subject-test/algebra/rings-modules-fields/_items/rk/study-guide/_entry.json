@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0bfe9fbe04934b6cbf2db8cf7e9459c5",
+  "title": "Rings, Modules, and Fields: Fast Review",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test algebra review: ideals, quotients, polynomial rings, fields, and modules.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2fd0367474904079a7500f8cd8f93828",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2fd0367474904079a7500f8cd8f93828.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:59.807557+00:00",
+  "updated_at": "2026-09-06T04:36:59.807563+00:00"
+}

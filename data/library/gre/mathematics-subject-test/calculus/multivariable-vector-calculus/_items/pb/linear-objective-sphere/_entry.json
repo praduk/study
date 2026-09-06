@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a836f4093a1d4079a68b095398b517e0",
+  "title": "Linear Objective on a Sphere",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "constrained-optimization",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b2a3913b2b7a4312ab305de8902f03b2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b2a3913b2b7a4312ab305de8902f03b2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0b3df98664544444b254d73d9136093f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0b3df98664544444b254d73d9136093f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:25.577401+00:00",
+  "updated_at": "2026-09-06T04:45:26.967053+00:00"
+}

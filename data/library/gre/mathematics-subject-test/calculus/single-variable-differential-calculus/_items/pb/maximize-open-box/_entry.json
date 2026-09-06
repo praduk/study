@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "99e9805f1c904cb782176a56d89743ee",
+  "title": "Maximize an Open Box",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 150 seconds. Choose one answer.",
+  "problem_family": "optimization",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b1575af549d40a99f1688b8783f81ab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b1575af549d40a99f1688b8783f81ab.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "79d06ff6da3d4236abbbb1ffaea6a05a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.79d06ff6da3d4236abbbb1ffaea6a05a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:59.237418+00:00",
+  "updated_at": "2026-09-06T04:45:00.532737+00:00"
+}

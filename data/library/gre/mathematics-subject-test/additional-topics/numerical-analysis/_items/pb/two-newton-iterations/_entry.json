@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "af219261c5c745eab57613ca27c41467",
+  "title": "Applying Two Newton Iterations",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 1:30. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "32a50adac07c47dc845ea16cc1ec8e3f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.32a50adac07c47dc845ea16cc1ec8e3f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "946324a445e145cd9e52229ff136acfc",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.946324a445e145cd9e52229ff136acfc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:52.748717+00:00",
+  "updated_at": "2026-09-06T04:39:53.383906+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "47c96b19b4c84747bf79e51713bc2f5a",
+  "title": "Domain of a Radical Composition",
+  "rank": 6917529027641081856,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "functions-and-domains",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f8cf779a5344269892d492592290429",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f8cf779a5344269892d492592290429.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "19ca0411642d49a39c02470521737572",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.19ca0411642d49a39c02470521737572.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:48.193944+00:00",
+  "updated_at": "2026-09-06T04:44:49.396867+00:00"
+}

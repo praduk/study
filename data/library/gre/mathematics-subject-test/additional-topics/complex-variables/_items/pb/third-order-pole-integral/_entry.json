@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5204bd42294a4f61b0e9aafa63de7bef",
+  "title": "Evaluating an Integral at a Third-Order Pole",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 2:00. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d00ddb7e56834e9fb89172298ba388a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d00ddb7e56834e9fb89172298ba388a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bbb6217deaf3412598d83932f2b2c74d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.bbb6217deaf3412598d83932f2b2c74d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:48.787650+00:00",
+  "updated_at": "2026-09-06T04:39:49.433521+00:00"
+}

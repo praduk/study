@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "35012d98959f4ce9b3a6fbf148e220e4",
+  "title": "Three-Pass Speed Plan and Practice Protocol",
+  "rank": 8070450532247928832,
+  "header": "A derived and adaptable pacing plan, not an ETS rule or a universally optimal method.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9e797a7e96684ba8ab8493a42648e911",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9e797a7e96684ba8ab8493a42648e911.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:34:43.789933+00:00",
+  "updated_at": "2026-09-06T04:34:43.789939+00:00"
+}

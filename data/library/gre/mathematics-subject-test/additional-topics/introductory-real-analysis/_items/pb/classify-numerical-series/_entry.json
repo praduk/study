@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "58414c78cf4f4a77a67cf81c3810a118",
+  "title": "Classifying a Numerical Series",
+  "rank": 8070450532247928832,
+  "header": "Suggested time: 1:30. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4bfce72a366b45018bcc39975fb89dd0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4bfce72a366b45018bcc39975fb89dd0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5f6d5106b6884f349cecae33db1e7063",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5f6d5106b6884f349cecae33db1e7063.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:38.982397+00:00",
+  "updated_at": "2026-09-06T04:39:39.558883+00:00"
+}

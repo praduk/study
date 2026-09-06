@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c328e48a80da40588ffa62bc61c0d997",
+  "title": "Selecting a Graph Traversal Guarantee",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 1:15. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8d9da56286314cca9579203989665704",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8d9da56286314cca9579203989665704.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "40f5a086ba414752b32b5b9e7fcf9a81",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.40f5a086ba414752b32b5b9e7fcf9a81.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:44.390760+00:00",
+  "updated_at": "2026-09-06T04:39:45.005589+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e93489b6d3204e62b610c419a17ba401",
+  "title": "Taylor Coefficient after Composition",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "taylor-series",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3b946d2d6e7d484abb33336b571106cb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3b946d2d6e7d484abb33336b571106cb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d1e9b7aec4de4d84b2541f0cfc788d35",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d1e9b7aec4de4d84b2541f0cfc788d35.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:18.814848+00:00",
+  "updated_at": "2026-09-06T04:45:20.177952+00:00"
+}

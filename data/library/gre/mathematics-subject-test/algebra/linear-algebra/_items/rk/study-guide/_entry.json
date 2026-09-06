@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "644df303e2204a84ac3165ae2ee3ea47",
+  "title": "Linear Algebra: Fast Review",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test algebra review: matrices, systems, spaces, transformations, and eigenstructure.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3faca8a74dab4de490ea763cd62c217c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3faca8a74dab4de490ea763cd62c217c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:53.655547+00:00",
+  "updated_at": "2026-09-06T04:41:52.331305+00:00"
+}

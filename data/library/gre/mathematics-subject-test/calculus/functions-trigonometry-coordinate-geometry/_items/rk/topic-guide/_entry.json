@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e94bae755a114d9996da9ca57fbd9f50",
+  "title": "Functions, Trigonometry, and Coordinate Geometry Guide",
+  "rank": 4611686018427387904,
+  "header": "Calculus foundations and fast graph recognition.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "55be0f7d8a33434ea3780f61e6bc0862",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.55be0f7d8a33434ea3780f61e6bc0862.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:47.607583+00:00",
+  "updated_at": "2026-09-06T04:44:47.608615+00:00"
+}

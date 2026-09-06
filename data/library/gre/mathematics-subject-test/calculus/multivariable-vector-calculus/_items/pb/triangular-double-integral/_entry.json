@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "18977160fded41788d5d18ab8a007d65",
+  "title": "Integrate over a Triangular Region",
+  "rank": 8646911284551352320,
+  "header": "GRE-style original practice. Suggested target: 120 seconds. Choose one answer.",
+  "problem_family": "multiple-integrals",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8ffbd281ae8b4e2ca163b5c1e41baab4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8ffbd281ae8b4e2ca163b5c1e41baab4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d81a39dcd46347b7ab1b12f1464266f2",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d81a39dcd46347b7ab1b12f1464266f2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:27.503685+00:00",
+  "updated_at": "2026-09-06T04:45:28.921146+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "00533a7339ec46f5aa97ac657a163772",
+  "title": "Solve a Matrix Equation by Spotting an Inverse",
+  "rank": 6917529027641081856,
+  "header": "GRE-style matrix algebra and systems practice. Target: 90 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dd10e5f4ff6e40b1ba95802eccb5c0b3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dd10e5f4ff6e40b1ba95802eccb5c0b3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ec8a4dd9750743169c47c0a135834e62",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ec8a4dd9750743169c47c0a135834e62.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:54.082727+00:00",
+  "updated_at": "2026-09-06T04:36:54.629079+00:00"
+}

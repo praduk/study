@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c5ede55170434facbf5e517305f35c1a",
+  "title": "Graph Theory and Algorithms Study Guide",
+  "rank": 4611686018427387904,
+  "header": "GRE Mathematics Subject Test review: graphs, trees, planarity, traversal, and elementary complexity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "785420b7bcdb4607a96b1e86eb04995b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.785420b7bcdb4607a96b1e86eb04995b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:43.789880+00:00",
+  "updated_at": "2026-09-06T04:41:06.431231+00:00"
+}

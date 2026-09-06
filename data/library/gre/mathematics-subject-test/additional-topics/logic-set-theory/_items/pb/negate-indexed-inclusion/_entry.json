@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7e30bcbe1be94126b2c8d8600cfa4159",
+  "title": "Negating an Indexed Set Inclusion",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 1:45. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e484476b600b47498ab14cdeb15506b5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e484476b600b47498ab14cdeb15506b5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "29394176e5534b39a13c30c44f905a70",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.29394176e5534b39a13c30c44f905a70.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:40.341869+00:00",
+  "updated_at": "2026-09-06T04:39:40.928275+00:00"
+}

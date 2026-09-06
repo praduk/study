@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9dcf8a8ca74745899c7d1916d604ea5d",
+  "title": "Build a Transformation Matrix from Basis Images",
+  "rank": 8935141660703064064,
+  "header": "GRE-style linear transformation and basis practice. Target: 90 seconds.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b37498d77ce54731b58e82258ef7d158",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b37498d77ce54731b58e82258ef7d158.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "aa61acf97f1d4109b44dfdbede443adf",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.aa61acf97f1d4109b44dfdbede443adf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:36:56.715133+00:00",
+  "updated_at": "2026-09-06T04:36:57.280119+00:00"
+}

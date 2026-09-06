@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bde9c3dc9a5a48c3827d9ab212f281c0",
+  "title": "Exponential Substitution",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "integration-by-substitution",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2b842388ce4649d5b6c206f13e5f77ce",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2b842388ce4649d5b6c206f13e5f77ce.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "026fdf7ab10941848d84543307090166",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.026fdf7ab10941848d84543307090166.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:07.026299+00:00",
+  "updated_at": "2026-09-06T04:45:08.342108+00:00"
+}

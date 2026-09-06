@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ae7d9e64e4554c99b3f77809cdddc9f3",
+  "title": "Directional Derivative along a Unit Vector",
+  "rank": 6917529027641081856,
+  "header": "GRE-style original practice. Suggested target: 120 seconds. Choose one answer.",
+  "problem_family": "directional-derivatives",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ab031bbf7dc44faebcad662e2be99068",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ab031bbf7dc44faebcad662e2be99068.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "878a928c5c484d709693963ecbe038c8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.878a928c5c484d709693963ecbe038c8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:23.290733+00:00",
+  "updated_at": "2026-09-06T04:45:24.890276+00:00"
+}

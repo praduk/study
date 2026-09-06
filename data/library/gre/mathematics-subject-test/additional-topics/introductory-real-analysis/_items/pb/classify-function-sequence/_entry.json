@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "efdc00f2f96142ebb9e21ba2fb38291a",
+  "title": "Classifying a Function Sequence",
+  "rank": 6917529027641081856,
+  "header": "Suggested time: 2:00. Choose the best of five answers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3e26a33ad31e4f8e8db7e8b28bdbf3f4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3e26a33ad31e4f8e8db7e8b28bdbf3f4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "27a84755aedd4f4594bb9b3626a12c5f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.27a84755aedd4f4594bb9b3626a12c5f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:39:38.092448+00:00",
+  "updated_at": "2026-09-06T04:39:38.658550+00:00"
+}

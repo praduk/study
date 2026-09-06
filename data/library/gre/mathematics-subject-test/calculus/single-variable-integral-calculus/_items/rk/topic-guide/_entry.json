@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1d1b087c43b64503a69be98cc8f0433b",
+  "title": "Single-Variable Integral Calculus Guide",
+  "rank": 4611686018427387904,
+  "header": "Antiderivatives, the Fundamental Theorem, and applications.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a9cce8e397b47e3b0c791437b3c895b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a9cce8e397b47e3b0c791437b3c895b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:04.561639+00:00",
+  "updated_at": "2026-09-06T04:45:04.561645+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "924cf8a6554245aea57628e09bf21ba7",
+  "title": "Classify a Positive Series",
+  "rank": 6917529027641081856,
+  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "problem_family": "series-convergence",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9469190e32d44245add37e5a4d96aead",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9469190e32d44245add37e5a4d96aead.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4169533f254848ec954791856ce330cd",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4169533f254848ec954791856ce330cd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:45:15.124558+00:00",
+  "updated_at": "2026-09-06T04:45:16.466189+00:00"
+}

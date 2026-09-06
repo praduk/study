@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f9a67391a4ef4ab192728e4ae4435ee7",
+  "title": "Derivative of an Inverse Function",
+  "rank": 8070450532247928832,
+  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "problem_family": "inverse-derivatives",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "794570f4994e43e8b0cd3a4814f776a2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.794570f4994e43e8b0cd3a4814f776a2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "68df679eff3b4019a782344f435be364",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.68df679eff3b4019a782344f435be364.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-06T04:44:57.450405+00:00",
+  "updated_at": "2026-09-06T04:44:58.740703+00:00"
+}
