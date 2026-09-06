@@ -72,36 +72,40 @@ export interface GitStatus {
   message?: string;
 }
 
+export interface ReviewStats {
+  due: number;
+  completed_today: number;
+  minutes_today: number;
+  calibration: {
+    model: string;
+    target_grade: 'good-or-easy';
+    target_probability: number;
+    minimum_observations: number;
+    minimum_delay_hours: number;
+    processed_log_records: number;
+    models: Record<string, {
+      observations: number;
+      successes: number;
+      effective_observations: number;
+      effective_exposure: number;
+      posterior_log_scale_sd: number;
+      ready: boolean;
+    }>;
+  };
+}
+
 export interface Bootstrap {
   version: number;
   folders: Folder[];
   entries: EntrySummary[];
   tree: FolderNode[];
   macros: Record<string, string | (string | number)[]>;
-  review: {
-    due: number;
-    completed_today: number;
-    minutes_today: number;
-    calibration: {
-      model: string;
-      target_grade: 'good-or-easy';
-      target_probability: number;
-      minimum_observations: number;
-      minimum_delay_hours: number;
-      processed_log_records: number;
-      models: Record<string, {
-        observations: number;
-        successes: number;
-        effective_observations: number;
-        effective_exposure: number;
-        posterior_log_scale_sd: number;
-        ready: boolean;
-      }>;
-    };
-  };
+  review: ReviewStats;
   git: GitStatus;
   capabilities: Record<string, boolean>;
 }
+
+export type BootstrapPayload = Omit<Bootstrap, 'tree'> & { tree?: FolderNode[] };
 
 export interface ReviewCard {
   id: string;

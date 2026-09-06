@@ -102,8 +102,21 @@ Move the whole entry directory when changing one of those values. Keep stable ID
 python study.py --check-data
 ```
 
+After a complete version 2 parse and validation, `LibraryStore` keeps a deep-copied normalized
+metadata snapshot in memory. It reuses that snapshot only after checking the recorded signatures of
+`library.json`, every traversed directory, sidecar, Markdown file, and asset. A changed or missing
+signature forces another complete parse and validation. Study also compares signatures from before
+and after an uncached load, so a tree that changes while it is being read is never admitted to the
+cache. Version 1 retains its existing uncached validation behavior.
+
 Study's search index watches v2 sidecars, Markdown files, and the relevant directory signatures.
 A valid direct edit becomes visible on the next query after the bounded 250 ms staleness check.
-Normal v2 mutations use a prepared/committed recovery journal. If startup must displace an
-interrupted live tree, it retains that tree under ignored `data/runtime/` storage so a manual edit
-made while Study was stopped is not silently deleted.
+Structural and content-changing v2 mutations use a prepared/committed recovery journal. The narrow
+exception is an update whose only field is a non-null `review_enabled`: that preference has no path,
+namespace, ordering, or indexed-content effect, so Study atomically replaces only the affected
+folder's `_folder.json`. Before replacing it, Study verifies that the sidecar still matches the
+signature used to build the current snapshot; a concurrent direct edit aborts the preference write
+instead of being overwritten. Study retains the validated metadata cache only when every other
+recorded signature is unchanged; otherwise the next read performs full validation. If startup must
+displace an interrupted live tree, it retains that tree under ignored `data/runtime/` storage so a
+manual edit made while Study was stopped is not silently deleted.

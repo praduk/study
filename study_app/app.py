@@ -30,6 +30,8 @@ from fastapi import (
 )
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from PIL import Image, ImageOps, UnidentifiedImageError
+from starlette.middleware.gzip import GZipMiddleware
+from starlette.types import ASGIApp, Receive, Scope, Send
 
 from .auth import COOKIE_NAME, CSRF_HEADER, LoginThrottle, Session, SessionStore, verify_password
 from .config import Settings
@@ -56,6 +58,54 @@ from .models import (
 )
 from .review import ReviewEngine
 from .store import LibraryStore, StoreError
+
+_PRECOMPRESSED_SUFFIXES = {
+    ".avif",
+    ".br",
+    ".gif",
+    ".gz",
+    ".jpeg",
+    ".jpg",
+    ".mp3",
+    ".mp4",
+    ".ogg",
+    ".pdf",
+    ".png",
+    ".webm",
+    ".webp",
+    ".woff",
+    ".woff2",
+    ".zip",
+}
+
+
+class _SelectiveGZipMiddleware:
+    """Compress useful full responses without re-encoding media or byte ranges."""
+
+    def __init__(
+        self, app: ASGIApp, *, minimum_size: int = 1000, compresslevel: int = 5
+    ) -> None:
+        self.app = app
+        self.gzip = GZipMiddleware(
+            app, minimum_size=minimum_size, compresslevel=compresslevel
+        )
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        headers = {key.lower(): value for key, value in scope.get("headers", [])}
+        path = str(scope.get("path", ""))
+        if (
+            b"range" in headers
+            or path == "/api/export/pdf"
+            or path.startswith("/media/")
+            or Path(path).suffix.casefold() in _PRECOMPRESSED_SUFFIXES
+        ):
+            await self.app(scope, receive, send)
+            return
+        await self.gzip(scope, receive, send)
+
 
 SAFE_FILE = re.compile(r"^[a-f0-9]{64}\.(?:png|jpe?g|webp)$")
 SAFE_DIAGRAM = re.compile(r"^[a-f0-9]{32}\.excalidraw$")
@@ -293,6 +343,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     git = GitRepository(settings.root, settings.data_dir, store.mutation_lock)
     throttle = LoginThrottle()
     app = FastAPI(title="Study", version="0.1.0", docs_url=None, redoc_url=None)
+    app.add_middleware(_SelectiveGZipMiddleware, minimum_size=1000, compresslevel=5)
     allowed_hosts = {
         _configured_host(host)
         for host in (LOOPBACK_HOSTS if local_mode else settings.allowed_hosts)
@@ -434,10 +485,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         return {"authenticated": False}
 
     @app.get("/api/bootstrap")
-    def bootstrap(_session: Auth) -> dict[str, Any]:
+    def bootstrap(
+        _session: Auth,
+        compact: Annotated[bool, Query()] = False,
+    ) -> dict[str, Any]:
         with store.mutation_lock:
             library = store.snapshot()
-            review_stats = review.stats()
+            review_stats = review.stats(library)
+        if compact:
+            library.pop("tree", None)
         return {
             **library,
             "review": review_stats,
@@ -486,8 +542,21 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         return store.create_folder(payload.name, payload.slug, payload.parent_id, payload.index)
 
     @app.patch("/api/folders/{folder_id}")
-    def update_folder(folder_id: str, payload: FolderUpdate, _session: Mutation) -> dict[str, Any]:
-        return store.update_folder(folder_id, payload.model_dump(exclude_unset=True))
+    def update_folder(
+        folder_id: str,
+        payload: FolderUpdate,
+        _session: Mutation,
+        include_review_stats: Annotated[bool, Query()] = False,
+    ) -> dict[str, Any]:
+        updates = payload.model_dump(exclude_unset=True)
+        if not include_review_stats:
+            return store.update_folder(folder_id, updates)
+        with store.mutation_lock:
+            folder = store.update_folder(folder_id, updates)
+            snapshot = store.snapshot()
+            folder = next(item for item in snapshot["folders"] if item["id"] == folder_id)
+            review_stats = review.stats(snapshot)
+        return {"folder": folder, "review": review_stats, "git": git.status()}
 
     @app.delete("/api/folders/{folder_id}")
     def delete_folder(
@@ -879,7 +948,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def webmcp_summary(_session: Auth):
         with store.mutation_lock:
             snapshot = store.snapshot()
-            due = review.stats()["due"]
+            due = review.stats(snapshot)["due"]
         return {
             "folders": len(snapshot["folders"]),
             "entries": len(snapshot["entries"]),
@@ -895,7 +964,14 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         if root.exists() and root.resolve() in candidate.parents and candidate.is_file():
             if candidate.suffix.casefold() == ".html":
                 return _frontend_html_response(candidate)
-            return FileResponse(candidate)
+            cache_control = (
+                "private, max-age=31536000, immutable"
+                if path.startswith("_next/static/")
+                else "private, max-age=3600"
+                if path.startswith("vendor/")
+                else "no-cache"
+            )
+            return FileResponse(candidate, headers={"Cache-Control": cache_control})
         if path in {"_next", "vendor"} or path.startswith(("_next/", "vendor/")):
             raise HTTPException(status_code=404, detail="Frontend asset not found")
         if Path(path).suffix:

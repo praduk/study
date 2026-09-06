@@ -73,12 +73,18 @@ and the matches in the first nonempty stage, not library size. Full-text query c
 to the smallest intersected posting lists plus verified matches. Very common terms can still
 approach a full scan; the result cap bounds response size, not that honest worst case.
 
-Markdown files are read once when a snapshot is built, not once per query. Every normal store write
-invalidates the snapshot immediately. A successful app-controlled Git pull synchronously reloads
-it. To catch direct on-disk edits, Study checks `library.json` on every query and performs a
-signature sweep at most once every 250 milliseconds. For aggregate v1 storage this covers the
-indexed Markdown paths. For sharded v2 storage it also covers folder/entry sidecars and the
-traversed directories, so additions, deletions, and slug-derived directory moves invalidate the
-snapshot. The signature includes device, inode, size, modification time, and change time. Thus a
-valid manual edit may remain visible through the old cache for at most 250 milliseconds and is
-refreshed on the next query after that bound.
+Markdown files are read once when a snapshot is built, not once per query. Every store write that
+can affect indexed content, canonical tags, lexical scope, or ranking invalidates the snapshot
+immediately. The sole v2 exception is an update containing only a non-null folder
+`review_enabled` preference, which search does not consume. Study preserves the existing search
+snapshot after that atomic single-sidecar write only if the index matched disk beforehand and the
+validated library-cache refresh finds no unexpected concurrent change; otherwise it invalidates the
+snapshot normally.
+
+A successful app-controlled Git pull synchronously reloads the index. To catch direct on-disk
+edits, Study checks `library.json` on every query and performs a signature sweep at most once every
+250 milliseconds. For aggregate v1 storage this covers the indexed Markdown paths. For sharded v2
+storage it also covers folder/entry sidecars and the traversed directories, so additions, deletions,
+and slug-derived directory moves invalidate the snapshot. The signature includes device, inode,
+size, modification time, and change time. Thus a valid manual edit may remain visible through the
+old cache for at most 250 milliseconds and is refreshed on the next query after that bound.

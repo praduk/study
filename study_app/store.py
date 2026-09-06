@@ -257,6 +257,10 @@ class LibraryStore:
         self._next_search_staleness_check = 0.0
         self._search_build_count = 0
         self._search_content_read_count = 0
+        self._library_cache: dict[str, Any] | None = None
+        self._library_signatures: dict[
+            Path, tuple[int, int, int, int, int] | None
+        ] = {}
         self._v2_folder_paths: dict[str, Path] = {}
         self._v2_entry_paths: dict[str, Path] = {}
         self._v2_folder_ranks: dict[str, int] = {}
@@ -405,7 +409,74 @@ class LibraryStore:
         with self._lock:
             self._ensure_layout()
 
+    def _library_cache_is_current(self) -> bool:
+        if (
+            self._library_cache is None
+            or self._library_cache.get("version") != 2
+            or not self._library_signatures
+        ):
+            return False
+        return all(
+            self._file_signature(path) == signature
+            for path, signature in self._library_signatures.items()
+        )
+
+    def _invalidate_library_cache(self) -> None:
+        self._library_cache = None
+        self._library_signatures = {}
+
+    def _cache_validated_library(
+        self,
+        library: dict[str, Any],
+        *,
+        signatures: dict[Path, tuple[int, int, int, int, int] | None],
+    ) -> None:
+        # Version 1 keeps authored files in several separate legacy roots.
+        # Revalidating it preserves the existing fail-closed behavior; the
+        # performance-sensitive current format is the self-contained v2 tree.
+        if library["version"] != 2:
+            self._invalidate_library_cache()
+            return
+        if any(signature is None for signature in signatures.values()):
+            raise StoreError("library changed while loading")
+        self._library_cache = copy.deepcopy(library)
+        # Publish the exact signatures that bracketed validation. Never rescan
+        # here: doing so could attach post-validation signatures to stale data.
+        self._library_signatures = dict(signatures)
+
     def _read(self) -> dict[str, Any]:
+        if self._library_cache_is_current():
+            return copy.deepcopy(self._library_cache)
+
+        # A manual edit or Git replacement can race a read. Cache only a
+        # completely validated snapshot whose on-disk signatures stayed fixed
+        # for the duration of the parse.
+        for attempt in range(2):
+            library_before = self._file_signature(self.library_path)
+            version_before = self._format_version()
+            v2_tree_before = self._v2_tree_signatures() if version_before == 2 else {}
+            library = self._read_uncached()
+            library_after = self._file_signature(self.library_path)
+            v2_tree_after = self._v2_tree_signatures() if library["version"] == 2 else {}
+            if library_before == library_after and v2_tree_before == v2_tree_after:
+                signatures = {self.library_path: library_after, **v2_tree_after}
+                signatures.update(
+                    {
+                        path: self._file_signature(path)
+                        for path in self._v2_signature_paths
+                        if path not in signatures
+                    }
+                )
+                self._cache_validated_library(
+                    library,
+                    signatures=signatures,
+                )
+                return library
+            if attempt == 1:
+                raise StoreError("library changed repeatedly while loading")
+        raise AssertionError("unreachable")
+
+    def _read_uncached(self) -> dict[str, Any]:
         try:
             with self.library_path.open(encoding="utf-8") as stream:
                 library = json.load(stream)
@@ -946,6 +1017,36 @@ class LibraryStore:
             raise StoreError(f"cannot inspect metadata before writing: {path.name}") from exc
         _atomic_text(path, encoded)
 
+    def _write_json_if_signature_matches(
+        self,
+        path: Path,
+        value: dict[str, Any],
+        expected_signature: tuple[int, int, int, int, int] | None,
+    ) -> None:
+        """Replace one JSON file only if it is still the version we validated."""
+        encoded = json.dumps(value, ensure_ascii=False, indent=2) + "\n"
+        temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+        try:
+            before = self._file_signature(path)
+            try:
+                current = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError) as exc:
+                raise StoreError(f"cannot inspect metadata before writing: {path.name}") from exc
+            after = self._file_signature(path)
+            if before != expected_signature or after != expected_signature:
+                raise StoreError("folder metadata changed before saving its review preference")
+            if current == encoded:
+                return
+            with temporary.open("x", encoding="utf-8") as stream:
+                stream.write(encoded)
+                stream.flush()
+                os.fsync(stream.fileno())
+            if self._file_signature(path) != expected_signature:
+                raise StoreError("folder metadata changed before saving its review preference")
+            os.replace(temporary, path)
+        finally:
+            temporary.unlink(missing_ok=True)
+
     @staticmethod
     def _v2_folder_metadata(
         folder: dict[str, Any], rank: int, path: Path
@@ -1268,6 +1369,10 @@ class LibraryStore:
             self._write_v2(library)
         else:
             _atomic_json(self.library_path, library)
+        # A generic write may race an out-of-band direct edit after its final
+        # validation. Let the next read use the normal before/after validation
+        # loop instead of publishing signatures captured after that race.
+        self._invalidate_library_cache()
         self._invalidate_search_index()
 
     @staticmethod
@@ -1534,6 +1639,19 @@ class LibraryStore:
         with self._lock:
             library = self._read()
             folder = self._folder(library, folder_id)
+            if set(updates) == {"review_enabled"} and updates["review_enabled"] is not None:
+                folder["review_enabled"] = bool(updates["review_enabled"])
+                folder["updated_at"] = _now()
+                if library["version"] == 2:
+                    if not self._write_v2_folder_review_preference(library, folder):
+                        library = self._read()
+                        folder = self._folder(library, folder_id)
+                else:
+                    self._write(library)
+                return {
+                    **copy.deepcopy(folder),
+                    "namespace": self.folder_namespace(library, folder_id),
+                }
             new_parent = updates.get("parent_id", folder.get("parent_id"))
             if new_parent == folder_id:
                 raise StoreError("a folder cannot contain itself")
@@ -1566,6 +1684,82 @@ class LibraryStore:
             folder["updated_at"] = _now()
             self._write(library)
             return {**copy.deepcopy(folder), "namespace": self.folder_namespace(library, folder_id)}
+
+    def _write_v2_folder_review_preference(
+        self, library: dict[str, Any], folder: dict[str, Any]
+    ) -> bool:
+        """Atomically persist the one sidecar field that has no structural dependencies."""
+        folder_id = folder["id"]
+        folder_path = self._v2_folder_paths.get(folder_id)
+        rank = self._v2_folder_ranks.get(folder_id)
+        if folder_path is None or rank is None:
+            raise StoreError("folder metadata path is unavailable")
+        metadata_path = folder_path / V2_FOLDER_METADATA
+        expected_changes = {metadata_path.resolve(), folder_path.resolve()}
+        prior_library_signatures = dict(self._library_signatures)
+        preserve_search = self._search_snapshot_matches_disk()
+        expected_metadata = self._v2_folder_metadata(folder, rank, folder_path)
+        prior_target_signature = prior_library_signatures.get(metadata_path.resolve())
+
+        try:
+            self._write_json_if_signature_matches(
+                metadata_path,
+                expected_metadata,
+                prior_target_signature,
+            )
+        except StoreError:
+            self._invalidate_library_cache()
+            self._invalidate_search_index()
+            raise
+
+        cache_refreshed = False
+        try:
+            target_before = self._file_signature(metadata_path)
+            target_metadata = self._read_json_object(
+                metadata_path, f"folder metadata at {folder_path.name}"
+            )
+            target_after = self._file_signature(metadata_path)
+            if target_metadata != expected_metadata or target_before != target_after:
+                raise StoreError("folder metadata changed while saving its review preference")
+            tree_signatures = self._v2_tree_signatures()
+            next_signatures = {
+                self.library_path: self._file_signature(self.library_path),
+                **tree_signatures,
+            }
+            next_signatures.update(
+                {
+                    path: self._file_signature(path)
+                    for path in self._v2_signature_paths
+                    if path not in next_signatures
+                }
+            )
+            unchanged_paths = set(prior_library_signatures) - expected_changes
+            no_unexpected_change = (
+                set(next_signatures) == set(prior_library_signatures)
+                and next_signatures.get(metadata_path.resolve()) == target_after
+                and all(
+                    next_signatures[path] == prior_library_signatures[path]
+                    for path in unchanged_paths
+                )
+            )
+            if no_unexpected_change:
+                self._cache_validated_library(
+                    library,
+                    signatures=next_signatures,
+                )
+                cache_refreshed = True
+            else:
+                self._invalidate_library_cache()
+        except StoreError:
+            # The single atomic sidecar write already committed. Force the next
+            # read to validate from disk instead of reporting a false failure.
+            self._invalidate_library_cache()
+
+        if preserve_search and cache_refreshed:
+            self._refresh_search_signatures(expected_changes)
+        else:
+            self._invalidate_search_index()
+        return cache_refreshed
 
     @staticmethod
     def _next_sibling_id(items: list[dict[str, Any]], item_id: str) -> str | None:
@@ -2655,6 +2849,29 @@ class LibraryStore:
         self._search_index = None
         self._search_signatures = {}
         self._next_search_staleness_check = 0.0
+
+    def _search_snapshot_matches_disk(self) -> bool:
+        if self._search_index is None or not self._search_signatures:
+            return False
+        try:
+            return all(
+                self._file_signature(path) == signature
+                for path, signature in self._search_signatures.items()
+            )
+        except StoreError:
+            return False
+
+    def _refresh_search_signatures(self, changed_paths: set[Path]) -> None:
+        """Keep an index after an atomic write to metadata it does not consume."""
+        if any(
+            path not in self._search_signatures or path not in self._library_signatures
+            for path in changed_paths
+        ):
+            self._invalidate_search_index()
+            return
+        for path in changed_paths:
+            self._search_signatures[path] = self._library_signatures[path]
+        self._next_search_staleness_check = time.monotonic() + SEARCH_STALENESS_SECONDS
 
     def invalidate_search_index(self) -> None:
         """Invalidate indexes after an out-of-band operation such as Git pull."""

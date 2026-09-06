@@ -1,0 +1,1 @@
+import{S as e}from"./api-D9S3D2-T.js";var t=e(`chevron-right`,[[`path`,{d:`m9 18 6-6-6-6`,key:`mthhwq`}]]);export{t};

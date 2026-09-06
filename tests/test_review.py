@@ -35,6 +35,58 @@ def test_review_queue_preserves_authored_order_and_inherits_folder_exclusion(tmp
     assert [card["entry_id"] for card in review.queue()] == [second["id"]]
 
 
+def test_review_stats_from_snapshot_matches_queue_without_loading_answers(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    fixed = datetime(2026, 9, 4, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: fixed)
+    store = LibraryStore(tmp_path / "data")
+    enabled = store.create_folder("Enabled", "enabled", None)
+    disabled = store.create_folder("Disabled", "disabled", None)
+    disabled_child = store.create_folder("Enabled child", "enabled-child", disabled["id"])
+    store.update_folder(disabled["id"], {"review_enabled": False})
+    definition = _entry(store, enabled["id"], "Group", "group")
+    theorem = store.create_entry(
+        enabled["id"], "th", "Orbit theorem", "orbit", "", "Statement"
+    )
+    store.add_supplement(
+        theorem["id"],
+        {"kind": "pf", "label": "Proof", "content": "Proof body", "main": True},
+    )
+    problem = store.create_entry(
+        enabled["id"], "pb", "Compute an orbit", "compute-orbit", "", "Problem"
+    )
+    store.add_supplement(
+        problem["id"],
+        {"kind": "sl", "label": "Solution", "content": "Solution", "main": True},
+    )
+    _entry(store, disabled_child["id"], "Hidden", "hidden")
+    review = ReviewEngine(store)
+    initial = review.queue()
+    assert len(initial) == 4
+    definition_card = next(card for card in initial if card["entry_id"] == definition["id"])
+    attempt = review.reveal(
+        definition_card["id"],
+        {"attempt": "Definition", "confidence": 2, "overt": True},
+    )
+    review.grade(definition_card["id"], attempt["attempt_id"], 2)
+    expected_due = len(review.queue())
+    assert expected_due == 3
+    snapshot = store.snapshot()
+
+    def reject_slow_path(*_args, **_kwargs):
+        pytest.fail(
+            "snapshot-based review stats must not reread the library, use the queue, "
+            "or read Markdown"
+        )
+
+    monkeypatch.setattr(review, "queue", reject_slow_path)
+    monkeypatch.setattr(store, "_read_content", reject_slow_path)
+    monkeypatch.setattr(store, "snapshot", reject_slow_path)
+
+    assert review.stats(snapshot)["due"] == expected_due
+
+
 def test_statement_prompts_name_the_definition_axiom_or_theorem(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Foundations", "foundations", None)

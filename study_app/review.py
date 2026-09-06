@@ -592,22 +592,24 @@ class ReviewEngine:
             self._calibration_verified = True
             return calibration_summary(calibration)
 
-    def _current_card_ids(self) -> set[str]:
+    def _current_card_ids(self, snapshot: dict[str, Any] | None = None) -> set[str]:
         current: set[str] = set()
-        for entry in self.store.snapshot()["entries"]:
+        for entry in (snapshot or self.store.snapshot())["entries"]:
             for mode in entry.get("review_modes", []):
                 if self.store.review_mode_available(entry, mode):
                     current.add(self.card_id(entry["id"], mode))
         return current
 
-    def _prune_if_library_changed(self) -> None:
+    def _prune_if_library_changed(self, snapshot: dict[str, Any] | None = None) -> None:
         """Compact stale review data after a live direct library edit."""
         with self._lock:
-            current_cards = frozenset(self._current_card_ids())
+            current_cards = frozenset(self._current_card_ids(snapshot))
             if current_cards != self._known_current_cards:
-                self.prune_to_current_library()
+                self.prune_to_current_library(snapshot)
 
-    def prune_to_current_library(self) -> dict[str, int]:
+    def prune_to_current_library(
+        self, snapshot: dict[str, Any] | None = None
+    ) -> dict[str, int]:
         """Remove review data for entries and review tasks that no longer exist."""
         with self._lock:
             state = self._read()
@@ -618,7 +620,7 @@ class ReviewEngine:
                 record_visitor=records.append,
             )
             validated_log_signature = self._log_signature()
-            current_cards = self._current_card_ids()
+            current_cards = self._current_card_ids(snapshot)
             retained_records = [
                 record for record in records if record["card_id"] in current_cards
             ]
@@ -1059,12 +1061,44 @@ class ReviewEngine:
             "calibration": calibration_reporting_summary(calibration),
         }
 
-    def stats(self) -> dict[str, Any]:
+    @staticmethod
+    def _snapshot_review_entries(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
+        entries: list[dict[str, Any]] = []
+
+        def visit(nodes: list[dict[str, Any]], parent_enabled: bool) -> None:
+            for node in nodes:
+                enabled = parent_enabled and bool(node.get("review_enabled", True))
+                if enabled:
+                    entries.extend(node.get("entries", []))
+                visit(node.get("children", []), enabled)
+
+        visit(snapshot["tree"], True)
+        return entries
+
+    def stats(self, snapshot: dict[str, Any] | None = None) -> dict[str, Any]:
         with self._lock:
-            due = self.queue(limit=10000)
+            snapshot = snapshot or self.store.snapshot()
+            self._prune_if_library_changed(snapshot)
             state = self._read()
-            calibration = self._calibration_for_state(state)
-            current_cards = self._current_card_ids()
+            _, calibration, changed = self._sync_state_with_log(state)
+            if changed:
+                self._write(state)
+            self._calibration_verified = True
+            now = _now()
+            due = 0
+            for entry in self._snapshot_review_entries(snapshot):
+                modes = entry.get("review_modes") or self.store.default_review_modes(
+                    entry["kind"]
+                )
+                for mode in modes:
+                    if not self.store.review_mode_available(entry, mode):
+                        continue
+                    due_text = state["cards"].get(
+                        self.card_id(entry["id"], mode), {}
+                    ).get("due_at")
+                    if due_text is None or datetime.fromisoformat(due_text) <= now:
+                        due += 1
+            current_cards = self._current_card_ids(snapshot)
             today = _now().date().isoformat()
             completed_today = sum(
                 1
@@ -1082,7 +1116,7 @@ class ReviewEngine:
                 / 60_000
             )
         return {
-            "due": len(due),
+            "due": due,
             "completed_today": completed_today,
             "minutes_today": minutes,
             "calibration": calibration_summary(calibration),

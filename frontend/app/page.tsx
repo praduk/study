@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import {
   BookOpen, Braces, CalendarDays, ChevronDown, ChevronRight, Download, FilePlus2, FolderInput,
   ChevronLeft, FolderPen, FolderPlus, FolderTree, GitBranch, Library, LoaderCircle, LogIn, LogOut, Menu,
@@ -8,14 +8,11 @@ import {
 } from 'lucide-react';
 
 import { DeleteItemDialog, type DeleteTarget } from '@/components/DeleteItemDialog';
-import { EditorDialog } from '@/components/EditorDialog';
 import { ExportDialog } from '@/components/ExportDialog';
 import { GitSyncDialog } from '@/components/GitSyncDialog';
 import { MacrosDialog } from '@/components/MacrosDialog';
 import { MathMarkdown } from '@/components/MathMarkdown';
 import { MoveFolderDialog } from '@/components/MoveFolderDialog';
-import { ReviewView } from '@/components/ReviewView';
-import { ReviewCalendar } from '@/components/ReviewCalendar';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
@@ -30,9 +27,23 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import { api, setCsrfToken } from '@/lib/api';
 import { folderPathIds, libraryPathForEntry, resolveLibraryPath } from '@/lib/library-path';
+import { hydrateBootstrap, updateBootstrapFolder } from '@/lib/library-tree';
 import { configureMathJax } from '@/lib/mathjax';
 import { readingVariantSelection } from '@/lib/reference-navigation';
-import type { Bootstrap, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus } from '@/lib/types';
+import type { Bootstrap, BootstrapPayload, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus, ReviewStats } from '@/lib/types';
+
+const EditorDialog = lazy(async () => {
+  const loaded = await import('@/components/EditorDialog');
+  return { default: loaded.EditorDialog };
+});
+const ReviewView = lazy(async () => {
+  const loaded = await import('@/components/ReviewView');
+  return { default: loaded.ReviewView };
+});
+const ReviewCalendar = lazy(async () => {
+  const loaded = await import('@/components/ReviewCalendar');
+  return { default: loaded.ReviewCalendar };
+});
 
 const KIND_LABEL: Record<EntryKind, string> = { ax: 'Axiom', df: 'Definition', rk: 'Remark', th: 'Theorem', pb: 'Problem' };
 const ENTRY_KINDS = Object.entries(KIND_LABEL) as [EntryKind, string][];
@@ -147,8 +158,9 @@ function InsertionPoint({ parentFolderId, folderName, entryIndex, folderIndex, e
   </div>;
 }
 
-function TreeNode({ node, selectedEntry, selectedFolder, expanded, readOnly, onToggle, onSelectEntry, onSelectFolder, onReviewToggle, onMove, onInsertEntry, onInsertFolder }: {
+function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReviewFolders, readOnly, onToggle, onSelectEntry, onSelectFolder, onReviewToggle, onMove, onInsertEntry, onInsertFolder }: {
   node: FolderNode; selectedEntry: string | null; selectedFolder: string | null; expanded: Set<string>;
+  pendingReviewFolders: Set<string>;
   readOnly: boolean;
   onToggle: (id: string) => void; onSelectEntry: (id: string, folderId: string) => void;
   onSelectFolder: (id: string) => void; onReviewToggle: (id: string, enabled: boolean) => void;
@@ -165,7 +177,7 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, readOnly, onT
       onDragLeave={(event) => event.currentTarget.classList.remove('drop-target')}
       onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.remove('drop-target'); const payload = parseDrag(event); if (payload && payload.id !== node.id) onMove(payload, node.id, payload.type === 'entry' ? node.entries.length : node.children.length); }}>
       <button className="tree-chevron" aria-label={open ? 'Collapse folder' : 'Expand folder'} onClick={() => onToggle(node.id)}>{open ? <ChevronDown /> : <ChevronRight />}</button>
-      <Checkbox checked={node.review_enabled} disabled={readOnly} aria-label={`Include ${node.name} in review`} onCheckedChange={(checked) => !readOnly && onReviewToggle(node.id, Boolean(checked))} />
+      <Checkbox checked={node.review_enabled} disabled={readOnly || pendingReviewFolders.size > 0} aria-label={`Include ${node.name} in review`} onCheckedChange={(checked) => !readOnly && onReviewToggle(node.id, Boolean(checked))} />
       <button className="folder-name" onClick={() => { onSelectFolder(node.id); if (!open) onToggle(node.id); }}>{node.name}</button>
       <span className="count">{count}</span>
     </div>
@@ -179,7 +191,7 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, readOnly, onT
         onClick={() => onSelectEntry(entry.id, node.id)}><span className={`type-chip type-${entry.kind}`}>{entry.kind}</span><span>{entry.title}</span></button>
         {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} entryIndex={index + 1} folderIndex={index === node.entries.length - 1 ? 0 : undefined} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
       </div>)}</div>
-      {node.children.map((child, index) => <div className="folder-row-group" key={child.id}><TreeNode node={child} selectedEntry={selectedEntry} selectedFolder={selectedFolder} expanded={expanded} readOnly={readOnly} onToggle={onToggle} onSelectEntry={onSelectEntry} onSelectFolder={onSelectFolder} onReviewToggle={onReviewToggle} onMove={onMove} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} />
+      {node.children.map((child, index) => <div className="folder-row-group" key={child.id}><TreeNode node={child} selectedEntry={selectedEntry} selectedFolder={selectedFolder} expanded={expanded} pendingReviewFolders={pendingReviewFolders} readOnly={readOnly} onToggle={onToggle} onSelectEntry={onSelectEntry} onSelectFolder={onSelectFolder} onReviewToggle={onReviewToggle} onMove={onMove} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} />
         {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} folderIndex={index + 1} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
       </div>)}
     </div>}
@@ -251,9 +263,12 @@ export default function Home() {
   const [session, setSession] = useState({ loading: true, authenticated: false, authRequired: false });
   const [data, setData] = useState<Bootstrap | null>(null); const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null); const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null); const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null); const [entry, setEntry] = useState<EntryDetail | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set()); const dark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => false); const [mode, setMode] = useState<'library' | 'review' | 'calendar'>('library'); const [editorOpen, setEditorOpen] = useState(false); const [createEntry, setCreateEntry] = useState(false); const [createKind, setCreateKind] = useState<EntryKind>('df'); const [createIndex, setCreateIndex] = useState<number | null>(null);
+  const [pendingReviewFolders, setPendingReviewFolders] = useState<Set<string>>(new Set());
+  const reviewPreferencePending = pendingReviewFolders.size > 0;
   const [gitOpen, setGitOpen] = useState(false); const [exportOpen, setExportOpen] = useState(false); const [macrosOpen, setMacrosOpen] = useState(false); const [moveFolderOpen, setMoveFolderOpen] = useState(false); const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null); const [mobileLibrary, setMobileLibrary] = useState(false); const [libraryOpen, setLibraryOpen] = useState(true); const [libraryWidth, setLibraryWidth] = useState(270); const [query, setQuery] = useState(''); const [searchResults, setSearchResults] = useState<SearchResult[]>([]); const [searching, setSearching] = useState(false); const [notice, setNotice] = useState(''); const [error, setError] = useState(''); const searchRef = useRef<HTMLInputElement>(null);
   const [librarySynchronized, setLibrarySynchronized] = useState(true); const [pullReloadError, setPullReloadError] = useState(''); const [locationError, setLocationError] = useState('');
   const dataRef = useRef<Bootstrap | null>(null);
+  const pendingReviewFoldersRef = useRef<Set<string>>(new Set());
   const locationInitialized = useRef(false);
   const editorOpenRef = useRef(false);
   const pendingPopstate = useRef(false);
@@ -321,7 +336,7 @@ export default function Home() {
     if (target) writeEntryPath(target, variantId, 'push');
   }, [isMobile, writeEntryPath]);
 
-  const load = useCallback(async () => { try { const next = await api<Bootstrap>('/api/bootstrap'); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
+  const load = useCallback(async () => { try { const payload = await api<BootstrapPayload>('/api/bootstrap?compact=true'); const next = hydrateBootstrap(payload); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
   useEffect(() => { api<{ authenticated: boolean; auth_required: boolean; csrf: string | null }>('/api/session').then((result) => { setCsrfToken(result.csrf); setSession({ loading: false, authenticated: result.authenticated, authRequired: result.auth_required }); if (result.authenticated) return load(); }).catch((reason: Error) => { setSession({ loading: false, authenticated: false, authRequired: true }); setError(reason.message); }); }, [load]);
   useEffect(() => { dataRef.current = data; }, [data]);
   useEffect(() => {
@@ -408,9 +423,11 @@ export default function Home() {
   }, [query]);
   useEffect(() => { const context = document.modelContext; if (!context?.registerTool || !data) return; const lifecycle = new AbortController(); const report = (reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)); const registrations = [
     context.registerTool({ name: 'read_study_library_summary', title: 'Read Study library summary', description: 'Return folder, entry, and due-review counts without changing the library.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: true, untrustedContentHint: false }, execute: () => api('/api/webmcp/library-summary') }, { signal: lifecycle.signal }),
-    context.registerTool({ name: 'start_study_review', title: 'Start review', description: 'Open the visible due-review flow in authored library order.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: () => { setMode('review'); return { status: 'opened', due: data.review.due }; } }, { signal: lifecycle.signal }),
-    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); chooseEntry(created.id, created.folder_id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
+    context.registerTool({ name: 'start_study_review', title: 'Start review', description: 'Open the visible due-review flow in authored library order.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: () => { if (!librarySynchronized || pendingReviewFoldersRef.current.size) throw new Error('Study is still saving a library preference.'); setMode('review'); return { status: 'opened', due: data.review.due }; } }, { signal: lifecycle.signal }),
+    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { if (pendingReviewFoldersRef.current.size) throw new Error('Study is still saving a library preference.'); const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); chooseEntry(created.id, created.folder_id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
   ]; registrations.forEach((registration) => void Promise.resolve(registration).catch(report)); return () => lifecycle.abort(); }, [chooseEntry, data, isMobile, librarySynchronized, load]);
+
+  const orderedEntries = useMemo(() => authoredEntries(data?.tree || []), [data?.tree]);
 
   const toggleTheme = () => { const next = !dark; document.documentElement.classList.toggle('dark', next); localStorage.setItem('study-theme', next ? 'dark' : 'light'); };
   const openEntryReference = useCallback((entryId: string, variantId?: string) => {
@@ -434,7 +451,7 @@ export default function Home() {
     setCreateIndex(null);
     setEntry(null);
     try {
-      const next = await api<Bootstrap>('/api/bootstrap');
+      const next = hydrateBootstrap(await api<BootstrapPayload>('/api/bootstrap?compact=true'));
       const nextEntryId = selectedEntryId && next.entries.some((item) => item.id === selectedEntryId)
         ? selectedEntryId
         : next.entries[0]?.id || null;
@@ -467,13 +484,68 @@ export default function Home() {
       throw new Error(message);
     }
   }, [selectedEntryId, selectedFolderId]);
-  const updateFolderReview = async (id: string, enabled: boolean) => { if (isMobile || !librarySynchronized) return; try { await api(`/api/folders/${id}`, { method: 'PATCH', body: JSON.stringify({ review_enabled: enabled }) }); await load(); } catch (reason) { setError((reason as Error).message); } };
+  const updateFolderReview = async (id: string, enabled: boolean) => {
+    if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size > 0) return;
+    const snapshot = dataRef.current;
+    const currentFolder = snapshot?.folders.find((folder) => folder.id === id);
+    if (!snapshot || !currentFolder || currentFolder.review_enabled === enabled) return;
+
+    pendingReviewFoldersRef.current.add(id);
+    setPendingReviewFolders(new Set(pendingReviewFoldersRef.current));
+    const optimistic = updateBootstrapFolder(snapshot, { ...currentFolder, review_enabled: enabled });
+    dataRef.current = optimistic;
+    setData(optimistic);
+    try {
+      const result = await api<{ folder: Folder; review: ReviewStats; git: GitStatus }>(
+        `/api/folders/${id}?include_review_stats=true`,
+        { method: 'PATCH', body: JSON.stringify({ review_enabled: enabled }) },
+      );
+      const latest = dataRef.current;
+      if (latest) {
+        if (latest !== optimistic) {
+          const reconciled = await load();
+          if (!reconciled) {
+            setLibrarySynchronized(false);
+            setError('The review preference was saved, but Study could not verify the current library. Reload Study before making more changes.');
+          }
+          return;
+        }
+        const latestFolder = latest.folders.find((folder) => folder.id === id);
+        if (!latestFolder) {
+          const reconciled = await load();
+          if (!reconciled) setLibrarySynchronized(false);
+          return;
+        }
+        const authoritative = updateBootstrapFolder(latest, {
+          ...latestFolder,
+          review_enabled: result.folder.review_enabled,
+        });
+        const next = { ...authoritative, review: result.review, git: result.git };
+        dataRef.current = next;
+        setData(next);
+      }
+    } catch (reason) {
+      const detail = (reason as Error).message;
+      const recovered = await load();
+      if (recovered) {
+        setError(`Study reloaded the library after it could not confirm that preference (${detail}).`);
+      } else {
+        dataRef.current = snapshot;
+        setData(snapshot);
+        setLibrarySynchronized(false);
+        setError(`Study could not verify that preference or reload the library (${detail}). Reload Study before making more changes.`);
+      }
+    } finally {
+      pendingReviewFoldersRef.current.delete(id);
+      setPendingReviewFolders(new Set(pendingReviewFoldersRef.current));
+    }
+  };
   const refreshSelectedEntry = async (syncFolder: boolean) => { if (!selectedEntryId) return; const refreshed = await api<EntryDetail>(`/api/entries/${selectedEntryId}`); setEntry(refreshed); if (syncFolder) setSelectedFolderId(refreshed.folder_id); setExpanded((current) => { const next = new Set(current); folderPathIds(refreshed.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); return refreshed; };
-  const moveItem = async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } };
-  const addFolder = async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } };
-  const renameFolder = async () => { if (isMobile || !librarySynchronized || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
+  const moveItem = async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } };
+  const addFolder = async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } };
+  const renameFolder = async () => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
   const beginDeleteFolder = () => {
-    if (isMobile || !librarySynchronized || !data || !selectedFolderId) return;
+    if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size || !data || !selectedFolderId) return;
     const folder = data.folders.find((item) => item.id === selectedFolderId);
     if (!folder) return;
     const subtree = folderSubtreeIds(folder.id, data.folders);
@@ -527,30 +599,29 @@ export default function Home() {
     }
     setNotice(`${target.type === 'folder' ? 'Folder' : 'Entry'} deleted.`);
   };
-  const beginCreateEntry = (folderId: string, index: number | null, kind: EntryKind = 'df') => { if (isMobile || !librarySynchronized) return; setSelectedFolderId(folderId); setCreateKind(kind); setCreateIndex(index); setCreateEntry(true); setEditorOpen(true); };
+  const beginCreateEntry = (folderId: string, index: number | null, kind: EntryKind = 'df') => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return; setSelectedFolderId(folderId); setCreateKind(kind); setCreateIndex(index); setCreateEntry(true); setEditorOpen(true); };
   const handleSaved = async (saved: EntryDetail) => { const existed = Boolean(dataRef.current?.entries.some((item) => item.id === saved.id)); const savedVariantIds = new Set([...saved.formulations, ...saved.supplements].map((item) => item.id)); const nextVariantId = existed && selectedVariantId && savedVariantIds.has(selectedVariantId) ? selectedVariantId : null; writeEntryPath(saved, nextVariantId, existed ? 'replace' : 'push'); setSelectedEntryId(saved.id); setSelectedFolderId(saved.folder_id); setSelectedVariantId(nextVariantId); setEntry(saved); setExpanded((current) => { const next = new Set(current); folderPathIds(saved.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); setLocationError(''); await load(); setNotice('Saved.'); };
   const logout = async () => { await api('/api/logout', { method: 'POST' }); setCsrfToken(null); setSession({ loading: false, authenticated: false, authRequired: true }); dataRef.current = null; locationInitialized.current = false; setData(null); };
 
   if (session.loading) return <div className="app-loading"><LoaderCircle className="spin" /><span>Opening Study…</span></div>;
   if (!session.authenticated && session.authRequired) return <LoginScreen onLogin={(csrf) => { setCsrfToken(csrf); setSession({ loading: false, authenticated: true, authRequired: true }); void load(); }} />;
-  if (mode === 'review' && data) return <ReviewView initialDue={data.review.due} isMobile={isMobile} onExit={() => { setMode('library'); void load(); }} onChanged={() => void load()} />;
-  if (mode === 'calendar') return <ReviewCalendar onExit={() => { setMode('library'); void load(); }} />;
+  if (mode === 'review' && data) return <Suspense fallback={<div className="app-loading"><LoaderCircle className="spin" /><span>Opening review…</span></div>}><ReviewView initialDue={data.review.due} isMobile={isMobile} onExit={() => { setMode('library'); void load(); }} /></Suspense>;
+  if (mode === 'calendar') return <Suspense fallback={<div className="app-loading"><LoaderCircle className="spin" /><span>Opening calendar…</span></div>}><ReviewCalendar onExit={() => { setMode('library'); void load(); }} /></Suspense>;
 
   const resizeLibrary = (width: number) => setLibraryWidth(width);
   const selectedFolder = data?.folders.find((folder) => folder.id === selectedFolderId) || null;
-  const orderedEntries = authoredEntries(data?.tree || []);
   const selectedEntryIndex = orderedEntries.findIndex((item) => item.id === selectedEntryId);
   const previousEntry = selectedEntryIndex > 0 ? orderedEntries[selectedEntryIndex - 1] : null;
   const nextEntry = selectedEntryIndex >= 0 && selectedEntryIndex < orderedEntries.length - 1 ? orderedEntries[selectedEntryIndex + 1] : null;
-  const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, readOnly: isMobile || !librarySynchronized, onToggle: (id: string) => setExpanded((current) => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; }), onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: updateFolderReview, onMove: moveItem, onInsertEntry: beginCreateEntry, onInsertFolder: addFolder };
+  const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, pendingReviewFolders, readOnly: isMobile || !librarySynchronized, onToggle: (id: string) => setExpanded((current) => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; }), onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: updateFolderReview, onMove: moveItem, onInsertEntry: beginCreateEntry, onInsertFolder: addFolder };
   return <main className={`app-frame ${libraryOpen ? '' : 'library-closed'}`} style={{ '--library-width': `${libraryWidth}px` } as CSSProperties}><header className="topbar" inert={isMobile && mobileLibrary ? true : undefined}><div className="brand-cluster"><Button className="library-toggle" variant="ghost" size="icon-sm" aria-label={libraryOpen ? 'Hide library panel' : 'Show library panel'} onClick={() => setLibraryOpen((value) => !value)}>{libraryOpen ? <PanelLeftClose /> : <PanelLeftOpen />}</Button><button ref={mobileLibraryTriggerRef} className="brand" aria-label="Open Study library" aria-controls="study-library-sidebar" aria-expanded={isMobile ? mobileLibrary : libraryOpen} onClick={() => { if (isMobile) { setQuery(''); setSearchResults([]); setMobileLibrary(true); } else setLibraryOpen(true); }}><span className="brand-mark"><Sigma className="desktop-brand-icon" /><Menu className="mobile-brand-icon" /></span><span>Study</span></button></div>
     <div className="searchbox"><Search /><input ref={searchRef} type="search" maxLength={1000} aria-label="Search your library" aria-controls="study-search-results" placeholder="Search definitions, theorems, problems…" value={query} onChange={(event) => { const value = event.target.value; setQuery(value); setSearchResults([]); setSearching(Boolean(value.trim())); }} onKeyDown={(event) => { if (event.key === 'Enter' && searchResults[0]) { event.preventDefault(); chooseSearchResult(searchResults[0]); } else if (event.key === 'Escape') { setQuery(''); setSearchResults([]); setSearching(false); } }} /><kbd>⌘ K</kbd>{query.trim() && <section id="study-search-results" className="search-results" aria-label="Search results"><div className="search-status" aria-live="polite">{searching ? 'Searching…' : `${searchResults.length} result${searchResults.length === 1 ? '' : 's'}`}</div>{!searching && searchResults.map((result) => <button key={result.id} type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => chooseSearchResult(result)}><span className={`type-chip type-${result.kind}`}>{result.kind}</span><span><strong>{result.title}</strong><code>{result.canonical_tag}</code></span></button>)}</section>}</div>
-    <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" aria-label={`Start review, ${data?.review.due || 0} due`} onClick={() => setMode('review')}><BookOpen /><span className="review-label">Review</span><span className="review-count-badge">{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
-    <aside id="study-library-sidebar" className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`} role={isMobile && mobileLibrary ? 'dialog' : 'complementary'} aria-label="Study library" aria-modal={isMobile && mobileLibrary ? true : undefined} aria-hidden={isMobile && !mobileLibrary ? true : undefined}><div className="sidebar-heading"><span>Library</span><Button ref={mobileLibraryCloseRef} className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => { setMobileLibrary(false); window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus()); }}><X /></Button></div><div className="mobile-sidebar-actions"><Button onClick={() => { setMobileLibrary(false); setMode('review'); }}><BookOpen /> Review <span className="review-count-badge">{data?.review.due || 0}</span></Button><Button variant="outline" onClick={() => { setMobileLibrary(false); setMode('calendar'); }}><CalendarDays /> Calendar</Button><Button variant="outline" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />} {dark ? 'Light mode' : 'Dark mode'}</Button>{session.authRequired && <Button variant="outline" onClick={() => void logout()}><LogOut /> Log out</Button>}</div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
+    <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" disabled={!librarySynchronized || reviewPreferencePending} aria-label={`Start review, ${data?.review.due || 0} due`} onClick={() => setMode('review')}><BookOpen /><span className="review-label">Review</span><span className="review-count-badge">{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
+    <aside id="study-library-sidebar" className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`} role={isMobile && mobileLibrary ? 'dialog' : 'complementary'} aria-label="Study library" aria-modal={isMobile && mobileLibrary ? true : undefined} aria-hidden={isMobile && !mobileLibrary ? true : undefined}><div className="sidebar-heading"><span>Library</span><Button ref={mobileLibraryCloseRef} className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => { setMobileLibrary(false); window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus()); }}><X /></Button></div><div className="mobile-sidebar-actions"><Button disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('review'); }}><BookOpen /> Review <span className="review-count-badge">{data?.review.due || 0}</span></Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('calendar'); }}><CalendarDays /> Calendar</Button><Button variant="outline" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />} {dark ? 'Light mode' : 'Dark mode'}</Button>{session.authRequired && <Button variant="outline" onClick={() => void logout()}><LogOut /> Log out</Button>}</div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
     {libraryOpen && <LibraryResizeHandle value={libraryWidth} onChange={resizeLibrary} />}
-    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
+    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized && !reviewPreferencePending} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
     {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : locationError ? <button className="toast-error" onClick={() => setLocationError('')}>{locationError}</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
-    <EditorDialog open={editorOpen} entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} />
+    {editorOpen && <Suspense fallback={<output className="dialog-loading"><LoaderCircle className="spin" /><span>Opening editor…</span></output>}><EditorDialog open entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} /></Suspense>}
     <DeleteItemDialog target={deleteTarget} onClose={() => setDeleteTarget(null)} onDelete={deleteItem} />
     {data && <MoveFolderDialog open={moveFolderOpen} folder={selectedFolder} folders={data.folders} tree={data.tree} onClose={() => setMoveFolderOpen(false)} onMove={async (destinationId, index) => {
       if (!selectedFolderId) return false;

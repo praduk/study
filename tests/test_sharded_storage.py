@@ -101,6 +101,175 @@ def test_v2_crud_moves_paths_but_preserves_stable_ids_and_sparse_peer_metadata(t
     assert store.check_data()["entries"] == 2
 
 
+def test_v2_review_preference_updates_only_its_folder_sidecar(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    target = store.create_folder("Target", "target", None)
+    other = store.create_folder("Other", "other", None)
+    store.create_entry(target["id"], "df", "Group", "group", "", "Body")
+    store.create_entry(other["id"], "df", "Ring", "ring", "", "Body")
+    target_sidecar = store.library_dir / "target" / "_folder.json"
+    before = {
+        path.relative_to(store.library_dir): path.read_bytes()
+        for path in store.library_dir.rglob("*")
+        if path.is_file()
+    }
+
+    def reject_generic_transaction() -> None:
+        pytest.fail("a review-only update must not start a whole-library transaction")
+
+    monkeypatch.setattr(store, "_begin_v2_transaction", reject_generic_transaction)
+    updated = store.update_folder(target["id"], {"review_enabled": False})
+
+    after = {
+        path.relative_to(store.library_dir): path.read_bytes()
+        for path in store.library_dir.rglob("*")
+        if path.is_file()
+    }
+    assert set(after) == set(before)
+    changed = {path for path in before if before[path] != after[path]}
+    assert changed == {target_sidecar.relative_to(store.library_dir)}
+    assert updated["review_enabled"] is False
+    assert json.loads(target_sidecar.read_text())["review_enabled"] is False
+    reopened = LibraryStore(store.data_dir)
+    persisted = next(
+        folder for folder in reopened.snapshot()["folders"] if folder["id"] == target["id"]
+    )
+    assert persisted["review_enabled"] is False
+
+
+def test_v2_review_preference_preserves_a_current_search_index(tmp_path: Path):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    store.create_entry(
+        folder["id"], "df", "Group", "group", "", "unique-review-search-token"
+    )
+    assert store.search("unique-review-search-token")
+    index = store._search_index
+    before = store.search_index_stats()
+
+    store.update_folder(folder["id"], {"review_enabled": False})
+
+    assert store._search_index is index
+    assert store.search("unique-review-search-token")
+    assert store.search_index_stats() == before
+
+
+def test_v2_cached_reads_detect_a_direct_entry_sidecar_edit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    store.create_entry(folder["id"], "df", "Old title", "group", "", "Body")
+    store.snapshot()
+    original_read = store._read_uncached
+    uncached_reads = 0
+
+    def count_uncached_read() -> dict:
+        nonlocal uncached_reads
+        uncached_reads += 1
+        return original_read()
+
+    monkeypatch.setattr(store, "_read_uncached", count_uncached_read)
+    assert store.snapshot()["entries"][0]["title"] == "Old title"
+    assert uncached_reads == 0
+
+    sidecar = next(store.library_dir.rglob("group/_entry.json"))
+    metadata = json.loads(sidecar.read_text())
+    metadata["title"] = "Directly edited title"
+    sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+
+    assert store.snapshot()["entries"][0]["title"] == "Directly edited title"
+    assert uncached_reads == 1
+
+
+def test_v2_generic_write_does_not_cache_over_a_concurrent_direct_edit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "df", "Old title", "group", "", "Body")
+    sidecar = next(store.library_dir.rglob("group/_entry.json"))
+    original_apply = store._apply_v2_write
+
+    def apply_then_edit(library: dict) -> None:
+        original_apply(library)
+        metadata = json.loads(sidecar.read_text())
+        metadata["title"] = "Concurrent direct title"
+        sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+
+    monkeypatch.setattr(store, "_apply_v2_write", apply_then_edit)
+    store.update_entry(entry["id"], {"title": "Application title"})
+
+    assert store.snapshot()["entries"][0]["title"] == "Concurrent direct title"
+    assert LibraryStore(store.data_dir).snapshot()["entries"][0]["title"] == (
+        "Concurrent direct title"
+    )
+
+
+def test_v2_review_preference_does_not_cache_over_a_concurrent_sidecar_edit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Original folder", "original", None)
+    sidecar = store.library_dir / "original" / "_folder.json"
+    original_write = store._write_json_if_signature_matches
+
+    def write_then_edit(
+        path: Path,
+        value: dict,
+        expected_signature: tuple[int, int, int, int, int] | None,
+    ) -> None:
+        original_write(path, value, expected_signature)
+        metadata = json.loads(sidecar.read_text())
+        metadata["name"] = "Concurrent direct folder"
+        metadata["review_enabled"] = True
+        sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+
+    monkeypatch.setattr(store, "_write_json_if_signature_matches", write_then_edit)
+    updated = store.update_folder(folder["id"], {"review_enabled": False})
+
+    current = store.snapshot()["folders"][0]
+    assert updated["name"] == "Concurrent direct folder"
+    assert updated["review_enabled"] is True
+    assert current["name"] == "Concurrent direct folder"
+    assert current["review_enabled"] is True
+    assert LibraryStore(store.data_dir).snapshot()["folders"][0]["name"] == (
+        "Concurrent direct folder"
+    )
+
+
+def test_v2_review_preference_does_not_overwrite_a_concurrent_target_edit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Original folder", "original", None)
+    sidecar = store.library_dir / "original" / "_folder.json"
+    original_write = store._write_json_if_signature_matches
+
+    def edit_then_write(
+        path: Path,
+        value: dict,
+        expected_signature: tuple[int, int, int, int, int] | None,
+    ) -> None:
+        metadata = json.loads(sidecar.read_text())
+        metadata["name"] = "Concurrent direct folder"
+        sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+        original_write(path, value, expected_signature)
+
+    monkeypatch.setattr(store, "_write_json_if_signature_matches", edit_then_write)
+    with pytest.raises(
+        StoreError, match="folder metadata changed before saving its review preference"
+    ):
+        store.update_folder(folder["id"], {"review_enabled": False})
+
+    current = store.snapshot()["folders"][0]
+    assert current["name"] == "Concurrent direct folder"
+    assert current["review_enabled"] is True
+    assert LibraryStore(store.data_dir).snapshot()["folders"][0] == current
+
+
 def test_v2_assets_are_colocated_and_follow_entry_moves_and_deletion(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
     source = store.create_folder("Source", "source", None)

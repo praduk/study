@@ -20,7 +20,6 @@ interface Props {
   initialDue: number;
   isMobile: boolean;
   onExit: () => void;
-  onChanged: () => void;
 }
 
 const GRADES = [
@@ -32,7 +31,7 @@ const GRADES = [
 
 const REVIEW_BATCH_SIZE = 200;
 
-export function ReviewView({ initialDue, isMobile, onExit, onChanged }: Props) {
+export function ReviewView({ initialDue, isMobile, onExit }: Props) {
   const [cards, setCards] = useState<ReviewCard[]>([]);
   const [index, setIndex] = useState(0);
   const [attempt, setAttempt] = useState('');
@@ -129,7 +128,6 @@ export function ReviewView({ initialDue, isMobile, onExit, onChanged }: Props) {
       setConfidence(null);
       setRevealed(null);
       startedAt.current = Date.now();
-      onChanged();
       if (advance.batchExhausted) await loadBatch(true);
     } catch (reason) {
       setError((reason as Error).message);
