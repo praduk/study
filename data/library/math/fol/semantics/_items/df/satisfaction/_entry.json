@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "66d50d5ebb7a414586528e062f081842",
+  "title": "Satisfaction Relation",
+  "rank": 12884901888,
+  "header": "The relation $𝔐,g ⊨ φ$ is defined recursively on formulas.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "facaa39f9f904fc380736e22682539d5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.facaa39f9f904fc380736e22682539d5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.135118+00:00",
+  "updated_at": "2026-09-04T12:51:43.135120+00:00"
+}

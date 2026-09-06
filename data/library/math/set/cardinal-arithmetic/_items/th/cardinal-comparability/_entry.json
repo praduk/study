@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "346fb411891a44fc99bb947bc81ed33d",
+  "title": "Cardinal Comparability in ZFC",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3579e150d94544afbeaf1cbc683e16ed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3579e150d94544afbeaf1cbc683e16ed.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ad77ff88e87846fb8afb797fd1a85e98",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.ad77ff88e87846fb8afb797fd1a85e98.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.077876+00:00",
+  "updated_at": "2026-09-04T12:51:40.091384+00:00"
+}

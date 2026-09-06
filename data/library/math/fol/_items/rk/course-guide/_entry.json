@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b50361291d02404cb68ced93477f6fb7",
+  "title": "First-Order Logic Course Guide",
+  "rank": 4294967296,
+  "header": "Scope and conventions for the entire First-Order Logic branch.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9c55e2a743b448a0b0f3e82a6ccd8d2f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9c55e2a743b448a0b0f3e82a6ccd8d2f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.540089+00:00",
+  "updated_at": "2026-09-04T12:51:42.540096+00:00"
+}

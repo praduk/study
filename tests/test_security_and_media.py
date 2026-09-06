@@ -3,7 +3,9 @@ from __future__ import annotations
 import base64
 import hashlib
 import io
+import json
 import sqlite3
+from pathlib import Path
 
 from fastapi.testclient import TestClient
 from PIL import Image
@@ -184,10 +186,11 @@ def test_delete_api_requires_csrf_and_explicit_recursive_folder_confirmation(
 
 
 def test_csp_authorizes_exact_inline_bootstrap_scripts(settings_factory):
-    settings = settings_factory(rich_frontend=True)
-    settings.built_frontend.mkdir(parents=True)
+    settings = settings_factory()
+    frontend = settings.root / "study_app" / "web"
+    frontend.mkdir(parents=True)
     script_bodies = ("window.first = 1;", "\nwindow.second = '<tag>';\n")
-    settings.built_frontend.joinpath("index.html").write_text(
+    frontend.joinpath("index.html").write_text(
         "<!doctype html><script>"
         + script_bodies[0]
         + "</script><script src='/assets/app.js'></script><script>"
@@ -213,9 +216,10 @@ def test_csp_authorizes_exact_inline_bootstrap_scripts(settings_factory):
 
 
 def test_csp_tracks_frontend_rebuild_without_server_restart(settings_factory):
-    settings = settings_factory(rich_frontend=True)
-    settings.built_frontend.mkdir(parents=True)
-    index = settings.built_frontend / "index.html"
+    settings = settings_factory()
+    frontend = settings.root / "study_app" / "web"
+    frontend.mkdir(parents=True)
+    index = frontend / "index.html"
     old_body = "window.bootstrap = 'old';"
     new_body = "window.bootstrap = 'new';"
     index.write_text(f"<!doctype html><script>{old_body}</script>", encoding="utf-8")
@@ -243,9 +247,10 @@ def test_csp_tracks_frontend_rebuild_without_server_restart(settings_factory):
 
 
 def test_canonical_library_path_serves_spa_without_capturing_reserved_routes(settings_factory):
-    settings = settings_factory(rich_frontend=True)
-    settings.built_frontend.mkdir(parents=True)
-    index = settings.built_frontend / "index.html"
+    settings = settings_factory()
+    frontend = settings.root / "study_app" / "web"
+    frontend.mkdir(parents=True)
+    index = frontend / "index.html"
     index.write_text("<!doctype html><title>Study</title>", encoding="utf-8")
     app = create_app(settings, local_mode=True)
 
@@ -307,6 +312,15 @@ def test_image_upload_normalizes_and_rejects_unapproved_formats(settings_factory
         media = client.get("/" + value["path"])
         assert media.status_code == 200
         assert media.headers["content-type"] == "image/png"
+        filename = Path(value["path"]).name
+        local_files = list(settings.data_dir.glob(f"library/**/assets/{filename}"))
+        assert len(local_files) == 1
+        assert not (settings.data_dir / "media" / filename).exists()
+
+        stray = _png(2, 2)
+        stray_name = f"{hashlib.sha256(stray).hexdigest()}.png"
+        (settings.data_dir / "media" / stray_name).write_bytes(stray)
+        assert client.get(f"/media/{stray_name}").status_code == 404
 
         bitmap = io.BytesIO()
         Image.new("RGB", (3, 3)).save(bitmap, "BMP")
@@ -329,3 +343,118 @@ def test_image_upload_normalizes_and_rejects_unapproved_formats(settings_factory
         unsafe_name = "a" * 64 + ".png"
         (settings.data_dir / "media" / unsafe_name).symlink_to(outside)
         assert client.get(f"/media/{unsafe_name}").status_code == 404
+
+
+def test_v2_diagram_sources_and_preview_are_colocated_and_served(settings_factory):
+    settings = settings_factory()
+    app = create_app(settings, local_mode=True)
+    headers = {"origin": "http://127.0.0.1", "x-study-csrf": "local"}
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        folder = client.post(
+            "/api/folders",
+            json={"name": "Category", "slug": "category", "parent_id": None},
+            headers=headers,
+        ).json()
+        entry = client.post(
+            "/api/entries",
+            json={
+                "folder_id": folder["id"],
+                "kind": "df",
+                "title": "Diagram",
+                "tag": "diagram",
+                "header": "",
+                "content": "Body",
+            },
+            headers=headers,
+        ).json()
+        excalidraw = client.post(
+            f"/api/entries/{entry['id']}/diagrams/excalidraw",
+            files={"preview": ("preview.png", _png(), "image/png")},
+            data={
+                "scene": json.dumps(
+                    {"type": "excalidraw", "version": 2, "elements": []}
+                ),
+                "name": "Drawing",
+                "width": "76",
+                "invert_lightness": "true",
+            },
+            headers=headers,
+        )
+        assert excalidraw.status_code == 200
+        drawing = excalidraw.json()
+        preview_name = Path(drawing["path"]).name
+        source_name = Path(drawing["source"]).name
+        assert client.get(f"/media/{preview_name}").status_code == 200
+        source_response = client.get(f"/api/diagrams/{source_name}")
+        assert source_response.status_code == 200
+        assert source_response.json()["elements"] == []
+
+        commutative = client.post(
+            f"/api/entries/{entry['id']}/diagrams/commutative",
+            json={
+                "name": "Square",
+                "width": 71,
+                "nodes": [{"id": "a", "label": "$A$", "row": 0, "column": 0}],
+                "arrows": [],
+            },
+            headers=headers,
+        )
+        assert commutative.status_code == 200
+        commutative_name = Path(commutative.json()["source"]).name
+        commutative_response = client.get(f"/api/commutative/{commutative_name}")
+        assert commutative_response.status_code == 200
+        assert commutative_response.json()["name"] == "Square"
+
+    asset_dir = next(settings.data_dir.glob("library/**/diagram/assets"))
+    assert {path.name for path in asset_dir.iterdir()} == {
+        preview_name,
+        source_name,
+        commutative_name,
+    }
+    assert list((settings.data_dir / "media").iterdir()) == []
+    assert list((settings.data_dir / "diagrams").iterdir()) == []
+
+
+def test_v1_upload_and_media_route_remain_global(settings_factory):
+    settings = settings_factory()
+    settings.data_dir.mkdir(parents=True)
+    (settings.data_dir / "library.json").write_text(
+        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
+    )
+    app = create_app(settings, local_mode=True)
+    headers = {"origin": "http://127.0.0.1", "x-study-csrf": "local"}
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        folder = client.post(
+            "/api/folders",
+            json={"name": "Legacy", "slug": "legacy", "parent_id": None},
+            headers=headers,
+        ).json()
+        entry = client.post(
+            "/api/entries",
+            json={
+                "folder_id": folder["id"],
+                "kind": "df",
+                "title": "Legacy",
+                "tag": "legacy",
+                "header": "",
+                "content": "Body",
+            },
+            headers=headers,
+        ).json()
+        uploaded = client.post(
+            f"/api/entries/{entry['id']}/images",
+            files={"image": ("image.png", _png(), "image/png")},
+            headers=headers,
+        )
+        assert uploaded.status_code == 200
+        filename = Path(uploaded.json()["path"]).name
+        assert (settings.data_dir / "media" / filename).is_file()
+        assert client.get(f"/media/{filename}").status_code == 200

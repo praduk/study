@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "560f10a1b5ff4984bb10ee7abc8bf3b2",
+  "title": "Ordinal Addition, Multiplication, and Exponentiation",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "feceeb3ff60d4d2a81463f437971d93a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.feceeb3ff60d4d2a81463f437971d93a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.799152+00:00",
+  "updated_at": "2026-09-04T12:51:39.799159+00:00"
+}

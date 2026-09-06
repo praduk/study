@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import threading
@@ -162,6 +163,47 @@ def _validate_pixel_metadata(asset: dict[str, Any], dimensions: tuple[int, int],
         raise LibraryValidationError(f"{label} pixel metadata does not match its image")
 
 
+def _validate_content_address(path: Path, label: str) -> None:
+    digest = hashlib.sha256()
+    try:
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+    except OSError as exc:
+        raise LibraryValidationError(f"{label} cannot be read") from exc
+    if digest.hexdigest() != path.stem:
+        raise LibraryValidationError(f"{label} filename does not match its content hash")
+
+
+def _existing_asset_file(
+    relative: str,
+    *,
+    data_dir: Path,
+    global_root: Path,
+    local_asset_dir: Path | None,
+    label: str,
+    suffixes: set[str],
+) -> tuple[Path, bool]:
+    if local_asset_dir is not None:
+        filename = Path(relative).name
+        local = local_asset_dir / filename
+        if local.exists() or local.is_symlink():
+            return (
+                _existing_file(
+                    local_asset_dir,
+                    filename,
+                    local_asset_dir,
+                    label,
+                    suffixes,
+                ),
+                True,
+            )
+    return (
+        _existing_file(data_dir, relative, global_root, label, suffixes),
+        False,
+    )
+
+
 def _validate_variant_group(
     *,
     entry_id: str,
@@ -239,6 +281,7 @@ def _validate_assets(
     media_dir: Path,
     diagram_dir: Path,
     asset_ids: set[str],
+    local_asset_dir: Path | None = None,
 ) -> None:
     if not isinstance(values, list):
         raise LibraryValidationError(f"entry {entry_id} assets must be a list")
@@ -257,14 +300,17 @@ def _validate_assets(
             preview_relative = _asset_path(
                 asset.get("path"), f"{label} preview path", MEDIA_PATH_RE
             )
-            preview = _existing_file(
-                data_dir,
+            preview, is_local = _existing_asset_file(
                 preview_relative,
-                media_dir,
-                f"{label} preview",
-                {".png", ".jpg", ".jpeg", ".webp"},
+                data_dir=data_dir,
+                global_root=media_dir,
+                local_asset_dir=local_asset_dir,
+                label=f"{label} preview",
+                suffixes={".png", ".jpg", ".jpeg", ".webp"},
             )
             dimensions = _validate_image(preview, f"{label} preview")
+            if is_local:
+                _validate_content_address(preview, f"{label} preview")
             _validate_pixel_metadata(asset, dimensions, label)
         if kind == "excalidraw":
             source_relative = _asset_path(
@@ -272,12 +318,13 @@ def _validate_assets(
             )
             if source_relative != f"diagrams/{asset_id}.excalidraw":
                 raise LibraryValidationError(f"{label} source does not match its asset id")
-            source = _existing_file(
-                data_dir,
+            source, _is_local = _existing_asset_file(
                 source_relative,
-                diagram_dir,
-                f"{label} source",
-                {".excalidraw"},
+                data_dir=data_dir,
+                global_root=diagram_dir,
+                local_asset_dir=local_asset_dir,
+                label=f"{label} source",
+                suffixes={".excalidraw"},
             )
             scene = _json_object(source, f"{label} Excalidraw source")
             if not isinstance(scene.get("elements", []), list):
@@ -288,12 +335,13 @@ def _validate_assets(
             )
             if source_relative != f"diagrams/{asset_id}.commutative.json":
                 raise LibraryValidationError(f"{label} source does not match its asset id")
-            source = _existing_file(
-                data_dir,
+            source, _is_local = _existing_asset_file(
                 source_relative,
-                diagram_dir,
-                f"{label} source",
-                {".json"},
+                data_dir=data_dir,
+                global_root=diagram_dir,
+                local_asset_dir=local_asset_dir,
+                label=f"{label} source",
+                suffixes={".json"},
             )
             diagram = _json_object(source, f"{label} commutative source")
             if diagram.get("version") != 1:
@@ -443,6 +491,8 @@ def validate_library(
         confusable = entry.get("confusable_with")
         if not isinstance(confusable, list) or any(not isinstance(item, str) for item in confusable):
             raise LibraryValidationError(f"entry {entry_id} confusable_with must be a list of text")
+        if not formulations:
+            raise AssertionError("validated formulations unexpectedly empty")
         _validate_assets(
             entry_id,
             entry.get("assets"),
@@ -450,6 +500,9 @@ def validate_library(
             media_dir,
             diagram_dir,
             asset_ids,
+            (
+                (data_dir / formulations[0]["file"]).parent / "assets"
+                if library.get("version") == 2
+                else None
+            ),
         )
-        if not formulations:
-            raise AssertionError("validated formulations unexpectedly empty")

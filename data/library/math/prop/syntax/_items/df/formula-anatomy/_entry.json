@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "76a120eb3d694040ae32eaccace2266c",
+  "title": "Main Connective, Parse Tree, and Subformula",
+  "rank": 17179869184,
+  "header": "Prerequisite: @math:prop:syntax:df:formula",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aeb58e9ee75a4ceaa1f9715296f6c44b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aeb58e9ee75a4ceaa1f9715296f6c44b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.531425+00:00",
+  "updated_at": "2026-09-04T12:51:40.531430+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2430b7f76fb84fff8a9ea07fdac33350",
+  "title": "NAND and NOR Are Individually Functionally Complete",
+  "rank": 34359738368,
+  "header": "Prerequisite: @math:prop:normal-forms:th:standard-complete-bases",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c72d072c0bbe4d7dad2dfd44a2f73ed3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c72d072c0bbe4d7dad2dfd44a2f73ed3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f5dc56edc3914cb0b2ba831506163f87",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.f5dc56edc3914cb0b2ba831506163f87.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.332707+00:00",
+  "updated_at": "2026-09-04T12:51:41.351695+00:00"
+}

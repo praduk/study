@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "29704d2598414a1db73f92d23f669a04",
+  "title": "Upward Löwenheim–Skolem Theorem",
+  "rank": 17179869184,
+  "header": "Assume $T$ has an infinite model and $κ≥\\max(|L|,ℵ_0)$ is infinite.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef103973f7e8427f9c0f0d333d99a274",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef103973f7e8427f9c0f0d333d99a274.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "df34cf3cd434476fa4956b817630541e",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.df34cf3cd434476fa4956b817630541e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.115037+00:00",
+  "updated_at": "2026-09-04T12:51:45.148038+00:00"
+}

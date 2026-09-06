@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "56874105386343ae94a29bf729ee7825",
+  "title": "Functions, Images, and Preimages",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "db0bb486ec644b959a68ae1f5d93143b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.db0bb486ec644b959a68ae1f5d93143b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.331669+00:00",
+  "updated_at": "2026-09-04T12:51:39.331672+00:00"
+}

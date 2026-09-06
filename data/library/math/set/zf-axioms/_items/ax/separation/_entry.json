@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "57ee6d3607f44f42a6f83726ea83291d",
+  "title": "Axiom Schema of Separation",
+  "rank": 21474836480,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e14037bf50054493a953aeb5ff8c7856",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e14037bf50054493a953aeb5ff8c7856.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.248722+00:00",
+  "updated_at": "2026-09-04T12:51:39.248724+00:00"
+}

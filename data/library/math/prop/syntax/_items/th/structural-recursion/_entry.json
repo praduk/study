@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "30f1d61bf5f44b27878ad2264814db9c",
+  "title": "Structural Recursion for Formulas",
+  "rank": 34359738368,
+  "header": "Prerequisites: @math:prop:syntax:th:unique-readability and @math:prop:syntax:th:structural-induction",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cdb39fe3cdbc42488e8c42b3056fb5ea",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cdb39fe3cdbc42488e8c42b3056fb5ea.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6a6a1d016cd74026907aea2e2b5930b4",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.6a6a1d016cd74026907aea2e2b5930b4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.628058+00:00",
+  "updated_at": "2026-09-04T12:51:40.643524+00:00"
+}

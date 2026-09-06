@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0a6ec4e462fd422588c2e2ed92885182",
+  "title": "The Cumulative Hierarchy and Rank",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "293f2812339f4ac1913848af71149ddf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.293f2812339f4ac1913848af71149ddf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.243441+00:00",
+  "updated_at": "2026-09-04T12:51:40.243446+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "692bfcbd4c2144a085618b0c48277a66",
+  "title": "Pairing Natural Numbers and Enumerated Unions",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f0123f48eaa945e09be58b54f3137acd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f0123f48eaa945e09be58b54f3137acd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e3a7b6ca0c48449bb0f74bbbac7df768",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.e3a7b6ca0c48449bb0f74bbbac7df768.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.456285+00:00",
+  "updated_at": "2026-09-04T12:51:39.464128+00:00"
+}

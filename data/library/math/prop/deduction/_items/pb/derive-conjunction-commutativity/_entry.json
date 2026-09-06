@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e935a590def64108848fc0a52e0b2d1e",
+  "title": "Derive Commutativity of Conjunction",
+  "rank": 34359738368,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "72e185d19fcb42f999170ebc41b15733",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.72e185d19fcb42f999170ebc41b15733.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4c6fd93a5f944abeb2e55619abc5caac",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4c6fd93a5f944abeb2e55619abc5caac.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.815700+00:00",
+  "updated_at": "2026-09-04T12:51:41.836810+00:00"
+}

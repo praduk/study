@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5e948ce80a1648379a97f864227cdf3d",
+  "title": "Weakening of Derivability",
+  "rank": 34359738368,
+  "header": "Adding assumptions cannot destroy an existing derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9f274a9804fe45d5b8afb38a1257331b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9f274a9804fe45d5b8afb38a1257331b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b0efccd97eab4a5b9ef9467684c239c3",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.b0efccd97eab4a5b9ef9467684c239c3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.811937+00:00",
+  "updated_at": "2026-09-04T12:51:43.840364+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d577a43d3040412fb1b50c37068669e3",
+  "title": "Quotient Term Model",
+  "rank": 42949672960,
+  "header": "Built from a maximal Henkin theory $Δ$ with at least one closed term.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a1cd7ffc65bc4846895d5353f7f59bbc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a1cd7ffc65bc4846895d5353f7f59bbc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.604654+00:00",
+  "updated_at": "2026-09-04T12:51:44.604658+00:00"
+}

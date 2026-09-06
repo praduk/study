@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d470e6514fc246a3aad1e6f60d83667e",
+  "title": "Semantic Substitution Lemma",
+  "rank": 38654705664,
+  "header": "Prerequisites: @math:prop:syntax:df:uniform-substitution and @math:prop:semantics:df:valuation",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b43ff4cd0cdc4807aa75d73a369dde8b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b43ff4cd0cdc4807aa75d73a369dde8b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bc1192332c9745dba5f5b8dce72663c0",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.bc1192332c9745dba5f5b8dce72663c0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.908778+00:00",
+  "updated_at": "2026-09-04T12:51:40.925254+00:00"
+}

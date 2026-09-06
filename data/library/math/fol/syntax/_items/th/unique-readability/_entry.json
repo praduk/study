@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "add0d323a100486b9df9b7fc83842cfd",
+  "title": "Unique Readability",
+  "rank": 42949672960,
+  "header": "Assumes disjoint symbol classes and the fully parenthesized grammar in this module.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "60448812c28c458ba53ea0318a0d6f3a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.60448812c28c458ba53ea0318a0d6f3a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8509bcec6dfe4f0785849dda8dfae7a0",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.8509bcec6dfe4f0785849dda8dfae7a0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.884314+00:00",
+  "updated_at": "2026-09-04T12:51:42.909775+00:00"
+}

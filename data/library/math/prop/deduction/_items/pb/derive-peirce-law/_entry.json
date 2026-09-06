@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "270aabe83e244c0db45d304292ea654d",
+  "title": "Derive Peirce's Law",
+  "rank": 47244640256,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "49faad1e05af414cb0535d8490bf8de3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.49faad1e05af414cb0535d8490bf8de3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fe4b235d4a3c42949bea076e04e78cf6",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.fe4b235d4a3c42949bea076e04e78cf6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.941763+00:00",
+  "updated_at": "2026-09-04T12:51:41.963077+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1517eea7f9af4e668469918684547cbd",
+  "title": "Negation Normal Form",
+  "rank": 4294967296,
+  "header": "Negations occur only immediately before an atomic formula or $⊥$.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2c5229ea9124ca8afb7dc147666adf9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2c5229ea9124ca8afb7dc147666adf9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.389262+00:00",
+  "updated_at": "2026-09-04T12:51:45.389268+00:00"
+}

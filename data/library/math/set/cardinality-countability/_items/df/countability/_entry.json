@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7cb2d1765df24edcb287bba6f05c3f64",
+  "title": "Finite, Countable, and Dedekind-Infinite Sets",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "236138d8f39646ef8b62a61d558518b8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.236138d8f39646ef8b62a61d558518b8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.449486+00:00",
+  "updated_at": "2026-09-04T12:51:39.449489+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e71c65f4cf164383bf4ddd665b853b3a",
+  "title": "Axioms, Schemas, and Course Conventions",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c85d69c1bf73428bbfd6ba07788f22ce",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c85d69c1bf73428bbfd6ba07788f22ce.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.229690+00:00",
+  "updated_at": "2026-09-04T12:51:39.229692+00:00"
+}

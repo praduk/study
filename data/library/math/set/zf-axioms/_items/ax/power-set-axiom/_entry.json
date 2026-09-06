@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "21750d772be54bc0967a63fea0194207",
+  "title": "Axiom of Power Set",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e22ef73919248ab811b1178e4bd4893",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e22ef73919248ab811b1178e4bd4893.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.245266+00:00",
+  "updated_at": "2026-09-04T12:51:39.245268+00:00"
+}

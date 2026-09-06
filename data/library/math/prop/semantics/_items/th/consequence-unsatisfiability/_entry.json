@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8050cd8e547f4b20a0e33123d6483ae7",
+  "title": "Consequence as Unsatisfiability",
+  "rank": 25769803776,
+  "header": "Prerequisites: @math:prop:semantics:df:semantic-consequence and @math:prop:semantics:df:semantic-status",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93d9d253605e45388ed8c983943c0c0a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93d9d253605e45388ed8c983943c0c0a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5b48161792e64c9d8d01e56eae9dd37f",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.5b48161792e64c9d8d01e56eae9dd37f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.813592+00:00",
+  "updated_at": "2026-09-04T12:51:40.830210+00:00"
+}

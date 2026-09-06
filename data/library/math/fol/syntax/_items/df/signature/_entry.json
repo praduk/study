@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "eb4378d3b4d7469089524eacdc7b9b56",
+  "title": "First-Order Signature",
+  "rank": 4294967296,
+  "header": "Single-sorted classical first-order logic with logical equality.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4c960e3534f14d7b835b83d575c184fb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4c960e3534f14d7b835b83d575c184fb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.613124+00:00",
+  "updated_at": "2026-09-04T12:51:42.613129+00:00"
+}

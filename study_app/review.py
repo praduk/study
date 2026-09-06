@@ -22,7 +22,6 @@ from .review_calibration import (
     observe_review,
     reporting_model_estimate,
     schedule_interval,
-    validate_calibration_state,
     validate_recorded_observation,
 )
 from .store import LibraryStore, StoreError
@@ -47,17 +46,24 @@ def _now() -> datetime:
     return datetime.now(timezone.utc)
 
 
-def _atomic_json(path: Path, value: Any) -> None:
+def _atomic_bytes(path: Path, value: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
     try:
-        with temporary.open("x", encoding="utf-8") as stream:
-            stream.write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+        with temporary.open("xb") as stream:
+            stream.write(value)
             stream.flush()
             os.fsync(stream.fileno())
         os.replace(temporary, path)
     finally:
         temporary.unlink(missing_ok=True)
+
+
+def _atomic_json(path: Path, value: Any) -> None:
+    _atomic_bytes(
+        path,
+        (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
+    )
 
 
 def _extend_log_digest(previous: str | None, encoded_record: str) -> str:
@@ -91,23 +97,6 @@ def _cards_digest(cards: dict[str, Any]) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 
-def _equivalent_derived_value(left: Any, right: Any) -> bool:
-    """Compare replayed derived state without rewriting harmless float roundoff."""
-    if isinstance(left, bool) or isinstance(right, bool):
-        return left is right
-    if isinstance(left, (int, float)) and isinstance(right, (int, float)):
-        return math.isclose(float(left), float(right), rel_tol=1e-12, abs_tol=1e-15)
-    if isinstance(left, dict) and isinstance(right, dict):
-        return left.keys() == right.keys() and all(
-            _equivalent_derived_value(left[key], right[key]) for key in left
-        )
-    if isinstance(left, list) and isinstance(right, list):
-        return len(left) == len(right) and all(
-            _equivalent_derived_value(a, b) for a, b in zip(left, right, strict=True)
-        )
-    return left == right
-
-
 class ReviewEngine:
     """A bounded self-calibrating scheduler; its target is the learner's self-grade."""
 
@@ -123,10 +112,12 @@ class ReviewEngine:
             None,
             None,
         )
+        self._calibration_cache: dict[str, Any] | None = None
         self._calibration_digest_cache: str | None = None
         self._cards_digest_cache: str | None = None
         self._recent_logged_attempts: dict[str, dict[str, Any]] = {}
         self._recent_log_order: list[str] = []
+        self._known_current_cards: frozenset[str] | None = None
         if self.state_path.is_symlink() or self.log_path.is_symlink():
             raise StoreError("review-state files cannot be symbolic links")
         if not self.state_path.exists():
@@ -154,7 +145,11 @@ class ReviewEngine:
 
     def _write(self, state: dict[str, Any]) -> None:
         state["updated_at"] = _now().isoformat()
-        _atomic_json(self.state_path, state)
+        # Bayesian calibration is derived from the review log. Keeping its
+        # 161-point posterior grids in versioned current state makes every
+        # grade create a large, conflict-prone JSON diff.
+        persisted = {key: value for key, value in state.items() if key != "calibration"}
+        _atomic_json(self.state_path, persisted)
 
     def _log_signature(self) -> tuple[int, int, int, int] | None:
         try:
@@ -184,6 +179,7 @@ class ReviewEngine:
         cards: dict[str, Any],
         recent_records: list[dict[str, Any]],
     ) -> None:
+        self._calibration_cache = calibration
         self._log_signature_cache = signature
         self._log_checkpoint_cache = (
             calibration["processed_log_records"],
@@ -238,6 +234,7 @@ class ReviewEngine:
             calibration["processed_log_digest"],
         )
         self._calibration_digest_cache = _calibration_digest(calibration)
+        self._calibration_cache = calibration
         self._cards_digest_cache = _cards_digest(cards)
         self._remember_logged_attempt(record)
         self._calibration_verified = True
@@ -416,25 +413,23 @@ class ReviewEngine:
         record_visitor: Callable[[dict[str, Any]], None] | None = None,
     ) -> tuple[dict[str, Any] | None, dict[str, Any], bool]:
         """Use a verified cache or rebuild derived state from authoritative history."""
-        stored_calibration = state.get("calibration")
-        try:
-            stored_validated = validate_calibration_state(stored_calibration)
-        except (TypeError, ValueError):
-            stored_validated = None
+        had_persisted_calibration = "calibration" in state
+        cached_calibration = self._calibration_cache
         signature_before = self._log_signature()
         if (
             not force_rebuild
             and record_visitor is None
             and self._calibration_verified
-            and stored_validated is not None
+            and not had_persisted_calibration
+            and cached_calibration is not None
             and signature_before == self._log_signature_cache
-            and _calibration_digest(stored_validated)
+            and _calibration_digest(cached_calibration)
             == self._calibration_digest_cache
             and _cards_digest(state["cards"]) == self._cards_digest_cache
             and (
-                stored_validated["processed_log_records"],
-                stored_validated["last_log_attempt_id"],
-                stored_validated["processed_log_digest"],
+                cached_calibration["processed_log_records"],
+                cached_calibration["last_log_attempt_id"],
+                cached_calibration["processed_log_digest"],
             )
             == self._log_checkpoint_cache
         ):
@@ -444,8 +439,8 @@ class ReviewEngine:
                 or logged_attempt is not None
                 or attempt_id in state["pending_attempts"]
             ):
-                state["calibration"] = stored_validated
-                return logged_attempt, stored_validated, False
+                state["calibration"] = cached_calibration
+                return logged_attempt, cached_calibration, False
 
         # Startup, external file changes, old idempotency lookups, and explicit
         # validation all take the deterministic full-replay path.
@@ -562,15 +557,9 @@ class ReviewEngine:
         calibration["last_log_attempt_id"] = last_attempt_id
         calibration["processed_log_digest"] = current_digest
 
-        calibration_changed = not (
-            stored_validated is not None
-            and _equivalent_derived_value(stored_validated, calibration)
-        )
-        if not calibration_changed:
-            # Retain the already persisted representation so a read does not
-            # create a Git diff from platform-level floating-point roundoff.
-            calibration = stored_validated
-        changed = calibration_changed
+        # A legacy persisted calibration is deliberately removed on the next
+        # state write. The authoritative log always reconstructs it exactly.
+        changed = had_persisted_calibration
         for card_id, schedule in latest_schedules.items():
             if state["cards"].get(card_id) != schedule:
                 state["cards"][card_id] = schedule
@@ -603,11 +592,109 @@ class ReviewEngine:
             self._calibration_verified = True
             return calibration_summary(calibration)
 
+    def _current_card_ids(self) -> set[str]:
+        current: set[str] = set()
+        for entry in self.store.snapshot()["entries"]:
+            for mode in entry.get("review_modes", []):
+                if self.store.review_mode_available(entry, mode):
+                    current.add(self.card_id(entry["id"], mode))
+        return current
+
+    def _prune_if_library_changed(self) -> None:
+        """Compact stale review data after a live direct library edit."""
+        with self._lock:
+            current_cards = frozenset(self._current_card_ids())
+            if current_cards != self._known_current_cards:
+                self.prune_to_current_library()
+
+    def prune_to_current_library(self) -> dict[str, int]:
+        """Remove review data for entries and review tasks that no longer exist."""
+        with self._lock:
+            state = self._read()
+            records: list[dict[str, Any]] = []
+            _, _, replayed_changed = self._sync_state_with_log(
+                state,
+                force_rebuild=True,
+                record_visitor=records.append,
+            )
+            validated_log_signature = self._log_signature()
+            current_cards = self._current_card_ids()
+            retained_records = [
+                record for record in records if record["card_id"] in current_cards
+            ]
+            removed_log_records = len(records) - len(retained_records)
+
+            retained_cards = {
+                card_id: card
+                for card_id, card in state["cards"].items()
+                if card_id in current_cards
+            }
+            retained_attempts = {
+                attempt_id: attempt
+                for attempt_id, attempt in state["pending_attempts"].items()
+                if attempt["card_id"] in current_cards
+            }
+            removed_cards = len(state["cards"]) - len(retained_cards)
+            removed_pending_attempts = (
+                len(state["pending_attempts"]) - len(retained_attempts)
+            )
+
+            if not (removed_log_records or removed_cards or removed_pending_attempts):
+                if replayed_changed:
+                    self._write(state)
+                self._calibration_verified = True
+                self._known_current_cards = frozenset(current_cards)
+                return {
+                    "removed_cards": 0,
+                    "removed_pending_attempts": 0,
+                    "removed_log_records": 0,
+                    "retained_log_records": len(retained_records),
+                }
+
+            if removed_log_records:
+                if self._log_signature() != validated_log_signature:
+                    raise StoreError(
+                        "review-log.jsonl changed while it was being compacted"
+                    )
+                for record in retained_records:
+                    # A recorded forecast was made from the posterior that
+                    # existed before deletion. Removing interleaved evidence
+                    # changes that posterior, so retaining the forecast would
+                    # make the compacted log fail validation and would report
+                    # a counterfactual performance score. Legacy replay
+                    # reconstructs model evidence from the surviving card
+                    # history without treating it as an out-of-sample forecast.
+                    record.pop("calibration_observation", None)
+                    record.pop("calibration_event_version", None)
+                encoded = b"".join(
+                    (
+                        json.dumps(record, ensure_ascii=False) + "\n"
+                    ).encode("utf-8")
+                    for record in retained_records
+                )
+                # Rewrite history before state. If the following state write is
+                # interrupted, the next startup replays this compacted log and
+                # completes the same cleanup.
+                _atomic_bytes(self.log_path, encoded)
+
+            state["cards"] = retained_cards
+            state["pending_attempts"] = retained_attempts
+            if removed_log_records:
+                state.pop("calibration", None)
+                self._calibration_verified = False
+                self._sync_state_with_log(state, force_rebuild=True)
+            self._write(state)
+            self._calibration_verified = True
+            self._known_current_cards = frozenset(current_cards)
+            return {
+                "removed_cards": removed_cards,
+                "removed_pending_attempts": removed_pending_attempts,
+                "removed_log_records": removed_log_records,
+                "retained_log_records": len(retained_records),
+            }
+
     def _calibration_for_state(self, state: dict[str, Any]) -> dict[str, Any]:
-        try:
-            calibration = validate_calibration_state(state.get("calibration"))
-        except (TypeError, ValueError):
-            _, calibration, _ = self._sync_state_with_log(state, force_rebuild=True)
+        _, calibration, _ = self._sync_state_with_log(state)
         state["calibration"] = calibration
         return calibration
 
@@ -695,6 +782,7 @@ class ReviewEngine:
     def queue(self, include_not_due: bool = False, limit: int = 100) -> list[dict[str, Any]]:
         now = _now()
         with self._lock:
+            self._prune_if_library_changed()
             state = self._read()
             _, _, changed = self._sync_state_with_log(state)
             if changed:
@@ -817,7 +905,7 @@ class ReviewEngine:
         include_inactive: bool = False,
         timezone_name: str = "UTC",
     ) -> dict[str, Any]:
-        """Report current due events and validated attempt history without changing files."""
+        """Report due events; compact stale review data after an out-of-band library edit."""
         now = _now()
         start, end = self._bounded_report_range(start, end, now=now)
         now = now.astimezone(timezone.utc)
@@ -834,6 +922,8 @@ class ReviewEngine:
         total = self._empty_history_bucket()
 
         def record_history(record: dict[str, Any]) -> None:
+            if record["card_id"] not in current_cards:
+                return
             schedule = record["schedule"]
             completed_at = self._aware_datetime(
                 schedule["last_reviewed_at"], "review completion time"
@@ -853,12 +943,7 @@ class ReviewEngine:
                     bucket["again_lapses"] += 1
 
         with self._lock:
-            state = self._read()
-            _, calibration, _ = self._sync_state_with_log(
-                state,
-                force_rebuild=True,
-                record_visitor=record_history,
-            )
+            self._prune_if_library_changed()
             all_entries = self.store.ordered_entries(review_only=False)
             active_entries = self.store.ordered_entries(review_only=True)
             entry_by_id = {entry["id"]: entry for entry in all_entries}
@@ -883,9 +968,22 @@ class ReviewEngine:
                     if entry["id"] in active_entry_ids:
                         active_cards.add(card_id)
 
+            state = self._read()
+            _, calibration, _ = self._sync_state_with_log(
+                state,
+                force_rebuild=True,
+                record_visitor=record_history,
+            )
+
             events: list[tuple[datetime, int, int, str, dict[str, Any]]] = []
             for card_id, schedule in state["cards"].items():
                 if not schedule:
+                    continue
+                entry_id, mode = self.split_card_id(card_id)
+                entry = entry_by_id.get(entry_id)
+                # A direct file edit can briefly leave stale state before startup
+                # compacts it. Never surface that deleted entry in reporting.
+                if entry is None:
                     continue
                 due_at = self._aware_datetime(
                     schedule["due_at"], "review due time"
@@ -895,13 +993,9 @@ class ReviewEngine:
                 active = card_id in active_cards
                 if not active and not include_inactive:
                     continue
-                entry_id, mode = self.split_card_id(card_id)
-                entry = entry_by_id.get(entry_id)
                 review_enabled = entry_id in active_entry_ids
                 if active:
                     inactive_reason = None
-                elif entry is None:
-                    inactive_reason = "entry-missing"
                 elif card_id not in current_cards:
                     inactive_reason = "mode-unavailable"
                 else:
@@ -926,19 +1020,17 @@ class ReviewEngine:
                 event = {
                     "card_id": card_id,
                     "entry_id": entry_id,
-                    "folder_id": entry["folder_id"] if entry is not None else None,
-                    "title": entry["title"] if entry is not None else None,
-                    "canonical_tag": (
-                        entry["canonical_tag"] if entry is not None else None
-                    ),
-                    "kind": entry["kind"] if entry is not None else None,
+                    "folder_id": entry["folder_id"],
+                    "title": entry["title"],
+                    "canonical_tag": entry["canonical_tag"],
+                    "kind": entry["kind"],
                     "mode": mode,
                     "mode_label": MODE_LABELS[mode],
                     "due_at": due_at.isoformat(),
                     "last_reviewed_at": last_reviewed.astimezone(timezone.utc).isoformat(),
                     "active": active,
                     "review_enabled": review_enabled,
-                    "orphaned": inactive_reason in {"entry-missing", "mode-unavailable"},
+                    "orphaned": inactive_reason == "mode-unavailable",
                     "inactive_reason": inactive_reason,
                     "schedule_at_last_grade": dict(schedule),
                     "model_estimate": model_estimate,
@@ -968,21 +1060,24 @@ class ReviewEngine:
         }
 
     def stats(self) -> dict[str, Any]:
-        due = self.queue(limit=10000)
         with self._lock:
+            due = self.queue(limit=10000)
             state = self._read()
             calibration = self._calibration_for_state(state)
+            current_cards = self._current_card_ids()
             today = _now().date().isoformat()
             completed_today = sum(
                 1
-                for card in state["cards"].values()
-                if str(card.get("last_reviewed_at", "")).startswith(today)
+                for card_id, card in state["cards"].items()
+                if card_id in current_cards
+                and str(card.get("last_reviewed_at", "")).startswith(today)
             )
             minutes = round(
                 sum(
                     int(card.get("last_elapsed_ms", 0))
-                    for card in state["cards"].values()
-                    if str(card.get("last_reviewed_at", "")).startswith(today)
+                    for card_id, card in state["cards"].items()
+                    if card_id in current_cards
+                    and str(card.get("last_reviewed_at", "")).startswith(today)
                 )
                 / 60_000
             )
@@ -995,21 +1090,25 @@ class ReviewEngine:
 
     def reveal(self, card_id: str, attempt: dict[str, Any]) -> dict[str, Any]:
         entry_id, mode = self.split_card_id(card_id)
-        entry = self.store.get_entry(entry_id)
-        if mode not in entry.get("review_modes", []) or not self.store.review_mode_available(
-            entry, mode
-        ):
-            raise StoreError("this review mode is not enabled for the entry")
-        attempt_id = uuid.uuid4().hex
-        created = {
-            "id": attempt_id,
-            "card_id": card_id,
-            "entry_id": entry_id,
-            "mode": mode,
-            "started_at": _now().isoformat(),
-            **attempt,
-        }
         with self._lock:
+            self._prune_if_library_changed()
+            # Entry lookup and pending-attempt persistence share the library
+            # mutation lock with deletion, so a reveal cannot recreate review
+            # state after its entry has been removed.
+            entry = self.store.get_entry(entry_id)
+            if mode not in entry.get(
+                "review_modes", []
+            ) or not self.store.review_mode_available(entry, mode):
+                raise StoreError("this review mode is not enabled for the entry")
+            attempt_id = uuid.uuid4().hex
+            created = {
+                "id": attempt_id,
+                "card_id": card_id,
+                "entry_id": entry_id,
+                "mode": mode,
+                "started_at": _now().isoformat(),
+                **attempt,
+            }
             state = self._read()
             self._sync_state_with_log(state)
             state["pending_attempts"][attempt_id] = created
@@ -1049,6 +1148,7 @@ class ReviewEngine:
             raise StoreError("review grade is outside its valid range")
         now = _now()
         with self._lock:
+            self._prune_if_library_changed()
             state = self._read()
             logged, model_calibration, changed = self._sync_state_with_log(
                 state, attempt_id

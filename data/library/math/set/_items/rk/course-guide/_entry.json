@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7338933359b449328771e9dd4695cceb",
+  "title": "Set Theory Course Guide",
+  "rank": 4294967296,
+  "header": "Upper-division undergraduate scope; classical first-order logic with equality is assumed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aa3a90486fff4b47be8fb57791708339",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aa3a90486fff4b47be8fb57791708339.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.214132+00:00",
+  "updated_at": "2026-09-04T12:51:39.214136+00:00"
+}

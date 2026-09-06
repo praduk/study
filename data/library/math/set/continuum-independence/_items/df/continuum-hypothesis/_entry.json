@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0d5f10ade66b4b44a660a3ac3f91b7d0",
+  "title": "The Continuum Hypothesis and GCH",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b062c4162c484e31a52211a98b993b49",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b062c4162c484e31a52211a98b993b49.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.389586+00:00",
+  "updated_at": "2026-09-04T12:51:40.389592+00:00"
+}

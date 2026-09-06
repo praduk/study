@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4c8d8a6ff5724249829629395d182c3f",
+  "title": "Relations and Their Operations",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "becb666972db43ee8c6ed4c47e7a9785",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.becb666972db43ee8c6ed4c47e7a9785.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.312440+00:00",
+  "updated_at": "2026-09-04T12:51:39.312442+00:00"
+}

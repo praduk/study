@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2fd1b7d922674eb5ae8cef6061aedc42",
+  "title": "Parse Quantifier Scope",
+  "rank": 47244640256,
+  "header": "Use the official grammar, not informal reading conventions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da575ca91ebc4ad0b8a029cd4fce6848",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da575ca91ebc4ad0b8a029cd4fce6848.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "69128dd0604a417283f71861edb8437a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.69128dd0604a417283f71861edb8437a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.934063+00:00",
+  "updated_at": "2026-09-04T12:51:42.959251+00:00"
+}

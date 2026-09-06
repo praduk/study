@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b781f8537bc84039ab78fb38be3c3ea5",
+  "title": "Well-Order Induction",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5699e08f75424d9789ca279911a4ecc7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5699e08f75424d9789ca279911a4ecc7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1c59a5adcbc149a89b869e12ffe5e5fa",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.1c59a5adcbc149a89b869e12ffe5e5fa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.599893+00:00",
+  "updated_at": "2026-09-04T12:51:39.609725+00:00"
+}

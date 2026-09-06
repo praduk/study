@@ -183,7 +183,7 @@ def _validate_forecast_evaluation(value: Any) -> dict[str, Any]:
 
 
 def validate_calibration_state(value: Any) -> dict[str, Any]:
-    """Return a normalised copy of persisted calibration state or raise ValueError."""
+    """Return a normalised copy of serialized calibration state or raise ValueError."""
     if (
         not isinstance(value, dict)
         or isinstance(value.get("version"), bool)

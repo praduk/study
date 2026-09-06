@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f262b5ab9e1743fbab9d75fe93af3c0e",
+  "title": "Preorders, Partial Orders, and Linear Orders",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ffcb522cc0974b4ca059ec29ea289a4d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ffcb522cc0974b4ca059ec29ea289a4d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.569604+00:00",
+  "updated_at": "2026-09-04T12:51:39.569610+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7e42630c2fba4fd4afd74deb5dfbaa4a",
+  "title": "Propositional Logic Course Map",
+  "rank": 4294967296,
+  "header": "Rigorous undergraduate core; classical, bivalent, truth-functional propositional logic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "134c8b2f0a13455e98a9957582aaf0c3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.134c8b2f0a13455e98a9957582aaf0c3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.436185+00:00",
+  "updated_at": "2026-09-04T12:51:40.436194+00:00"
+}

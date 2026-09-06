@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -9,13 +8,12 @@ import pytest
 
 from study_app import cli
 from study_app.config import Settings
-from study_app.store import LibraryStore
 
 
 def _settings(tmp_path: Path, *, password_hash: str = "", port: int = 8123) -> Settings:
     root = tmp_path / "study"
-    (root / "frontend" / "dist" / "client").mkdir(parents=True)
-    (root / "frontend" / "dist" / "client" / "index.html").write_text("Study")
+    (root / "study_app" / "web").mkdir(parents=True)
+    (root / "study_app" / "web" / "index.html").write_text("Study")
     return Settings(
         root=root,
         port=port,
@@ -41,7 +39,7 @@ def test_set_password_accepts_one_character(tmp_path: Path, monkeypatch: pytest.
         def revoke_all(self) -> None:
             written["revoked"] = True
 
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(cli.getpass, "getpass", lambda _prompt: next(prompts))
     monkeypatch.setattr(cli, "make_password_hash", lambda password: f"hash:{password}")
     monkeypatch.setattr(
@@ -61,11 +59,46 @@ def test_set_password_accepts_one_character(tmp_path: Path, monkeypatch: pytest.
 def test_set_password_rejects_empty_password(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     settings = _settings(tmp_path)
     prompts = iter(["", ""])
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(cli.getpass, "getpass", lambda _prompt: next(prompts))
 
     with pytest.raises(SystemExit, match="cannot be empty"):
         cli._set_password()
+
+
+def test_installed_command_uses_the_checkout_in_the_working_directory(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    (tmp_path / "study_app").mkdir()
+    (tmp_path / "study.py").write_text("", encoding="utf-8")
+    (tmp_path / "config.toml").write_text("[study]\nport = 8765\n", encoding="utf-8")
+    monkeypatch.setattr(cli, "PACKAGE_ROOT", tmp_path / "site-packages")
+    monkeypatch.chdir(tmp_path)
+
+    assert cli._installed_application_root(None) == tmp_path.resolve()
+
+
+def test_installed_command_refuses_to_use_its_site_packages_parent(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    monkeypatch.setattr(cli, "PACKAGE_ROOT", tmp_path / "site-packages")
+    monkeypatch.chdir(tmp_path)
+
+    with pytest.raises(SystemExit, match="from a Study checkout"):
+        cli._installed_application_root(None)
+
+
+def test_installed_command_finds_a_checkout_above_the_working_directory(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    (tmp_path / "study_app").mkdir()
+    (tmp_path / "study.py").write_text("", encoding="utf-8")
+    nested = tmp_path / "notes" / "drafts"
+    nested.mkdir(parents=True)
+    monkeypatch.setattr(cli, "PACKAGE_ROOT", tmp_path / "site-packages")
+    monkeypatch.chdir(nested)
+
+    assert cli._installed_application_root(None) == tmp_path.resolve()
 
 
 def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
@@ -82,7 +115,7 @@ def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
             calls["thread_started"] = True
 
     monkeypatch.setattr(sys, "argv", ["study.py"])
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(cli.threading, "Thread", FakeThread)
     monkeypatch.setattr(
         cli, "create_app", lambda actual, local_mode: (actual, local_mode)
@@ -93,7 +126,7 @@ def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
         lambda app, **kwargs: calls.update(app=app, uvicorn=kwargs),
     )
 
-    cli.main()
+    cli.main(settings.root)
 
     assert calls["app"] == (settings, True)
     assert calls["uvicorn"]["host"] == "127.0.0.1"
@@ -103,14 +136,10 @@ def test_no_arguments_is_loopback_local_mode_and_starts_browser_waiter(
     assert calls["thread_started"] is True
 
 
-def test_no_arguments_starts_with_packaged_frontend_when_dist_is_absent(
+def test_no_arguments_starts_with_shipped_frontend(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ):
     settings = _settings(tmp_path)
-    (settings.built_frontend / "index.html").unlink()
-    fallback = settings.root / "study_app" / "web"
-    fallback.mkdir(parents=True)
-    (fallback / "index.html").write_text("Study without a build", encoding="utf-8")
     calls: dict[str, Any] = {}
 
     class FakeThread:
@@ -121,7 +150,7 @@ def test_no_arguments_starts_with_packaged_frontend_when_dist_is_absent(
             calls["thread_started"] = True
 
     monkeypatch.setattr(sys, "argv", ["study.py"])
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(cli.threading, "Thread", FakeThread)
     monkeypatch.setattr(cli, "create_app", lambda actual, local_mode: (actual, local_mode))
     monkeypatch.setattr(
@@ -130,61 +159,10 @@ def test_no_arguments_starts_with_packaged_frontend_when_dist_is_absent(
         lambda app, **kwargs: calls.update(app=app, uvicorn=kwargs),
     )
 
-    cli.main()
+    cli.main(settings.root)
 
     assert calls["app"] == (settings, True)
     assert calls["thread_started"] is True
-
-
-def test_storage_migration_cli_requires_idle_clean_git_and_migrates(tmp_path: Path, monkeypatch):
-    settings = _settings(tmp_path)
-    subprocess.run(["git", "init", "-b", "main", str(settings.root)], check=True, capture_output=True)
-    subprocess.run(
-        ["git", "-C", str(settings.root), "config", "user.name", "Study Tests"], check=True
-    )
-    subprocess.run(
-        [
-            "git",
-            "-C",
-            str(settings.root),
-            "config",
-            "user.email",
-            "study-tests@example.invalid",
-        ],
-        check=True,
-    )
-    (settings.root / ".gitignore").write_text("data/runtime/*.tmp\n", encoding="utf-8")
-    settings.data_dir.mkdir()
-    (settings.data_dir / "library.json").write_text(
-        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
-    )
-    store = LibraryStore(settings.data_dir)
-    folder = store.create_folder("Algebra", "algebra", None)
-    store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
-    subprocess.run(
-        ["git", "-C", str(settings.root), "add", "."], check=True, capture_output=True
-    )
-    subprocess.run(
-        ["git", "-C", str(settings.root), "commit", "-m", "version 1"],
-        check=True,
-        capture_output=True,
-    )
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
-
-    rebase_marker = settings.root / ".git" / "rebase-merge"
-    rebase_marker.mkdir()
-    with pytest.raises(SystemExit, match="idle Git state"):
-        cli._migrate_storage()
-    rebase_marker.rmdir()
-
-    (settings.root / "dirty.txt").write_text("dirty", encoding="utf-8")
-    with pytest.raises(SystemExit, match="clean Git worktree"):
-        cli._migrate_storage()
-    (settings.root / "dirty.txt").unlink()
-
-    cli._migrate_storage()
-
-    assert LibraryStore(settings.data_dir).format_version == 2
 
 
 def test_server_mode_requires_password_and_does_not_start_browser_waiter(
@@ -192,7 +170,7 @@ def test_server_mode_requires_password_and_does_not_start_browser_waiter(
 ):
     settings = _settings(tmp_path)
     monkeypatch.setattr(sys, "argv", ["study.py", "--server"])
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(
         cli.threading,
         "Thread",
@@ -203,7 +181,7 @@ def test_server_mode_requires_password_and_does_not_start_browser_waiter(
     )
 
     with pytest.raises(SystemExit, match="requires a password"):
-        cli.main()
+        cli.main(settings.root)
 
 
 def test_server_mode_uses_configured_bind_and_port_without_browser(
@@ -212,7 +190,7 @@ def test_server_mode_uses_configured_bind_and_port_without_browser(
     settings = _settings(tmp_path, password_hash="argon2-hash", port=9443)
     calls: dict[str, Any] = {}
     monkeypatch.setattr(sys, "argv", ["study.py", "--server"])
-    monkeypatch.setattr(cli, "load_settings", lambda _path=None: settings)
+    monkeypatch.setattr(cli, "load_settings", lambda _path=None, **_kwargs: settings)
     monkeypatch.setattr(cli, "create_app", lambda actual, local_mode: (actual, local_mode))
     monkeypatch.setattr(
         cli.threading,
@@ -225,7 +203,7 @@ def test_server_mode_uses_configured_bind_and_port_without_browser(
         lambda app, **kwargs: calls.update(app=app, uvicorn=kwargs),
     )
 
-    cli.main()
+    cli.main(settings.root)
 
     assert calls["app"] == (settings, False)
     assert calls["uvicorn"]["host"] == "0.0.0.0"

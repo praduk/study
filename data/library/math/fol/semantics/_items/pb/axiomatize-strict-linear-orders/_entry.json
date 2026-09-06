@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3a049314f1824fc6a02386c92025baa2",
+  "title": "Axiomatize Strict Linear Orders",
+  "rank": 47244640256,
+  "header": "Language: one binary relation symbol $<$ with logical equality.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "694645ab3f204c7b94f64393b47f587c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.694645ab3f204c7b94f64393b47f587c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e500b3d2fdb14519a4ec8c10b91b68db",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e500b3d2fdb14519a4ec8c10b91b68db.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.466531+00:00",
+  "updated_at": "2026-09-04T12:51:43.496480+00:00"
+}

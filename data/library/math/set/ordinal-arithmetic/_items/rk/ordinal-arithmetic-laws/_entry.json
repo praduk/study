@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4d4414f440384e8e813234c2f4598351",
+  "title": "Algebraic Laws and Asymmetry of Ordinal Arithmetic",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b56abd0fdb7b464184918f9f14451e63",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b56abd0fdb7b464184918f9f14451e63.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.810129+00:00",
+  "updated_at": "2026-09-04T12:51:39.810134+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2231fce88680499eb6082daa48754030",
+  "title": "Successor and Limit Ordinals",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "55e0e91b238e4d3c98cb6d10381b7caa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.55e0e91b238e4d3c98cb6d10381b7caa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.693197+00:00",
+  "updated_at": "2026-09-04T12:51:39.693205+00:00"
+}

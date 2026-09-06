@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2702078e0ad44566b4c48472dd99bfcd",
+  "title": "Truth, Model, and Satisfiability",
+  "rank": 17179869184,
+  "header": "Truth of a sentence is assignment-independent.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a22e79f990624baebe8be83716866024",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a22e79f990624baebe8be83716866024.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.160822+00:00",
+  "updated_at": "2026-09-04T12:51:43.160825+00:00"
+}

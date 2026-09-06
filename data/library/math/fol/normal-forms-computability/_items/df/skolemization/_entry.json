@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "64b72bde3e6145c58ca0808ba78873d6",
+  "title": "Skolemization",
+  "rank": 17179869184,
+  "header": "Skolem symbols are new and record dependence on preceding universal variables.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2159eab15d0641198ea5f166524fda08",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2159eab15d0641198ea5f166524fda08.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.565799+00:00",
+  "updated_at": "2026-09-04T12:51:45.565810+00:00"
+}

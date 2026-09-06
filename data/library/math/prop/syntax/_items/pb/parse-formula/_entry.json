@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "248e1f4a2ff44489aa61337643781acc",
+  "title": "Parse a Formula and Compute Its Measures",
+  "rank": 42949672960,
+  "header": "Prerequisites: @math:prop:syntax:df:formula-anatomy and @math:prop:syntax:df:rank-atoms",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "591c2c6271c842e3992771e8f105f52b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.591c2c6271c842e3992771e8f105f52b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f432c25bb3de4f798fe2b6d945645d00",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f432c25bb3de4f798fe2b6d945645d00.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.674006+00:00",
+  "updated_at": "2026-09-04T12:51:40.689624+00:00"
+}

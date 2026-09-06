@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "51c0163d43714600a3d21628fb2a34e6",
+  "title": "Boolean Function and Functional Completeness",
+  "rank": 25769803776,
+  "header": "Prerequisite: @math:prop:semantics:df:valuation",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f7b485ea768348a1b26b6fe0b9f33344",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f7b485ea768348a1b26b6fe0b9f33344.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.274620+00:00",
+  "updated_at": "2026-09-04T12:51:41.274624+00:00"
+}

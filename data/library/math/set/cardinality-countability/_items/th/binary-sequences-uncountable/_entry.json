@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2ee5ffd1027840bbb83177bf6665d62e",
+  "title": "Binary Sequences Are Uncountable",
+  "rank": 30064771072,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5bddb4531b9941d1a5f58a54fd48be9d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5bddb4531b9941d1a5f58a54fd48be9d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4066a2f997cd499ba5e4afc589f4cc09",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.4066a2f997cd499ba5e4afc589f4cc09.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.506401+00:00",
+  "updated_at": "2026-09-04T12:51:39.515197+00:00"
+}

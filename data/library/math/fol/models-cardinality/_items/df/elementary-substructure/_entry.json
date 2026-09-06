@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "13ba55a78c1744628e6dd7d6a36f17dd",
+  "title": "Substructure and Elementary Substructure",
+  "rank": 4294967296,
+  "header": "Substructure preservation of atomic formulas is weaker than elementarity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6c7469bd47ad4ce5a6659fb4bce4dffe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6c7469bd47ad4ce5a6659fb4bce4dffe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.955321+00:00",
+  "updated_at": "2026-09-04T12:51:44.955327+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "62690e0d76194d78a349266f2442cc00",
+  "title": "Synthesize a Proof of a Tautology",
+  "rank": 34359738368,
+  "header": "Prerequisites: @math:prop:deduction:th:derived-classical-principles and @math:prop:metatheory:th:finite-completeness",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "102b459adf564976aff9d68f9f35c587",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.102b459adf564976aff9d68f9f35c587.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c5920c09d74b4edfac47d3637c49e96e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c5920c09d74b4edfac47d3637c49e96e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.412085+00:00",
+  "updated_at": "2026-09-04T12:51:42.435050+00:00"
+}

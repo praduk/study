@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ff66d59c7cf343a587576941d9d2ff15",
+  "title": "Existential Quantifier Rules",
+  "rank": 21474836480,
+  "header": "Existential elimination introduces a genuinely fresh witness parameter.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9abeaca1b05841468e8891b590b406dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9abeaca1b05841468e8891b590b406dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.700747+00:00",
+  "updated_at": "2026-09-04T12:51:43.700751+00:00"
+}

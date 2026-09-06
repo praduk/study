@@ -28,7 +28,13 @@ try:
 except ImportError:  # pragma: no cover - POSIX uses fcntl above.
     msvcrt = None  # type: ignore[assignment]
 
-from .library_validation import LibraryValidationError, validate_library
+from .library_validation import (
+    COMMUTATIVE_PATH_RE,
+    EXCALIDRAW_PATH_RE,
+    MEDIA_PATH_RE,
+    LibraryValidationError,
+    validate_library,
+)
 from .search_index import LibrarySearchIndex, SearchIndexError
 
 SLUG_RE = re.compile(r"^[a-z][a-z0-9-]*$")
@@ -50,8 +56,8 @@ V2_DEEP_DIRECTORY = "_deep"
 V2_FOLDER_METADATA = "_folder.json"
 V2_ITEMS_DIRECTORY = "_items"
 V2_ENTRY_METADATA = "_entry.json"
+V2_ASSETS_DIRECTORY = "assets"
 V2_WRITE_JOURNAL = "library-write-journal.tmp"
-V2_MIGRATION_JOURNAL = "library-migration-journal.tmp"
 V2_RANK_GAP = 1 << 32
 V2_MAX_RANK = (1 << 63) - 1
 V2_MAX_RELATIVE_PATH = 768
@@ -207,33 +213,6 @@ def _atomic_bytes(path: Path, value: bytes) -> None:
         temporary.unlink(missing_ok=True)
 
 
-def _exclusive_bytes(path: Path, value: bytes) -> None:
-    """Create a durable file without ever replacing a competing writer's file."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
-    if hasattr(os, "O_NOFOLLOW"):
-        flags |= os.O_NOFOLLOW
-    descriptor = os.open(path, flags, 0o666)
-    created = os.fstat(descriptor)
-    try:
-        with os.fdopen(descriptor, "wb") as stream:
-            descriptor = -1
-            stream.write(value)
-            stream.flush()
-            os.fsync(stream.fileno())
-    except BaseException:
-        try:
-            current = path.stat(follow_symlinks=False)
-            if (current.st_dev, current.st_ino) == (created.st_dev, created.st_ino):
-                path.unlink(missing_ok=True)
-        except OSError:
-            pass
-        raise
-    finally:
-        if descriptor >= 0:
-            os.close(descriptor)
-
-
 def _fsync_directory(path: Path) -> None:
     """Durably record directory-entry changes where directory fsync is supported."""
     if os.name == "nt":  # pragma: no cover - Windows cannot open directories this way.
@@ -243,17 +222,6 @@ def _fsync_directory(path: Path) -> None:
         os.fsync(descriptor)
     finally:
         os.close(descriptor)
-
-
-def _fsync_directory_tree(root: Path) -> None:
-    """Persist already-fsynced file renames and mkdirs below a staged tree."""
-    def fail_walk(error: OSError) -> None:
-        raise error
-
-    for directory, _children, _files in os.walk(
-        root, topdown=False, onerror=fail_walk, followlinks=False
-    ):
-        _fsync_directory(Path(directory))
 
 
 def _atomic_json(path: Path, value: Any) -> None:
@@ -350,7 +318,6 @@ class LibraryStore:
         for metadata in (self.library_path, self.macros_path):
             if metadata.is_symlink():
                 raise StoreError(f"{metadata.name} cannot be a symbolic link")
-        self._recover_v2_migration()
         if not self.library_path.exists():
             if self.legacy_content_dir.exists():
                 raise StoreError(
@@ -392,116 +359,6 @@ class LibraryStore:
             raise StoreError(f"data directory escapes the configured data root: {content_root.name}")
         if not self.macros_path.exists():
             _atomic_json(self.macros_path, {"version": 1, "macros": {}})
-
-    def _recover_v2_migration(self) -> int | None:
-        journal = self.runtime_dir / V2_MIGRATION_JOURNAL
-        if not journal.exists():
-            return None
-        value = self._read_json_object(journal, "storage migration journal")
-        if set(value) != {
-            "version",
-            "state",
-            "backup",
-            "staging",
-        } or value.get("version") != 1:
-            raise StoreError("storage migration journal is invalid")
-        state = value.get("state")
-        backup_name = value.get("backup")
-        staging_name = value.get("staging")
-        if state not in {"prepared", "committed"} or not isinstance(
-            backup_name, str
-        ) or not re.fullmatch(
-            r"library-v1-[a-f0-9]{32}\.tmp", backup_name
-        ) or not isinstance(staging_name, str) or not re.fullmatch(
-            r"library-migration-[a-f0-9]{32}\.tmp", staging_name
-        ):
-            raise StoreError("storage migration journal is invalid")
-        backup = self.runtime_dir / backup_name
-        staging = self.runtime_dir / staging_name
-        if backup.is_symlink() or staging.is_symlink():
-            raise StoreError("storage migration backup is unsafe")
-
-        if state == "committed":
-            if self._format_version() != 2:
-                raise StoreError("committed storage migration is missing its version 2 marker")
-            self._read_v2()
-            try:
-                journal.unlink()
-                _fsync_directory(self.runtime_dir)
-            except OSError:
-                return 2
-            shutil.rmtree(backup, ignore_errors=True)
-            shutil.rmtree(staging, ignore_errors=True)
-            return 2
-
-        backup_library = backup / "library.json"
-        backup_content = backup / "content"
-        if backup_library.is_symlink() or backup_content.is_symlink():
-            raise StoreError("storage migration backup is unsafe")
-
-        # Refuse to overwrite anything recreated by an external editor. A
-        # version 2 marker/tree can only be ours while this prepared journal is
-        # present, so preserve it under runtime before restoring v1.
-        if backup_library.exists() and self.library_path.exists():
-            try:
-                current_marker = json.loads(self.library_path.read_text(encoding="utf-8"))
-            except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-                raise StoreError(
-                    "interrupted storage migration conflicts with a recreated library.json"
-                ) from exc
-            if current_marker != {"version": 2, "root": V2_LIBRARY_ROOT}:
-                raise StoreError(
-                    "interrupted storage migration conflicts with a recreated library.json"
-                )
-        if backup_content.exists() and self.legacy_content_dir.exists():
-            raise StoreError(
-                "interrupted storage migration conflicts with recreated legacy content"
-            )
-
-        preserved_v2: Path | None = None
-        installed_staging = not staging.exists()
-        if backup_library.exists() and (
-            self.library_path.exists() or (self.library_dir.exists() and installed_staging)
-        ):
-            preserved_v2 = self.runtime_dir / f"library-migration-interrupted-{uuid.uuid4().hex}.tmp"
-            preserved_v2.mkdir(parents=False, exist_ok=False)
-            try:
-                if self.library_path.exists():
-                    os.replace(self.library_path, preserved_v2 / "library.json")
-                if self.library_dir.exists():
-                    os.replace(self.library_dir, preserved_v2 / V2_LIBRARY_ROOT)
-                _fsync_directory(self.data_dir)
-                _fsync_directory(self.runtime_dir)
-            except OSError as exc:
-                raise StoreError("cannot preserve an interrupted version 2 cutover") from exc
-
-        try:
-            if backup_library.exists():
-                os.replace(backup_library, self.library_path)
-            elif not self.library_path.exists() or self._format_version() != 1:
-                raise StoreError("interrupted storage migration has no recoverable library.json")
-            if backup_content.exists():
-                os.replace(backup_content, self.legacy_content_dir)
-            _fsync_directory(self.data_dir)
-            _fsync_directory(backup)
-        except OSError as exc:
-            raise StoreError("cannot restore an interrupted version 1 library") from exc
-
-        library = self._read()
-        if library.get("version") != 1:
-            raise StoreError("interrupted storage migration did not restore version 1")
-        try:
-            journal.unlink()
-            _fsync_directory(self.runtime_dir)
-        except OSError:
-            return 1
-        shutil.rmtree(backup, ignore_errors=True)
-        shutil.rmtree(staging, ignore_errors=True)
-        # Never delete a live tree that existed during an interrupted cutover.
-        # It may have been created independently after the source was frozen.
-        # If it had to be moved out of the way, it remains inert under runtime
-        # for explicit inspection instead of being guessed safe to discard.
-        return 1
 
     def _recover_v2_write(self) -> None:
         journal = self.runtime_dir / V2_WRITE_JOURNAL
@@ -730,11 +587,86 @@ class LibraryStore:
                         resolved_source, logical_path=logical_path(resolved_source)
                     )
 
+            assets = entry.get("assets")
+            if not isinstance(assets, list):
+                raise StoreError(f"entry {entry_id} assets must be a list")
+            referenced_assets: set[Path] = set()
+            for asset in assets:
+                if not isinstance(asset, dict):
+                    raise StoreError(f"entry {entry_id} assets must contain objects")
+                for field, route_prefix in (("path", "media"), ("source", "diagrams")):
+                    if field not in asset:
+                        continue
+                    local = asset[field]
+                    local_path = Path(local) if isinstance(local, str) else Path()
+                    is_local = (
+                        isinstance(local, str)
+                        and local
+                        and "\\" not in local
+                        and len(local_path.parts) == 2
+                        and local_path.parts[0] == V2_ASSETS_DIRECTORY
+                        and local_path.name not in {"", ".", ".."}
+                    )
+                    if is_local:
+                        source = entry_dir / local_path
+                        if source.is_symlink() or not source.is_file():
+                            raise StoreError(
+                                f"entry {entry_id} asset is missing or unsafe: {local}"
+                            )
+                        resolved_source = source.resolve()
+                        referenced_assets.add(resolved_source)
+                        signature_paths.add(resolved_source)
+                        self._v2_data_relative(
+                            resolved_source, logical_path=logical_path(resolved_source)
+                        )
+                        asset[field] = f"{route_prefix}/{local_path.name}"
+                        continue
+
+                    kind = asset.get("kind")
+                    pattern = MEDIA_PATH_RE if field == "path" else None
+                    global_root = self.media_dir if field == "path" else self.diagram_dir
+                    suffixes = {".png", ".jpg", ".jpeg", ".webp"}
+                    if field == "source" and kind == "excalidraw":
+                        pattern = EXCALIDRAW_PATH_RE
+                        suffixes = {".excalidraw"}
+                    elif field == "source" and kind == "commutative":
+                        pattern = COMMUTATIVE_PATH_RE
+                        suffixes = {".json"}
+                    if (
+                        not isinstance(local, str)
+                        or pattern is None
+                        or pattern.fullmatch(local) is None
+                    ):
+                        raise StoreError(
+                            f"entry {entry_id} has an invalid colocated asset path"
+                        )
+                    try:
+                        source = self._safe_owned_file(local, global_root, suffixes)
+                    except StoreError as exc:
+                        raise StoreError(
+                            f"entry {entry_id} legacy asset is missing or unsafe: {local}"
+                        ) from exc
+                    signature_paths.add(source)
+
             for child in checked_children(entry_dir, f"entry directory {entry_id}"):
                 if child == metadata_path:
                     signature_paths.add(child.resolve())
                     continue
                 if child.is_file() and child.resolve() in referenced_files:
+                    continue
+                if child.name == V2_ASSETS_DIRECTORY and child.is_dir():
+                    if not referenced_assets:
+                        raise StoreError(
+                            f"entry {entry_id} contains an unrecognized path: {child.name}"
+                        )
+                    for asset_file in checked_children(
+                        child, f"assets for entry {entry_id}"
+                    ):
+                        if not asset_file.is_file() or asset_file.resolve() not in referenced_assets:
+                            raise StoreError(
+                                f"entry {entry_id} contains an unrecognized asset: "
+                                f"{asset_file.name}"
+                            )
                     continue
                 raise StoreError(f"entry {entry_id} contains an unrecognized path: {child.name}")
 
@@ -1034,7 +966,9 @@ class LibraryStore:
         return value
 
     @staticmethod
-    def _v2_entry_metadata(entry: dict[str, Any], rank: int) -> dict[str, Any]:
+    def _v2_entry_metadata(
+        entry: dict[str, Any], rank: int, entry_path: Path
+    ) -> dict[str, Any]:
         value: dict[str, Any] = {
             "version": 1,
             "id": entry["id"],
@@ -1051,6 +985,13 @@ class LibraryStore:
             variant.pop("content", None)
             variant.pop("canonical_tag", None)
             variant["file"] = Path(variant["file"]).name
+        for asset in value["assets"]:
+            for field in ("path", "source"):
+                if field in asset:
+                    filename = Path(asset[field]).name
+                    local = entry_path / V2_ASSETS_DIRECTORY / filename
+                    if local.exists() or local.is_symlink():
+                        asset[field] = f"{V2_ASSETS_DIRECTORY}/{filename}"
         for field in ("created_at", "updated_at"):
             if field in entry:
                 value[field] = entry[field]
@@ -1159,7 +1100,9 @@ class LibraryStore:
                 variant["file"] = self._v2_data_relative(entry_path / local)
             self._write_json_if_changed(
                 entry_path / V2_ENTRY_METADATA,
-                self._v2_entry_metadata(entry, entry_rank_by_id[entry["id"]]),
+                self._v2_entry_metadata(
+                    entry, entry_rank_by_id[entry["id"]], entry_path
+                ),
             )
 
         for folder_id, old in old_folder_paths.items():
@@ -1652,6 +1595,37 @@ class LibraryStore:
             raise StoreError(f"owned file is missing or unsafe: {relative}")
         return candidate
 
+    def _safe_entry_asset_file(
+        self,
+        entry: dict[str, Any],
+        relative: str,
+        field: str,
+        global_root: Path,
+        suffixes: set[str],
+    ) -> Path:
+        pattern = MEDIA_PATH_RE if field == "path" else None
+        if field == "source":
+            pattern = (
+                EXCALIDRAW_PATH_RE
+                if Path(relative).suffix.casefold() == ".excalidraw"
+                else COMMUTATIVE_PATH_RE
+            )
+        if pattern is None or pattern.fullmatch(relative) is None:
+            raise StoreError(f"invalid owned asset path: {relative}")
+        if self._format_version() == 1:
+            return self._safe_owned_file(relative, global_root, suffixes)
+        entry_root = self._v2_entry_paths.get(entry["id"])
+        if entry_root is None:
+            raise StoreError(f"entry asset owner is missing: {entry['id']}")
+        local_root = entry_root / V2_ASSETS_DIRECTORY
+        local = local_root / Path(relative).name
+        if local.exists() or local.is_symlink():
+            local_relative = self._v2_data_relative(local)
+            return self._safe_owned_file(local_relative, local_root, suffixes)
+        # A logical route in a v2 sidecar is an explicit pre-colocation record.
+        # Resolver callers have already matched it against a registered asset.
+        return self._safe_owned_file(relative, global_root, suffixes)
+
     def _entry_owned_files(
         self, entries: list[dict[str, Any]]
     ) -> tuple[dict[Path, str], dict[Path, tuple[str, set[str]]]]:
@@ -1670,7 +1644,9 @@ class LibraryStore:
                     relative = asset.get(field)
                     if relative is None:
                         continue
-                    path = self._safe_owned_file(relative, root, suffixes)
+                    path = self._safe_entry_asset_file(
+                        entry, relative, field, root, suffixes
+                    )
                     existing = asset_files.get(path)
                     tokens = {
                         relative,
@@ -1685,8 +1661,9 @@ class LibraryStore:
 
     def _surviving_asset_references(
         self, entries: list[dict[str, Any]]
-    ) -> tuple[set[Path], list[str]]:
+    ) -> tuple[set[Path], set[str], list[str]]:
         paths: set[Path] = set()
+        tokens: set[str] = set()
         markdown: list[str] = []
         for entry in entries:
             for variant in (*entry.get("formulations", []), *entry.get("supplements", [])):
@@ -1698,8 +1675,13 @@ class LibraryStore:
                 ):
                     relative = asset.get(field)
                     if relative is not None:
-                        paths.add(self._safe_owned_file(relative, root, suffixes))
-        return paths, markdown
+                        paths.add(
+                            self._safe_entry_asset_file(
+                                entry, relative, field, root, suffixes
+                            )
+                        )
+                        tokens.update({relative, Path(relative).name, asset["id"]})
+        return paths, tokens, markdown
 
     def _plan_unreferenced_files(
         self,
@@ -1707,14 +1689,33 @@ class LibraryStore:
         asset_files: dict[Path, tuple[str, set[str]]],
         surviving_entries: list[dict[str, Any]],
     ) -> tuple[dict[Path, str], dict[Path, str]]:
-        surviving_asset_paths, surviving_markdown = self._surviving_asset_references(
-            surviving_entries
+        surviving_asset_paths, surviving_asset_tokens, surviving_markdown = (
+            self._surviving_asset_references(
+                surviving_entries
+            )
         )
+        local_reference_blockers: list[str] = []
+        if self._format_version() == 2:
+            for relative, tokens in asset_files.values():
+                matching_assets = tokens & surviving_asset_tokens
+                referenced = any(
+                    token in text for token in tokens for text in surviving_markdown
+                )
+                if referenced and not matching_assets:
+                    local_reference_blockers.append(relative)
+        if local_reference_blockers:
+            raise StoreError(
+                "cannot delete content while surviving Markdown references its local asset: "
+                f"{min(local_reference_blockers)}"
+            )
         preserved = {
             path: relative
             for path, (relative, tokens) in asset_files.items()
             if path in surviving_asset_paths
-            or any(token in text for token in tokens for text in surviving_markdown)
+            or (
+                self._format_version() == 1
+                and any(token in text for token in tokens for text in surviving_markdown)
+            )
         }
         deletions = {
             **content_files,
@@ -1766,7 +1767,7 @@ class LibraryStore:
         }
 
     def delete_entry(self, entry_id: str) -> dict[str, Any]:
-        """Delete one entry while retaining review history and shared asset files."""
+        """Delete one entry and its exclusively owned files."""
         with self._lock:
             library = self._read()
             entry = self._entry(library, entry_id)
@@ -2379,396 +2380,6 @@ class LibraryStore:
             _atomic_json(self.macros_path, value)
         return value
 
-    @staticmethod
-    def _normalized_order_maps(
-        library: dict[str, Any],
-    ) -> tuple[dict[str, int], dict[str, int]]:
-        folder_orders: dict[str, int] = {}
-        for parent_id in {None, *(folder["id"] for folder in library["folders"])}:
-            siblings = sorted(
-                (
-                    folder
-                    for folder in library["folders"]
-                    if folder.get("parent_id") == parent_id
-                ),
-                key=lambda folder: folder.get("order", 0),
-            )
-            folder_orders.update(
-                {folder["id"]: index for index, folder in enumerate(siblings)}
-            )
-        entry_orders: dict[str, int] = {}
-        for folder in library["folders"]:
-            entries = sorted(
-                (
-                    entry
-                    for entry in library["entries"]
-                    if entry["folder_id"] == folder["id"]
-                ),
-                key=lambda entry: entry.get("order", 0),
-            )
-            entry_orders.update(
-                {entry["id"]: index for index, entry in enumerate(entries)}
-            )
-        return folder_orders, entry_orders
-
-    def _v1_migration_content_path(
-        self, relative: str, content_root: Path | None = None
-    ) -> Path:
-        if not isinstance(relative, str) or "\\" in relative:
-            raise StoreError("invalid legacy content path during migration")
-        try:
-            live_root = self.legacy_content_dir.resolve()
-            live = (self.data_dir / relative).resolve()
-        except OSError as exc:
-            raise StoreError("invalid legacy content path during migration") from exc
-        if live_root not in live.parents or live.suffix.casefold() != ".md":
-            raise StoreError("legacy content path escapes data/content")
-        if content_root is None:
-            return live
-        try:
-            tail = live.relative_to(live_root)
-            root = content_root.resolve()
-            candidate = (root / tail).resolve()
-        except (OSError, ValueError) as exc:
-            raise StoreError("invalid legacy content path during migration") from exc
-        if root not in candidate.parents or candidate.suffix.casefold() != ".md":
-            raise StoreError("legacy content path escapes its frozen migration root")
-        return candidate
-
-    def _migration_signature(
-        self,
-        library: dict[str, Any],
-        *,
-        v1_content_root: Path | None = None,
-    ) -> str:
-        folder_orders, entry_orders = self._normalized_order_maps(library)
-        folders = []
-        for folder in sorted(library["folders"], key=lambda value: value["id"]):
-            normalized = {
-                key: copy.deepcopy(value)
-                for key, value in folder.items()
-                if key not in {"namespace", "order"}
-            }
-            normalized["order"] = folder_orders[folder["id"]]
-            folders.append(normalized)
-        entries = []
-        for entry in sorted(library["entries"], key=lambda value: value["id"]):
-            normalized = {
-                key: copy.deepcopy(value)
-                for key, value in entry.items()
-                if key not in {"canonical_tag", "order"}
-            }
-            normalized["order"] = entry_orders[entry["id"]]
-            normalized["review_modes"] = self.review_modes_for_entry(normalized)
-            for group_name in ("formulations", "supplements"):
-                for variant in normalized.get(group_name, []):
-                    path = (
-                        self._v1_migration_content_path(
-                            variant["file"], v1_content_root
-                        )
-                        if v1_content_root is not None
-                        else self.data_dir / variant["file"]
-                    )
-                    try:
-                        body = path.read_bytes()
-                        body.decode("utf-8")
-                    except (OSError, UnicodeDecodeError) as exc:
-                        raise StoreError(
-                            f"cannot read UTF-8 Markdown during migration: {path.name}"
-                        ) from exc
-                    digest = hashlib.sha256(body).hexdigest()
-                    variant["content_sha256"] = digest
-                    variant.pop("file", None)
-                    variant.pop("content", None)
-                    variant.pop("canonical_tag", None)
-            entries.append(normalized)
-        value = {"folders": folders, "entries": entries}
-        return hashlib.sha256(
-            json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode(
-                "utf-8"
-            )
-        ).hexdigest()
-
-    def _validate_v1_migration_content_tree(
-        self,
-        library: dict[str, Any],
-        *,
-        content_root: Path | None = None,
-    ) -> None:
-        inspected_root = content_root or self.legacy_content_dir
-        referenced = {
-            self._v1_migration_content_path(variant["file"], content_root)
-            for entry in library["entries"]
-            for variant in (*entry.get("formulations", []), *entry.get("supplements", []))
-        }
-        discovered: set[Path] = set()
-
-        def fail_walk(error: OSError) -> None:
-            raise error
-
-        try:
-            walk = os.walk(
-                inspected_root,
-                topdown=True,
-                onerror=fail_walk,
-                followlinks=False,
-            )
-            for directory, child_names, file_names in walk:
-                base = Path(directory)
-                for child_name in child_names:
-                    child = base / child_name
-                    if child.is_symlink():
-                        raise StoreError(
-                            f"migration refused because legacy content contains a symlink: {child_name}"
-                        )
-                for file_name in file_names:
-                    path = base / file_name
-                    if path.is_symlink() or not path.is_file():
-                        raise StoreError(
-                            f"migration refused because legacy content is unsafe: {file_name}"
-                        )
-                    discovered.add(path.resolve())
-        except OSError as exc:
-            raise StoreError("cannot inspect all legacy content before migration") from exc
-        extra = discovered - referenced
-        if extra:
-            relative = min(path.relative_to(inspected_root).as_posix() for path in extra)
-            raise StoreError(
-                "migration refused because legacy content is unreferenced: "
-                f"content/{relative}"
-            )
-        missing = referenced - discovered
-        if missing:
-            relative = min(path.relative_to(inspected_root).as_posix() for path in missing)
-            raise StoreError(
-                f"migration refused because legacy content is missing: content/{relative}"
-            )
-
-    def _build_v2_tree(self, library: dict[str, Any], destination: Path) -> None:
-        self._write_json_if_changed(destination / V2_ROOT_METADATA, {"version": 1})
-        folder_paths = self._desired_v2_folder_paths(library, destination)
-        folder_orders, entry_orders = self._normalized_order_maps(library)
-        folder_ranks = {
-            folder_id: (order + 1) * V2_RANK_GAP
-            for folder_id, order in folder_orders.items()
-        }
-        entry_ranks = {
-            entry_id: (order + 1) * V2_RANK_GAP
-            for entry_id, order in entry_orders.items()
-        }
-        for folder in sorted(
-            library["folders"], key=lambda value: len(folder_paths[value["id"]].parts)
-        ):
-            path = folder_paths[folder["id"]]
-            path.mkdir(parents=True, exist_ok=False)
-            self._write_json_if_changed(
-                path / V2_FOLDER_METADATA,
-                self._v2_folder_metadata(folder, folder_ranks[folder["id"]], path),
-            )
-
-        for entry in library["entries"]:
-            entry_path = (
-                folder_paths[entry["folder_id"]]
-                / V2_ITEMS_DIRECTORY
-                / entry["kind"]
-                / entry["tag"]
-            )
-            entry_path.mkdir(parents=True, exist_ok=False)
-            migrated = copy.deepcopy(entry)
-            for group_name in ("formulations", "supplements"):
-                for variant in migrated.get(group_name, []):
-                    source = self.data_dir / variant["file"]
-                    role = (
-                        "formulation"
-                        if group_name == "formulations"
-                        else "proof"
-                        if variant.get("kind") == "pf"
-                        else "solution"
-                    )
-                    filename = f"{role}.{variant['id']}.md"
-                    target = entry_path / filename
-                    try:
-                        body = source.read_bytes()
-                    except OSError as exc:
-                        raise StoreError(f"cannot read Markdown during migration: {source.name}") from exc
-                    _atomic_bytes(target, body)
-                    logical_target = self.library_dir / target.relative_to(destination)
-                    variant["file"] = self._v2_data_relative(logical_target)
-            self._write_json_if_changed(
-                entry_path / V2_ENTRY_METADATA,
-                self._v2_entry_metadata(migrated, entry_ranks[entry["id"]]),
-            )
-
-    def migrate_to_v2(self) -> dict[str, Any]:
-        """Explicitly migrate a validated v1 library; startup never calls this."""
-        with self._lock:
-            if self._format_version() != 1:
-                raise StoreError("the library already uses version 2 storage")
-            if self.library_dir.exists():
-                raise StoreError("migration refused because data/library already exists")
-            try:
-                original_library = self.library_path.read_bytes()
-            except OSError as exc:
-                raise StoreError("cannot preserve library.json before migration") from exc
-            library = self._read()
-            try:
-                if self.library_path.read_bytes() != original_library:
-                    raise StoreError(
-                        "version 1 data changed while migration was being prepared"
-                    )
-            except OSError as exc:
-                raise StoreError("cannot preserve library.json before migration") from exc
-            unexpected_library_fields = set(library) - {
-                "version",
-                "folders",
-                "entries",
-                "updated_at",
-            }
-            if unexpected_library_fields:
-                field = min(unexpected_library_fields)
-                raise StoreError(
-                    f"migration refused because library.json contains unknown field: {field}"
-                )
-            self._validate_v1_migration_content_tree(library)
-            before_signature = self._migration_signature(library)
-            staging = self.runtime_dir / f"library-migration-{uuid.uuid4().hex}.tmp"
-            backup = self.runtime_dir / f"library-v1-{uuid.uuid4().hex}.tmp"
-            migration_journal = self.runtime_dir / V2_MIGRATION_JOURNAL
-            if migration_journal.exists():
-                raise StoreError("an unfinished storage migration requires recovery")
-            legacy_content_was_present = self.legacy_content_dir.exists()
-            result = {
-                "version": 2,
-                "folders": len(library["folders"]),
-                "entries": len(library["entries"]),
-                "markdown_files": sum(
-                    len(entry.get("formulations", []))
-                    + len(entry.get("supplements", []))
-                    for entry in library["entries"]
-                ),
-            }
-            try:
-                staging.mkdir(parents=False, exist_ok=False)
-                self._build_v2_tree(library, staging)
-                migrated = self._read_v2(staging)
-                after_signature = self._migration_signature(migrated)
-                if before_signature != after_signature:
-                    raise StoreError("version 2 migration verification did not match the v1 library")
-                _fsync_directory_tree(staging)
-                _fsync_directory(self.runtime_dir)
-                current_signature = self._migration_signature(self._read())
-                if current_signature != before_signature:
-                    raise StoreError("version 1 data changed while migration was being prepared")
-
-                backup.mkdir(parents=False, exist_ok=False)
-                _atomic_json(
-                    migration_journal,
-                    {
-                        "version": 1,
-                        "state": "prepared",
-                        "backup": backup.name,
-                        "staging": staging.name,
-                    },
-                )
-                _fsync_directory(self.runtime_dir)
-                os.replace(self.library_path, backup / "library.json")
-                if self.legacy_content_dir.exists():
-                    os.replace(self.legacy_content_dir, backup / "content")
-                elif legacy_content_was_present:
-                    raise StoreError(
-                        "version 1 content changed while migration was being prepared"
-                    )
-                _fsync_directory(self.data_dir)
-                _fsync_directory(backup)
-
-                try:
-                    frozen_library_bytes = (backup / "library.json").read_bytes()
-                except OSError as exc:
-                    raise StoreError("cannot verify frozen library.json") from exc
-                if frozen_library_bytes != original_library:
-                    raise StoreError(
-                        "version 1 data changed while migration was being prepared"
-                    )
-                frozen_content_root = backup / "content"
-                self._validate_v1_migration_content_tree(
-                    library, content_root=frozen_content_root
-                )
-                frozen_signature = self._migration_signature(
-                    library, v1_content_root=frozen_content_root
-                )
-                if frozen_signature != before_signature:
-                    raise StoreError(
-                        "version 1 data changed while migration was being prepared"
-                    )
-                if self.library_path.exists() or self.legacy_content_dir.exists():
-                    raise StoreError(
-                        "version 1 data was recreated while migration was being prepared"
-                    )
-
-                os.replace(staging, self.library_dir)
-                _fsync_directory(self.data_dir)
-                _fsync_directory(self.runtime_dir)
-                marker = (
-                    json.dumps(
-                        {"version": 2, "root": V2_LIBRARY_ROOT},
-                        ensure_ascii=False,
-                        indent=2,
-                    )
-                    + "\n"
-                ).encode("utf-8")
-                _exclusive_bytes(self.library_path, marker)
-                _fsync_directory(self.data_dir)
-                self._read()
-                if self.legacy_content_dir.exists():
-                    raise StoreError(
-                        "version 1 content was recreated while migration was being finalized"
-                    )
-                self._invalidate_search_index()
-                _atomic_json(
-                    migration_journal,
-                    {
-                        "version": 1,
-                        "state": "committed",
-                        "backup": backup.name,
-                        "staging": staging.name,
-                    },
-                )
-                _fsync_directory(self.runtime_dir)
-                try:
-                    migration_journal.unlink()
-                    _fsync_directory(self.runtime_dir)
-                    shutil.rmtree(backup, ignore_errors=True)
-                except BaseException:  # noqa: BLE001 - commit already succeeded.
-                    # The committed journal and v1 backup are safe for startup
-                    # cleanup. Never turn cleanup trouble into a false migration
-                    # failure that invites an unsafe retry.
-                    return result
-                return result
-            except BaseException as exc:
-                if migration_journal.exists():
-                    try:
-                        recovered_version = self._recover_v2_migration()
-                    except BaseException as recovery_exc:
-                        raise StoreError(
-                            "storage migration failed and automatic recovery was incomplete; "
-                            f"recovery data remains under {self.runtime_dir}"
-                        ) from recovery_exc
-                    if recovered_version == 2:
-                        return result
-                    if recovered_version != 1:
-                        raise StoreError(
-                            "storage migration failed and recovery state is indeterminate; "
-                            f"recovery data remains under {self.runtime_dir}"
-                        ) from exc
-                    self._invalidate_search_index()
-                if isinstance(exc, OSError):
-                    raise StoreError(f"storage migration failed: {exc}") from exc
-                raise
-            finally:
-                if not migration_journal.exists():
-                    shutil.rmtree(staging, ignore_errors=True)
-                    shutil.rmtree(backup, ignore_errors=True)
-
     def check_data(self) -> dict[str, int]:
         with self._lock:
             library = self._read()
@@ -2860,14 +2471,153 @@ class LibraryStore:
                 pending.extend(reversed(children.get(folder["id"], [])))
             return ordered
 
-    def register_asset(self, entry_id: str, asset: dict[str, Any]) -> dict[str, Any]:
+    def _asset_file_targets(
+        self,
+        entry: dict[str, Any],
+        asset: dict[str, Any],
+        version: int,
+    ) -> dict[str, Path]:
+        targets: dict[str, Path] = {}
+        for field in ("path", "source"):
+            relative = asset.get(field)
+            if relative is None:
+                continue
+            pattern = MEDIA_PATH_RE if field == "path" else None
+            if field == "source" and asset.get("kind") == "excalidraw":
+                pattern = EXCALIDRAW_PATH_RE
+            elif field == "source" and asset.get("kind") == "commutative":
+                pattern = COMMUTATIVE_PATH_RE
+            if (
+                not isinstance(relative, str)
+                or pattern is None
+                or pattern.fullmatch(relative) is None
+            ):
+                raise StoreError(f"asset {field} is not a safe Study asset path")
+            if version == 1:
+                targets[field] = self.data_dir / relative
+                continue
+            entry_root = self._v2_entry_paths.get(entry["id"])
+            if entry_root is None:
+                raise StoreError("entry asset owner is missing")
+            targets[field] = (
+                entry_root / V2_ASSETS_DIRECTORY / Path(relative).name
+            )
+        return targets
+
+    def register_asset(
+        self,
+        entry_id: str,
+        asset: dict[str, Any],
+        file_contents: dict[str, bytes] | None = None,
+    ) -> dict[str, Any]:
+        """Atomically register an asset and, when supplied, write its owned files."""
         with self._lock:
             library = self._read()
             entry = self._entry(library, entry_id)
-            entry.setdefault("assets", []).append(asset)
-            entry["updated_at"] = _now()
-            self._write(library)
-            return asset
+            stored_asset = copy.deepcopy(asset)
+            version = int(library["version"])
+            targets = self._asset_file_targets(entry, stored_asset, version)
+            contents = dict(file_contents or {})
+            if set(contents) - set(targets):
+                raise StoreError("asset file contents do not match its metadata")
+            if any(not isinstance(value, bytes) for value in contents.values()):
+                raise StoreError("asset file contents must be bytes")
+
+            created: list[Path] = []
+            try:
+                with self._v2_write_transaction():
+                    for field, value in contents.items():
+                        target = targets[field]
+                        if target.is_symlink():
+                            raise StoreError(f"asset destination is unsafe: {target.name}")
+                        if target.exists():
+                            if not target.is_file():
+                                raise StoreError(
+                                    f"asset destination is unsafe: {target.name}"
+                                )
+                            try:
+                                existing = target.read_bytes()
+                            except OSError as exc:
+                                raise StoreError(
+                                    f"cannot inspect existing asset: {target.name}"
+                                ) from exc
+                            if existing != value:
+                                raise StoreError(
+                                    f"asset filename collides with different content: {target.name}"
+                                )
+                            continue
+                        _atomic_bytes(target, value)
+                        created.append(target)
+                    entry.setdefault("assets", []).append(stored_asset)
+                    entry["updated_at"] = _now()
+                    self._write(library)
+            except BaseException:
+                if version == 1:
+                    for path in created:
+                        path.unlink(missing_ok=True)
+                raise
+            return copy.deepcopy(stored_asset)
+
+    def _resolve_asset_file(
+        self,
+        *,
+        field: str,
+        filename: str,
+        kinds: set[str],
+        global_root: Path,
+        suffixes: set[str],
+    ) -> Path | None:
+        route_prefix = "media" if field == "path" else "diagrams"
+        relative = f"{route_prefix}/{filename}"
+        pattern = MEDIA_PATH_RE if field == "path" else None
+        if field == "source" and kinds == {"excalidraw"}:
+            pattern = EXCALIDRAW_PATH_RE
+        elif field == "source" and kinds == {"commutative"}:
+            pattern = COMMUTATIVE_PATH_RE
+        if pattern is None or pattern.fullmatch(relative) is None:
+            return None
+        with self._lock:
+            library = self._read()
+            if library["version"] == 1:
+                try:
+                    return self._safe_owned_file(relative, global_root, suffixes)
+                except StoreError:
+                    return None
+            for entry in library["entries"]:
+                for asset in entry.get("assets", []):
+                    if asset.get("kind") not in kinds or asset.get(field) != relative:
+                        continue
+                    return self._safe_entry_asset_file(
+                        entry, relative, field, global_root, suffixes
+                    )
+            return None
+
+    def resolve_media_file(self, filename: str) -> Path | None:
+        return self._resolve_asset_file(
+            field="path",
+            filename=filename,
+            kinds={"image", "excalidraw"},
+            global_root=self.media_dir,
+            suffixes={".png", ".jpg", ".jpeg", ".webp"},
+        )
+
+    def resolve_excalidraw_file(self, filename: str) -> Path | None:
+        return self._resolve_asset_file(
+            field="source",
+            filename=filename,
+            kinds={"excalidraw"},
+            global_root=self.diagram_dir,
+            suffixes={".excalidraw"},
+        )
+
+    def resolve_commutative_file(self, filename: str) -> Path | None:
+        return self._resolve_asset_file(
+            field="source",
+            filename=filename,
+            kinds={"commutative"},
+            global_root=self.diagram_dir,
+            suffixes={".json"},
+        )
 
     @staticmethod
     def _file_signature(path: Path) -> tuple[int, int, int, int, int] | None:

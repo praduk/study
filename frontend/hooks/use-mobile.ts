@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react';
 
-const MOBILE_QUERY = '(max-width: 720px)';
+const MOBILE_QUERY = '(max-width: 960px)';
 
 export function useIsMobile() {
   return useSyncExternalStore(

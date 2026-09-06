@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "af42e1b9d0574f2994e3821dd945ce1b",
+  "title": "Diagnose an Invalid Disjunction Elimination",
+  "rank": 55834574848,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "592e71908e244be29957d89d5f78781a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.592e71908e244be29957d89d5f78781a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "28a88af5ea204c058e2d35b9659c4fea",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.28a88af5ea204c058e2d35b9659c4fea.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.027462+00:00",
+  "updated_at": "2026-09-04T12:51:42.050103+00:00"
+}

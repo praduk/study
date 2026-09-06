@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a461effd7ddc4a279c1402fe466a2a37",
+  "title": "Universal Quantifier Rules",
+  "rank": 17179869184,
+  "header": "The eigenvariable side condition is essential.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6683d520e059458eb18bee92cb211529",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6683d520e059458eb18bee92cb211529.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.670999+00:00",
+  "updated_at": "2026-09-04T12:51:43.671004+00:00"
+}

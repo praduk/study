@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fd6e82c25a5742258f94286183199ad5",
+  "title": "Structural Induction for Terms and Formulas",
+  "rank": 38654705664,
+  "header": "Applies to properties closed under every constructor in the grammar.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ecc3757e54249e5b35664aa05e89f37",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ecc3757e54249e5b35664aa05e89f37.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8d102f1d75564ea3b1ac07567dcb88fd",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.8d102f1d75564ea3b1ac07567dcb88fd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.829645+00:00",
+  "updated_at": "2026-09-04T12:51:42.854390+00:00"
+}

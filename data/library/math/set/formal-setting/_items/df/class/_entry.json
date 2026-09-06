@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "464bc6b106284989af759fbc85eacc4f",
+  "title": "Definable Classes and Proper Classes",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5d5906d1cde9421dae30140a54ce124e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5d5906d1cde9421dae30140a54ce124e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.225155+00:00",
+  "updated_at": "2026-09-04T12:51:39.225158+00:00"
+}

@@ -36,13 +36,14 @@ MEDIA_TYPES = {
 }
 
 
-def _embed_images(rendered: str, data_dir: Path) -> str:
-    media_root = (data_dir / "media").resolve()
-
+def _embed_images(rendered: str, store: LibraryStore) -> str:
     def replace(match: re.Match[str]) -> str:
         relative = match.group("url").lstrip("/")
-        candidate = (data_dir / relative).resolve()
-        if media_root not in candidate.parents or not candidate.is_file():
+        filename = Path(relative).name
+        if relative != f"media/{filename}":
+            raise StoreError(f"export image is missing or unsafe: {relative}")
+        candidate = store.resolve_media_file(filename)
+        if candidate is None:
             raise StoreError(f"export image is missing or unsafe: {relative}")
         mime = MEDIA_TYPES.get(candidate.suffix.casefold())
         if not mime:
@@ -65,9 +66,8 @@ def _main(items: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _load_commutative(store: LibraryStore, diagram_id: str) -> CommutativeDiagramCreate:
-    root = store.diagram_dir.resolve()
-    path = (root / f"{diagram_id}.commutative.json").resolve()
-    if root not in path.parents or not path.is_file():
+    path = store.resolve_commutative_file(f"{diagram_id}.commutative.json")
+    if path is None:
         raise StoreError(f"commutative diagram is missing: {diagram_id}")
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -346,7 +346,7 @@ def build_export_html(
               {header}<div class="entry-body">{body}</div>{"".join(alternatives)}{"".join(supplements)}
             </article>"""
         )
-    body = _embed_images("".join(sections), store.data_dir)
+    body = _embed_images("".join(sections), store)
     macros = (
         json.dumps(store.get_macros(), ensure_ascii=False)
         .replace("&", "\\u0026")

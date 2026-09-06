@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e6b7a2499c324d3e96a69d75d1af29df",
+  "title": "Negation Normal Form Theorem",
+  "rank": 8589934592,
+  "header": "Classical first-order logic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e6c04c469a3b4d18aef5dab9bbf60336",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e6c04c469a3b4d18aef5dab9bbf60336.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a3280e3676154eda986d9f197fcfd9ce",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a3280e3676154eda986d9f197fcfd9ce.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.426815+00:00",
+  "updated_at": "2026-09-04T12:51:45.462101+00:00"
+}

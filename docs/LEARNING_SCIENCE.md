@@ -187,8 +187,13 @@ discounting, not wall-clock decay: the posterior does not change merely because 
 As new qualified observations arrive, recent grading behavior can eventually outweigh older
 behavior while evidence changes gradually. Scheduling uses the posterior available before the
 current grade; the current grade updates subsequent schedules. The pre-outcome probability and
-full-precision normalized delay are written to the append-only review log, and the derived posterior
-can be reconstructed from that log after an interrupted state write.
+full-precision normalized delay are appended to the review log, and the derived posterior can be
+reconstructed from that log after an interrupted state write. Deleting content is the deliberate
+exception: Study removes that content's log records and rebuilds the posterior from current items.
+Because removing interleaved evidence changes the posterior that produced later forecasts, this
+compaction clears all pre-deletion forecast-evaluation observations, including those for retained
+items. It preserves the retained items' Bayesian learning evidence through deterministic legacy
+replay, then starts out-of-sample forecast scoring again with the next qualified review.
 
 If a learner chooses Confident (`3`) and then grades Again, Study adds another `0.35` to difficulty,
 capped at `10`. It stores a simple calibration value:
@@ -216,7 +221,7 @@ on completed reviews and may be biased by that selection. The model is fitted on
 Good-or-Easy self-grades. It must not be described as measuring objective remembering, correctness,
 durable mathematical competence, mastery, or transfer.
 
-### Read-only calendar and history reporting
+### Calendar and history reporting
 
 `GET /api/review/calendar` reports current schedule snapshots and validated review history over a
 half-open, timezone-aware interval: `start` is inclusive and `end` is exclusive. The interval is
@@ -225,18 +230,20 @@ days; supplying only one bound creates the same 90-day span on the other side.
 
 Each event is the one currently stored next-due time for a reviewed card, not a generated recurrence.
 Active cards are derived from the current library, fixed task availability, and inherited folder
-review setting. New cards have no stored schedule and are omitted. Review-disabled schedules and
-orphaned schedules for deleted entries or removed tasks are omitted unless `include_inactive=true`.
-The stored schedule at the last grade is returned with the current entry title, canonical tag, task
-label, and active-state classification. The endpoint reconstructs state in memory from the complete
-log and fails closed on malformed history; it does not write either review file.
+review setting. New cards have no stored schedule and are omitted. Deleted entries and tasks that no
+longer exist are purged. With `include_inactive=true`, existing entries whose review is disabled may
+still be shown. The stored schedule at the last grade is returned with the current entry title,
+canonical tag, task label, and active-state classification. The endpoint reconstructs state from
+the complete log and fails closed on malformed history. It is byte-for-byte read-only while the
+library and review state are synchronized; after an out-of-band deletion or task change, it first
+compacts stale review data so the persisted files again describe only current items.
 
 Statistics count every validated log record completed within the interval, so repeated same-day
 attempts remain distinct. They include elapsed minutes, the four self-grade counts, Again lapses,
 the Good-or-Easy self-grade rate, and zero-filled daily buckets. Buckets use UTC by default; an
 optional bounded `timezone` query accepts an IANA time-zone name for local calendar labels without
 changing the instant-based range or totals. These history totals retain attempts for content that is
-now review-disabled or deleted, consistent with the append-only log.
+now review-disabled, but deletion removes an item's attempts from both reporting and calibration.
 
 Bayesian reporting includes each posterior interval-scale median and equal-tail 90% credible
 interval, endpoint mass, distinct-card count, readiness gates, suggested interval factor, target

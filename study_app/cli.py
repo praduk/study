@@ -14,8 +14,9 @@ import uvicorn
 from .app import create_app
 from .auth import SessionStore, make_password_hash
 from .config import load_settings, write_password_override
-from .git_ops import GitError, GitRepository
 from .store import LibraryStore, StoreError
+
+PACKAGE_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _open_when_ready(url: str) -> None:
@@ -29,9 +30,11 @@ def _open_when_ready(url: str) -> None:
             time.sleep(0.1)
 
 
-def _set_password(config_path: Path | None = None) -> None:
+def _set_password(
+    config_path: Path | None = None, *, application_root: Path | None = None
+) -> None:
     # Validate the effective configuration before replacing its secret overlay.
-    load_settings(config_path)
+    load_settings(config_path, application_root=application_root)
     first = getpass.getpass("New Study server password: ")
     second = getpass.getpass("Repeat password: ")
     if first != second:
@@ -39,7 +42,7 @@ def _set_password(config_path: Path | None = None) -> None:
     if not first:
         raise SystemExit("Password cannot be empty.")
     target = write_password_override(make_password_hash(first), config_path)
-    settings = load_settings(config_path)
+    settings = load_settings(config_path, application_root=application_root)
     SessionStore(
         settings.data_dir / "runtime" / "sessions.sqlite3",
         settings.session_days,
@@ -51,8 +54,10 @@ def _set_password(config_path: Path | None = None) -> None:
     )
 
 
-def _check_data(config_path: Path | None = None) -> None:
-    settings = load_settings(config_path)
+def _check_data(
+    config_path: Path | None = None, *, application_root: Path | None = None
+) -> None:
+    settings = load_settings(config_path, application_root=application_root)
     try:
         result = LibraryStore(settings.data_dir).check_data()
     except StoreError as exc:
@@ -64,34 +69,30 @@ def _check_data(config_path: Path | None = None) -> None:
     )
 
 
-def _migrate_storage(config_path: Path | None = None) -> None:
-    settings = load_settings(config_path)
-    store = LibraryStore(settings.data_dir)
-    git = GitRepository(settings.root, settings.data_dir, store.mutation_lock)
-    with store.mutation_lock:
-        try:
-            git.ensure_no_operation_in_progress()
-        except GitError as exc:
-            raise SystemExit(f"Storage migration requires idle Git state: {exc}") from exc
-        status = git.status()
-        if not status.get("available"):
-            raise SystemExit(
-                f"Storage migration requires Git: {status.get('message', 'unavailable')}"
-            )
-        if status.get("dirty"):
-            raise SystemExit("Storage migration requires a clean Git worktree.")
-        try:
-            result = store.migrate_to_v2()
-        except StoreError as exc:
-            raise SystemExit(f"Storage migration failed: {exc}") from exc
-    print(
-        "Storage migration completed and verified: "
-        f"{result['folders']} folders, {result['entries']} entries, "
-        f"{result['markdown_files']} Markdown files. Review and commit the Git diff."
+def _checkout_at_or_above(start: Path) -> Path | None:
+    start = start.resolve()
+    for candidate in (start, *start.parents):
+        if (candidate / "study.py").is_file() and (candidate / "study_app").is_dir():
+            return candidate
+    return None
+
+
+def _installed_application_root(config_path: Path | None) -> Path:
+    starts = [PACKAGE_ROOT]
+    if config_path is not None:
+        starts.append(config_path.resolve().parent)
+    starts.append(Path.cwd())
+    for start in starts:
+        root = _checkout_at_or_above(start)
+        if root is not None:
+            return root
+    raise SystemExit(
+        "Run the installed Study command from a Study checkout, or pass "
+        "--config pointing inside one."
     )
 
 
-def main() -> None:
+def main(application_root: Path | None = None) -> None:
     parser = argparse.ArgumentParser(description="Run the Study mathematics application.")
     actions = parser.add_mutually_exclusive_group()
     actions.add_argument(
@@ -101,37 +102,28 @@ def main() -> None:
     actions.add_argument(
         "--check-data", action="store_true", help="validate authored Study data and exit"
     )
-    actions.add_argument(
-        "--migrate-storage",
-        action="store_true",
-        help="explicitly migrate a clean version 1 library to sharded version 2 storage",
-    )
     parser.add_argument("--config", type=Path, help="use a different TOML configuration file")
     args = parser.parse_args()
 
+    root = (
+        application_root.resolve()
+        if application_root is not None
+        else _installed_application_root(args.config)
+    )
+    config_path = (args.config or root / "config.toml").resolve()
+
     if args.set_password:
-        _set_password(args.config)
+        _set_password(config_path, application_root=root)
         return
     if args.check_data:
-        _check_data(args.config)
+        _check_data(config_path, application_root=root)
         return
-    if args.migrate_storage:
-        _migrate_storage(args.config)
-        return
-
-    settings = load_settings(args.config)
+    settings = load_settings(config_path, application_root=root)
     local_mode = not args.server
     if args.server and not settings.password_hash:
         raise SystemExit("Server mode requires a password. Run: python study.py --set-password")
-    selected_frontend = (
-        settings.built_frontend
-        if settings.rich_frontend and settings.built_frontend.joinpath("index.html").is_file()
-        else settings.no_build_frontend
-    )
-    if not selected_frontend.joinpath("index.html").is_file():
-        raise SystemExit(
-            "The Study interface is missing. Reinstall Study or build the frontend."
-        )
+    if not settings.frontend_public.joinpath("index.html").is_file():
+        raise SystemExit("The Study interface is missing. Reinstall Study.")
 
     host = "127.0.0.1" if local_mode else settings.server_host
     url = f"http://127.0.0.1:{settings.port}"

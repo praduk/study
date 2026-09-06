@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f5ed5ff94db64ea098c2e0afee55ebc9",
+  "title": "Axiom of Choice",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eaab7a34c8ad45b79f9aac44f5561f2b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eaab7a34c8ad45b79f9aac44f5561f2b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.914173+00:00",
+  "updated_at": "2026-09-04T12:51:39.914178+00:00"
+}

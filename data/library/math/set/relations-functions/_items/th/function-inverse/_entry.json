@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "da1cc48ae6214c0c9225c87cad6ecb66",
+  "title": "Bijections Are Exactly the Invertible Functions",
+  "rank": 30064771072,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "77014da1cbe0450f94ca947bef3af60f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.77014da1cbe0450f94ca947bef3af60f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7bfc7197a23e451f9de2f088baedad00",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.7bfc7197a23e451f9de2f088baedad00.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.336639+00:00",
+  "updated_at": "2026-09-04T12:51:39.341854+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cf92c3b046ed4c5d891c4707e0701484",
+  "title": "Arithmetic of Infinite Cardinals",
+  "rank": 21474836480,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d346243f371e4f8f8c025f64c46b8667",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d346243f371e4f8f8c025f64c46b8667.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6d0c65ceb1c0480092f9797bed7f9af8",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.6d0c65ceb1c0480092f9797bed7f9af8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.140557+00:00",
+  "updated_at": "2026-09-04T12:51:40.154079+00:00"
+}

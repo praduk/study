@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b7a4c57788224c05b871841607b49bea",
+  "title": "Standard Functionally Complete Bases",
+  "rank": 30064771072,
+  "header": "Prerequisites: @math:prop:normal-forms:th:canonical-normal-forms and @math:prop:normal-forms:df:functional-completeness",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "96d9c7b7a1dd4873912bb6e03eae3f7d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.96d9c7b7a1dd4873912bb6e03eae3f7d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c7a42a0dcfc9477fae81f37a0a1be409",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.c7a42a0dcfc9477fae81f37a0a1be409.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.294082+00:00",
+  "updated_at": "2026-09-04T12:51:41.314060+00:00"
+}

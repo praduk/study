@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "822acaaff1b441e0b98bc4fa03bb8d57",
+  "title": "Signed-Valuation Derivation Lemma",
+  "rank": 8589934592,
+  "header": "Prerequisites: @math:prop:deduction:th:derived-classical-principles and @math:prop:semantics:df:satisfaction-truth-table",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c1deddaa06c74e568faf01856738318a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c1deddaa06c74e568faf01856738318a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1be61ede7c3b4c27a4dbce29f2dfcf90",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.1be61ede7c3b4c27a4dbce29f2dfcf90.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.135768+00:00",
+  "updated_at": "2026-09-04T12:51:42.159213+00:00"
+}

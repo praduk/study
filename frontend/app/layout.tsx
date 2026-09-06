@@ -1,21 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+/* oxlint-disable next/no-css-tags -- the shipped offline vendor stylesheet has a stable URL */
+
 export const metadata: Metadata = {
   title: 'Study — mathematical recall',
   description: 'A local-first library for learning and remembering mathematics.',
-  metadataBase: new URL('http://127.0.0.1:8765'),
-  openGraph: {
-    title: 'Study',
-    description: 'Learn deeply. Recall deliberately.',
-    images: [{ url: '/og.png', width: 1731, height: 909, alt: 'Study — Learn deeply. Recall deliberately.' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Study',
-    description: 'Learn deeply. Recall deliberately.',
-    images: ['/og.png'],
-  },
 };
 
 export default function RootLayout({
@@ -25,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="/vendor/excalidraw/index.css" />
+      </head>
       <body>{children}</body>
     </html>
   );

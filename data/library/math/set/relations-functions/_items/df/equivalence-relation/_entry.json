@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5691bab0a7c9441aa116aca49819f32f",
+  "title": "Equivalence Relations and Partitions",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "150327c1ff7348c3a4c280c0a91d292a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.150327c1ff7348c3a4c280c0a91d292a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.317118+00:00",
+  "updated_at": "2026-09-04T12:51:39.317122+00:00"
+}

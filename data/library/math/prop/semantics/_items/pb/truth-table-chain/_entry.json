@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "50b70bbcb3f5433d94c6ba5203c8a00b",
+  "title": "Classify a Conditional Chain by Truth Table",
+  "rank": 51539607552,
+  "header": "Prerequisites: @math:prop:semantics:df:valuation and @math:prop:semantics:df:semantic-status",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f94aaf7cc2574a718f0de5eb3f4c1b08",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f94aaf7cc2574a718f0de5eb3f4c1b08.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6b7f493084454a42a379bed1ddcf825e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6b7f493084454a42a379bed1ddcf825e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.011710+00:00",
+  "updated_at": "2026-09-04T12:51:41.031794+00:00"
+}

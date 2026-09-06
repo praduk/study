@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0a1dd2530f6449978927a7297c7fa734",
+  "title": "Syntactic Consistency and Completeness of a Theory",
+  "rank": 4294967296,
+  "header": "These are proof-theoretic notions; satisfiability is semantic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "432cd8fb2c77445ca80ecaf3c03c7e0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.432cd8fb2c77445ca80ecaf3c03c7e0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.125003+00:00",
+  "updated_at": "2026-09-04T12:51:44.125008+00:00"
+}

@@ -35,6 +35,14 @@ def _initialize_repository(root: Path) -> None:
     _git(root, "config", "user.email", "study-tests@example.invalid")
 
 
+def _v1_store(data_dir: Path) -> LibraryStore:
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "library.json").write_text(
+        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
+    )
+    return LibraryStore(data_dir)
+
+
 def test_content_paths_and_mathjax_macros_are_strictly_validated(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
     with pytest.raises(StoreError, match="inside"):
@@ -221,10 +229,10 @@ def test_folder_moves_keep_both_sibling_lists_contiguous(tmp_path: Path):
     assert [folder["order"] for folder in destination_node["children"]] == [0, 1]
 
 
-def test_delete_entry_removes_owned_files_but_preserves_shared_assets_and_history(
+def test_store_delete_removes_owned_files_and_leaves_review_cleanup_to_app_layer(
     tmp_path: Path,
 ):
-    store = LibraryStore(tmp_path / "data")
+    store = _v1_store(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     before = store.create_entry(folder["id"], "df", "Before", "before", "", "Before")
     target = store.create_entry(folder["id"], "th", "Target", "target", "", "Target")
@@ -740,12 +748,35 @@ def _export_fixture(store: LibraryStore) -> list[dict]:
             {"source": "a", "target": "b", "label": "$f$", "dashed": False, "double": False}
         ],
     }
-    (store.diagram_dir / f"{diagram_id}.commutative.json").write_text(json.dumps(diagram))
+    diagram_bytes = (json.dumps(diagram, ensure_ascii=False, indent=2) + "\n").encode()
     image = io.BytesIO()
     Image.new("RGB", (5, 4), "#b7d7f0").save(image, "PNG")
     image_bytes = image.getvalue()
     image_name = hashlib.sha256(image_bytes).hexdigest() + ".png"
-    (store.media_dir / image_name).write_bytes(image_bytes)
+    store.register_asset(
+        entry["id"],
+        {
+            "id": "image-asset",
+            "kind": "image",
+            "path": f"media/{image_name}",
+            "alt": "A small image",
+            "width": 37,
+            "invert_lightness": True,
+            "pixels": [5, 4],
+        },
+        {"path": image_bytes},
+    )
+    store.register_asset(
+        entry["id"],
+        {
+            "id": diagram_id,
+            "kind": "commutative",
+            "source": f"diagrams/{diagram_id}.commutative.json",
+            "alt": diagram["name"],
+            "width": diagram["width"],
+        },
+        {"source": diagram_bytes},
+    )
     content = (
         f"Inline math $\\alpha + \\beta$, braces $\\{{x\\}}$, subscript $x_1$, "
         f"macro $\\RR$, and price \\$5.\n\n"
@@ -759,8 +790,15 @@ def _export_fixture(store: LibraryStore) -> list[dict]:
     return store.ordered_entries()
 
 
-def test_export_embeds_image_width_and_renders_commutative_placeholders(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+@pytest.mark.parametrize("version", [1, 2])
+def test_export_embeds_image_width_and_renders_commutative_placeholders(
+    tmp_path: Path, version: int
+):
+    store = (
+        _v1_store(tmp_path / "data")
+        if version == 1
+        else LibraryStore(tmp_path / "data")
+    )
     entries = _export_fixture(store)
     document = build_export_html(store, entries, "Export test", True)
     assert "[[commutative:" not in document

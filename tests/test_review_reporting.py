@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import threading
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -47,12 +48,12 @@ def _grade(
     return graded.json()
 
 
-def test_read_only_stats_do_not_rewrite_equivalent_calibration_roundoff(tmp_path):
+def test_read_only_stats_do_not_persist_derived_calibration(tmp_path):
     store = LibraryStore(tmp_path / "data")
     review = ReviewEngine(store)
     review.queue()
     state = json.loads(review.state_path.read_text(encoding="utf-8"))
-    state["calibration"]["models"]["pooled"]["log_weights"][0] += 1e-14
+    assert "calibration" not in state
     state["updated_at"] = "preserve-this-value"
     review.state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
     before = review.state_path.read_bytes()
@@ -157,7 +158,7 @@ def test_calendar_api_reports_schedules_repeated_attempts_and_bayesian_diagnosti
     assert "weights" not in str(payload["calibration"])
 
 
-def test_calendar_omits_disabled_and_orphaned_schedules_unless_requested(
+def test_calendar_can_show_disabled_items_but_never_deleted_items(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
     current = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
@@ -179,16 +180,33 @@ def test_calendar_omits_disabled_and_orphaned_schedules_unless_requested(
             {"attempt": "Attempt", "confidence": 2, "elapsed_ms": 1_000, "overt": True},
         )
         review.grade(cards[entry["id"]]["id"], attempt["attempt_id"], 2)
+    pending = review.reveal(
+        cards[deleted_entry["id"]]["id"],
+        {"attempt": "Pending", "confidence": 2, "elapsed_ms": 500, "overt": True},
+    )
 
     store.update_folder(disabled_folder["id"], {"review_enabled": False})
     store.delete_entry(deleted_entry["id"])
+    cleanup = review.prune_to_current_library()
     start = current
     end = current + timedelta(days=10)
 
+    assert cleanup == {
+        "removed_cards": 1,
+        "removed_pending_attempts": 1,
+        "removed_log_records": 1,
+        "retained_log_records": 1,
+    }
+    state = review._read()
+    assert cards[deleted_entry["id"]]["id"] not in state["cards"]
+    assert pending["attempt_id"] not in state["pending_attempts"]
+    assert "calibration" not in state
+    assert review.validate_log()["processed_log_records"] == 1
+    assert deleted_entry["id"] not in review.log_path.read_text(encoding="utf-8")
     assert review.calendar(start=start, end=end)["events"] == []
     payload = review.calendar(start=start, end=end, include_inactive=True)
 
-    assert len(payload["events"]) == 2
+    assert len(payload["events"]) == 1
     by_entry = {event["entry_id"]: event for event in payload["events"]}
     disabled = by_entry[disabled_entry["id"]]
     assert disabled["title"] == "Disabled definition"
@@ -196,14 +214,372 @@ def test_calendar_omits_disabled_and_orphaned_schedules_unless_requested(
     assert disabled["review_enabled"] is False
     assert disabled["orphaned"] is False
     assert disabled["inactive_reason"] == "review-disabled"
-    deleted = by_entry[deleted_entry["id"]]
-    assert deleted["title"] is None
-    assert deleted["canonical_tag"] is None
-    assert deleted["active"] is False
-    assert deleted["review_enabled"] is False
-    assert deleted["orphaned"] is True
-    assert deleted["inactive_reason"] == "entry-missing"
-    assert payload["statistics"]["attempts"] == 2
+    assert deleted_entry["id"] not in by_entry
+    assert payload["statistics"]["attempts"] == 1
+
+
+def test_entry_delete_api_purges_review_state_and_log(settings_factory):
+    app = create_app(settings_factory(), local_mode=True)
+    folder = app.state.store.create_folder("Foundations", "foundations", None)
+    entry = app.state.store.create_entry(
+        folder["id"], "df", "Deleted definition", "deleted", "", "Content"
+    )
+
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        card = next(
+            card
+            for card in client.get("/api/review/queue").json()["cards"]
+            if card["entry_id"] == entry["id"]
+        )
+        _grade(client, card["id"], 2, elapsed_ms=1_000)
+        pending = client.post(
+            f"/api/review/{card['id']}/reveal",
+            json={
+                "attempt": "Pending",
+                "confidence": 2,
+                "elapsed_ms": 500,
+                "overt": True,
+            },
+            headers=LOCAL_HEADERS,
+        ).json()
+
+        deleted = client.delete(
+            f"/api/entries/{entry['id']}", headers=LOCAL_HEADERS
+        )
+
+    assert deleted.status_code == 200
+    assert deleted.json()["review_cleanup"] == {
+        "removed_cards": 1,
+        "removed_pending_attempts": 1,
+        "removed_log_records": 1,
+        "retained_log_records": 0,
+    }
+    state = app.state.review._read()
+    assert card["id"] not in state["cards"]
+    assert pending["attempt_id"] not in state["pending_attempts"]
+    assert "calibration" not in state
+    assert app.state.review.validate_log()["processed_log_records"] == 0
+    assert app.state.review.log_path.read_bytes() == b""
+
+
+def test_recursive_folder_delete_api_purges_subtree_review_history(settings_factory):
+    app = create_app(settings_factory(), local_mode=True)
+    parent = app.state.store.create_folder("Parent", "parent", None)
+    child = app.state.store.create_folder("Child", "child", parent["id"])
+    entries = [
+        app.state.store.create_entry(
+            folder_id, "df", title, tag, "", "Content"
+        )
+        for folder_id, title, tag in (
+            (parent["id"], "Parent definition", "parent-definition"),
+            (child["id"], "Child definition", "child-definition"),
+        )
+    ]
+
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        cards = {
+            card["entry_id"]: card
+            for card in client.get("/api/review/queue").json()["cards"]
+        }
+        for entry in entries:
+            _grade(client, cards[entry["id"]]["id"], 2, elapsed_ms=1_000)
+
+        deleted = client.delete(
+            f"/api/folders/{parent['id']}",
+            params={"recursive": "true"},
+            headers=LOCAL_HEADERS,
+        )
+
+    assert deleted.status_code == 200
+    assert deleted.json()["review_cleanup"] == {
+        "removed_cards": 2,
+        "removed_pending_attempts": 0,
+        "removed_log_records": 2,
+        "retained_log_records": 0,
+    }
+    assert app.state.review._read()["cards"] == {}
+    assert app.state.review.log_path.read_bytes() == b""
+
+
+def test_kind_change_purges_a_review_task_that_no_longer_exists(settings_factory):
+    app = create_app(settings_factory(), local_mode=True)
+    folder = app.state.store.create_folder("Foundations", "foundations", None)
+    entry = app.state.store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+
+    with TestClient(
+        app,
+        base_url="http://127.0.0.1",
+        client=("127.0.0.1", 50000),
+    ) as client:
+        card = next(
+            card
+            for card in client.get("/api/review/queue").json()["cards"]
+            if card["entry_id"] == entry["id"]
+        )
+        _grade(client, card["id"], 2, elapsed_ms=1_000)
+
+        changed = client.patch(
+            f"/api/entries/{entry['id']}",
+            json={"kind": "pb"},
+            headers=LOCAL_HEADERS,
+        )
+
+    assert changed.status_code == 200
+    assert changed.json()["review_modes"] == []
+    assert app.state.review._read()["cards"] == {}
+    assert app.state.review.log_path.read_bytes() == b""
+
+
+def test_review_cleanup_noop_preserves_files_byte_for_byte(tmp_path):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    entry = store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+    review = ReviewEngine(store)
+    card = next(card for card in review.queue() if card["entry_id"] == entry["id"])
+    attempt = review.reveal(
+        card["id"],
+        {"attempt": "Attempt", "confidence": 2, "elapsed_ms": 1_000, "overt": True},
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+    state_before = review.state_path.read_bytes()
+    log_before = review.log_path.read_bytes()
+
+    result = review.prune_to_current_library()
+
+    assert result == {
+        "removed_cards": 0,
+        "removed_pending_attempts": 0,
+        "removed_log_records": 0,
+        "retained_log_records": 1,
+    }
+    assert review.state_path.read_bytes() == state_before
+    assert review.log_path.read_bytes() == log_before
+
+
+def test_review_cleanup_rebuilds_bayesian_evidence_after_interleaved_deletion(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    clock = {"now": datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)}
+    monkeypatch.setattr(review_module, "_now", lambda: clock["now"])
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    deleted = store.create_entry(folder["id"], "df", "Deleted", "deleted", "", "A")
+    retained = store.create_entry(folder["id"], "df", "Retained", "retained", "", "B")
+    review = ReviewEngine(store)
+    cards = {card["entry_id"]: card["id"] for card in review.queue()}
+
+    def grade(card_id: str) -> None:
+        attempt = review.reveal(
+            card_id,
+            {
+                "attempt": "Attempt",
+                "confidence": 2,
+                "elapsed_ms": 1_000,
+                "overt": True,
+            },
+        )
+        review.grade(card_id, attempt["attempt_id"], 2)
+
+    grade(cards[deleted["id"]])
+    grade(cards[retained["id"]])
+    clock["now"] += timedelta(days=2)
+    grade(cards[deleted["id"]])
+    grade(cards[retained["id"]])
+    records_before = [
+        json.loads(line) for line in review.log_path.read_text(encoding="utf-8").splitlines()
+    ]
+    assert sum("calibration_observation" in record for record in records_before) == 2
+
+    store.delete_entry(deleted["id"])
+    cleanup = review.prune_to_current_library()
+
+    assert cleanup == {
+        "removed_cards": 1,
+        "removed_pending_attempts": 0,
+        "removed_log_records": 2,
+        "retained_log_records": 2,
+    }
+    retained_records = [
+        json.loads(line) for line in review.log_path.read_text(encoding="utf-8").splitlines()
+    ]
+    assert [record["card_id"] for record in retained_records] == [
+        cards[retained["id"]],
+        cards[retained["id"]],
+    ]
+    assert all("calibration_observation" not in record for record in retained_records)
+    assert all("calibration_event_version" not in record for record in retained_records)
+    state = review._read()
+    calibration = review._calibration_for_state(state)
+    assert "calibration" not in review._read()
+    assert calibration["models"]["pooled"]["observations"] == 1
+    assert calibration["models"]["pooled"]["observed_card_ids"] == [
+        cards[retained["id"]]
+    ]
+    assert calibration["forecast_evaluation"]["count"] == 0
+
+    restarted = ReviewEngine(store)
+    assert restarted.validate_log()["models"]["pooled"]["observations"] == 1
+    clock["now"] += timedelta(days=2)
+    review = restarted
+    grade(cards[retained["id"]])
+
+    final = ReviewEngine(store).validate_log()
+    assert final["models"]["pooled"]["observations"] == 2
+    assert final["forecast_evaluation"]["count"] == 1
+
+
+def test_app_startup_purges_review_data_after_a_direct_library_delete(
+    settings_factory,
+):
+    settings = settings_factory()
+    store = LibraryStore(settings.data_dir)
+    folder = store.create_folder("Foundations", "foundations", None)
+    entry = store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+    review = ReviewEngine(store)
+    card = next(card for card in review.queue() if card["entry_id"] == entry["id"])
+    attempt = review.reveal(
+        card["id"],
+        {"attempt": "Attempt", "confidence": 2, "elapsed_ms": 1_000, "overt": True},
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+    store.delete_entry(entry["id"])
+
+    app = create_app(settings, local_mode=True)
+
+    state = app.state.review._read()
+    assert card["id"] not in state["cards"]
+    assert "calibration" not in state
+    assert app.state.review.validate_log()["processed_log_records"] == 0
+    assert app.state.review.log_path.read_bytes() == b""
+
+
+def test_live_review_read_purges_data_after_a_direct_library_delete(tmp_path):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    entry = store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+    review = ReviewEngine(store)
+    card = next(card for card in review.queue() if card["entry_id"] == entry["id"])
+    attempt = review.reveal(
+        card["id"],
+        {"attempt": "Attempt", "confidence": 2, "elapsed_ms": 1_000, "overt": True},
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+    store.delete_entry(entry["id"])
+
+    assert review.queue() == []
+    state = review._read()
+    assert state["cards"] == {}
+    assert state["pending_attempts"] == {}
+    assert "calibration" not in state
+    assert review.validate_log()["processed_log_records"] == 0
+    assert review.log_path.read_bytes() == b""
+
+
+def test_concurrent_reveal_cannot_leave_pending_state_for_a_deleted_entry(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    entry = store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+    review = ReviewEngine(store)
+    card = next(card for card in review.queue() if card["entry_id"] == entry["id"])
+    reveal_inside_lock = threading.Event()
+    allow_reveal_to_finish = threading.Event()
+    deletion_started = threading.Event()
+    deletion_finished = threading.Event()
+    failures: list[Exception] = []
+    original_get_entry = store.get_entry
+
+    def paused_get_entry(entry_id: str):
+        value = original_get_entry(entry_id)
+        reveal_inside_lock.set()
+        if not allow_reveal_to_finish.wait(timeout=5):
+            raise RuntimeError("test timed out while holding the reveal lock")
+        return value
+
+    monkeypatch.setattr(store, "get_entry", paused_get_entry)
+
+    def reveal() -> None:
+        try:
+            review.reveal(
+                card["id"],
+                {
+                    "attempt": "Attempt",
+                    "confidence": 2,
+                    "elapsed_ms": 1_000,
+                    "overt": True,
+                },
+            )
+        except Exception as exc:  # noqa: BLE001  # pragma: no cover - surfaced below.
+            failures.append(exc)
+
+    def delete() -> None:
+        deletion_started.set()
+        try:
+            with store.mutation_lock:
+                store.delete_entry(entry["id"])
+                review.prune_to_current_library()
+        except Exception as exc:  # noqa: BLE001  # pragma: no cover - surfaced below.
+            failures.append(exc)
+        finally:
+            deletion_finished.set()
+
+    reveal_thread = threading.Thread(target=reveal)
+    delete_thread = threading.Thread(target=delete)
+    reveal_thread.start()
+    assert reveal_inside_lock.wait(timeout=5)
+    delete_thread.start()
+    assert deletion_started.wait(timeout=5)
+    assert not deletion_finished.is_set()
+    allow_reveal_to_finish.set()
+    reveal_thread.join(timeout=5)
+    delete_thread.join(timeout=5)
+
+    assert not reveal_thread.is_alive()
+    assert not delete_thread.is_alive()
+    assert failures == []
+    assert review._read()["pending_attempts"] == {}
+    assert review.queue() == []
+
+
+def test_interrupted_review_compaction_is_completed_from_the_compacted_log(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Foundations", "foundations", None)
+    entry = store.create_entry(folder["id"], "df", "Set", "set", "", "Content")
+    review = ReviewEngine(store)
+    card = next(card for card in review.queue() if card["entry_id"] == entry["id"])
+    attempt = review.reveal(
+        card["id"],
+        {"attempt": "Attempt", "confidence": 2, "elapsed_ms": 1_000, "overt": True},
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+    store.delete_entry(entry["id"])
+
+    def fail_state_write(_state):
+        raise OSError("simulated interrupted state write")
+
+    monkeypatch.setattr(review, "_write", fail_state_write)
+    with pytest.raises(OSError, match="simulated interrupted state write"):
+        review.prune_to_current_library()
+
+    assert review.log_path.read_bytes() == b""
+    assert card["id"] in json.loads(review.state_path.read_text())["cards"]
+
+    restarted = ReviewEngine(store)
+    cleanup = restarted.prune_to_current_library()
+    assert cleanup["removed_cards"] == 1
+    assert restarted._read()["cards"] == {}
+    assert restarted.log_path.read_bytes() == b""
 
 
 def test_calendar_reports_again_as_a_fixed_ten_minute_retry(

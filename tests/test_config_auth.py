@@ -19,6 +19,8 @@ def test_password_rotation_preserves_local_overrides_and_revokes_sessions(
     tmp_path: Path, monkeypatch
 ):
     monkeypatch.setattr(config_module, "ROOT", tmp_path)
+    (tmp_path / "study.py").write_text("", encoding="utf-8")
+    (tmp_path / "study_app").mkdir()
     config_path = tmp_path / "custom.toml"
     config_path.write_text(
         """[study]
@@ -78,6 +80,8 @@ keep = "this value"
 
 def test_data_directory_is_fixed_beside_study_launcher(tmp_path: Path, monkeypatch):
     monkeypatch.setattr(config_module, "ROOT", tmp_path)
+    (tmp_path / "study.py").write_text("", encoding="utf-8")
+    (tmp_path / "study_app").mkdir()
     config_path = tmp_path / "custom.toml"
     config_path.write_text("[study]\nport = 8765\n", encoding="utf-8")
 
@@ -91,16 +95,31 @@ def test_data_directory_is_fixed_beside_study_launcher(tmp_path: Path, monkeypat
         load_settings(config_path)
 
 
-def test_rich_frontend_is_an_explicit_boolean_opt_in(tmp_path: Path, monkeypatch):
-    monkeypatch.setattr(config_module, "ROOT", tmp_path)
-    config_path = tmp_path / "custom.toml"
-    config_path.write_text("[study]\nrich_frontend = true\n", encoding="utf-8")
+def test_explicit_application_root_controls_data_and_shipped_frontend(tmp_path: Path):
+    root = tmp_path / "checkout"
+    root.mkdir()
+    (root / "study.py").write_text("", encoding="utf-8")
+    (root / "study_app").mkdir()
+    config_path = root / "config.toml"
+    config_path.write_text("[study]\nport = 8765\n", encoding="utf-8")
 
-    assert load_settings(config_path).rich_frontend is True
+    settings = load_settings(config_path, application_root=root)
 
-    config_path.write_text('[study]\nrich_frontend = "yes"\n', encoding="utf-8")
-    with pytest.raises(TypeError, match="rich_frontend must be true or false"):
-        load_settings(config_path)
+    assert settings.root == root.resolve()
+    assert settings.data_dir == root.resolve() / "data"
+
+
+def test_settings_refuse_a_package_directory_that_is_not_a_checkout(
+    tmp_path: Path, monkeypatch
+):
+    package_parent = tmp_path / "site-packages"
+    package_parent.mkdir()
+    monkeypatch.setattr(config_module, "ROOT", package_parent)
+
+    with pytest.raises(ValueError, match="checkout containing study.py"):
+        load_settings()
+
+    assert not (package_parent / "data").exists()
 
 
 def test_same_session_generation_survives_store_restart(tmp_path: Path):

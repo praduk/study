@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "02642f549541492c81f961a8674a5bcb",
+  "title": "Cardinal Addition, Multiplication, and Exponentiation",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "92e495abe8564397bb4253b8465df8b4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.92e495abe8564397bb4253b8465df8b4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.103506+00:00",
+  "updated_at": "2026-09-04T12:51:40.103510+00:00"
+}

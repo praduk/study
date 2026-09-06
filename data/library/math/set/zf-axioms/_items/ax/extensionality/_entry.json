@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c57743c53c9146c99e050998b768c9ea",
+  "title": "Axiom of Extensionality",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7214bdaa0d5d401e9546aacb12f1d680",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7214bdaa0d5d401e9546aacb12f1d680.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.236737+00:00",
+  "updated_at": "2026-09-04T12:51:39.236740+00:00"
+}

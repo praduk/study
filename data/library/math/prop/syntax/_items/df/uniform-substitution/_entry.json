@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ce37bab3e1b94bb286c005f92c44f5d8",
+  "title": "Uniform Substitution",
+  "rank": 38654705664,
+  "header": "Prerequisite: @math:prop:syntax:th:structural-recursion",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c63978128f06445dabfc1eee57eca523",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c63978128f06445dabfc1eee57eca523.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.658624+00:00",
+  "updated_at": "2026-09-04T12:51:40.658631+00:00"
+}

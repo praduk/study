@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f2d615ad14204b32a21f12b6d22ba3e2",
+  "title": "Truth Lemma for the Henkin Model",
+  "rank": 47244640256,
+  "header": "Let $Δ$ be maximal consistent, deductively closed, and Henkin.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "23fcea2b346b499bb31a94aa8bbe8a69",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.23fcea2b346b499bb31a94aa8bbe8a69.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1e67a89673aa493baefbd61cbf62ffad",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.1e67a89673aa493baefbd61cbf62ffad.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.634959+00:00",
+  "updated_at": "2026-09-04T12:51:44.665151+00:00"
+}

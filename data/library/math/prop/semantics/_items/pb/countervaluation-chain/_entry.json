@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2aa86ec024594c168c94200a440ca95c",
+  "title": "Test an Argument with a Countervaluation",
+  "rank": 60129542144,
+  "header": "Prerequisite: @math:prop:semantics:df:semantic-consequence",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ba6f68298aa4fa5961372722f2261c9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ba6f68298aa4fa5961372722f2261c9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "67432de0ae6748b9aa2981e62c09d1d7",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.67432de0ae6748b9aa2981e62c09d1d7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.082889+00:00",
+  "updated_at": "2026-09-04T12:51:41.100062+00:00"
+}

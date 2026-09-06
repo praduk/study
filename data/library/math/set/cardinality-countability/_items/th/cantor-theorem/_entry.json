@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8bf62152ec0543dfbdd8837ed352dac7",
+  "title": "Cantor's Theorem",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "20e92c49e144482d893431892ef96f8b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.20e92c49e144482d893431892ef96f8b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bbf258d5a0034db2b4df0828982545ad",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.bbf258d5a0034db2b4df0828982545ad.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.488994+00:00",
+  "updated_at": "2026-09-04T12:51:39.497543+00:00"
+}

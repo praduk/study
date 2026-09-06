@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6ddb9e44de5241fdb7c5d309ff1c3d39",
+  "title": "Symbolize Nested Quantification",
+  "rank": 30064771072,
+  "header": "Domain: people and books. $S(x)$ means “$x$ is a student”; $B(y)$ means “$y$ is a book”; $R(x,y)$ means “$x$ read $y$”.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4454c05a61548858dd6e3b729d9ec1c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4454c05a61548858dd6e3b729d9ec1c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "280e32239c51400c87f0d58faeb3a796",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.280e32239c51400c87f0d58faeb3a796.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.756924+00:00",
+  "updated_at": "2026-09-04T12:51:42.780898+00:00"
+}

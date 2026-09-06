@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "89cdbb5eb420420d864882d1fe490b27",
+  "title": "Compactness Theorem",
+  "rank": 60129542144,
+  "header": "Semantic and consequence forms are both included.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bc3b3dfb6ceb4f85acee9766b18d7bdf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bc3b3dfb6ceb4f85acee9766b18d7bdf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "84ebfce725b94523aeef95f914c07657",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.84ebfce725b94523aeef95f914c07657.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.827702+00:00",
+  "updated_at": "2026-09-04T12:51:44.860410+00:00"
+}

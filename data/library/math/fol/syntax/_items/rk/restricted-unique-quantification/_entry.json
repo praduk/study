@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6246d1025e374f3989d51e2461f8e847",
+  "title": "Restricted and Unique Quantification",
+  "rank": 25769803776,
+  "header": "These are abbreviations inside ordinary first-order logic, not new quantifiers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aec01ca11d4b426faeb2023d87a11040",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aec01ca11d4b426faeb2023d87a11040.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.732601+00:00",
+  "updated_at": "2026-09-04T12:51:42.732608+00:00"
+}

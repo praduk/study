@@ -32,7 +32,6 @@ class Settings:
     max_upload_mb: int
     max_image_megapixels: int
     setup_nonce: str = ""
-    rich_frontend: bool = False
 
     @property
     def data_dir(self) -> Path:
@@ -40,18 +39,11 @@ class Settings:
         return self.root / "data"
 
     @property
-    def built_frontend(self) -> Path:
-        return self.root / "frontend" / "dist" / "client"
-
-    @property
-    def no_build_frontend(self) -> Path:
+    def frontend_public(self) -> Path:
+        """The complete, prebuilt frontend shipped inside the Python package."""
         packaged = Path(__file__).resolve().parent / "web"
         source_checkout = self.root / "study_app" / "web"
         return source_checkout if source_checkout.is_dir() else packaged
-
-    @property
-    def frontend_public(self) -> Path:
-        return self.root / "frontend" / "public"
 
     @property
     def session_generation(self) -> str:
@@ -101,8 +93,13 @@ def _exact_host(value: Any) -> str:
     return host.rstrip(".")
 
 
-def load_settings(config_path: Path | None = None) -> Settings:
-    path = (config_path or DEFAULT_CONFIG).resolve()
+def load_settings(
+    config_path: Path | None = None, *, application_root: Path | None = None
+) -> Settings:
+    root = (application_root or ROOT).resolve()
+    if not (root / "study.py").is_file() or not (root / "study_app").is_dir():
+        raise ValueError("Study application root must be a checkout containing study.py")
+    path = (config_path or root / "config.toml").resolve()
     values: dict[str, Any] = {
         "port": 8765,
         "server_host": "0.0.0.0",
@@ -113,7 +110,6 @@ def load_settings(config_path: Path | None = None) -> Settings:
         "max_upload_mb": 12,
         "max_image_megapixels": 32,
         "setup_nonce": "",
-        "rich_frontend": False,
     }
     configured_values = _read_toml(path)
     local_values = _read_toml(_local_config_for(path))
@@ -168,11 +164,8 @@ def load_settings(config_path: Path | None = None) -> Settings:
         raise TypeError("setup_nonce must be a string of at most 256 characters")
     if not isinstance(values["secure_cookie"], bool):
         raise TypeError("secure_cookie must be true or false")
-    if not isinstance(values["rich_frontend"], bool):
-        raise TypeError("rich_frontend must be true or false")
-
     return Settings(
-        root=ROOT,
+        root=root,
         port=port,
         server_host=server_host,
         allowed_hosts=allowed,
@@ -182,7 +175,6 @@ def load_settings(config_path: Path | None = None) -> Settings:
         max_upload_mb=max_upload_mb,
         max_image_megapixels=max_image_megapixels,
         setup_nonce=values["setup_nonce"],
-        rich_frontend=values["rich_frontend"],
     )
 
 
@@ -209,7 +201,6 @@ def write_password_override(password_hash: str, config_path: Path | None = None)
         "max_upload_mb",
         "max_image_megapixels",
         "setup_nonce",
-        "rich_frontend",
     }
     if "study" in document:
         study = document["study"]

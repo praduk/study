@@ -18,7 +18,7 @@ import type {
 import type { FileId, OrderedExcalidrawElement } from '@excalidraw/excalidraw/element/types';
 
 const LazyExcalidraw = lazy(async () => {
-  window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/';
+  window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/fonts/';
   const excalidraw = await import('@excalidraw/excalidraw');
   return { default: excalidraw.Excalidraw };
 });

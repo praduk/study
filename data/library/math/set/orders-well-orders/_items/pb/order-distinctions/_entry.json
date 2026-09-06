@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5789ccbbb3fe4b6c95f3a52a8f52ce8d",
+  "title": "Distinguishing Order Notions",
+  "rank": 21474836480,
+  "header": "",
+  "problem_family": "order-examples",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5e2a6821942f49aa9c02e42373314c1f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5e2a6821942f49aa9c02e42373314c1f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "64faca1c36804d9e904c0df8d32e8546",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.64faca1c36804d9e904c0df8d32e8546.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.618597+00:00",
+  "updated_at": "2026-09-04T12:51:39.637449+00:00"
+}

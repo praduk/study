@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ab05ca018393465aa292f894cc552ff7",
+  "title": "Standard Countable Sets",
+  "rank": 21474836480,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f9e096db82de42af9421e69519cd121e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f9e096db82de42af9421e69519cd121e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e74d1246dc3e403fab13879f9c5bccc1",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.e74d1246dc3e403fab13879f9c5bccc1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.471611+00:00",
+  "updated_at": "2026-09-04T12:51:39.481340+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "565fee5637f84b548ae23c0fd47fd766",
+  "title": "Skolemize a Mixed Quantifier Prefix",
+  "rank": 38654705664,
+  "header": "Keep every dependency on preceding universal variables.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4fe91c6fa0134f12b83aa668038e5da4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4fe91c6fa0134f12b83aa668038e5da4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d977685d86ac43cab9a642fce9e4efa8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d977685d86ac43cab9a642fce9e4efa8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.844288+00:00",
+  "updated_at": "2026-09-04T12:51:45.878638+00:00"
+}

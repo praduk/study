@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "88509cb558b64e8a9e369786c44204ee",
+  "title": "Inductive Sets and the Set of Natural Numbers",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ecd5be3eb8774151813890b2132d39c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ecd5be3eb8774151813890b2132d39c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.356443+00:00",
+  "updated_at": "2026-09-04T12:51:39.356445+00:00"
+}

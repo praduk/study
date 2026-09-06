@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "458b765921a34feaa29f8db15109a3c9",
+  "title": "Literals, Terms, Clauses, Minterms, and Maxterms",
+  "rank": 4294967296,
+  "header": "Prerequisites: @math:prop:syntax:df:formula and @math:prop:semantics:df:satisfaction-truth-table",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b599df87df3b4c76a946702de1356cf2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b599df87df3b4c76a946702de1356cf2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.150645+00:00",
+  "updated_at": "2026-09-04T12:51:41.150648+00:00"
+}

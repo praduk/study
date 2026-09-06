@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e5e6265ebb734c578945e31a3c681a04",
+  "title": "Zorn's Lemma Is Equivalent to Choice",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd6638e362d4483697e4615f0fcf85ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd6638e362d4483697e4615f0fcf85ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a18a9a59583741bdb6aa6b71fb87f390",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a18a9a59583741bdb6aa6b71fb87f390.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.970688+00:00",
+  "updated_at": "2026-09-04T12:51:39.983447+00:00"
+}

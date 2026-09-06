@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fc3779549783457ba30d619888559ca6",
+  "title": "Diagnose Invalid Quantifier Inferences",
+  "rank": 47244640256,
+  "header": "For each invalid inference, identify the violated rule or give a countermodel.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a16813782564749b082340b6c9b51b3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a16813782564749b082340b6c9b51b3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b5abbea1d04140ac8278d5afdc120688",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b5abbea1d04140ac8278d5afdc120688.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.952202+00:00",
+  "updated_at": "2026-09-04T12:51:43.981093+00:00"
+}

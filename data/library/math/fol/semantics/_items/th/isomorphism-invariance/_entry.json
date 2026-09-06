@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "04aab8296cd3409f925cbc98dae1902a",
+  "title": "Isomorphism Invariance",
+  "rank": 34359738368,
+  "header": "Isomorphisms preserve all symbols of the signature.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48f6acd1053141b19dc946cc754452cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48f6acd1053141b19dc946cc754452cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "49b028d4a40340688344f72bfaafd1e9",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.49b028d4a40340688344f72bfaafd1e9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.324955+00:00",
+  "updated_at": "2026-09-04T12:51:43.355849+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7eb26b4e82714525a5287adf9837d672",
+  "title": "Prevent Variable Capture",
+  "rank": 51539607552,
+  "header": "Substitute the term $y$ for the free variable $x$.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a8277fd2afd342a19339266821fcf03d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a8277fd2afd342a19339266821fcf03d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e64b991fe8864090b6e676b38a7c8ea2",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e64b991fe8864090b6e676b38a7c8ea2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.984087+00:00",
+  "updated_at": "2026-09-04T12:51:43.009432+00:00"
+}

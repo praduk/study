@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c7644f39fba6419896a70c52625b8568",
+  "title": "Fundamental Truth-Functional Equivalences",
+  "rank": 47244640256,
+  "header": "Prerequisites: @math:prop:semantics:df:logical-equivalence and @math:prop:semantics:df:valuation",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "efd38f34300e4c049f75859122b915e2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.efd38f34300e4c049f75859122b915e2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "03393cab24b4496b8e73e8bcaaf45ce1",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.03393cab24b4496b8e73e8bcaaf45ce1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.976473+00:00",
+  "updated_at": "2026-09-04T12:51:40.995034+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0f290a1070fb4b60b77a0b8a7355bd75",
+  "title": "Decidability of Propositional Logic",
+  "rank": 30064771072,
+  "header": "Prerequisites: @math:prop:semantics:th:locality and @math:prop:metatheory:th:finite-completeness",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "94a66101503f449bba3a6dd54b7885a2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.94a66101503f449bba3a6dd54b7885a2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2b2493ef7475465487f2014931370b78",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.2b2493ef7475465487f2014931370b78.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.366412+00:00",
+  "updated_at": "2026-09-04T12:51:42.389318+00:00"
+}

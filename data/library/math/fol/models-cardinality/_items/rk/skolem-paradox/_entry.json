@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a8c3673a23374f61b42bb7abb2f6727b",
+  "title": "Skolem's Paradox and External Countability",
+  "rank": 30064771072,
+  "header": "The apparent paradox dissolves by distinguishing internal from external viewpoints.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7fdebd2b743e44eb861022877e442a7d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7fdebd2b743e44eb861022877e442a7d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.288274+00:00",
+  "updated_at": "2026-09-04T12:51:45.288278+00:00"
+}

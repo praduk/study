@@ -181,10 +181,10 @@ export interface ReviewCalendarModelEstimate {
 export interface ReviewCalendarEvent {
   card_id: string;
   entry_id: string;
-  folder_id: string | null;
-  title: string | null;
-  canonical_tag: string | null;
-  kind: EntryKind | null;
+  folder_id: string;
+  title: string;
+  canonical_tag: string;
+  kind: EntryKind;
   mode: ReviewMode;
   mode_label: string;
   due_at: string;

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5b9ae51a679748ac9a6b4e059fc1d914",
+  "title": "Maximal Henkin Theory Lemma",
+  "rank": 34359738368,
+  "header": "Combine Henkinization with maximal-consistent extension.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3fe921a4651f449b80036733d63a9d14",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3fe921a4651f449b80036733d63a9d14.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eece808f16b346c9a300b352aa4dba6d",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.eece808f16b346c9a300b352aa4dba6d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.478834+00:00",
+  "updated_at": "2026-09-04T12:51:44.511070+00:00"
+}

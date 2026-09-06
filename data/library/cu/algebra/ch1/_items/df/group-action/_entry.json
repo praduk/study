@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "57d6f2ab1c8847519f8932749dce0c11",
+  "title": "Group Action",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "32c3a8ef2f304a0b8bb29b5856f8913b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.32c3a8ef2f304a0b8bb29b5856f8913b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T14:11:48.620700+00:00",
+  "updated_at": "2026-09-05T20:30:32.274905+00:00"
+}

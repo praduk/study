@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aa011bde882c491cb3e667e4217026f3",
+  "title": "Every Well-Order Has a Unique Ordinal Type",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f25ed19fc9f2475c9657291e94f07566",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f25ed19fc9f2475c9657291e94f07566.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "65a0b1a1f7f34cb08f3d3e85dc2f8dc6",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.65a0b1a1f7f34cb08f3d3e85dc2f8dc6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.741630+00:00",
+  "updated_at": "2026-09-04T12:51:39.751591+00:00"
+}

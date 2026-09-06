@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5ed6b30d7f2b4c29ae614078fc402172",
+  "title": "Axiom Schema of Replacement",
+  "rank": 34359738368,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93ccbd1fdfca400f8182eb9bbbfb6ef1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93ccbd1fdfca400f8182eb9bbbfb6ef1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.262068+00:00",
+  "updated_at": "2026-09-04T12:51:39.262070+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a98ede67edc74252a287a1288d1d3724",
+  "title": "Henkin Extension Lemma",
+  "rank": 30064771072,
+  "header": "For any set-sized language and consistent theory; uses fresh constants and well-ordering.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "84811bee033546f1a2ecc08ee0724448",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.84811bee033546f1a2ecc08ee0724448.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2a0cbc7ed134305961ed5e738bda485",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a2a0cbc7ed134305961ed5e738bda485.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.419267+00:00",
+  "updated_at": "2026-09-04T12:51:44.449467+00:00"
+}

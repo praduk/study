@@ -99,6 +99,9 @@ function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, in
               />
             );
           },
+          table({ node: _node, children, ...props }) {
+            return <div className="table-scroll"><table {...props}>{children}</table></div>;
+          },
           span(props) {
             const activate = onOpenEntry
               ? (target: StudyReferenceTarget) =>

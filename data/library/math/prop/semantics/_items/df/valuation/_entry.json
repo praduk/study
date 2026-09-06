@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1bece2252e6842f8b0040ee38febdc08",
+  "title": "Valuation and Recursive Evaluation",
+  "rank": 4294967296,
+  "header": "Prerequisites: @math:prop:syntax:df:propositional-language and @math:prop:syntax:th:structural-recursion",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e084ffdeaac94a47867a107c51aa13a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e084ffdeaac94a47867a107c51aa13a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.734682+00:00",
+  "updated_at": "2026-09-04T12:51:40.734685+00:00"
+}

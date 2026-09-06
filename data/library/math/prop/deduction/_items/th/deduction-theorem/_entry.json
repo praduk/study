@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6431085d875441cc80b715c6a664d79f",
+  "title": "Natural-Deduction Deduction Theorem",
+  "rank": 21474836480,
+  "header": "Prerequisites: @math:prop:deduction:th:weakening and @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "96d88454c927485fbdfe01cb3fa27018",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.96d88454c927485fbdfe01cb3fa27018.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3edc432e3fb54869a1d5430c14addb60",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.3edc432e3fb54869a1d5430c14addb60.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.690333+00:00",
+  "updated_at": "2026-09-04T12:51:41.713779+00:00"
+}

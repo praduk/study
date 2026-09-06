@@ -42,10 +42,11 @@ Read `README.md`, `docs/SEARCH.md`, `docs/LEARNING_SCIENCE.md`, and
 - `frontend/app/` and `frontend/components/`: responsive UI, editor, reader, and review flow.
 - `frontend/scripts/copy-vendor.mjs`: offline MathJax and Excalidraw asset generation.
 - `data/library.json`: v1 aggregate metadata or the tiny v2 storage marker.
-- `data/library/`: v2 folder/entry sidecars and colocated Markdown.
+- `data/library/`: v2 folder/entry sidecars, colocated Markdown, and per-entry `assets/` directories.
 - `data/macros.json`: global LaTeX macros.
 - `data/content/`: v1 Markdown formulations, proofs, and solutions.
-- `data/media/`, `data/diagrams/`, and `data/excalidraw/`: media and editable diagram sources.
+- `data/media/` and `data/diagrams/`: legacy v1 assets; `data/excalidraw/`: the shared diagram
+  library and templates.
 - `data/review.json` and `data/review-log.jsonl`: review state and history.
 
 ## Before changing mathematical content
@@ -93,7 +94,8 @@ deleted directly after confirmation; deleting a non-empty folder must use the ex
 path and identify the entire affected subtree. Commit metadata before cleaning up files so a failed
 unlink can leave only an inert orphan, never a live record pointing at a missing file. Do not remove
 a media or diagram file while any surviving asset record or Markdown content still references it.
-Historical review state and the append-only review log are retained when authored content is deleted.
+Confirmed content deletion also removes schedules, pending attempts, and review-log records for the
+deleted entries. Normal grading appends to the log; deletion is the deliberate compaction exception.
 
 ### Folders
 
@@ -196,9 +198,9 @@ Review tasks are fixed, not author-selectable:
 - Problems use `solve` when a main solution exists and remain out of review until then.
 
 The store derives `review_modes`; never hand-author a different list. `problem_family` and
-`confusable_with` are free-form metadata today; the scheduler does not interpret them. Historical
-state for removed modes may remain in `review.json` or the append-only log, but it must not re-enter
-the queue or be silently reclassified.
+`confusable_with` are free-form metadata today; the scheduler does not interpret them. When a mode
+ceases to exist, its schedules, pending attempts, and log records are purged rather than silently
+reclassified.
 
 Do not hand-edit `data/review.json` or `data/review-log.jsonl` as part of a content correction. Card
 IDs are `<entry-id>::<mode>`; changing an entry ID or mode can orphan historical state.
@@ -289,7 +291,7 @@ queue order, folder inheritance, attempt/reveal gating, formula boundaries, and 
 For any content change:
 
 1. Run `python study.py --check-data`, which parses the active v1/v2 library and
-   `data/macros.json` without migrating it.
+   `data/macros.json` without changing either file.
 2. Confirm every folder, entry, variant, supplement, and asset reference resolves under `data/`.
 3. Confirm sibling slug uniqueness, per-folder/per-kind entry tag uniqueness, acyclic parents, one
    main per formulation/supplement group, and unique required subtags.
@@ -315,6 +317,7 @@ separate local-mode and server-mode checks; do not weaken loopback, password, Ho
 cookie, or path-containment protections.
 
 Before finishing, inspect `git diff` and `git status`, preserve unrelated changes, and run
-`git diff --check`. Do not commit, push, pull, delete user content, rewrite review history, or perform
-a destructive Git operation unless the user explicitly requested it. Report exactly which files
-changed, which checks ran, and which risks or uncertainties remain.
+`git diff --check`. Do not commit, push, pull, delete user content, compact review history outside a
+confirmed content deletion, or perform a destructive Git operation unless the user explicitly
+requested it. Report exactly which files changed, which checks ran, and which risks or uncertainties
+remain.

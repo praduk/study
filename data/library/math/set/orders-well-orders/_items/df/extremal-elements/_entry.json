@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b5e3f182846846bd8593faa1abadb739",
+  "title": "Least, Minimal, Maximal, and Greatest Elements",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "665d586bfcf2452e924f9a779b4a1e06",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.665d586bfcf2452e924f9a779b4a1e06.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.578996+00:00",
+  "updated_at": "2026-09-04T12:51:39.579003+00:00"
+}

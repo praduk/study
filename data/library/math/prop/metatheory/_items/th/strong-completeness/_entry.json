@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0a551a7e7c7f44deb40621758f9e482f",
+  "title": "Strong Completeness of Natural Deduction",
+  "rank": 21474836480,
+  "header": "Prerequisites: @math:prop:metatheory:th:finite-completeness, @math:prop:metatheory:th:semantic-compactness, @math:prop:deduction:th:natural-deduction-soundness, and @math:prop:deduction:th:weakening",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e7dc4d3aeba44e0498290ac5e2f38f0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e7dc4d3aeba44e0498290ac5e2f38f0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21a4c414ec4b4021b451ee78cee031c0",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.21a4c414ec4b4021b451ee78cee031c0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.274125+00:00",
+  "updated_at": "2026-09-04T12:51:42.297196+00:00"
+}

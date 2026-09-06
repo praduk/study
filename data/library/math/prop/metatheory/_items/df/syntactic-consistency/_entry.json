@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "abd49013c1054e2f80659bc810f780bb",
+  "title": "Syntactic Consistency",
+  "rank": 4294967296,
+  "header": "Prerequisite: @math:prop:deduction:df:derivability",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8bd95942e06a416e9b82bf0b3758e8ea",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8bd95942e06a416e9b82bf0b3758e8ea.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.113675+00:00",
+  "updated_at": "2026-09-04T12:51:42.113680+00:00"
+}

@@ -43,6 +43,8 @@
     "bijectto": "\\hookrightarrow\\mathrel{\\mspace{-15mu}}\\rightarrow",
     "true": "\\top",
     "false": "\\bot",
+    "llbracket": "\\mathopen{⟦}",
+    "rrbracket": "\\mathclose{⟧}",
     "spanvs": "\\operatorname{span}",
     "tensor": "\\otimes",
     "bmat": [
@@ -148,5 +150,5 @@
     "WStab": "\\operatorname{WStab}",
     "Orb": "\\operatorname{Orb}"
   },
-  "updated_at": "2026-09-04T14:30:20.240736+00:00"
+  "updated_at": "2026-09-06T03:42:28+00:00"
 }

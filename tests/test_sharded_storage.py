@@ -1,19 +1,39 @@
 from __future__ import annotations
 
+import hashlib
+import io
 import json
 import os
 import shutil
 import subprocess
-import sys
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import pytest
+from PIL import Image
 
 from study_app.git_ops import GitRepository
 from study_app.store import SEARCH_STALENESS_SECONDS, LibraryStore, StoreError
+
+
+def _png_bytes(width: int = 4, height: int = 3) -> bytes:
+    output = io.BytesIO()
+    Image.new("RGB", (width, height), "#638b7d").save(output, "PNG")
+    return output.getvalue()
+
+
+def _image_asset(image: bytes, asset_id: str = "image-asset") -> dict:
+    filename = f"{hashlib.sha256(image).hexdigest()}.png"
+    return {
+        "id": asset_id,
+        "kind": "image",
+        "path": f"media/{filename}",
+        "alt": "A diagram preview",
+        "width": 70,
+        "invert_lightness": False,
+        "pixels": [4, 3],
+    }
 
 
 def _git(directory: Path, *args: str) -> str:
@@ -23,35 +43,6 @@ def _git(directory: Path, *args: str) -> str:
         capture_output=True,
         text=True,
     ).stdout.strip()
-
-
-def _v1_store(data_dir: Path) -> LibraryStore:
-    data_dir.mkdir(parents=True, exist_ok=True)
-    (data_dir / "library.json").write_text(
-        '{"version": 1, "folders": [], "entries": []}\n', encoding="utf-8"
-    )
-    return LibraryStore(data_dir)
-
-
-def _library_with_variants(root: Path) -> tuple[LibraryStore, dict, dict, dict]:
-    store = _v1_store(root / "data")
-    mathematics = store.create_folder("Mathematics", "math", None)
-    algebra = store.create_folder("Algebra", "algebra", mathematics["id"])
-    theorem = store.create_entry(
-        algebra["id"], "th", "Orbit theorem", "orbit", "Assume a group action.", "Statement"
-    )
-    theorem = store.add_formulation(
-        theorem["id"],
-        {"label": "Action form", "subtag": "action", "content": "Alternative", "main": False},
-    )
-    theorem = store.add_supplement(
-        theorem["id"],
-        {"kind": "pf", "label": "Main proof", "content": "Proof", "main": True},
-    )
-    definition = store.create_entry(
-        algebra["id"], "df", "Group", "group", "", "Definition", index=0
-    )
-    return store, mathematics, algebra, {"theorem": theorem, "definition": definition}
 
 
 def test_fresh_data_root_initializes_directly_as_v2(tmp_path: Path):
@@ -65,335 +56,23 @@ def test_fresh_data_root_initializes_directly_as_v2(tmp_path: Path):
     assert store.get_entry(entry["id"])["formulations"][0]["content"] == "Body\n"
 
 
-def test_v1_to_v2_migration_is_lossless_explicit_and_round_trips(tmp_path: Path):
-    store, mathematics, algebra, values = _library_with_variants(tmp_path)
-    theorem = values["theorem"]
-    definition = values["definition"]
-    review_path = store.data_dir / "review.json"
-    review_path.write_text('{"version": 1, "cards": {}, "pending_attempts": {}}\n')
-    review_before = review_path.read_bytes()
-
-    result = store.migrate_to_v2()
-
-    assert result == {"version": 2, "folders": 2, "entries": 2, "markdown_files": 4}
-    assert json.loads(store.library_path.read_text()) == {"version": 2, "root": "library"}
-    assert not store.legacy_content_dir.exists()
-    assert review_path.read_bytes() == review_before
-    assert store.check_data() == {
-        "version": 2,
-        "folders": 2,
-        "entries": 2,
-        "markdown_files": 4,
-    }
-
-    entry_dir = store.library_dir / "math" / "algebra" / "_items" / "th" / "orbit"
-    assert json.loads((store.library_dir / "_library.json").read_text()) == {"version": 1}
-    assert (store.library_dir / "math" / "_folder.json").is_file()
-    assert (store.library_dir / "math" / "algebra" / "_folder.json").is_file()
-    assert (entry_dir / "_entry.json").is_file()
-    assert len(list(entry_dir.glob("formulation.*.md"))) == 2
-    assert len(list(entry_dir.glob("proof.*.md"))) == 1
-
-    reopened = LibraryStore(store.data_dir)
-    migrated = reopened.get_entry(theorem["id"])
-    assert migrated["folder_id"] == algebra["id"]
-    assert migrated["canonical_tag"] == "math:algebra:th:orbit"
-    assert [item["content"] for item in migrated["formulations"]] == [
-        "Statement\n",
-        "Alternative\n",
-    ]
-    assert migrated["supplements"][0]["content"] == "Proof\n"
-    assert [entry["id"] for entry in reopened.snapshot()["tree"][0]["children"][0]["entries"]] == [
-        definition["id"],
-        theorem["id"],
-    ]
-    assert reopened.snapshot()["folders"][0]["id"] == mathematics["id"]
-    with pytest.raises(StoreError, match="already uses version 2"):
-        reopened.migrate_to_v2()
-
-
-def test_empty_v2_library_has_a_tracked_root_sentinel(tmp_path: Path):
-    store = _v1_store(tmp_path / "data")
-
-    assert store.migrate_to_v2()["entries"] == 0
-    assert (store.library_dir / "_library.json").is_file()
-    assert LibraryStore(store.data_dir).check_data() == {
-        "version": 2,
-        "folders": 0,
-        "entries": 0,
-        "markdown_files": 0,
-    }
-
-
-def test_migration_preserves_effective_order_from_noncontiguous_v1_values(tmp_path: Path):
-    store, _mathematics, algebra, values = _library_with_variants(tmp_path)
-    library = json.loads(store.library_path.read_text())
-    for entry in library["entries"]:
-        entry["order"] = 20 if entry["id"] == values["theorem"]["id"] else 10
-    store.library_path.write_text(json.dumps(library), encoding="utf-8")
-
-    before = [entry["id"] for entry in store.snapshot()["tree"][0]["children"][0]["entries"]]
-    store.migrate_to_v2()
-    after = [entry["id"] for entry in store.snapshot()["tree"][0]["children"][0]["entries"]]
-
-    assert before == after
-    assert store.get_entry(values["theorem"]["id"])["folder_id"] == algebra["id"]
-
-
-def test_migration_preserves_source_list_order_when_v1_order_values_tie(tmp_path: Path):
-    store = _v1_store(tmp_path / "data")
+def test_data_check_rejects_non_utf8_markdown(tmp_path: Path):
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
-    zulu = store.create_entry(folder["id"], "df", "Zulu", "zulu", "", "Zulu")
-    alpha = store.create_entry(folder["id"], "df", "Alpha", "alpha", "", "Alpha")
-    library = json.loads(store.library_path.read_text())
-    for entry in library["entries"]:
-        entry["order"] = 0
-    store.library_path.write_text(json.dumps(library), encoding="utf-8")
-
-    before = [entry["id"] for entry in store.ordered_entries()]
-    store.migrate_to_v2()
-    after = [entry["id"] for entry in store.ordered_entries()]
-
-    assert before == [zulu["id"], alpha["id"]]
-    assert after == before
-
-
-def test_v1_to_v2_migration_restores_v1_after_post_cutover_failure(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-):
-    store, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    theorem_id = values["theorem"]["id"]
-    original_library = store.library_path.read_bytes()
-    original_content = {
-        path.relative_to(store.data_dir): path.read_bytes()
-        for path in store.legacy_content_dir.rglob("*.md")
-    }
-    original_read = store._read
-    read_count = 0
-
-    def fail_after_cutover():
-        nonlocal read_count
-        read_count += 1
-        if read_count == 3:
-            raise StoreError("injected post-cutover validation failure")
-        return original_read()
-
-    monkeypatch.setattr(store, "_read", fail_after_cutover)
-    with pytest.raises(StoreError, match="injected post-cutover"):
-        store.migrate_to_v2()
-
-    monkeypatch.setattr(store, "_read", original_read)
-    assert store.library_path.read_bytes() == original_library
-    assert not store.library_dir.exists()
-    assert {
-        path.relative_to(store.data_dir): path.read_bytes()
-        for path in store.legacy_content_dir.rglob("*.md")
-    } == original_content
-    assert store.get_entry(theorem_id)["id"] == theorem_id
-
-
-@pytest.mark.parametrize("interrupted_source", ["library", "content"])
-def test_migration_recovers_when_rename_completes_before_base_exception(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-    interrupted_source: str,
-):
-    store, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    theorem_id = values["theorem"]["id"]
-    original_library = store.library_path.read_bytes()
-    original_content = {
-        path.relative_to(store.data_dir): path.read_bytes()
-        for path in store.legacy_content_dir.rglob("*.md")
-    }
-    selected = (
-        store.library_path
-        if interrupted_source == "library"
-        else store.legacy_content_dir
-    )
-    original_replace = os.replace
-    interrupted = False
-
-    def interrupt_after_replace(source, destination):
-        nonlocal interrupted
-        original_replace(source, destination)
-        if not interrupted and Path(source) == selected:
-            interrupted = True
-            raise KeyboardInterrupt
-
-    monkeypatch.setattr(os, "replace", interrupt_after_replace)
-    with pytest.raises(KeyboardInterrupt):
-        store.migrate_to_v2()
-
-    monkeypatch.setattr(os, "replace", original_replace)
-    assert interrupted
-    assert store.library_path.read_bytes() == original_library
-    assert {
-        path.relative_to(store.data_dir): path.read_bytes()
-        for path in store.legacy_content_dir.rglob("*.md")
-    } == original_content
-    reopened = LibraryStore(store.data_dir)
-    assert reopened.format_version == 1
-    assert reopened.get_entry(theorem_id)["id"] == theorem_id
-
-
-def test_migration_never_removes_an_independently_created_v2_target(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-):
-    store, _mathematics, _algebra, _values = _library_with_variants(tmp_path)
-    original_builder = store._build_v2_tree
-
-    def create_competing_target(library: dict, destination: Path):
-        original_builder(library, destination)
-        store.library_dir.mkdir()
-        (store.library_dir / "external.txt").write_text("external", encoding="utf-8")
-
-    monkeypatch.setattr(store, "_build_v2_tree", create_competing_target)
-    with pytest.raises(StoreError, match="storage migration failed"):
-        store.migrate_to_v2()
-
-    assert (store.library_dir / "external.txt").read_text(encoding="utf-8") == "external"
-    assert store.format_version == 1
-
-
-def test_migration_refuses_unknown_metadata_and_unreferenced_content(tmp_path: Path):
-    unknown_store = _v1_store(tmp_path / "unknown" / "data")
-    unknown_library = json.loads(unknown_store.library_path.read_text())
-    unknown_library["owner_note"] = "must not be discarded"
-    unknown_store.library_path.write_text(json.dumps(unknown_library), encoding="utf-8")
-    with pytest.raises(StoreError, match="unknown field: owner_note"):
-        unknown_store.migrate_to_v2()
-
-    orphan_store = _v1_store(tmp_path / "orphan" / "data")
-    orphan = orphan_store.legacy_content_dir / "orphan" / "notes.md"
-    orphan.parent.mkdir()
-    orphan.write_text("must not be discarded", encoding="utf-8")
-    with pytest.raises(StoreError, match="unreferenced"):
-        orphan_store.migrate_to_v2()
-    assert orphan.read_text(encoding="utf-8") == "must not be discarded"
-
-
-def test_migration_freezes_and_restores_a_file_added_during_staging(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-):
-    store, _mathematics, _algebra, _values = _library_with_variants(tmp_path)
-    original_builder = store._build_v2_tree
-    late = store.legacy_content_dir / "late.md"
-
-    def add_late_file(library: dict, destination: Path):
-        original_builder(library, destination)
-        late.write_text("must survive", encoding="utf-8")
-
-    monkeypatch.setattr(store, "_build_v2_tree", add_late_file)
-    with pytest.raises(StoreError, match="unreferenced"):
-        store.migrate_to_v2()
-
-    assert store.format_version == 1
-    assert late.read_text(encoding="utf-8") == "must survive"
-    assert not store.library_dir.exists()
-
-
-def test_startup_recovers_v1_after_process_exit_during_migration_cutover(tmp_path: Path):
-    store, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    theorem_id = values["theorem"]["id"]
-    script = """
-import os
-import sys
-from pathlib import Path
-
-from study_app.store import LibraryStore
-
-store = LibraryStore(Path(sys.argv[1]))
-original_replace = os.replace
-
-def crash_after_content_freeze(source, destination):
-    original_replace(source, destination)
-    if Path(source) == store.legacy_content_dir and Path(destination).name == "content":
-        os._exit(79)
-
-os.replace = crash_after_content_freeze
-store.migrate_to_v2()
-"""
-
-    crashed = subprocess.run(
-        [sys.executable, "-c", script, str(store.data_dir)],
-        cwd=Path(__file__).parents[1],
-        check=False,
-    )
-
-    assert crashed.returncode == 79
-    recovered = LibraryStore(store.data_dir)
-    assert recovered.format_version == 1
-    assert recovered.get_entry(theorem_id)["id"] == theorem_id
-    assert not (store.runtime_dir / "library-migration-journal.tmp").exists()
-
-
-def test_migration_fails_closed_when_legacy_tree_cannot_be_scanned(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-):
-    store, _mathematics, _algebra, _values = _library_with_variants(tmp_path)
-    original_scandir = os.scandir
-    failed = False
-
-    def fail_once(path):
-        nonlocal failed
-        if not failed and Path(path) == store.legacy_content_dir:
-            failed = True
-            raise PermissionError("injected scan failure")
-        return original_scandir(path)
-
-    monkeypatch.setattr(os, "scandir", fail_once)
-    with pytest.raises(StoreError, match="inspect all legacy content"):
-        store.migrate_to_v2()
-
-    assert store.format_version == 1
-
-
-def test_migration_fails_closed_when_staged_tree_cannot_be_synced(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-):
-    store, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    original_scandir = os.scandir
-    failed = False
-
-    def fail_staging_scan(path):
-        nonlocal failed
-        if isinstance(path, int):
-            return original_scandir(path)
-        candidate = Path(path)
-        if not failed and candidate.name.startswith("library-migration-"):
-            failed = True
-            raise PermissionError("injected staging scan failure")
-        return original_scandir(path)
-
-    monkeypatch.setattr(os, "scandir", fail_staging_scan)
-    with pytest.raises(StoreError, match="storage migration failed"):
-        store.migrate_to_v2()
-
-    assert failed
-    assert store.format_version == 1
-    assert store.get_entry(values["theorem"]["id"])["id"] == values["theorem"]["id"]
-
-
-def test_data_check_and_migration_reject_non_utf8_markdown(tmp_path: Path):
-    store, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    entry = store.get_entry(values["theorem"]["id"])
+    entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
     source = store.data_dir / entry["formulations"][0]["file"]
     source.write_bytes(b"\xff\xfe")
 
     with pytest.raises(StoreError, match="unreadable"):
         store.check_data()
-    with pytest.raises(StoreError, match="UTF-8"):
-        store.migrate_to_v2()
 
 
 def test_v2_crud_moves_paths_but_preserves_stable_ids_and_sparse_peer_metadata(tmp_path: Path):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     source = store.create_folder("Source", "source", None)
     destination = store.create_folder("Destination", "destination", None)
     first = store.create_entry(source["id"], "df", "First", "first", "", "First")
     last = store.create_entry(source["id"], "df", "Last", "last", "", "Last")
-    store.migrate_to_v2()
-
     first_metadata = next(store.library_dir.rglob("first/_entry.json"))
     last_metadata = next(store.library_dir.rglob("last/_entry.json"))
     first_before = first_metadata.read_bytes()
@@ -422,13 +101,268 @@ def test_v2_crud_moves_paths_but_preserves_stable_ids_and_sparse_peer_metadata(t
     assert store.check_data()["entries"] == 2
 
 
+def test_v2_assets_are_colocated_and_follow_entry_moves_and_deletion(tmp_path: Path):
+    store = LibraryStore(tmp_path / "data")
+    source = store.create_folder("Source", "source", None)
+    destination = store.create_folder("Destination", "destination", None)
+    entry = store.create_entry(source["id"], "df", "Diagram", "diagram", "", "Body")
+    image = _png_bytes()
+    image_asset = _image_asset(image)
+    excalidraw_id = "b" * 32
+    excalidraw = {
+        "type": "excalidraw",
+        "version": 2,
+        "elements": [],
+    }
+    commutative_id = "c" * 32
+    commutative = {
+        "version": 1,
+        "name": "Commutative diagram",
+        "width": 76,
+        "nodes": [{"id": "a", "label": "$A$", "row": 0, "column": 0}],
+        "arrows": [],
+    }
+    store.register_asset(entry["id"], image_asset, {"path": image})
+    store.register_asset(
+        entry["id"],
+        {
+            "id": excalidraw_id,
+            "kind": "excalidraw",
+            "source": f"diagrams/{excalidraw_id}.excalidraw",
+            "path": image_asset["path"],
+            "alt": "Drawing",
+            "width": 76,
+            "invert_lightness": True,
+            "pixels": [4, 3],
+        },
+        {
+            "path": image,
+            "source": (json.dumps(excalidraw, indent=2) + "\n").encode(),
+        },
+    )
+    store.register_asset(
+        entry["id"],
+        {
+            "id": commutative_id,
+            "kind": "commutative",
+            "source": f"diagrams/{commutative_id}.commutative.json",
+            "alt": "Commutative diagram",
+            "width": 76,
+        },
+        {"source": (json.dumps(commutative, indent=2) + "\n").encode()},
+    )
+
+    entry_dir = next(store.library_dir.rglob("diagram/_entry.json")).parent
+    sidecar = json.loads((entry_dir / "_entry.json").read_text())
+    assert {
+        asset.get("path") for asset in sidecar["assets"] if asset.get("path")
+    } == {f"assets/{Path(image_asset['path']).name}"}
+    assert {
+        asset.get("source") for asset in sidecar["assets"] if asset.get("source")
+    } == {
+        f"assets/{excalidraw_id}.excalidraw",
+        f"assets/{commutative_id}.commutative.json",
+    }
+    assert sorted(path.name for path in (entry_dir / "assets").iterdir()) == sorted(
+        [
+            Path(image_asset["path"]).name,
+            f"{excalidraw_id}.excalidraw",
+            f"{commutative_id}.commutative.json",
+        ]
+    )
+    assert list(store.media_dir.iterdir()) == []
+    assert list(store.diagram_dir.iterdir()) == []
+
+    store.move_item("entry", entry["id"], destination["id"], 0)
+    store.update_folder(destination["id"], {"slug": "target"})
+    store.update_entry(entry["id"], {"kind": "rk", "tag": "moved-diagram"})
+    moved_dir = store.library_dir / "target" / "_items" / "rk" / "moved-diagram"
+    assert (moved_dir / "assets" / Path(image_asset["path"]).name).read_bytes() == image
+    assert store.resolve_media_file(Path(image_asset["path"]).name).parent == (
+        moved_dir / "assets"
+    )
+    assert store.resolve_excalidraw_file(f"{excalidraw_id}.excalidraw").parent == (
+        moved_dir / "assets"
+    )
+    assert store.resolve_commutative_file(
+        f"{commutative_id}.commutative.json"
+    ).parent == (moved_dir / "assets")
+    reopened = LibraryStore(store.data_dir)
+    assert reopened.get_entry(entry["id"])["assets"][0]["path"] == image_asset["path"]
+
+    deletion = reopened.delete_entry(entry["id"])
+    assert deletion["deleted_file_count"] == 4
+    assert not moved_dir.exists()
+    assert reopened.resolve_media_file(Path(image_asset["path"]).name) is None
+
+
+def test_v2_reads_and_preserves_explicit_legacy_global_asset_records(tmp_path: Path):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Source", "source", None)
+    entry = store.create_entry(folder["id"], "df", "Legacy", "legacy", "", "Body")
+    image = _png_bytes()
+    image_name = f"{'a' * 64}.png"
+    excalidraw_id = "b" * 32
+    commutative_id = "c" * 32
+    store.media_dir.mkdir(parents=True, exist_ok=True)
+    (store.media_dir / image_name).write_bytes(image)
+    store.diagram_dir.mkdir(parents=True, exist_ok=True)
+    (store.diagram_dir / f"{excalidraw_id}.excalidraw").write_text(
+        json.dumps({"type": "excalidraw", "version": 2, "elements": []})
+    )
+    (store.diagram_dir / f"{commutative_id}.commutative.json").write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "name": "Legacy commutative diagram",
+                "width": 76,
+                "nodes": [{"id": "a", "label": "$A$", "row": 0, "column": 0}],
+                "arrows": [],
+            }
+        )
+    )
+    entry_dir = next(store.library_dir.rglob("legacy/_entry.json")).parent
+    sidecar_path = entry_dir / "_entry.json"
+    sidecar = json.loads(sidecar_path.read_text())
+    sidecar["assets"] = [
+        {
+            "id": "legacy-image",
+            "kind": "image",
+            "path": f"media/{image_name}",
+            "alt": "Legacy image",
+            "width": 70,
+            "invert_lightness": False,
+            "pixels": [4, 3],
+        },
+        {
+            "id": excalidraw_id,
+            "kind": "excalidraw",
+            "source": f"diagrams/{excalidraw_id}.excalidraw",
+            "path": f"media/{image_name}",
+            "alt": "Legacy drawing",
+            "width": 76,
+            "invert_lightness": True,
+            "pixels": [4, 3],
+        },
+        {
+            "id": commutative_id,
+            "kind": "commutative",
+            "source": f"diagrams/{commutative_id}.commutative.json",
+            "alt": "Legacy commutative diagram",
+            "width": 76,
+        },
+    ]
+    sidecar_path.write_text(json.dumps(sidecar, indent=2) + "\n")
+
+    reopened = LibraryStore(store.data_dir)
+    assert reopened.resolve_media_file(image_name) == store.media_dir / image_name
+    assert reopened.resolve_excalidraw_file(
+        f"{excalidraw_id}.excalidraw"
+    ) == store.diagram_dir / f"{excalidraw_id}.excalidraw"
+    assert reopened.resolve_commutative_file(
+        f"{commutative_id}.commutative.json"
+    ) == store.diagram_dir / f"{commutative_id}.commutative.json"
+
+    reopened.update_entry(entry["id"], {"title": "Still legacy"})
+    rewritten = json.loads(sidecar_path.read_text())
+    assert rewritten["assets"] == sidecar["assets"]
+    assert not (entry_dir / "assets").exists()
+
+
+def test_v2_asset_registration_rolls_back_without_a_live_orphan(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
+    image = _png_bytes()
+    asset = _image_asset(image)
+    original_writer = store._write_json_if_changed
+
+    def fail_asset_sidecar(path: Path, value: dict):
+        if path.name == "_entry.json" and value.get("assets"):
+            raise StoreError("injected asset sidecar failure")
+        return original_writer(path, value)
+
+    monkeypatch.setattr(store, "_write_json_if_changed", fail_asset_sidecar)
+    with pytest.raises(StoreError, match="injected asset sidecar failure"):
+        store.register_asset(entry["id"], asset, {"path": image})
+
+    reopened = LibraryStore(store.data_dir)
+    entry_dir = next(reopened.library_dir.rglob("group/_entry.json")).parent
+    assert reopened.get_entry(entry["id"])["assets"] == []
+    assert not (entry_dir / "assets").exists()
+    assert not (store.runtime_dir / "library-write-journal.tmp").exists()
+
+
+def test_v2_deletion_rejects_a_surviving_markdown_asset_reference_until_copied(
+    tmp_path: Path,
+):
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Topology", "topology", None)
+    owner = store.create_entry(folder["id"], "df", "Owner", "owner", "", "Owner")
+    survivor = store.create_entry(
+        folder["id"], "df", "Survivor", "survivor", "", "Survivor"
+    )
+    image = _png_bytes()
+    asset = _image_asset(image)
+    store.register_asset(owner["id"], asset, {"path": image})
+    survivor_variant = survivor["formulations"][0]
+    store.write_variant_content(
+        survivor["id"],
+        survivor_variant["id"],
+        f"Keep ![shared](/media/{Path(asset['path']).name}).",
+    )
+
+    with pytest.raises(StoreError, match="surviving Markdown references"):
+        store.delete_entry(owner["id"])
+    assert store.get_entry(owner["id"])["id"] == owner["id"]
+
+    store.register_asset(
+        survivor["id"], _image_asset(image, "surviving-copy"), {"path": image}
+    )
+    owner_asset_path = store.resolve_media_file(Path(asset["path"]).name)
+    assert owner_asset_path is not None
+    store.delete_entry(owner["id"])
+    surviving_path = store.resolve_media_file(Path(asset["path"]).name)
+    assert surviving_path is not None and surviving_path != owner_asset_path
+    assert surviving_path.read_bytes() == image
+
+
+def test_v2_rejects_orphan_traversing_and_content_mismatched_assets(tmp_path: Path):
+    mismatched = LibraryStore(tmp_path / "mismatched" / "data")
+    folder = mismatched.create_folder("Algebra", "algebra", None)
+    entry = mismatched.create_entry(folder["id"], "df", "Group", "group", "", "Body")
+    image = _png_bytes()
+    bad_asset = _image_asset(image)
+    bad_asset["path"] = f"media/{'a' * 64}.png"
+    with pytest.raises(StoreError, match="content hash"):
+        mismatched.register_asset(entry["id"], bad_asset, {"path": image})
+
+    orphaned = LibraryStore(tmp_path / "orphaned" / "data")
+    folder = orphaned.create_folder("Algebra", "algebra", None)
+    entry = orphaned.create_entry(folder["id"], "df", "Group", "group", "", "Body")
+    asset = _image_asset(image)
+    orphaned.register_asset(entry["id"], asset, {"path": image})
+    entry_dir = next(orphaned.library_dir.rglob("group/_entry.json")).parent
+    (entry_dir / "assets" / "orphan.txt").write_text("orphan")
+    with pytest.raises(StoreError, match="unrecognized asset"):
+        LibraryStore(orphaned.data_dir).snapshot()
+    (entry_dir / "assets" / "orphan.txt").unlink()
+    sidecar_path = entry_dir / "_entry.json"
+    sidecar = json.loads(sidecar_path.read_text())
+    sidecar["assets"][0]["path"] = "assets/../escape.png"
+    sidecar_path.write_text(json.dumps(sidecar))
+    with pytest.raises(StoreError, match="invalid colocated asset path"):
+        LibraryStore(orphaned.data_dir).snapshot()
+
+
 def test_v2_multi_path_write_rolls_back_after_metadata_failure(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Old", "old", None)
     entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
-    store.migrate_to_v2()
     old_entry = store.library_dir / "old" / "_items" / "df" / "group" / "_entry.json"
     original_writer = store._write_json_if_changed
 
@@ -544,40 +478,6 @@ def test_v2_deep_path_escape_preserves_full_namespace_and_supports_moves(tmp_pat
     assert (store.library_dir / folders[-1]["slug"] / "_folder.json").is_file()
 
 
-def test_migration_serializes_a_second_store_writer(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
-    migrating, _mathematics, _algebra, values = _library_with_variants(tmp_path)
-    writer = LibraryStore(migrating.data_dir)
-    entered_build = threading.Event()
-    release_build = threading.Event()
-    original_builder = migrating._build_v2_tree
-
-    def paused_builder(library: dict, destination: Path):
-        entered_build.set()
-        assert release_build.wait(timeout=5)
-        return original_builder(library, destination)
-
-    monkeypatch.setattr(migrating, "_build_v2_tree", paused_builder)
-    def write():
-        entry = writer.get_entry(values["theorem"]["id"])
-        writer.write_variant_content(
-            entry["id"], entry["formulations"][0]["id"], "new-from-writer"
-        )
-
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        migration_future = executor.submit(migrating.migrate_to_v2)
-        assert entered_build.wait(timeout=5)
-        writer_future = executor.submit(write)
-        time.sleep(0.05)
-        assert not writer_future.done()
-        release_build.set()
-        migration_future.result(timeout=5)
-        writer_future.result(timeout=5)
-
-    assert LibraryStore(migrating.data_dir).get_entry(values["theorem"]["id"])[
-        "formulations"
-    ][0]["content"] == "new-from-writer\n"
-
-
 def test_interprocess_lock_releases_thread_guard_after_base_exception(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ):
@@ -630,10 +530,9 @@ def test_store_rejects_symlinked_runtime_without_writing_outside_data(tmp_path: 
     ],
 )
 def test_v2_tree_corruption_is_rejected(tmp_path: Path, corruption: str):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
-    store.migrate_to_v2()
     entry_dir = next(store.library_dir.rglob("group/_entry.json")).parent
 
     if corruption == "missing-root":
@@ -654,10 +553,9 @@ def test_v2_tree_corruption_is_rejected(tmp_path: Path, corruption: str):
 
 
 def test_v2_rejects_symlinks_in_the_authored_tree(tmp_path: Path):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
-    store.migrate_to_v2()
     target = store.library_dir / "algebra" / "unexpected"
     try:
         target.symlink_to(store.library_dir / "algebra", target_is_directory=True)
@@ -668,12 +566,11 @@ def test_v2_rejects_symlinks_in_the_authored_tree(tmp_path: Path):
 
 
 def test_v2_direct_markdown_and_path_edits_refresh_search(tmp_path: Path):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Analysis", "analysis", None)
     entry = store.create_entry(
         folder["id"], "df", "Continuity", "continuity", "", "old-body-token"
     )
-    store.migrate_to_v2()
     assert store.search("old-body-token")
     initial_builds = store.search_index_stats()["builds"]
 
@@ -692,10 +589,9 @@ def test_v2_direct_markdown_and_path_edits_refresh_search(tmp_path: Path):
 def test_v2_search_retries_when_sidecar_changes_during_index_build(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ):
-    store = _v1_store(tmp_path / "data")
+    store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Analysis", "analysis", None)
     store.create_entry(folder["id"], "df", "Old unique title", "continuity", "", "Body")
-    store.migrate_to_v2()
     metadata_path = next(store.library_dir.rglob("continuity/_entry.json"))
     original_reader = store._read_indexed_content
     injected = False
@@ -720,11 +616,10 @@ def test_v2_entry_edit_has_a_local_git_diff(tmp_path: Path):
     _git(root, "init", "-b", "main")
     _git(root, "config", "user.name", "Study Tests")
     _git(root, "config", "user.email", "study-tests@example.invalid")
-    store = _v1_store(root / "data")
+    store = LibraryStore(root / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     first = store.create_entry(folder["id"], "df", "First", "first", "", "First")
     second = store.create_entry(folder["id"], "df", "Second", "second", "", "Second")
-    store.migrate_to_v2()
     _git(root, "add", ".")
     _git(root, "commit", "-m", "v2 library")
 
@@ -735,7 +630,32 @@ def test_v2_entry_edit_has_a_local_git_diff(tmp_path: Path):
     assert second["id"]
 
 
-def test_candidate_pull_accepts_and_validates_a_v2_transition(tmp_path: Path):
+def test_v2_asset_addition_has_only_an_entry_local_git_diff(tmp_path: Path):
+    root = tmp_path / "repository"
+    root.mkdir()
+    _git(root, "init", "-b", "main")
+    _git(root, "config", "user.name", "Study Tests")
+    _git(root, "config", "user.email", "study-tests@example.invalid")
+    store = LibraryStore(root / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
+    _git(root, "add", ".")
+    _git(root, "commit", "-m", "v2 library")
+
+    image = _png_bytes()
+    asset = _image_asset(image)
+    store.register_asset(entry["id"], asset, {"path": image})
+    changed = _git(root, "status", "--short").splitlines()
+
+    prefix = "data/library/algebra/_items/df/group/"
+    assert [line.lstrip() for line in changed] == [
+        f"M {prefix}_entry.json",
+        f"?? {prefix}assets/",
+    ]
+    assert list(store.media_dir.iterdir()) == []
+
+
+def test_candidate_pull_accepts_and_validates_a_v2_update(tmp_path: Path):
     remote = tmp_path / "remote.git"
     subprocess.run(["git", "init", "--bare", str(remote)], check=True, capture_output=True)
     local = tmp_path / "local"
@@ -744,11 +664,11 @@ def test_candidate_pull_accepts_and_validates_a_v2_transition(tmp_path: Path):
     _git(local, "config", "user.name", "Study Tests")
     _git(local, "config", "user.email", "study-tests@example.invalid")
     (local / ".gitignore").write_text("data/runtime/*.tmp\n", encoding="utf-8")
-    local_store = _v1_store(local / "data")
+    local_store = LibraryStore(local / "data")
     folder = local_store.create_folder("Algebra", "algebra", None)
     entry = local_store.create_entry(folder["id"], "df", "Group", "group", "", "Body")
     _git(local, "add", ".")
-    _git(local, "commit", "-m", "version 1")
+    _git(local, "commit", "-m", "initial library")
     _git(local, "remote", "add", "origin", str(remote))
     _git(local, "push", "-u", "origin", "main")
 
@@ -760,9 +680,13 @@ def test_candidate_pull_accepts_and_validates_a_v2_transition(tmp_path: Path):
     )
     _git(other, "config", "user.name", "Study Tests")
     _git(other, "config", "user.email", "study-tests@example.invalid")
-    LibraryStore(other / "data").migrate_to_v2()
+    other_store = LibraryStore(other / "data")
+    other_entry = other_store.get_entry(entry["id"])
+    other_store.write_variant_content(
+        entry["id"], other_entry["formulations"][0]["id"], "Updated body"
+    )
     _git(other, "add", "-A", "data")
-    _git(other, "commit", "-m", "version 2")
+    _git(other, "commit", "-m", "update body")
     _git(other, "push")
 
     def validate_candidate(candidate_data: Path) -> None:
@@ -775,4 +699,4 @@ def test_candidate_pull_accepts_and_validates_a_v2_transition(tmp_path: Path):
 
     reopened = LibraryStore(local / "data")
     assert reopened.format_version == 2
-    assert reopened.get_entry(entry["id"])["formulations"][0]["content"] == "Body\n"
+    assert reopened.get_entry(entry["id"])["formulations"][0]["content"] == "Updated body\n"

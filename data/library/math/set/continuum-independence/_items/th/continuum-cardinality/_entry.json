@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b8d3056239fd4737bb8d0246aedb7e53",
+  "title": "The Reals Have the Size of the Power Set of Omega",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ae6fdc2862243efacce4f2ba232fdbc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ae6fdc2862243efacce4f2ba232fdbc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4d7f2323e91b42dca873a223c78ad9fc",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.4d7f2323e91b42dca873a223c78ad9fc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.361597+00:00",
+  "updated_at": "2026-09-04T12:51:40.375463+00:00"
+}

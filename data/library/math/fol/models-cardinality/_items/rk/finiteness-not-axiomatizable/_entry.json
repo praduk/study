@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "84b2fabc90654e718647f70fcc7cc372",
+  "title": "Compactness and the Limits of Finiteness",
+  "rank": 25769803776,
+  "header": "First-order theories can force infinitude but cannot have exactly all finite structures as models.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e081728228c64e3a8b4be13b413ae7fd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e081728228c64e3a8b4be13b413ae7fd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.254651+00:00",
+  "updated_at": "2026-09-04T12:51:45.254657+00:00"
+}

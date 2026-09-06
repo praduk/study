@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ddc072e9c9924bc5835f7f2b00b9f210",
+  "title": "Soundness of Classical Natural Deduction",
+  "rank": 30064771072,
+  "header": "Prerequisites: @math:prop:semantics:df:semantic-consequence and @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44fd94093a874f53bedc9bd2024262cb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44fd94093a874f53bedc9bd2024262cb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "534e43d0ea6d41ee8a6bc68fc10719e6",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.534e43d0ea6d41ee8a6bc68fc10719e6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.774069+00:00",
+  "updated_at": "2026-09-04T12:51:41.794893+00:00"
+}

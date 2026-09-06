@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c8b682330b48431082a8695cee1aee3e",
+  "title": "König's Theorem",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6c9ba6ac39c84e07b4d1deed02cc18c8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6c9ba6ac39c84e07b4d1deed02cc18c8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ef1e1d67fc0347869dba7059bcc1c0d2",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.ef1e1d67fc0347869dba7059bcc1c0d2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.167275+00:00",
+  "updated_at": "2026-09-04T12:51:40.180148+00:00"
+}

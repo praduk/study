@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1c919d4b58a447368f5d954781a51c42",
+  "title": "Boundary of a First Set Theory Course",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d5479910c8134bba878a8e7e84195cbf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d5479910c8134bba878a8e7e84195cbf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.420543+00:00",
+  "updated_at": "2026-09-04T12:51:40.420549+00:00"
+}

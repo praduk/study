@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6ff2af65df4447079e3a8ca3fb338498",
+  "title": "Unions of Ordinals Are Suprema",
+  "rank": 30064771072,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "702ae467473d46f19564131c9ce7e733",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.702ae467473d46f19564131c9ce7e733.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "89714bf177ae4b0c9b623c2b6be618d8",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.89714bf177ae4b0c9b623c2b6be618d8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.761235+00:00",
+  "updated_at": "2026-09-04T12:51:39.771095+00:00"
+}

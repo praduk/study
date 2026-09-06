@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "66814e690c454fd5972eecefd8a46ffa",
+  "title": "Derive a Valid Quantifier Distribution",
+  "rank": 42949672960,
+  "header": "Assume $x$ is not free in $ψ$.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff8f7e0c39184ec299277f296aedee55",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff8f7e0c39184ec299277f296aedee55.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1972115276b5417f8229d6090342acb9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1972115276b5417f8229d6090342acb9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.895860+00:00",
+  "updated_at": "2026-09-04T12:51:43.924268+00:00"
+}

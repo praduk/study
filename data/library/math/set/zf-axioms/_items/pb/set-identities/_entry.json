@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "27430db3984b495ba5d517f3bba9f946",
+  "title": "Set Identities by Extensionality",
+  "rank": 51539607552,
+  "header": "",
+  "problem_family": "set-algebra",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5021854a8171495fa59240f4e967730a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5021854a8171495fa59240f4e967730a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1d5cbecf6bfe4e11aec81056ccf22f62",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1d5cbecf6bfe4e11aec81056ccf22f62.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.280704+00:00",
+  "updated_at": "2026-09-04T12:51:39.288536+00:00"
+}

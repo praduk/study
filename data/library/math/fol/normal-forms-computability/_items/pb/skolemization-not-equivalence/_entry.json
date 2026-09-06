@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "00f5dc6fd1ce42f9b4ceb032b6f0b0a5",
+  "title": "Skolemization Is Not Equivalence",
+  "rank": 25769803776,
+  "header": "Compare formulas in the expanded language.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ea6d8cc684944198fd696863a4425c4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ea6d8cc684944198fd696863a4425c4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "72cbce68f92845ab9da779860ad825ba",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.72cbce68f92845ab9da779860ad825ba.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.670263+00:00",
+  "updated_at": "2026-09-04T12:51:45.706359+00:00"
+}

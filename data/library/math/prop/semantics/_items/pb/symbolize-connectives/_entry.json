@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "98f2668f7121480aa7f360e57ea9231f",
+  "title": "Symbolize Scope-Sensitive English",
+  "rank": 55834574848,
+  "header": "Use $p$: Mira submits; $q$: Noor submits; $r$: the report is approved.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bafe2843afe14b88b53ac5b64b2d756a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bafe2843afe14b88b53ac5b64b2d756a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e2c48523ad2d47b984ffbe600ec7a968",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e2c48523ad2d47b984ffbe600ec7a968.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.049046+00:00",
+  "updated_at": "2026-09-04T12:51:41.066064+00:00"
+}

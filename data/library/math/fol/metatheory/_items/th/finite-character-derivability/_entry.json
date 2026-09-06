@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1cbe1e12bdbb403db9126468906b7394",
+  "title": "Finite Character of Derivability",
+  "rank": 17179869184,
+  "header": "Natural-deduction derivations are finite objects.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aab6a184c7df417896ed0bebc8a98b8f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aab6a184c7df417896ed0bebc8a98b8f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0e47a07d74d640ad972279fec885371f",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.0e47a07d74d640ad972279fec885371f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.270571+00:00",
+  "updated_at": "2026-09-04T12:51:44.300038+00:00"
+}

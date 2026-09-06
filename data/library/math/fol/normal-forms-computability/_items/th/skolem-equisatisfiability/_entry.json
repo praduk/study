@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4c86ec9814224bb9838c920ab94fe7af",
+  "title": "Skolem Equisatisfiability Theorem",
+  "rank": 21474836480,
+  "header": "The conclusion is equisatisfiability, not logical equivalence; the forward direction uses choice of witnesses.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f1cd07caa7f646fa8d8e069565862d38",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f1cd07caa7f646fa8d8e069565862d38.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "707b0c05fb7c43c3880cc1fbf6f972bf",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.707b0c05fb7c43c3880cc1fbf6f972bf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.603307+00:00",
+  "updated_at": "2026-09-04T12:51:45.637328+00:00"
+}

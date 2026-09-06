@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "815ec0bdf5d948c1b56b5d5b2b2c4f1a",
+  "title": "Axiom of Infinity",
+  "rank": 30064771072,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1f4dd48928e14ff6972364b6414f3f93",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1f4dd48928e14ff6972364b6414f3f93.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.258719+00:00",
+  "updated_at": "2026-09-04T12:51:39.258721+00:00"
+}

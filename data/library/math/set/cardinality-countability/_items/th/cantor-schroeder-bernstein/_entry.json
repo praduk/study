@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3469b37f4ea94a3b9bc32ff87f8f7d7e",
+  "title": "Cantor--Schröder--Bernstein Theorem",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bff58fd0d8de4244838a7af9be30cb4e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bff58fd0d8de4244838a7af9be30cb4e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "66a9ac52644a42edbc0158f207e7ed58",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.66a9ac52644a42edbc0158f207e7ed58.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.435511+00:00",
+  "updated_at": "2026-09-04T12:51:39.443402+00:00"
+}

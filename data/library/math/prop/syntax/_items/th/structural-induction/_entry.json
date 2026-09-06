@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b2a56000200943ac8790e305f6bdff34",
+  "title": "Structural Induction for Formulas",
+  "rank": 30064771072,
+  "header": "Prerequisite: @math:prop:syntax:th:unique-readability",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef2859c824d14c728f3c54b702aba495",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef2859c824d14c728f3c54b702aba495.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "08a7e08db9a44fbd8c62276e5bd4982b",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.08a7e08db9a44fbd8c62276e5bd4982b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.597043+00:00",
+  "updated_at": "2026-09-04T12:51:40.612846+00:00"
+}

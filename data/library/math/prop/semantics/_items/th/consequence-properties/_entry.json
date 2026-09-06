@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cf4072e605bc4a588796177ac360b1e2",
+  "title": "Structural Properties of Semantic Consequence",
+  "rank": 30064771072,
+  "header": "Prerequisite: @math:prop:semantics:df:semantic-consequence",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bfb05f5bb266427593e77d08b68e165d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bfb05f5bb266427593e77d08b68e165d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8ef954ae6cf84f87a1b1821a12fd8f5a",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.8ef954ae6cf84f87a1b1821a12fd8f5a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.845635+00:00",
+  "updated_at": "2026-09-04T12:51:40.861301+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ca60538900894a3d84272e9b7c38cc10",
+  "title": "Finite-Premise Completeness",
+  "rank": 12884901888,
+  "header": "Prerequisites: @math:prop:metatheory:th:signed-valuation-lemma, @math:prop:deduction:th:derived-classical-principles, and @math:prop:deduction:th:natural-deduction-soundness",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a5219961441244bcbeb6ae26ac987c8f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a5219961441244bcbeb6ae26ac987c8f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9adc070da3f349abbf477f353c87c26b",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.9adc070da3f349abbf477f353c87c26b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.181917+00:00",
+  "updated_at": "2026-09-04T12:51:42.205376+00:00"
+}

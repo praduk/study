@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8e86afa702c6486b92142bc8bc59ac4f",
+  "title": "Use Compactness to Color an Infinite Graph",
+  "rank": 38654705664,
+  "header": "Prerequisites: @math:prop:normal-forms:df:literal-clause-term and @math:prop:metatheory:th:semantic-compactness",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a56f39779384b75899de77b4c29b4be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a56f39779384b75899de77b4c29b4be.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "25f79609c39e4b83910b2961d13fac0b",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.25f79609c39e4b83910b2961d13fac0b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.458813+00:00",
+  "updated_at": "2026-09-04T12:51:42.484764+00:00"
+}

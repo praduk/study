@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5868c7b9bb2f4104b7e5abfe5edc37e3",
+  "title": "First-Order Structure",
+  "rank": 4294967296,
+  "header": "Domains are nonempty and every function symbol denotes a total function.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "855ccd0aed95405faecb0e454bf88183",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.855ccd0aed95405faecb0e454bf88183.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.084733+00:00",
+  "updated_at": "2026-09-04T12:51:43.084737+00:00"
+}

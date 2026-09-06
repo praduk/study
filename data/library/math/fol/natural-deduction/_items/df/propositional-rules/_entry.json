@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a22f87c2e06541319323f2364f22348e",
+  "title": "Propositional Natural-Deduction Rules",
+  "rank": 8589934592,
+  "header": "These rules act inside first-order derivations as well as propositional ones.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dbcfea101175465ca525e36bdc62bf97",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dbcfea101175465ca525e36bdc62bf97.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.616327+00:00",
+  "updated_at": "2026-09-04T12:51:43.616331+00:00"
+}

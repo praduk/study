@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "142edd3179b14c7aa42589babb77a820",
+  "title": "Variable Assignment and Term Value",
+  "rank": 8589934592,
+  "header": "Open terms and formulas require an assignment.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09c737902c49429ebc178bc7f04a4ed7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09c737902c49429ebc178bc7f04a4ed7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.109885+00:00",
+  "updated_at": "2026-09-04T12:51:43.109889+00:00"
+}

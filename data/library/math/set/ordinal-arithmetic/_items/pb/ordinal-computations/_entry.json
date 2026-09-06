@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "043b5bbb76184e14a2f4dffc8bddc12b",
+  "title": "Computing with Ordinal Recursion",
+  "rank": 21474836480,
+  "header": "",
+  "problem_family": "ordinal-arithmetic",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f5f5d052d75c4d8c853ce81dd57e23f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f5f5d052d75c4d8c853ce81dd57e23f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0cc16d0e61b146a2a69b1376efae53c8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0cc16d0e61b146a2a69b1376efae53c8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.861729+00:00",
+  "updated_at": "2026-09-04T12:51:39.883585+00:00"
+}

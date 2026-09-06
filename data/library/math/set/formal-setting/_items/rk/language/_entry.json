@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "830d4ac40da941958f2945e8f11b2e9a",
+  "title": "The Language of Set Theory",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ea9c9783acf4fb58a760fa658feb917",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ea9c9783acf4fb58a760fa658feb917.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.222803+00:00",
+  "updated_at": "2026-09-04T12:51:39.222805+00:00"
+}

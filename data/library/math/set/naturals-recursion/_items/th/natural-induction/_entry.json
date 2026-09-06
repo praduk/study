@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ac29a2b0161f42acbb2520d5e651be16",
+  "title": "Induction on the Natural Numbers",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ff45f9d653a4ab5b980a95ffa6c2d2a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ff45f9d653a4ab5b980a95ffa6c2d2a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bf644028ce2840b9b833ef9caed94814",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.bf644028ce2840b9b833ef9caed94814.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.372227+00:00",
+  "updated_at": "2026-09-04T12:51:39.378050+00:00"
+}

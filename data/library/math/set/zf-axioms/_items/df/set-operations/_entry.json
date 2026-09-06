@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ff8e9e907f564b418b73e7c29407b234",
+  "title": "Subsets and Boolean Set Operations",
+  "rank": 42949672960,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "25b8020c66e6430f9427cc1354fd80b1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.25b8020c66e6430f9427cc1354fd80b1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.269250+00:00",
+  "updated_at": "2026-09-04T12:51:39.269252+00:00"
+}

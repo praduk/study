@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "569759d6f7f54f5d874cbc537343e0e1",
+  "title": "Weakening",
+  "rank": 17179869184,
+  "header": "Prerequisite: @math:prop:deduction:df:derivability",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e113669542e14bea9d72c5e80807b8d5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e113669542e14bea9d72c5e80807b8d5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9414db74487e406da85cf2b4627fd6bc",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.9414db74487e406da85cf2b4627fd6bc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.650354+00:00",
+  "updated_at": "2026-09-04T12:51:41.670486+00:00"
+}

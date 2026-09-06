@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "772a4e5cc6024ace9f81f002e5fec584",
+  "title": "Equinumerosity and Cardinal Comparison",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3735d9a9ec784b8db9638875277adc22",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3735d9a9ec784b8db9638875277adc22.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.429507+00:00",
+  "updated_at": "2026-09-04T12:51:39.429509+00:00"
+}

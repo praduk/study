@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "62ebe93f75b846028e8ce2cabcf9a19a",
+  "title": "Derivation and Syntactic Consequence",
+  "rank": 4294967296,
+  "header": "Derivations are finite trees with explicitly discharged assumptions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "21c4bff9c7bf43d6937a2bb22f4c2358",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.21c4bff9c7bf43d6937a2bb22f4c2358.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.588669+00:00",
+  "updated_at": "2026-09-04T12:51:43.588675+00:00"
+}

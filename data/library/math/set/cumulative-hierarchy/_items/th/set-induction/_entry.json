@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4f9b822e53c84367b5616ce63c016910",
+  "title": "Foundation and Set Induction",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "df4a70a53761461ea147deb734c7388f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.df4a70a53761461ea147deb734c7388f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f6ee38c9dc9e4858adae9e169d9bf92f",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.f6ee38c9dc9e4858adae9e169d9bf92f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.217726+00:00",
+  "updated_at": "2026-09-04T12:51:40.230729+00:00"
+}

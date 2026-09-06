@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7d3dccac299a4a68a37826304333d30b",
+  "title": "There Is No Universal Set",
+  "rank": 47244640256,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b47e8c1df69a459e8fa96755f2ada50d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b47e8c1df69a459e8fa96755f2ada50d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8f1645420af349e6aad8bdbe72784d05",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.8f1645420af349e6aad8bdbe72784d05.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.272965+00:00",
+  "updated_at": "2026-09-04T12:51:39.277085+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3b8a8e458ada482caa848e76301b0428",
+  "title": "Object Language and Metalanguage",
+  "rank": 4294967296,
+  "header": "Keep formulas separate from statements about formulas.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f8c854d8eb204df58469a462796c7f4e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f8c854d8eb204df58469a462796c7f4e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.485339+00:00",
+  "updated_at": "2026-09-04T12:51:40.485346+00:00"
+}

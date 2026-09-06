@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a4521f0a46c648098e506fe2fb8f0d01",
+  "title": "Logical Equality Is Identity",
+  "rank": 38654705664,
+  "header": "This course uses first-order logic with built-in equality.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e2d02c7a70d14797babac75679639570",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e2d02c7a70d14797babac75679639570.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.384857+00:00",
+  "updated_at": "2026-09-04T12:51:43.384861+00:00"
+}

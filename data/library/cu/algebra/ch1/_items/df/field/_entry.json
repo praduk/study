@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0edb913ab5e54826b108b87a11eb8406",
+  "title": "Field",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dcfce0abdaf442b18cafbb66d49ce616",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dcfce0abdaf442b18cafbb66d49ce616.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T14:15:43.037280+00:00",
+  "updated_at": "2026-09-04T14:16:59.654133+00:00"
+}

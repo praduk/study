@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d4c2503f22e94fffbb9bd90ba29bf4e6",
+  "title": "Satisfiability and Semantic Status",
+  "rank": 12884901888,
+  "header": "Prerequisite: @math:prop:semantics:df:satisfaction-truth-table",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f5d6f995117a47bba24ed2eb4bd1a3d4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f5d6f995117a47bba24ed2eb4bd1a3d4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.766725+00:00",
+  "updated_at": "2026-09-04T12:51:40.766728+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "397892d9bb264a28971f480160f54966",
+  "title": "What Independence of CH Means",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "04617af4a00f4cfb93783a3764d1b694",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.04617af4a00f4cfb93783a3764d1b694.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.405012+00:00",
+  "updated_at": "2026-09-04T12:51:40.405019+00:00"
+}

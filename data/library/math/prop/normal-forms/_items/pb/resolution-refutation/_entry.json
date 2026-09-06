@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c17ef44a0629415b87f284dbd307df52",
+  "title": "Give a Resolution Refutation",
+  "rank": 55834574848,
+  "header": "Prerequisite: @math:prop:normal-forms:df:resolution",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a84c020ec03d4d10b54e1363a73a2731",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a84c020ec03d4d10b54e1363a73a2731.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1ce3df91d1544f6babf0316149270228",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1ce3df91d1544f6babf0316149270228.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.514336+00:00",
+  "updated_at": "2026-09-04T12:51:41.534772+00:00"
+}

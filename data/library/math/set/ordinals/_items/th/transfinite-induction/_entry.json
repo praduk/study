@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "88f07549d3224f3e80199ab1ff1c51e7",
+  "title": "Transfinite Induction",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cf5250d81f844c4782478ffc226fd781",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cf5250d81f844c4782478ffc226fd781.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a4221753dd444fbebc4b88e8d37f1858",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a4221753dd444fbebc4b88e8d37f1858.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.703080+00:00",
+  "updated_at": "2026-09-04T12:51:39.712949+00:00"
+}

@@ -3,8 +3,8 @@
 Study is a local-first web application for writing, organizing, reading, and reviewing
 mathematics. Its Python backend stores the library as Markdown and JSON under `data/`; the
 responsive web interface supplies local MathJax, editing, review, and review-calendar statistics.
-A richer optional interface adds Vim editing, Excalidraw, advanced image handling, resolved
-`@tag` links and previews, and PDF controls.
+The complete interface includes Vim editing, Excalidraw, advanced image handling, resolved `@tag`
+links and previews, and PDF controls.
 
 Study has one library and no user accounts. Local mode is loopback-only and skips the password.
 Server mode is password-protected and stores revocable sessions.
@@ -17,18 +17,18 @@ Server mode is password-protected and stores revocable sessions.
 - Proofs (`pf`) for theorems and solutions (`sl`) for problems, including tagged alternatives.
 - GitHub-flavored Markdown in the web reader, local MathJax, global LaTeX macros, and custom
   Markdown headers. PDF export currently uses portable CommonMark.
-- In the optional rich interface, a CodeMirror editor with Vim keybindings and a live preview.
-  Escape stays inside Vim; `:w` saves
+- A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:w` saves
   without closing, and `:q` closes the editor explicitly.
-- In the optional rich interface, image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
+- Image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
-- In the optional rich interface, embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,
+- Embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,
   and a grid-based commutative-diagram editor.
 - Exact-position insertion controls for entries and folders, drag-and-drop ordering, and a tree
   picker for moving a folder under another folder. Canonical namespaces are recomputed after a move.
 - Confirmed deletion for entries and folders. Deleting a non-empty folder requires typing its name
-  and removes the complete subtree; shared media files are retained while anything still uses them.
-- In the optional rich interface, scoped `@tag` references that expand from the current folder through progressively broader
+  and removes the complete subtree; Study refuses a deletion that would strand a surviving asset
+  reference.
+- Scoped `@tag` references that expand from the current folder through progressively broader
   subtrees, then fall back across the full library. `@[replacement text]tag` customizes the inline
   wording while previews retain the entry title. References include fully rendered hover/focus/tap
   previews and a `Cmd/Ctrl+Shift+K` insertion picker.
@@ -48,7 +48,7 @@ Server mode is password-protected and stores revocable sessions.
 
 ## Install
 
-The core application requires only Python 3.10 or newer. From the repository root:
+Study requires only Python 3.10 or newer at runtime. From the repository root:
 
 ```sh
 python -m venv .venv
@@ -56,10 +56,10 @@ source .venv/bin/activate
 python -m pip install -e .
 ```
 
-That is enough for reading, basic authoring, review, the calendar, statistics, and local math
-typesetting. The core interface and its pinned MathJax runtime are shipped with Study, so Node.js,
-npm, and a frontend build are not required. The core reader displays authored `@tag` text as text;
-resolved links, previews, and the reference picker belong to the optional rich interface.
+That installs the complete interface: reading, authoring, CodeMirror/Vim, Excalidraw, references,
+review, the calendar, statistics, and local math typesetting. Its already-built browser assets and
+pinned MathJax runtime are shipped with Study, so users do not need Node.js, npm, or a frontend
+build.
 
 PDF export is optional because its browser runtime is comparatively large:
 
@@ -68,28 +68,10 @@ python -m pip install -e '.[pdf]'
 python -m playwright install chromium
 ```
 
-The richer CodeMirror/Vim and Excalidraw interface is also optional. It requires Node.js 22.13 or
-newer and npm:
-
-```sh
-cd frontend
-npm ci
-npm run build
-```
-
-Then opt into that build in the ignored `config.local.toml`:
-
-```toml
-[study]
-rich_frontend = true
-```
-
-The shipped interface remains the default so an old ignored build cannot unexpectedly override a
-newer core interface. If the selected rich build is absent, Study safely falls back to the core.
-
-That build copies pinned MathJax and Excalidraw runtime assets into the ignored
-`frontend/public/vendor/` directory. Both interfaces serve math assets locally; neither depends on
-a CDN. For development and tests, install `.[dev]` instead of the core package.
+Frontend maintainers need Node.js 22.13 or newer and npm only when changing the TypeScript source.
+`npm run build` refreshes the complete checked-in snapshot under `study_app/web/`. Study serves that
+single snapshot; there is no reduced or alternate interface. For development and tests, install
+`.[dev]` instead of the runtime package.
 
 On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1` instead.
 
@@ -103,7 +85,7 @@ With no arguments, Study binds to `127.0.0.1`, waits for the health check, and o
 `http://127.0.0.1:8765` in the default browser. A password is not requested in this mode, and the
 server is not reachable from another device.
 
-The installed command is equivalent:
+The installed command is equivalent when run anywhere inside the Study checkout:
 
 ```sh
 study
@@ -144,7 +126,6 @@ session_days = 30
 secure_cookie = false
 max_upload_mb = 12
 max_image_megapixels = 32
-rich_frontend = false
 ```
 
 The data location is intentionally not configurable: authored material and runtime state always
@@ -191,9 +172,8 @@ which keeps every valid canonical reference within the bounded API and prevents 
 
 ### Scoped references and search
 
-The optional rich interface renders resolved references, previews, and the insertion picker. The
-core interface leaves their exact authored text visible. In ordinary Markdown prose, `@group`
-resolves in the entry's own folder first, then its descendant
+The interface renders resolved references, previews, and the insertion picker. In ordinary
+Markdown prose, `@group` resolves in the entry's own folder first, then its descendant
 subtree. Study next checks the direct parent and the sibling subtrees exposed at that level, and
 repeats outward through real ancestors. If the originating top-level tree has no match, one final
 stage checks every other top-level tree. The first nonempty stage wins, so a local or higher-level
@@ -225,17 +205,19 @@ detected within 250 ms. The complete contract is in [`docs/SEARCH.md`](docs/SEAR
 Use `$x$` for inline mathematics and `$$x$$` for display mathematics. `\(...\)` and `\[...\]` are
 also accepted. Macro names and definitions are global and stored in `data/macros.json`.
 
-Images inserted through the editor are normalized to PNG and stored by content hash. The generated
-Markdown carries display settings in its URL fragment:
+Images inserted through the editor are normalized to PNG, stored by content hash inside the owning
+entry's `assets/` directory, and served through a stable URL. The generated Markdown carries display
+settings in its URL fragment:
 
 ```markdown
 ![Cayley graph](/media/0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef.png#width=70&invert=lightness)
 ```
 
 Use the editor for images and diagrams whenever possible so the source file, preview, asset
-metadata, width, and entry association remain consistent. Excalidraw source remains editable under
-`data/diagrams/`; its Markdown includes a preview and an `excalidraw` source comment. Commutative
-diagrams use a stored JSON source and an insertion token such as:
+metadata, width, and entry association remain consistent. Excalidraw source remains editable beside
+the entry it belongs to; its Markdown includes a preview and an `excalidraw` source comment.
+Commutative diagrams likewise keep their JSON source with the entry and use an insertion token such
+as:
 
 ```text
 [[commutative:0123456789abcdef0123456789abcdef|width=76]]
@@ -311,25 +293,30 @@ All library data is rooted at `data/` relative to `study.py`:
 
 ```text
 data/
-  library.json                 v1 aggregate metadata or the tiny v2 format marker
-  library/                     v2 folder/entry sidecars and colocated Markdown
+  library.json                 tiny v2 format marker
+  library/                     v2 folder/entry sidecars, Markdown, and entry-owned assets
     _library.json              v2 root sentinel, including for an empty library
   macros.json                  global MathJax macros
-  review.json                  current schedules, pending attempts, and cached calibration state
-  review-log.jsonl             append-only graded attempts and calibration observations
-  content/<entry>/<variant>.md v1 Markdown formulations, proofs, and solutions
-  media/                       normalized image and drawing previews
-  diagrams/                    Excalidraw and commutative-diagram sources
+  review.json                  current schedules and pending attempts
+  review-log.jsonl             graded attempts and calibration observations for current items
+  media/                       legacy v1 image and drawing previews
+  diagrams/                    legacy v1 editable diagram sources
   excalidraw/                  shared Excalidraw library
   exports/                     generated PDFs
   runtime/                     ephemeral export work and the session database
 ```
 
 The `data/` directory is intentionally not ignored. Authored content, diagrams, macros, and review
-history can be committed. The sole persistent exception is the session SQLite database and its
-journal files, because they contain live authentication tokens. `config.local.toml`, dependencies,
-the rich-interface build output, and its copied vendor assets are also ignored. The small core
-interface and its pinned local MathJax assets are tracked under `study_app/web/`.
+history can be committed. Deleting an entry also removes its schedules, pending attempts, and
+graded-attempt records; disabled but existing entries retain their history. The sole persistent
+exception is the session SQLite database and its journal files, because they contain live
+authentication tokens. `config.local.toml`, dependencies, and intermediate frontend build output
+are ignored. The complete release frontend and its local runtime assets are tracked under
+`study_app/web/`.
+
+Bayesian posterior grids are derived from `review-log.jsonl` and cached only in memory. They are not
+duplicated in `review.json`, which keeps ordinary grade diffs small and avoids versioning a large
+rebuildable array.
 
 The in-app Commit action commits only `data/` while preserving unrelated staged work. To make that
 scope enforceable, this narrowly scoped action does not run repository hooks; use normal Git when a
@@ -339,13 +326,10 @@ discards work.
 Study validates folder, entry, variant, review-mode, asset, and Markdown-file invariants when loading
 the library so a broken manual edit or pull fails visibly instead of silently becoming empty content.
 
-Existing aggregate libraries continue to be read and written without an automatic format change.
-New data roots use v2, which keeps each folder's metadata in `_folder.json` and each entry's metadata
-and Markdown together under its slug-derived path. This makes ordinary entry edits local in Git.
-`python study.py --check-data` validates either format; the explicit
-`python study.py --migrate-storage` command requires idle, clean Git state, performs a lossless
-checked migration, and leaves the result for you to review and commit. See the
-[storage format and migration guide](docs/STORAGE.md).
+New data roots use the sharded format, which keeps each folder's metadata in `_folder.json` and each
+entry's metadata and Markdown together under its slug-derived path. This makes ordinary entry edits
+local in Git. `python study.py --check-data` validates the library. See the
+[storage format guide](docs/STORAGE.md).
 
 ## Development checks
 

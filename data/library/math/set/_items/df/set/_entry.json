@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "93647a7d04094d32a24ff770189b4891",
+  "title": "Set",
+  "rank": 8589934592,
+  "header": "Canonical root definition retained for cross-topic references.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "62a96b5bf19144cfb66eab30e3d92bdf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.62a96b5bf19144cfb66eab30e3d92bdf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.216364+00:00",
+  "updated_at": "2026-09-04T12:51:39.216368+00:00"
+}

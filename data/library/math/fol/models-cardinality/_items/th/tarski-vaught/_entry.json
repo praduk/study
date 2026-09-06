@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "83dd959a203e4675bb6a67459145503e",
+  "title": "Tarski–Vaught Test",
+  "rank": 8589934592,
+  "header": "Let $𝔑$ be an $L$-substructure of $𝔐$.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8aa6a36f464c40ba800b819b3a9b2996",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8aa6a36f464c40ba800b819b3a9b2996.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2a6a560b642e4968aaa549d3be54368a",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.2a6a560b642e4968aaa549d3be54368a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.986535+00:00",
+  "updated_at": "2026-09-04T12:51:45.018471+00:00"
+}

@@ -13,6 +13,3 @@ secure_cookie = false
 
 max_upload_mb = 12
 max_image_megapixels = 32
-
-# The shipped interface needs no build. Opt into frontend/dist only after building it.
-rich_frontend = false

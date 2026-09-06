@@ -1,3 +1,4 @@
+import asyncio
 import base64
 import hashlib
 import hmac
@@ -11,6 +12,7 @@ import time
 import uuid
 import warnings
 from datetime import datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import Annotated, Any
 from urllib.parse import urlsplit
@@ -31,7 +33,6 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 
 from .auth import COOKIE_NAME, CSRF_HEADER, LoginThrottle, Session, SessionStore, verify_password
 from .config import Settings
-from .export import export_pdf
 from .git_ops import GitError, GitRepository
 from .library_validation import IMAGE_DECODE_LOCK, MAX_REFERENCE_QUERY_LENGTH
 from .models import (
@@ -45,7 +46,6 @@ from .models import (
     GitCommitRequest,
     LoginRequest,
     MacrosUpdate,
-    MarkdownRenderRequest,
     MoveRequest,
     ReorderRequest,
     ReviewGrade,
@@ -56,7 +56,6 @@ from .models import (
 )
 from .review import ReviewEngine
 from .store import LibraryStore, StoreError
-from .web_render import render_markdown_fragment
 
 SAFE_FILE = re.compile(r"^[a-f0-9]{64}\.(?:png|jpe?g|webp)$")
 SAFE_DIAGRAM = re.compile(r"^[a-f0-9]{32}\.excalidraw$")
@@ -161,8 +160,21 @@ def _safe_existing_file(directory: Path, filename: str) -> Path | None:
     return candidate
 
 
+@lru_cache(maxsize=1)
 def _pdf_export_available() -> bool:
-    return importlib.util.find_spec("playwright") is not None
+    if not all(
+        importlib.util.find_spec(package) is not None
+        for package in ("markdown_it", "mdit_py_plugins", "playwright")
+    ):
+        return False
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            executable = Path(playwright.chromium.executable_path)
+            return executable.is_file() and os.access(executable, os.X_OK)
+    except Exception:  # noqa: BLE001 - a capability probe must fail closed.
+        return False
 
 
 def _atomic_bytes(path: Path, value: bytes) -> None:
@@ -180,6 +192,10 @@ def _atomic_bytes(path: Path, value: bytes) -> None:
 
 def _atomic_json(path: Path, value: Any) -> None:
     _atomic_bytes(path, (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+
+
+def _json_bytes(value: Any) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
 
 
 def _markdown_alt(value: str) -> str:
@@ -226,6 +242,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     # no disk-indexing latency.
     store.reload_search_index()
     review = ReviewEngine(store)
+    review.prune_to_current_library()
     sessions = SessionStore(
         store.runtime_dir / "sessions.sqlite3",
         settings.session_days,
@@ -418,9 +435,12 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
 
     @app.get("/api/bootstrap")
     def bootstrap(_session: Auth) -> dict[str, Any]:
+        with store.mutation_lock:
+            library = store.snapshot()
+            review_stats = review.stats()
         return {
-            **store.snapshot(),
-            "review": review.stats(),
+            **library,
+            "review": review_stats,
             "git": git.status(),
             "capabilities": {
                 "editing": True,
@@ -475,8 +495,16 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         _session: Mutation,
         recursive: Annotated[bool, Query()] = False,
     ) -> dict[str, Any]:
-        deletion = store.delete_folder(folder_id, recursive=recursive)
-        return {"ok": True, "deletion": deletion, "library": store.snapshot()}
+        with store.mutation_lock:
+            review.validate_log()
+            deletion = store.delete_folder(folder_id, recursive=recursive)
+            review_cleanup = review.prune_to_current_library()
+            return {
+                "ok": True,
+                "deletion": deletion,
+                "review_cleanup": review_cleanup,
+                "library": store.snapshot(),
+            }
 
     @app.post("/api/entries")
     def create_entry(payload: EntryCreate, _session: Mutation) -> dict[str, Any]:
@@ -493,12 +521,27 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
 
     @app.patch("/api/entries/{entry_id}")
     def update_entry(entry_id: str, payload: EntryUpdate, _session: Mutation) -> dict[str, Any]:
-        return store.update_entry(entry_id, payload.model_dump(exclude_unset=True))
+        updates = payload.model_dump(exclude_unset=True)
+        if "kind" not in updates:
+            return store.update_entry(entry_id, updates)
+        with store.mutation_lock:
+            review.validate_log()
+            updated = store.update_entry(entry_id, updates)
+            review.prune_to_current_library()
+            return updated
 
     @app.delete("/api/entries/{entry_id}")
     def delete_entry(entry_id: str, _session: Mutation) -> dict[str, Any]:
-        deletion = store.delete_entry(entry_id)
-        return {"ok": True, "deletion": deletion, "library": store.snapshot()}
+        with store.mutation_lock:
+            review.validate_log()
+            deletion = store.delete_entry(entry_id)
+            review_cleanup = review.prune_to_current_library()
+            return {
+                "ok": True,
+                "deletion": deletion,
+                "review_cleanup": review_cleanup,
+                "library": store.snapshot(),
+            }
 
     @app.put("/api/entries/{entry_id}/content/{variant_id}")
     def update_content(entry_id: str, variant_id: str, payload: ContentUpdate, _session: Mutation):
@@ -529,10 +572,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     @app.put("/api/macros")
     def update_macros(payload: MacrosUpdate, _session: Mutation):
         return store.set_macros(payload.macros)
-
-    @app.post("/api/render/markdown")
-    def render_markdown(payload: MarkdownRenderRequest, _session: Auth) -> dict[str, str]:
-        return {"html": render_markdown_fragment(store, payload.source)}
 
     async def prepare_image(upload: UploadFile) -> tuple[str, int, int, bytes]:
         limit = settings.max_upload_mb * 1024 * 1024
@@ -613,18 +652,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "invert_lightness": invert_lightness,
             "pixels": [pixels_wide, pixels_high],
         }
-        image_path = store.media_dir / filename
-        with store.mutation_lock:
-            store.get_entry(entry_id)
-            created = not image_path.exists()
-            if created:
-                _atomic_bytes(image_path, normalized)
-            try:
-                store.register_asset(entry_id, asset)
-            except Exception:
-                if created:
-                    image_path.unlink(missing_ok=True)
-                raise
+        asset = store.register_asset(entry_id, asset, {"path": normalized})
         fragment = f"width={width}" + ("&invert=lightness" if invert_lightness else "")
         asset["markdown"] = f"![{_markdown_alt(asset['alt'])}](/media/{filename}#{fragment})"
         return asset
@@ -650,8 +678,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         diagram_id = uuid.uuid4().hex
         source_name = f"{diagram_id}.excalidraw"
         preview_name, pixels_wide, pixels_high, normalized = await prepare_image(preview)
-        source_path = store.diagram_dir / source_name
-        preview_path = store.media_dir / preview_name
         width = min(100, max(10, width))
         asset = {
             "id": diagram_id,
@@ -663,19 +689,11 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "invert_lightness": invert_lightness,
             "pixels": [pixels_wide, pixels_high],
         }
-        with store.mutation_lock:
-            store.get_entry(entry_id)
-            preview_created = not preview_path.exists()
-            if preview_created:
-                _atomic_bytes(preview_path, normalized)
-            _atomic_json(source_path, parsed)
-            try:
-                store.register_asset(entry_id, asset)
-            except Exception:
-                source_path.unlink(missing_ok=True)
-                if preview_created:
-                    preview_path.unlink(missing_ok=True)
-                raise
+        asset = store.register_asset(
+            entry_id,
+            asset,
+            {"path": normalized, "source": _json_bytes(parsed)},
+        )
         fragment = f"width={width}" + ("&invert=lightness" if invert_lightness else "")
         asset["markdown"] = (
             f"![{_markdown_alt(asset['alt'])}](/media/{preview_name}#{fragment})\n"
@@ -687,7 +705,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def get_diagram(filename: str, _session: Auth):
         if not SAFE_DIAGRAM.fullmatch(filename):
             raise HTTPException(status_code=404)
-        path = _safe_existing_file(store.diagram_dir, filename)
+        path = store.resolve_excalidraw_file(filename)
         if path is None:
             raise HTTPException(status_code=404)
         return FileResponse(
@@ -741,7 +759,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         diagram_id = uuid.uuid4().hex
         filename = f"{diagram_id}.commutative.json"
         diagram = {"version": 1, **payload.model_dump()}
-        source_path = store.diagram_dir / filename
         asset = {
             "id": diagram_id,
             "kind": "commutative",
@@ -749,14 +766,9 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "alt": payload.name,
             "width": payload.width,
         }
-        with store.mutation_lock:
-            store.get_entry(entry_id)
-            _atomic_json(source_path, diagram)
-            try:
-                store.register_asset(entry_id, asset)
-            except Exception:
-                source_path.unlink(missing_ok=True)
-                raise
+        asset = store.register_asset(
+            entry_id, asset, {"source": _json_bytes(diagram)}
+        )
         asset["markdown"] = f"[[commutative:{diagram_id}|width={payload.width}]]"
         return asset
 
@@ -764,7 +776,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def get_commutative(filename: str, _session: Auth):
         if not SAFE_COMMUTATIVE.fullmatch(filename):
             raise HTTPException(status_code=404)
-        path = _safe_existing_file(store.diagram_dir, filename)
+        path = store.resolve_commutative_file(filename)
         if path is None:
             raise HTTPException(status_code=404)
         return FileResponse(
@@ -775,7 +787,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def media(filename: str, _session: Auth):
         if not SAFE_FILE.fullmatch(filename):
             raise HTTPException(status_code=404)
-        path = _safe_existing_file(store.media_dir, filename)
+        path = store.resolve_media_file(filename)
         if path is None:
             raise HTTPException(status_code=404)
         media_type = {
@@ -832,7 +844,9 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
 
     @app.post("/api/git/commit")
     def git_commit(payload: GitCommitRequest, _session: Mutation):
-        return git.commit_content(payload.message)
+        with store.mutation_lock:
+            review.prune_to_current_library()
+            return git.commit_content(payload.message)
 
     @app.post("/api/git/pull")
     def git_pull(_session: Mutation):
@@ -840,55 +854,52 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             result = git.pull_fast_forward(validate_candidate_data)
             store.ensure_layout()
             store.reload_search_index()
-            review.rebuild_calibration()
+            review.prune_to_current_library()
             review.stats()
             return result
 
     @app.post("/api/export/pdf")
     async def create_pdf(payload: ExportRequest, _session: Mutation):
+        if not await asyncio.to_thread(_pdf_export_available):
+            raise HTTPException(status_code=503, detail="PDF export dependencies are not installed")
+        from .export import export_pdf
+
         entries = store.ordered_entries(
             folder_id=payload.folder_id,
             recursive=payload.recursive,
             kinds=set(payload.kinds),
         )
         title = payload.title or "Study export"
-        built_mathjax = settings.frontend_public / "vendor" / "mathjax" / "tex-svg.js"
-        fallback_mathjax = (
-            settings.no_build_frontend / "vendor" / "mathjax" / "tex-chtml.js"
-        )
-        mathjax = (
-            built_mathjax
-            if settings.rich_frontend and built_mathjax.is_file()
-            else fallback_mathjax
-        )
+        mathjax = settings.frontend_public / "vendor" / "mathjax" / "tex-svg.js"
         target = await export_pdf(store, entries, title, payload.include_supplements, mathjax)
         safe_title = re.sub(r"[^A-Za-z0-9._-]+", "-", title).strip("-") or "study"
         return FileResponse(target, media_type="application/pdf", filename=f"{safe_title}.pdf")
 
     @app.get("/api/webmcp/library-summary")
     def webmcp_summary(_session: Auth):
-        snapshot = store.snapshot()
+        with store.mutation_lock:
+            snapshot = store.snapshot()
+            due = review.stats()["due"]
         return {
             "folders": len(snapshot["folders"]),
             "entries": len(snapshot["entries"]),
-            "due": review.stats()["due"],
+            "due": due,
         }
 
     @app.get("/{path:path}")
     def frontend(path: str):
         if path in {"api", "media"} or path.startswith(("api/", "media/")):
             raise HTTPException(status_code=404, detail="API route not found")
-        built_index = (
-            _safe_existing_file(settings.built_frontend, "index.html")
-            if settings.rich_frontend
-            else None
-        )
-        root = settings.built_frontend if built_index is not None else settings.no_build_frontend
+        root = settings.frontend_public
         candidate = (root / path).resolve()
         if root.exists() and root.resolve() in candidate.parents and candidate.is_file():
             if candidate.suffix.casefold() == ".html":
                 return _frontend_html_response(candidate)
             return FileResponse(candidate)
+        if path in {"_next", "vendor"} or path.startswith(("_next/", "vendor/")):
+            raise HTTPException(status_code=404, detail="Frontend asset not found")
+        if Path(path).suffix:
+            raise HTTPException(status_code=404, detail="Frontend file not found")
         index = _safe_existing_file(root, "index.html")
         if index is not None:
             return _frontend_html_response(index, cache_control="no-cache")

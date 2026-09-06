@@ -60,7 +60,7 @@ function dueTime(event: ReviewCalendarEvent, timeZone: string) {
 }
 
 function eventLabel(event: ReviewCalendarEvent) {
-  return event.title || (event.orphaned ? 'Unavailable review item' : 'Untitled review item');
+  return event.title;
 }
 
 function scheduledInterval(scheduler: ReviewCalendarSchedule['scheduler']) {

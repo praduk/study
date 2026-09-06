@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0a744dbe5a8b4026849c81bc907258e6",
+  "title": "Zorn's Lemma and Maximal Forests",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "zorn-applications",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "47bdc213b54646249fa174e6d8c88a05",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.47bdc213b54646249fa174e6d8c88a05.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "abfb035202564ab6b124aa30c95631d8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.abfb035202564ab6b124aa30c95631d8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.006270+00:00",
+  "updated_at": "2026-09-04T12:51:40.032347+00:00"
+}

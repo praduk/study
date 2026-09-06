@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c61ce146be4c4c23b5913117b26d813f",
+  "title": "Falsity and Classical Reasoning Rules",
+  "rank": 12884901888,
+  "header": "Negation is treated as $φ→⊥$; reductio makes the system classical.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f2a8de8b10d54b35b4cf8ab1d49d5c9c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f2a8de8b10d54b35b4cf8ab1d49d5c9c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.643665+00:00",
+  "updated_at": "2026-09-04T12:51:43.643669+00:00"
+}

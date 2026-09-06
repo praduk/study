@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d185756ef6a2428fb836d44a9368f5fb",
+  "title": "Terms",
+  "rank": 8589934592,
+  "header": "Terms denote individuals; they are not formulas and have no truth value.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b7d3e71ed97410dbfde25c9dee76f0b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b7d3e71ed97410dbfde25c9dee76f0b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:42.636533+00:00",
+  "updated_at": "2026-09-04T12:51:42.636537+00:00"
+}

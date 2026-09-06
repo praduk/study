@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "867ae508ae6d49dda642c2b0ee72966f",
+  "title": "The Ordered-Pair Property",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e0760b72da1a401d83793c968958ff2c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e0760b72da1a401d83793c968958ff2c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9fbc48d8460f4d738e5baa286ad0fc31",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.9fbc48d8460f4d738e5baa286ad0fc31.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.304047+00:00",
+  "updated_at": "2026-09-04T12:51:39.308454+00:00"
+}

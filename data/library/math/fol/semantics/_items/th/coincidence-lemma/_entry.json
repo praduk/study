@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ddc99bff7508434a8d4b42b533a15998",
+  "title": "Coincidence Lemma",
+  "rank": 25769803776,
+  "header": "Only values assigned to free variables can affect satisfaction.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dd94c949430d4a3981f8b4efb0107c0c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dd94c949430d4a3981f8b4efb0107c0c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1bf1d898b5734a25ad163b808fce0cb6",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.1bf1d898b5734a25ad163b808fce0cb6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.213144+00:00",
+  "updated_at": "2026-09-04T12:51:43.239126+00:00"
+}

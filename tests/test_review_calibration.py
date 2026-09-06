@@ -461,9 +461,11 @@ def test_interrupted_state_write_recovers_one_calibration_observation(
 
     recovered = review.grade(card["id"], second_attempt["attempt_id"], 2)
     state = review._read()
+    calibration = review.stats()["calibration"]
     assert recovered["scheduler"]["source"] == "fallback"
-    assert state["calibration"]["models"]["pooled"]["observations"] == 1
-    assert state["calibration"]["models"]["statement"]["observations"] == 1
+    assert "calibration" not in state
+    assert calibration["models"]["pooled"]["observations"] == 1
+    assert calibration["models"]["statement"]["observations"] == 1
     records = [json.loads(line) for line in review.log_path.read_text().splitlines()]
     assert len(records) == 2
     assert records[-1]["calibration_observation"]["good_or_easy"] is True
@@ -509,10 +511,12 @@ def test_reload_reconciles_logged_grade_without_retrying_original_request(
     reloaded = ReviewEngine(store)
     assert reloaded.queue() == []
     recovered = reloaded._read()
+    calibration = reloaded.stats()["calibration"]
     assert recovered["cards"][card["id"]]["repetitions"] == 2
     assert recovered["pending_attempts"] == {}
-    assert recovered["calibration"]["models"]["statement"]["observations"] == 1
-    assert recovered["calibration"]["processed_log_records"] == 2
+    assert "calibration" not in recovered
+    assert calibration["models"]["statement"]["observations"] == 1
+    assert calibration["processed_log_records"] == 2
     assert replayed_observations == 1
 
     current += timedelta(days=5)
@@ -521,8 +525,10 @@ def test_reload_reconciles_logged_grade_without_retrying_original_request(
     )
     reloaded.grade(card["id"], next_attempt["attempt_id"], 2)
     final_state = reloaded._read()
+    final_calibration = reloaded.stats()["calibration"]
     assert final_state["cards"][card["id"]]["repetitions"] == 3
-    assert final_state["calibration"]["models"]["statement"]["observations"] == 2
+    assert "calibration" not in final_state
+    assert final_calibration["models"]["statement"]["observations"] == 2
     assert len(reloaded.log_path.read_text(encoding="utf-8").splitlines()) == 3
 
 
@@ -651,7 +657,7 @@ def test_v2_observation_requires_its_previous_schedule_during_replay(
     )
     review.grade(card["id"], first["attempt_id"], 2)
     rebuilt = review._read()
-    rebuilt.pop("calibration")
+    assert "calibration" not in rebuilt
     review._write(rebuilt)
 
     with pytest.raises(StoreError, match="without a previous review"):
@@ -670,7 +676,7 @@ def test_semantic_log_validation_rejects_incomplete_records(tmp_path):
         review.validate_log()
 
 
-def test_new_engine_rebuilds_a_tampered_but_well_formed_calibration_cache(
+def test_legacy_persisted_calibration_cache_is_removed_and_rebuilt_in_memory(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
     current = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
@@ -686,7 +692,8 @@ def test_new_engine_rebuilds_a_tampered_but_well_formed_calibration_cache(
     review.grade(card["id"], attempt["attempt_id"], 2)
 
     state = review._read()
-    state["calibration"]["models"]["statement"].update(
+    calibration = new_calibration_state()
+    calibration["models"]["statement"].update(
         {
             "observations": 1,
             "successes": 1,
@@ -696,28 +703,25 @@ def test_new_engine_rebuilds_a_tampered_but_well_formed_calibration_cache(
             "last_observed_at": current.isoformat(),
         }
     )
-    review._write(state)
+    state["calibration"] = calibration
+    review.state_path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
 
     restarted = ReviewEngine(store)
     restarted.queue(include_not_due=True)
-    repaired = restarted._read()["calibration"]["models"]["statement"]
+    persisted = restarted._read()
+    repaired = restarted.stats()["calibration"]["models"]["statement"]
+    assert "calibration" not in persisted
     assert repaired["observations"] == 0
     assert repaired["effective_observations"] == 0.0
 
     same_process = restarted._read()
-    same_process["calibration"]["models"]["statement"].update(
-        {
-            "observations": 1,
-            "successes": 1,
-            "effective_observations": 1.0,
-            "effective_successes": 1.0,
-            "effective_exposure": 1.0,
-            "last_observed_at": current.isoformat(),
-        }
+    same_process["calibration"] = calibration
+    restarted.state_path.write_text(
+        json.dumps(same_process, indent=2) + "\n", encoding="utf-8"
     )
-    restarted._write(same_process)
     restarted.queue(include_not_due=True)
-    repaired_again = restarted._read()["calibration"]["models"]["statement"]
+    repaired_again = restarted.stats()["calibration"]["models"]["statement"]
+    assert "calibration" not in restarted._read()
     assert repaired_again["observations"] == 0
 
 
@@ -854,10 +858,10 @@ def test_mixed_live_updates_match_authoritative_full_replay(
         )
         review.grade(card["id"], attempt["attempt_id"], grades[index % len(grades)])
 
-    live = review._read()["calibration"]
+    live = review._calibration_for_state(review._read())
     live_interval = schedule_interval(live, "statement", 10.0, 1)
     review.rebuild_calibration()
-    replayed = review._read()["calibration"]
+    replayed = review._calibration_for_state(review._read())
     replayed_interval = schedule_interval(replayed, "statement", 10.0, 1)
 
     assert replayed["processed_log_records"] == 36

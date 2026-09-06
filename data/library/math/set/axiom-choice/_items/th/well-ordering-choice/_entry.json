@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5fd6dba083aa4ebc8e825296e0656b2e",
+  "title": "Well-Ordering Theorem Is Equivalent to Choice",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "14e89ec7dd4247b1b16981175ccbe721",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.14e89ec7dd4247b1b16981175ccbe721.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c6fa83a8228f4319bd9816028da68579",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.c6fa83a8228f4319bd9816028da68579.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.947739+00:00",
+  "updated_at": "2026-09-04T12:51:39.959444+00:00"
+}

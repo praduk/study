@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9a6f94ef28b84f9a9049e6eb5c332665",
+  "title": "Prenex Normal Form Theorem",
+  "rank": 12884901888,
+  "header": "Bound variables must first be standardized apart.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e711fc1657824a57be97982e6baebd53",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e711fc1657824a57be97982e6baebd53.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6631f9bfefd24350be24de5412226b7d",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.6631f9bfefd24350be24de5412226b7d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.496090+00:00",
+  "updated_at": "2026-09-04T12:51:45.529858+00:00"
+}

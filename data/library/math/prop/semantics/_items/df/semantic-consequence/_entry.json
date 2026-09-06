@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "de292c5ce53f4d4487b19f995324765e",
+  "title": "Semantic Consequence",
+  "rank": 17179869184,
+  "header": "Prerequisite: @math:prop:semantics:df:satisfaction-truth-table",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "420d3d01052946a49170afadccf9bfb2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.420d3d01052946a49170afadccf9bfb2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.782031+00:00",
+  "updated_at": "2026-09-04T12:51:40.782036+00:00"
+}

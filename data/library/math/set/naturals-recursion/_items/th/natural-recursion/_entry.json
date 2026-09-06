@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6d97935516d14a948b1ba8e7752d93db",
+  "title": "Recursion on the Natural Numbers",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90c56286f46747218da060aa5fe83bba",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90c56286f46747218da060aa5fe83bba.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e35b026a253642c99354a54660fd22b1",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.e35b026a253642c99354a54660fd22b1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.383311+00:00",
+  "updated_at": "2026-09-04T12:51:39.389036+00:00"
+}

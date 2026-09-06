@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b23b7ed099c44cc3a382b0ac57bc864f",
+  "title": "Ordinal Trichotomy",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f1b63e6b8f4c43dc872fcd83ba7444bf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f1b63e6b8f4c43dc872fcd83ba7444bf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bb441139c92b484b8628fa36f14b6a7c",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.bb441139c92b484b8628fa36f14b6a7c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.674486+00:00",
+  "updated_at": "2026-09-04T12:51:39.684143+00:00"
+}

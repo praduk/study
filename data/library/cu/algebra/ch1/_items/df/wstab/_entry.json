@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "id": "42fa599ff2424fe689a58c88fd30d0a3",
+  "title": "Weak Stabilizer",
+  "rank": 25769803776,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e62bcd1d6dde414f98b9f9e3267ef35b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e62bcd1d6dde414f98b9f9e3267ef35b.md",
+      "main": true
+    },
+    {
+      "id": "9ad6825a5ed24e4d92cf42f9b5a2f3e0",
+      "label": "in terms of stabilizer",
+      "subtag": "stab",
+      "file": "formulation.9ad6825a5ed24e4d92cf42f9b5a2f3e0.md",
+      "main": false
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T14:31:54.503693+00:00",
+  "updated_at": "2026-09-05T20:30:08.412806+00:00"
+}

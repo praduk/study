@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2e71e522e564437397cb5783c8fe2e82",
+  "title": "Omega Is the Least Inductive Set",
+  "rank": 8589934592,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a5f632dd6ee4c578b4acf8481bbbf90",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a5f632dd6ee4c578b4acf8481bbbf90.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a0db7fc095c041cc8c4c924a4013ba50",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a0db7fc095c041cc8c4c924a4013ba50.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.361586+00:00",
+  "updated_at": "2026-09-04T12:51:39.366955+00:00"
+}

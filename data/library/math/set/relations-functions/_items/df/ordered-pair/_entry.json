@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "37ca1baee7754e9cba6936d39b1724a6",
+  "title": "Ordered Pairs and Cartesian Products",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8fd6dc1bf58b40f38920b552527ad667",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8fd6dc1bf58b40f38920b552527ad667.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.299600+00:00",
+  "updated_at": "2026-09-04T12:51:39.299602+00:00"
+}

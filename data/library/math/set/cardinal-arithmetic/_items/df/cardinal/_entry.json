@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6ea1e579ac3c46a6b568f4d46a4e09d9",
+  "title": "Cardinal Numbers and the Aleph Sequence",
+  "rank": 4294967296,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8b27d8e36b434a638ecb7d9417894878",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8b27d8e36b434a638ecb7d9417894878.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.066136+00:00",
+  "updated_at": "2026-09-04T12:51:40.066140+00:00"
+}

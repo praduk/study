@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "78aa9aa82f634918bac4ea29bf96404b",
+  "title": "Equality Congruence Lemma",
+  "rank": 38654705664,
+  "header": "Let $Δ$ be a deductively closed consistent theory with equality.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "de4eb72dcf6346b782fd4740dedd811f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.de4eb72dcf6346b782fd4740dedd811f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4a2d4198615141b4bd2b3ba1d100724b",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.4a2d4198615141b4bd2b3ba1d100724b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:44.543990+00:00",
+  "updated_at": "2026-09-04T12:51:44.574816+00:00"
+}

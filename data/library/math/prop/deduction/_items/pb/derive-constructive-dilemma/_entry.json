@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "404209f6b4df444e96db76227291d132",
+  "title": "Derive a Constructive Dilemma",
+  "rank": 38654705664,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "526053771b474b4097602e3c9d795c96",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.526053771b474b4097602e3c9d795c96.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fda7bbe1027a42c2a683075a77827348",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.fda7bbe1027a42c2a683075a77827348.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.857342+00:00",
+  "updated_at": "2026-09-04T12:51:41.878249+00:00"
+}

@@ -20,6 +20,8 @@ frontend/dist/
 frontend/.vinext/
 frontend/.next/
 frontend/public/vendor/
+study_app/.web-stage-*/
+study_app/.web-backup-*/
 *.tsbuildinfo
 
 # Editors and operating systems

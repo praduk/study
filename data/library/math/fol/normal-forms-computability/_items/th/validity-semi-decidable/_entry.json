@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "043439fdef3c4193a93a2507fe007839",
+  "title": "Effective Enumerability of First-Order Validity",
+  "rank": 30064771072,
+  "header": "Assume a computable signature and an effective presentation of the proof rules.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c648bc5430e4bc18f124aa6d511fff4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c648bc5430e4bc18f124aa6d511fff4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eb220c6f50d5491fbc486a914aabad03",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.eb220c6f50d5491fbc486a914aabad03.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:45.740702+00:00",
+  "updated_at": "2026-09-04T12:51:45.774877+00:00"
+}

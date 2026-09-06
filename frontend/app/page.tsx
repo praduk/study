@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import {
   BookOpen, Braces, CalendarDays, ChevronDown, ChevronRight, Download, FilePlus2, FolderInput,
-  FolderPen, FolderPlus, FolderTree, GitBranch, Library, LoaderCircle, LogIn, LogOut, Menu,
-  Moon, PanelLeftClose, PanelLeftOpen, Search, Plus, Sigma, Sun, Trash2,
+  ChevronLeft, FolderPen, FolderPlus, FolderTree, GitBranch, Library, LoaderCircle, LogIn, LogOut, Menu,
+  Moon, PanelLeftClose, PanelLeftOpen, Search, Plus, Sigma, Sun, Trash2, X,
 } from 'lucide-react';
 
 import { DeleteItemDialog, type DeleteTarget } from '@/components/DeleteItemDialog';
@@ -82,6 +82,18 @@ function folderSubtreeIds(folderId: string, folders: Folder[]) {
   return result;
 }
 
+function folderEntryCount(node: FolderNode): number {
+  return node.entries.length
+    + node.children.reduce((total, child) => total + folderEntryCount(child), 0);
+}
+
+function authoredEntries(nodes: FolderNode[]): EntrySummary[] {
+  return nodes.flatMap((node) => [
+    ...node.entries,
+    ...authoredEntries(node.children),
+  ]);
+}
+
 function InsertionPoint({ parentFolderId, folderName, entryIndex, folderIndex, empty, onInsertEntry, onInsertFolder, onMove }: {
   parentFolderId: string | null;
   folderName: string;
@@ -145,7 +157,7 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, readOnly, onT
   onInsertFolder: (parentId: string | null, index: number) => void;
 }) {
   const open = expanded.has(node.id);
-  const count = node.entries.length + node.children.reduce((sum, child) => sum + child.entries.length, 0);
+  const count = folderEntryCount(node);
   return <div className="tree-node">
     <div className={`tree-row folder-row ${selectedFolder === node.id ? 'selected-folder' : ''}`} draggable={!readOnly}
       onDragStart={readOnly ? undefined : (event) => beginDrag(event, { type: 'folder', id: node.id }, node.name)}
@@ -217,16 +229,20 @@ function LoginScreen({ onLogin }: { onLogin: (csrf: string) => void }) {
   return <main className="login-screen"><form className="login-card" onSubmit={submit}><span className="brand-mark large"><Sigma /></span><h1>Study</h1><p>Your mathematical library is password protected.</p><label className="field-label" htmlFor="study-password">Password<Input id="study-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} /></label>{error && <div className="form-error">{error}</div>}<Button type="submit" disabled={busy || !password}><LogIn /> {busy ? 'Opening…' : 'Open library'}</Button></form></main>;
 }
 
-function ReadingPane({ entry, folders, canEdit, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry }: { entry: EntryDetail | null; folders: Folder[]; canEdit: boolean; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void }) {
-  if (!entry) return <article className="reading-pane empty-library"><div><span className="brand-mark large"><Library /></span><h1>Your study library</h1><p>Select an entry, or create one in a folder. Content is stored as ordinary Markdown under <code>data/</code>.</p></div></article>;
+function ReadingPane({ entry, folders, canEdit, inactive, previousEntry, nextEntry, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry, onNavigate }: { entry: EntryDetail | null; folders: Folder[]; canEdit: boolean; inactive: boolean; previousEntry: EntrySummary | null; nextEntry: EntrySummary | null; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void; onNavigate: (entry: EntrySummary) => void }) {
+  if (!entry) return <article className="reading-pane empty-library" inert={inactive || undefined} tabIndex={-1}><div><span className="brand-mark large"><Library /></span><h1>Your study library</h1><p>Select an entry, or create one in a folder. Content is stored as ordinary Markdown under <code>data/</code>.</p></div></article>;
   const target = readingVariantSelection(entry, selectedVariantId);
   const folder = folders.find((item) => item.id === entry.folder_id); const active = entry.formulations.find((item) => item.id === target.formulationId) || entry.formulations[0];
-  return <article className="reading-pane"><div className="breadcrumbs">{folder?.namespace.split(':').join(' / ')} <span>/</span> {KIND_LABEL[entry.kind]}</div>
+  return <article className="reading-pane" inert={inactive || undefined} tabIndex={-1}><div className="breadcrumbs">{folder?.namespace.split(':').join(' / ')} <span>/</span> {KIND_LABEL[entry.kind]}</div>
     <div className="document-heading"><div><span className="canonical-tag">{active?.canonical_tag || entry.canonical_tag}</span><h1>{entry.title}</h1></div><div className="document-actions desktop-write"><Button variant="outline" disabled={!canEdit} onClick={onEdit}>Edit</Button><Button variant="destructive" disabled={!canEdit} onClick={onDelete}><Trash2 /> Delete</Button></div></div>
     {entry.header && <MathMarkdown content={entry.header} className="content-header" folderId={entry.folder_id} onOpenEntry={onOpenEntry} />}
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
     {!!entry.supplements.length && <section className="supplement-list"><h2>{entry.kind === 'th' ? 'Proofs' : 'Solutions'}</h2>{entry.supplements.map((item) => <details key={item.id} open={target.supplementId ? target.supplementId === item.id : item.main}><summary><span>{item.label}</span><code>{item.canonical_tag}</code></summary><MathMarkdown content={item.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} /></details>)}</section>}
+    <nav className="reading-sequence-nav" aria-label="Adjacent entries in authored order">
+      <Button variant="outline" disabled={!previousEntry} onClick={() => previousEntry && onNavigate(previousEntry)}><ChevronLeft /><span><small>Previous</small><strong>{previousEntry?.title || 'Start of library'}</strong></span></Button>
+      <Button variant="outline" disabled={!nextEntry} onClick={() => nextEntry && onNavigate(nextEntry)}><span><small>Next</small><strong>{nextEntry?.title || 'End of library'}</strong></span><ChevronRight /></Button>
+    </nav>
   </article>;
 }
 
@@ -241,6 +257,8 @@ export default function Home() {
   const locationInitialized = useRef(false);
   const editorOpenRef = useRef(false);
   const pendingPopstate = useRef(false);
+  const mobileLibraryTriggerRef = useRef<HTMLButtonElement>(null);
+  const mobileLibraryCloseRef = useRef<HTMLButtonElement>(null);
 
   const writeEntryPath = useCallback((target: EntrySummary, variantId: string | null, mode: 'push' | 'replace') => {
     if (pendingPopstate.current) return;
@@ -298,9 +316,10 @@ export default function Home() {
     });
     setLocationError('');
     setMobileLibrary(false);
+    if (isMobile) window.requestAnimationFrame(() => document.querySelector<HTMLElement>('.reading-pane')?.focus());
     const target = dataRef.current?.entries.find((item) => item.id === id);
     if (target) writeEntryPath(target, variantId, 'push');
-  }, [writeEntryPath]);
+  }, [isMobile, writeEntryPath]);
 
   const load = useCallback(async () => { try { const next = await api<Bootstrap>('/api/bootstrap'); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
   useEffect(() => { api<{ authenticated: boolean; auth_required: boolean; csrf: string | null }>('/api/session').then((result) => { setCsrfToken(result.csrf); setSession({ loading: false, authenticated: result.authenticated, authRequired: result.auth_required }); if (result.authenticated) return load(); }).catch((reason: Error) => { setSession({ loading: false, authenticated: false, authRequired: true }); setError(reason.message); }); }, [load]);
@@ -338,6 +357,41 @@ export default function Home() {
     return () => controller.abort();
   }, [librarySynchronized, selectedEntryId, session.authenticated]);
   useEffect(() => { const stored = localStorage.getItem('study-theme'); const value = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches; document.documentElement.classList.toggle('dark', value); }, []);
+  useEffect(() => {
+    if (!isMobile || !mobileLibrary) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    mobileLibraryCloseRef.current?.focus();
+    window.requestAnimationFrame(() => {
+      const tree = document.querySelector<HTMLElement>('#study-library-sidebar .tree');
+      const active = tree?.querySelector<HTMLElement>('.entry-row.active');
+      if (!tree || !active) return;
+      const treeBounds = tree.getBoundingClientRect();
+      const activeBounds = active.getBoundingClientRect();
+      tree.scrollTop += activeBounds.top - treeBounds.top - (treeBounds.height - activeBounds.height) / 2;
+    });
+    const handleDrawerKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setMobileLibrary(false);
+        window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus());
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const drawer = document.getElementById('study-library-sidebar');
+      const focusable = drawer ? [...drawer.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], input:not(:disabled), [tabindex]:not([tabindex="-1"])')].filter((item) => item.getClientRects().length > 0) : [];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    window.addEventListener('keydown', handleDrawerKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleDrawerKeyDown);
+    };
+  }, [isMobile, mobileLibrary]);
   useEffect(() => { const handler = (event: KeyboardEvent) => { if ((event.metaKey || event.ctrlKey) && !event.shiftKey && event.key.toLowerCase() === 'k') { event.preventDefault(); searchRef.current?.focus(); } }; window.addEventListener('keydown', handler); return () => window.removeEventListener('keydown', handler); }, []);
   useEffect(() => {
     const needle = query.trim();
@@ -484,13 +538,17 @@ export default function Home() {
 
   const resizeLibrary = (width: number) => setLibraryWidth(width);
   const selectedFolder = data?.folders.find((folder) => folder.id === selectedFolderId) || null;
+  const orderedEntries = authoredEntries(data?.tree || []);
+  const selectedEntryIndex = orderedEntries.findIndex((item) => item.id === selectedEntryId);
+  const previousEntry = selectedEntryIndex > 0 ? orderedEntries[selectedEntryIndex - 1] : null;
+  const nextEntry = selectedEntryIndex >= 0 && selectedEntryIndex < orderedEntries.length - 1 ? orderedEntries[selectedEntryIndex + 1] : null;
   const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, readOnly: isMobile || !librarySynchronized, onToggle: (id: string) => setExpanded((current) => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; }), onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: updateFolderReview, onMove: moveItem, onInsertEntry: beginCreateEntry, onInsertFolder: addFolder };
-  return <main className={`app-frame ${libraryOpen ? '' : 'library-closed'}`} style={{ '--library-width': `${libraryWidth}px` } as CSSProperties}><header className="topbar"><div className="brand-cluster"><Button className="library-toggle" variant="ghost" size="icon-sm" aria-label={libraryOpen ? 'Hide library panel' : 'Show library panel'} onClick={() => setLibraryOpen((value) => !value)}>{libraryOpen ? <PanelLeftClose /> : <PanelLeftOpen />}</Button><button className="brand" aria-label="Open Study library" onClick={() => isMobile ? setMobileLibrary(true) : setLibraryOpen(true)}><span className="brand-mark"><Sigma /></span><span>Study</span></button></div>
+  return <main className={`app-frame ${libraryOpen ? '' : 'library-closed'}`} style={{ '--library-width': `${libraryWidth}px` } as CSSProperties}><header className="topbar" inert={isMobile && mobileLibrary ? true : undefined}><div className="brand-cluster"><Button className="library-toggle" variant="ghost" size="icon-sm" aria-label={libraryOpen ? 'Hide library panel' : 'Show library panel'} onClick={() => setLibraryOpen((value) => !value)}>{libraryOpen ? <PanelLeftClose /> : <PanelLeftOpen />}</Button><button ref={mobileLibraryTriggerRef} className="brand" aria-label="Open Study library" aria-controls="study-library-sidebar" aria-expanded={isMobile ? mobileLibrary : libraryOpen} onClick={() => { if (isMobile) { setQuery(''); setSearchResults([]); setMobileLibrary(true); } else setLibraryOpen(true); }}><span className="brand-mark"><Sigma className="desktop-brand-icon" /><Menu className="mobile-brand-icon" /></span><span>Study</span></button></div>
     <div className="searchbox"><Search /><input ref={searchRef} type="search" maxLength={1000} aria-label="Search your library" aria-controls="study-search-results" placeholder="Search definitions, theorems, problems…" value={query} onChange={(event) => { const value = event.target.value; setQuery(value); setSearchResults([]); setSearching(Boolean(value.trim())); }} onKeyDown={(event) => { if (event.key === 'Enter' && searchResults[0]) { event.preventDefault(); chooseSearchResult(searchResults[0]); } else if (event.key === 'Escape') { setQuery(''); setSearchResults([]); setSearching(false); } }} /><kbd>⌘ K</kbd>{query.trim() && <section id="study-search-results" className="search-results" aria-label="Search results"><div className="search-status" aria-live="polite">{searching ? 'Searching…' : `${searchResults.length} result${searchResults.length === 1 ? '' : 's'}`}</div>{!searching && searchResults.map((result) => <button key={result.id} type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => chooseSearchResult(result)}><span className={`type-chip type-${result.kind}`}>{result.kind}</span><span><strong>{result.title}</strong><code>{result.canonical_tag}</code></span></button>)}</section>}</div>
-    <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" onClick={() => setMode('review')}><BookOpen /> Review <span>{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
-    <aside className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`}><div className="sidebar-heading"><span>Library</span><Button className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => setMobileLibrary(false)}><Menu /></Button></div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
+    <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" aria-label={`Start review, ${data?.review.due || 0} due`} onClick={() => setMode('review')}><BookOpen /><span className="review-label">Review</span><span className="review-count-badge">{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
+    <aside id="study-library-sidebar" className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`} role={isMobile && mobileLibrary ? 'dialog' : 'complementary'} aria-label="Study library" aria-modal={isMobile && mobileLibrary ? true : undefined} aria-hidden={isMobile && !mobileLibrary ? true : undefined}><div className="sidebar-heading"><span>Library</span><Button ref={mobileLibraryCloseRef} className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => { setMobileLibrary(false); window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus()); }}><X /></Button></div><div className="mobile-sidebar-actions"><Button onClick={() => { setMobileLibrary(false); setMode('review'); }}><BookOpen /> Review <span className="review-count-badge">{data?.review.due || 0}</span></Button><Button variant="outline" onClick={() => { setMobileLibrary(false); setMode('calendar'); }}><CalendarDays /> Calendar</Button><Button variant="outline" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />} {dark ? 'Light mode' : 'Dark mode'}</Button>{session.authRequired && <Button variant="outline" onClick={() => void logout()}><LogOut /> Log out</Button>}</div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
     {libraryOpen && <LibraryResizeHandle value={libraryWidth} onChange={resizeLibrary} />}
-    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} />
+    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
     {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : locationError ? <button className="toast-error" onClick={() => setLocationError('')}>{locationError}</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
     <EditorDialog open={editorOpen} entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} />
     <DeleteItemDialog target={deleteTarget} onClose={() => setDeleteTarget(null)} onDelete={deleteItem} />

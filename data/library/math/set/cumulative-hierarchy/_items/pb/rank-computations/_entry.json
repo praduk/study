@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9d871e1be9f1443ebd8c5f7f0ccb3967",
+  "title": "Computing Ranks",
+  "rank": 17179869184,
+  "header": "",
+  "problem_family": "cumulative-hierarchy",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "acfa693433b6459ab8dcffaf018ec656",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.acfa693433b6459ab8dcffaf018ec656.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "db695870240d4698b9c45fbc672f725f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.db695870240d4698b9c45fbc672f725f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:40.285404+00:00",
+  "updated_at": "2026-09-04T12:51:40.312104+00:00"
+}

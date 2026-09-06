@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "43b98f8831ab46bda0c50fce91b468d4",
+  "title": "Proof Construction and Scope Discipline",
+  "rank": 12884901888,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1d590fd4105459aa9e820efdd7f8d09",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1d590fd4105459aa9e820efdd7f8d09.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.630670+00:00",
+  "updated_at": "2026-09-04T12:51:41.630673+00:00"
+}

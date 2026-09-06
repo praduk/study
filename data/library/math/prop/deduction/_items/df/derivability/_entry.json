@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "215c37cbf4a04dd19283cb717d96ae02",
+  "title": "Derivability and Proof-Theoretic Equivalence",
+  "rank": 8589934592,
+  "header": "Prerequisite: @math:prop:deduction:df:natural-deduction-calculus",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da509f253d604874bc942ffdcd590fdf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da509f253d604874bc942ffdcd590fdf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:41.611103+00:00",
+  "updated_at": "2026-09-04T12:51:41.611106+00:00"
+}

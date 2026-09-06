@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "07b0a5e0e656417a9e413cb7211a1e2c",
+  "title": "Well-Orders and Initial Segments",
+  "rank": 12884901888,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d495082ebad43edab233a4d9724e866",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d495082ebad43edab233a4d9724e866.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:39.589558+00:00",
+  "updated_at": "2026-09-04T12:51:39.589566+00:00"
+}

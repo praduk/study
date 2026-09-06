@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "48803a47ec8743f196e49fdf660f8d4d",
+  "title": "Semantic Substitution Lemma",
+  "rank": 30064771072,
+  "header": "Assume $t$ is free for $x$ in $φ$.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5881ebd1ad5543878db51275aeaf732f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5881ebd1ad5543878db51275aeaf732f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8e8a8ebc6fa445de99c2bbaae2ca8d4e",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.8e8a8ebc6fa445de99c2bbaae2ca8d4e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-04T12:51:43.272345+00:00",
+  "updated_at": "2026-09-04T12:51:43.298409+00:00"
+}
