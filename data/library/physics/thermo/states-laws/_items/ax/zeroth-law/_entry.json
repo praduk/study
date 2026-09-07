@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4d6d136b3d1245be8562cac46518733a",
+  "title": "Zeroth law: thermal-equilibrium postulate",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "60245499862e4ae2a1ed370a3038d4db",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.60245499862e4ae2a1ed370a3038d4db.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.535356+00:00",
+  "updated_at": "2026-09-07T08:57:24.535357+00:00"
+}

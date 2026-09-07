@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "771033b7509b497d9fe575fd5e9d89d2",
+  "title": "Immersions, submersions, and embeddings",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "546d5d9e94574bb5a6ed5560a97e4ce1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.546d5d9e94574bb5a6ed5560a97e4ce1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:19.517896+00:00",
+  "updated_at": "2026-09-07T08:04:19.517904+00:00"
+}

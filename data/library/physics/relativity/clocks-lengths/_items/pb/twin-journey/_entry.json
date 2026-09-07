@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bdb72f796d244ec3a7e91c807cd5d021",
+  "title": "A round trip with two inertial legs",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "23be09f2854d40c0afbbee69852fa717",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.23be09f2854d40c0afbbee69852fa717.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e7bbc483d2f0494d87b3c2d70b9894be",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e7bbc483d2f0494d87b3c2d70b9894be.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.039639+00:00",
+  "updated_at": "2026-09-07T09:02:59.077752+00:00"
+}

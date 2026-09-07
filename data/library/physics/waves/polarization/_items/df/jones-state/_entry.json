@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4d9c992e919a4f82b9b84f5c73d35636",
+  "title": "Jones vectors with a fixed phase convention",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3cdbeb0e8c41444cb9b4e102899cdacd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3cdbeb0e8c41444cb9b4e102899cdacd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:18.928724+00:00",
+  "updated_at": "2026-09-07T09:04:18.928732+00:00"
+}

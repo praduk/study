@@ -1,0 +1,1 @@
+One ideal clock stays at $x=0$. Another leaves it at $t=0$, travels at speed $v$ to $x=L>0$, reverses direction, and returns at the same speed, where $0<v<c$. In the idealized instantaneous-turnaround limit, compute both elapsed times and their difference. Identify what breaks the apparent exchange symmetry.

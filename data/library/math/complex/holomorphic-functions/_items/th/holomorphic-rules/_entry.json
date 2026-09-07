@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6fa209c5bdfa475b823ed6a709521ad8",
+  "title": "Algebra and chain rules for holomorphic functions",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:df:holomorphic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "288d973277ca4b7488588c26fe62c1ba",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.288d973277ca4b7488588c26fe62c1ba.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6f25acb9c70b461ba0fdc2c1cb86a05f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6f25acb9c70b461ba0fdc2c1cb86a05f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:10.922710+00:00",
+  "updated_at": "2026-09-07T08:26:04.987577+00:00"
+}

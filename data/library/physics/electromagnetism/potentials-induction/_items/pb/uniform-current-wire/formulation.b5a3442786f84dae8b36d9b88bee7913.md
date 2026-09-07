@@ -1,0 +1,1 @@
+A very long straight wire of radius $a$ carries total steady current $I$ uniformly in its cross-section along $+z$. In the infinite-wire idealization, with no imposed external field, find $\mathbf B$ inside and outside. Check continuity at the surface.

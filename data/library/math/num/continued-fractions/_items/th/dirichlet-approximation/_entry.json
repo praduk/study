@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "73f679cbf3394958b8a7a4d173e248b5",
+  "title": "Dirichlet’s elementary approximation theorem",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3517df51e53c4f88bc7bdd532236e2d5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3517df51e53c4f88bc7bdd532236e2d5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c2370cf406274f7faee939fe56d00144",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c2370cf406274f7faee939fe56d00144.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:37.433519+00:00",
+  "updated_at": "2026-09-07T07:48:38.724749+00:00"
+}

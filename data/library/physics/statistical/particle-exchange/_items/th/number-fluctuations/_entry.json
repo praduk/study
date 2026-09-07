@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "faf06f49b34448798a9f5155e93f5233",
+  "title": "Number fluctuations and chemical response",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1f43127037474108be1a62a9cc07c597",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1f43127037474108be1a62a9cc07c597.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1fab4d0a1c674a81a4826ba89439da64",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1fab4d0a1c674a81a4826ba89439da64.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.023831+00:00",
+  "updated_at": "2026-09-07T09:00:58.071597+00:00"
+}

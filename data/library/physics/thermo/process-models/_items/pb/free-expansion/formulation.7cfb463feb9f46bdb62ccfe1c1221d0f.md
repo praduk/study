@@ -1,0 +1,1 @@
+A calorically perfect ideal gas expands into a vacuum inside an insulated rigid enclosure, from equilibrium volume $V_1$ to $V_2>V_1$. Find $Q,W,\Delta U,\Delta T,\Delta S$. Compare with reversible isothermal expansion between the same endpoint states.

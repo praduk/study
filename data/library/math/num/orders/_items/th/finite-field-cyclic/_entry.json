@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "abb4ed67046b405db7d2af434c47daf7",
+  "title": "A finite subgroup of a field’s units is cyclic",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "96910513b2e04b17bf0bb2c581f5ed8a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.96910513b2e04b17bf0bb2c581f5ed8a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e4d2c0a3e0fc4387a307ca1401e39575",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e4d2c0a3e0fc4387a307ca1401e39575.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:05.788409+00:00",
+  "updated_at": "2026-09-07T07:48:07.060155+00:00"
+}

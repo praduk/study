@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "56bc4f48d6cb46959ddd19c88582039d",
+  "title": "First frequency correction for a cubic restoring force",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c5a25fb20aeb459fa585a98ae962f4ee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c5a25fb20aeb459fa585a98ae962f4ee.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2788fd4760064601b05ebbf39b90381a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2788fd4760064601b05ebbf39b90381a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.143491+00:00",
+  "updated_at": "2026-09-07T09:04:12.251820+00:00"
+}

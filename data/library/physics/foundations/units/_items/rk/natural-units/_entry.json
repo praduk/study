@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "68373a883dd949ebbd1482b573cb72ed",
+  "title": "Restoring dimensions after natural units",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2a2fcb3d04fa4048ac1e4660e37636b1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2a2fcb3d04fa4048ac1e4660e37636b1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:40.882875+00:00",
+  "updated_at": "2026-09-07T08:51:40.882882+00:00"
+}

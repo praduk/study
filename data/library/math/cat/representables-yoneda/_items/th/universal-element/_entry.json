@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "22629823288643b1b649a320b8ad93cc",
+  "title": "Representability by a universal element",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d9cbff9d4fc04f88bd52e8b98eb6e131",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d9cbff9d4fc04f88bd52e8b98eb6e131.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a70113b8c7c542c6ba103ef6b46e6053",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a70113b8c7c542c6ba103ef6b46e6053.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:28.802442+00:00",
+  "updated_at": "2026-09-07T07:56:30.695780+00:00"
+}

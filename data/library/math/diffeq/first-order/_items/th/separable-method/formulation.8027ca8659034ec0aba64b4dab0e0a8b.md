@@ -1,0 +1,1 @@
+Let $a$ and $b$ be continuous and let $y$ solve $y'=a(t)b(y)$. On an interval where $b(y(t))\ne0$, any antiderivatives $A'=a$ and $B'=1/b$ satisfy $B(y(t))=A(t)+C$. Conversely a differentiable function satisfying this relation with $b(y)\ne0$ solves the equation. Every zero $b(c)=0$ gives an equilibrium solution $y(t)=c$.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b307e615aadd4cea9d00048011c36aa8",
+  "title": "A quartic model of spontaneous order",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4ef6bd2ef96d400ab7380f8db93644c5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4ef6bd2ef96d400ab7380f8db93644c5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "274954413b95487c9026ceaf53f5f4ba",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.274954413b95487c9026ceaf53f5f4ba.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:59.117000+00:00",
+  "updated_at": "2026-09-07T09:00:59.195479+00:00"
+}

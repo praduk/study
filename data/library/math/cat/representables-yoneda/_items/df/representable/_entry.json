@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "75c7661646af4d5f9bc4a59fdf290e7e",
+  "title": "Representable functors and presheaves",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dad64dc17c7a4df4ba6a33b5b4c21b41",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dad64dc17c7a4df4ba6a33b5b4c21b41.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:21.070060+00:00",
+  "updated_at": "2026-09-07T07:56:21.070081+00:00"
+}

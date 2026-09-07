@@ -1,0 +1,1 @@
+The product rule yields $(uv)'=u'v+uv'$. All functions on the right are continuous, so their Riemann integrals exist. Integrate the identity and use linearity and the fundamental theorem of calculus, then rearrange.

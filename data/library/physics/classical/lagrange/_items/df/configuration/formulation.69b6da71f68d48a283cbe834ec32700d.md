@@ -1,0 +1,3 @@
+A configuration manifold $Q$ parametrizes allowed positions. A holonomic constraint is a relation among positions and possibly time; regular independent equations $f_\alpha(x,t)=0$ locally define the allowed configurations. Coordinates $q^i$ on that set are generalized coordinates. A virtual displacement varies $q$ at fixed time.
+
+A constraint force is ideal if its total virtual work vanishes on every allowed virtual displacement. Smooth frictionless surfaces are modeled this way; sliding friction generally is not. A constraint involving velocities need not be equivalent to a position constraint, so substituting it into a Lagrangian is not automatically justified.

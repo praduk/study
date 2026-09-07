@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5a2a4b561c9947589f45e0af02141c4b",
+  "title": "Shear flow between moving plates",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fb8f3d86baa54b40a0b337889c713604",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fb8f3d86baa54b40a0b337889c713604.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2a0e4158025a46f4a4aeaf98fa6629c2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2a0e4158025a46f4a4aeaf98fa6629c2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.284182+00:00",
+  "updated_at": "2026-09-07T09:04:13.347812+00:00"
+}

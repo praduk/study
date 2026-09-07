@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "49ee0352c557452599301fe277f0e9c2",
+  "title": "Pure gauge connections have zero curvature",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "25c6ac42bd794b32873c4276c2a7ea36",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.25c6ac42bd794b32873c4276c2a7ea36.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9b1b0d762adc46a09026dd1ffc490d4e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9b1b0d762adc46a09026dd1ffc490d4e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:15.812987+00:00",
+  "updated_at": "2026-09-07T08:54:18.583464+00:00"
+}

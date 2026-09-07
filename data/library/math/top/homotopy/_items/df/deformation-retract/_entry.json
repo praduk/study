@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "09a4630728074781aa2d746084f9ae1a",
+  "title": "Retractions and strong deformation retractions",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ead47a4729b7489883eeaa7a6453779c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ead47a4729b7489883eeaa7a6453779c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:56.852636+00:00",
+  "updated_at": "2026-09-07T08:01:56.852643+00:00"
+}

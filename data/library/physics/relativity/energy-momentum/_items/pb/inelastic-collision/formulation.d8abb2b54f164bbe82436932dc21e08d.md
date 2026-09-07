@@ -1,0 +1,1 @@
+Two particles, each of mass $m>0$, approach with velocities $+v$ and $-v$ in their center-of-momentum frame. They stick into one composite object and emit no radiation. Find its velocity and invariant mass. Explain where the initial kinetic energy is represented.

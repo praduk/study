@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "daf2adb28c9c4761886d0e6f6c29e65b",
+  "title": "A smooth vector field that is not complete",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8424281ed0614bbcbc19b7b5657e8cec",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8424281ed0614bbcbc19b7b5657e8cec.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ffe1c78f83b14c8ca58f4e7c194eea31",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ffe1c78f83b14c8ca58f4e7c194eea31.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:49.651798+00:00",
+  "updated_at": "2026-09-07T08:04:51.621746+00:00"
+}

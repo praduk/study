@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "92486c0529334cce9b8e1295ef57853d",
+  "title": "Smooth distributions and integral manifolds",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6016ff3e6f534401bcb8531d87967af5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6016ff3e6f534401bcb8531d87967af5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:52.825316+00:00",
+  "updated_at": "2026-09-07T08:04:52.825323+00:00"
+}

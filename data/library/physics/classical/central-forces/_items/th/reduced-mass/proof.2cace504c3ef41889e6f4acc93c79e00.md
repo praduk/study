@@ -1,0 +1,1 @@
+Invert the definitions: $x_1=R+(m_2/M)r$, $x_2=R-(m_1/M)r$. On substituting their velocities in the kinetic energy, the cross terms cancel. The coefficient of $|\dot r|^2/2$ is $(m_1m_2^2+m_2m_1^2)/M^2=\mu$. The potential depends only on $r$, and Euler–Lagrange in $R$ gives $M\ddot R=0$.

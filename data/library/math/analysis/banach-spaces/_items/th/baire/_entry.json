@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1d898355a49e4b62852022ee1f384e67",
+  "title": "Baire category theorem for complete metric spaces",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:banach-spaces:df:banach-operator, @math:uganalysis:metric-multivariable:df:metric-completeness.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "459e1a487812447fb471479e5c40dfa4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.459e1a487812447fb471479e5c40dfa4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "745df7ed832a4fdea14f3546c44966a9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.745df7ed832a4fdea14f3546c44966a9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:37.400934+00:00",
+  "updated_at": "2026-09-07T08:13:39.947059+00:00"
+}

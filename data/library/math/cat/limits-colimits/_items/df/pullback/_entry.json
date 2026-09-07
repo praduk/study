@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "636fb47c389b42df96d1aa11263c2eb3",
+  "title": "Pullbacks",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ae67f51acd2149368746aff9195671ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ae67f51acd2149368746aff9195671ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:02.074673+00:00",
+  "updated_at": "2026-09-07T07:56:02.074698+00:00"
+}

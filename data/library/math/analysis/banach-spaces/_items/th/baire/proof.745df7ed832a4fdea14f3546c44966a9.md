@@ -1,0 +1,3 @@
+Let $G_n$ be open dense and let $U$ be a nonempty open set. Choose a nonempty closed ball $\overline B(x_1,r_1)\subseteq U\cap G_1$ with $0<r_1<1/2$. Inductively choose
+$\overline B(x_{n+1},r_{n+1})\subseteq B(x_n,r_n)\cap G_{n+1}$
+with $0<r_{n+1}<2^{-n-1}$. Such choices follow from openness and density, even if a ball is a singleton. The centers are Cauchy because every later center lies in the $n$th ball and its radius tends to zero. Completeness gives a limit $x$. Each closed ball contains the tail and hence $x$. Thus $x\in U\cap\bigcap_nG_n$. Since $U$ was arbitrary, the intersection is dense. Taking complements gives the equivalent formulation.

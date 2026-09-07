@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "94082aa3840344cdbcb90e9d401f3ee5",
+  "title": "Solvability is closed under extensions",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce5cf385453146e288e26bbb36f76e5e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce5cf385453146e288e26bbb36f76e5e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "05edd74b49524d5a96e5994b33d7cead",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.05edd74b49524d5a96e5994b33d7cead.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:25.243958+00:00",
+  "updated_at": "2026-09-07T07:53:26.720717+00:00"
+}

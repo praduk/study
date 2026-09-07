@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cd04808aa41f4558ad2ee90770769540",
+  "title": "Limit superior and limit inferior",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:monotone-convergence.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "01ed1e6bc18b471e9e5e135bcb53ec64",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.01ed1e6bc18b471e9e5e135bcb53ec64.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:36.418327+00:00",
+  "updated_at": "2026-09-07T08:24:18.042287+00:00"
+}

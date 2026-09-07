@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e2416f1c67994fb88ff958508a98a797",
+  "title": "Occupation-number energy of free modes",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8613ce93a02845bd898d1eeee99b4f23",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8613ce93a02845bd898d1eeee99b4f23.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bc99d34ff87e4afe9b8c9f2029c99224",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bc99d34ff87e4afe9b8c9f2029c99224.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:47.016197+00:00",
+  "updated_at": "2026-09-07T08:53:49.714156+00:00"
+}

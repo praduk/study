@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "21651281bbc04c20910dd78739f9bb9f",
+  "title": "Darboux sums and the Riemann integral",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0ea36fd67c844a8eb00e9f07b95bebe3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0ea36fd67c844a8eb00e9f07b95bebe3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:53.991208+00:00",
+  "updated_at": "2026-09-07T08:24:27.948489+00:00"
+}

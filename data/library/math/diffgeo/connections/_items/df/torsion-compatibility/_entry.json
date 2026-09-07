@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "157582a6c0b743dcbad7e899e9357a1f",
+  "title": "Torsion and metric compatibility",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "47abe9e9eba44da0b087835f3de49556",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.47abe9e9eba44da0b087835f3de49556.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:42.905985+00:00",
+  "updated_at": "2026-09-07T08:27:17.365617+00:00"
+}

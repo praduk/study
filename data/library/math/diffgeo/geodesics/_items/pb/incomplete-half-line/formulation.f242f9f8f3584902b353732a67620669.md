@@ -1,0 +1,1 @@
+On $M=(0,\infty)$ compare the Riemannian metrics $g=dx^2$ and $h=dx^2/x^2$. Determine completeness and the geodesic through $x_0>0$ with initial coordinate velocity $v_0$ for each metric.

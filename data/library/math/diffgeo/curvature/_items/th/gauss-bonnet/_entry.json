@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "96e513bd9a804989b762919d715d726b",
+  "title": "Gauss–Bonnet for closed surfaces",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff3e8e1327944c39abb7453bb9833952",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff3e8e1327944c39abb7453bb9833952.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:39.834770+00:00",
+  "updated_at": "2026-09-07T08:27:37.133427+00:00"
+}

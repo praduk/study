@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7e227c4f12a94f4dbd16a2513ca18c93",
+  "title": "Riemann’s removable singularity theorem",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:taylor-cauchy, @math:complex:singularities:df:isolated-singularity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d00d58c56644b4c9015bb06e96925e8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d00d58c56644b4c9015bb06e96925e8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "65fb1e3435ad465a99ce39a063b1a923",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.65fb1e3435ad465a99ce39a063b1a923.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:21.122698+00:00",
+  "updated_at": "2026-09-07T08:16:23.592244+00:00"
+}

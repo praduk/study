@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "92848a3adeee417895dab6378ebc4b6f",
+  "title": "Singular simplices and the boundary operator",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8303e3683aa7435599412351210a0d4d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8303e3683aa7435599412351210a0d4d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:43.440386+00:00",
+  "updated_at": "2026-09-07T08:02:43.440392+00:00"
+}

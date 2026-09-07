@@ -1,0 +1,1 @@
+The laws constrain a material's processes but do not determine its pressure or heat capacity. The equation $pV=Nk_BT$ is an ideal-gas model. Adding $U=(3/2)Nk_BT$ assumes classical monatomic translation. Dense fluids and active molecular modes require different input. A correct derivation from a model does not establish that the model describes a particular material.

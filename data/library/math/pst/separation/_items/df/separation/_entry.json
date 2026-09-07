@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "48a644380efa4ef48d0a0af82a1ef7c9",
+  "title": "Separation axioms and conventions",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dccd95553b4542faae7eae9f5674373c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dccd95553b4542faae7eae9f5674373c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:39.543089+00:00",
+  "updated_at": "2026-09-07T08:00:39.543097+00:00"
+}

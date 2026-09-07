@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "69f6955381d54c6aabc5b5819bc28dcf",
+  "title": "Equation and energy of a classical quartic field",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "30c1f174ee64455581465fa0638725bd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.30c1f174ee64455581465fa0638725bd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "510692529b7642e6a23e066fa13d6a70",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.510692529b7642e6a23e066fa13d6a70.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:57.046919+00:00",
+  "updated_at": "2026-09-07T08:52:59.719026+00:00"
+}

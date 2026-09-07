@@ -1,0 +1,3 @@
+A real plane harmonic disturbance is $u(x,t)=A\cos(k\cdot x-\omega t+\phi)$, where $A$ has the units of the measured field. Its phase is the dimensionless argument; surfaces of constant phase are wavefronts. For $k\ne0$, wavelength is $\lambda=2\pi/|k|$ and the normal phase speed is $\omega/|k|$. For $\omega>0$, the period is $2\pi/\omega$.
+
+The material displacement in a vibrating string has units of length, whereas acoustic pressure has units Pa and an electric field has units $\mathrm{V\,m^{-1}}$. Equal mathematical waveforms can represent different observables and carry different amounts of energy. Phase motion alone does not identify the velocity of a material particle or a signal front.

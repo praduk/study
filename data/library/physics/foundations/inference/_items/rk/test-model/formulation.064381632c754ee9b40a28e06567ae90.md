@@ -1,0 +1,3 @@
+To test a model, specify a preparation, an observable, a predicted value or distribution, and an uncertainty or approximation range. Then identify alternatives whose predictions differ in that setup. Fitting free parameters and evaluating the fit on the same data is weaker evidence than a prediction on an independent preparation.
+
+A successful fit does not prove uniqueness of the explanation. A failed comparison first requires checking the measurement map, units, parameter calibration, and claimed approximation regime. This is methodological orientation; the mathematical examples in this course establish conditional statements only.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4b8377e7ee894851854840879a922bc7",
+  "title": "Induced maps and retracts on fundamental groups",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb84c3e33cef492fa063b8f49d78c13b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb84c3e33cef492fa063b8f49d78c13b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "035dcde9f8ff44aa9f7c2545813a9295",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.035dcde9f8ff44aa9f7c2545813a9295.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:58.330334+00:00",
+  "updated_at": "2026-09-07T08:02:00.222889+00:00"
+}

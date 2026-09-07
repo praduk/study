@@ -1,0 +1,1 @@
+Compute $3^2\equiv9$, $3^4\equiv13$, and $3^8\equiv16=-1\pmod{17}$. The order divides $16$, and every proper divisor of $16$ divides $8$; hence the order is $16$. Its $k$th power has order $16$ exactly when $\gcd(k,16)=1$, namely for $k=1,3,5,7,9,11,13,15$. Reducing these powers gives $3,10,5,11,14,7,12,6$. Thus the set is $\{3,5,6,7,10,11,12,14\}$.

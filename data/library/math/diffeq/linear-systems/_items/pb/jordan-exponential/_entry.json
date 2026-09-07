@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c3e65c31ef3e45438f3bc7f12b4e938f",
+  "title": "A repeated eigenvalue with only one eigenvector",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "07d763cd212c4af9aef946a601c9db70",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.07d763cd212c4af9aef946a601c9db70.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f77994e9ccaf483f83b770f2f3dd9059",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f77994e9ccaf483f83b770f2f3dd9059.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:39.706558+00:00",
+  "updated_at": "2026-09-07T07:49:41.076838+00:00"
+}

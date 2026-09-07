@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "667844f0a0fd4494b37c4fa63e85e7a2",
+  "title": "Regular Sturm–Liouville eigenvalue problems",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36682cc44283462280b0dbd9fa02ab5a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36682cc44283462280b0dbd9fa02ab5a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:40.559957+00:00",
+  "updated_at": "2026-09-07T07:51:40.559964+00:00"
+}

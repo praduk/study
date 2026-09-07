@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7bfe127816ad4ce6a1e74c9a65088537",
+  "title": "First-order transition amplitude for a finite driven system",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "51e5a9cb8d5d4c939cc2ea32bb61f4db",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.51e5a9cb8d5d4c939cc2ea32bb61f4db.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a6918d6f86694b9999c2fa363c9e775c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a6918d6f86694b9999c2fa363c9e775c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:23.565921+00:00",
+  "updated_at": "2026-09-07T09:11:23.670075+00:00"
+}

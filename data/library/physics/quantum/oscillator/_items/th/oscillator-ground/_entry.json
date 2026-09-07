@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a42bc6c8d66841ce91d41640b8f62928",
+  "title": "Gaussian minimizer of the oscillator energy form",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1452029afa374d568d3e4cc977bc0f40",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1452029afa374d568d3e4cc977bc0f40.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e32c2ac1ea084ab593378779bbf0a5d1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e32c2ac1ea084ab593378779bbf0a5d1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.555218+00:00",
+  "updated_at": "2026-09-07T09:11:21.618092+00:00"
+}

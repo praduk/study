@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "77e2c287a32d4343a040204d9720b791",
+  "title": "CW complexes and skeleta",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8f8cc5a96a51477497b8fb90646f3b3c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8f8cc5a96a51477497b8fb90646f3b3c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:29.830422+00:00",
+  "updated_at": "2026-09-07T08:02:29.830430+00:00"
+}

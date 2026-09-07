@@ -1,0 +1,1 @@
+In one degree of freedom let $Q=a q$ and $P=b p$, with nonzero dimensionless constants $a,b$. Determine when this is canonical. Transform $H=p^2/(2m)+m\Omega^2q^2/2$ in the canonical case, and explain why rescaling coordinates cannot change the physical oscillation frequency.

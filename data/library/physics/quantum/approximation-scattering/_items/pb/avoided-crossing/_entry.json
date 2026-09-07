@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2a96b9096e1c40bcab047abda7512148",
+  "title": "An exact check on perturbation theory",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3690f33f77864a688a309b064b3638a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3690f33f77864a688a309b064b3638a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ebd294bef35541d79cb550b6f894c122",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ebd294bef35541d79cb550b6f894c122.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:23.403571+00:00",
+  "updated_at": "2026-09-07T09:22:01.288290+00:00"
+}

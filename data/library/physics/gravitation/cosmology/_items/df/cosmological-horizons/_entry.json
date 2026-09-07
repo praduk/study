@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a486aa2bb9f34c659b21f5c44ce2a908",
+  "title": "Particle horizon, event horizon, and Hubble radius",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0fb7c2c3533843eea5420222176fe320",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0fb7c2c3533843eea5420222176fe320.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:17.854758+00:00",
+  "updated_at": "2026-09-07T09:18:17.854763+00:00"
+}

@@ -1,0 +1,1 @@
+At zero external field, consider the phenomenological free-energy density $f(m)=f_0+a(T-T_c)m^2/2+b m^4/4$ for $m\in\mathbb R$, with $a,b>0$. Find all global minima for $T$ above, equal to, and below $T_c$, and the minimized free-energy density.

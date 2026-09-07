@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "84c4aff9485349ddbce3be786f70855c",
+  "title": "Rolle’s theorem and the mean value theorem",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:continuity:th:extreme-values, @math:uganalysis:differentiation:df:derivative.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4907d55d62e544d396c3f53f4e15f126",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4907d55d62e544d396c3f53f4e15f126.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1c78e83ada084dcf9848fdbe25e41e80",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1c78e83ada084dcf9848fdbe25e41e80.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:35.543755+00:00",
+  "updated_at": "2026-09-07T08:24:23.931033+00:00"
+}

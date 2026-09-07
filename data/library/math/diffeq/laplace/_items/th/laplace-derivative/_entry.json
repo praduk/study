@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "75f77fe7ea1e4d488b2ae96366453023",
+  "title": "Transforming derivatives and initial data",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09e1041d0c504ab7855c17cefe0aeb12",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09e1041d0c504ab7855c17cefe0aeb12.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fc0aab17b8914865909c9c59b57551a7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fc0aab17b8914865909c9c59b57551a7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:24.940955+00:00",
+  "updated_at": "2026-09-07T08:23:02.971806+00:00"
+}

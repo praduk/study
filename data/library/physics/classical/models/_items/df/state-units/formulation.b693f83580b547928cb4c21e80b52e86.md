@@ -1,0 +1,3 @@
+For $N$ particles with fixed masses $m_a>0$, a Newtonian state at time $t$ consists of positions $x_a\in\R^3$ and velocities $v_a\in\R^3$ in a chosen reference frame. An observable is a real-valued or vector-valued function of the state and possibly time, together with its physical interpretation and units. Position, velocity, and acceleration have units $\mathrm m$, $\mathrm{m\,s^{-1}}$, and $\mathrm{m\,s^{-2}}$.
+
+A dimensionally meaningful equation equates quantities of the same dimensions. The arguments of exponentials, logarithms, and trigonometric functions must be dimensionless. Dimensional consistency is necessary, but it cannot determine a dimensionless numerical coefficient or establish that a model fits an experiment.

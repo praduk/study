@@ -1,0 +1,1 @@
+If positive integers $m_1,\ldots,m_k$ are pairwise coprime and $M=\prod_i m_i$, then every system $x\equiv a_i\pmod{m_i}$ has a unique solution modulo $M$. Equivalently the reduction map $\Z/M\Z\to\prod_i\Z/m_i\Z$ is a ring isomorphism.

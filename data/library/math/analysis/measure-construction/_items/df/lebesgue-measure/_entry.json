@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ba187c4f075d4f4799fa393fe591d1d8",
+  "title": "Lebesgue measure and completion",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:measure-construction:th:caratheodory, @math:analysis:measure-construction:th:measure-extension.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b4be73f8c35f4102a50fb8899ab99dae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b4be73f8c35f4102a50fb8899ab99dae.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:20.629439+00:00",
+  "updated_at": "2026-09-07T08:24:55.984909+00:00"
+}

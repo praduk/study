@@ -1,0 +1,1 @@
+In a commutative ring $R$, a prime ideal is a proper ideal $P$ such that $ab\in P$ implies $a\in P$ or $b\in P$. A maximal ideal is a proper ideal contained in no other proper ideal. An integral domain is a nonzero commutative ring with no nonzero zero divisors. A field is a nonzero commutative ring in which every nonzero element is invertible.

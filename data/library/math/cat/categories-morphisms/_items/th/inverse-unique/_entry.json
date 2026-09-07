@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "deca92f69fb940a59c3579b7f6e3924e",
+  "title": "Inverses are unique",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "33a08472a2b849508005bd6f246fe6dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.33a08472a2b849508005bd6f246fe6dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "61bc72c30a9c46b79009335b3deeb31a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.61bc72c30a9c46b79009335b3deeb31a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:20.680722+00:00",
+  "updated_at": "2026-09-07T08:23:46.508976+00:00"
+}

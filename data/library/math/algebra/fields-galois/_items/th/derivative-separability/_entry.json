@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "710a07e89bef4aacbc01e1b037ccfc8b",
+  "title": "Derivative criterion for repeated roots",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fd203016a3e2457f8d6f392209eedf49",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fd203016a3e2457f8d6f392209eedf49.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7737b5530c92487c815606d88db4b8ea",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7737b5530c92487c815606d88db4b8ea.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:44.285153+00:00",
+  "updated_at": "2026-09-07T07:54:46.203527+00:00"
+}

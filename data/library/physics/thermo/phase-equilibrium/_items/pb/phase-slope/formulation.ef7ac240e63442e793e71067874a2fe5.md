@@ -1,0 +1,1 @@
+At $T=300\,\mathrm K$, a solid-to-liquid transition has molar latent heat $6000\,\mathrm{J/mol}$ and molar volume change $-2.0\times10^{-6}\,\mathrm{m^3/mol}$. Find the local coexistence slope and explain its sign.

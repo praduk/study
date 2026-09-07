@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd06e6d609c54d588910e3d6a2425a71",
+  "title": "All roots of a nonzero complex number",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:complex-plane:th:exponential-addition.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b94c851fa1b84e6bb23f4d231865217b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b94c851fa1b84e6bb23f4d231865217b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5534c64d265547d09c64e7f2bb90528d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5534c64d265547d09c64e7f2bb90528d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:59.425610+00:00",
+  "updated_at": "2026-09-07T08:25:58.859701+00:00"
+}

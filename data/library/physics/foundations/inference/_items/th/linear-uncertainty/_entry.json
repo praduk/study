@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "10f4746ce66c4cbba690983b3053d89d",
+  "title": "Covariance of a linearized observable",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9eb1b0bc874b400382260950288c8f49",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9eb1b0bc874b400382260950288c8f49.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e2a26d07c1824e1892079e62a603fe17",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e2a26d07c1824e1892079e62a603fe17.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:31.322929+00:00",
+  "updated_at": "2026-09-07T08:52:33.973267+00:00"
+}

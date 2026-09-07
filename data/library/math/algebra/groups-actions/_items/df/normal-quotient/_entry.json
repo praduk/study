@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cab6ff4067014e37a79254a9e31658a6",
+  "title": "Normal subgroups and quotients",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d148b5f0afdd4d0389eff2976a30a1d9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d148b5f0afdd4d0389eff2976a30a1d9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:00.872386+00:00",
+  "updated_at": "2026-09-07T07:53:00.872394+00:00"
+}

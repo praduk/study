@@ -1,0 +1,1 @@
+Since $p_T|_V=Nk_B/V$, Maxwell gives $S_V|_T=Nk_B/V$. Integration yields $Nk_B\log(V/V_0)$. The ratio inside the logarithm is dimensionless. No heat-capacity model is needed for this temperature-fixed change.

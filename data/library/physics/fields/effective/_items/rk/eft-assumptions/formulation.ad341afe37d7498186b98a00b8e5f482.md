@@ -1,0 +1,3 @@
+An effective description retains low-energy degrees of freedom and writes interactions compatible with the stated symmetries, organized by a separation of scales. In a derivative expansion, terms suppressed by powers of a heavy scale can be neglected only at specified low momenta and to a specified accuracy. Coefficients are fixed by matching or data, not by dimensional analysis alone.
+
+Large coefficients, thresholds, infrared effects, or nonperturbative phenomena can defeat naive power counting. This is a framework for conditional approximations, not a universal guarantee that every omitted term is small. Source context: [Burgess](https://arxiv.org/abs/hep-th/0701053).

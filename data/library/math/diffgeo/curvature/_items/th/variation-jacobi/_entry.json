@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2b6c9a3e8685491786baa2752cc0ca59",
+  "title": "Geodesic variations produce Jacobi fields",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a8a335677d4495d8d0e2a965ade135d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a8a335677d4495d8d0e2a965ade135d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3519a5bdb4ff4d84b54c807f019b2f5f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3519a5bdb4ff4d84b54c807f019b2f5f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:33.120089+00:00",
+  "updated_at": "2026-09-07T08:07:57.255542+00:00"
+}

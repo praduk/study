@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a39901e1ddde408a8d1da3b3402ff704",
+  "title": "The Lebesgue integral",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:measurable-functions:th:simple-approximation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e85916e0b39942e2bb389ded4dec873d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e85916e0b39942e2bb389ded4dec873d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:53.363019+00:00",
+  "updated_at": "2026-09-07T08:25:02.121670+00:00"
+}

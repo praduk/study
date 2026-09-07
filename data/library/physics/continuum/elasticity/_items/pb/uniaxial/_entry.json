@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fa263e27cee946b09dfcc6a5273eeb51",
+  "title": "Young modulus and Poisson ratio from Lamé moduli",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "383659ce344a4fddb978ca608ec50308",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.383659ce344a4fddb978ca608ec50308.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0d4c0678ff8e42a090ac1e04cfa17b9d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0d4c0678ff8e42a090ac1e04cfa17b9d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.759893+00:00",
+  "updated_at": "2026-09-07T09:04:13.855921+00:00"
+}

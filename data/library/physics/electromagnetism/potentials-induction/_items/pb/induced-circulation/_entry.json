@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "66279ed5652548278cd4ac42defe92f6",
+  "title": "Electric field produced by changing magnetic flux",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e4dd4797e3c146749d026eb0bf8fad71",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e4dd4797e3c146749d026eb0bf8fad71.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21cf807878854f919decf9a0487f92ee",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.21cf807878854f919decf9a0487f92ee.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.899633+00:00",
+  "updated_at": "2026-09-07T09:02:56.948189+00:00"
+}

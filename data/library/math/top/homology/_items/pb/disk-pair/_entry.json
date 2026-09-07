@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "551d698b8a4f49bda0902796f3ff9655",
+  "title": "Relative homology of a disk and its boundary",
+  "rank": 9218868437227405312,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "37bc2a4067724258ad4c2208a2229ac3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.37bc2a4067724258ad4c2208a2229ac3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "aedc465d57d647409d5e2f93b334ddd0",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.aedc465d57d647409d5e2f93b334ddd0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:01.631953+00:00",
+  "updated_at": "2026-09-07T08:03:03.554634+00:00"
+}

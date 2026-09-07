@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "943dcc091290428bb8a30a1749a2ba45",
+  "title": "Continuum Mechanics for Mathematicians: Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Deformation, local conservation, fluids, elastic solids, acoustics, and heat.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "29e127af83c147219760249c2e282221",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.29e127af83c147219760249c2e282221.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.321882+00:00",
+  "updated_at": "2026-09-07T09:04:12.321888+00:00"
+}

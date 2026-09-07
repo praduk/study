@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "526a9bbed26c4fb4ba233a8da2b88972",
+  "title": "Temperature, flux, and convection data",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8091d432d0e74f1786eb1081e93c1d67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8091d432d0e74f1786eb1081e93c1d67.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.592864+00:00",
+  "updated_at": "2026-09-07T09:04:15.592870+00:00"
+}

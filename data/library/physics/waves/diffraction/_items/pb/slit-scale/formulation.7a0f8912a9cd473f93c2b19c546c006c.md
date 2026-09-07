@@ -1,0 +1,1 @@
+Use the scalar Fraunhofer model for a rectangular slit of width $b=0.20\,\mathrm{mm}$, wavelength $\lambda=500\,\mathrm{nm}$, and screen distance $z=4.0\,\mathrm m$. Find the transverse central-lobe width between first zeros and estimate $b^2/(\lambda z)$. If the wavelength doubles with geometry fixed, what changes?

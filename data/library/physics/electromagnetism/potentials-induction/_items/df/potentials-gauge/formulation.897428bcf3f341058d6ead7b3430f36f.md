@@ -1,0 +1,3 @@
+A scalar potential $\phi$ and vector potential $\mathbf A$ represent fields by $\mathbf B=\nabla\times\mathbf A$ and $\mathbf E=-\nabla\phi-\partial_t\mathbf A$. For any smooth scalar $\chi$, the transformation $\mathbf A'=\mathbf A+\nabla\chi$, $\phi'=\phi-\partial_t\chi$ leaves both fields unchanged because curl-gradient vanishes and mixed derivatives commute.
+
+The Lorenz gauge is $\nabla\cdot\mathbf A+c^{-2}\partial_t\phi=0$. It still permits gauge functions solving $(\Delta-c^{-2}\partial_t^2)\chi=0$. Potentials exist locally when the homogeneous Maxwell equations hold. Global existence requires appropriate topological conditions; a closed field two-form need not be exact.

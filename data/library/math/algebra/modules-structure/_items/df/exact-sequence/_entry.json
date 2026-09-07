@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0dbac67f187046bb9c84de35aa97796b",
+  "title": "Exact sequences, kernels, and cokernels",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0cdcd72cfcf44a5b45ded75fae58787",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0cdcd72cfcf44a5b45ded75fae58787.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:03.904759+00:00",
+  "updated_at": "2026-09-07T07:54:03.904767+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "357a81733e2b4ee8a0f79d36fdf75e73",
+  "title": "Tensoring with a quotient ring",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d072a21d51074258b31c0653e737a2a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d072a21d51074258b31c0653e737a2a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0c507b937395470cbbef2b19189ee2eb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0c507b937395470cbbef2b19189ee2eb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:21.250419+00:00",
+  "updated_at": "2026-09-07T08:23:34.697930+00:00"
+}

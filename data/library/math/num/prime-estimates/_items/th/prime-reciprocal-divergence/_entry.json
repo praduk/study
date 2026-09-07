@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7a5190c16cb54f73b86f2439a4978a11",
+  "title": "The sum of reciprocals of primes diverges",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c1a11ba81f9447b92da82541f3d8cd4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c1a11ba81f9447b92da82541f3d8cd4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6f38245c63214f1b809dc51093faf3e5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6f38245c63214f1b809dc51093faf3e5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:44.710908+00:00",
+  "updated_at": "2026-09-07T08:22:41.534083+00:00"
+}

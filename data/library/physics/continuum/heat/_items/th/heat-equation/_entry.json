@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "dbf1b62e631e4733985c022d1f8d4765",
+  "title": "Heat diffusion and its characteristic time",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:continuum:heat:ax:fourier-heat.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7e8ce5653c0843c3a1ded58f2a38f7ef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7e8ce5653c0843c3a1ded58f2a38f7ef.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2cc1ba4d57f74baf94a0583a8c39abef",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2cc1ba4d57f74baf94a0583a8c39abef.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.826942+00:00",
+  "updated_at": "2026-09-07T09:04:14.929145+00:00"
+}

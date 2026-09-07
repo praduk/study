@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c514f2fd6e8c4c2f9c28382cbd20b43a",
+  "title": "Forward Euler’s global error under bounded derivatives",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "787b86771cc24519be87f495d1945dfe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.787b86771cc24519be87f495d1945dfe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "12013a143fe14d10a8b6227f918aca34",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.12013a143fe14d10a8b6227f918aca34.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:16.488049+00:00",
+  "updated_at": "2026-09-07T08:22:53.151235+00:00"
+}

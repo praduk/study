@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6706f0bb0ae24c3d8ed6d011663db3e5",
+  "title": "Loops and the fundamental group",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "553d007366f04b5fa7db8f878798a95c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.553d007366f04b5fa7db8f878798a95c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:52.455590+00:00",
+  "updated_at": "2026-09-07T08:26:53.146225+00:00"
+}

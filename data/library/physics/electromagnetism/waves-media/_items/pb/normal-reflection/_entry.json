@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "03d7665c4d2847b2a58991ddb18b19c5",
+  "title": "Reflection and energy balance at normal incidence",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1678089cf8e94a2d8e2f08f5465eadb1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1678089cf8e94a2d8e2f08f5465eadb1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2e4814f3a664e07a6fc134236d1ac4a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a2e4814f3a664e07a6fc134236d1ac4a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.967832+00:00",
+  "updated_at": "2026-09-07T09:02:58.052002+00:00"
+}

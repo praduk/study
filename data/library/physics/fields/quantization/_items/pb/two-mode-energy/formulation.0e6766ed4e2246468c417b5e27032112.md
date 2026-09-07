@@ -1,0 +1,1 @@
+Two independent bosonic modes have the same frequency $\omega>0$. List an occupation-number basis for the subspace with total occupation two and compute their common energy in the free Hamiltonian, both before and after subtracting the vacuum constant.

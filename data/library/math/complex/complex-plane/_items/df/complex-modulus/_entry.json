@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d313f17c2c2c4bf083c449b97256981e",
+  "title": "Complex arithmetic, conjugation, and modulus",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3327544331cc40878d3c932a9980de6c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3327544331cc40878d3c932a9980de6c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:49.985245+00:00",
+  "updated_at": "2026-09-07T08:14:49.985253+00:00"
+}

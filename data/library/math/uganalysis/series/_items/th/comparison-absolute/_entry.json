@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "20a69750276b42b8ac84a59b0a9eb439",
+  "title": "Comparison and absolute convergence",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:monotone-convergence, @math:uganalysis:sequences:th:cauchy-completeness.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3cf4d90babd043dda0524a8c688698f1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3cf4d90babd043dda0524a8c688698f1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4edd99eeea2b4d98b01afddfb6716c3f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4edd99eeea2b4d98b01afddfb6716c3f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:46.221199+00:00",
+  "updated_at": "2026-09-07T08:08:48.495849+00:00"
+}

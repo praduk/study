@@ -1,0 +1,1 @@
+The inequality $h\ge t1_{\{h>t\}}$ gives the measure bound upon integration. Apply it to $h=|f_n-f|^p$ with threshold $\epsilon^p$: the error-set measure is bounded by $\epsilon^{-p}\norm{f_n-f}_p^p\to0$.

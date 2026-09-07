@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c9f89224b35549cd8e0b164ac4d247a2",
+  "title": "Paraxial rays and the ideal thin-lens map",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b14e1900815444a88c7872cfd5a5e2f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b14e1900815444a88c7872cfd5a5e2f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:18.235184+00:00",
+  "updated_at": "2026-09-07T09:04:18.235191+00:00"
+}

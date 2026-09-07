@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7e2d2ce858144010b67930b89b9ab07b",
+  "title": "Scalar plane-wave dispersion and group speed",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "301363c34b3e4df9a30d73a3559af2d9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.301363c34b3e4df9a30d73a3559af2d9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ebf9c2deb0b94e92984b9afac6c27e4a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ebf9c2deb0b94e92984b9afac6c27e4a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:25.290224+00:00",
+  "updated_at": "2026-09-07T08:53:27.961146+00:00"
+}

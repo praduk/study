@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "14df363febcb4f4389dfb62c55f1ff6e",
+  "title": "Smooth vector bundles and sections",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "975f82814ca34c3c83e81dfd342cbda6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.975f82814ca34c3c83e81dfd342cbda6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:42.538783+00:00",
+  "updated_at": "2026-09-07T08:04:42.538791+00:00"
+}

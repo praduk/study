@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2df0dc7a55eb4af5a6a10c8326c39b41",
+  "title": "Hölder’s inequality",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:lp-spaces:df:lp.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec6f3bd9ac524463a5b539be6d89fafb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec6f3bd9ac524463a5b539be6d89fafb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f519218fe86746f692ad39e3b978a6f4",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f519218fe86746f692ad39e3b978a6f4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:21.818580+00:00",
+  "updated_at": "2026-09-07T08:25:14.412378+00:00"
+}

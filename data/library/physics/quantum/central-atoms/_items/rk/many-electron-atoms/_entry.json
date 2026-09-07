@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e865c3f0be0946adad86cb027e0081d4",
+  "title": "Many-electron atoms and the limits of orbital pictures",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "724df513c9b446278b2fbdbfdbc5cdc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.724df513c9b446278b2fbdbfdbc5cdc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.744467+00:00",
+  "updated_at": "2026-09-07T09:11:22.744472+00:00"
+}

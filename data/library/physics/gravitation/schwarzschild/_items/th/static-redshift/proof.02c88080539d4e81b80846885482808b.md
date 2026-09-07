@@ -1,0 +1,1 @@
+The field $K=\partial_t$ is Killing and the ray tangent $k$ is affine geodesic, so $g(k,K)$ is constant. Static observers have $U=K/N$, because $g(K,K)=-N^2c^2$. They measure $\omega=-g(k,U)=-g(k,K)/N$, hence $N\omega$ is the same at both endpoints. Taking the ratio proves the result. Motion relative to the static congruence introduces additional Doppler factors.

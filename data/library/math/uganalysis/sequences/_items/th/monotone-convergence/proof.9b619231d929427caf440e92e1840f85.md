@@ -1,0 +1,1 @@
+For an increasing sequence let $s=\sup_n x_n$. Given $\epsilon>0$, some $x_N>s-\epsilon$. For $n\ge N$, $s-\epsilon<x_N\le x_n\le s$, so $|x_n-s|<\epsilon$. Apply this argument to $-x_n$ for decreasing sequences.

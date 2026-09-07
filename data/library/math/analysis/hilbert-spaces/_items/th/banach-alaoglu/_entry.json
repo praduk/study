@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "969be9d6a96a4989a2de5497e5c37e94",
+  "title": "Banach–Alaoglu theorem",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:analysis:hilbert-spaces:df:weak-convergence.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "557bc6c8b5f2431486074ee1652af84d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.557bc6c8b5f2431486074ee1652af84d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:21.546000+00:00",
+  "updated_at": "2026-09-07T08:14:21.546007+00:00"
+}

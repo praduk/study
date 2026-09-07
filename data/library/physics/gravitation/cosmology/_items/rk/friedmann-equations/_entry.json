@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5f7f12d79e73472c86c242ce8cc749c0",
+  "title": "Friedmann evolution and its constraint",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1db958efa6b948f08278060c725ceede",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1db958efa6b948f08278060c725ceede.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:17.320157+00:00",
+  "updated_at": "2026-09-07T09:18:17.320163+00:00"
+}

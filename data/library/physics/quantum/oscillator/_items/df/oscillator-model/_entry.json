@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d5593fc2fd7240ef8171c68b66199dae",
+  "title": "Oscillator Hamiltonian and oscillator length",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ec05297c7314f2ba2b8fe4f1fc02952",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ec05297c7314f2ba2b8fe4f1fc02952.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.510058+00:00",
+  "updated_at": "2026-09-07T09:11:21.510060+00:00"
+}

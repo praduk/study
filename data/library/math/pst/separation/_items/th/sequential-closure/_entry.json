@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "774971f6dc25431281d43aada82766c1",
+  "title": "Sequential closure in first-countable spaces",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2f38796010da41a59e54563b2871af87",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2f38796010da41a59e54563b2871af87.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "536704be6d1240c78b278da8454f2afc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.536704be6d1240c78b278da8454f2afc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:49.308296+00:00",
+  "updated_at": "2026-09-07T08:00:51.045379+00:00"
+}

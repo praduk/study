@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b547c448ed374c1097aea0388fe59744",
+  "title": "Exterior derivative squares to zero and commutes with pullback",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9213f12522e4461d90368b04367b5569",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9213f12522e4461d90368b04367b5569.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "294c301fad1342d0879d503b5ae6461a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.294c301fad1342d0879d503b5ae6461a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:02.463970+00:00",
+  "updated_at": "2026-09-07T08:05:04.447035+00:00"
+}

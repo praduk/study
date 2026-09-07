@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7d61412153494a0ab5dcb2aa1ccd12a6",
+  "title": "Physical symmetry and gauge redundancy",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e1e33656e4f94a3d9ff16bfd754208d7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e1e33656e4f94a3d9ff16bfd754208d7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:59.696453+00:00",
+  "updated_at": "2026-09-07T08:51:59.696459+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9235070df83042af898c69708f3708d3",
+  "title": "Tangent spaces to spheres and orthogonal matrices",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "123fd6ec8c6b4b369d1b62025ee26f2e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.123fd6ec8c6b4b369d1b62025ee26f2e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d7e066873b3c4b318f9430539e2f7c43",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d7e066873b3c4b318f9430539e2f7c43.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:25.668569+00:00",
+  "updated_at": "2026-09-07T08:04:27.796035+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "531d37bac7b74a95a4b1a9678dae27e7",
+  "title": "Ideal gas: constitutive model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e748f98a7b294b918d6712671344d853",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e748f98a7b294b918d6712671344d853.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.226664+00:00",
+  "updated_at": "2026-09-07T08:57:26.226667+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4c79d81ed0934f3da1551cb668c1c8db",
+  "title": "Iterated integrals can disagree without absolute integrability",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:product-measures:th:fubini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c72041783a96476f9ad6303383f26122",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c72041783a96476f9ad6303383f26122.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "edbc9941430c4e4d8cf8ba20c03fc79d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.edbc9941430c4e4d8cf8ba20c03fc79d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:49.389082+00:00",
+  "updated_at": "2026-09-07T08:25:28.543068+00:00"
+}

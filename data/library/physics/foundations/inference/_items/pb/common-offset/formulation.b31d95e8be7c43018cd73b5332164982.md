@@ -1,0 +1,1 @@
+Suppose $Y_i=\mu+B+\epsilon_i$ for $1\le i\le n$ with $n\ge2$, where $B$ and the independent $\epsilon_i$ have zero means, finite variances $\tau^2$ and $\sigma^2$, and $B$ is independent of every $\epsilon_i$. Find the variance of the sample mean and of $Y_1-Y_2$.

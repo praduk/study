@@ -1,0 +1,1 @@
+In $D$ spacetime dimensions with natural units and dimensionless action, assign derivatives mass dimension one and use a canonically normalized scalar kinetic term. Then $[\phi]_{\rm mass}=(D-2)/2$. A coefficient $g_n$ of $\phi^n$ has mass dimension $D-n(D-2)/2$. These are engineering dimensions, not interacting scaling dimensions.

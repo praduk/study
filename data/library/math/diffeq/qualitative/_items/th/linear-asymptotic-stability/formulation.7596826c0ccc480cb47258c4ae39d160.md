@@ -1,0 +1,1 @@
+For a real matrix $A$, the origin of $x'=Ax$ is asymptotically stable exactly when every complex eigenvalue of $A$ has strictly negative real part. In that case there are $C,\gamma>0$ with $\norm{e^{tA}}\le Ce^{-\gamma t}$ for $t\ge0$.

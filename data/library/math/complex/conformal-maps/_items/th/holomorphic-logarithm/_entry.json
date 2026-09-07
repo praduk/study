@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a16100ab268745b689cba80ccb05bede",
+  "title": "A nonvanishing function on a simply connected domain has a logarithm",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:contour-integration:th:cauchy-simply-connected, @math:complex:complex-plane:th:exponential-addition, @math:complex:holomorphic-functions:th:zero-derivative.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f18c03e3a46f48b89043101844acdb1c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f18c03e3a46f48b89043101844acdb1c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e4abecc40293400190c5a88158eab080",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e4abecc40293400190c5a88158eab080.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:23.351844+00:00",
+  "updated_at": "2026-09-07T08:17:25.828366+00:00"
+}

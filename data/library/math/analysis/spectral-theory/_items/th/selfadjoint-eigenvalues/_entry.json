@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "879f88fbde254d11b198a019446f81de",
+  "title": "Eigenvalues of a self-adjoint operator",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:spectral-theory:df:adjoint.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "918fb964f9c845528838a863143d6a3d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.918fb964f9c845528838a863143d6a3d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1dd436f41a4146498fb52eb8c2be9e1f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1dd436f41a4146498fb52eb8c2be9e1f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:36.657030+00:00",
+  "updated_at": "2026-09-07T08:14:39.014558+00:00"
+}

@@ -1,0 +1,1 @@
+Along the line $x(s)=x_0+as$, the chain rule gives $\frac{d}{ds}u(x_0+as,s)=a u_x+u_t=0$. Thus its value is $f(x_0)$. For the characteristic through $(x,t)$, $x_0=x-at$, proving necessity of the formula. Its two first derivatives verify the PDE and the initial value, proving existence and uniqueness.

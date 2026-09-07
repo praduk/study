@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "78fd815c7cb2431b872fd1d007237183",
+  "title": "Monotone convergence theorem",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:df:lebesgue-integral, @math:analysis:measure-construction:th:measure-continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d49e136d5fb4dfb9640147910e36915",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d49e136d5fb4dfb9640147910e36915.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f8e96e961ddf401b828fca10487b4c55",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f8e96e961ddf401b828fca10487b4c55.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:55.959460+00:00",
+  "updated_at": "2026-09-07T08:25:04.143686+00:00"
+}

@@ -1,0 +1,1 @@
+For an odd prime $p$ and integer $a$, $\left(\frac ap\right)\equiv a^{(p-1)/2}\pmod p$. The symbol is multiplicative in its numerator: $\left(\frac{ab}p\right)=\left(\frac ap\right)\left(\frac bp\right)$. Also $\left(\frac{-1}p\right)=(-1)^{(p-1)/2}$.

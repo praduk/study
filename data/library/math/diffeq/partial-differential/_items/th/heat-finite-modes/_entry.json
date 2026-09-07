@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f19ef465d3c94a4b82694cf0462547ed",
+  "title": "Heat evolution of finite sine data",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0360c0af424c46c0aae513c74d25c407",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0360c0af424c46c0aae513c74d25c407.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7cc8b87cf1c84e48b2fa31f80048823d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7cc8b87cf1c84e48b2fa31f80048823d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:52.255396+00:00",
+  "updated_at": "2026-09-07T08:23:12.865724+00:00"
+}

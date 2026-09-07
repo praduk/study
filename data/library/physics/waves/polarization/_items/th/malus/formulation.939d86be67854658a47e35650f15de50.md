@@ -1,0 +1,1 @@
+For incident linear polarization along a real unit vector $b$, an ideal polarizer with axis $a$ transmits the fraction $(a\cdot b)^2=\cos^2\theta$, where $\theta$ is the angle between axes. For an unpolarized ensemble satisfying $\langle\mathcal E\mathcal E^*\rangle=(I_{\rm in}/(2C))\mathbf1$, it transmits half the mean intensity.

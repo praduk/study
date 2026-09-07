@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7ceda69274be48c8aa7a06afd854b43e",
+  "title": "The differential of a smooth map",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e806d9b3b89b4ea6b5533eaef1caec41",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e806d9b3b89b4ea6b5533eaef1caec41.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:13.627783+00:00",
+  "updated_at": "2026-09-07T08:04:13.627800+00:00"
+}

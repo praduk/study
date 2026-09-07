@@ -1,0 +1,3 @@
+Curl Faraday's law and substitute Ampère–Maxwell. Since $\nabla\cdot\mathbf E=0$, the curl-curl identity gives $-\Delta\mathbf E=-c^{-2}\partial_t^2\mathbf E$. The same argument with the two equations interchanged gives the magnetic wave equation.
+
+For the plane ansatz, Gauss' equations give transversality. Faraday gives $\mathbf k\times\mathbf E_0=\omega\mathbf B_0$. Ampère gives $\mathbf k\times\mathbf B_0=-\omega\mathbf E_0/c^2$. Substitution and $\mathbf k\cdot\mathbf E_0=0$ yield $|\mathbf k|^2=\omega^2/c^2$ for a nonzero wave. Conversely these amplitude conditions substitute into all four Maxwell equations.

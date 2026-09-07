@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5c84794304f044219ac4816f44e95d0d",
+  "title": "Incompressible Navier–Stokes from balance and closure",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:continuum:fluids:ax:newtonian-stress, @physics:continuum:balances:th:local-momentum.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "68da29416860496db02165f6aff90ff6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.68da29416860496db02165f6aff90ff6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a750f17c44174f41b74a7cc3b6cf349d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a750f17c44174f41b74a7cc3b6cf349d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.880597+00:00",
+  "updated_at": "2026-09-07T09:04:12.933994+00:00"
+}

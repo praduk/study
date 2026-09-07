@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d5fc4dd400d144fe8933753ea288e27a",
+  "title": "The incompressible elastic limit is a constraint",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1d0fb4d71e004e8ba7ac9ea557701cb6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1d0fb4d71e004e8ba7ac9ea557701cb6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.039111+00:00",
+  "updated_at": "2026-09-07T09:04:14.039118+00:00"
+}

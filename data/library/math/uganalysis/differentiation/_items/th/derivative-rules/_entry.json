@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8c5d066b07e743a28482c4ac15a836bf",
+  "title": "Product and chain rules",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:differentiation:df:derivative, @math:uganalysis:sequences:th:limit-laws.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7159a34014f64e03b893250037c169eb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7159a34014f64e03b893250037c169eb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7380303076f240879d4ee3a1a9d9f9d2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7380303076f240879d4ee3a1a9d9f9d2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:30.911266+00:00",
+  "updated_at": "2026-09-07T08:09:33.257217+00:00"
+}

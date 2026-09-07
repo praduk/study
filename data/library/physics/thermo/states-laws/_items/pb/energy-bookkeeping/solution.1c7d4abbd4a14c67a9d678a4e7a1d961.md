@@ -1,0 +1,1 @@
+The work is $W=p_{\rm ext}\Delta V=200\ {\rm J}$. Hence $\Delta U=750-200=550\ {\rm J}$. More heat enters than energy leaves as work. The unit identity $\mathrm{Pa}\,\mathrm{m}^3=\mathrm{J}$ checks the calculation.

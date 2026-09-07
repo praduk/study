@@ -1,0 +1,1 @@
+For any $x<y$ in $I$, the mean value theorem gives $f(y)-f(x)=f'(c)(y-x)$ for some $x<c<y$. The three conclusions follow by applying the respective derivative assumption. The interval hypothesis matters: a function can have zero derivative on each component of a disconnected domain and take different constants on different components.

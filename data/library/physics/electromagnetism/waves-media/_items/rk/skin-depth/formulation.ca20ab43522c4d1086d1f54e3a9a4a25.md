@@ -1,0 +1,3 @@
+For constant $\epsilon,\mu,\sigma$ in a homogeneous Ohmic conductor, the transverse wave equation is $\Delta\mathbf E=\mu\epsilon\partial_t^2\mathbf E+\mu\sigma\partial_t\mathbf E$. With convention $e^{i(kz-\omega t)}$, it gives $k^2=\mu\epsilon\omega^2+i\mu\sigma\omega$.
+
+In the good-conductor regime $\sigma\gg\epsilon\omega$, choose the root decaying into $z>0$: $k\simeq(1+i)\sqrt{\mu\sigma\omega/2}$. The field amplitude decays as $e^{-z/\delta}$ with $\delta=\sqrt{2/(\mu\sigma\omega)}$. This approximation uses a local Ohmic law over the relevant frequencies. It does not describe superconductivity or microscopic transport when the local continuum approximation fails.

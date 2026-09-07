@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3274b2993b604d4cbdb361b53c403ab6",
+  "title": "Compose two subluminal speeds",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2d996a64deea4fcc99fb819c81f9b120",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2d996a64deea4fcc99fb819c81f9b120.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "13bf6c683a8d48228869782b27c857fd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.13bf6c683a8d48228869782b27c857fd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.235856+00:00",
+  "updated_at": "2026-09-07T09:02:59.280735+00:00"
+}

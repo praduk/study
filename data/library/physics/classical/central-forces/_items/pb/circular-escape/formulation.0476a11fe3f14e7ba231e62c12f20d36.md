@@ -1,0 +1,1 @@
+In the fixed-center model $V(r)=-GMm/r$, find the circular speed at radius $r_0$ and the minimum outward radial launch speed at $r_0$ that can reach arbitrarily large radius. Here $G,M,m,r_0>0$, and no drag or other bodies act. Compare the two speeds and check dimensions.

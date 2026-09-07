@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8986e597f25c4e22954bc5af16dcac03",
+  "title": "A pure pair with mixed local states",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7522906065df411889f8542787fb518d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7522906065df411889f8542787fb518d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e6ea7f11273f4cb783fcc4f55e565493",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e6ea7f11273f4cb783fcc4f55e565493.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:24.633514+00:00",
+  "updated_at": "2026-09-07T09:11:24.763395+00:00"
+}

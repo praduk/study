@@ -1,0 +1,1 @@
+For a cycle $z$, $\partial z=0$, so $g(z)-f(z)=\partial P(z)$. The two images differ by a boundary and therefore represent the same homology class. Since every homology class has a cycle representative, the induced maps agree.

@@ -1,0 +1,3 @@
+For a small diagram $D:J\to\mathcal C$, form $P=\prod_{j\in\Obj J}D(j)$ and $Q=\prod_{a:i\to j}D(j)$. Define $s,t:P\to Q$ by giving their component at $a:i\to j$: it is $D(a)\pi_i$ for $s$ and $\pi_j$ for $t$. Let $e:L\to P$ equalize $s,t$. Then $\lambda_j=\pi_j e$ satisfy the cone identities.
+
+Given a cone $p_j:X\to D(j)$, the product gives unique $p:X\to P$ with components $p_j$. The cone identities say $sp=tp$, so $p$ factors uniquely through $e$. This yields the required unique map into $L$. If another map induces the same cone, its composite with $e$ has the same product projections, hence agrees with $p$; equalizer uniqueness identifies it with the first map.

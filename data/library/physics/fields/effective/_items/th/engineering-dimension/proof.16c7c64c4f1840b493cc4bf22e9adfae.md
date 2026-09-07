@@ -1,0 +1,1 @@
+The integration measure has mass dimension $-D$, so the density must have dimension $D$. The kinetic term has dimension $2+2[\phi]_{\rm mass}$, proving the first formula. The monomial coefficient then satisfies $[g_n]_{\rm mass}+n[\phi]_{\rm mass}=D$, which gives the second. Anomalous dimensions require additional information beyond this dimensional calculation.

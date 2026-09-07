@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d8b39b8cd413449eaeac00f89e32d8fc",
+  "title": "Uniqueness for smooth electrostatic boundary problems",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d91420ad5f3c4529814bf73edbaa1a2e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d91420ad5f3c4529814bf73edbaa1a2e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f0e84c616da04704b9ad427e6fbd0065",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f0e84c616da04704b9ad427e6fbd0065.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.439862+00:00",
+  "updated_at": "2026-09-07T09:02:56.465886+00:00"
+}

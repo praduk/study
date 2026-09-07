@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d18b39123e2245bf871ed2abf140cc96",
+  "title": "Separation of variables with its missing equilibria",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8027ca8659034ec0aba64b4dab0e0a8b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8027ca8659034ec0aba64b4dab0e0a8b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "83bc8e7736e1480dbc3e5d36a52d6e30",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.83bc8e7736e1480dbc3e5d36a52d6e30.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:57.291146+00:00",
+  "updated_at": "2026-09-07T07:48:58.638483+00:00"
+}

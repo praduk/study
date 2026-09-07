@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "db39dd0feec841b39719e49c1a84411f",
+  "title": "Longitudinal and transverse elastic waves",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @physics:continuum:elasticity:th:navier-elastic, @physics:continuum:elasticity:th:elastic-positivity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2dc713ee2cc94e149926b8fe9a801a30",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2dc713ee2cc94e149926b8fe9a801a30.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f451919913c84f19a7f76d4e1b83b1dd",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f451919913c84f19a7f76d4e1b83b1dd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.905967+00:00",
+  "updated_at": "2026-09-07T09:04:13.991800+00:00"
+}

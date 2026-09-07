@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8ca153b9e46b4332983d92ee35832373",
+  "title": "Measurable functions and almost-everywhere statements",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:measure-construction:df:measure-space.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "265edbe1f5e14d5cbb1d3d51955fde8b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.265edbe1f5e14d5cbb1d3d51955fde8b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:30.553635+00:00",
+  "updated_at": "2026-09-07T08:11:30.553656+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "73f38fc8b02148af8c55e00a3dbae9d1",
+  "title": "SI and the meanings of constants",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95a5729f8562419cbd8bc14a5df264a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95a5729f8562419cbd8bc14a5df264a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:34.778647+00:00",
+  "updated_at": "2026-09-07T08:51:34.778653+00:00"
+}

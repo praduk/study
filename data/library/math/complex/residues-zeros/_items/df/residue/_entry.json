@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4b70c5748721482e9e9f774a073bcabb",
+  "title": "Residues and pole formulas",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:complex:singularities:th:laurent, @math:complex:singularities:th:laurent-classification.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "097e8ea94b5743d58fa84065bbeefd4a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.097e8ea94b5743d58fa84065bbeefd4a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:45.046300+00:00",
+  "updated_at": "2026-09-07T08:26:34.965173+00:00"
+}

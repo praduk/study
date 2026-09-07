@@ -1,0 +1,1 @@
+Differentiation gives $(\partial_\mu P_a^\mu)\partial_\nu\phi^a+P_a^\mu\partial_\mu\partial_\nu\phi^a-\partial_\nu\mathcal L$. The chain rule, with no explicit $x$ dependence, writes the last term as $\mathcal L_{\phi^a}\partial_\nu\phi^a+P_a^\mu\partial_\nu\partial_\mu\phi^a$. Mixed derivatives cancel, and the remaining term vanishes by the Euler-Lagrange equations.

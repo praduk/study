@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "64fd0c05497e48baa8cb3c29965c6d8d",
+  "title": "Continuous functions on a closed interval attain extrema",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:bolzano-weierstrass, @math:uganalysis:continuity:th:sequential-continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "24830ccad0f746ff83122314b263606e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.24830ccad0f746ff83122314b263606e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ecaf9c226c2d4504b2997f1937b24d47",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ecaf9c226c2d4504b2997f1937b24d47.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:15.318424+00:00",
+  "updated_at": "2026-09-07T08:09:17.622598+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "77c9774c06954bfc877d5d98fd25ad4e",
+  "title": "Second law: entropy balance",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "15508688a43e4f82b566e907a102302d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.15508688a43e4f82b566e907a102302d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.616631+00:00",
+  "updated_at": "2026-09-07T08:57:24.616632+00:00"
+}

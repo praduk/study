@@ -1,0 +1,1 @@
+At fixed $T,N$, the fundamental relation gives $U_V=TS_V-p$. Equality of the mixed derivatives of $F$ gives $S_V=p_T$. Substitute. For $p=Nk_BT/V$, the right side vanishes, so $U$ is independent of $V$ along each connected fixed-$T,N$ branch.

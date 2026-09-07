@@ -1,0 +1,1 @@
+A massive particle starts at rest and follows the constant-proper-acceleration worldline until it reaches speed $3c/5$. Find the elapsed proper time, laboratory time, distance, and kinetic energy in terms of $\alpha,m,c$.

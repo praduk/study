@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "49ce65e22b1048339b278b5475ade7aa",
+  "title": "Neighborhood test for closure",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4fbb3b32d3e246ef93ae532b3aefe6cb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4fbb3b32d3e246ef93ae532b3aefe6cb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "250271cb432d4045acf8fa2715409c09",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.250271cb432d4045acf8fa2715409c09.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:09.480055+00:00",
+  "updated_at": "2026-09-07T08:00:11.130682+00:00"
+}

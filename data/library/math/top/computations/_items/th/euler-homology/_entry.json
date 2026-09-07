@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6089114df12145fa9eccb31046898ef0",
+  "title": "Euler characteristic from homology",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2012bf7fb1d5489fb58a01432b239338",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2012bf7fb1d5489fb58a01432b239338.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "abe00afda0524f9fb98fc76fc484d7e2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.abe00afda0524f9fb98fc76fc484d7e2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:22.265630+00:00",
+  "updated_at": "2026-09-07T08:03:24.325863+00:00"
+}

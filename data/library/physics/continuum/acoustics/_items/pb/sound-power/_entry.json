@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8b3d0d0d0a7c4fcfbef21522dcb26e80",
+  "title": "Pressure amplitude is not intensity amplitude",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d98b79f685454c4d8c72a20b56f731fe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d98b79f685454c4d8c72a20b56f731fe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "19f28b1af3234325b17a86998f9093f2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.19f28b1af3234325b17a86998f9093f2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.524352+00:00",
+  "updated_at": "2026-09-07T09:04:14.615243+00:00"
+}

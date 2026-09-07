@@ -1,0 +1,5 @@
+This folder develops algebraic topology; the separate Point Set Topology course supplies its topological prerequisites. Follow the numbered folders from homotopy and coverings to homology, cohomology, and duality. Coefficients are $\Z$ unless specified. All maps are continuous, paths use $I=[0,1]$, and based maps preserve the displayed basepoint. Closed manifold means compact manifold without boundary.
+
+These are original instructional statements, proofs, and worked computations. Large structural theorems are explicitly marked as used without proof, so they do not generate an incomplete proof task. Applications explain their hypotheses and perform the actual calculation. The inspected authority is [Allen Hatcher's *Algebraic Topology*](https://pi.math.cornell.edu/~hatcher/AT/ATplain.pdf), especially chapters 1–3 and the elementary higher-homotopy results in chapter 4.
+
+The course is a graduate foundation through duality and first higher-homotopy tools. Spectral sequences, obstruction theory, stable homotopy, and characteristic classes require further courses; the present material does not claim exhaustive coverage of those subjects.

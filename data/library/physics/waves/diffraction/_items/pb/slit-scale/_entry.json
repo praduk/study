@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "784a515ad2434a53afa382bc9ca6039b",
+  "title": "Check the scale of a diffraction pattern",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a0f8912a9cd473f93c2b19c546c006c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a0f8912a9cd473f93c2b19c546c006c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0470ae4197694ccf8df92975536b4f18",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0470ae4197694ccf8df92975536b4f18.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:17.617407+00:00",
+  "updated_at": "2026-09-07T09:04:17.721273+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b98e4c697d7a4682b01ccffb82979d97",
+  "title": "The ML estimate",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:contour-integration:df:contour-integral.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "73583ac63f4f499eb850fed681ae97f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.73583ac63f4f499eb850fed681ae97f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8e27e1dc0a8c43d1af59514bee73bd69",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8e27e1dc0a8c43d1af59514bee73bd69.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:28.231549+00:00",
+  "updated_at": "2026-09-07T08:26:10.961877+00:00"
+}

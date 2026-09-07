@@ -1,0 +1,1 @@
+The rotation group has four elements. The identity fixes all $2^4=16$ colorings. Each quarter-turn fixes only the two constant colorings. A half-turn requires opposite vertices to agree, giving $2^2=4$ fixed colorings. By @math:algebra:groups-actions:th:burnside the answer is $(16+2+4+2)/4=6$. Reflections are not included in the equivalence relation.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "60427492e7a84aada585d59610416ba0",
+  "title": "Finite products of compact spaces are compact",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e733de72d61d49d7a0615bff3d2ccb82",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e733de72d61d49d7a0615bff3d2ccb82.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "452c17ce1bc244f8b5fc6f51c83c32a7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.452c17ce1bc244f8b5fc6f51c83c32a7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:09.964085+00:00",
+  "updated_at": "2026-09-07T08:01:11.737423+00:00"
+}

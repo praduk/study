@@ -1,0 +1,1 @@
+For $V(r)=-\kappa/r$ with $\kappa>0$, define $a=\hbar^2/(m_r\kappa)$ and $\psi(\mathbf r)=(\pi a^3)^{-1/2}e^{-r/a}$. Verify normalization and its energy eigenvalue for the standard Coulomb model, and compute $\langle r\rangle$.

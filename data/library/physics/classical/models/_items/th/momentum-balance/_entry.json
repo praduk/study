@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e69cdd7bec6943e98239e169715c72bc",
+  "title": "Momentum and angular momentum of a particle system",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:classical:models:ax:newton-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ea3d4b141f54478f86167f2686692b18",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ea3d4b141f54478f86167f2686692b18.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "996533ed8a9a4ebaa7b403e8c5e6840b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.996533ed8a9a4ebaa7b403e8c5e6840b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.037027+00:00",
+  "updated_at": "2026-09-07T09:04:09.054495+00:00"
+}

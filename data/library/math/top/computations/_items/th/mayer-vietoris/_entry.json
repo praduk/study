@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c173c0dfe88e4c63b7e390fc0423d427",
+  "title": "Mayer–Vietoris exact sequence",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aff1e90573394b56870ad605073c2f83",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aff1e90573394b56870ad605073c2f83.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:06.390720+00:00",
+  "updated_at": "2026-09-07T08:26:57.155880+00:00"
+}

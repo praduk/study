@@ -1,0 +1,1 @@
+For a topological space $X$, order its subsets by inclusion. Let $\operatorname{Closed}(X)$ be the poset of closed subsets and $i:\operatorname{Closed}(X)\to\mathcal P(X)$ the inclusion. Show that topological closure is left adjoint to $i$, and explain how it preserves joins in the correct target poset.

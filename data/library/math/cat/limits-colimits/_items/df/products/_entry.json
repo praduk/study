@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "37952e293c00417ba69d96348c88c5d2",
+  "title": "Products and coproducts",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0b179df381e403d8cbf5dd6c240bb4b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0b179df381e403d8cbf5dd6c240bb4b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:00.594824+00:00",
+  "updated_at": "2026-09-07T07:56:00.594848+00:00"
+}

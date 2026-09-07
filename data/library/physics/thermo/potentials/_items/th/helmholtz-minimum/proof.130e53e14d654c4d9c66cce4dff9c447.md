@@ -1,0 +1,1 @@
+No work means $\Delta U=Q$. The second law, including reservoir entropy, gives $\Delta S-Q/T_0\ge0$. Multiply by $T_0$ and substitute $\Delta U$. No equilibrium temperature need be assigned to intermediate nonequilibrium states. At equilibrium with the bath this is the Helmholtz minimization criterion over accessible states.

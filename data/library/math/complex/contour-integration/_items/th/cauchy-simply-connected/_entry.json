@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ea9cfd53ebf04c9f8b1499382b40e0cb",
+  "title": "Cauchy’s theorem on a simply connected domain",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:contour-integration:th:goursat.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "15fd80274ee74dc9afea9fdc083ef9e8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.15fd80274ee74dc9afea9fdc083ef9e8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:39.856757+00:00",
+  "updated_at": "2026-09-07T08:26:16.958650+00:00"
+}

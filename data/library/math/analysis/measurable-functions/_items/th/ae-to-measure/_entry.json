@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "10d84d20a3dc4996b1b65649817d1f1e",
+  "title": "Almost-everywhere convergence on a finite measure space",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:analysis:measurable-functions:df:convergence-modes, @math:analysis:measure-construction:th:measure-continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ca81889551d246aebbba01f4fcd22c43",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ca81889551d246aebbba01f4fcd22c43.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b49c95123f3e472ca897d988497e766c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b49c95123f3e472ca897d988497e766c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:45.286595+00:00",
+  "updated_at": "2026-09-07T08:11:48.802794+00:00"
+}

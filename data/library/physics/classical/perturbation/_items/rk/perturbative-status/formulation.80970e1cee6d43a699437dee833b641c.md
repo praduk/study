@@ -1,0 +1,3 @@
+A dimensionless parameter $\epsilon$ measures a ratio, such as nonlinear to linear restoring force. An expansion $x=x_0+\epsilon x_1+\cdots$ is a calculational ansatz; solving its coefficient equations does not by itself bound the remainder for all time. Terms like $\epsilon t\sin\Omega t$ are secular: they become comparable to the leading term on sufficiently long time scales.
+
+For weak nonlinear oscillations, allowing the frequency itself to depend on $\epsilon$ can remove the first resonant term. The next problem derives such a correction and checks its residual. Long-time averaging, adiabatic invariance, and the survival of invariant tori require additional hypotheses and proofs that are not supplied here.

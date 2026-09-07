@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2fecc77c11d14d09b0aa718a076e8e52",
+  "title": "Relative acceleration in a geodesic congruence",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4332695ede1244b790fd6411c23d9ccc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4332695ede1244b790fd6411c23d9ccc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cb40bd01561940d4aca71386434be3af",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cb40bd01561940d4aca71386434be3af.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.596603+00:00",
+  "updated_at": "2026-09-07T09:18:15.610051+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "25c0c6eac4fa4499ae36de7c827edea6",
+  "title": "Symmetry, self-adjointness, and operator domains",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c6daa81f33446679d2c33c9714f5894",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c6daa81f33446679d2c33c9714f5894.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.824688+00:00",
+  "updated_at": "2026-09-07T09:11:20.824690+00:00"
+}

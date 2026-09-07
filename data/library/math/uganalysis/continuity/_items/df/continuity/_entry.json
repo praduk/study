@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b82a284aad2d421fb7872053d3d3ad77",
+  "title": "Limits, continuity, and uniform continuity",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce034d6460484ce79a0b921a4a5b6ca4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce034d6460484ce79a0b921a4a5b6ca4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:05.562967+00:00",
+  "updated_at": "2026-09-07T08:09:05.562989+00:00"
+}

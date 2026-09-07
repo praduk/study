@@ -1,0 +1,1 @@
+Reversibility and zero heat give $dS=0$. The entropy differential gives $c\,dT/T+dV/V=0$, hence $d\log(TV^{1/c})=0$. Since $\gamma-1=1/c$, this proves the first identity. Substitute $T=pV/(Nk_B)$ into it to obtain the second. An irreversible adiabatic process can produce entropy and is not covered by this argument.

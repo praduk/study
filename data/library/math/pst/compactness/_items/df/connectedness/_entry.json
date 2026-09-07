@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "15cb047f5e93475a927d2c793420f22e",
+  "title": "Connectedness, paths, and components",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a86c8c383158468eb6db53db54930913",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a86c8c383158468eb6db53db54930913.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:12.816926+00:00",
+  "updated_at": "2026-09-07T08:01:12.816933+00:00"
+}

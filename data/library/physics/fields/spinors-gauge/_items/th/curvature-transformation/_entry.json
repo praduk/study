@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d8ff26e46afa4b9ab81bb63699707bfd",
+  "title": "Curvature transforms by conjugation",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1f1d31070a74980bfb266a414086744",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1f1d31070a74980bfb266a414086744.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7b00c82b6a554a2ba904d5f0c3c790f6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7b00c82b6a554a2ba904d5f0c3c790f6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:11.389030+00:00",
+  "updated_at": "2026-09-07T08:54:14.160785+00:00"
+}

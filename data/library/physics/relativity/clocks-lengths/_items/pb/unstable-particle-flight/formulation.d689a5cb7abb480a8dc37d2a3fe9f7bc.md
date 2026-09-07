@@ -1,0 +1,1 @@
+An unstable particle is modeled as having a specified realized proper lifetime $\tau_0$ and moving freely at speed $4c/5$ in a laboratory. Find its laboratory lifetime and travel distance. In its rest frame, how long is the laboratory path traversed between creation and decay? Treat $\tau_0$ as given, not as a statistical mean.

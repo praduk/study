@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2a0f75320fe540ccad4dbf6d3bef13cd",
+  "title": "Resolve normal and shear traction",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d287832886b2444cadd4a247339d86f4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d287832886b2444cadd4a247339d86f4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5f2464860b854d0395c9c123567bc9bf",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5f2464860b854d0395c9c123567bc9bf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.673595+00:00",
+  "updated_at": "2026-09-07T09:04:12.713484+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "560f9fec0b664615bcbcf105735d4340",
+  "title": "Canonical symplectic form and Poisson bracket",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff4d0f942ab844729104a47af5147789",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff4d0f942ab844729104a47af5147789.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.511674+00:00",
+  "updated_at": "2026-09-07T09:04:09.511680+00:00"
+}

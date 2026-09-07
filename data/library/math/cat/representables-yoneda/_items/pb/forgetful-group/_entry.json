@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "59cb83c2d427411f9758b68fa606c595",
+  "title": "The underlying-set functor on groups is representable",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fac9c8c60bc34a8caa346b918ae25e18",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fac9c8c60bc34a8caa346b918ae25e18.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4d4cb6a90e9e4d6e8bda782d127f629a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.4d4cb6a90e9e4d6e8bda782d127f629a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:31.900899+00:00",
+  "updated_at": "2026-09-07T07:56:33.798339+00:00"
+}

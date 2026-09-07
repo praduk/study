@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "df5c848f6af2487a84e6f5201ae1597c",
+  "title": "Bianchi identity, constraints, and global energy",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44cdb04bb11c47caa353278d315b495b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44cdb04bb11c47caa353278d315b495b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.847632+00:00",
+  "updated_at": "2026-09-07T09:18:15.847634+00:00"
+}

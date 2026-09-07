@@ -1,0 +1,1 @@
+On $|z|=1$, $|z^5+1|\le2<3=|3z|$. Rouché applied to $f(z)=3z$ and $g(z)=z^5+1$ gives the same number of zeros as $3z$, namely one. The strict inequality also excludes boundary zeros: $|p(z)|\ge3-2=1$ on the unit circle.

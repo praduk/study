@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f2f6901500734480b325d39c68a68379",
+  "title": "Counting orbits by fixed points",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2cd1d6b75b1249eebb61921a5fd99cf7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2cd1d6b75b1249eebb61921a5fd99cf7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21466de46687493089504a63331a059e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.21466de46687493089504a63331a059e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:07.692524+00:00",
+  "updated_at": "2026-09-07T08:23:18.876972+00:00"
+}

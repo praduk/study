@@ -1,0 +1,3 @@
+Newtonian dynamics, Maxwell theory, the quantum measurement postulates, and Einstein gravity are physical frameworks with empirical content. Once a framework and its hypotheses are fixed, conservation laws or spectral formulas may follow mathematically.
+
+An ideal gas, a frictionless particle, and a perfectly conducting boundary add model assumptions. A calculation can establish a consequence of those assumptions; it cannot establish their accuracy for a particular material, speed, temperature, or apparatus. Compare predicted observables with measured observables and state which regime the comparison tests.

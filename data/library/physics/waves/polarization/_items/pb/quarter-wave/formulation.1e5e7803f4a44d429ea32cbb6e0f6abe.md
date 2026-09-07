@@ -1,0 +1,1 @@
+A coherent beam travels along $+z$ and enters an ideal plate with Jones matrix $\operatorname{diag}(1,i)$. Its incident vector is $E_0(1,1)^T/\sqrt2$, with real $E_0>0$. Find the output vector and the real electric field at $z=0$. Determine the intensity fraction passed by any subsequent ideal linear polarizer.

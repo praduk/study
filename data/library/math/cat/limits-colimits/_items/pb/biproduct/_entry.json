@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4cc7adea355242dc98b12f54138a1572",
+  "title": "Finite direct sums are products and coproducts",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c2992d0ebd8425498218ca5f9b84322",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c2992d0ebd8425498218ca5f9b84322.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7c7dd22ce4c34cbc8ce109d8bdfc345d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.7c7dd22ce4c34cbc8ce109d8bdfc345d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:16.430094+00:00",
+  "updated_at": "2026-09-07T07:56:18.331494+00:00"
+}

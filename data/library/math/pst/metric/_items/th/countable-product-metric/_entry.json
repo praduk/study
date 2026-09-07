@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f8d9019b05554effb35f4dc722e22d8a",
+  "title": "A metric for a countable product",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b6d693eb7864aa7b5d4246b2e10d9f3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b6d693eb7864aa7b5d4246b2e10d9f3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1e3843837e914296a5b650dbcba911b1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1e3843837e914296a5b650dbcba911b1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:41.980854+00:00",
+  "updated_at": "2026-09-07T08:01:43.823407+00:00"
+}

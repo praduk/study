@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "081df3db2b25493e91672804358cd932",
+  "title": "Christoffel symbols of the Levi–Civita connection",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f07244b119db448abd3d35b4f8ff758f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f07244b119db448abd3d35b4f8ff758f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "be63db13f48241599dd9a626efc4e0fc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.be63db13f48241599dd9a626efc4e0fc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:47.814267+00:00",
+  "updated_at": "2026-09-07T08:27:21.318183+00:00"
+}

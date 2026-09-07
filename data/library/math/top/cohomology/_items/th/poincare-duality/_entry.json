@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0a15671f98f443379de0a1c3aca1456a",
+  "title": "Poincaré duality for closed oriented manifolds",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f0ca610a06774648a99b35e9959e66ba",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f0ca610a06774648a99b35e9959e66ba.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:47.436058+00:00",
+  "updated_at": "2026-09-07T08:07:50.782515+00:00"
+}

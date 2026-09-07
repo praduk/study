@@ -1,0 +1,5 @@
+The upper-half-plane poles are $z_1=e^{i\pi/4}$ and $z_2=e^{3i\pi/4}$. They are simple with residues $1/(4z_j^3)$, whose sum is $-i/(2\sqrt2)$.
+
+To justify the residue identity for the semicircular contour, take $R>1$, excise small disjoint disks around the two poles, and join their circles to the outer boundary by nonintersecting cuts. Apply Cauchy's theorem to the boundary of the resulting simply connected region; one can first move its boundary slightly inward and then use continuity to take the limit. The two orientations along each cut cancel. The outer integral therefore equals the sum of the positively oriented small-circle integrals. On each small circle the holomorphic remainder integrates to zero and the simple principal part integrates to $2\pi i$ times its residue. Hence the outer contour integral is $\pi/\sqrt2$.
+
+On the semicircular arc, $|1+z^4|\ge R^4-1$, so its integral has magnitude at most $\pi R/(R^4-1)\to0$. The real integrand is continuous, positive, and bounded by $x^{-4}$ for $|x|\ge1$, so both one-sided improper integrals converge. Therefore the limiting real integral, not merely its principal value, equals $\pi/\sqrt2$.

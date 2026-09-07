@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5685c12fe8114236be3d1721ce2531e7",
+  "title": "Course guide: Graduate Analysis",
+  "rank": 4611686018427387904,
+  "header": "Graduate measure theory, integration, and functional analysis.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b9274ffa58246dd9852fd1c02040f5f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b9274ffa58246dd9852fd1c02040f5f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:58.202849+00:00",
+  "updated_at": "2026-09-07T08:10:58.202869+00:00"
+}

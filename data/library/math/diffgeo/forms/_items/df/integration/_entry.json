@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "08ebe5771abf42b0b90f73ed2a2eefff",
+  "title": "Integration of top-degree forms",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "327292c936b54404b0de946938523e79",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.327292c936b54404b0de946938523e79.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:13.714241+00:00",
+  "updated_at": "2026-09-07T08:05:13.714249+00:00"
+}

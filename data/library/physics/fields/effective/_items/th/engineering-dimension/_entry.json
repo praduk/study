@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "07c3784d3ca64f66a81b0a51bba5ab72",
+  "title": "Engineering dimensions near a free scalar theory",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c3fa56df41bf469a89d8fb37f8ab6844",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c3fa56df41bf469a89d8fb37f8ab6844.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "16c7c64c4f1840b493cc4bf22e9adfae",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.16c7c64c4f1840b493cc4bf22e9adfae.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:42.874737+00:00",
+  "updated_at": "2026-09-07T08:54:45.634174+00:00"
+}

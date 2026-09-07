@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "66f7b5dd5f7b4880be142050a0c4aaf7",
+  "title": "Invariant mass after a completely inelastic collision",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d8abb2b54f164bbe82436932dc21e08d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d8abb2b54f164bbe82436932dc21e08d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d0253714a5f649d680ee8f7b767543fb",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d0253714a5f649d680ee8f7b767543fb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.767350+00:00",
+  "updated_at": "2026-09-07T09:02:59.831701+00:00"
+}

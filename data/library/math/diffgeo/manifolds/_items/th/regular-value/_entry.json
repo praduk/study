@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ce795c57a23944d6a3d2d38a38724b69",
+  "title": "Regular-value theorem",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4ee12a0eb2045ab8a70ab6c07dbba48",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4ee12a0eb2045ab8a70ab6c07dbba48.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b60382d1ec344a668d6e6dd7e201a9a8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b60382d1ec344a668d6e6dd7e201a9a8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:22.062209+00:00",
+  "updated_at": "2026-09-07T08:04:24.199094+00:00"
+}

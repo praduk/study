@@ -1,0 +1,1 @@
+The set of left endpoints is nonempty and bounded above by $b_1$. Put $s=\sup_n a_n$. For fixed $n$, every $a_k\le b_n$: use nesting if $k\ge n$, and $a_k\le a_n$ if $k<n$. Therefore $a_n\le s\le b_n$ for all $n$. If $x,y$ lie in every interval, $|x-y|\le b_n-a_n\to0$, hence $x=y$.

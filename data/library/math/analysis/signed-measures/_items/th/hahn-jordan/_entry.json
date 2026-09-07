@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6a058bf397604160b7b04155e3b36e9f",
+  "title": "Hahn and Jordan decompositions",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:signed-measures:df:signed-measure.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d340fef7fd8b405a9733de58b1e7256a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d340fef7fd8b405a9733de58b1e7256a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:12.330400+00:00",
+  "updated_at": "2026-09-07T08:25:30.569672+00:00"
+}

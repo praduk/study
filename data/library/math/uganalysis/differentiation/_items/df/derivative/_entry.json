@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "80370b56adcd41ce80545ec69bec6fed",
+  "title": "Derivative at a point",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4e932884e57743e49912d1e505961d65",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4e932884e57743e49912d1e505961d65.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:28.895789+00:00",
+  "updated_at": "2026-09-07T08:24:21.967773+00:00"
+}

@@ -1,0 +1,1 @@
+The function $\mu$ is positive, satisfies $\mu'=p\mu$, and has $\mu(t_0)=1$. Multiplication changes the equation to $(\mu y)'=\mu q$. Integrating from $t_0$ gives the formula for every possible solution. The fundamental theorem of calculus verifies that the formula is differentiable, satisfies the equation, and has the initial value, proving existence and uniqueness.

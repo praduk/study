@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "53a05a03a5fe4e7f928a3403129e62b4",
+  "title": "A Hamilton–Jacobi solution generates trajectories",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4bec46b0f4684424bdc056563ed09c45",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4bec46b0f4684424bdc056563ed09c45.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "63bf68ee9623475c8ad92707596caff9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.63bf68ee9623475c8ad92707596caff9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.896391+00:00",
+  "updated_at": "2026-09-07T09:04:12.000741+00:00"
+}

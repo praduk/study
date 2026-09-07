@@ -1,0 +1,3 @@
+A finite-dimensional representation of a group $G$ over a field $k$ is a homomorphism $\rho:G\to\GL(V)$ for a finite-dimensional $k$-vector space $V$. A subrepresentation is a $G$-invariant subspace. A nonzero representation is irreducible if it has no nonzero proper subrepresentation. An intertwiner $T:V\to W$ satisfies $T\rho_V(g)=\rho_W(g)T$.
+
+The group algebra $k[G]$ consists of finite formal sums $\sum a_g g$, with multiplication extending that of $G$ bilinearly. A representation is equivalently a unital $k[G]$-module, through $(\sum a_g g)v=\sum a_g\rho(g)v$. Its character is $\chi_V(g)=\tr\rho(g)$. Trace invariance under conjugation shows a character is constant on conjugacy classes.

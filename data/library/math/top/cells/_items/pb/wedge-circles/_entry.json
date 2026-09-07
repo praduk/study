@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a95fdf1e59e84be5ae573c09e28f3356",
+  "title": "The figure-eight fundamental group",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9517a9bee1a9431eb9262f2ce41d1208",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9517a9bee1a9431eb9262f2ce41d1208.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7bf20a5b7f2941ffb6910f6e5b69cd75",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.7bf20a5b7f2941ffb6910f6e5b69cd75.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:32.888865+00:00",
+  "updated_at": "2026-09-07T08:02:34.777011+00:00"
+}

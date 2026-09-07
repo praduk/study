@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c48dd8205f9240b49203bfc9af8977d0",
+  "title": "Ring isomorphism and ideal correspondence",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "110749fb1cad440a877e7cc711fb4f8f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.110749fb1cad440a877e7cc711fb4f8f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "51f22aa1a5fc43cda377d4eb59ca4959",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.51f22aa1a5fc43cda377d4eb59ca4959.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:31.278470+00:00",
+  "updated_at": "2026-09-07T07:53:32.768255+00:00"
+}

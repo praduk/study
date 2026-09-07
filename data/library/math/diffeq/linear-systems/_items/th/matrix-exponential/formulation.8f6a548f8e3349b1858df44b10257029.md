@@ -1,0 +1,1 @@
+For a fixed real or complex square matrix $A$, define $e^{tA}=\sum_{k=0}^\infty t^kA^k/k!$. Then $(e^{tA})'=Ae^{tA}$, $e^{0A}=I$, and $e^{sA}e^{tA}=e^{(s+t)A}$. The unique solution of $x'=Ax$, $x(0)=x_0$, is $x(t)=e^{tA}x_0$.

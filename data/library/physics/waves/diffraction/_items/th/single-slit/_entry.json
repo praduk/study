@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "dea6a5f2895041608094346adf2c3da7",
+  "title": "A uniformly illuminated slit gives a sinc profile",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:waves:diffraction:th:fraunhofer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99d14729b6f444ec88106097b5da076b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99d14729b6f444ec88106097b5da076b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "52d0bdd4eaa1424cb07c7c6142573380",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.52d0bdd4eaa1424cb07c7c6142573380.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:17.478518+00:00",
+  "updated_at": "2026-09-07T09:04:17.564981+00:00"
+}

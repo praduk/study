@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "728adce12dde4d288be6b82675795a92",
+  "title": "Topology — graduate algebraic topology",
+  "rank": 4611686018427387904,
+  "header": "Graduate course; prerequisites: point-set topology, groups, abelian groups, rings, and linear algebra.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dd33ec5751a941e7b6f63ce51643cb08",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dd33ec5751a941e7b6f63ce51643cb08.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:47.917323+00:00",
+  "updated_at": "2026-09-07T08:01:47.917329+00:00"
+}

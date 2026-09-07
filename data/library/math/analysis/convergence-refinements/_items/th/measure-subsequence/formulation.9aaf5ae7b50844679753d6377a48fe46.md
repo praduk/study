@@ -1,0 +1,1 @@
+If measurable finite real- or complex-valued functions $f_n$ and $f$ satisfy $f_n\to f$ in measure, there is a subsequence $f_{n_k}\to f$ almost everywhere. No finiteness assumption on $\mu(X)$ is needed.

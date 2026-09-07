@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f7de7f36c7a94505ac7913a7c3a50d0d",
+  "title": "What first order requires in a degenerate eigenspace",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09afa8ff48fd4a41abe3966d27744fdb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09afa8ff48fd4a41abe3966d27744fdb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b53f7eb6efd14c6d98a4865535d381d7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b53f7eb6efd14c6d98a4865535d381d7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:23.234546+00:00",
+  "updated_at": "2026-09-07T09:11:23.343935+00:00"
+}

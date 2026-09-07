@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "31f62a3cc1ee4aa6b242ef69d4fe47be",
+  "title": "An incomplete manifold and a complete metric on the same space",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f242f9f8f3584902b353732a67620669",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f242f9f8f3584902b353732a67620669.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "066a495dd4694095a834c6786d2dafd1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.066a495dd4694095a834c6786d2dafd1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:16.235423+00:00",
+  "updated_at": "2026-09-07T08:06:18.299745+00:00"
+}

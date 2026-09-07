@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "65d5ff41f37f43e09673c75529e5fd03",
+  "title": "Bases and subbases",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "668e81365ab147f0817770c3f65a0a1f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.668e81365ab147f0817770c3f65a0a1f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:04.167154+00:00",
+  "updated_at": "2026-09-07T08:00:04.167159+00:00"
+}

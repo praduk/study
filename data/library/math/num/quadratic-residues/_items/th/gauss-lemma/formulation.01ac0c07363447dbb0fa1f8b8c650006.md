@@ -1,0 +1,1 @@
+Let $p$ be an odd prime and $p\nmid a$. Among the least positive residues of $a,2a,\ldots,ma$, where $m=(p-1)/2$, let $N$ be the number exceeding $p/2$. Then $\left(\frac ap\right)=(-1)^N$. Consequently $\left(\frac2p\right)=(-1)^{(p^2-1)/8}$.

@@ -1,0 +1,3 @@
+For two conductors with charges $+Q,-Q$ in a fixed linear electrostatic environment, capacitance is $C=Q/V$ when their potential difference is $V$ and the proportionality is independent of $Q$. Its unit is farad, $\mathrm{C/V}$. Quasistatically adding charge $dq$ against potential difference $q/C$ requires work $dW=(q/C)dq$, so $W=Q^2/(2C)=CV^2/2$.
+
+In vacuum the field energy density is $u_E=\epsilon_0|\mathbf E|^2/2$. The capacitor work is stored in this field under the ideal reversible model. Fringing, dielectric nonlinearity, leakage, and energy supplied by an attached battery must be included when the ideal assumptions fail.

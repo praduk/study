@@ -1,0 +1,1 @@
+Substitution $x\mapsto x+1$ is an automorphism of $\Q[x]$, with inverse $x\mapsto x-1$, so it preserves reducibility. The shifted polynomial is $x^4+4x^3+6x^2+4x+2$. Eisenstein at $p=2$ applies: the leading coefficient is odd, every other coefficient is even, and the constant term is not divisible by $4$. Hence both the shifted polynomial and $x^4+1$ are irreducible.

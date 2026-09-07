@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "72bacf0e3ce649aabc2205c408b0fb56",
+  "title": "Pointwise isomorphisms are natural isomorphisms",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c191c2680874f8faa98b082aba5163d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c191c2680874f8faa98b082aba5163d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eb18e7047aab4bcd96806726cc4d3db5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eb18e7047aab4bcd96806726cc4d3db5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:46.663271+00:00",
+  "updated_at": "2026-09-07T07:55:48.477448+00:00"
+}

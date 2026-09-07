@@ -1,0 +1,1 @@
+Choose $a\in I,b\in J$ with $a+b=1$. Certainly $IJ\subseteq I\cap J$. If $x\in I\cap J$, then $x=xa+xb\in IJ$, proving equality. The map $R\to R/I\times R/J$ has kernel $I\cap J$. For residues represented by $u,v$, the element $ub+va$ reduces to $u$ modulo $I$ and to $v$ modulo $J$. Thus the map is surjective, and the first isomorphism theorem finishes the proof.

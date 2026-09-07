@@ -1,0 +1,3 @@
+Minkowski spacetime is a four-dimensional affine space with translation metric $\eta=\operatorname{diag}(-1,1,1,1)$ in inertial coordinates $x^\mu=(ct,x,y,z)$. A nonzero vector $w$ is timelike if $w\cdot w<0$, null if $w\cdot w=0$, and spacelike if $w\cdot w>0$. Timelike or null vectors are causal. A time orientation declares causal vectors with $w^0>0$ future-directed.
+
+A Lorentz transformation is an invertible linear map $\Lambda$ satisfying $\Lambda^T\eta\Lambda=\eta$. A Poincaré transformation adds a translation. Proper transformations have determinant $+1$; orthochronous transformations preserve the chosen future cone. The spatial separation of two events depends on the inertial frame; their squared interval does not.

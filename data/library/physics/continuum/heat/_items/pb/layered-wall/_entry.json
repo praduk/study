@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0f9757eaf59f4ac18560c43484ebb994",
+  "title": "Two conducting layers in series",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "17195cefa8dd4a659dce6b88c11ce52b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.17195cefa8dd4a659dce6b88c11ce52b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "299f6f7a48ed4ed9aa3a3d3a3a001705",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.299f6f7a48ed4ed9aa3a3d3a3a001705.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.193777+00:00",
+  "updated_at": "2026-09-07T09:04:15.330649+00:00"
+}

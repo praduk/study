@@ -1,0 +1,1 @@
+The rate of swept area is $r^2\dot\phi/2=\ell/(2\mu)$. An ellipse with semiaxes $a$ and $b=a\sqrt{1-e^2}$ has area $\pi ab$. Therefore $\mathcal T=2\pi\mu a^2\sqrt{1-e^2}/\ell$. The conic relation gives $\ell^2=\mu\kappa a(1-e^2)$. Substitution cancels the eccentricity and proves the formula. Finally $\kappa/\mu=G(m_1+m_2)$.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a857620bd9464f2aa1011b32b7e9b484",
+  "title": "Two masses exchanging oscillation energy",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0e5b563b63d54558964447c0fef98ea6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0e5b563b63d54558964447c0fef98ea6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a678695767c24ae7bc3c27933fedb570",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a678695767c24ae7bc3c27933fedb570.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.170734+00:00",
+  "updated_at": "2026-09-07T09:04:11.278135+00:00"
+}

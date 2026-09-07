@@ -1,0 +1,1 @@
+For $\Delta>0$ and real energy scale $g$, diagonalize $H=\begin{pmatrix}0&g\\g&\Delta\end{pmatrix}$. Expand the lower eigenvalue for $|g|\ll\Delta$ through order $g^2$ and explain why that expansion fails near $\Delta=0$.

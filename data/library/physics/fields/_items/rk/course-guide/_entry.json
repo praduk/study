@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "eb23ddeb19f445038493a82551095331",
+  "title": "Classical and Quantum Field Theory: Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Physics for readers familiar with the Mathematics library.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4ece54061a3442048cd112bedfaeb1c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4ece54061a3442048cd112bedfaeb1c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:41.905048+00:00",
+  "updated_at": "2026-09-07T08:52:41.905055+00:00"
+}

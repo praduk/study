@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "79a5edac3ebb4cb18e80d4aa4e95fee0",
+  "title": "Mixed preparations and tensor products: model postulates",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d24ee996819540db8a8fb178ecb84e62",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d24ee996819540db8a8fb178ecb84e62.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:24.185149+00:00",
+  "updated_at": "2026-09-07T09:11:24.185154+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b8d45ba4157249b1870f4942c3387f90",
+  "title": "Convergence and Cauchy sequences",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dcfea89d20ba4a0583edb27bdce143b6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dcfea89d20ba4a0583edb27bdce143b6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:19.277537+00:00",
+  "updated_at": "2026-09-07T08:08:19.277546+00:00"
+}

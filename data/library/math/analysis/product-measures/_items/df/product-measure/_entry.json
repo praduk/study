@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "40ab812ad2c84c0cbcd1386b6ccf80d6",
+  "title": "Product sigma algebra and product measure",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:measure-construction:th:measure-extension.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fec8534ff9194c7a814bf04149b07f90",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fec8534ff9194c7a814bf04149b07f90.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:42.039967+00:00",
+  "updated_at": "2026-09-07T08:25:22.483126+00:00"
+}

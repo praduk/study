@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "985e8d81f59d4504ac574526844cf6ff",
+  "title": "Einstein–Hilbert action and stress-energy convention",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1a1e55384dfa46e5b9acb5a5aac3fa4c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1a1e55384dfa46e5b9acb5a5aac3fa4c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.931506+00:00",
+  "updated_at": "2026-09-07T09:18:15.931508+00:00"
+}

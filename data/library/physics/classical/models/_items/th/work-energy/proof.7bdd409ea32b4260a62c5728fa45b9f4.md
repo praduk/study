@@ -1,0 +1,1 @@
+Differentiate $T$ to obtain $\dot T=m\dot x\cdot\ddot x=F\cdot\dot x$. Integrating over time gives the work integral along the actual path. The chain rule gives $dV/dt=\nabla V\cdot\dot x+\partial_tV$; substitution cancels the spatial terms. No path-independence claim is needed for a time-dependent potential.

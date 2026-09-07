@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5572eaa60ca5401bbcf73f93c3e82844",
+  "title": "Fubini’s theorem for integrable functions",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:analysis:product-measures:th:tonelli, @math:analysis:lebesgue-integration:th:integral-additivity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "de110543ed014d81a058243fe9e6e796",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.de110543ed014d81a058243fe9e6e796.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "098e7a0e4fba4d898d5865b221cdd30a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.098e7a0e4fba4d898d5865b221cdd30a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:45.706303+00:00",
+  "updated_at": "2026-09-07T08:25:26.499435+00:00"
+}

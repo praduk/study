@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5cc41c9dbd60448c9ade4feea5b764d2",
+  "title": "Einstein's field equation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e492d4c3936743e9840d477b799587bc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e492d4c3936743e9840d477b799587bc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.822428+00:00",
+  "updated_at": "2026-09-07T09:18:15.822430+00:00"
+}

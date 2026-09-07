@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8cd9aadb8d704e44bc72475611a374ed",
+  "title": "Fundamental theorem of algebra",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:liouville.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b62a8751a39047e4b2f1f67f0ed6adba",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b62a8751a39047e4b2f1f67f0ed6adba.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d4f204948b6e46ad9b0457534a022716",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d4f204948b6e46ad9b0457534a022716.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:09.156745+00:00",
+  "updated_at": "2026-09-07T08:16:11.639876+00:00"
+}

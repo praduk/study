@@ -1,0 +1,1 @@
+Differentiation under the integral and the divergence theorem turn the asserted balance into $\int_V(\partial_t\rho+\nabla\cdot j-s)\,d^3x=0$. The continuous integrand must vanish: otherwise it has a fixed strict sign on a sufficiently small ball. This proves the local equation. Integrating that equation and applying the same two identities proves the converse.

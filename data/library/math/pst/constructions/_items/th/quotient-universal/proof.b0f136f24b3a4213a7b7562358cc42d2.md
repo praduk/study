@@ -1,0 +1,1 @@
+Define $g(y)=f(x)$ for any $x$ with $q(x)=y$. Constancy on fibers makes this well-defined and surjectivity gives uniqueness. For open $V\subseteq Z$, $q^{-1}(g^{-1}(V))=f^{-1}(V)$ is open. The quotient definition implies $g^{-1}(V)$ is open, so $g$ is continuous.

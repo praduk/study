@@ -1,0 +1,3 @@
+An ideal lossless retarder has orthogonal principal axes and, in that basis, Jones matrix $e^{i\phi_0}\operatorname{diag}(1,e^{i\delta})$. The common phase $\phi_0$ does not change polarization; the relative phase $\delta$ is the retardance. A quarter-wave plate has $\delta=\pi/2$ modulo $2\pi$ in this axis convention, and a half-wave plate has $\delta=\pi$ modulo $2\pi$.
+
+For a birefringent plate of thickness $d$ at vacuum wavelength $\lambda_0$, the simple propagation model gives $\delta=2\pi(n_2-n_1)d/\lambda_0$. The two indices and their dispersion are material data. Rotating the axes transforms the matrix by the corresponding real orthogonal basis changes.

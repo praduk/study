@@ -1,0 +1,3 @@
+The Killing fields $\partial_t$ and $\partial_\phi$ have tangent contractions $-fc^2\dot t=-c^2e$ and $r^2\dot\phi=\ell$, constant by @physics:gravitation:test-motion:th:killing-integral. The normalization is $-fc^2\dot t^2+f^{-1}\dot r^2+r^2\dot\phi^2=-c^2$. Substitute the constants and multiply by $f$ to obtain the first equation.
+
+To avoid division by $\dot r$ at a turning point, use $\Gamma^r_{tt}=ff'c^2/2$, $\Gamma^r_{rr}=-f'/(2f)$, and $\Gamma^r_{\phi\phi}=-fr$ in the equatorial plane. In the radial geodesic equation substitute $\dot t=e/f$, $\dot\phi=\ell/r^2$, and $\dot r^2=e^2c^2-f(c^2+\ell^2/r^2)$. The $e^2$ terms cancel, leaving $\ddot r=-f'(c^2+\ell^2/r^2)/2+f\ell^2/r^3=-V_\ell'/2$.

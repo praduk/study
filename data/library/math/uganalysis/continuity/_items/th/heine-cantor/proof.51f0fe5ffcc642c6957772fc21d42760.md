@@ -1,0 +1,1 @@
+If uniform continuity failed, some $\epsilon_0>0$ would allow $x_n,y_n\in[a,b]$ with $|x_n-y_n|<1/n$ and $|f(x_n)-f(y_n)|\ge\epsilon_0$. A subsequence $x_{n_k}$ converges to some $x\in[a,b]$. The distance condition gives $y_{n_k}\to x$. Continuity makes both sequences of function values tend to $f(x)$, contradicting their separation.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "42ad7f7d93c44802bc59492f1f0687a4",
+  "title": "Leading orbital and light-propagation tests",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1acadf6230c4587b4f1649062ac469d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1acadf6230c4587b4f1649062ac469d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.523935+00:00",
+  "updated_at": "2026-09-07T09:18:16.523940+00:00"
+}

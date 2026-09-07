@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c95ec9d01d2742ffab47251d204ec24a",
+  "title": "Hamiltonian flow preserves phase-space volume",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e976f55ccc964e9a9f4a92f00ae11f3d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e976f55ccc964e9a9f4a92f00ae11f3d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e0ea442737fa4e5b8a4eb1510487232c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e0ea442737fa4e5b8a4eb1510487232c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:59.443005+00:00",
+  "updated_at": "2026-09-07T09:00:59.527992+00:00"
+}

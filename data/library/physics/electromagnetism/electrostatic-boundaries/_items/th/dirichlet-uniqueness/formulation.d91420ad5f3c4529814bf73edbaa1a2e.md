@@ -1,0 +1,1 @@
+Let $\Omega$ be a bounded connected domain with smooth boundary. If $\phi_1,\phi_2\in C^2(\overline\Omega)$ solve the same Poisson equation, then equal Dirichlet data imply $\phi_1=\phi_2$. Equal Neumann data imply their difference is constant. This is uniqueness, not existence.

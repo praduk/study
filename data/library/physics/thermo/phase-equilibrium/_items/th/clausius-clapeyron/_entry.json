@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d27b918bcf0f485f8182d9f4f189a886",
+  "title": "Integrated ideal-vapor approximation",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ed9fb0ab263401cab4592601298be0e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ed9fb0ab263401cab4592601298be0e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fe15d6300bed4be0ac1e694637ecf4eb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fe15d6300bed4be0ac1e694637ecf4eb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.874821+00:00",
+  "updated_at": "2026-09-07T08:57:25.945015+00:00"
+}

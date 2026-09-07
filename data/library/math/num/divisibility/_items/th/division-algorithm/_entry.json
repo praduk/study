@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f6c3a57341da47eb9aa886f5622abfd0",
+  "title": "Division algorithm",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36a72f6cef1c429e8ab5cf114c0caa1f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36a72f6cef1c429e8ab5cf114c0caa1f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7bd3cb155caf4dad83d4b69aa84a34b1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7bd3cb155caf4dad83d4b69aa84a34b1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:33.693011+00:00",
+  "updated_at": "2026-09-07T07:47:34.816583+00:00"
+}

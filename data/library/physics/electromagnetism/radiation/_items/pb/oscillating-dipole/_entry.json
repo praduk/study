@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5d8ea04acd4d4dd7a6590ea52bbbe845",
+  "title": "Angular distribution and mean dipole power",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c2b1393f18b944f38787f919d8b1b11d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c2b1393f18b944f38787f919d8b1b11d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "002baef8705e474488213d8f18c0dfde",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.002baef8705e474488213d8f18c0dfde.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.554362+00:00",
+  "updated_at": "2026-09-07T09:02:58.650907+00:00"
+}

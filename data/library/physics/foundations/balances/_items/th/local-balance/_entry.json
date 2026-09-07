@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "92e970c3ca544b3783e6fa32264a97e8",
+  "title": "From integral balance to continuity equation",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fffbebe12c474498bb894b22a0ed4e48",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fffbebe12c474498bb894b22a0ed4e48.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0fee333ea8c84ec9a961961fe1bd11a0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0fee333ea8c84ec9a961961fe1bd11a0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:45.089762+00:00",
+  "updated_at": "2026-09-07T08:51:47.678036+00:00"
+}

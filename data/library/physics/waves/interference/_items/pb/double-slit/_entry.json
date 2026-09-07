@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aff106dbd855464b91a2e730c12b2852",
+  "title": "Fringe spacing and unequal beam intensities",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8cc1a3fbc394464885fffe06f4d7fee5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8cc1a3fbc394464885fffe06f4d7fee5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "32ba3bc4304c4ffc8bb1989cede1b88a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.32ba3bc4304c4ffc8bb1989cede1b88a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.973669+00:00",
+  "updated_at": "2026-09-07T09:04:17.054498+00:00"
+}

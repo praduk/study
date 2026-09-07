@@ -1,0 +1,1 @@
+Fix $x\in X\setminus K$. For each $k\in K$, choose disjoint open neighborhoods $U_k$ of $k$ and $V_k$ of $x$. Finitely many $U_{k_1},\ldots,U_{k_m}$ cover $K$. The open neighborhood $V_{k_1}\cap\cdots\cap V_{k_m}$ of $x$ misses $K$. Hence every point outside $K$ has an open neighborhood outside it, proving its complement open. If $K$ is empty the conclusion is immediate.

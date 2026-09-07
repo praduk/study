@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "631c2c986ddb46469e5643fe434fd1d5",
+  "title": "Bunching and exclusion in a single mode",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "423f2dc511a24d04b8be9f22ef681c03",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.423f2dc511a24d04b8be9f22ef681c03.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fa04c04a971d404e9e9dc0b3a0e48ae7",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.fa04c04a971d404e9e9dc0b3a0e48ae7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.408649+00:00",
+  "updated_at": "2026-09-07T09:00:58.469293+00:00"
+}

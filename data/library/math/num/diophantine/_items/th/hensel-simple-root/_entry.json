@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0e0437a00dc44966a761cad1a896702b",
+  "title": "Lifting a simple root modulo a prime power",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9bc15979ad3143ca9b050893d4d85c96",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9bc15979ad3143ca9b050893d4d85c96.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f2e7761c9f334057b6b6c987abef0054",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f2e7761c9f334057b6b6c987abef0054.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:24.987146+00:00",
+  "updated_at": "2026-09-07T07:48:26.250873+00:00"
+}

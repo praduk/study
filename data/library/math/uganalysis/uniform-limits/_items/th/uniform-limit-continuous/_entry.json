@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "85a30e0ea96b47b78f7925b8f4a1b099",
+  "title": "A uniform limit of continuous functions is continuous",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:uniform-limits:df:uniform-convergence, @math:uganalysis:continuity:df:continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7350c12ca9564edcb5b39f869562dd16",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7350c12ca9564edcb5b39f869562dd16.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "60d0cfe4391c4bf7b0e02bbdfd7d6e35",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.60d0cfe4391c4bf7b0e02bbdfd7d6e35.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:24.590889+00:00",
+  "updated_at": "2026-09-07T08:10:26.796452+00:00"
+}

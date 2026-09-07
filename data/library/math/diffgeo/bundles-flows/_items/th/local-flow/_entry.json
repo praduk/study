@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0e9b4ad755ef4f3099004c51dd924c66",
+  "title": "Local flows of smooth vector fields",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "40ee3d84e5e146d098b8f37909475237",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.40ee3d84e5e146d098b8f37909475237.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:37.217784+00:00",
+  "updated_at": "2026-09-07T08:04:37.217801+00:00"
+}

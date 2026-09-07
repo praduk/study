@@ -1,0 +1,3 @@
+Model a flexible string by transverse displacement $y(x,t)$, constant line mass density $\mu>0$ in $\mathrm{kg\,m^{-1}}$, and constant tension $T>0$ in N. Neglect bending stiffness, damping, longitudinal acceleration, and products of small slopes. A segment has mass $\mu\,dx$, and the vertical component of its tension is approximated by $T y_x$.
+
+These assumptions are accurate only in the intended small-slope regime, $|y_x|\ll1$, with a suitable tension mechanism. The linearized model is an approximation to forces and geometry, not a claim that finite-slope strings obey an exact linear wave equation.

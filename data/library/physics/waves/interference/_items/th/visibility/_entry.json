@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5c06515aeb624f889c8bd2468217eba9",
+  "title": "Fringe visibility measures coherence and balance",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:waves:interference:df:coherence, @physics:waves:interference:ax:quadratic-detection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff342edc114145b2be08243ddab2a17a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff342edc114145b2be08243ddab2a17a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4dece729f1f941d7af6f6d1b244c7b4c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4dece729f1f941d7af6f6d1b244c7b4c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.838804+00:00",
+  "updated_at": "2026-09-07T09:04:16.925341+00:00"
+}

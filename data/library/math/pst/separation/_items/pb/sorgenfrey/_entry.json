@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "31f3a09aae824ab38ed6d255e21899ea",
+  "title": "The lower-limit topology separates countability conditions",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f28ff1854c8743f9b04d947ba27fab0e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f28ff1854c8743f9b04d947ba27fab0e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cbadba2cd4bb4c3e84e03385ec9e04f0",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.cbadba2cd4bb4c3e84e03385ec9e04f0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:55.601726+00:00",
+  "updated_at": "2026-09-07T08:00:57.504591+00:00"
+}

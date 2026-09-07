@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0f4ca2019ecc4ab2a3ee36e28032e3d5",
+  "title": "Microcanonical ensemble: equal-weight assumption",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9428438104284c8a8323b1935c43acfd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9428438104284c8a8323b1935c43acfd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.365873+00:00",
+  "updated_at": "2026-09-07T09:00:57.365875+00:00"
+}

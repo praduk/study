@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1aec70be64df45d5876799beeb735573",
+  "title": "Continuity into a product",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "72b309865e9c41e88f53e081880796aa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.72b309865e9c41e88f53e081880796aa.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "28ffe61922484113aa1d6515aace5fc2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.28ffe61922484113aa1d6515aace5fc2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:25.677276+00:00",
+  "updated_at": "2026-09-07T08:00:27.440501+00:00"
+}

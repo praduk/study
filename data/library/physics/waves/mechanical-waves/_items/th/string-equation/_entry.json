@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3680308b901c4715a4e131f7fcd7621c",
+  "title": "The string wave speed follows from force balance",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:waves:mechanical-waves:ax:string-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "01ab74ebb5b24588bd420c9a87285548",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.01ab74ebb5b24588bd420c9a87285548.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "39db907f93e34584a0dbd14903c14c21",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.39db907f93e34584a0dbd14903c14c21.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.730817+00:00",
+  "updated_at": "2026-09-07T09:04:15.747573+00:00"
+}

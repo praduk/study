@@ -1,0 +1,1 @@
+Two photons have laboratory energies $E_1,E_2>0$ and directions with angle $\theta\in[0,\pi]$. Compute the invariant mass of their two-photon system. Specialize to equal-energy opposite photons and to parallel photons. Do not assume an interaction takes place.

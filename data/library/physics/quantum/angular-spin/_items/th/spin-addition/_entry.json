@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "faed89a3ff43483eb0d0e744b6c1cbd7",
+  "title": "Two spins split into a singlet and a triplet",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "850da646e4614ea3ba9cc4b2a43af77a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.850da646e4614ea3ba9cc4b2a43af77a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7e992b3957bd400ca724dd811d9c7776",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7e992b3957bd400ca724dd811d9c7776.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.255721+00:00",
+  "updated_at": "2026-09-07T09:11:22.328702+00:00"
+}

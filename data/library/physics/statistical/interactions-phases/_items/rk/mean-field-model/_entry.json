@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e59f18eea87d4460a8d796a9fdb175d4",
+  "title": "Mean field as a self-consistency approximation",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8d5723f0667e4a1fad22ad35c26c5bbe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8d5723f0667e4a1fad22ad35c26c5bbe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:59.056255+00:00",
+  "updated_at": "2026-09-07T09:00:59.056260+00:00"
+}

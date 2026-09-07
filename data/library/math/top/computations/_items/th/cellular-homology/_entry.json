@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "14a5666e476c414d915202ccc11fe25a",
+  "title": "Cellular chain complex computes singular homology",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "57db6a3d4e374c88bc8dccc2c305b156",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.57db6a3d4e374c88bc8dccc2c305b156.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:13.478123+00:00",
+  "updated_at": "2026-09-07T08:03:13.478132+00:00"
+}

@@ -1,0 +1,1 @@
+Consider $\ddot x+\Omega_0^2x+\alpha x^3=0$, with $\Omega_0,A>0$, $x(0)=A$, $\dot x(0)=0$. Set $\epsilon=\alpha A^2/\Omega_0^2$ and assume $|\epsilon|\ll1$. Seek $x=A[\cos\tau+\epsilon y_1(\tau)]$, $\tau=\Omega_0(1+\epsilon\nu)t$, with $y_1(0)=y_1'(0)=0$. Remove resonant forcing at first order, and state exactly what has been checked.

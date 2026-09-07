@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "373f5215cac947d7a8a139a290ff23ca",
+  "title": "Pure states: the ray postulate",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a122064ce8241058cbd2a2566865aab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a122064ce8241058cbd2a2566865aab.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.809796+00:00",
+  "updated_at": "2026-09-07T09:11:20.809800+00:00"
+}

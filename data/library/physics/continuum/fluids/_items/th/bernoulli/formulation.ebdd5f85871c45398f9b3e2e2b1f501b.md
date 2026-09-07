@@ -1,0 +1,1 @@
+For a smooth steady inviscid flow with constant $\rho>0$ and body force $b=-\nabla\Phi$, the quantity $B=|v|^2/2+p/\rho+\Phi$ is constant along each streamline. If additionally $\nabla\times v=0$ on a connected region, $B$ is constant throughout that region. The terms have units $\mathrm{m^2\,s^{-2}}$.

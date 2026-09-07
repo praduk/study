@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a48fa5e1af36481ca2965662f59cf4e7",
+  "title": "Special relativity for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "Lorentz geometry, clock and particle measurements, and covariant electromagnetism.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b43a45865b874607b89dc2676138f7d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b43a45865b874607b89dc2676138f7d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.717209+00:00",
+  "updated_at": "2026-09-07T09:02:58.717215+00:00"
+}

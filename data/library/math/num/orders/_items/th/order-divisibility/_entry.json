@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "941fd4d19f8b490c9f269240f40a3390",
+  "title": "Order divides every return exponent",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8aa178b02f3e493485ab160e12b98d09",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8aa178b02f3e493485ab160e12b98d09.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b13f3ca1404448c1a4f3743529a04710",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b13f3ca1404448c1a4f3743529a04710.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:03.790943+00:00",
+  "updated_at": "2026-09-07T07:48:05.051439+00:00"
+}

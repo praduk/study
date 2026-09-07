@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "68d943745fe543498530a0fe29498e9e",
+  "title": "A field at a point is operator-valued distribution notation",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "659efb4579b74a26b353e3d6fa69a2cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.659efb4579b74a26b353e3d6fa69a2cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:51.333313+00:00",
+  "updated_at": "2026-09-07T08:53:51.333321+00:00"
+}

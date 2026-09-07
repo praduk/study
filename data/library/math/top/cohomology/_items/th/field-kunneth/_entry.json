@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "292a30d72d1b4608a8c5c8245b6ac6e3",
+  "title": "Künneth theorem over a field",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d2a8b6a33d444067b17abee37f80d9cc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d2a8b6a33d444067b17abee37f80d9cc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:43.913188+00:00",
+  "updated_at": "2026-09-07T08:27:03.201829+00:00"
+}

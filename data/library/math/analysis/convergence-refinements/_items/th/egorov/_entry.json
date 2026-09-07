@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "015c17ad263542508bc1e30274d08a29",
+  "title": "Egorov’s theorem",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:analysis:measure-construction:th:measure-continuity, @math:analysis:measurable-functions:df:convergence-modes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "108adba8fcbc4faf8678c0a3cb2a0e95",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.108adba8fcbc4faf8678c0a3cb2a0e95.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "984f68ca6e1642c7b028ef02020a2a32",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.984f68ca6e1642c7b028ef02020a2a32.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:02.302432+00:00",
+  "updated_at": "2026-09-07T08:13:04.839414+00:00"
+}

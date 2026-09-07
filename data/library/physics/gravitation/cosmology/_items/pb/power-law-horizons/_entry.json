@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b8c6843afdec4dae973c0bcd3521d693",
+  "title": "Horizons in a power-law universe",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ec4df40ba7d45bb8543c9872df6bc46",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ec4df40ba7d45bb8543c9872df6bc46.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c6f35865fee14b07a675143f6ecb81a4",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c6f35865fee14b07a675143f6ecb81a4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:17.939464+00:00",
+  "updated_at": "2026-09-07T09:18:18.046008+00:00"
+}

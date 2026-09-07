@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f89a304ba5e44063b14c51dbf87785bc",
+  "title": "Quadratic residues and the Legendre symbol",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8adcdedd000146428124475ddc053e36",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8adcdedd000146428124475ddc053e36.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:10.775925+00:00",
+  "updated_at": "2026-09-07T07:48:10.775932+00:00"
+}

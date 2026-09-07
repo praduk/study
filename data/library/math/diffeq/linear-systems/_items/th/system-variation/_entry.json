@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "76d263a99da54acf8faaa155532692d4",
+  "title": "Variation of constants for systems",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2adf0a79ff04b928a4633443dff872b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2adf0a79ff04b928a4633443dff872b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "18b5f0500c054a5fa1b855def07ad081",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.18b5f0500c054a5fa1b855def07ad081.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:37.534778+00:00",
+  "updated_at": "2026-09-07T08:22:59.020959+00:00"
+}

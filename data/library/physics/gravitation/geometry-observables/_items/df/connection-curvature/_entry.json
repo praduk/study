@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "845d4dc143a94a86abc0562fd6b1b0d2",
+  "title": "Lorentzian connection and curvature convention",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "12154f983a2f4c90b0829cc1bb5a981b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.12154f983a2f4c90b0829cc1bb5a981b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.587320+00:00",
+  "updated_at": "2026-09-07T09:18:15.587323+00:00"
+}

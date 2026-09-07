@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f07265dd065e4aa5accef50d17fcfd67",
+  "title": "Differential Geometry — graduate course guide",
+  "rank": 4611686018427387904,
+  "header": "Graduate smooth-manifold and Riemannian geometry; prerequisites: multivariable analysis, linear algebra, topology, and differential equations.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba54bb0407fc45e7a9be1f4534f43267",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba54bb0407fc45e7a9be1f4534f43267.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:01.054760+00:00",
+  "updated_at": "2026-09-07T08:07:52.398768+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "025415fe2efb4495bff4812e35794ec3",
+  "title": "Eisenstein’s irreducibility criterion",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ed9de974f2564812ac773a98368d7543",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ed9de974f2564812ac773a98368d7543.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0422b0d5de924786baa95e6890b637cb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0422b0d5de924786baa95e6890b637cb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:53.025811+00:00",
+  "updated_at": "2026-09-07T07:53:54.497315+00:00"
+}

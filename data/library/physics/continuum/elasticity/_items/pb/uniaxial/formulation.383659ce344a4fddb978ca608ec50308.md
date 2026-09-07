@@ -1,0 +1,1 @@
+Assume $\mu>0$ and $3\lambda+2\mu>0$. Under uniform uniaxial stress $\sigma_{11}=s$, with every other stress component zero, solve for the diagonal strains and find Young's modulus $Y=s/\varepsilon_{11}$ and Poisson ratio $\nu_P=-\varepsilon_{22}/\varepsilon_{11}$ for $s\ne0$.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2800ff074d8a429d9a8da6899d3bd163",
+  "title": "Verify encryption and decryption in a small example",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0213e6f39d754204931714746729cca2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0213e6f39d754204931714746729cca2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "84ff424e393846e08e00c97df43668ba",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.84ff424e393846e08e00c97df43668ba.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:51.997531+00:00",
+  "updated_at": "2026-09-07T07:48:53.311409+00:00"
+}

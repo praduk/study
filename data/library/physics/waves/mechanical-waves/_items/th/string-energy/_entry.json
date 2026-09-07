@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "16c6cdb0786e4b479bc037cbf4df6bee",
+  "title": "String energy and its flux",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:waves:mechanical-waves:th:string-equation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f8e30b7eedbe467fa901474bc3903173",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f8e30b7eedbe467fa901474bc3903173.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2c22cf4789394059b5c40c8511f89608",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2c22cf4789394059b5c40c8511f89608.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.759107+00:00",
+  "updated_at": "2026-09-07T09:04:15.786932+00:00"
+}

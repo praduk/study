@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8aaee92d9fbf4379b95ef8878cf58680",
+  "title": "Compute a square wave’s Fourier series",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5fc0462521cb461e9ad839f989b26322",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5fc0462521cb461e9ad839f989b26322.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bd3dec05425746a4a01c67c729ee2ba0",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.bd3dec05425746a4a01c67c729ee2ba0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:48.612580+00:00",
+  "updated_at": "2026-09-07T08:23:10.882094+00:00"
+}

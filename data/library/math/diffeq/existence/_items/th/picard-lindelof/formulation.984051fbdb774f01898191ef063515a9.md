@@ -1,0 +1,1 @@
+Suppose $f$ is continuous on $[t_0-a,t_0+a]\times\overline B(y_0,b)$ with $a,b>0$, satisfies $\norm f\le M$, and is Lipschitz in $y$ there with constant $L$. Choose $h>0$ with $h\le a$, $hM\le b$, and $hL<1$. There is a unique solution on $[t_0-h,t_0+h]$ among continuous curves staying in that ball, with $y(t_0)=y_0$.

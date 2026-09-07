@@ -1,0 +1,1 @@
+For a particle of mass $m$, let its canonical velocity density be proportional to $\exp[-m|\mathbf v|^2/(2k_BT)]$ on $\mathbb R^3$. Find its normalized density, $\langle\mathbf v\rangle$, $\langle|\mathbf v|^2\rangle$, and the most probable speed.

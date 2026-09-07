@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fcd1dc4425b1492b912a3e27538c0402",
+  "title": "Squaring the free Dirac equation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e36b028cb37a4661866d8d3d3f9277e0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e36b028cb37a4661866d8d3d3f9277e0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8c863cac0e5641df8499ed430414f022",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8c863cac0e5641df8499ed430414f022.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:04.829482+00:00",
+  "updated_at": "2026-09-07T08:54:07.574233+00:00"
+}

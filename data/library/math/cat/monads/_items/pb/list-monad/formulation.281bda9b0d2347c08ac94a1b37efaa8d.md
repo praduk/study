@@ -1,0 +1,1 @@
+Let $T(X)$ be the set of finite lists of elements of $X$, including the empty list. Define $T(f)$ by applying $f$ to every entry, $\eta_X(x)=[x]$, and $\mu_X$ by concatenating a finite list of finite lists. Verify the monad laws.

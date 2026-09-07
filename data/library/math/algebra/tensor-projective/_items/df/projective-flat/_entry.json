@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "93026ab82b60474d8c93ec660835633a",
+  "title": "Projective and flat modules",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3551c1d0981e402dadf6ddebede5d6d3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3551c1d0981e402dadf6ddebede5d6d3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:32.372967+00:00",
+  "updated_at": "2026-09-07T07:54:32.372976+00:00"
+}

@@ -1,0 +1,1 @@
+Model a mass $m$ on a massless rigid rod of length $\ell$, moving in a vertical plane under uniform downward gravity of magnitude $g$. The pivot is fixed. Use the angle $\theta$ from the downward vertical. Derive the exact equation and conserved energy; determine the linear oscillation frequency about the downward equilibrium.

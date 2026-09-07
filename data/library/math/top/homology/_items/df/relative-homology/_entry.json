@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a72ae8bf7668429f8f87d531a335dd5a",
+  "title": "Relative and reduced homology",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aba6734b15be4fdf971d37647d0352d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aba6734b15be4fdf971d37647d0352d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:57.082362+00:00",
+  "updated_at": "2026-09-07T08:02:57.082368+00:00"
+}

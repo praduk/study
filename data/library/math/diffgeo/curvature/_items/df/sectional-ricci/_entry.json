@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b0a7e602b9be4ff596348bfc90a0d3d3",
+  "title": "Sectional, Ricci, and scalar curvature",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd46795febd54234b99842b6d865cb30",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd46795febd54234b99842b6d865cb30.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:26.407426+00:00",
+  "updated_at": "2026-09-07T08:27:31.195347+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a30ca2e01cdb493c9ee4fd57d9772e48",
+  "title": "Euler equations in the body frame",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:classical:rigid-body:df:inertia-tensor, @physics:classical:models:th:momentum-balance.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "029165e0a69a46f69336c5913341444e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.029165e0a69a46f69336c5913341444e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "529e8c3ca41a4756b3da60b070357ad3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.529e8c3ca41a4756b3da60b070357ad3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.520047+00:00",
+  "updated_at": "2026-09-07T09:04:10.595168+00:00"
+}

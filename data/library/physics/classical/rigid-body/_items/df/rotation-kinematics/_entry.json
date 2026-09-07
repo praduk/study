@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f0b8deccc0424db5b1082ad5a99524f7",
+  "title": "Rigid motion and angular velocity",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c71ff97a13db414393ed3cb569960c85",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c71ff97a13db414393ed3cb569960c85.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.406802+00:00",
+  "updated_at": "2026-09-07T09:04:10.406805+00:00"
+}

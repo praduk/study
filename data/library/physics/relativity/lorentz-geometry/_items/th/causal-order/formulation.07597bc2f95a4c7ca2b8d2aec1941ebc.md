@@ -1,0 +1,1 @@
+For a nonzero separation $(c\Delta t,\Delta\mathbf x)$, spacelike separation admits an inertial frame in which the events are simultaneous and frames giving either temporal order. Timelike separation admits a frame in which the events occur at the same spatial point. Future causal separation has positive time component in every proper orthochronous inertial frame.

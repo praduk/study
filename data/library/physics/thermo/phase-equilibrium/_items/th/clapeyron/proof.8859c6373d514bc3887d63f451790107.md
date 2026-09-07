@@ -1,0 +1,1 @@
+For either phase, the Gibbs-Duhem identity divided by its particle count is $d\mu=-s\,dT+v\,dp$. Differentiate $\mu_1=\mu_2$ along the curve to obtain $\Delta v\,dp=\Delta s\,dT$. Division by the assumed nonzero $\Delta v$ proves the first equality; $\ell=T\Delta s$ gives the second. The formula does not assert a finite slope when $\Delta v=0$.

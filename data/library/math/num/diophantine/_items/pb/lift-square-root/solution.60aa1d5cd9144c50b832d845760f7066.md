@@ -1,0 +1,1 @@
+Modulo $7$, the roots are $3,4$. For $a=3$, $(a^2-2)/7=1$ and $f'(a)=6$, giving $1+6t\equiv0\pmod7$, so $t=1$ and the lift is $10$. The other root lifts to $-10\equiv39\pmod{49}$. These satisfy $10^2-2=98$ and $39^2-2=1519=31\cdot49$. Every root modulo $49$ reduces to one of the two roots modulo $7$, whose simple lifts are unique.

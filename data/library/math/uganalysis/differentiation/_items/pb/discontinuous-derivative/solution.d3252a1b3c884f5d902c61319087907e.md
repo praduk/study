@@ -1,0 +1,1 @@
+At zero, $f(h)/h=h\sin(1/h)\to0$, so $f'(0)=0$. Away from zero, the product and chain rules give $f'(x)=2x\sin(1/x)-\cos(1/x)$. At $x_n=1/(2\pi n)$ this equals $-1$, so it does not tend to $f'(0)$. Every point away from zero is covered by the usual derivative rules.

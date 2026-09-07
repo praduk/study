@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ddb735c6c7544f5988e2c04b596a3cb0",
+  "title": "Congruences and residue classes",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0197fab0b07942b1bf3ffdb87e744bad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0197fab0b07942b1bf3ffdb87e744bad.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:42.096388+00:00",
+  "updated_at": "2026-09-07T07:47:42.096394+00:00"
+}

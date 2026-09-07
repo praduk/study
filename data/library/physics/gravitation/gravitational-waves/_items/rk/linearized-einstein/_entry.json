@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e6647da03d394491869903a072fc6d51",
+  "title": "Linearized Einstein equations and gauge",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "353c89ba1f1d4a53b171706a1b0757a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.353c89ba1f1d4a53b171706a1b0757a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.743868+00:00",
+  "updated_at": "2026-09-07T09:18:16.743871+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8101424ea05d4a8a8164401d14174083",
+  "title": "First-order linear equation",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e178199a8b5b44e98b5c6004ec678b7c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e178199a8b5b44e98b5c6004ec678b7c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b2ba0fc2682d4df48102ebbaa5ff0991",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b2ba0fc2682d4df48102ebbaa5ff0991.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:59.425499+00:00",
+  "updated_at": "2026-09-07T08:22:47.337476+00:00"
+}

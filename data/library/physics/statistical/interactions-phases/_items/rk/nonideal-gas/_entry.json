@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d417c15212ab407d87b74dc004dfaebc",
+  "title": "Nonideal equations of state and stability",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "86a1909d392e443ab89750c75d383733",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.86a1909d392e443ab89750c75d383733.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:59.242787+00:00",
+  "updated_at": "2026-09-07T09:00:59.242791+00:00"
+}

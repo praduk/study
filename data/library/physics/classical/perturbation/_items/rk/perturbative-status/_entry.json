@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3768d07a026e4f58b3b04f75c114d545",
+  "title": "Small parameters and secular terms",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "80970e1cee6d43a699437dee833b641c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.80970e1cee6d43a699437dee833b641c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.061942+00:00",
+  "updated_at": "2026-09-07T09:04:12.061948+00:00"
+}

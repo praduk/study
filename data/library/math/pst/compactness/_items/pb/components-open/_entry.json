@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "49ee1e8fec89437f9fa7cf779acae59b",
+  "title": "Components need not be open",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "02ddc31068934097b924a1f769eebba3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.02ddc31068934097b924a1f769eebba3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9698a007eed045b58f6eade62ab06b18",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9698a007eed045b58f6eade62ab06b18.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:19.971316+00:00",
+  "updated_at": "2026-09-07T08:01:21.775273+00:00"
+}

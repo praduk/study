@@ -1,0 +1,3 @@
+A relativistic local quantum model requires compatible local observations at spacelike separation: bosonic local observables commute there, with field-domain and smearing qualifications. This does not say every two-point function is zero outside the light cone. Vacuum correlations and signaling are different questions.
+
+For free relativistic fields this structure can be checked explicitly; the continuum support argument is beyond this entry. See [Tong's free-field discussion](https://davidtong.org/teaching/quantum-field-theory/qfthtml/S2). A sharp momentum cutoff generally spoils exact locality, so a finite-mode calculation is not itself that continuum proof.

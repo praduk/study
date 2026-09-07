@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "142342de6c324eadaaca046046ea3461",
+  "title": "Course guide: Undergraduate Real Analysis",
+  "rank": 4611686018427387904,
+  "header": "Rigorous foundations for single-variable analysis, with a bridge to several variables.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fded84c3d0d740518dd1d7a3f18a5921",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fded84c3d0d740518dd1d7a3f18a5921.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:07:58.770315+00:00",
+  "updated_at": "2026-09-07T08:07:58.770333+00:00"
+}

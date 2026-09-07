@@ -1,0 +1,1 @@
+A charge $q$ sits at $(0,0,a)$ with $a>0$, above a grounded infinite conductor occupying $z\leq0$. Find a potential for $z>0$ that vanishes on the plane and at infinity. Determine the induced surface charge density and its total charge. Verify uniqueness among potentials with the same Coulomb singularity and uniform decay at infinity.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ae1dbc14352b4a91a2accd24f13ed02f",
+  "title": "Distinguish uniqueness failure from finite-time blow-up",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0e2d3ad200e44154ba78a75ddbf82010",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0e2d3ad200e44154ba78a75ddbf82010.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1ce0789ce195493eb87b4a551722684f",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.1ce0789ce195493eb87b4a551722684f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:14.358867+00:00",
+  "updated_at": "2026-09-07T07:49:15.693257+00:00"
+}

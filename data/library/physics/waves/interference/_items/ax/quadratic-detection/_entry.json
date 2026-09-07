@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "fd757e998c07435d81f085c6a8fa0f34",
+  "title": "The ideal quadratic intensity model",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b18688425eaf436e812eeacfa243f549",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b18688425eaf436e812eeacfa243f549.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.780948+00:00",
+  "updated_at": "2026-09-07T09:04:16.780954+00:00"
+}

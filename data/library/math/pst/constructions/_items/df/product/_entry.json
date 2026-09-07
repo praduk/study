@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "50385450f36349829e4f83d088de480e",
+  "title": "Product topology and box topology",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1f3f7e83e5d74378a47f060f9dbb7a94",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1f3f7e83e5d74378a47f060f9dbb7a94.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:24.312501+00:00",
+  "updated_at": "2026-09-07T08:00:24.312508+00:00"
+}

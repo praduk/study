@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9bfd5f4d90c44401a1d9ef430b6e3d6e",
+  "title": "The Euclidean connection in polar coordinates",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7e91cf7b6a1445858230f5f06f2052e9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7e91cf7b6a1445858230f5f06f2052e9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "539b35326cf644f5acb8bb96e94599ba",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.539b35326cf644f5acb8bb96e94599ba.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:51.080770+00:00",
+  "updated_at": "2026-09-07T08:05:53.139905+00:00"
+}

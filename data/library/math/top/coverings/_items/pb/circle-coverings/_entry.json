@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "39aad5dc6039421093fdca7987f071f4",
+  "title": "Classify connected coverings of the circle",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d7634f70a334af7815a69203721e752",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d7634f70a334af7815a69203721e752.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f8da46853a54425da4c4c3a96c6d0754",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f8da46853a54425da4c4c3a96c6d0754.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:22.300979+00:00",
+  "updated_at": "2026-09-07T08:02:24.170844+00:00"
+}

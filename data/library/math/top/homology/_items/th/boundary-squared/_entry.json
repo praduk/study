@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "50f05ad8119340ed80bc88ad87b1c968",
+  "title": "The boundary of a boundary is zero",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "237f829dead341a58fa5e6b3b8745974",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.237f829dead341a58fa5e6b3b8745974.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eab64cf24a9a4b9596f0a689d50f3e79",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eab64cf24a9a4b9596f0a689d50f3e79.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:44.982288+00:00",
+  "updated_at": "2026-09-07T08:02:46.863332+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "424ae33dac5e491a816561cc0aa96205",
+  "title": "Measurability survives countable limits",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:measurable-functions:df:measurable-function.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "775457332c16407ca20e92ae472cb258",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.775457332c16407ca20e92ae472cb258.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "37a8ea8a94e147ba82a122eb49900ff6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.37a8ea8a94e147ba82a122eb49900ff6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:33.482573+00:00",
+  "updated_at": "2026-09-07T08:11:35.993668+00:00"
+}

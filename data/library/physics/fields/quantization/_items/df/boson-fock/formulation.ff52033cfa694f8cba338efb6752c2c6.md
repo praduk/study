@@ -1,0 +1,3 @@
+For a complex one-particle Hilbert space $K$, bosonic Fock space is the Hilbert direct sum $\mathcal F_s(K)=\bigoplus_{n=0}^\infty\operatorname{Sym}^nK$, with $\operatorname{Sym}^0K=\C$. The vacuum is the unit vector in the zero-particle sector. If $K$ has finite dimension $M$ and a chosen orthonormal basis of modes, an occupation-number basis of $\mathcal F_s(K)$ is labeled by $(n_1,\ldots,n_M)\in\N_0^M$.
+
+This is a mathematical state-space construction. A physical model must identify the modes, observables, Hamiltonian, and preparation. Creation and annihilation operators are generally unbounded, initially defined on a suitable dense finite-particle domain.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "699d051145674de581b4be297b6204b1",
+  "title": "Mean Bose and Fermi occupation of one mode",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0f2c3cfc7d43461d872d311f7ebdbaf0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0f2c3cfc7d43461d872d311f7ebdbaf0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0f955ce540b84016b3ade27379bca4a7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0f955ce540b84016b3ade27379bca4a7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.313064+00:00",
+  "updated_at": "2026-09-07T09:00:58.373282+00:00"
+}

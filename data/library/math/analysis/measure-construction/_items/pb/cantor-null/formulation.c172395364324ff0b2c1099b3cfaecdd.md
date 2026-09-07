@@ -1,0 +1,1 @@
+Start with $C_0=[0,1]$. At each stage remove the open middle third of each retained interval, obtaining $C_n$. Let $C=\bigcap_{n=0}^{\infty}C_n$. Prove that $C$ is closed and has Lebesgue measure zero.

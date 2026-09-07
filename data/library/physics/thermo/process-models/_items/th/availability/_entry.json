@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9f0e96262e444305abe5c226718b438d",
+  "title": "Available work in a fixed environment",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3a384cfbbfc645d18ea2f1e878306b3b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3a384cfbbfc645d18ea2f1e878306b3b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "47294d3184ae48989da896be9de0505c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.47294d3184ae48989da896be9de0505c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.685308+00:00",
+  "updated_at": "2026-09-07T08:57:26.772138+00:00"
+}

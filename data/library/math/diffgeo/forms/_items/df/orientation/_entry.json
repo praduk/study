@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4bde6358aef74fc38579ad6bbde2515d",
+  "title": "Orientation and boundary orientation",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce9e072dddaf4179ad4c809bb8c78ff9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce9e072dddaf4179ad4c809bb8c78ff9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:10.436936+00:00",
+  "updated_at": "2026-09-07T08:05:10.436945+00:00"
+}

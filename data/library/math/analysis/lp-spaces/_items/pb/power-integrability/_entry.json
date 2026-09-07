@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ea964be00fa14899bfba8c6188f033b1",
+  "title": "Power singularities and infinite tails",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:th:monotone-integrals, @math:analysis:lp-spaces:df:lp, @math:uganalysis:riemann-integration:th:fundamental-theorem.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "648f850927424fdba3124ea91e8131a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.648f850927424fdba3124ea91e8131a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "da888708500a4213a0e0d1dbbe252195",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.da888708500a4213a0e0d1dbbe252195.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:36.424679+00:00",
+  "updated_at": "2026-09-07T08:12:38.727278+00:00"
+}

@@ -1,0 +1,1 @@
+A particle moves in one dimension with $m\dot v=-bv$, where $m,b>0$, $v(0)=v_0>0$, and $x(0)=0$. Find $v(t)$, $x(t)$, the total distance traveled for $t\ge0$, and the mechanical energy converted to other forms. Give the units of $b$.

@@ -1,0 +1,1 @@
+Let $\phi$ be a complex field with $\mathcal L=-\partial_\mu\phi^*\partial^\mu\phi-m^2\phi^*\phi$. Treat real and imaginary parts as independent. For $\delta\phi=i\phi$ and $\delta\phi^*=-i\phi^*$, find a Noether current and verify its divergence vanishes.

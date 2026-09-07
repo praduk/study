@@ -1,0 +1,1 @@
+A uniform symmetric stress is $\sigma=\begin{pmatrix}3&1&0\\1&1&0\\0&0&0\end{pmatrix}\,\mathrm{MPa}$. For the plane normal $n=(1,1,0)/\sqrt2$, find the traction, signed normal stress, and magnitude of the tangential traction. Here $1\,\mathrm{MPa}=10^6\,\mathrm{Pa}$.

@@ -1,0 +1,1 @@
+For $x^2-2y^2=1$, start with $(x_0,y_0)=(1,0)$ and define $x_{n+1}=3x_n+4y_n$, $y_{n+1}=2x_n+3y_n$. Prove this gives infinitely many distinct nonnegative integer solutions, and compute the first three with $y>0$.

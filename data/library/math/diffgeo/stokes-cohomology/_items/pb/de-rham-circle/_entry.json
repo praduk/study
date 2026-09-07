@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a8911d81de0f47928b29841b225d7132",
+  "title": "Compute the de Rham cohomology of the circle directly",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "914d63db679d4b1ab7f9e5dfd8dfd6ff",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.914d63db679d4b1ab7f9e5dfd8dfd6ff.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "819b4bce00c549e6aae39663f74b842c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.819b4bce00c549e6aae39663f74b842c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:31.516694+00:00",
+  "updated_at": "2026-09-07T08:05:33.513461+00:00"
+}

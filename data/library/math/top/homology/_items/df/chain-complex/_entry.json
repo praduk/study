@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8ccc3482a805464ca7c19aed01bcd89a",
+  "title": "Chain complexes and homology",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c2766a2c76194974a5b6c70032de0185",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c2766a2c76194974a5b6c70032de0185.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:41.936684+00:00",
+  "updated_at": "2026-09-07T08:02:41.936692+00:00"
+}

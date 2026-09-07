@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5c9fe307baeb4cceb11daedf358bee37",
+  "title": "Abelian groups of order seventy-two",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1b0be18b7185473d80f264af7697677b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1b0be18b7185473d80f264af7697677b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "373a8e5c9ec94c7cbcf52c2fc18c7a3a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.373a8e5c9ec94c7cbcf52c2fc18c7a3a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:11.262144+00:00",
+  "updated_at": "2026-09-07T07:54:12.787958+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2b61bf14091a46e7b226750fe3c8eadb",
+  "title": "Thermal photons and the ultraviolet failure of equipartition",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "de1d9f93b4a24f879a9261c3f47cb8bf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.de1d9f93b4a24f879a9261c3f47cb8bf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.767228+00:00",
+  "updated_at": "2026-09-07T09:00:58.767232+00:00"
+}

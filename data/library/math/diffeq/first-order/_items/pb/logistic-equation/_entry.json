@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6d08b6a4f2914b7a9e9eb890458911eb",
+  "title": "Solve and interpret a logistic initial-value problem",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e40009ebe0094c94afdf7435a8e1c43d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e40009ebe0094c94afdf7435a8e1c43d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a09c3ba176c643ada159cf288687ee4a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a09c3ba176c643ada159cf288687ee4a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:03.678789+00:00",
+  "updated_at": "2026-09-07T08:22:51.223806+00:00"
+}

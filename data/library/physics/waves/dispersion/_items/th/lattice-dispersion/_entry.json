@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0c28a7c5b2fe4fed923e3542dad2acf9",
+  "title": "A mass–spring chain has a dispersive band",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "183190da70c54b719f3fc4847c1049f2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.183190da70c54b719f3fc4847c1049f2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e04ae6b83b794ad7a43991257ae63db9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e04ae6b83b794ad7a43991257ae63db9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.040717+00:00",
+  "updated_at": "2026-09-07T09:04:16.077495+00:00"
+}

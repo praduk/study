@@ -1,0 +1,1 @@
+Let $H$ be a Hermitian matrix with smallest eigenvalue $E_0$. For every normalized vector $v$, $\langle v|Hv\rangle\ge E_0$. Equality holds exactly when $v$ lies in the lowest eigenspace. Minimizing over a nonzero trial subspace gives an upper bound on $E_0$, and enlarging that subspace cannot raise the minimized value.

@@ -1,0 +1,1 @@
+The stationary-solid thermal model with constant coefficients gives $T_t=\alpha\Delta T+r/(\rho c_h)$, where $\alpha=k/(\rho c_h)$ is thermal diffusivity. For a length scale $L$, the diffusion time scale is $L^2/\alpha$.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "30589e45e0f148b698b5546b1eea3402",
+  "title": "Where particle physics fits",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0445dd16b4b9463489172de5b40810b8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0445dd16b4b9463489172de5b40810b8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:53.975685+00:00",
+  "updated_at": "2026-09-07T08:54:53.975693+00:00"
+}

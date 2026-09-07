@@ -1,0 +1,3 @@
+On an oriented $n$-manifold, integrate a compactly supported top-degree form by a partition of unity subordinate to oriented charts. In each chart integrate its scalar coefficient against $dx^1\cdots dx^n$ and add the results. The ordinary change-of-variables theorem makes the result independent of charts and partition.
+
+Compact support and local finiteness reduce the sum to finitely many nonzero contributions. Reversing orientation changes the sign of the integral. Without an orientation, a density can be integrated, but an arbitrary top-degree form has no canonical signed integral.

@@ -1,0 +1,1 @@
+Between two timelike-separated events in Minkowski spacetime, the straight future-directed timelike segment has at least as much proper time as any future-directed piecewise smooth timelike curve joining them. Equality holds exactly for that straight image with future-directed parametrization.

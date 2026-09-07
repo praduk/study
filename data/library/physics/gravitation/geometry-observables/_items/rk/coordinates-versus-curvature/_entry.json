@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e5d4ef9bfbb142e98e290cdc2915d2b7",
+  "title": "Coordinate effects and invariant gravitational information",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7211f18bbd2943fa95372b5f50da5bff",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7211f18bbd2943fa95372b5f50da5bff.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.646677+00:00",
+  "updated_at": "2026-09-07T09:18:15.646682+00:00"
+}

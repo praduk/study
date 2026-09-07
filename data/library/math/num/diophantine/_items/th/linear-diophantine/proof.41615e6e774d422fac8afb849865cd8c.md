@@ -1,0 +1,1 @@
+Necessity and existence follow from Bézout. Subtracting a particular solution gives $(a/d)(x-x_0)=-(b/d)(y-y_0)$. Since $a/d,b/d$ are coprime, Euclid’s lemma forces $b/d\mid x-x_0$ even if a factor is negative. Write $x-x_0=(b/d)t$ and cancel the nonzero $b/d$ to get the formula for $y$. Substitution proves sufficiency.

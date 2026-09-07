@@ -1,0 +1,1 @@
+The forward direction follows by choosing the continuity radius and then taking the sequence tail inside it. If continuity fails, there is $\epsilon_0>0$ such that for every $\delta>0$ some $x\in E$ has $|x-a|<\delta$ but $|f(x)-f(a)|\ge\epsilon_0$. Choosing $\delta=1/n$ constructs a sequence contradicting the sequential condition.

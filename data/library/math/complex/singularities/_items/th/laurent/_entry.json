@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4d70b0fda6cf4f27bcd506cd14a32359",
+  "title": "Laurent expansion on an annulus",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:contour-integration:th:cauchy-formula.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c7c458f73d204ceaa1260e86e8a938d4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c7c458f73d204ceaa1260e86e8a938d4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:25.082977+00:00",
+  "updated_at": "2026-09-07T08:26:28.955365+00:00"
+}

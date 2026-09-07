@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a70ea5503e7d4ef8abb8583ee3bae534",
+  "title": "Measured engine heat flows",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3d13fe509b464d5093d4c0238ced9ba1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3d13fe509b464d5093d4c0238ced9ba1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b1b0e547114f4151b966b0906f5e1a15",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b1b0e547114f4151b966b0906f5e1a15.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.708409+00:00",
+  "updated_at": "2026-09-07T08:57:24.735704+00:00"
+}

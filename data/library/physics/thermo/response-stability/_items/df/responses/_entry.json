@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6135a4a9d5e54985a1c5a8f1efecd7f7",
+  "title": "Heat capacities, expansion, and compressibility",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "423078038ec24627ab42a72b86d08723",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.423078038ec24627ab42a72b86d08723.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.180588+00:00",
+  "updated_at": "2026-09-07T09:00:56.999272+00:00"
+}

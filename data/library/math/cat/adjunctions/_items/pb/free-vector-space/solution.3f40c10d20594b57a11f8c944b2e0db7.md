@@ -1,0 +1,3 @@
+A function $f:S\to U(V)$ extends uniquely to the linear map $\bar f(\sum a_s e_s)=\sum a_sf(s)$; finite support makes the sum defined. Conversely a linear map is determined by its values on the $e_s$. These assignments commute with functions of sets and linear maps of vector spaces, giving the natural Hom bijection. A function $u:S\to T$ defines the free functor on arrows by $e_s\mapsto e_{u(s)}$.
+
+The unit is $s\mapsto e_s$. The counit $k^{(U(V))}\to V$ sends $e_v\mapsto v$. On every generator, each triangle composite returns the same generator or vector, so both triangle identities hold.

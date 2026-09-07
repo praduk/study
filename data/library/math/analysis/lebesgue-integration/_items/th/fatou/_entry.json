@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bcbed6894a204b60ac8828daeb8d6890",
+  "title": "Fatou’s lemma",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:th:monotone-integrals, @math:analysis:measurable-functions:th:measurable-limits.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "690951c4625c49ebb95f71317e03c72c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.690951c4625c49ebb95f71317e03c72c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4c6c07ba031c40b6976719dea7723a93",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4c6c07ba031c40b6976719dea7723a93.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:03.341169+00:00",
+  "updated_at": "2026-09-07T08:25:06.175451+00:00"
+}

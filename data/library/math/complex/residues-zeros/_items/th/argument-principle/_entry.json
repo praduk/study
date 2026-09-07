@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d836b6549bdf4a8abab425ad04ad1016",
+  "title": "Argument principle on a disk",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:residues-zeros:th:residue-theorem, @math:complex:analytic-consequences:th:identity-theorem.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a90b2f9ffd8247f2a63c7363a289bb87",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a90b2f9ffd8247f2a63c7363a289bb87.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "60bb5337c8ef4a7c8e0ce1e402c54d81",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.60bb5337c8ef4a7c8e0ce1e402c54d81.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:51.005171+00:00",
+  "updated_at": "2026-09-07T08:26:38.971825+00:00"
+}

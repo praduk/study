@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "229328fd4b8b4cbf81dd95951d003e80",
+  "title": "Physical Models and Conventions: Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Physics for readers familiar with the Mathematics library.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d174485de844f709e16fa160a41ba67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d174485de844f709e16fa160a41ba67.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:16.876070+00:00",
+  "updated_at": "2026-09-07T08:51:16.876088+00:00"
+}

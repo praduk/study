@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "72c8791d746f4517ba0092d7f7c25ec8",
+  "title": "Every smooth manifold admits a Riemannian metric",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "04093de9762e438b9c0c5cd1f7834ee8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.04093de9762e438b9c0c5cd1f7834ee8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "40da0b5bbcaa4a77a85bbc66f96bc126",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.40da0b5bbcaa4a77a85bbc66f96bc126.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:38.026273+00:00",
+  "updated_at": "2026-09-07T08:05:40.028680+00:00"
+}

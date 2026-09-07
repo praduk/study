@@ -1,0 +1,1 @@
+A string of length $L$ is initially at rest with triangular displacement $f(x)=2Ax/L$ for $0\le x\le L/2$ and $f(x)=2A(L-x)/L$ for $L/2\le x\le L$. Assume $2|A|/L\ll1$. Find its sine coefficients, write the mode evolution, and identify why a globally $C^2$ solution is not obtained from these initial data.

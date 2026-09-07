@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8d9e80a075e542edb024c34d4a7ac1c1",
+  "title": "Maxwell equations in the chosen tensor convention",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "57b81810c05c4507bc8c486df3334f75",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.57b81810c05c4507bc8c486df3334f75.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ad1576ba9be94303882ab837521fe6a3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ad1576ba9be94303882ab837521fe6a3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:00.634436+00:00",
+  "updated_at": "2026-09-07T09:03:00.730712+00:00"
+}

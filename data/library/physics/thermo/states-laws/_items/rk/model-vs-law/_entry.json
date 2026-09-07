@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8f813923a89245e99a1063f8fb4ce8c9",
+  "title": "Equations of state are additional physical input",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "254b3c29c957483ca6b1a3f43814f4a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.254b3c29c957483ca6b1a3f43814f4a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.587374+00:00",
+  "updated_at": "2026-09-07T08:57:24.587376+00:00"
+}

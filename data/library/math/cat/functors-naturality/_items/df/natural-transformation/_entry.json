@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "22604773841946d5a7000064bbda09af",
+  "title": "Natural transformations",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b033976f3f6942e7889c017e3cfc6014",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b033976f3f6942e7889c017e3cfc6014.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:45.022152+00:00",
+  "updated_at": "2026-09-07T08:23:48.472448+00:00"
+}

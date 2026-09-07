@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aab46a8ace0f4c31b80c6817b35369c6",
+  "title": "Singularity type from Laurent coefficients",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:singularities:th:laurent, @math:complex:singularities:df:isolated-singularity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e86270ef8c34455abed5130f326c97aa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e86270ef8c34455abed5130f326c97aa.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "df18343a74b04d8ebe9066d163b9a889",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.df18343a74b04d8ebe9066d163b9a889.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:27.072786+00:00",
+  "updated_at": "2026-09-07T08:16:29.550235+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9336a2bd403846ef92740b221076fb80",
+  "title": "Compare phase and group speed near a band edge",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "883f0851ee4d45c4911bde0ece5d3547",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.883f0851ee4d45c4911bde0ece5d3547.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cf0214c1279b4a679a6d0d7120cd1458",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.cf0214c1279b4a679a6d0d7120cd1458.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.099031+00:00",
+  "updated_at": "2026-09-07T09:04:16.135965+00:00"
+}

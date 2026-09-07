@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0134d9b0d03543c8b9d86fd3ee5bc7de",
+  "title": "Cauchy integral formula on a disk",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:complex:contour-integration:th:cauchy-simply-connected.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95d5680b3fe14a17a25f554538190529",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95d5680b3fe14a17a25f554538190529.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:45.668600+00:00",
+  "updated_at": "2026-09-07T08:26:20.981626+00:00"
+}

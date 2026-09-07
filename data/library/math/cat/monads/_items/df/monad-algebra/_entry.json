@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1f4c25d234364e9290ba1c3690c52f5e",
+  "title": "Algebras for a monad",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f913c69dceac4320bdf8f8e63ee45554",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f913c69dceac4320bdf8f8e63ee45554.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:57:04.010854+00:00",
+  "updated_at": "2026-09-07T08:24:16.057910+00:00"
+}

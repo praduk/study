@@ -1,0 +1,3 @@
+In a local frame for a vector bundle, write a connection as $D=d+A$, where $A$ is a matrix-valued one-form, and its curvature as $F=dA+A\wedge A$. Matrix multiplication accompanies wedge multiplication. Under a smooth change of frame $g$, sections transform by $\psi'=g^{-1}\psi$ and the connection form by $A'=g^{-1}Ag+g^{-1}dg$.
+
+For a unitary gauge group $A$ is skew-Hermitian in this convention. An electromagnetic real potential is converted to a connection using the specified charge and factors of $i$ and $\hbar$. Those factors must not be guessed from the bare geometric formula.

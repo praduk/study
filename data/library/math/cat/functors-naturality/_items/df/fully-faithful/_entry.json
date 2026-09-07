@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "bae99abe3dd74dd18a777fd7a06d079c",
+  "title": "Full, faithful, and essentially surjective functors",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "12b993665c324736bdf5a389849b225b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.12b993665c324736bdf5a389849b225b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:40.576794+00:00",
+  "updated_at": "2026-09-07T07:55:40.576811+00:00"
+}

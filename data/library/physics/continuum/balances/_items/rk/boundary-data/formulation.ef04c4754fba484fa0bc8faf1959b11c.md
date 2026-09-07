@@ -1,0 +1,3 @@
+A balance PDE does not specify how a body is supported or driven. In elasticity, boundary displacement and boundary traction are alternative data on complementary portions of the boundary. Prescribing both arbitrarily on the same portion generally overdetermines the problem. A static body with pure traction data also needs overall force and torque balance; rigid translations and rotations may remain undetermined.
+
+For viscous fluids, a stationary solid wall is often modeled by no slip, $v=0$. An inviscid impermeable wall generally imposes only $v\cdot n=0$. Replacing one by the other changes the model. At a free interface, stress balance and a kinematic condition for the moving interface must be supplied; surface tension can add a traction jump.

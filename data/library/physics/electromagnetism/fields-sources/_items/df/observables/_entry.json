@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7dec6007e0ad4620b41d91c7942a2da0",
+  "title": "Charge, current, and field measurements",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0bcc7c0392f84210bc2b6bc7348fc951",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0bcc7c0392f84210bc2b6bc7348fc951.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.293461+00:00",
+  "updated_at": "2026-09-07T09:02:56.293463+00:00"
+}

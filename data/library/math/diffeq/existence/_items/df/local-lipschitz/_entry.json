@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2ae94f93ef894edbaddb597372e72c4a",
+  "title": "A local Lipschitz condition in the state variable",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3cbd00ea8dfe454ba421af76bbb4540a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3cbd00ea8dfe454ba421af76bbb4540a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:09.021307+00:00",
+  "updated_at": "2026-09-07T07:49:09.021314+00:00"
+}

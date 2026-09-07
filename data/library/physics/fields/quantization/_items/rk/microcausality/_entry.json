@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f06eccb49bfc47be8edc35fca0d1acff",
+  "title": "Microcausality concerns local observables",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c6fc9361b33a4e6f9964d2db3d24b6a8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c6fc9361b33a4e6f9964d2db3d24b6a8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:53.528886+00:00",
+  "updated_at": "2026-09-07T08:53:53.528892+00:00"
+}

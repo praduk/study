@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8cfd5308cc4545d4a652ad725a633083",
+  "title": "Phase velocity and group velocity",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9116b47d28944b9592e18fc6aac5aae1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9116b47d28944b9592e18fc6aac5aae1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.945571+00:00",
+  "updated_at": "2026-09-07T09:04:15.945578+00:00"
+}

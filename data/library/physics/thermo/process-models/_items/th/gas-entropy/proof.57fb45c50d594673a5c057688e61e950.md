@@ -1,0 +1,1 @@
+At fixed $N$, $T\,dS=dU+p\,dV$. Substituting both constitutive equations gives $dS=cNk_B\,dT/T+Nk_B\,dV/V$. Integrating the exact differential on the positive $(T,V)$ quadrant proves the formula. Its additive reference entropy is undetermined by these differential equations.

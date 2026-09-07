@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a854f0e08c344ad9bde5685d0a2bdfbb",
+  "title": "A quantum mode and the classical limit",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "759e86d58d1742079ea95035f2d069cb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.759e86d58d1742079ea95035f2d069cb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "39c1a21a339f471ab827e33acdee234a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.39c1a21a339f471ab827e33acdee234a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.659054+00:00",
+  "updated_at": "2026-09-07T09:11:24.724115+00:00"
+}

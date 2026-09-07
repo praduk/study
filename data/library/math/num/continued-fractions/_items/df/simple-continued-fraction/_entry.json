@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e4ef4d5ae9fd4b78ac5d4923c04e9ad7",
+  "title": "Simple continued fractions and convergents",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3b2995b1105b4fa08dc0bf200f625b25",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3b2995b1105b4fa08dc0bf200f625b25.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:32.171446+00:00",
+  "updated_at": "2026-09-07T07:48:32.171452+00:00"
+}

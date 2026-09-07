@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "336cc27356474bdb8df5d4eff2a56f30",
+  "title": "Compactness in metric spaces",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0fe04eff44ee4ee2b6a61c5bf66a9be8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0fe04eff44ee4ee2b6a61c5bf66a9be8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cb7e7bcba42046a7a9d3ecc3e5fbbf03",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cb7e7bcba42046a7a9d3ecc3e5fbbf03.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:28.773183+00:00",
+  "updated_at": "2026-09-07T08:01:30.609549+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5ec25264d3324f089a8d984dd607c14c",
+  "title": "Isotropic Newtonian-fluid constitutive law",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f6fdfecd0a645989a090fea736ab5f4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f6fdfecd0a645989a090fea736ab5f4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.805452+00:00",
+  "updated_at": "2026-09-07T09:04:12.805454+00:00"
+}

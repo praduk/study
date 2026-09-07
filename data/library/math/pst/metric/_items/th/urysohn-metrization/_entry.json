@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9d987240626849559e6a3af734bd1c1b",
+  "title": "Urysohn metrization theorem",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6924b4e0350842869c9b5b4f67f27964",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6924b4e0350842869c9b5b4f67f27964.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:44.951630+00:00",
+  "updated_at": "2026-09-07T08:01:44.951637+00:00"
+}

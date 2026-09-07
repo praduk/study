@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1678cd60cdd248a4b86c4d7f84112f19",
+  "title": "Goursat’s triangle theorem",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:contour-integration:th:ml-estimate, @math:complex:contour-integration:th:primitive-integral, @math:complex:holomorphic-functions:df:holomorphic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c168b8410ab548f1a84bc64382323589",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c168b8410ab548f1a84bc64382323589.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8421ac9c957d4236808fde20aa3fa02d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8421ac9c957d4236808fde20aa3fa02d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:35.920069+00:00",
+  "updated_at": "2026-09-07T08:26:14.979185+00:00"
+}

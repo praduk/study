@@ -1,0 +1,1 @@
+For $n\in\ker f$, $f(gng^{-1})=f(g)1f(g)^{-1}=1$, so the kernel is normal. If $g\ker f=h\ker f$, then $h^{-1}g\in\ker f$, giving $f(g)=f(h)$. The induced map is therefore well defined and is a homomorphism. It is surjective onto $f(G)$; if its value at $g\ker f$ is $1$, then $g\in\ker f$, proving injectivity.

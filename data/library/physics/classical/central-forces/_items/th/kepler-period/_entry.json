@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f78f1556a8454d9eb1f6b6bd76bbdb37",
+  "title": "Kepler period from swept area",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "72092483f8574c01b095775064f93e6c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.72092483f8574c01b095775064f93e6c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4bbb9fe8b2714585a719e7de10ef446d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4bbb9fe8b2714585a719e7de10ef446d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.141015+00:00",
+  "updated_at": "2026-09-07T09:04:10.206172+00:00"
+}

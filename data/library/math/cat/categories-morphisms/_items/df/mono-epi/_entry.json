@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1e9299e16ff74d84be0754dc76d901b1",
+  "title": "Monomorphisms, epimorphisms, and split maps",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff71d14ba2b84ad38f800a8760fe1c55",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff71d14ba2b84ad38f800a8760fe1c55.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:25.343006+00:00",
+  "updated_at": "2026-09-07T07:55:25.343024+00:00"
+}

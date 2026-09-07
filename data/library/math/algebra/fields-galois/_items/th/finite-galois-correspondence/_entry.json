@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "37eabb178e9b435ab47618fd874bac05",
+  "title": "Fundamental theorem of finite Galois theory",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dc9a3b8a24ac476197dad251906ab225",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dc9a3b8a24ac476197dad251906ab225.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:47.207925+00:00",
+  "updated_at": "2026-09-07T08:23:42.571986+00:00"
+}

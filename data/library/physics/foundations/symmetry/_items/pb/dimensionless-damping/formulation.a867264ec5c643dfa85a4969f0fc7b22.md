@@ -1,0 +1,1 @@
+For $m\ddot x+b\dot x+kx=F_0\cos(\omega t)$ with $m,k,F_0>0$ and $b\ge0$, choose displacement scale $F_0/k$ and time scale $\sqrt{m/k}$. Derive the dimensionless equation and identify its two independent control parameters.

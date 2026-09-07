@@ -1,0 +1,2 @@
+Differentiate the eigenvalue equation at zero:
+$Vu_0+H_0u'=E'u_0+E_0u'$. Taking the inner product with $u_0$ cancels the $u'$ terms because $H_0$ is Hermitian, yielding $E'$. Taking it with $u_m$ orthogonal to $u_0$ gives $(E_m-E_0)\langle u_m|u'\rangle=-\langle u_m|Vu_0\rangle$. Simplicity ensures the nonzero denominator. Differentiated normalization makes $\langle u_0|u'\rangle$ purely imaginary; multiplying the eigenvector by a differentiable phase can set it to zero at the expansion point.

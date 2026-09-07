@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ea35e6572bd74992ab6e6aa612e2da91",
+  "title": "SI four-potential and electromagnetic field tensor",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b221215920344d069e95b7c4dce0cbb7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b221215920344d069e95b7c4dce0cbb7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:00.565936+00:00",
+  "updated_at": "2026-09-07T09:03:00.565939+00:00"
+}

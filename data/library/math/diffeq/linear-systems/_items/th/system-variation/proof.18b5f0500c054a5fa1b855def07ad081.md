@@ -1,0 +1,1 @@
+Write $x=\Phi c$; then $x'=A\Phi c+\Phi c'$. The forcing equation is equivalent to $c'=\Phi^{-1}b$. Integrate and enforce the initial state. All factors are continuously differentiable as needed, so substituting the formula verifies the equation. Subtract two solutions and use homogeneous uniqueness to obtain uniqueness.

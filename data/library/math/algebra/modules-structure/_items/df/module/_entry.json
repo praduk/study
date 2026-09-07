@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1f3554009c764149a33d972bbd3cc92b",
+  "title": "Modules, submodules, and free modules",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b5b3716cba0340798d62e78af69e011f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b5b3716cba0340798d62e78af69e011f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:02.700407+00:00",
+  "updated_at": "2026-09-07T07:54:02.700414+00:00"
+}

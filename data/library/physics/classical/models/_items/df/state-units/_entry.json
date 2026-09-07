@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "704d9ba131b5435294888eb23e664f83",
+  "title": "States, observables, and dimensional consistency",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b693f83580b547928cb4c21e80b52e86",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b693f83580b547928cb4c21e80b52e86.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:08.996542+00:00",
+  "updated_at": "2026-09-07T09:04:08.996543+00:00"
+}

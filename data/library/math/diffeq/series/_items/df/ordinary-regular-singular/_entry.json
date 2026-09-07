@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1a49114aaf424838a23d74f97452d5ef",
+  "title": "Ordinary and regular singular points",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3058a8e889094b7fbf3c279d0b26cbe1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3058a8e889094b7fbf3c279d0b26cbe1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:32.730515+00:00",
+  "updated_at": "2026-09-07T07:51:32.730522+00:00"
+}

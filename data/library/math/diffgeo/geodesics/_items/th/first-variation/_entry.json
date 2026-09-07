@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2f88b968baf94aa5928600e1326f63b6",
+  "title": "First variation of energy",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a2b6231ad024e2f880eef6e5661c019",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a2b6231ad024e2f880eef6e5661c019.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "877a692cdc0a4c5b80127fa3722e5433",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.877a692cdc0a4c5b80127fa3722e5433.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:11.187000+00:00",
+  "updated_at": "2026-09-07T08:27:27.252391+00:00"
+}

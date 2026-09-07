@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cce366d7e52146c1a39830c9067a4bc5",
+  "title": "Chinese remainder theorem for two ideals",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec5319f4162e4ff286c78f1168f02405",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec5319f4162e4ff286c78f1168f02405.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4a6112e063624f349cd59c21b1db5026",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4a6112e063624f349cd59c21b1db5026.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:37.290728+00:00",
+  "updated_at": "2026-09-07T08:23:24.800681+00:00"
+}

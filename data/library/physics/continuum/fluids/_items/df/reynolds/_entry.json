@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f39db642fd0546ff8e6a9f776d4281b8",
+  "title": "Reynolds number compares transport mechanisms",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4c604c4206db4ee19ad419d893e99840",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4c604c4206db4ee19ad419d893e99840.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.137264+00:00",
+  "updated_at": "2026-09-07T09:04:13.137270+00:00"
+}

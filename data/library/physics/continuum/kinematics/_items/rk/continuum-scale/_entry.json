@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "17dbbe3b54a244ccb94cd172ac73d122",
+  "title": "What a continuum field represents",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "169c7034ea29492694306a3a777333db",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.169c7034ea29492694306a3a777333db.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.332773+00:00",
+  "updated_at": "2026-09-07T09:04:12.332775+00:00"
+}

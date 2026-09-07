@@ -1,0 +1,1 @@
+For the linear acoustic system, energy density $e=\rho_0|v|^2/2+p'^2/(2\rho_0c^2)$ and energy flux $j=p'v$ satisfy $\partial_te+\operatorname{div}j=0$. For a purely right-moving plane sound wave, $v_x=p'/(\rho_0c)$; the acoustic impedance is $Z=\rho_0c$ in $\mathrm{Pa\,s\,m^{-1}}$.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5c77e4f4fa1d4488a31dedd0000f3d51",
+  "title": "Alternating series estimate",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:monotone-convergence.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da7f60730da74af489ef5406382a6f8b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da7f60730da74af489ef5406382a6f8b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a6cd585c06094cc8a1ae50f5796deea5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a6cd585c06094cc8a1ae50f5796deea5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:53.881525+00:00",
+  "updated_at": "2026-09-07T08:08:56.138236+00:00"
+}

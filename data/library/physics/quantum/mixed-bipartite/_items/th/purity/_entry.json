@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a1fc54e6418b4a87ad358bbb9ab940fe",
+  "title": "Purity characterizes finite-dimensional pure states",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b346eabf93ef49119b3a93840c1a5597",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b346eabf93ef49119b3a93840c1a5597.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "31fe403ab36b4fb29d6bb5fa621bc7a0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.31fe403ab36b4fb29d6bb5fa621bc7a0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:24.289353+00:00",
+  "updated_at": "2026-09-07T09:11:24.418357+00:00"
+}

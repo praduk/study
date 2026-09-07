@@ -1,0 +1,1 @@
+For continuous real $p,q$ on an interval $I$, the solution space of $y''+py'+qy=0$ has dimension two. A pair $y_1,y_2$ is a basis exactly when its Wronskian $W(t_0)=y_1(t_0)y_2'(t_0)-y_1'(t_0)y_2(t_0)$ is nonzero at one point $t_0\in I$.

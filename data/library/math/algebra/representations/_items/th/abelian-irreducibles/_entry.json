@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "75fbb7f1237f4491a600f4ee28c7a83c",
+  "title": "Irreducible representations of finite abelian groups over C",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0ac354704a94438d9374b5664af68d03",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0ac354704a94438d9374b5664af68d03.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "db77255e0d2c45a4af0c718aecd4adfa",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.db77255e0d2c45a4af0c718aecd4adfa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:08.588872+00:00",
+  "updated_at": "2026-09-07T07:55:10.392797+00:00"
+}

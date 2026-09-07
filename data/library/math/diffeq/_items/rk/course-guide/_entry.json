@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "964e654b77e6417495a483adea3c7035",
+  "title": "Differential Equations Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Undergraduate core; calculus, elementary linear algebra, and proof fluency.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8eeb3233c50f4ccfaddabff41fbae7dc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8eeb3233c50f4ccfaddabff41fbae7dc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:54.083159+00:00",
+  "updated_at": "2026-09-07T07:48:54.083165+00:00"
+}

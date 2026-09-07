@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "da8b6dc7a74345b9bf409adb393062e0",
+  "title": "Nowhere dense, meagre, and Baire spaces",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e4c33e8586344c48a1d2213809a9fab2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e4c33e8586344c48a1d2213809a9fab2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:34.600459+00:00",
+  "updated_at": "2026-09-07T08:01:34.600467+00:00"
+}

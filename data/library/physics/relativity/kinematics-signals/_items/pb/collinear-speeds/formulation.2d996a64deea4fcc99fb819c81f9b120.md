@@ -1,0 +1,1 @@
+A rocket moves at $3c/5$ along $+x$ in a laboratory. It emits a probe that moves at $3c/5$ along $+x$ in the rocket frame. Find the probe's laboratory speed by both velocity transformation and rapidity. Compare with ordinary addition.

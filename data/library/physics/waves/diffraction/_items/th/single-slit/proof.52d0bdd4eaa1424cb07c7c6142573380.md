@@ -1,0 +1,1 @@
+The $x_1$ Fourier factor is $\int_{-b/2}^{b/2}e^{-i\xi_1x_1}dx_1=2\sin(\xi_1b/2)/\xi_1$, with value $b$ at zero by continuity. Set $\xi_1=kX_1/z$ to get the amplitude factor. Its first nonzero roots have $kbX_1/(2z)=\pm\pi$, giving $X_1=\pm\lambda z/b$. Intensity is proportional to the square of this factor; the aperture's other dimension contributes its own independent factor.

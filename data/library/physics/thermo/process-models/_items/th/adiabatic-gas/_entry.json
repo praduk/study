@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "448a2749c7b4418c95d17f24afef5308",
+  "title": "Reversible adiabats of a calorically perfect gas",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec67c75d5e4f49e2bc4407cb2d43e029",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec67c75d5e4f49e2bc4407cb2d43e029.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "773995ae8815463f854646624022fb20",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.773995ae8815463f854646624022fb20.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.417336+00:00",
+  "updated_at": "2026-09-07T08:57:26.499769+00:00"
+}

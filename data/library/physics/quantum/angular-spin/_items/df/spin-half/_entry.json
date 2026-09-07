@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2ae107e9c6a645fcbec1b45be88dec8a",
+  "title": "Spin one-half and the Pauli matrices",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ab12fe948844062971b7ba1f78d0513",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ab12fe948844062971b7ba1f78d0513.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.967361+00:00",
+  "updated_at": "2026-09-07T09:11:21.967369+00:00"
+}

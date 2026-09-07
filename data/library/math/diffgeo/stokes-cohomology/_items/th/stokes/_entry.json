@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "67d15d8b8cd2481fa5a4fe0d18e6b60c",
+  "title": "Stokes theorem on manifolds",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "af72c0777240492a86684e4bcaa0f419",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.af72c0777240492a86684e4bcaa0f419.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "495c4656ec204db0bdbd1eb948e5b3fe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.495c4656ec204db0bdbd1eb948e5b3fe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:17.028526+00:00",
+  "updated_at": "2026-09-07T08:27:11.176167+00:00"
+}

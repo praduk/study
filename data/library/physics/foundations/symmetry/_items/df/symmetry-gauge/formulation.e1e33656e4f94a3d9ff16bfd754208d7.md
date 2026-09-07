@@ -1,0 +1,3 @@
+A symmetry is a specified transformation preserving the model's dynamics and relevant structure. It may send a physical state to a distinguishable physical state, as a spatial rotation sends a directional preparation to another one. Gauge redundancy identifies different mathematical descriptions of the same physical state.
+
+Which transformations are gauge depends on boundary conditions and the observable algebra: transformations nontrivial at a boundary can carry physical charges. In the elementary electromagnetic example, $A\mapsto A+\nabla\chi$ and $\phi\mapsto\phi-\partial_t\chi$ preserve $E=-\nabla\phi-\partial_tA$ and $B=\nabla\times A$.

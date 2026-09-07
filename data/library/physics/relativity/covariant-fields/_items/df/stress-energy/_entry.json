@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "95fe8bd5fcaa468d8a3a189a27a1c771",
+  "title": "Stress-energy and observer energy",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b338de601c7445f7a522c9141136b2e0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b338de601c7445f7a522c9141136b2e0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:01.254964+00:00",
+  "updated_at": "2026-09-07T09:03:01.254969+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "48ff7bdf1e834ecb8c5911cc1c73e21a",
+  "title": "The de Rham isomorphism theorem",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c659d717138e48839c48efb94e76c1e7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c659d717138e48839c48efb94e76c1e7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:29.884786+00:00",
+  "updated_at": "2026-09-07T08:05:29.884793+00:00"
+}

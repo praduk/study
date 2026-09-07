@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "53672c9576d74d8ba5e50b1a62dd5ff9",
+  "title": "Long exact sequence of a pair",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1333081f00e74ccbacf436a6843cae0e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1333081f00e74ccbacf436a6843cae0e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:58.597836+00:00",
+  "updated_at": "2026-09-07T08:26:55.133899+00:00"
+}

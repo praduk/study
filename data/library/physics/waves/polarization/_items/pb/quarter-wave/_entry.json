@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8cdded094caa4174b01bbbb4e9ee7f0e",
+  "title": "Follow a field through a quarter-wave plate",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1e5e7803f4a44d429ea32cbb6e0f6abe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1e5e7803f4a44d429ea32cbb6e0f6abe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b28a920870db42a2a888de277fb70b0a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b28a920870db42a2a888de277fb70b0a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:19.423702+00:00",
+  "updated_at": "2026-09-07T09:04:19.544064+00:00"
+}

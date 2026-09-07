@@ -1,0 +1,1 @@
+The even partial sums increase because $S_{2m+2}-S_{2m}=b_{2m+1}-b_{2m+2}\ge0$. The odd partial sums decrease, and each even partial sum is at most each later odd one. Both subsequences are bounded and converge; their difference $b_{2m+1}$ tends to zero, so they have the same limit $S$. The limit lies between $S_N$ and $S_{N+1}$, giving the error bound.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5c7d282472154a49bad3b31a3b7c7804",
+  "title": "Poisson particle fluctuations of a dilute ideal gas",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4cfbded8f724fd386963db2b1afd6f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4cfbded8f724fd386963db2b1afd6f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9d3efaa66c744468a2f6b7b2814f2d33",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9d3efaa66c744468a2f6b7b2814f2d33.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.100381+00:00",
+  "updated_at": "2026-09-07T09:00:58.150704+00:00"
+}

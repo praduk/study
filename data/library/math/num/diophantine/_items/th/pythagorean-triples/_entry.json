@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5bf3ff840fbd4c3cb9ee373385af1424",
+  "title": "Primitive Pythagorean triples",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c3f061422e643e89416d7a93e47ece2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c3f061422e643e89416d7a93e47ece2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0fa347bc4bcf42e081e6ab460c9f67f3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0fa347bc4bcf42e081e6ab460c9f67f3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:22.895865+00:00",
+  "updated_at": "2026-09-07T08:22:35.751408+00:00"
+}

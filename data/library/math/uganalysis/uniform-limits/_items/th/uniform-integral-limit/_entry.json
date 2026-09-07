@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8e209c7dd77545a7b49af7e3dba6b5e1",
+  "title": "Uniform convergence permits passage through a Riemann integral",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:uniform-limits:df:uniform-convergence, @math:uganalysis:riemann-integration:th:darboux-criterion, @math:uganalysis:riemann-integration:th:integral-algebra.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb3fea99dcb34fdf8fde5bbb7030fcc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb3fea99dcb34fdf8fde5bbb7030fcc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "43040a81ac0743d18d4dd7b651a66d44",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.43040a81ac0743d18d4dd7b651a66d44.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:28.136341+00:00",
+  "updated_at": "2026-09-07T08:10:30.285702+00:00"
+}

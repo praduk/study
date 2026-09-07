@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "eb611973291043969ddfc25e16acfc08",
+  "title": "Homogeneous isotropic cosmology as a model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c1d23f24a99a4b358bff2518b86ab00e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c1d23f24a99a4b358bff2518b86ab00e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:17.250374+00:00",
+  "updated_at": "2026-09-07T09:18:17.250380+00:00"
+}

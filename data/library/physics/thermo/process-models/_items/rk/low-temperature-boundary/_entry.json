@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d1020c7e5a0145f08c2c0ee88ad1dcfa",
+  "title": "The low-temperature boundary of a constitutive model",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "68441824e93b4dbb9078044ee6f1d5a5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.68441824e93b4dbb9078044ee6f1d5a5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.825131+00:00",
+  "updated_at": "2026-09-07T08:57:26.825135+00:00"
+}

@@ -1,0 +1,3 @@
+SI uses the base units second, metre, kilogram, ampere, kelvin, mole, and candela. Its definitions fix numerical values of selected defining constants, including $c$, $h$, and $k_B$; this does not make every material parameter or every physical measurement exact. The joule has unit $\mathrm{kg}\,\mathrm{m}^2\mathrm{s}^{-2}$ and the pascal $\mathrm{kg}\,\mathrm{m}^{-1}\mathrm{s}^{-2}$.
+
+Angles measured in radians have unit one in SI, while retaining their interpretation as angles. Unit symbols and quantity symbols play different roles. Authority: [BIPM SI Brochure](https://www.bipm.org/en/publications/si-brochure).

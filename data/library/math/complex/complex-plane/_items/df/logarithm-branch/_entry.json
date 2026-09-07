@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6eef06543bb048daab10628002fa79fe",
+  "title": "Branches of the logarithm",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:complex-plane:th:exponential-addition.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3368d9e439ae4950bd379d86239799c1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3368d9e439ae4950bd379d86239799c1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:57.542472+00:00",
+  "updated_at": "2026-09-07T08:25:56.858071+00:00"
+}

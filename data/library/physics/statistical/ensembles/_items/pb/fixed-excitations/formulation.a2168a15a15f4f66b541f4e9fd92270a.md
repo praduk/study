@@ -1,0 +1,1 @@
+Four distinguishable sites each have energy $0$ or $\epsilon>0$. In a microcanonical preparation with total energy $2\epsilon$, count the states, find the excitation probability of site 1, and compute the entropy. Are sites 1 and 2 independent?

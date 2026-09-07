@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "12275a1404be45f884515b719a33a208",
+  "title": "Euler-Lagrange equations for smooth fields",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f79e73460ca84fc094a545d038b4ddcf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f79e73460ca84fc094a545d038b4ddcf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2474829e53740a0a23565f364a868ef",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a2474829e53740a0a23565f364a868ef.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:50.645720+00:00",
+  "updated_at": "2026-09-07T08:52:53.329155+00:00"
+}

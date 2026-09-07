@@ -1,0 +1,1 @@
+A plane wave at normal incidence travels from a lossless medium of impedance $Z_1>0$ into one of impedance $Z_2>0$, with no free surface charge or current. Using a common tangential electric-field direction, find the electric amplitude reflection and transmission coefficients $r,t$, and verify reflected plus transmitted power equals incident power.

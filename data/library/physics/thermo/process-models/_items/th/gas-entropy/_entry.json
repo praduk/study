@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5228a6f2eae84ef5b436cb45413263ec",
+  "title": "Entropy changes of a calorically perfect gas",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63e396265027462e90da9f800abf1a61",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63e396265027462e90da9f800abf1a61.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "57fb45c50d594673a5c057688e61e950",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.57fb45c50d594673a5c057688e61e950.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.289286+00:00",
+  "updated_at": "2026-09-07T08:57:26.369980+00:00"
+}

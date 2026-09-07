@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1c545614e1ea4368b527e74c1c6ec706",
+  "title": "Vacuum Yang-Mills theory as a gauge-field model",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dde294b6364b4689be82a675de8c30a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dde294b6364b4689be82a675de8c30a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:20.229383+00:00",
+  "updated_at": "2026-09-07T08:54:20.229390+00:00"
+}

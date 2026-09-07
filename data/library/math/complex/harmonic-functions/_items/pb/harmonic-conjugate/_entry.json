@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bcef8ef0d3954d81b8c9ec4c9c1ac156",
+  "title": "Find a harmonic conjugate and a global obstruction",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:harmonic-functions:df:harmonic, @math:complex:contour-integration:pb:circle-monomials.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "adc3e2a2b7684017aa24d902d3d41334",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.adc3e2a2b7684017aa24d902d3d41334.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3ad255e0e5c4959a0205f4a6a21f2c3",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d3ad255e0e5c4959a0205f4a6a21f2c3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:41.538336+00:00",
+  "updated_at": "2026-09-07T08:17:44.023325+00:00"
+}

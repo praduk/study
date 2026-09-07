@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0b458db7c9564c58ad22a494fcd645c9",
+  "title": "Computable descriptions of Ext and Tor over the integers",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "231c694973d94de7bb5cdba0b95e3a3e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.231c694973d94de7bb5cdba0b95e3a3e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:36.946945+00:00",
+  "updated_at": "2026-09-07T08:03:36.946965+00:00"
+}

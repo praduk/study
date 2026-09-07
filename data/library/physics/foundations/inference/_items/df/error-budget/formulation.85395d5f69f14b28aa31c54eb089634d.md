@@ -1,0 +1,3 @@
+A measurement reports an estimate with an uncertainty model, calibration assumptions, and a stated observable. Random variation, systematic calibration effects, numerical error, and discrepancy of the physical model are different contributions. Repeating measurements may reduce uncertainty of a sample mean without removing a shared calibration offset.
+
+An uncertainty interval is not automatically a hard error bound. Its interpretation depends on the probability or coverage construction used. Compare a prediction and a measurement for the same quantity and preparation before interpreting their difference.

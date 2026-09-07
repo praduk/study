@@ -1,0 +1,1 @@
+For finitely many states with finite real energies independent of temperature, $F(T)=-k_BT\log\sum_i e^{-E_i/(k_BT)}$ is real analytic on $T>0$. The same holds jointly in real coupling parameters when the energies depend real analytically on them.

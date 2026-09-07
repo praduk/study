@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0c095b27a32d4a0682ce5fd97d19ea8b",
+  "title": "Inertia tensor, kinetic energy, and angular momentum",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48e35abb67b442bab980acc4b94b85fc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48e35abb67b442bab980acc4b94b85fc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.463064+00:00",
+  "updated_at": "2026-09-07T09:04:10.463069+00:00"
+}

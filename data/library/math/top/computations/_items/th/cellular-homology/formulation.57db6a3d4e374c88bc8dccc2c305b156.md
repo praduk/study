@@ -1,0 +1,3 @@
+For a CW complex, the cellular chain group $C_n^{\mathrm{cell}}(X)$ is free abelian on the oriented $n$-cells. For $n\ge2$, the boundary coefficient at an $(n-1)$-cell is the degree of its attaching map followed by collapse of the $(n-2)$-skeleton and all the other $(n-1)$-cells. In dimension one, boundary is terminal vertex minus initial vertex. The homology of this complex is naturally isomorphic to singular homology.
+
+This structural theorem is used without proof here. See the inspected [Hatcher, *Algebraic Topology*, §2.2, cellular homology](https://pi.math.cornell.edu/~hatcher/AT/ATplain.pdf).

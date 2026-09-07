@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ba3152c031ea4e17bf8b2e1c313aeb31",
+  "title": "The Gaussian fourth-moment pairing",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d6d3415d85c45f7944c0be914e9084b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d6d3415d85c45f7944c0be914e9084b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8c6a52418ca64a01a58763a04d2abc94",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8c6a52418ca64a01a58763a04d2abc94.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:29.183224+00:00",
+  "updated_at": "2026-09-07T08:54:32.065698+00:00"
+}

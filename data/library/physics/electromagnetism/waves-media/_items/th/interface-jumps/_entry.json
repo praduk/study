@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9441c93f149a4b7881528767c24b95d8",
+  "title": "Interface jump conditions with surface sources",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a5b2dbc9b7d24881b07ecd30552391bf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a5b2dbc9b7d24881b07ecd30552391bf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4308dd371cbc49a7a8adb3f432673bbf",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4308dd371cbc49a7a8adb3f432673bbf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.834911+00:00",
+  "updated_at": "2026-09-07T09:02:57.918225+00:00"
+}

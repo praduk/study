@@ -1,0 +1,1 @@
+Count ordered positive pairs $(a,b)$ with $ab\le x$ in two ways: the sum is $\sum_{a\le x}\lfloor x/a\rfloor$. Put $N=\lfloor x\rfloor$. Since each floor differs from $x/a$ by less than $1$, this is $xH_N+O(N)$. Comparing the harmonic sum with the integral of $1/t$ gives $\log(N+1)\le H_N\le1+\log N$, hence $H_N=\log x+O(1)$ for $x\ge2$. Combining the estimates proves the result.

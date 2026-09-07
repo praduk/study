@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f3779682379d43b3a3abaf34eb086ba6",
+  "title": "The standard Lorentz boost and its inverse",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2af9111355d54287b1091119a3085b26",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2af9111355d54287b1091119a3085b26.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8333d18816eb4ec293ba749ccd22f498",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8333d18816eb4ec293ba749ccd22f498.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.746238+00:00",
+  "updated_at": "2026-09-07T09:02:58.760817+00:00"
+}

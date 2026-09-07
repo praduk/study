@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "65476c37449740438b5986dab838e5fa",
+  "title": "Tower law",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5124da5683db4297b84d2c0197b2b5e9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5124da5683db4297b84d2c0197b2b5e9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5f3e3737ea4249eba57e3914e174c444",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5f3e3737ea4249eba57e3914e174c444.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:39.962079+00:00",
+  "updated_at": "2026-09-07T08:23:40.596431+00:00"
+}

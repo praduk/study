@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "539947b5f40243aabc674f20e9e6632d",
+  "title": "Configuration coordinates and ideal holonomic constraints",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "69b6da71f68d48a283cbe834ec32700d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.69b6da71f68d48a283cbe834ec32700d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.121085+00:00",
+  "updated_at": "2026-09-07T09:04:09.121091+00:00"
+}

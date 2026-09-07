@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b2fcdf0cfb5c40388efa67308527c47c",
+  "title": "Rotations and angular momentum: physical identification",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c5b13928d10c49558544e3e3bdb73f63",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c5b13928d10c49558544e3e3bdb73f63.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.910133+00:00",
+  "updated_at": "2026-09-07T09:11:21.910137+00:00"
+}

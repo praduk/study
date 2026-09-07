@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "185a59383d49424ca1e000c2c14aae49",
+  "title": "Electrostatic potential and boundary data",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b80b6863f1584ee596d8d7eab174ed86",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b80b6863f1584ee596d8d7eab174ed86.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.420693+00:00",
+  "updated_at": "2026-09-07T09:02:56.420695+00:00"
+}

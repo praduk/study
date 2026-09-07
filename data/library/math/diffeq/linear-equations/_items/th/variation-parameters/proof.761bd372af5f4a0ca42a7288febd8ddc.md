@@ -1,0 +1,1 @@
+Seek $y_p=u_1y_1+u_2y_2$ with $u_1'y_1+u_2'y_2=0$. Differentiating once and twice and using the homogeneous equations reduces the forcing equation to $u_1'y_1'+u_2'y_2'=g$. Solve this two-by-two system: $u_1'=-y_2g/W$, $u_2'=y_1g/W$. Abel’s identity ensures division by $W$ is valid everywhere. Integrating gives the formula, and the construction verifies the equation.

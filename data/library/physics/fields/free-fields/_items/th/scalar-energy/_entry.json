@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e0594fd40bf94019b74b1a8eebdaee56",
+  "title": "Energy balance for a free scalar",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0991e671f8f74bdaaf043d08c2c88966",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0991e671f8f74bdaaf043d08c2c88966.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "345bfd9a039f43b2a0540e3f7cebe595",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.345bfd9a039f43b2a0540e3f7cebe595.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:29.565837+00:00",
+  "updated_at": "2026-09-07T08:53:32.254519+00:00"
+}

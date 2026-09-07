@@ -1,0 +1,1 @@
+If $p\le0$, its terms do not tend to zero. If $p>0$, group indices $2^k\le n<2^{k+1}$. The block contains $2^k$ terms and its sum lies between $2^{-p}2^{k(1-p)}$ and $2^{k(1-p)}$. The sum of upper bounds is geometric and finite for $p>1$. When $0<p\le1$, every block has sum at least $2^{-p}$, so the partial sums diverge. Thus convergence holds exactly for $p>1$.

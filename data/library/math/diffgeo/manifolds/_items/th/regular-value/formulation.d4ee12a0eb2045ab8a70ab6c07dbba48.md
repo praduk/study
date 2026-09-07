@@ -1,0 +1,1 @@
+Let $F:M^m\to N^n$ be smooth and $q\in N$ a regular value, meaning $dF_p$ is surjective at every $p\in F^{-1}(q)$. If the fiber is nonempty, it is an embedded $(m-n)$-submanifold and $T_p(F^{-1}(q))=\ker dF_p$. An empty fiber is allowed as an empty submanifold.

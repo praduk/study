@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "af94e86d33a74d03b374c4ae02a464da",
+  "title": "Canonical field momentum and Hamiltonian density",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8c87efbb3bd44bda8d8e19e091270557",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8c87efbb3bd44bda8d8e19e091270557.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:54.931036+00:00",
+  "updated_at": "2026-09-07T08:52:54.931042+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "326847f4cd8649809550eb4648427bdb",
+  "title": "Derivative bounds control increments",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:differentiation:th:mean-value.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "02a6a8d1518d45efb3f8f2f58d32b282",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.02a6a8d1518d45efb3f8f2f58d32b282.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "997372e5b6b8448c943712c939201c3b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.997372e5b6b8448c943712c939201c3b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:39.495704+00:00",
+  "updated_at": "2026-09-07T08:09:41.860950+00:00"
+}

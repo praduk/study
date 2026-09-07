@@ -1,0 +1,3 @@
+For a localized oscillating source of size $a$ and frequency $\omega$, an electric-dipole expansion requires $a\ll\lambda=2\pi c/\omega$. An observation point in the radiation zone also has $r\gg a$ and $kr\gg1$, where $k=\omega/c$. Quasistatic near fields fall faster than $1/r$; an outgoing radiation field has amplitudes proportional to $1/r$, so its energy flux can have a finite nonzero integral over large spheres.
+
+These are separate expansions: a small source need not be observed in its far zone. Static fields carry energy and stress but do not by themselves imply outward radiation. The limit $r\to\infty$ relevant to emitted power keeps the source's retarded time fixed.

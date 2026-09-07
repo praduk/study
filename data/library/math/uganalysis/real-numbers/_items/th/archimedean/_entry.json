@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f914afe9e74340ec9badf5936b0ee57f",
+  "title": "Archimedean property and rational density",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:th:supremum-approximation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d0ac478c6609468994e4375d3e859b58",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d0ac478c6609468994e4375d3e859b58.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "06afa280ea984fad9003fc14837b1542",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.06afa280ea984fad9003fc14837b1542.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:07.034004+00:00",
+  "updated_at": "2026-09-07T08:08:09.097214+00:00"
+}

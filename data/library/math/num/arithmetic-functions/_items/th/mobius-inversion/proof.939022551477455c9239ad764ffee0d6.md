@@ -1,0 +1,1 @@
+For $n$ with $r$ distinct prime factors, $\sum_{d\mid n}\mu(d)=(1-1)^r$, equal to $0$ if $n>1$ and $1$ if $n=1$. Thus $\mu*\mathbf1=\varepsilon$. If $g=\mathbf1*f$, convolution with $\mu$ gives $\mu*g=f$. Conversely $f=\mu*g$ implies $\mathbf1*f=g$ by the same identity and associativity.

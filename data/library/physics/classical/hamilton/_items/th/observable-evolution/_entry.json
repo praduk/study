@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "371431015c094070b26290c4296aa7d0",
+  "title": "Observable evolution and a conserved bracket",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @physics:classical:hamilton:th:symplectic-volume.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cce4ecbf31b840d49e3a92963df62c17",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cce4ecbf31b840d49e3a92963df62c17.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3449fcda22c44acd9532e09d9a8d60cb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3449fcda22c44acd9532e09d9a8d60cb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.628112+00:00",
+  "updated_at": "2026-09-07T09:04:09.679750+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2da436a753ed44fda646767b7e408edd",
+  "title": "Locally uniform limits remain holomorphic",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:contour-integration:th:cauchy-formula, @math:complex:analytic-consequences:th:taylor-cauchy.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "98a90e7391a94c89ba8cbe4d8a48a87d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.98a90e7391a94c89ba8cbe4d8a48a87d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "864552e59de348808434abe35903044d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.864552e59de348808434abe35903044d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:45.522595+00:00",
+  "updated_at": "2026-09-07T08:17:47.975315+00:00"
+}

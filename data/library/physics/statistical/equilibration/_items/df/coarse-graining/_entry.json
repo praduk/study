@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "32e1428bd6334968a32be33b6c378944",
+  "title": "Fine and coarse descriptions of entropy",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d5413efa36544606a0338db69ca10e86",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d5413efa36544606a0338db69ca10e86.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:59.374011+00:00",
+  "updated_at": "2026-09-07T09:00:59.374013+00:00"
+}

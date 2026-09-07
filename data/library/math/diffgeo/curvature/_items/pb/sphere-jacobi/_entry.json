@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f5dcd21d8a5849a89dbfa6d0a7515e53",
+  "title": "Jacobi fields on a round sphere",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "29efcb0c82e74ec6a0ed4ef567f0aee5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.29efcb0c82e74ec6a0ed4ef567f0aee5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c5dc74327953494f9c36e68ab1a7759a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c5dc74327953494f9c36e68ab1a7759a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:36.442796+00:00",
+  "updated_at": "2026-09-07T08:06:38.555686+00:00"
+}

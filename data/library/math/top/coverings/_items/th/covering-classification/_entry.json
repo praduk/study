@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3004f1df82954bbd8ca20a0994025da3",
+  "title": "Classification of connected coverings",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b925bce994a3480cab97b71493436946",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b925bce994a3480cab97b71493436946.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:19.316629+00:00",
+  "updated_at": "2026-09-07T08:02:19.316637+00:00"
+}

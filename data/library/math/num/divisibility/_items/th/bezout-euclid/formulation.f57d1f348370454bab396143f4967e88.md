@@ -1,0 +1,1 @@
+For $a,b\in\Z$ not both zero, the positive generator of $\{ax+by:x,y\in\Z\}$ is $d=\gcd(a,b)$. Consequently $d=ax+by$ for some integers $x,y$. If $a=bq+r$, then $\gcd(a,b)=\gcd(b,r)$; repeated division terminates at the gcd.

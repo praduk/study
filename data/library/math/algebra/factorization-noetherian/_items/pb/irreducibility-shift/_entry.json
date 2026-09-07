@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "163c932926eb422c9acead45eb4b92f9",
+  "title": "A shifted polynomial",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "02fee4309bc341929f6cfad7757c7b6d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.02fee4309bc341929f6cfad7757c7b6d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "65c5869aa42e403a8049a30bd4ae7250",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.65c5869aa42e403a8049a30bd4ae7250.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:55.405504+00:00",
+  "updated_at": "2026-09-07T07:53:56.897039+00:00"
+}

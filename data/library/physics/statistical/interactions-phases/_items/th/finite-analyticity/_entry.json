@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bf79c59d56da4b869dd2f4adf19a29d2",
+  "title": "No real-temperature singularity in a finite spin partition function",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "88155fd3ae9743538e7dae5fa2ce5b37",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.88155fd3ae9743538e7dae5fa2ce5b37.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bd71c758f52e49dd932f5ad0031a5775",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bd71c758f52e49dd932f5ad0031a5775.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.937426+00:00",
+  "updated_at": "2026-09-07T09:00:59.011508+00:00"
+}

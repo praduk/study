@@ -1,0 +1,1 @@
+In the classical model, two equal compartments of volume $V$ each contain $N$ identical particles at the same $T$. Compare the partition function before a partition is removed with that of $2N$ particles in volume $2V$. Find the resulting entropy difference and its leading large-$N$ order. Explain the physically different case of two distinct species.

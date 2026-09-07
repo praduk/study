@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1ae9761231e34a299ccee0910fa55251",
+  "title": "Images and closures preserve connectedness",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3a1f7fd2558a414fb03114da0d7f20bb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3a1f7fd2558a414fb03114da0d7f20bb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "22d6f343330e4e5c821fc9e85dab860b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.22d6f343330e4e5c821fc9e85dab860b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:14.244675+00:00",
+  "updated_at": "2026-09-07T08:01:16.002154+00:00"
+}

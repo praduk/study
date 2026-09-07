@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "726be785de6e475fadfa0f663a704271",
+  "title": "Abel’s Wronskian identity",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b9b4f40c2a074948ab14a5b6a3b7f2bd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b9b4f40c2a074948ab14a5b6a3b7f2bd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4925f946e28d4b6fb0a1643a46f5e8b6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4925f946e28d4b6fb0a1643a46f5e8b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:24.166558+00:00",
+  "updated_at": "2026-09-07T08:22:55.103161+00:00"
+}

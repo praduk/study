@@ -1,0 +1,1 @@
+Let $X$ be infinite and let the open sets be $\nulset$ and the subsets with finite complement. Verify the topology axioms and describe the closed sets, the closure of an infinite subset, and whether the space is Hausdorff.

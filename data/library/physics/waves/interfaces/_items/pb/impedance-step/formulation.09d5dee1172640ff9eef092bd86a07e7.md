@@ -1,0 +1,1 @@
+A taut string has the same tension on both sides of a junction, but $\mu_2=9\mu_1$. A rightward wave is incident from side 1. Find the speed ratio, displacement reflection and transmission coefficients, and transmitted power fraction. Describe the reflected phase.

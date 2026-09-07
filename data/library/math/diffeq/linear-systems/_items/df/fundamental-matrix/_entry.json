@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "089d75527f3b45fab5184785a7ea7cf4",
+  "title": "Fundamental matrices",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4b3d063b84c14c69849eaa79232d1de9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4b3d063b84c14c69849eaa79232d1de9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:34.168235+00:00",
+  "updated_at": "2026-09-07T07:49:34.168243+00:00"
+}

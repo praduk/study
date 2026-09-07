@@ -1,0 +1,1 @@
+The mean is $J\mathbb E[\delta x]=0$. By the definition of covariance and linearity of expectation, $\mathbb E[\delta y\delta y^T]=\mathbb E[J\delta x\delta x^TJ^T]=J\Sigma J^T$. No independence assumption is needed; correlations are the off-diagonal terms of $\Sigma$.

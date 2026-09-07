@@ -1,0 +1,1 @@
+Apply the ML estimate to the coefficient integral from the Taylor formula. The circle has length $2\pi r$ and the denominator has modulus $r^{n+1}$. Thus $|f^{(n)}(a)|/n!\le(2\pi)^{-1}(M/r^{n+1})(2\pi r)=M/r^n$.

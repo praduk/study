@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8368f22b8bde493c8edf3698a8fe5da1",
+  "title": "Actions, orbits, stabilizers, and conjugation",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6bdaf0e501064bb8bd5e2d315eb1d388",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6bdaf0e501064bb8bd5e2d315eb1d388.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:04.277369+00:00",
+  "updated_at": "2026-09-07T07:53:04.277376+00:00"
+}

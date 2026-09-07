@@ -1,0 +1,3 @@
+A density field does not claim that mass is literally divisible without limit. It records an average over a representative volume. A continuum approximation is plausible when there is a range of averaging lengths larger than relevant microscopic scales and smaller than the macroscopic variation scale. Molecular gases with mean free path comparable to the apparatus size, thin interfaces, and discrete fracture can require different models.
+
+The balance equations do not determine the stress from the motion. That missing relation is a constitutive law, chosen using material response and experimental evidence. Smoothness, isotropy, incompressibility, and linear response are separate assumptions; one does not imply the others.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1b072858157c49aa9389c15632ee37e4",
+  "title": "Polynomial growth forces a polynomial",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:cauchy-estimates, @math:complex:analytic-consequences:th:taylor-cauchy.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5448d49707bb461e893ce1e96f32a60e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5448d49707bb461e893ce1e96f32a60e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b69fec72cb2746a69c03971305be7d70",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b69fec72cb2746a69c03971305be7d70.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:13.129369+00:00",
+  "updated_at": "2026-09-07T08:16:15.596922+00:00"
+}

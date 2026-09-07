@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2b24f15120f54c9896dd80ffb9c704b1",
+  "title": "Action on a periodic orbit",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "38a95fce60c04fcd9c87aa1084eea9f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.38a95fce60c04fcd9c87aa1084eea9f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.654177+00:00",
+  "updated_at": "2026-09-07T09:04:11.654180+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aca1acc73d0346aea8e4ef47990b57b1",
+  "title": "Closed subsets and continuous images of compact spaces",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1f7266b4ffb44012a36b3937878a4bee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1f7266b4ffb44012a36b3937878a4bee.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0ec97a67ac95476eb5eb14eef918a903",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0ec97a67ac95476eb5eb14eef918a903.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:01.486951+00:00",
+  "updated_at": "2026-09-07T08:01:03.270192+00:00"
+}

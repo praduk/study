@@ -1,0 +1,1 @@
+Let $f_n\in C^1([a,b])$, with $a<b$. Assume $f_n(x_0)$ converges for some $x_0\in[a,b]$ and $f_n'\to g$ uniformly. Then $f_n$ converges uniformly to a continuously differentiable function $f$, and $f'=g$ on $(a,b)$.

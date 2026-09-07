@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b8f1ebdf469c4a82bd6d816bacfe273a",
+  "title": "Magnetic field of a cylindrical current",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b5a3442786f84dae8b36d9b88bee7913",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b5a3442786f84dae8b36d9b88bee7913.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21ee1709fac841eab3b18e74760cbc9e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.21ee1709fac841eab3b18e74760cbc9e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.826481+00:00",
+  "updated_at": "2026-09-07T09:02:56.872599+00:00"
+}

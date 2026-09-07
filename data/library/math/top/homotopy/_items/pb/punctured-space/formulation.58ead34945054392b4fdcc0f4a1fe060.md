@@ -1,0 +1,1 @@
+For $n\ge1$, construct a strong deformation retraction of $\R^n\setminus\{0\}$ onto the unit sphere $S^{n-1}$. Explain why the same formula cannot be extended to a retraction of the whole space when $n\ge2$.

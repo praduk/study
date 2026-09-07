@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e26c306e8fcf4bc1a8574d1f5b8120b3",
+  "title": "Complex differentiability and holomorphicity",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63bcccf509e2465a8ee4a6de18ebf7e3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63bcccf509e2465a8ee4a6de18ebf7e3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:05.194813+00:00",
+  "updated_at": "2026-09-07T08:26:00.968016+00:00"
+}

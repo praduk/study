@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "16b80fd575c0441e84c0084f1e4644dc",
+  "title": "What dimensions determine about a pendulum",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ec526b6567f4e1292710b884f09a65b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ec526b6567f4e1292710b884f09a65b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ebf0838b4a2144339182121aad8f02dc",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ebf0838b4a2144339182121aad8f02dc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:36.786295+00:00",
+  "updated_at": "2026-09-07T08:51:39.385844+00:00"
+}

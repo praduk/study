@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "89c508db2d3e4a0e97b77069858228eb",
+  "title": "First and second countability, separability, and Lindelöfness",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b96f6a741e04b07a00146f64f04e257",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b96f6a741e04b07a00146f64f04e257.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:43.692089+00:00",
+  "updated_at": "2026-09-07T08:00:43.692094+00:00"
+}

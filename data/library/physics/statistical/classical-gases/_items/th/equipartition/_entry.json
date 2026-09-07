@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "87067cdd287a4a5ab36aea7708940ed9",
+  "title": "A quadratic mode carries half a thermal energy",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4458fac6ad2f44469811137ff9417254",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4458fac6ad2f44469811137ff9417254.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6b40f144c209438b8a4f8ba5af4b7cb5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6b40f144c209438b8a4f8ba5af4b7cb5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.743657+00:00",
+  "updated_at": "2026-09-07T09:00:57.786389+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7e57a75ffb5a4d08bdf1f93b3e370732",
+  "title": "Subspace topology and embeddings",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c254cc7b0e5453283a18221cc32116c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c254cc7b0e5453283a18221cc32116c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:20.259676+00:00",
+  "updated_at": "2026-09-07T08:00:20.259682+00:00"
+}

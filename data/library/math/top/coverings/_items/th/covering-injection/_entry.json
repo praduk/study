@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d095dbf96fe643e487b5fd8d8abda686",
+  "title": "A covering injects the fundamental group",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2244dd25403465680b1b6dccfb50857",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2244dd25403465680b1b6dccfb50857.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b5ca2f46d1ed4378a499b2f74a1810ed",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b5ca2f46d1ed4378a499b2f74a1810ed.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:11.874245+00:00",
+  "updated_at": "2026-09-07T08:02:13.777507+00:00"
+}

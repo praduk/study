@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4e71d9f9978b458ea623e6b497b43ea1",
+  "title": "Fundamental groups from the two-skeleton",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6fe66c570dce444aae60e6ffe66c2d48",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6fe66c570dce444aae60e6ffe66c2d48.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:31.333530+00:00",
+  "updated_at": "2026-09-07T08:02:31.333538+00:00"
+}

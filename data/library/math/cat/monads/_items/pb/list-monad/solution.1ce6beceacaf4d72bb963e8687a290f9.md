@@ -1,0 +1,3 @@
+Applying functions entrywise respects identities and composition, so $T$ is a functor. Inserting singleton lists and concatenating lists both commute with entrywise application of any function, proving naturality of $\eta$ and $\mu$.
+
+For a list $[x_1,\ldots,x_n]$, $T\eta$ yields $[[x_1],\ldots,[x_n]]$, whose concatenation is the original list. The other unit map makes the one-element outer list $[[x_1,\ldots,x_n]]$, with the same concatenation. For a list of lists of lists, either first concatenating the inner lists within each middle list or first concatenating the middle lists produces the same sequence of entries in the same order. This proves associativity, including empty inner and outer lists.

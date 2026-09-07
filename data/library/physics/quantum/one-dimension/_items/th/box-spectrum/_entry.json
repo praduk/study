@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "85011b80522d42bfacab76f6bf62724f",
+  "title": "Energy eigenfunctions in an infinite square well",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7041528e32474ce6aead0d50a7dc5fc6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7041528e32474ce6aead0d50a7dc5fc6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4a90bc39876a4398bd252c4bad109cf0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4a90bc39876a4398bd252c4bad109cf0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.191646+00:00",
+  "updated_at": "2026-09-07T09:11:21.235340+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3e650cbacb794885a58a4f244229f7b9",
+  "title": "The ray equation in a smoothly varying index",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:waves:ray-optics:ax:fermat.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d2ffe1e435d49c2b349c0813af6c9f2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d2ffe1e435d49c2b349c0813af6c9f2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "01a7563e14b74a9192c9ec00f71cf29a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.01a7563e14b74a9192c9ec00f71cf29a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:18.047370+00:00",
+  "updated_at": "2026-09-07T09:04:18.168755+00:00"
+}

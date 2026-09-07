@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "61c5bd3c8e624e578380f76671d92b56",
+  "title": "Interior, closure, boundary, and accumulation",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "74233302a2b7403b8fe38f915e3b0cf8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.74233302a2b7403b8fe38f915e3b0cf8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:08.165433+00:00",
+  "updated_at": "2026-09-07T08:00:08.165440+00:00"
+}

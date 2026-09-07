@@ -1,0 +1,1 @@
+An ideal long solenoid of radius $a$ has $\mathbf B=B(t)\hat{\mathbf z}$ inside and negligible magnetic field outside. Assume axial symmetry and no electrostatic contribution. Find the azimuthal induced electric field at cylindrical radius $s$. Explain the exterior circulation when local $\partial_t\mathbf B=0$ there.

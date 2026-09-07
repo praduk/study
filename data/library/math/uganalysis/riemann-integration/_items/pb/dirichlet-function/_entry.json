@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4a4d9562f98d4203bab61801c5d053f9",
+  "title": "A bounded nonintegrable function",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:th:archimedean, @math:uganalysis:riemann-integration:df:darboux-integral.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7f3c61142c0a4b6f8c87f64b6478b1aa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7f3c61142c0a4b6f8c87f64b6478b1aa.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "70288ae090a441c78af02e2f26077962",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.70288ae090a441c78af02e2f26077962.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:17.509131+00:00",
+  "updated_at": "2026-09-07T08:10:19.689516+00:00"
+}

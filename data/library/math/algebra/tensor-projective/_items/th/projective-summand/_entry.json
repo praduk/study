@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1fd4448da664453d8732ace540bb3907",
+  "title": "Projective modules are direct summands of free modules",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "18b7914762b0483f9691b282f842be01",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.18b7914762b0483f9691b282f842be01.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b6065a7cf1244894abdce0e7bb3e4e1c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b6065a7cf1244894abdce0e7bb3e4e1c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:33.957229+00:00",
+  "updated_at": "2026-09-07T07:54:35.753085+00:00"
+}

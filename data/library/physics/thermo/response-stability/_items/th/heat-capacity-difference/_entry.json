@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "81c8133a4d8f40769cc39c40333edcca",
+  "title": "Difference of heat capacities",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c95f6475e1247cb8ca7de4539ba4055",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c95f6475e1247cb8ca7de4539ba4055.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "96e5afaad41844259f4cb60a42e29907",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.96e5afaad41844259f4cb60a42e29907.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.299845+00:00",
+  "updated_at": "2026-09-07T08:57:25.353143+00:00"
+}

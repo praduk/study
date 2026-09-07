@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2aaf50a8082c41c1b210ea00e8182268",
+  "title": "Groups, subgroups, and homomorphisms",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c8218ac42829451d86daa9638aeee82b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c8218ac42829451d86daa9638aeee82b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:52:57.468592+00:00",
+  "updated_at": "2026-09-07T07:52:57.468598+00:00"
+}

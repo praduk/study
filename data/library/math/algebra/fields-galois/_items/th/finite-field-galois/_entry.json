@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "31247efc7988446da964bd096e23c31a",
+  "title": "Galois group of a finite field extension",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "74118565f26d45f6b3fb18d3196b0ad8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.74118565f26d45f6b3fb18d3196b0ad8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f76ab14762fe45c3812c1a3db35c86e0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f76ab14762fe45c3812c1a3db35c86e0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:52.248564+00:00",
+  "updated_at": "2026-09-07T07:54:54.034065+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2f9460e320bb48a4b3154d2127ccc011",
+  "title": "Markov’s inequality and Lp convergence in measure",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:df:lebesgue-integral, @math:analysis:lp-spaces:df:lp.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "466ae22cf8c1485289e764b54b1b7335",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.466ae22cf8c1485289e764b54b1b7335.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "008469ac3b0846a78b1ab04625e67d62",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.008469ac3b0846a78b1ab04625e67d62.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:54.962527+00:00",
+  "updated_at": "2026-09-07T08:12:57.241830+00:00"
+}

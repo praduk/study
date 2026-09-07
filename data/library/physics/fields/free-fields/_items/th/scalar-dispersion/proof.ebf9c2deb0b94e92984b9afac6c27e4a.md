@@ -1,0 +1,1 @@
+Each time derivative contributes $-i\omega$ and each spatial derivative $ik_j$. The equation reduces to $-\omega^2+|k|^2+m^2=0$. Differentiating the positive square root gives the velocity, whose squared norm is $|k|^2/(|k|^2+m^2)\le1$. Real and imaginary parts are real solutions. This group-speed calculation alone is not a proof of the support of a general wave front.

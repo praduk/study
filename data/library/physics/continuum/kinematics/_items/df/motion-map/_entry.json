@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "713cacfe8b5f4586bb15683ef0236c83",
+  "title": "Material and spatial descriptions",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "774f03362d484ffd90d338bda3690647",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.774f03362d484ffd90d338bda3690647.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.339536+00:00",
+  "updated_at": "2026-09-07T09:04:12.339538+00:00"
+}

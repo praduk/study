@@ -1,0 +1,1 @@
+Divide $k=qr+s$, $0\le s<r$. Since inverse powers exist, $a^k=a^s$ modulo $n$ for all integer $k$. Minimality of $r$ forces $s=0$ whenever this equals $1$. For the second assertion, $(a^k)^j=1$ exactly when $r\mid kj$, or $r/\gcd(r,k)\mid j$, so the least positive such $j$ is the stated quotient.

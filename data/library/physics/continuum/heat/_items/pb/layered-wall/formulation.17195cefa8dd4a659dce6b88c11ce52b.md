@@ -1,0 +1,1 @@
+Two plane layers of equal area $A$ have thicknesses $L_1,L_2>0$ and conductivities $k_1,k_2>0$. Their outer faces are held at $T_h>T_c$, and the contact is perfect. Assume steady one-dimensional conduction without sources. Find heat rate, interface temperature, and the units of the thermal resistance.

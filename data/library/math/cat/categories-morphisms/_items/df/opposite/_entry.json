@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a9f385398231484297562d9d2bc557c3",
+  "title": "Opposite categories and duality",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5065e16b2c7a43da93367230587d6fe4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5065e16b2c7a43da93367230587d6fe4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:23.750866+00:00",
+  "updated_at": "2026-09-07T07:55:23.750873+00:00"
+}

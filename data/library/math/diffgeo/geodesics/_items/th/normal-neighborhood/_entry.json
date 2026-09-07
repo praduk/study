@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1f549d71b68d4d898e0a311213084393",
+  "title": "Exponential maps are locally diffeomorphic at zero",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dff6561b40cf496ebe4ba13af9cf9a13",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dff6561b40cf496ebe4ba13af9cf9a13.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c426dee51dcb4adb9536613e1fab72cd",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c426dee51dcb4adb9536613e1fab72cd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:06.158280+00:00",
+  "updated_at": "2026-09-07T08:06:08.233505+00:00"
+}

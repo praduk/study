@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5a5a16fc17254d50b649568244cb314e",
+  "title": "Seifert–van Kampen theorem for two open sets",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "060b0bb1cd3040e7877194db5bff8939",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.060b0bb1cd3040e7877194db5bff8939.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:28.332550+00:00",
+  "updated_at": "2026-09-07T08:02:28.332556+00:00"
+}

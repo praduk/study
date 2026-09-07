@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0dde0267ffc246958ae09befcd90145c",
+  "title": "Relativistic velocity transformation",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ea27cc376b0945889810f6bd91e03c75",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ea27cc376b0945889810f6bd91e03c75.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a6adb3082323495690b86a93ba2508d6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a6adb3082323495690b86a93ba2508d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.164513+00:00",
+  "updated_at": "2026-09-07T09:02:59.209173+00:00"
+}

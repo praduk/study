@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "51c38796cf7c4b92819e418f96427d75",
+  "title": "Refrigerator coefficient of performance",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "670ca7fde43242f5918004696d402fb6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.670ca7fde43242f5918004696d402fb6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "888ce6908ff247bca8517340732c53b0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.888ce6908ff247bca8517340732c53b0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.668679+00:00",
+  "updated_at": "2026-09-07T08:57:24.693492+00:00"
+}

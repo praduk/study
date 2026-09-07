@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "779993eaf3bc4018b13c8eb0c5b54af3",
+  "title": "Born probabilities and ideal projective measurement",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9f79999e43004dfd87420deb6010c1e1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9f79999e43004dfd87420deb6010c1e1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.816507+00:00",
+  "updated_at": "2026-09-07T09:11:20.816509+00:00"
+}

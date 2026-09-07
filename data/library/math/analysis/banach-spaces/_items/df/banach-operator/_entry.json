@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b3f94de1422e4a6996e05edde95f31e7",
+  "title": "Banach spaces and the operator norm",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7e93f83b180e437da1dd8e78b9bd5e03",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7e93f83b180e437da1dd8e78b9bd5e03.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:25.241137+00:00",
+  "updated_at": "2026-09-07T08:13:25.241144+00:00"
+}

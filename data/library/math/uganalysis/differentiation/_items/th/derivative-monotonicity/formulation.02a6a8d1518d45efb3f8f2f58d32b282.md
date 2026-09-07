@@ -1,0 +1,1 @@
+Let $f$ be continuous on an interval $I$ and differentiable at every interior point. If $f'\ge0$, then $f$ is nondecreasing. If $f'=0$, then $f$ is constant. If $|f'|\le M$, then $|f(y)-f(x)|\le M|y-x|$ for all $x,y\in I$.

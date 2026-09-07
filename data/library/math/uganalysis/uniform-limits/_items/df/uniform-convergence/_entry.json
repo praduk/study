@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "83beee673ec1413c90ef4b45ff2ab451",
+  "title": "Pointwise and uniform convergence",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bea5fd436da8401c9ca7ad44cde3b906",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bea5fd436da8401c9ca7ad44cde3b906.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:22.851015+00:00",
+  "updated_at": "2026-09-07T08:10:22.851022+00:00"
+}

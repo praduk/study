@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5a687a4028ab42a9b2fc66534ca989c8",
+  "title": "A useful prediction identifies a possible failure",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "064381632c754ee9b40a28e06567ae90",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.064381632c754ee9b40a28e06567ae90.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:39.787582+00:00",
+  "updated_at": "2026-09-07T08:52:39.787589+00:00"
+}

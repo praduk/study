@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7f927188b9aa4e79bffb51c538789e66",
+  "title": "An equally spaced coherent array",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0969025b605437bba3f2b6bc326cc97",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0969025b605437bba3f2b6bc326cc97.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9b5fb70339da4563be427e00c8b6618f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9b5fb70339da4563be427e00c8b6618f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:17.096467+00:00",
+  "updated_at": "2026-09-07T09:04:17.174932+00:00"
+}

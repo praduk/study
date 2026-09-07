@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5ecf75910f274f7c92c085a8ec201d58",
+  "title": "Supremum, infimum, and completeness",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be8b2fea833444c884a3527a5a09c45f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be8b2fea833444c884a3527a5a09c45f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:02.099370+00:00",
+  "updated_at": "2026-09-07T08:08:02.099377+00:00"
+}

@@ -1,0 +1,1 @@
+For functions $f_n,f:E\to\R$ on a nonempty set $E$, pointwise convergence means $f_n(x)\to f(x)$ separately for each $x\in E$. Uniform convergence means that for every $\epsilon>0$ there exists $N$ such that $n\ge N$ implies $|f_n(x)-f(x)|<\epsilon$ for every $x\in E$. Equivalently, $\sup_{x\in E}|f_n(x)-f(x)|\to0$. The key difference is whether $N$ may depend on $x$.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6fcec7e806124fb681493ffe2a34bab0",
+  "title": "A Maxwell relation",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e47de0b43fff4732b5d453bc76dfaa13",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e47de0b43fff4732b5d453bc76dfaa13.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "366a59eb306d4a59b97e6a172b41e7a3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.366a59eb306d4a59b97e6a172b41e7a3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.879646+00:00",
+  "updated_at": "2026-09-07T08:57:24.918595+00:00"
+}

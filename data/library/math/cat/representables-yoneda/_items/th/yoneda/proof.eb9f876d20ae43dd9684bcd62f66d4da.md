@@ -1,0 +1,3 @@
+For $x\in F(A)$ define $\alpha^x_B(f)=F(f)(x)$ for $f:A\to B$. For $g:B\to C$, functoriality gives $F(g)\alpha^x_B(f)=F(gf)(x)=\alpha^x_C(gf)$, so this is natural. Its evaluation at $\id_A$ is $x$.
+
+Conversely, naturality of $\alpha$ for $f:A\to B$ gives $\alpha_B(f)=F(f)(\alpha_A(\id_A))$, showing that evaluation determines every component and that the constructions are inverse. If $\theta:F\Rightarrow F'$, then evaluating $\theta\alpha$ yields $\theta_A(\alpha_A(\id_A))$, proving naturality in $F$. For $u:A\to A'$, precomposition gives $\Hom(A',-)\to\Hom(A,-)$. Composing $\alpha$ with it evaluates at $\id_{A'}$ as $\alpha_{A'}(u)=F(u)(\alpha_A(\id_A))$, proving naturality in $A$.

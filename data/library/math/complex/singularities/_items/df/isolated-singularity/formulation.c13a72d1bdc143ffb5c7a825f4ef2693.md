@@ -1,0 +1,3 @@
+An isolated singularity of $f$ at $a$ means that $f$ is holomorphic on some punctured disk $0<|z-a|<r$. It is removable if $f$ extends holomorphically across $a$; it is a pole of order $m\ge1$ if $(z-a)^m f(z)$ extends holomorphically with a nonzero value at $a$; it is essential if neither description applies.
+
+A function is meromorphic on an open set when it is holomorphic there except for isolated poles. A zero is a feature of a holomorphic function, whereas a pole is a singularity of one; multiplicities distinguish them in zero-counting formulas.

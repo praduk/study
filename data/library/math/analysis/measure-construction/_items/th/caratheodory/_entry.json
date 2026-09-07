@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "09926542121d4f9b8811378510a2bf56",
+  "title": "Carathéodory’s construction",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:measure-construction:df:outer-measure.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c6cf583ce0094adaae917559e091bac0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c6cf583ce0094adaae917559e091bac0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "520b5a3a499148488c5ba92411a6b7d5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.520b5a3a499148488c5ba92411a6b7d5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:12.890200+00:00",
+  "updated_at": "2026-09-07T08:24:51.980383+00:00"
+}

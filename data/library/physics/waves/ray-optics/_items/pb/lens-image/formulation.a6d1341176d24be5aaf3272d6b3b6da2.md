@@ -1,0 +1,1 @@
+An ideal converging thin lens has $f=0.10\,\mathrm m$. Compute image distance and magnification for a small object at $s=0.30\,\mathrm m$, then at $s=0.050\,\mathrm m$. In which case can an ordinary screen behind the lens intercept a focused image?

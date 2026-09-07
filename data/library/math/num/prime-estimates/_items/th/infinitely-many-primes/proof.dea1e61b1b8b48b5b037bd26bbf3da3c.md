@@ -1,0 +1,1 @@
+The displayed integer is greater than $1$ and has a prime divisor by prime factorization. If that prime were one of the $p_i$, it would divide both the product and the product plus one, hence divide $1$, which is impossible. A prime divisor need not equal the displayed number; that number can be composite.

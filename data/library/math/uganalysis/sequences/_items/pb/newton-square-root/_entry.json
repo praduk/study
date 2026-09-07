@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ca8e5ba37b5948b6987d095364a39e2c",
+  "title": "A recursive approximation to a square root",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:monotone-convergence, @math:uganalysis:sequences:th:limit-laws.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b0b6b6e2766d49f9b4a67f104529eef3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b0b6b6e2766d49f9b4a67f104529eef3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6148eb09f82e4414a8f48c429749de7c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.6148eb09f82e4414a8f48c429749de7c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:38.193492+00:00",
+  "updated_at": "2026-09-07T08:24:20.008160+00:00"
+}

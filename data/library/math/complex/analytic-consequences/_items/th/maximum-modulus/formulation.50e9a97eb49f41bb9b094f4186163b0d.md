@@ -1,0 +1,1 @@
+A nonconstant holomorphic function on a domain has no local maximum of its modulus. Therefore, if $f$ is holomorphic on a neighborhood of a closed disk, its maximum modulus on that disk is attained on the boundary.

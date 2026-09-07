@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "01fcd43fa4cc41e083329e416376960a",
+  "title": "A controlled first Born coefficient for a compact potential",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f934cc96a0fb42c0a756898a5b69cf30",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f934cc96a0fb42c0a756898a5b69cf30.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fb2b8a0841ee4c328ffc346b3d744271",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fb2b8a0841ee4c328ffc346b3d744271.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:23.894665+00:00",
+  "updated_at": "2026-09-07T09:22:03.989570+00:00"
+}

@@ -1,0 +1,3 @@
+A transverse monochromatic electric vector traces an ellipse at a fixed point. It is linearly polarized if the ellipse degenerates to a segment, and circularly polarized if it is a circle. A complex amplitude retains relative phases; the field is its real part, not its complex modulus.
+
+For a vacuum plane wave in direction $\mathbf n$, $\mathbf B=\mathbf n\times\mathbf E/c$, so $\mathbf S=\epsilon_0c|\mathbf E|^2\mathbf n$. Its mean intensity is $I=\epsilon_0c|\mathbf E_0|^2/2$ where $|\mathbf E_0|^2=\sum_iE_{0i}\overline E_{0i}$. Vacuum impedance is $Z_0=\sqrt{\mu_0/\epsilon_0}=\mu_0c$, relating transverse $|\mathbf E|$ to $|\mathbf H|$ with $\mathbf H=\mathbf B/\mu_0$.

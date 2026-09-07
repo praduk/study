@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cac330aaf13b49888d4448d79feacd57",
+  "title": "Categories and locally small categories",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "37f0d790e07a48a6a2ffdf8f026c6dde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.37f0d790e07a48a6a2ffdf8f026c6dde.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:17.684701+00:00",
+  "updated_at": "2026-09-07T07:55:17.684723+00:00"
+}

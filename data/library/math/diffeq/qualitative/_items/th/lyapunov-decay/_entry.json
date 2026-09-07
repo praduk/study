@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b782c5e188fe451c898943276b8ea757",
+  "title": "A sufficient Lyapunov criterion for exponential decay",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6565cc0cb917439e98ab2430a1dea28d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6565cc0cb917439e98ab2430a1dea28d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4636ce8e0d7c4ff88c270a9eadf4e598",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4636ce8e0d7c4ff88c270a9eadf4e598.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:18.340579+00:00",
+  "updated_at": "2026-09-07T08:23:00.996568+00:00"
+}

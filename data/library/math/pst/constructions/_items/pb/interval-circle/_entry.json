@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2f82a02e5df14f70a4decb092810517d",
+  "title": "Identify the endpoints of an interval",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "84b1e5cf36f445b98be848adc536ce25",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.84b1e5cf36f445b98be848adc536ce25.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e41133dcad4b4f99b96925689ba9c5cd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e41133dcad4b4f99b96925689ba9c5cd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:35.345001+00:00",
+  "updated_at": "2026-09-07T08:00:37.067486+00:00"
+}

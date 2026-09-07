@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e6d743a3affe4d76a40b6616dd2fea74",
+  "title": "Local harmonic conjugates on a rectangle",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:harmonic-functions:df:harmonic, @math:complex:holomorphic-functions:th:cauchy-riemann.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7bc1bafe65724d119933bebd72eae961",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7bc1bafe65724d119933bebd72eae961.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "347c3ef70c59483983b7dcf5886b8eb6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.347c3ef70c59483983b7dcf5886b8eb6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:37.470299+00:00",
+  "updated_at": "2026-09-07T08:26:51.163833+00:00"
+}

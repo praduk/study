@@ -1,0 +1,3 @@
+For complex field amplitudes or slowly varying envelopes $U_1,U_2$ observed by the same detector, define the mutual coherence $\Gamma_{12}=\langle U_1\overline{U_2}\rangle$ and individual mean squared amplitudes $I_j/C=\langle|U_j|^2\rangle$, where $C>0$ is a common detector or medium factor. The brackets denote a stated time or ensemble average.
+
+For nonzero $I_1,I_2$, the normalized degree of coherence is $\gamma_{12}=C\Gamma_{12}/\sqrt{I_1I_2}$, and Cauchy–Schwarz gives $|\gamma_{12}|\le1$. A stable relative phase permits interference fringes. Averaging an independently fluctuating relative phase uniformly over a full cycle makes the mutual coherence zero.

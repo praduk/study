@@ -1,0 +1,1 @@
+Suppose $0<I_1<I_2<I_3$ and no torque acts. Linearize about steady rotation with angular speed $\Omega\ne0$ around a principal axis. Perturbations transverse to axes 1 and 3 are oscillatory; those transverse to axis 2 include exponentially growing modes. This statement concerns the linearized equations, not a general nonlinear stability theorem.

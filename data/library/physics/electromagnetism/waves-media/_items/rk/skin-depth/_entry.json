@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4325d599b23f48bf8ddc35c20f698a5c",
+  "title": "Skin depth in a good conductor",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ca20ab43522c4d1086d1f54e3a9a4a25",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ca20ab43522c4d1086d1f54e3a9a4a25.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.104108+00:00",
+  "updated_at": "2026-09-07T09:02:58.104112+00:00"
+}

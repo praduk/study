@@ -1,0 +1,1 @@
+For $a\in A$, basic neighborhoods in $A$ are $A\cap U$ where $U$ is an open neighborhood in $X$. Since $B\subseteq A$, the intersection $(A\cap U)\cap B$ equals $U\cap B$. Thus all relative neighborhoods meet $B$ exactly when all ambient neighborhoods meet $B$. Apply the closure test in the two spaces.

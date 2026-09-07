@@ -1,0 +1,1 @@
+Set $x=(F_0/k)y$ and $t=\sqrt{m/k}\,\tau$. Substitution and division by $F_0$ give $y''+2\zeta y'+y=\cos(\Omega\tau)$, where $\zeta=b/(2\sqrt{mk})$ and $\Omega=\omega\sqrt{m/k}$. Primes denote derivatives in $\tau$. Both parameters are dimensionless. The displacement scale removes the forcing amplitude for this linear model; it would not generally do so for a nonlinear spring.

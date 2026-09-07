@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "44b437298823447e97931b2598114a54",
+  "title": "Course guide: Quantum Mechanics for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "States, measurable predictions, dynamics, and controlled model calculations.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dcaad9e66bab4be29715cd87c2782d6e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dcaad9e66bab4be29715cd87c2782d6e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.799427+00:00",
+  "updated_at": "2026-09-07T09:11:20.799676+00:00"
+}

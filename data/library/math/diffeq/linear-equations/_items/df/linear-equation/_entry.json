@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "95519a70505c4541b69f465d20e53da5",
+  "title": "Linear differential operators and superposition",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0cdd3b468b4a41a7a577a8ffa549ed7c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0cdd3b468b4a41a7a577a8ffa549ed7c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:20.877222+00:00",
+  "updated_at": "2026-09-07T07:49:20.877227+00:00"
+}

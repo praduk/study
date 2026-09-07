@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8dc6909da613418badda35a3c32fa2c2",
+  "title": "Field momentum and Maxwell stress",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c3b9645b768409cbcf610d7e9eb2603",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c3b9645b768409cbcf610d7e9eb2603.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.191007+00:00",
+  "updated_at": "2026-09-07T09:02:57.191011+00:00"
+}

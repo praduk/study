@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "dfb682c1639b469eb840edc585c3ce32",
+  "title": "Linear small-oscillation model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "724f98c0911c4200b0bf8573ef423508",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.724f98c0911c4200b0bf8573ef423508.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.955955+00:00",
+  "updated_at": "2026-09-07T09:04:10.955958+00:00"
+}

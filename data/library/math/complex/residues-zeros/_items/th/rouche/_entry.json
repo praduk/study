@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd274a76804b4176a492eb00341f0135",
+  "title": "Rouché’s theorem on a disk",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:residues-zeros:th:argument-principle.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "06819e6085d3402183402c221261b4bc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.06819e6085d3402183402c221261b4bc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fe8fdda0ec6e48b69a24b9689af9f5e3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fe8fdda0ec6e48b69a24b9689af9f5e3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:54.953409+00:00",
+  "updated_at": "2026-09-07T08:26:40.986679+00:00"
+}

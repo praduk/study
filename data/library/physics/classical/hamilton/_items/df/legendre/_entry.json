@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6fa1e148851348a691fc4b8c245ae93d",
+  "title": "Regular Lagrangians and the Legendre map",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "11ba4b57eb2c48c2ba386d7d5d5e1410",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.11ba4b57eb2c48c2ba386d7d5d5e1410.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.410154+00:00",
+  "updated_at": "2026-09-07T09:04:09.410156+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e78b181dffdb4cd2aff3c29f0f2ac6ed",
+  "title": "The intermediate fields of a biquadratic extension",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44dd091383f944afa68b28844abcace3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44dd091383f944afa68b28844abcace3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dd8f2e0604c74c97912cce4808b2b84d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.dd8f2e0604c74c97912cce4808b2b84d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:49.249207+00:00",
+  "updated_at": "2026-09-07T07:54:51.035265+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3a42e3acf6a9439db22add260b4a03fa",
+  "title": "An epimorphism that is not surjective",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "04b03319404041ad94341001d95a8be3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.04b03319404041ad94341001d95a8be3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6e232605831641f5bfbcc0349feac493",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.6e232605831641f5bfbcc0349feac493.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:29.802880+00:00",
+  "updated_at": "2026-09-07T07:55:31.762777+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "de3a6464b0c84a36a8be9aa72df0f5f1",
+  "title": "Liouville’s theorem",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:cauchy-estimates, @math:complex:holomorphic-functions:th:zero-derivative.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b52ed68492244f1f9cc235aae1b4819c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b52ed68492244f1f9cc235aae1b4819c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "67a0fa93d51046a3b03ba5599ee1d986",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.67a0fa93d51046a3b03ba5599ee1d986.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:05.230925+00:00",
+  "updated_at": "2026-09-07T08:16:07.660630+00:00"
+}

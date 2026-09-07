@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9457e58857f541aab2fd901d38ed22e5",
+  "title": "Zero integral and almost-everywhere equality",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:df:lebesgue-integral.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dfcfb5b811bb4f3da79aad7d5903178f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dfcfb5b811bb4f3da79aad7d5903178f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4cae856dcf014c248e5c37d69a6042c0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4cae856dcf014c248e5c37d69a6042c0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:10.612317+00:00",
+  "updated_at": "2026-09-07T08:12:12.905613+00:00"
+}

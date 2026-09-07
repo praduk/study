@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a423761ea87a43998a2d3d80aaa539d6",
+  "title": "Transverse-traceless waves and polarizations",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd7cee5b45e24007bf265e361b61e90c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd7cee5b45e24007bf265e361b61e90c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.802032+00:00",
+  "updated_at": "2026-09-07T09:18:16.802038+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0b301f014c834c50a975fe3bbcbc2743",
+  "title": "Tensor products are right exact",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b0fb2ead763b46a9a8c8beadd8b3d2c2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b0fb2ead763b46a9a8c8beadd8b3d2c2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ee16dc7bb6794cd0ac30f7232cdf56fe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ee16dc7bb6794cd0ac30f7232cdf56fe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:26.425088+00:00",
+  "updated_at": "2026-09-07T08:23:36.667427+00:00"
+}

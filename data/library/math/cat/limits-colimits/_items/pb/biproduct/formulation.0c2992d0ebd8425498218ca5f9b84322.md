@@ -1,0 +1,1 @@
+For modules $M,N$ over a ring $R$, prove that $M\oplus N$ satisfies both the product and coproduct universal properties. Explain why the analogous assertion for infinitely many modules needs qualification.

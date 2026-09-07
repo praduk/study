@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "50672bf5702d44208f15a0b56e4c0a98",
+  "title": "Local hypotheses for covering classification",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b106611bed104ec99f9bf565a516e460",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b106611bed104ec99f9bf565a516e460.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:17.826166+00:00",
+  "updated_at": "2026-09-07T08:02:17.826174+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "81492aa9804247b8ab4d123f26475368",
+  "title": "Minkowski spacetime and causal character",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d4e1967b3e504e519de87ca2b379df90",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d4e1967b3e504e519de87ca2b379df90.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.736800+00:00",
+  "updated_at": "2026-09-07T09:02:58.736803+00:00"
+}

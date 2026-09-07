@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "15354cab4b7f4b6fae456a19a8d6743b",
+  "title": "Universal coefficient theorem for cohomology",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ee1271110c584986ac1bc8e1b824d451",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ee1271110c584986ac1bc8e1b824d451.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:38.580603+00:00",
+  "updated_at": "2026-09-07T08:27:01.136396+00:00"
+}

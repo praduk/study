@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1b484550de004732a4468bc10d80c1e9",
+  "title": "Proper time along a timelike worldline",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e2b6a49c49f94f0eae64b6e66a9454ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e2b6a49c49f94f0eae64b6e66a9454ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.868473+00:00",
+  "updated_at": "2026-09-07T09:02:58.868475+00:00"
+}

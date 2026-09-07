@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "baa96d4313e0469c92bde46cc040eb58",
+  "title": "Pressure obeys the acoustic wave equation",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:continuum:acoustics:ax:acoustic-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6203654341af42cd93ac0ae199750448",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6203654341af42cd93ac0ae199750448.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c06840699be940f699b0abeab6e7c387",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c06840699be940f699b0abeab6e7c387.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.237525+00:00",
+  "updated_at": "2026-09-07T09:04:14.329823+00:00"
+}

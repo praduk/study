@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "04d027d2ca7c4586901a45cfb04c321a",
+  "title": "A phase rotation produces a conserved current",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9ff4d891311e4e7ca1c8e3bdc46317dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9ff4d891311e4e7ca1c8e3bdc46317dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b803a8dc20964caaadb54b36ac08b99c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b803a8dc20964caaadb54b36ac08b99c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:14.166548+00:00",
+  "updated_at": "2026-09-07T08:53:16.883503+00:00"
+}

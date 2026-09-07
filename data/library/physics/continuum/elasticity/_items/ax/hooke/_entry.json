@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "23d6da0717464f218feb409cec494b96",
+  "title": "Isotropic linear elasticity as a material model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c3cd758c0f82469a8f36395891722551",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c3cd758c0f82469a8f36395891722551.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.445680+00:00",
+  "updated_at": "2026-09-07T09:04:13.445684+00:00"
+}

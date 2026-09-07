@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ff276eef945c4cbe8af7f85cfdbc47c5",
+  "title": "Multiplicative order and primitive roots",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "727897733a83401bbfa7282e20b050ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.727897733a83401bbfa7282e20b050ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:02.826315+00:00",
+  "updated_at": "2026-09-07T07:48:02.826322+00:00"
+}

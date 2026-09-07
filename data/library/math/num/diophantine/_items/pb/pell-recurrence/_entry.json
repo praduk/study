@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "457918c0370f4ded9d986b1e436585f3",
+  "title": "Construct infinitely many Pell solutions",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4168d649ccd6454baf27614da60f9060",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4168d649ccd6454baf27614da60f9060.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2e17306229b40ddb387177039b2ad2d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a2e17306229b40ddb387177039b2ad2d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:29.000331+00:00",
+  "updated_at": "2026-09-07T07:48:30.319067+00:00"
+}

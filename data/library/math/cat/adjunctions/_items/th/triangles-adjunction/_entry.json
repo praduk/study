@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cde6d3890f3c48368e671a27ca0465f2",
+  "title": "Triangle identities construct an adjunction",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5fb4db44bfe144418a63d510edac05b9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5fb4db44bfe144418a63d510edac05b9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "85924a52c07b49a891dbe71a33c137e1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.85924a52c07b49a891dbe71a33c137e1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:43.371013+00:00",
+  "updated_at": "2026-09-07T08:24:08.197150+00:00"
+}

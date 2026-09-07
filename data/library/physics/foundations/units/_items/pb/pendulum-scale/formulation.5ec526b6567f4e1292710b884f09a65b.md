@@ -1,0 +1,1 @@
+Assume the period $P$ of an ideal pendulum can depend only on length $\ell>0$, gravitational acceleration $g>0$, and dimensionless release angle $\theta_0$. Show the possible dimensional form of $P$. Does dimensional analysis determine the numerical factor or the amplitude dependence?

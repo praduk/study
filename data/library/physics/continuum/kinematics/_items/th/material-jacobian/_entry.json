@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2bf272369dd64bf28a1068e0e4e04fe6",
+  "title": "Material derivative and local volume change",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:continuum:kinematics:df:motion-map.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d157dd4fef144a0fb92dee27e8cdfa60",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d157dd4fef144a0fb92dee27e8cdfa60.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d02b13a26da14e32b6438a1b42598fc1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d02b13a26da14e32b6438a1b42598fc1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.348075+00:00",
+  "updated_at": "2026-09-07T09:04:12.361150+00:00"
+}

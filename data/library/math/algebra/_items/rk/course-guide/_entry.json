@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ab53ac95b9af48a09828604e3ac665b2",
+  "title": "Graduate Algebra: course guide",
+  "rank": 4611686018427387904,
+  "header": "Graduate coursework; prerequisites and scope.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ceb970a0b01f4926829aabfe8e3a5c5c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ceb970a0b01f4926829aabfe8e3a5c5c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:52:55.208004+00:00",
+  "updated_at": "2026-09-07T07:52:55.208009+00:00"
+}

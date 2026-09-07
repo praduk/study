@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a1b41e9c13064da2a49f58fb3e9afda2",
+  "title": "Boundary conditions are part of the physical problem",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef04c4754fba484fa0bc8faf1959b11c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef04c4754fba484fa0bc8faf1959b11c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.737037+00:00",
+  "updated_at": "2026-09-07T09:04:12.737044+00:00"
+}

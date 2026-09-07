@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "28f3f198fc6442de934f739e38687c36",
+  "title": "Spectrum and compact operators",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:banach-spaces:df:banach-operator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a9b3eaa5fa045ce8d489ce6e852faf2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a9b3eaa5fa045ce8d489ce6e852faf2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:29.127936+00:00",
+  "updated_at": "2026-09-07T08:25:42.739090+00:00"
+}

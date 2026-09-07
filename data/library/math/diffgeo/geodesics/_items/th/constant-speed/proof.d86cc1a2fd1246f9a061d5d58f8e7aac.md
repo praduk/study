@@ -1,0 +1,1 @@
+Metric compatibility along the curve gives $\frac{d}{dt}g(\dot\gamma,\dot\gamma)=2g(D_t\dot\gamma,\dot\gamma)=0$. Thus the squared speed is constant. If it is zero once, positive definiteness makes $\dot\gamma=0$ everywhere on its interval. Alternatively uniqueness of the initial-value problem identifies it with the constant curve.

@@ -1,0 +1,1 @@
+For a uniform rectangular aperture of width $b>0$ in $x_1$, the Fraunhofer amplitude in the $x_1$ direction has factor $b\,\operatorname{sinc}(k b X_1/(2z))$, where $\operatorname{sinc}s=\sin s/s$ and $\operatorname{sinc}0=1$. Thus the first transverse zeros in that model occur at $X_1=\pm\lambda z/b$.

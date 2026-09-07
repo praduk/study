@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a7f203c88d0d45d6b32b9e3a07e1bbd1",
+  "title": "Tidal acceleration and infinitesimal TT strain",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a0fff38ba5724516852a00c436add2a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a0fff38ba5724516852a00c436add2a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e3c2ddaa9c9f425c8df5e050d8ed6ab7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e3c2ddaa9c9f425c8df5e050d8ed6ab7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.861692+00:00",
+  "updated_at": "2026-09-07T09:18:16.940021+00:00"
+}

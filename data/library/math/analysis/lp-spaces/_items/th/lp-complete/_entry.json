@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "653c5b9ebd0f4b988afb22a06f31589a",
+  "title": "Completeness of Lp",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:lp-spaces:th:minkowski, @math:analysis:lebesgue-integration:th:fatou, @math:analysis:lebesgue-integration:th:monotone-integrals.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2193e5f592584a0f8ae0baaecc33de93",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2193e5f592584a0f8ae0baaecc33de93.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bfd5e0914a6f48e9ba1212d5a221c8f8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bfd5e0914a6f48e9ba1212d5a221c8f8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:29.148976+00:00",
+  "updated_at": "2026-09-07T08:12:31.389429+00:00"
+}

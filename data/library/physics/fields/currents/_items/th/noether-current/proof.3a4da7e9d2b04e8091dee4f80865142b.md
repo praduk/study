@@ -1,0 +1,1 @@
+Write $P_a^\mu=\partial\mathcal L/\partial(\partial_\mu\phi^a)$. The product rule gives $\delta\mathcal L=(\mathcal L_{\phi^a}-\partial_\mu P_a^\mu)Q^a+\partial_\mu(P_a^\mu Q^a)$. The first term vanishes on a solution by the Euler-Lagrange equations. Subtracting the assumed divergence $\partial_\mu B^\mu$ gives the result.

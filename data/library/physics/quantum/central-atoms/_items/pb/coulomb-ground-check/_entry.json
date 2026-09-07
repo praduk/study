@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a31d29ba6a0e40e497591756797c6fa4",
+  "title": "Direct check of a hydrogenic ground state",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5eb92fa1139e4e31b9e63837347123dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5eb92fa1139e4e31b9e63837347123dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f6a1bb1015b140a780e2e737a850ffee",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f6a1bb1015b140a780e2e737a850ffee.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.617818+00:00",
+  "updated_at": "2026-09-07T09:11:22.697939+00:00"
+}

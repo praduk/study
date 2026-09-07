@@ -1,0 +1,1 @@
+Write $A=2I+N$, where $N^2=0$. Because $2I$ and $N$ commute, their exponential series multiply to give $e^{tA}=e^{2t}(I+tN)$. Thus $x(t)=e^{2t}(t,1)^{\mathsf T}$. Its derivative is $e^{2t}(1+2t,2)^{\mathsf T}=Ax(t)$, and the initial vector is correct. The factor $t$ is essential; an ansatz using only constant eigenvectors would miss this solution.

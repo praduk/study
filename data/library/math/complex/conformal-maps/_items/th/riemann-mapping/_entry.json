@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9c0785806daf44939fdfd9d7118e853f",
+  "title": "Riemann mapping theorem",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:complex:conformal-maps:th:disk-automorphisms, @math:complex:analytic-consequences:th:liouville.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c1ef406219d402595dadfcae316c204",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c1ef406219d402595dadfcae316c204.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:31.343491+00:00",
+  "updated_at": "2026-09-07T08:17:31.343498+00:00"
+}

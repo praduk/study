@@ -1,0 +1,1 @@
+A smooth possibly time-dependent Hamiltonian flow preserves $\omega$ and its volume form $\omega^n/n!$ wherever the flow exists. In canonical coordinates it therefore preserves phase-space volume, even when $H$ depends explicitly on time.

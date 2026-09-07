@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "98b8458c2d8c451bbcb2982c72fe622c",
+  "title": "Submodules of finite free modules over a PID",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8d3c63a612de41f1a30ee4f2a2439f81",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8d3c63a612de41f1a30ee4f2a2439f81.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5cd0c31d155645b2a22d0629059ab6d9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5cd0c31d155645b2a22d0629059ab6d9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:07.550357+00:00",
+  "updated_at": "2026-09-07T07:54:09.115490+00:00"
+}

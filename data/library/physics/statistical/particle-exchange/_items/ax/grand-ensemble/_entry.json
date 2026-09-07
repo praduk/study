@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1c4166daf51e4af49527389c871ba05e",
+  "title": "Grand canonical ensemble and chemical potential",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1de1a51d78664a44a1efd3ee4136268b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1de1a51d78664a44a1efd3ee4136268b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.987380+00:00",
+  "updated_at": "2026-09-07T09:00:57.987382+00:00"
+}

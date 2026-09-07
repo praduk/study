@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "efa843c9318b486aabbe7067d9dafbb9",
+  "title": "Right adjoints preserve limits",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "94d8b2e68f9a4577bb3a72a2ca18e2b9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.94d8b2e68f9a4577bb3a72a2ca18e2b9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "015df106c0684fe98d9f0956bc6a9a16",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.015df106c0684fe98d9f0956bc6a9a16.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:51.543067+00:00",
+  "updated_at": "2026-09-07T07:56:53.244468+00:00"
+}

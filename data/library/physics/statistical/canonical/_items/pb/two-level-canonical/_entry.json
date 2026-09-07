@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4d104f78c31444b18bf5e7dfa62d308c",
+  "title": "Two-level heat capacity and limiting regimes",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e96d37a4344f4706a2fe5fc830a19728",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e96d37a4344f4706a2fe5fc830a19728.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "45b915105e424634be27bc8d163473db",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.45b915105e424634be27bc8d163473db.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.581386+00:00",
+  "updated_at": "2026-09-07T09:11:21.707939+00:00"
+}

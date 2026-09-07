@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a5a93e96eeed4ff0ad3a650bc7eca20a",
+  "title": "Tensor product over a commutative ring",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b495f4c178204eea8eb1d226f55f6366",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b495f4c178204eea8eb1d226f55f6366.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:20.004228+00:00",
+  "updated_at": "2026-09-07T07:54:20.004237+00:00"
+}

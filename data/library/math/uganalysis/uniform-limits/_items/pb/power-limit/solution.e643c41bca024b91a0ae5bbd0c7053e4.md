@@ -1,0 +1,1 @@
+For $0\le x<1$, $x^n\to0$; at $x=1$ the value is always $1$. The limit is discontinuous, so convergence on $[0,1]$ cannot be uniform. Directly, $\sup_{0\le x<1}x^n=1$ for every $n$. On $[0,r]$, the limit is zero and the uniform error is $r^n\to0$ (for $r=0$ the error is identically zero).

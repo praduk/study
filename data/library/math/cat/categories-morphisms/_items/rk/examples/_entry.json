@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d7c389a85caa44edb9151a5ecec7b132",
+  "title": "Sets, posets, and monoids as categories",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a45196b515248de9f1f357ddb8fafa7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a45196b515248de9f1f357ddb8fafa7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:19.281348+00:00",
+  "updated_at": "2026-09-07T07:55:19.281367+00:00"
+}

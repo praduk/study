@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "626c9654d2814a648015a2d39144e83c",
+  "title": "Spacetime, observers, and measured intervals",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b5ad70e044b54516a0ecee4a4e5d2695",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b5ad70e044b54516a0ecee4a4e5d2695.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.579589+00:00",
+  "updated_at": "2026-09-07T09:18:15.579591+00:00"
+}

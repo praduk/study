@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c7812f0b1ba64c249fcfcde87b47ce1c",
+  "title": "Jacobi fields",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b4fefd4500a34f6f978d391a9dc2c617",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b4fefd4500a34f6f978d391a9dc2c617.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:31.439130+00:00",
+  "updated_at": "2026-09-07T08:27:35.156482+00:00"
+}

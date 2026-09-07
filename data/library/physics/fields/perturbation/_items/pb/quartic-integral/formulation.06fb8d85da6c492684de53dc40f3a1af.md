@@ -1,0 +1,1 @@
+Let $X$ be a standard real Gaussian and define $Z(\lambda)=\mathbb E[e^{-\lambda X^4/24}]$ for $\lambda\ge0$. Find its expansion through order $\lambda^2$, with a justified $O(\lambda^3)$ remainder as $\lambda\downarrow0$.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "de49f6b5ff884d6191a5884e125818b0",
+  "title": "Excision in singular homology",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0ec3bd8dc95e4ca9975c1f4bae788dab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0ec3bd8dc95e4ca9975c1f4bae788dab.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:00.113144+00:00",
+  "updated_at": "2026-09-07T08:03:00.113153+00:00"
+}

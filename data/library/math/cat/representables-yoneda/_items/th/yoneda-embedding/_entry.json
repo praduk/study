@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a49149d1030748668d1d2e9ca41603a9",
+  "title": "The Yoneda embedding is fully faithful",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7f94be55d299404f8621abbb6c4495fb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7f94be55d299404f8621abbb6c4495fb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "85811c9fb214409b9b4120a88b5d584c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.85811c9fb214409b9b4120a88b5d584c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:25.689907+00:00",
+  "updated_at": "2026-09-07T08:23:58.313286+00:00"
+}

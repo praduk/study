@@ -1,0 +1,1 @@
+Let $m\ge1$, $a,b\in\Z$, and $d=\gcd(a,m)$. The congruence $ax\equiv b\pmod m$ has a solution exactly when $d\mid b$. When solvable it has exactly $d$ solutions modulo $m$. In particular $[a]$ is a unit exactly when $\gcd(a,m)=1$.

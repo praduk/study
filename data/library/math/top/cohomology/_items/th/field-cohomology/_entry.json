@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "47b756fa7218429fa8e6010fb18368bb",
+  "title": "Cohomology over a field is dual to homology",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff8f08a860964620a67721ac8d02bea4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff8f08a860964620a67721ac8d02bea4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "528486cb0c0c42e68ef5e8bf601f79e0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.528486cb0c0c42e68ef5e8bf601f79e0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:49.091249+00:00",
+  "updated_at": "2026-09-07T08:03:51.991325+00:00"
+}

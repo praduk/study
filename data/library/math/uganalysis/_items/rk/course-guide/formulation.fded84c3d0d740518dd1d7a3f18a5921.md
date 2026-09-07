@@ -1,0 +1,5 @@
+Prerequisites: proof by induction and contradiction, elementary set and function notation, and computational calculus. The development begins with completeness of $\R$ and ends with uniform limits and the derivative as a linear map.
+
+Read the topics in numerical order. First reconstruct each proof without viewing its supplement; then solve the problems before revealing their solutions. The proofs and worked problems here are independently written derivations. The inverse function theorem is explicitly identified as a source-backed result whose proof is not included.
+
+Reference texts inspected: Jiří Lebl, [Basic Analysis I and II](https://www.jirka.org/ra/html/ra.html), especially [uniform continuity](https://www.jirka.org/ra/html/sec_unifcont.html) and [interchange of limits](https://www.jirka.org/ra/html/sec_liminter.html). These are author-written open textbooks. The course is a compact foundation, not an exhaustive treatment of every topic in both volumes. Graduate measure theory and functional analysis belong in the separate Analysis course.

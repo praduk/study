@@ -1,0 +1,1 @@
+The work is $350\ {\rm J}$ and efficiency $0.35$. The reservoirs change entropy by $-1000/600+650/300=0.50\ {\rm J\,K^{-1}}$. The system is cyclic, so this is total entropy production; the cycle is irreversible. Its efficiency is below the reversible bound $1-300/600=0.50$.

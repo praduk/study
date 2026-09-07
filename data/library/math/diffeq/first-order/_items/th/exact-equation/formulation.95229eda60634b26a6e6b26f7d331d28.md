@@ -1,0 +1,1 @@
+Let $M,N$ be $C^1$ real functions on an open rectangle $I\times J$. There is a $C^2$ function $F$ with $F_x=M$, $F_y=N$ exactly when $M_y=N_x$. In this case a differentiable graph $y(x)$ solves $M(x,y)+N(x,y)y'=0$ exactly when $F(x,y(x))$ is constant.

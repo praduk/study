@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c2d837dad65b47fc8a0e81159c00d1b3",
+  "title": "Continuity of a measure along monotone sets",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:measure-construction:df:measure-space.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a2c3853704b4c2ba9fd96225c80645d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a2c3853704b4c2ba9fd96225c80645d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "025d32a74cde48299ac5b925e93f1b60",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.025d32a74cde48299ac5b925e93f1b60.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:06.080548+00:00",
+  "updated_at": "2026-09-07T08:11:08.578520+00:00"
+}

@@ -1,0 +1,3 @@
+The steady displacement amplitude is $|F_0|/\sqrt{(k-m\omega^2)^2+b^2\omega^2}$. Its interior maximum occurs at $\omega^2=k/m-b^2/(2m^2)$ only when that number is positive, as differentiating the denominator shows. Otherwise the maximum over nonnegative driving frequency is at zero. Velocity amplitude and mean dissipated power peak differently: for constant force amplitude their positive-frequency maximum is at $\sqrt{k/m}$.
+
+At zero damping, the exact resonant forcing has a particular solution proportional to $t\sin(\sqrt{k/m}\,t)$; a finite steady amplitude no longer exists. Large predicted response is also where the small-displacement model can cease to fit the physical oscillator.

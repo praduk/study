@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "719c44f122c94cb597a844e0069879b2",
+  "title": "What this first field-theory course establishes",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c14ece5462bd4818ae8ec622501c69a4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c14ece5462bd4818ae8ec622501c69a4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:56.201376+00:00",
+  "updated_at": "2026-09-07T08:54:56.201383+00:00"
+}

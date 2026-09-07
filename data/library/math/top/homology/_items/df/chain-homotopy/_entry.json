@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "bf153e00f2ee46178050def1610b71ba",
+  "title": "Chain homotopies",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "94ec9344fcc24b9ebb25e2753c158ae2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.94ec9344fcc24b9ebb25e2753c158ae2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:51.016968+00:00",
+  "updated_at": "2026-09-07T08:02:51.016975+00:00"
+}

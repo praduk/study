@@ -1,0 +1,1 @@
+The product rule gives $D'(g^{-1}s)=g^{-1}Ds$ for every section $s$, since $d(g^{-1})=-g^{-1}(dg)g^{-1}$. Apply $D'$ once more, using the connection extended to bundle-valued forms, to get $(D')^2(g^{-1}s)=g^{-1}D^2s$. Since $D^2s=Fs$, this says $F'=g^{-1}Fg$. The star acts only on form indices, and cyclicity of the matrix trace cancels conjugation in the displayed density.

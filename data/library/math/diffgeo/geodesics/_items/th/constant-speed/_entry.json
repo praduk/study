@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9f3c36a80b95450ca1815eac0dbdd0ca",
+  "title": "Riemannian geodesics have constant speed",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3056b7699a6b4f6a82e1dae235eca7f2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3056b7699a6b4f6a82e1dae235eca7f2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d86cc1a2fd1246f9a061d5d58f8e7aac",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d86cc1a2fd1246f9a061d5d58f8e7aac.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:01.139199+00:00",
+  "updated_at": "2026-09-07T08:06:03.243428+00:00"
+}

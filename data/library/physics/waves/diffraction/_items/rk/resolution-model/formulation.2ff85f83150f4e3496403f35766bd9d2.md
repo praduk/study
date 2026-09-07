@@ -1,0 +1,3 @@
+A finite aperture spreads the image of an ideal point into a diffraction pattern. A scale such as $\lambda/b$ describes angular spread for an aperture width $b$; its coefficient and shape depend on aperture geometry and illumination. Two sources also interfere differently when mutually coherent than when incoherent.
+
+Consequently there is no single theorem that every optical system resolves two objects at exactly one universal separation. A practical resolution statement must name the point-spread model, coherence assumptions, detector sampling and noise, and a decision criterion. Geometrical ray intersection alone omits diffraction and cannot establish unlimited resolution.

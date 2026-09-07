@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d7a6eecf56484f8c9010827b5ed7968c",
+  "title": "Image distance from a ray transfer matrix",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:waves:ray-optics:ax:thin-lens.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1bfddd08ed9d495f85ed2b60e43eaa7f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1bfddd08ed9d495f85ed2b60e43eaa7f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "052a02d4adc54f829f24ae0d49374331",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.052a02d4adc54f829f24ae0d49374331.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:18.326066+00:00",
+  "updated_at": "2026-09-07T09:04:18.524700+00:00"
+}

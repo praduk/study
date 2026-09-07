@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8bc98d864adb43fd90c6e97b2f22a038",
+  "title": "A quadratic energy proves local asymptotic stability",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ae422b54dcfa4441ac0099f264156b4f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ae422b54dcfa4441ac0099f264156b4f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7e8ab29bc4d24ec1bddd26db92f2ec33",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7e8ab29bc4d24ec1bddd26db92f2ec33.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:22.863843+00:00",
+  "updated_at": "2026-09-07T08:52:25.474788+00:00"
+}

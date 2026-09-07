@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cb10eb71b64b479f907fa031e0996447",
+  "title": "Criterion for an equivalence",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b842c9507c7a4e3991caf147ae8dc916",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b842c9507c7a4e3991caf147ae8dc916.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "681a4372a87640479ed9e80a5000f3d5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.681a4372a87640479ed9e80a5000f3d5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:51.142581+00:00",
+  "updated_at": "2026-09-07T07:55:53.149164+00:00"
+}

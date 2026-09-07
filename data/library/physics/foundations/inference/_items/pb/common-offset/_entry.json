@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a5fdeac8b60140a7b58d1072d6178707",
+  "title": "A shared offset does not average away",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b31d95e8be7c43018cd73b5332164982",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b31d95e8be7c43018cd73b5332164982.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fc9e0d28c9b74fbebe0f0e7158a5b227",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.fc9e0d28c9b74fbebe0f0e7158a5b227.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:35.553596+00:00",
+  "updated_at": "2026-09-07T09:06:12.434017+00:00"
+}

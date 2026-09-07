@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b1a2851467ee4cd88c82f0df8e6e93e6",
+  "title": "Power flow in an ideal coaxial line",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95b11a81a2804eb58ebdf6b007ad437d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95b11a81a2804eb58ebdf6b007ad437d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2331c6d0b5a24e5497940c73d82140d9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2331c6d0b5a24e5497940c73d82140d9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.353401+00:00",
+  "updated_at": "2026-09-07T09:02:57.425022+00:00"
+}

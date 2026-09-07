@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0b25d2e36acf439e8bce834397edd9fa",
+  "title": "Noether current for an internal variation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7333c34fe8b24a35bf9d7b9bf6949f4d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7333c34fe8b24a35bf9d7b9bf6949f4d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3a4da7e9d2b04e8091dee4f80865142b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3a4da7e9d2b04e8091dee4f80865142b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:05.659810+00:00",
+  "updated_at": "2026-09-07T08:53:08.313382+00:00"
+}

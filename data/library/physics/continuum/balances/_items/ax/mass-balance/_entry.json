@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7e791c14a5324243b759ba4cea422d65",
+  "title": "Mass conservation for a material region",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ad5b7ba6b424a569ee1c1bde9960569",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ad5b7ba6b424a569ee1c1bde9960569.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.466309+00:00",
+  "updated_at": "2026-09-07T09:04:12.466312+00:00"
+}

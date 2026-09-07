@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3aba9c7563704a4a9513e2d8b2b6aa2f",
+  "title": "Polarization, intensity, and impedance",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "20ae14eb96a547f493fe3b6d5f92c7e3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.20ae14eb96a547f493fe3b6d5f92c7e3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.646643+00:00",
+  "updated_at": "2026-09-07T09:02:57.646649+00:00"
+}

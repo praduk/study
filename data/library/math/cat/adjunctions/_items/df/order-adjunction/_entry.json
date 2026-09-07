@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0b81e74137744fb79154a865a97bdfaa",
+  "title": "Adjunctions between partially ordered sets",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "463ba0754180469ca18f87cc4d5a0be1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.463ba0754180469ca18f87cc4d5a0be1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:54.298813+00:00",
+  "updated_at": "2026-09-07T08:24:12.117823+00:00"
+}

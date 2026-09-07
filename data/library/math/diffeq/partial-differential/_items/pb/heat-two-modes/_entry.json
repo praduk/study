@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3113fb3ada064589a08724945c0fe646",
+  "title": "Compare decay of two heat modes",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f710569caab5479180c980a908d92fd5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f710569caab5479180c980a908d92fd5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "34edeab74d0c4ca3a67958f15e682e2e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.34edeab74d0c4ca3a67958f15e682e2e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:59.187333+00:00",
+  "updated_at": "2026-09-07T07:52:00.650232+00:00"
+}

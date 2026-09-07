@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b124c3d126a145838edaa918171d53b6",
+  "title": "Well-posed evolution and admissible data",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "52591886b3b84a588f25d03c205b6ec3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.52591886b3b84a588f25d03c205b6ec3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:24.738310+00:00",
+  "updated_at": "2026-09-07T08:51:24.738317+00:00"
+}

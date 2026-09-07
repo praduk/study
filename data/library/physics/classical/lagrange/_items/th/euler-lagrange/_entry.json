@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f779e03d28df4512b7634c2dfd0a7b2e",
+  "title": "Euler–Lagrange equations from fixed-endpoint stationarity",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:classical:lagrange:ax:stationary-action.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9c43961b6a96489ca806f05d7377d976",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9c43961b6a96489ca806f05d7377d976.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "74f612576b5747a5b758c6ccb1a4c5e7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.74f612576b5747a5b758c6ccb1a4c5e7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.163007+00:00",
+  "updated_at": "2026-09-07T09:04:09.192200+00:00"
+}

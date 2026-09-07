@@ -1,0 +1,1 @@
+Since $\sum\norm{A^n}\le\sum\norm A^n<\infty$ and $\mathcal B(X)$ is complete, the operator series converges to some $S$. For partial sums $S_N$, both $(I-A)S_N$ and $S_N(I-A)$ equal $I-A^{N+1}$. Passing to the operator-norm limit gives $(I-A)S=S(I-A)=I$. If $|\lambda|>\norm T$, factor $T-\lambda I=-\lambda(I-T/\lambda)$ and apply the first assertion.

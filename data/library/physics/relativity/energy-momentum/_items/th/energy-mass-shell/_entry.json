@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4dc7a15ae8d34904ad9857f578184780",
+  "title": "Mass shell, velocity, and the low-speed limit",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3a33a4f1eada4bd1b179bf50fb63ed7a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3a33a4f1eada4bd1b179bf50fb63ed7a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bdb58d37e04844fa9849938a6f6308de",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bdb58d37e04844fa9849938a6f6308de.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.592643+00:00",
+  "updated_at": "2026-09-07T09:02:59.665520+00:00"
+}

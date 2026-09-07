@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "437ece11779e4ecaadc1d63e84d7ac02",
+  "title": "Variation of parameters for a second-order equation",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "79f5357016154f6a8314e3528896e3f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.79f5357016154f6a8314e3528896e3f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "761bd372af5f4a0ca42a7288febd8ddc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.761bd372af5f4a0ca42a7288febd8ddc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:28.603442+00:00",
+  "updated_at": "2026-09-07T08:22:57.062224+00:00"
+}

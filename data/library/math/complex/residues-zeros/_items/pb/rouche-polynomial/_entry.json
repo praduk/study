@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1bbfb7626ebd48af94ad219fbc294d6c",
+  "title": "Count polynomial zeros without solving for them",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:residues-zeros:th:rouche.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e7f524b420c64b8eabcf264ab441b583",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e7f524b420c64b8eabcf264ab441b583.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c656c787519643b089426542434b5296",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c656c787519643b089426542434b5296.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:58.956486+00:00",
+  "updated_at": "2026-09-07T08:17:01.480352+00:00"
+}

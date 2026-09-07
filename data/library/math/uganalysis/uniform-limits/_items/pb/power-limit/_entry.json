@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "efabf2a86177400ab4e6501f0fbb51fd",
+  "title": "The pointwise limit of powers",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:uganalysis:uniform-limits:th:uniform-limit-continuous, @math:uganalysis:series:th:geometric-series.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "69b0c142525d43f881c5425d984f2364",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.69b0c142525d43f881c5425d984f2364.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e643c41bca024b91a0ae5bbd0c7053e4",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e643c41bca024b91a0ae5bbd0c7053e4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:38.636075+00:00",
+  "updated_at": "2026-09-07T08:10:40.807516+00:00"
+}

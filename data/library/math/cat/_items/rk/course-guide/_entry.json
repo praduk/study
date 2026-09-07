@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0aed52b838084b379ec6cf4beb618f9e",
+  "title": "Category Theory: course guide",
+  "rank": 4611686018427387904,
+  "header": "Rigorous first course; prerequisites and scope.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "db62089f8c6f4eceb482346f9860a0de",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.db62089f8c6f4eceb482346f9860a0de.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:14.522516+00:00",
+  "updated_at": "2026-09-07T07:55:14.522538+00:00"
+}

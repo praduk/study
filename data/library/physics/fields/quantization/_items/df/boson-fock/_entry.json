@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "01ab40f6697b4cdea91f22b3f5f0a48c",
+  "title": "Bosonic Fock space and occupation numbers",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff52033cfa694f8cba338efb6752c2c6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff52033cfa694f8cba338efb6752c2c6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:42.655705+00:00",
+  "updated_at": "2026-09-07T09:06:15.162103+00:00"
+}

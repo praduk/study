@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd7025d38e074d8f9453d749084ec43b",
+  "title": "Chemical potentials at an interior minimum",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d591f4dd894b495ab641e0653f8227a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d591f4dd894b495ab641e0653f8227a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "01469d13727949d3b212d14f9c2850ee",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.01469d13727949d3b212d14f9c2850ee.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.668212+00:00",
+  "updated_at": "2026-09-07T08:57:25.730556+00:00"
+}

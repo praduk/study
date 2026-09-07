@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c6a1ffd29025475f958c1bcee8794ee8",
+  "title": "Topological space and comparison of topologies",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d45d62e019e44c3896c5337786427b9c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d45d62e019e44c3896c5337786427b9c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:02.809909+00:00",
+  "updated_at": "2026-09-07T08:00:02.809916+00:00"
+}

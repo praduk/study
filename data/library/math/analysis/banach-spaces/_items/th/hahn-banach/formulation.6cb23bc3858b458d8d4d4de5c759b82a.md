@@ -1,0 +1,3 @@
+Let $M$ be a linear subspace of a real or complex normed space $X$. Every bounded linear functional $\ell:M\to\F$ extends to a bounded linear functional $L:X\to\F$ with $\norm L=\norm\ell$. Consequently, for every nonzero $x\in X$ there exists $L\in X^*$ with $\norm L=1$ and $L(x)=\norm x$.
+
+The extension existence proof is not included; see Hunter and Nachtergaele, [Applied Analysis, Section 5.6](https://www.math.ucdavis.edu/~hunter/book/ch5.pdf), for the real version. The complex version follows by extending $\operatorname{Re}\ell$ as a real functional $u$ and setting $L(x)=u(x)-iu(ix)$; rotating $x$ shows $\norm L=\norm\ell$. The separation consequence follows by starting on $\spanvs\{x\}$ with $\ell(\alpha x)=\alpha\norm x$.

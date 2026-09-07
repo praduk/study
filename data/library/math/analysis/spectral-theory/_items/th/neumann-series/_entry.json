@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1684472c0ede4de7b6b9c7644d3657d2",
+  "title": "Neumann series and a spectral bound",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:banach-spaces:th:operator-completeness, @math:analysis:spectral-theory:df:spectrum-compact.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48a2cbfc9b094b8396922bcfc24551a7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48a2cbfc9b094b8396922bcfc24551a7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "030f16b14ca745579f961a05c21cb6b6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.030f16b14ca745579f961a05c21cb6b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:31.001596+00:00",
+  "updated_at": "2026-09-07T08:25:44.753868+00:00"
+}

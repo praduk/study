@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aa8fcd7da4144e87b547741e57c2906c",
+  "title": "Frame dependence of simultaneity and causal order",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "07597bc2f95a4c7ca2b8d2aec1941ebc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.07597bc2f95a4c7ca2b8d2aec1941ebc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ad6180056415488d95d2ada8048ac11f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ad6180056415488d95d2ada8048ac11f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.782682+00:00",
+  "updated_at": "2026-09-07T09:02:58.801709+00:00"
+}

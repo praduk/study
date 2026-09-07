@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "129994c6a00846179a15d9a5472b2ba5",
+  "title": "Gronwall’s inequality and dependence on initial values",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "81a35d7c173d40a48cfaa03f9b4bac3b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.81a35d7c173d40a48cfaa03f9b4bac3b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0f7ba5d1b40140ef9541bcac39c9e885",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0f7ba5d1b40140ef9541bcac39c9e885.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:12.239754+00:00",
+  "updated_at": "2026-09-07T07:49:13.568736+00:00"
+}

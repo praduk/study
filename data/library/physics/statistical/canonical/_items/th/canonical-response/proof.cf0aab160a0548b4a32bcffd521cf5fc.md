@@ -1,0 +1,1 @@
+Differentiating normalized weights yields $\partial_h p_i=\beta p_i(A_i-\langle A\rangle)$. Multiply by $A_i$ and sum to obtain $\beta(\langle A^2\rangle-\langle A\rangle^2)$. If the measured observable itself depends on $h$, an additional term $\langle\partial_h A\rangle$ must be included. This is an equilibrium response identity, not a time-dependent response law.

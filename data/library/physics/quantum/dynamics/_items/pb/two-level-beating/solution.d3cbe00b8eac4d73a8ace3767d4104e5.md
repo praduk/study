@@ -1,0 +1,1 @@
+Evolution gives $\psi(t)=(|0\rangle+e^{-i\Delta t/\hbar}|1\rangle)/\sqrt2$. The return amplitude is $(1+e^{-i\Delta t/\hbar})/2$, whose squared modulus is $(1+\cos(\Delta t/\hbar))/2=\cos^2(\Delta t/(2\hbar))$. Its first zero for $t>0$ is $t=\pi\hbar/\Delta$. The energy probabilities remain $1/2,1/2$ throughout, even though this different measurement probability oscillates.

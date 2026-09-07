@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c07eac3a87894a9caad72400a8dc0d2c",
+  "title": "The middle-thirds Cantor set has measure zero",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:analysis:measure-construction:df:lebesgue-measure, @math:analysis:measure-construction:th:measure-continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c172395364324ff0b2c1099b3cfaecdd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c172395364324ff0b2c1099b3cfaecdd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f1c845d6d91c4c6eac17b487aa81d592",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f1c845d6d91c4c6eac17b487aa81d592.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:22.581114+00:00",
+  "updated_at": "2026-09-07T08:11:25.992236+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "23949a70762f4333ba1c1bccf0efacbc",
+  "title": "Weak convergence without norm convergence",
+  "rank": 9187343239835811840,
+  "header": "Prerequisites: @math:analysis:hilbert-spaces:df:weak-convergence, @math:analysis:hilbert-spaces:th:riesz-hilbert.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cc4a811116ce48b3800bd540d20e8d7b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cc4a811116ce48b3800bd540d20e8d7b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "23647478d87342a78a0de27385c8f82b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.23647478d87342a78a0de27385c8f82b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:23.412991+00:00",
+  "updated_at": "2026-09-07T08:14:25.744662+00:00"
+}

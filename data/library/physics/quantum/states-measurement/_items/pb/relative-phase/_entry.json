@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6e946a892b444b74a05758d49d546267",
+  "title": "A relative phase changes the measured spin",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "deae294cd9f04cddace16758fce49ae7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.deae294cd9f04cddace16758fce49ae7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff942ff89532461d927d97328739c6bd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ff942ff89532461d927d97328739c6bd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.875899+00:00",
+  "updated_at": "2026-09-07T09:11:20.895737+00:00"
+}

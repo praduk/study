@@ -1,0 +1,3 @@
+A prescribed temperature is a Dirichlet condition. A prescribed outward conductive flux is $-k\partial_nT=q_{\rm out}$, where positive $q_{\rm out}$ removes heat. A modeled convective boundary has $-k\partial_nT=h(T-T_\infty)$, a Robin condition. The normal orientation fixes the signs.
+
+Fourier diffusion predicts immediate nonzero tails from localized initial disturbances on unbounded space. This is a property of the parabolic approximation, not a claim that microscopic thermal information travels infinitely fast. At scales where that issue matters, the local equilibrium and instantaneous-flux assumptions require revision.

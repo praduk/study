@@ -1,0 +1,3 @@
+For a subset $A$ and closed set $C$, $\closure{A}\subseteq C$ exactly when $A\subseteq C$, because closure is the smallest closed set containing $A$. This is the order-adjunction condition $\operatorname{cl}\dashv i$.
+
+The join of arbitrary closed subsets $(C_j)$ in the closed-set poset is $\closure{\bigcup_j C_j}$, which need not be their union. Thus preservation of joins says $\closure{\bigcup_j A_j}=\closure{\bigcup_j\closure{A_j}}$. One inclusion uses $A_j\subseteq\closure{A_j}$; the other uses that the closed set $\closure{\bigcup_j A_j}$ contains every $\closure{A_j}$. There is no assertion that arbitrary unions of closed subsets are closed.

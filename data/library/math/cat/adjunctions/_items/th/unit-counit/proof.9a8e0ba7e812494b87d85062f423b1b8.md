@@ -1,0 +1,3 @@
+Define $\eta_A=\Phi_{A,FA}(\id_{FA})$ and $\varepsilon_B=\Phi^{-1}_{GB,B}(\id_{GB})$. Naturality of $\Phi$ in $B$ gives the first transposition formula; naturality of its inverse in $A$ gives the second. For $u:A\to A'$, applying naturality to $F(u)$ in the two variables gives $GF(u)\eta_A=\eta_{A'}u$, so $\eta$ is natural. Dually, for $v:B\to B'$, the inverse bijections give $v\varepsilon_B=\varepsilon_{B'}FG(v)$, so $\varepsilon$ is natural.
+
+Since $\Phi^{-1}(\eta_A)=\id_{FA}$, the second formula gives $\varepsilon_{FA}F(\eta_A)=\id_{FA}$. Since $\Phi(\varepsilon_B)=\id_{GB}$, the first gives the other triangle identity. These equalities follow from the actual chosen bijections, not merely from arbitrary isomorphisms involving $GF$ and $FG$.

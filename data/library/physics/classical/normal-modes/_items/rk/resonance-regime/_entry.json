@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a85aaee92b224a3f9fb22c4340610f4a",
+  "title": "Resonance depends on the observable and damping",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f709230926d415c8ec8a235546e9e6e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f709230926d415c8ec8a235546e9e6e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.498560+00:00",
+  "updated_at": "2026-09-07T09:04:11.498565+00:00"
+}

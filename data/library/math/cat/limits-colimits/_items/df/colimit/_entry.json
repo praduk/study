@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d171c264949f437f81e76ad168231c4a",
+  "title": "Colimits, pushouts, and coequalizers",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "40a32d6545e54f6cb237d4a7c75a2dd4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.40a32d6545e54f6cb237d4a7c75a2dd4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:11.337530+00:00",
+  "updated_at": "2026-09-07T07:56:11.337554+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f45c93e0b8b54c978c37bc8a36b25358",
+  "title": "Criterion for lifting a map",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "557a20ae2aa44ee695bb87cab7af0b67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.557a20ae2aa44ee695bb87cab7af0b67.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:20.789175+00:00",
+  "updated_at": "2026-09-07T08:02:20.789182+00:00"
+}

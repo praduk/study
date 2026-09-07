@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ad4a37b0180e4eb7bd085f6c6df5d317",
+  "title": "Curvature tensor and its sign convention",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6b42e46e8f7e4ee482e612d47823711e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6b42e46e8f7e4ee482e612d47823711e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:21.325240+00:00",
+  "updated_at": "2026-09-07T08:27:29.225962+00:00"
+}

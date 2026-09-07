@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "301c7fbbf73047219a4f97b97d8b7502",
+  "title": "Inverse-square attraction gives conic orbits",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:classical:central-forces:th:effective-potential.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "64335501daa442349e12dfde97aea75d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.64335501daa442349e12dfde97aea75d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "84024002d748479c983703c0d391a114",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.84024002d748479c983703c0d391a114.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.035036+00:00",
+  "updated_at": "2026-09-07T09:04:10.100362+00:00"
+}

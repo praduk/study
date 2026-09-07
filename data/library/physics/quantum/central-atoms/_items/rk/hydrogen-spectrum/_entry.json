@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b1e222a7bc4646e1a73649dc910428fa",
+  "title": "Hydrogenic spectrum: a specified Coulomb model",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "866afa307c124eaf98cec8b4b0bd1345",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.866afa307c124eaf98cec8b4b0bd1345.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.556073+00:00",
+  "updated_at": "2026-09-07T09:11:22.556079+00:00"
+}

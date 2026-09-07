@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a01336cf8da0450a9d344d44f2c305da",
+  "title": "An ideal linear polarizer is a projection model",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2999a8e4c9aa4b889ef04814c6caf890",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2999a8e4c9aa4b889ef04814c6caf890.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:19.041235+00:00",
+  "updated_at": "2026-09-07T09:04:19.041242+00:00"
+}

@@ -1,0 +1,3 @@
+The Standard Model is a quantum-field framework for electromagnetic, weak, and strong interactions. Its matter content includes quarks and leptons; gauge bosons mediate its gauge interactions and the Higgs field participates in electroweak symmetry breaking. Gravity is outside that model. This introductory overview does not derive its particle content or measured parameters from mathematical symmetry alone.
+
+[CERN's Standard Model overview](https://home.cern/science/physics/standard-model/) describes both its experimental success and its limitations. A full course would add representations, chiral fermions, electroweak theory, QCD, scattering calculations, and precision comparison with data.

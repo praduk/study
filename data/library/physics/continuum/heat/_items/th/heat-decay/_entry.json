@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7fdc2948bc7549c286e53f6701caa058",
+  "title": "An energy estimate for thermal equilibration",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:continuum:heat:th:heat-equation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aa6fbb168a264186ab10e8ac7f8aaede",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aa6fbb168a264186ab10e8ac7f8aaede.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b52a181b397c459985d7ab99a28711fb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b52a181b397c459985d7ab99a28711fb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.995045+00:00",
+  "updated_at": "2026-09-07T09:04:15.108648+00:00"
+}

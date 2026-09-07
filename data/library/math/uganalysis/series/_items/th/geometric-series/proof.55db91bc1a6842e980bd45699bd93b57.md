@@ -1,0 +1,1 @@
+Multiplying the finite sum by $1-r$ yields $1-r^{N+1}$; since $r^{N+1}\to0$, the formula follows. If $L<1$, choose $L<q<1$. Eventually $|a_n|^{1/n}\le q$, so $|a_n|\le q^n$ and comparison applies. If $L>1$, there is $q>1$ with $|a_n|^{1/n}>q$ for infinitely many $n$, so the terms do not tend to zero. Both $\sum1/n$ and $\sum1/n^2$ have $L=1$ but opposite convergence behavior.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b5eb84f00c26433b82d931094cdf6dc7",
+  "title": "A two-level return probability",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "843ecbd4b6ca4f40b9d81bdb81df6ed1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.843ecbd4b6ca4f40b9d81bdb81df6ed1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3cbe00b8eac4d73a8ace3767d4104e5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d3cbe00b8eac4d73a8ace3767d4104e5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.066390+00:00",
+  "updated_at": "2026-09-07T09:11:21.103581+00:00"
+}

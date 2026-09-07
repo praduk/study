@@ -1,0 +1,1 @@
+If $g$ is inverse to $f$, applying $F$ to both inverse equations shows $F(g)$ is inverse to $F(f)$. Conversely, if $F(f):FA\to FB$ has inverse $u:FB\to FA$, fullness supplies $g:B\to A$ with $F(g)=u$. Then $F(gf)=\id_{FA}=F(\id_A)$ and $F(fg)=F(\id_B)$. Faithfulness implies $gf=\id_A$ and $fg=\id_B$, proving reflection.

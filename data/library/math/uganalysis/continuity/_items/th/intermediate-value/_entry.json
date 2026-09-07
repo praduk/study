@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8fa111fcb0e84075a5115da57faaa278",
+  "title": "Intermediate value theorem",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:th:supremum-approximation, @math:uganalysis:continuity:th:sequential-continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c04396b6be94bb29d4658cf99e57aac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c04396b6be94bb29d4658cf99e57aac.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eff47880c43e4e0bb2aa80e2091334fa",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eff47880c43e4e0bb2aa80e2091334fa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:11.454643+00:00",
+  "updated_at": "2026-09-07T08:09:13.751312+00:00"
+}

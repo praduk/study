@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "12e8525eb8ae456f8d2e21367c00376b",
+  "title": "Finite signed measures and absolute continuity",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:analysis:measure-construction:df:measure-space.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba11a8184fd84559a5c9b12c1eb22b7b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba11a8184fd84559a5c9b12c1eb22b7b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:09.410305+00:00",
+  "updated_at": "2026-09-07T08:13:09.410314+00:00"
+}

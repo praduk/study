@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "97efc992b25c41aab19e8b61d5b34c17",
+  "title": "Tensor and Hom for finite cyclic groups",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f25c8493c89e4d5ca5a994d842f9c621",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f25c8493c89e4d5ca5a994d842f9c621.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5a676f2958be422b8f34361221e6ef35",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5a676f2958be422b8f34361221e6ef35.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:23.815384+00:00",
+  "updated_at": "2026-09-07T07:54:25.425717+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "58481f24bf13434aa8da90c6b1894e53",
+  "title": "What a terminal-speed measurement determines",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb4f9a4690f546558a8fc95e9a723eb0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb4f9a4690f546558a8fc95e9a723eb0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "49cef26fdfb249d0aaaa182065d992ac",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.49cef26fdfb249d0aaaa182065d992ac.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:26.687505+00:00",
+  "updated_at": "2026-09-07T08:51:29.188816+00:00"
+}

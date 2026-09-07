@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "41b7b4d4ff924d0fbb23363284d2e635",
+  "title": "An elementary average order of the divisor function",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be2c6bf14ff4430aa6c84d4873393f9b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be2c6bf14ff4430aa6c84d4873393f9b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "069abdd6a4064ea99062895805b8c11e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.069abdd6a4064ea99062895805b8c11e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:47.836793+00:00",
+  "updated_at": "2026-09-07T08:22:43.454518+00:00"
+}

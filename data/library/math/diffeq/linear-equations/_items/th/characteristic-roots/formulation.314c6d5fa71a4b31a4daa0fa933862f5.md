@@ -1,0 +1,1 @@
+For real constants $a,b$, solve $y''+ay'+by=0$ using the roots of $r^2+ar+b$. Distinct real roots $r_1,r_2$ give the basis $e^{r_1t},e^{r_2t}$; a repeated real root $r$ gives $e^{rt},te^{rt}$; roots $\alpha\pm i\beta$ with $\beta>0$ give the real basis $e^{\alpha t}\cos\beta t,e^{\alpha t}\sin\beta t$.

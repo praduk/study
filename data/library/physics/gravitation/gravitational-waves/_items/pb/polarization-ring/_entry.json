@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "29279bc2d3e94767b89835a9eb32d567",
+  "title": "A ring of test masses in a weak wave",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ff368163d364162b97f4412bf559acd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ff368163d364162b97f4412bf559acd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fc0bbc85e1724330a42081d462f3e0fe",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.fc0bbc85e1724330a42081d462f3e0fe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.985567+00:00",
+  "updated_at": "2026-09-07T09:18:17.064607+00:00"
+}

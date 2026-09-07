@@ -1,0 +1,1 @@
+Coordinate vector fields commute, so the three bracket terms in the Koszul formula vanish. Applying it to $X=\partial_i,Y=\partial_j,Z=\partial_\ell$ gives $2g_{k\ell}\Gamma^k_{ij}=\partial_i g_{j\ell}+\partial_j g_{i\ell}-\partial_\ell g_{ij}$. Multiply by the inverse matrix to isolate $\Gamma^k_{ij}$. Symmetry in $i,j$ is visible and agrees with torsion freeness.

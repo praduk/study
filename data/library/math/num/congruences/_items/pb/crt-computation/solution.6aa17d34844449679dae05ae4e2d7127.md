@@ -1,0 +1,1 @@
+The first and third conditions give $x=2+21t$. Modulo $5$, this is $2+t\equiv3$, so $t\equiv1\pmod5$ and $x\equiv23\pmod{105}$. Direct reductions check all three conditions. For the second system $\gcd(6,9)=3$ but $1\not\equiv2\pmod3$, so it is inconsistent.

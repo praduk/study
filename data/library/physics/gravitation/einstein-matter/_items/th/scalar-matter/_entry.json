@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "89c832e2e51a4ae791e04a9003052667",
+  "title": "A minimally coupled scalar field",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "035f917a6e494205b008264359f24505",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.035f917a6e494205b008264359f24505.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9ea5a3fcf3504a158d9463fa447ab4f7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9ea5a3fcf3504a158d9463fa447ab4f7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.026377+00:00",
+  "updated_at": "2026-09-07T09:18:16.069865+00:00"
+}

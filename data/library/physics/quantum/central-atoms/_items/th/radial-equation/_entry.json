@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3d1c2021039e42ee9405baa3ff9f704d",
+  "title": "Reduction to the radial Schrödinger equation",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ddd94bf7a0a74123b0becef0ea47d031",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ddd94bf7a0a74123b0becef0ea47d031.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0e8b947a346549f396dc77fdc960b95e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0e8b947a346549f396dc77fdc960b95e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.433388+00:00",
+  "updated_at": "2026-09-07T09:11:22.511797+00:00"
+}

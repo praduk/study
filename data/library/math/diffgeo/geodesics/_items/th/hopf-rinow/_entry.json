@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3bdd0413b73f4b52a885493d6927b537",
+  "title": "Hopf–Rinow theorem",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b651db0e4be45279c3ace9c2db8c1a7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b651db0e4be45279c3ace9c2db8c1a7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:14.554958+00:00",
+  "updated_at": "2026-09-07T08:06:14.554965+00:00"
+}

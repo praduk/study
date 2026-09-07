@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "70073e6428de428e8f400fbcdfdd3bfe",
+  "title": "Cauchy criterion in the real numbers",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:uganalysis:sequences:th:bolzano-weierstrass.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6188d47d82b3460ebcc10eca7c4ab4da",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6188d47d82b3460ebcc10eca7c4ab4da.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1788a693f0ca46959fdb8983e10ed04b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1788a693f0ca46959fdb8983e10ed04b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:32.637275+00:00",
+  "updated_at": "2026-09-07T08:08:34.864179+00:00"
+}

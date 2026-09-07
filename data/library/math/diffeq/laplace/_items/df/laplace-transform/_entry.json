@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "770a557525274cc5a792d07ec5a34eb8",
+  "title": "Laplace transform and exponential order",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1b3a278da02d4a748c1f3427dd232e39",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1b3a278da02d4a748c1f3427dd232e39.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:23.835122+00:00",
+  "updated_at": "2026-09-07T07:51:23.835131+00:00"
+}

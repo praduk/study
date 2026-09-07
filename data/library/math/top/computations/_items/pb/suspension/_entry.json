@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ae3373f15d074ebda8c4147b71f20787",
+  "title": "Reduced homology of a suspension",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cba76e5367bb43248decb645797f8e67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cba76e5367bb43248decb645797f8e67.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "69b7da6420e247169544912b879f6f2d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.69b7da6420e247169544912b879f6f2d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:26.385313+00:00",
+  "updated_at": "2026-09-07T08:03:28.494743+00:00"
+}

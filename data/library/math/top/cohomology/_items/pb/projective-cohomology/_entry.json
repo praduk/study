@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "db2c50314ee34988a87bd8ad57323f62",
+  "title": "Integral cohomology detects projective-plane torsion",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c4bf95f2d3440278c5fc8d2273aa36e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c4bf95f2d3440278c5fc8d2273aa36e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "58d727c182044748b0b7aee7a2ce136a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.58d727c182044748b0b7aee7a2ce136a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:40.433564+00:00",
+  "updated_at": "2026-09-07T08:03:42.487200+00:00"
+}

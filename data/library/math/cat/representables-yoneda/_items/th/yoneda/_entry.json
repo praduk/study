@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "604e0868e8174629880e68da6bc1e06d",
+  "title": "Yoneda lemma, covariant form",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bfe5661fafb4482db2871dde7660805a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bfe5661fafb4482db2871dde7660805a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eb9f876d20ae43dd9684bcd62f66d4da",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eb9f876d20ae43dd9684bcd62f66d4da.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:22.642745+00:00",
+  "updated_at": "2026-09-07T08:23:54.372043+00:00"
+}

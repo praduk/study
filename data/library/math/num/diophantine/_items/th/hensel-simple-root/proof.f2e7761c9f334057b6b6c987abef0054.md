@@ -1,0 +1,1 @@
+Expanding each monomial by the binomial theorem gives $f(a+tp^k)\equiv f(a)+tp^kf'(a)\pmod{p^{k+1}}$, since $2k\ge k+1$. Divide by $p^k$; the required condition is $f(a)/p^k+t f'(a)\equiv0\pmod p$. The derivative is a unit, so this has exactly one solution for $t$. The lifted derivative remains nonzero modulo $p$, allowing iteration.

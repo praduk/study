@@ -1,0 +1,1 @@
+Between coaxial perfect conductors of radii $a<b$, a vacuum transmission line has transverse fields $E_s=V/[s\log(b/a)]$ and $B_\varphi=\mu_0 I/(2\pi s)$, with $V$ the inner-minus-outer potential and $I$ current along $+z$ on the inner conductor. Find the energy flux and integrated power through the annulus.

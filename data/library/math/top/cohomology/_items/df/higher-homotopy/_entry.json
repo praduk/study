@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0ca30574f4104e3c9f4dc14c8455f9f2",
+  "title": "Higher homotopy groups and connectivity",
+  "rank": 9221120237041090560,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c19b2a0886734e7493fb5f9b43886a1f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c19b2a0886734e7493fb5f9b43886a1f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:56.861013+00:00",
+  "updated_at": "2026-09-07T08:03:56.861055+00:00"
+}

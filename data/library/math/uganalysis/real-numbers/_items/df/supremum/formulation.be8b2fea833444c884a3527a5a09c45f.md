@@ -1,0 +1,3 @@
+For nonempty $A\subseteq\R$, a number $u$ is an upper bound when $a\le u$ for every $a\in A$. Its supremum $\sup A$ is an upper bound no larger than any other upper bound. A maximum is an element of $A$ that is an upper bound. Define lower bound, infimum, and minimum by reversing inequalities.
+
+The completeness property of $\R$ says every nonempty subset bounded above has a real supremum. We take $\R$ to be a complete ordered field. The set $(0,1)$ has supremum $1$ and infimum $0$ but no maximum or minimum. In the extended real line one may set $\sup\varnothing=-\infty$, but that is not a real supremum.

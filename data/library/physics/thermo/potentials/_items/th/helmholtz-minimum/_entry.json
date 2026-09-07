@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ea2a69c446a04d489289f8cbd0164cb9",
+  "title": "Fixed-bath Helmholtz criterion",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f38f5f916e8d45d18cd60d3cdac3aac1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f38f5f916e8d45d18cd60d3cdac3aac1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "130e53e14d654c4d9c66cce4dff9c447",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.130e53e14d654c4d9c66cce4dff9c447.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.004610+00:00",
+  "updated_at": "2026-09-07T08:57:25.046504+00:00"
+}

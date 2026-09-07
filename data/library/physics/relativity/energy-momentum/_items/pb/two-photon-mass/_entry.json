@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "41fdf040140441498986f75b861cf61f",
+  "title": "Invariant mass of two photon beams",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fbb1e3d62e59475aa38b9f3240423fbe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fbb1e3d62e59475aa38b9f3240423fbe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5b17d3b2efa44338a956569741507ad5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5b17d3b2efa44338a956569741507ad5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.868218+00:00",
+  "updated_at": "2026-09-07T09:02:59.935668+00:00"
+}

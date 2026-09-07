@@ -1,0 +1,3 @@
+For a circle with counterclockwise orientation viewed from $+z$, Faraday's law gives $2\pi sE_\varphi=-\pi\min(s^2,a^2)\dot B$. Hence $E_\varphi=-s\dot B/2$ for $s<a$ and $E_\varphi=-a^2\dot B/(2s)$ for $s>a$. The formulas agree at $a$.
+
+An exterior loop that links the solenoid does not bound a surface wholly within the exterior. The exterior field can be curl-free there while having nonzero circulation: that region is not simply connected. A single-valued global electrostatic potential on the exterior cannot represent this field. In an actual changing solenoid, omitted end fields and displacement-current corrections limit the idealization.

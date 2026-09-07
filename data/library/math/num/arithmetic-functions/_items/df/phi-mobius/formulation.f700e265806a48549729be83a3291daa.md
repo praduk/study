@@ -1,0 +1,1 @@
+For $n\ge1$, $\varphi(n)$ counts $1\le a\le n$ with $\gcd(a,n)=1$. Define $\mu(1)=1$, $\mu(n)=0$ if a prime square divides $n$, and $\mu(n)=(-1)^r$ if $n$ is a product of $r$ distinct primes. The divisor-count and divisor-sum functions are $\tau(n)=\sum_{d\mid n}1$ and $\sigma(n)=\sum_{d\mid n}d$, with positive divisors understood.

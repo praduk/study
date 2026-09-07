@@ -1,0 +1,1 @@
+Sum Newton's equations. Each internal pair contributes $F_{ab}+F_{ba}=0$, leaving the external force. Differentiating $L$ gives $\sum_a v_a\times m_av_a+x_a\times m_a\dot v_a$. The first sum vanishes. The internal torque of the pair $a,b$ is $(x_a-x_b)\times F_{ab}$, which vanishes under centrality. The remaining terms are exactly the external torque.

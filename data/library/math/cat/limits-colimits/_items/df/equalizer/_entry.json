@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ab66aa141aeb45919052c7ab1273433d",
+  "title": "Equalizers and kernels",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "367eb8b2f1164ff6a76acff59672bc4c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.367eb8b2f1164ff6a76acff59672bc4c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:03.679870+00:00",
+  "updated_at": "2026-09-07T07:56:03.679889+00:00"
+}

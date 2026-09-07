@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "27ee18f75c3f4fc29ef001b27051ecbb",
+  "title": "Constant-coefficient second-order solutions",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "314c6d5fa71a4b31a4daa0fa933862f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.314c6d5fa71a4b31a4daa0fa933862f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4b910f5788854f508536042bab4a180a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4b910f5788854f508536042bab4a180a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:26.350312+00:00",
+  "updated_at": "2026-09-07T07:49:27.758062+00:00"
+}

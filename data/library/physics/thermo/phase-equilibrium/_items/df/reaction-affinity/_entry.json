@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "213f7c2c771d4da6a397f8f38b728791",
+  "title": "Reaction coordinates and dimensionless activities",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d4b89ed2c1d4681ab8dae4582f72ebb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d4b89ed2c1d4681ab8dae4582f72ebb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.987743+00:00",
+  "updated_at": "2026-09-07T08:57:25.987748+00:00"
+}

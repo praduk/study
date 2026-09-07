@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eaabc060b70a4d0f9e21a6477359de27",
+  "title": "A small frequency error accumulates",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6fdcf7ad23634ecd80e86a28749ce8fc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6fdcf7ad23634ecd80e86a28749ce8fc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "277ad899df6f408fa9ddafb6468e17d3",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.277ad899df6f408fa9ddafb6468e17d3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:16.461006+00:00",
+  "updated_at": "2026-09-07T08:52:19.128012+00:00"
+}

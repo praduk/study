@@ -1,0 +1,3 @@
+An inner product on a complex vector space is linear in its first argument, conjugate-linear in its second, satisfies $\iprod{x}{y}=\overline{\iprod{y}{x}}$, and has $\iprod{x}{x}>0$ for $x\ne0$. Over $\R$, conjugation has no effect. It induces $\norm x=\sqrt{\iprod{x}{x}}$. A Hilbert space is complete in this norm.
+
+Vectors are orthogonal when their inner product is zero. For $M\subseteq H$, define $M^\perp=\{x:\iprod{x}{m}=0\text{ for all }m\in M\}$. On $L^2$, the inner product is $\iprod f g=\int f\overline g\,d\mu$; Hölder guarantees its existence.

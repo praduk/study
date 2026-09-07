@@ -1,0 +1,3 @@
+For two linear strings joined at a massless junction $x=0$ with the same tension $T$, assume continuity of displacement and of transverse force: $y_1(0,t)=y_2(0,t)$ and $T\partial_xy_1(0,t)=T\partial_xy_2(0,t)$. A junction mass, damping, or different geometry changes these conditions.
+
+For optical phase matching, assume a stationary plane interface between homogeneous isotropic transparent media. At a fixed frequency $\omega>0$, traveling optical waves have $|k_j|=n_j\omega/c_0$, with real refractive indices $n_j>0$ and vacuum speed $c_0$. Matching linear boundary fields preserves temporal frequency and tangential phase. These are specified interface and propagation models; they are not assumptions about arbitrary structured surfaces.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3075e70216f54cb98249e395e2f3a723",
+  "title": "Clapeyron slope of a coexistence curve",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "73498303b856474a96498035c3baeda5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.73498303b856474a96498035c3baeda5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8859c6373d514bc3887d63f451790107",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8859c6373d514bc3887d63f451790107.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.768864+00:00",
+  "updated_at": "2026-09-07T08:57:25.834496+00:00"
+}

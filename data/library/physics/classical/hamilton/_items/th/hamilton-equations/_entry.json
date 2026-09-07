@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a9020dc02ceb407eb076c66fbb6dffae",
+  "title": "Hamilton equations and energy evolution",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:classical:hamilton:df:legendre, @physics:classical:lagrange:th:euler-lagrange.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d9b5893cd1747ef9b488783c41b68e6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d9b5893cd1747ef9b488783c41b68e6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cc67da7b94184311978c920bf27dd35e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cc67da7b94184311978c920bf27dd35e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.442843+00:00",
+  "updated_at": "2026-09-07T09:04:09.485740+00:00"
+}

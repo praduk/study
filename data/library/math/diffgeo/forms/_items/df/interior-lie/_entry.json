@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5a253f425ef548a2986c8e2272de3c68",
+  "title": "Interior product and Lie derivative",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9e5172cd288d4c069329eac73c18752c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9e5172cd288d4c069329eac73c18752c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:05.654960+00:00",
+  "updated_at": "2026-09-07T08:05:05.654965+00:00"
+}

@@ -1,0 +1,1 @@
+Boundedness implies $\norm{Tx-Ty}\le C\norm{x-y}$, hence continuity everywhere. That implies continuity at zero. If $T$ is continuous at zero, choose $\delta>0$ so $\norm z<\delta$ implies $\norm{Tz}<1$. For $x\ne0$, set $z=\delta x/(2\norm x)$. Linearity gives $\norm{Tx}<2\norm x/\delta$, while $T0=0$. Thus $T$ is bounded.

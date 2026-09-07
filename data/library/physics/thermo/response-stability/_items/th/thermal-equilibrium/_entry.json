@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a03b068aef2d418aad3a99456c486a11",
+  "title": "Entropy stationarity under energy exchange",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "58ea046a08fc4b00ac321d97f546d321",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.58ea046a08fc4b00ac321d97f546d321.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d2fb24c987264a5f92edb0f23bd1a16a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d2fb24c987264a5f92edb0f23bd1a16a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.384232+00:00",
+  "updated_at": "2026-09-07T08:57:25.438923+00:00"
+}

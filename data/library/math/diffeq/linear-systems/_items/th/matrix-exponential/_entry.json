@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fe5771eb2a204a758145dbcaf8f82301",
+  "title": "The matrix exponential solves constant systems",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8f6a548f8e3349b1858df44b10257029",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8f6a548f8e3349b1858df44b10257029.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "15c8b49b657c4ca8b2a48201ee326513",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.15c8b49b657c4ca8b2a48201ee326513.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:35.320156+00:00",
+  "updated_at": "2026-09-07T07:49:36.695889+00:00"
+}

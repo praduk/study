@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a10d672ecab14365b454d67cd99dc916",
+  "title": "Adjunctions through natural Hom bijections",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "24688a9b83d14958894f28b2fc7e0bfc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.24688a9b83d14958894f28b2fc7e0bfc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:39.263748+00:00",
+  "updated_at": "2026-09-07T08:24:02.271966+00:00"
+}

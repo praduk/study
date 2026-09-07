@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7a2fccdad8be4cbdac2b5a0d3ba06979",
+  "title": "Electromagnetism for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "Classical fields, sources, boundary data, energy transport, and radiation in SI units.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "18795a97086745bc8003b3a362a6e380",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.18795a97086745bc8003b3a362a6e380.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.283017+00:00",
+  "updated_at": "2026-09-07T09:02:56.283205+00:00"
+}

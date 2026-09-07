@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "faae3dff0e144132aaef872988f84346",
+  "title": "Rings, ideals, and quotient rings",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c06ee9d4685c4ebd842a60315d8a4cbd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c06ee9d4685c4ebd842a60315d8a4cbd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:30.072169+00:00",
+  "updated_at": "2026-09-07T07:53:30.072176+00:00"
+}

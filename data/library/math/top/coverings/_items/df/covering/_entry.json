@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6aa9f7177fcd420fae0da8dfb5028ca4",
+  "title": "Covering maps, sheets, and deck transformations",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "caf682050eee411caf6faa930cba4653",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.caf682050eee411caf6faa930cba4653.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:08.843460+00:00",
+  "updated_at": "2026-09-07T08:02:08.843466+00:00"
+}

@@ -1,0 +1,1 @@
+In the Newtonian weak-field model $\Phi(\mathbf x)=-GM/r$ for $r>0$, neighboring freely falling particles have first-order relative acceleration $\delta\ddot{\mathbf x}=-(\operatorname{Hess}\Phi)\boldsymbol\xi$. Compute the radial and transverse eigenvalues. Explain why a freely falling frame does not eliminate this effect.

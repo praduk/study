@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cf9b36d257e442cda8003d219889c096",
+  "title": "Hausdorffness and the diagonal",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d7ff5a490b0c42e6916cd3c932875433",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d7ff5a490b0c42e6916cd3c932875433.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "28eaa88bc69d432095496ec2939531fb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.28eaa88bc69d432095496ec2939531fb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:40.917090+00:00",
+  "updated_at": "2026-09-07T08:00:42.652181+00:00"
+}

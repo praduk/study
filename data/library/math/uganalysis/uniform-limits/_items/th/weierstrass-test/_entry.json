@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "294c0d7169384a3992e0694d07b8361a",
+  "title": "Weierstrass M-test",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:series:th:comparison-absolute, @math:uganalysis:uniform-limits:df:uniform-convergence.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "70864564565c4dd6aa6ec270b1cdb32e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.70864564565c4dd6aa6ec270b1cdb32e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2309d705910c49148f02c4fec0f7e5ff",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2309d705910c49148f02c4fec0f7e5ff.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:31.618723+00:00",
+  "updated_at": "2026-09-07T08:10:33.787115+00:00"
+}

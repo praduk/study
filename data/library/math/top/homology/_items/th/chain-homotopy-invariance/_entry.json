@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eb7e600825cd463a869dd93d59e45e05",
+  "title": "Chain-homotopic maps induce the same homology map",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "30a92cc0cc624d1ab12f622008001ed6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.30a92cc0cc624d1ab12f622008001ed6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e5116d1425514ca59ac213f608d4e017",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e5116d1425514ca59ac213f608d4e017.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:52.520433+00:00",
+  "updated_at": "2026-09-07T08:02:54.414702+00:00"
+}

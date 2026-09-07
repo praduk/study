@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7455808d174a41d3af2bc068a05f8970",
+  "title": "A fundamental pair for a second-order equation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "76d4ba55b6c54f539000bbde9f197832",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.76d4ba55b6c54f539000bbde9f197832.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "787982ebcc1b474db6e4cd214697504a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.787982ebcc1b474db6e4cd214697504a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:21.967368+00:00",
+  "updated_at": "2026-09-07T07:49:23.328853+00:00"
+}

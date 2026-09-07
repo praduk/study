@@ -1,0 +1,1 @@
+Differentiate $U(\lambda S,\lambda V,\lambda N)=\lambda U(S,V,N)$ at $\lambda=1$. Insert $U_S=T,U_V=-p,U_N=\mu$ to obtain Euler's relation. Differentiate that relation and subtract the fundamental differential; the remaining terms give Gibbs–Duhem. Extensivity is a necessary model assumption here.

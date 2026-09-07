@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "47fc59cda0a04e7bbc88ef87e07b21ae",
+  "title": "Four-velocity, four-acceleration, and rest spaces",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "72edd387005e4b3c843aa70504a701ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.72edd387005e4b3c843aa70504a701ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.099949+00:00",
+  "updated_at": "2026-09-07T09:02:59.099952+00:00"
+}

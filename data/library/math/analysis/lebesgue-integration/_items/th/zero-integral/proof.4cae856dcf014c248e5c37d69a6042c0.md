@@ -1,0 +1,1 @@
+If the integral is zero, $f\ge n^{-1}1_{\{f\ge1/n\}}$ implies $\mu(\{f\ge1/n\})=0$ for every positive integer $n$. Their union is $\{f>0\}$, which is null. Conversely, a nonnegative function supported on a measurable null set has integral zero: every simple function below it has zero integral. Apply this result to $|f-g|$ for the final assertion.

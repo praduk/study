@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c6149f04005a4482a52a29711eae4366",
+  "title": "Expectation evolution in finite dimension",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3426c9bf9be84f929b13ab75d93cd816",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3426c9bf9be84f929b13ab75d93cd816.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6bc88a487caa48cca162e359ef5180ff",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6bc88a487caa48cca162e359ef5180ff.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.944226+00:00",
+  "updated_at": "2026-09-07T09:11:20.970234+00:00"
+}

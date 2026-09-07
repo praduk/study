@@ -1,0 +1,1 @@
+Multiplication by a unit $a$ permutes the units modulo $n$: its inverse is multiplication by $a^{-1}$. Multiplying all unit classes before and after the permutation gives $a^{\varphi(n)}U=U$ with $U$ itself a unit, so it cancels. For a prime $p$, use $\varphi(p)=p-1$ when $p\nmid a$. If $p\mid a$, both sides of the second congruence are zero.

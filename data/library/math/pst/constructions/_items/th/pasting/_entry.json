@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ffb00ae59dd54d9b85462c682264cea6",
+  "title": "Finite closed pasting lemma",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d594f9741fa4510b59c5711607c3734",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d594f9741fa4510b59c5711607c3734.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "88551c344e7c4022802a8ffae2e9c98e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.88551c344e7c4022802a8ffae2e9c98e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:32.588357+00:00",
+  "updated_at": "2026-09-07T08:00:34.306340+00:00"
+}

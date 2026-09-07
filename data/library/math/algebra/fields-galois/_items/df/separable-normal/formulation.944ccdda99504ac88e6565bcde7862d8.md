@@ -1,0 +1,3 @@
+A splitting field of $f\in K[x]$ is an extension generated over $K$ by all roots of $f$, in which $f$ factors into linear factors. An algebraic element is separable if its minimal polynomial has distinct roots in a splitting field. An algebraic extension is separable if every element is separable.
+
+An algebraic extension $L/K$ is normal if every irreducible polynomial in $K[x]$ with a root in $L$ splits over $L$. A finite extension is Galois if it is normal and separable. Its Galois group $\operatorname{Gal}(L/K)$ is the group of field automorphisms of $L$ fixing $K$ pointwise. These conditions are both required; normality alone does not ensure separability in positive characteristic.

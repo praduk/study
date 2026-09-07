@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0faa84c837404124be78ccaa772680c8",
+  "title": "Isolated singularities and meromorphic functions",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c13a72d1bdc143ffb5c7a825f4ef2693",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c13a72d1bdc143ffb5c7a825f4ef2693.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:19.161411+00:00",
+  "updated_at": "2026-09-07T08:16:19.161418+00:00"
+}

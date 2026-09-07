@@ -1,0 +1,1 @@
+The sine series gives $\sin z/z=1-z^2/3!+\cdots$, so the first is removable with extension value $1$. The cosine series gives $(1-\cos z)/z^4=(1/2)z^{-2}-1/4!+\cdots$, so the second has a pole of order two. The expansion $e^{1/z}=\sum_{n=0}^{\infty}z^{-n}/n!$ has infinitely many nonzero negative powers and converges for every $z\ne0$, so zero is essential.

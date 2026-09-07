@@ -1,0 +1,1 @@
+For $n\ge2$ and $\gcd(a,n)=1$, the order $\operatorname{ord}_n(a)$ is the least positive $r$ such that $a^r\equiv1\pmod n$. Existence follows from Euler’s theorem. A primitive root modulo $n$ is a unit of order $\varphi(n)$, so its powers exhaust all units. For example $3$ has order $4$ modulo $5$. Modulo $8$, every unit squares to $1$, so no primitive root exists.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "82e7cfd4387640aca40921630ed7b0ac",
+  "title": "Transition functions and bundle constructions",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "22b5f15ad9454a83875a28dd1409a763",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.22b5f15ad9454a83875a28dd1409a763.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:44.879418+00:00",
+  "updated_at": "2026-09-07T08:04:44.879426+00:00"
+}

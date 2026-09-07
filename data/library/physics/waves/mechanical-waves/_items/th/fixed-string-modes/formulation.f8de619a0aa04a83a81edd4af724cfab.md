@@ -1,0 +1,1 @@
+For $y_{tt}=c^2y_{xx}$ on $0<x<L$, $y(0,t)=y(L,t)=0$, the nonzero separated oscillatory modes have shapes $\sin(n\pi x/L)$ and angular frequencies $\omega_n=n\pi c/L$, $n=1,2,\ldots$. Distinct mode shapes are orthogonal on $[0,L]$.

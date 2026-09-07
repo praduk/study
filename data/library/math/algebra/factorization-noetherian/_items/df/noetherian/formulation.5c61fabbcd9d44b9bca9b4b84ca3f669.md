@@ -1,0 +1,3 @@
+A module $M$ over a ring is Noetherian if every ascending chain of submodules eventually stabilizes. Equivalently, every submodule is finitely generated. For a commutative ring $R$, being Noetherian means its ideals satisfy this condition.
+
+To see the equivalence, the union of an ascending chain is a submodule; finitely many generators all occur at one stage. Conversely, a submodule with no finite generating set allows a strictly increasing chain obtained by adding an element outside the span at each stage. This latter implication uses the ordinary choice principles of the set-theoretic foundation.

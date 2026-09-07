@@ -1,0 +1,1 @@
+Direct differentiation gives $C_V=cNk_B$. Since $H=U+pV=(c+1)Nk_BT$, $C_p=(c+1)Nk_B$. The equation $V=Nk_BT/p$ gives $\alpha=1/T$ and $\kappa_T=1/p$. Hence $TV\alpha^2/\kappa_T=pV/T=Nk_B=C_p-C_V$, including the units J/K.

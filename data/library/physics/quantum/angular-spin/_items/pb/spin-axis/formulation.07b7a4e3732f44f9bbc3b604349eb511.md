@@ -1,0 +1,1 @@
+Prepare the $S_z=+\hbar/2$ state $|0\rangle$. For a measurement along the unit vector $\mathbf n=(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)$, find the two probabilities, mean spin component, and variance.

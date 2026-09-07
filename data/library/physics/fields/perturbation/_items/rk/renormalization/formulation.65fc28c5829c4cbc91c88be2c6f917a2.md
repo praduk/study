@@ -1,0 +1,3 @@
+A regulator makes specified short-distance expressions meaningful, for example by a momentum cutoff. Bare parameters may depend on that regulator. Renormalization fixes chosen observable quantities or parameter definitions and expresses other predictions in those terms while controlling regulator dependence.
+
+It is not permission to discard an arbitrary infinity without specifying the observable and prescription. In perturbation theory the construction is order by order; whether a nonperturbative continuum theory exists is a further mathematical question. Scale-dependent couplings express how a parameter definition changes with its reference scale.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "67cb7c83b2f14f5e803bc0a8ae3d588c",
+  "title": "Reduce a nonlinear equation by substitution",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "45de7964969c48418d1f75b3875d8fd3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.45de7964969c48418d1f75b3875d8fd3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "246f8ce97a684d0b87d6e24bd26ab14d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.246f8ce97a684d0b87d6e24bd26ab14d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:05.786386+00:00",
+  "updated_at": "2026-09-07T07:49:07.113952+00:00"
+}

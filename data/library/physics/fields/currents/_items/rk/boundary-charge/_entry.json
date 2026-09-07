@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "71f8123c9a5f4056aa4a1912ae78252e",
+  "title": "A local conservation equation needs boundary control",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2f94cd88636c4acdbf24f02a07e022ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2f94cd88636c4acdbf24f02a07e022ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:18.482648+00:00",
+  "updated_at": "2026-09-07T08:53:18.482653+00:00"
+}

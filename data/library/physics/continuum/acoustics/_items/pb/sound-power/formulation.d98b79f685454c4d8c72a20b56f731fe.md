@@ -1,0 +1,1 @@
+A right-moving plane acoustic wave has pressure $p'(x,t)=P\cos(kx-\omega t)$, with $P=2\,\mathrm{Pa}$, $\rho_0=1.2\,\mathrm{kg\,m^{-3}}$, $c=340\,\mathrm{m\,s^{-1}}$, and $\omega=ck$. Find the velocity amplitude and time-averaged intensity. What happens to mean intensity if $P$ doubles?

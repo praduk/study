@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2cc154d7e12c485f87d57daea193954e",
+  "title": "Orthogonality of distinct Sturm–Liouville eigenfunctions",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "76a8df52271744ac9222fe4d5ec8fd62",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.76a8df52271744ac9222fe4d5ec8fd62.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f5a06907e9b84ff3a27662b6d67bca54",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f5a06907e9b84ff3a27662b6d67bca54.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:41.696077+00:00",
+  "updated_at": "2026-09-07T08:23:06.897409+00:00"
+}

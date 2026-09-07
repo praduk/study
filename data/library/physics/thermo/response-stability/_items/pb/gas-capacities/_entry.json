@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e0ac1c2f004249deb5d4d678b07a16b9",
+  "title": "Response functions of a calorically perfect gas",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c3d800b9eb784408bc23e1b6ec2f706a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c3d800b9eb784408bc23e1b6ec2f706a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9136627e48674ad3bea953ae14bcea32",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9136627e48674ad3bea953ae14bcea32.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.474229+00:00",
+  "updated_at": "2026-09-07T08:57:25.530583+00:00"
+}

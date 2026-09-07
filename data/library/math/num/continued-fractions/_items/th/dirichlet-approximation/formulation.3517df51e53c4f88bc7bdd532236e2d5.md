@@ -1,0 +1,1 @@
+For a real $\alpha$ and integer $N\ge1$, there are integers $p,q$ with $1\le q\le N$ and $|q\alpha-p|<1/N$. If $\alpha$ is irrational, there are infinitely many rational numbers $p/q$ with $|\alpha-p/q|<1/q^2$.

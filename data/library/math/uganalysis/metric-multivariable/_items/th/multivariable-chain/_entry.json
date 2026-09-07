@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d541c3d93a8b4aa79967b37b499ffc26",
+  "title": "Chain rule for total derivatives",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:metric-multivariable:df:total-derivative.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da04d1482baa4701ad8fcb393d68f62b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da04d1482baa4701ad8fcb393d68f62b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d4a30cc0c2ad41b3bbb5e230860ed7b8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d4a30cc0c2ad41b3bbb5e230860ed7b8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:47.518000+00:00",
+  "updated_at": "2026-09-07T08:24:41.907721+00:00"
+}

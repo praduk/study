@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e6acb5516fe947a9a7a92cd8cb0c643b",
+  "title": "Every Euclidean domain is a PID",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e8397e744a5425bbd55cfe6e3345e3a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e8397e744a5425bbd55cfe6e3345e3a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0d4527e80ddf4bf99337b5f10f7f2c88",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0d4527e80ddf4bf99337b5f10f7f2c88.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:48.157187+00:00",
+  "updated_at": "2026-09-07T07:53:49.659890+00:00"
+}

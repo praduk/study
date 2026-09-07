@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7cbc7c7df682467593667f27c6286b74",
+  "title": "Convergence in measure has an almost-everywhere convergent subsequence",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:measurable-functions:df:convergence-modes, @math:analysis:measure-construction:df:measure-space.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9aaf5ae7b50844679753d6377a48fe46",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9aaf5ae7b50844679753d6377a48fe46.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "212a0d9eaa014278b477c496df196595",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.212a0d9eaa014278b477c496df196595.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:58.626305+00:00",
+  "updated_at": "2026-09-07T08:13:00.913094+00:00"
+}

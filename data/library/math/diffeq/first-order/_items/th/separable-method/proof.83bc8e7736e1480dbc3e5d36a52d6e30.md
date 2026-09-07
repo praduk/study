@@ -1,0 +1,1 @@
+By the chain rule, $(B\circ y)'=y'/b(y)=a=A'$, so the difference is constant on an interval. Differentiating the implicit relation gives $y'/b(y)=a$, proving the converse. For a zero $c$, substitution gives $0=a(t)b(c)$, verifying the equilibrium without dividing by zero.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1519e457a4f74e268878cd18aa2730e4",
+  "title": "Factoring continuous maps through a quotient",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "20fc764af9944877be565f2d8d6e5842",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.20fc764af9944877be565f2d8d6e5842.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b0f136f24b3a4213a7b7562358cc42d2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b0f136f24b3a4213a7b7562358cc42d2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:29.854837+00:00",
+  "updated_at": "2026-09-07T08:00:31.553858+00:00"
+}

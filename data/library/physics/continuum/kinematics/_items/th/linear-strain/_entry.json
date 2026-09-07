@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ac12d91818614d07ae534c0eca392a47",
+  "title": "Small strain is the linear part of metric change",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "88b85bd3f1564efea4e57555675e83c5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.88b85bd3f1564efea4e57555675e83c5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1b5d5da7c82b42eeabf54d0f9624cd9a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1b5d5da7c82b42eeabf54d0f9624cd9a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.382096+00:00",
+  "updated_at": "2026-09-07T09:04:12.400446+00:00"
+}

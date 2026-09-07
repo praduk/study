@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a74ede8eb81042418a46331cae6fa4fc",
+  "title": "Field energy and the Poynting vector",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "68de0c8b5fb440669c3eb7eb6385b08f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.68de0c8b5fb440669c3eb7eb6385b08f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.058420+00:00",
+  "updated_at": "2026-09-07T09:02:57.058422+00:00"
+}

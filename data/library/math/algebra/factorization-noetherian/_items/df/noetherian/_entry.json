@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3813da9812cc4e34a26aec6f21171d69",
+  "title": "Noetherian rings and modules",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5c61fabbcd9d44b9bca9b4b84ca3f669",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5c61fabbcd9d44b9bca9b4b84ca3f669.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:57.801496+00:00",
+  "updated_at": "2026-09-07T07:53:57.801503+00:00"
+}

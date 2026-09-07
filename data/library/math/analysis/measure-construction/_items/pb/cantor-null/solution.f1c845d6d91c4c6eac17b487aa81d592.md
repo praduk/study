@@ -1,0 +1,1 @@
+Each $C_n$ is a finite union of closed intervals, so their intersection is closed and hence Borel measurable. After $n$ stages there are $2^n$ intervals of length $3^{-n}$, giving $m(C_n)=(2/3)^n$. Since $C\subseteq C_n$, $0\le m(C)\le(2/3)^n$ for every $n$, so $m(C)=0$. Equivalently, measure continuity from above applies because $m(C_0)=1<\infty$.

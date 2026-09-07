@@ -1,0 +1,1 @@
+Assume $\mu(X)>0$. For finite $q$, apply Hölder to $|f|^p$ and $1$ with conjugate exponents $q/p$ and $q/(q-p)$. This gives $\int|f|^p\le(\int|f|^q)^{p/q}\mu(X)^{1-p/q}$. Take $p$th roots. For $q=\infty$, integrate the bound $|f|^p\le\norm f_\infty^p$ almost everywhere.

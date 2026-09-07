@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3baa17fee0fc41ce87b7a71fe39ed267",
+  "title": "An infinite cofinite space",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "49a7000f63044701b19f49daa8ffe9cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.49a7000f63044701b19f49daa8ffe9cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff3584d37e0344908f3498e5e93d6369",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ff3584d37e0344908f3498e5e93d6369.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:16.184231+00:00",
+  "updated_at": "2026-09-07T08:00:17.855160+00:00"
+}

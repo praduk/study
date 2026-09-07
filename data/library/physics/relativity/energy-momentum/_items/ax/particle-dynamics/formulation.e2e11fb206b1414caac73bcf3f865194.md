@@ -1,0 +1,3 @@
+For a free massive particle, the classical relativistic model assigns $p^\mu=mU^\mu=(E/c,\mathbf p)$, where $m>0$ is invariant mass. For a future-directed massless particle, $p\cdot p=0$ and $E=c|\mathbf p|>0$. An isolated interaction conserves the sum of incoming and outgoing four-momenta, including relevant field contributions.
+
+External forces obey $dp^\mu/d\tau=K^\mu$ for a massive particle. The force law and possible changes of invariant mass must come from the chosen interaction model. Conservation alone constrains allowed outcomes but does not determine cross-sections, decay probabilities, or whether a kinematically allowed process actually occurs.

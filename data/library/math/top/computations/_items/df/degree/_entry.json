@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "787e6775d77c4104af16183dcd8f5266",
+  "title": "Degree of a map of spheres",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36eac44483ae4788a3e9d004f4859349",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36eac44483ae4788a3e9d004f4859349.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:11.851028+00:00",
+  "updated_at": "2026-09-07T08:07:49.161063+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "998f4c9507ba47cd8cf12feb0aa1cb05",
+  "title": "Sequential criterion for continuity",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:continuity:df:continuity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d72997bae4694337a91b031b095a980d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d72997bae4694337a91b031b095a980d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1082a5f9545b48c29e1076bee7d71676",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1082a5f9545b48c29e1076bee7d71676.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:07.628915+00:00",
+  "updated_at": "2026-09-07T08:09:09.896050+00:00"
+}

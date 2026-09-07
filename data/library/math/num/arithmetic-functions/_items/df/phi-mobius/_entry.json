@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ae100a1d6b45489e90dc1a5f12bf1308",
+  "title": "Euler’s totient and the Möbius function",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f700e265806a48549729be83a3291daa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f700e265806a48549729be83a3291daa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:52.837039+00:00",
+  "updated_at": "2026-09-07T07:47:52.837046+00:00"
+}

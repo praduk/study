@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2c5a82ac261945e6b9aeab065669a8c5",
+  "title": "Every PID is a UFD",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8f7cb60c6aa94398863ac159c85ebe6a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8f7cb60c6aa94398863ac159c85ebe6a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8410bec813f44e399930fb99359bdfc8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8410bec813f44e399930fb99359bdfc8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:50.563707+00:00",
+  "updated_at": "2026-09-07T07:53:52.130255+00:00"
+}

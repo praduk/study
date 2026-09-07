@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "897236b7185a42ae81ae3877117f1382",
+  "title": "Initial data and boundary conditions",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "493f2e9efff248d892611bd222308982",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.493f2e9efff248d892611bd222308982.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:49.217270+00:00",
+  "updated_at": "2026-09-07T08:51:49.217278+00:00"
+}

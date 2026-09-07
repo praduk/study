@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b4e77fefb4a24a51ac5546bd5fdf3de5",
+  "title": "Canonical ensemble: heat-bath model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7724d133b76743578ad0588a3062db80",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7724d133b76743578ad0588a3062db80.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.448196+00:00",
+  "updated_at": "2026-09-07T09:00:57.448198+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3c1753c6471044eabf8440b88e53f25c",
+  "title": "Cosets and Lagrange’s theorem",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a05589c0c8114d5d844f43e951e762ef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a05589c0c8114d5d844f43e951e762ef.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c9d3b744c1b745538807cb21717962ef",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c9d3b744c1b745538807cb21717962ef.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:52:58.607658+00:00",
+  "updated_at": "2026-09-07T07:53:00.031698+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "69f83dfb17e340c38c8f75aea4eda75a",
+  "title": "Amplitude reflection and energy reflection differ",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:waves:interfaces:ax:interface-models, @physics:waves:mechanical-waves:th:string-energy.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "084ebd3a0bea4a5885c5be29ef41cba5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.084ebd3a0bea4a5885c5be29ef41cba5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b841d20e634c45d9be90ba9b8da38351",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b841d20e634c45d9be90ba9b8da38351.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.276056+00:00",
+  "updated_at": "2026-09-07T09:04:16.336402+00:00"
+}

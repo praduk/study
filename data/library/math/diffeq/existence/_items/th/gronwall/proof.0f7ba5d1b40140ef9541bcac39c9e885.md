@@ -1,0 +1,1 @@
+Set $v(t)=A+L\int_0^t u(s)\,ds$. Then $u\le v$ and $v'=Lu\le Lv$. Thus $(e^{-Lt}v)'\le0$, giving $v(t)\le Ae^{Lt}$ even when $A=0$ or $L=0$. Subtracting the two integral equations and applying the Lipschitz bound gives the first inequality with $A=\norm{y(0)-z(0)}$, proving the consequence.

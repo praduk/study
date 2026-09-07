@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a2c22ab18d154fb0a15a5a6f152e7fdf",
+  "title": "Active transformation versus change of coordinates",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1e4cd0f540a0436da0fe9e2bc3a298b8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1e4cd0f540a0436da0fe9e2bc3a298b8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:01.756995+00:00",
+  "updated_at": "2026-09-07T08:52:01.757001+00:00"
+}

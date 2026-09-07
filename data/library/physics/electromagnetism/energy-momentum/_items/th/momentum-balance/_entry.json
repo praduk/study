@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "efe147a93eb9470799d4702c1fdc529e",
+  "title": "Local electromagnetic momentum balance",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "267e135e627b4a0ea69af8283a975304",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.267e135e627b4a0ea69af8283a975304.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c6b1fe1a36f2449ab61a353db925e2bb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c6b1fe1a36f2449ab61a353db925e2bb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.242573+00:00",
+  "updated_at": "2026-09-07T09:02:57.313494+00:00"
+}

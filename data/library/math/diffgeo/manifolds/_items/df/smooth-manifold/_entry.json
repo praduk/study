@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "672d952bfba64617a0932f8d9e8354e6",
+  "title": "Charts, atlases, and smooth manifolds",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be23d2875ee3498faee6ee1700fbc400",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be23d2875ee3498faee6ee1700fbc400.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:04.672502+00:00",
+  "updated_at": "2026-09-07T08:04:04.672510+00:00"
+}

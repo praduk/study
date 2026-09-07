@@ -1,0 +1,1 @@
+The chain rule gives $u'=xy'$ and $u''=xy'+x^2y''$, so $x^2y''=u''-u'$. Substitute into the equation and use the constant-coefficient basis theorem. The map $x\mapsto\log x$ is a smooth bijection from $(0,\infty)$ to $\R$, so it preserves the full solution family. No extension across zero is asserted.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "da64fb340dcd4b29b3d0ff3f241601bd",
+  "title": "Automorphisms of the unit disk",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:conformal-maps:th:schwarz, @math:complex:conformal-maps:df:conformal-biholomorphic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb3542b540214ce6b32d8dba5bfbc333",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb3542b540214ce6b32d8dba5bfbc333.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "04bb2b9f3afd478786eca16b5e4228b1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.04bb2b9f3afd478786eca16b5e4228b1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:19.287116+00:00",
+  "updated_at": "2026-09-07T08:26:47.181915+00:00"
+}

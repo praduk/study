@@ -1,0 +1,1 @@
+A based map $f:(X,x_0)\to(Y,y_0)$ induces $f_*[\alpha]=[f\circ\alpha]$. This is a group homomorphism, $(gf)_*=g_*f_*$, and based-homotopic maps induce the same homomorphism. If $r:X\to A$ retracts $X$ onto $A$ and the basepoint is in $A$, then inclusion induces an injection on fundamental groups.

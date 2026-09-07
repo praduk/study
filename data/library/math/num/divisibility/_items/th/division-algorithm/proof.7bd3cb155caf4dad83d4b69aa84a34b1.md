@@ -1,0 +1,1 @@
+The set of nonnegative integers $a-bq$, with $q\in\Z$, is nonempty (take $q$ sufficiently negative). Let $r=a-bq$ be its least member. If $r\ge b$, then $r-b$ is a smaller nonnegative member, a contradiction. For uniqueness, two representations give $b(q-q')=r'-r$, whose right side has absolute value less than $b$. The only such multiple of $b$ is zero.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "68d8a59652ed42fb9dda1f42ffe72b4b",
+  "title": "Ideal interfaces and their matching assumptions",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a97515117531444f9d1c86026b81645c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a97515117531444f9d1c86026b81645c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.235630+00:00",
+  "updated_at": "2026-09-07T09:04:16.235634+00:00"
+}

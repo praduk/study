@@ -1,0 +1,1 @@
+For a straight pipe of radius $a$, assume steady fully developed incompressible flow $v=u(r)e_z$, viscosity $\eta>0$, no body force, and $dp/dz=-G$ with $G>0$. Impose no slip at $r=a$ and bounded velocity at $r=0$. Find $u(r)$ and volume flow $Q$.

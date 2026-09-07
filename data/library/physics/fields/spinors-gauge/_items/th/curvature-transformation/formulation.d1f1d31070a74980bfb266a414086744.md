@@ -1,0 +1,1 @@
+With the conventions of @physics:fields:spinors-gauge:df:connection, the transformed curvature satisfies $F'=g^{-1}Fg$. Consequently $\operatorname{tr}(F\wedge *F)$ is invariant under a unitary change of frame when the spacetime metric, Hodge star, and trace pairing are fixed.

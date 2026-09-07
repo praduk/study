@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4889737b33c24927ae60ae665666f134",
+  "title": "Amplitude, phase, wavelength, and frequency",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f2778cdc7fe046c3a4df937c47679ff0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f2778cdc7fe046c3a4df937c47679ff0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.711493+00:00",
+  "updated_at": "2026-09-07T09:04:15.711496+00:00"
+}

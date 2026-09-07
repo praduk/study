@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "312c32bf085a4c03bfe97576d423d566",
+  "title": "The total derivative is a linear approximation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95dc057f44dd4830be924a42e3322317",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95dc057f44dd4830be924a42e3322317.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:45.744352+00:00",
+  "updated_at": "2026-09-07T08:24:39.907632+00:00"
+}

@@ -1,0 +1,3 @@
+For a real unit transmission axis $a=(\cos\theta,\sin\theta)^T$, an ideal linear polarizer acts on a coherent Jones vector by $\mathcal E_{\rm out}=aa^T\mathcal E_{\rm in}$. In the same surrounding medium use $I=C\mathcal E^*\mathcal E$ for intensity, with the same positive $C$ before and after.
+
+The element transmits the parallel component and removes the orthogonal component. Real polarizers can have finite extinction, loss in the transmitted axis, and wavelength dependence; the rank-one matrix is the stated ideal model. Unpolarized light needs an average or coherence matrix rather than one fixed Jones vector.

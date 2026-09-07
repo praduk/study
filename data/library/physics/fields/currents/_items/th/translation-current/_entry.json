@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "df9b56e5adae486388967e573598272c",
+  "title": "The canonical translation current",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "37667267718c4f5687d2a77f245abaa3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.37667267718c4f5687d2a77f245abaa3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8e6666b5e48248e1a19d38f8c066fdfa",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8e6666b5e48248e1a19d38f8c066fdfa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:09.893870+00:00",
+  "updated_at": "2026-09-07T08:53:12.571585+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "01729dd6e3fe4d28bab49185811d1567",
+  "title": "Steady response of a damped driven oscillator",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9cf37fc2f28245009d7ea9ae12f61539",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9cf37fc2f28245009d7ea9ae12f61539.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "48dba754a8904e029ce9fc943b04c924",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.48dba754a8904e029ce9fc943b04c924.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.338172+00:00",
+  "updated_at": "2026-09-07T09:04:11.440752+00:00"
+}

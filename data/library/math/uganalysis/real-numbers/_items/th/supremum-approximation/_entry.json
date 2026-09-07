@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f4007df51ee8424090666c74003a5da1",
+  "title": "Approximation of a supremum",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:df:supremum.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4466ba986af5453a8d0db4b33c983990",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4466ba986af5453a8d0db4b33c983990.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a931acd86dbd43f2bf3305b659680ef5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a931acd86dbd43f2bf3305b659680ef5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:03.749200+00:00",
+  "updated_at": "2026-09-07T08:08:05.772355+00:00"
+}

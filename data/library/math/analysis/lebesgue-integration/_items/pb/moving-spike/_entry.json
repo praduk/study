@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "172af5484f2e47b8b8f53ca8c01fa713",
+  "title": "Why pointwise convergence cannot replace domination",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:th:dominated-convergence, @math:analysis:measurable-functions:df:convergence-modes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aa43e2d2fa164aff86fad6730b84a0ee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aa43e2d2fa164aff86fad6730b84a0ee.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "564765bdb70a48b18230dc309a48bcaf",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.564765bdb70a48b18230dc309a48bcaf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:14.330601+00:00",
+  "updated_at": "2026-09-07T08:12:16.683266+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6dc0903985e548e38cf4b6368b03714f",
+  "title": "Free expansion versus reversible expansion",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7cfb463feb9f46bdb62ccfe1c1221d0f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7cfb463feb9f46bdb62ccfe1c1221d0f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "088435ebf9db4ee9bd8faf34746149ad",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.088435ebf9db4ee9bd8faf34746149ad.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:26.548187+00:00",
+  "updated_at": "2026-09-07T08:57:26.634862+00:00"
+}

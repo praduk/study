@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a932380ef5434db297670694beed99b6",
+  "title": "A zero-dimensional quartic perturbation",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "06fb8d85da6c492684de53dc40f3a1af",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.06fb8d85da6c492684de53dc40f3a1af.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "222ac585bee94da2937b0f5a567f5c2a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.222ac585bee94da2937b0f5a567f5c2a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:33.765094+00:00",
+  "updated_at": "2026-09-07T08:54:36.587106+00:00"
+}

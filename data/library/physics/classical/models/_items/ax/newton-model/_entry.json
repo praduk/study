@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1f18a2fd2aab4f7aa71d3510661cea07",
+  "title": "Newtonian particle model in an inertial frame",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9fc360091b44a21976cdc39dff3272f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9fc360091b44a21976cdc39dff3272f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.003843+00:00",
+  "updated_at": "2026-09-07T09:04:09.003846+00:00"
+}

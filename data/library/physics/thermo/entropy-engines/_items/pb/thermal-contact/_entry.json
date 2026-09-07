@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "23299b86346e41eb8bbcf79a13111e98",
+  "title": "Entropy produced in thermal equilibration",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aab06bf1628b4c4d805fa3c1a4fee5c4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aab06bf1628b4c4d805fa3c1a4fee5c4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a80cfc2448de4ed7972d84c6b63dc714",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a80cfc2448de4ed7972d84c6b63dc714.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.752676+00:00",
+  "updated_at": "2026-09-07T08:57:24.782097+00:00"
+}

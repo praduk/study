@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "30f9766a9d2541f3860bb6351a10f887",
+  "title": "Bound state of an attractive delta interaction",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "532d80fc230a4bfd835b0b558353edcb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.532d80fc230a4bfd835b0b558353edcb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "02fe09791b7240139050cad37026b549",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.02fe09791b7240139050cad37026b549.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.262246+00:00",
+  "updated_at": "2026-09-07T09:11:21.310799+00:00"
+}

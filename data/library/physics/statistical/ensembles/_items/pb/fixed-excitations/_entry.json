@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cc4ae8e93d8245a5b87bd95952b4cb72",
+  "title": "Four labeled two-level sites",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2168a15a15f4f66b541f4e9fd92270a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2168a15a15f4f66b541f4e9fd92270a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "92a8c5abdbdd45beb64d9b252b544042",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.92a8c5abdbdd45beb64d9b252b544042.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.406603+00:00",
+  "updated_at": "2026-09-07T09:00:57.423086+00:00"
+}

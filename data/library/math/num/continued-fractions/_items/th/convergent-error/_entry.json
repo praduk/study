@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d98b32e11f2d476d9042525d749d29fd",
+  "title": "Error bound for irrational convergents",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "841eb3acebb349ea8123ccc705b014d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.841eb3acebb349ea8123ccc705b014d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1255c7b68f184bb992451a6cf619fc0c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1255c7b68f184bb992451a6cf619fc0c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:35.367434+00:00",
+  "updated_at": "2026-09-07T08:22:39.596607+00:00"
+}

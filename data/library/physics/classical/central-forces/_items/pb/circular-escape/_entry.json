@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8dab3eea8ba74b7684e1c5666759f3c1",
+  "title": "Circular speed and escape speed",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0476a11fe3f14e7ba231e62c12f20d36",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0476a11fe3f14e7ba231e62c12f20d36.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "03764b6c97e741879a9d3d67caa980f0",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.03764b6c97e741879a9d3d67caa980f0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.244050+00:00",
+  "updated_at": "2026-09-07T09:04:10.311134+00:00"
+}

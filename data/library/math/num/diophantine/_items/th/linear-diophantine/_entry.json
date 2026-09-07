@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2068d54185bf4e42b4fdad656a0b50d2",
+  "title": "All solutions of a linear Diophantine equation",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "61768286d484455d9a8432b8b59ef1f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.61768286d484455d9a8432b8b59ef1f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "41615e6e774d422fac8afb849865cd8c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.41615e6e774d422fac8afb849865cd8c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:20.897701+00:00",
+  "updated_at": "2026-09-07T08:22:33.824860+00:00"
+}

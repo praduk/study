@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e0b0fd7c838d4eada13c8801e03b0295",
+  "title": "State, parameter, and observable",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9fbdecbbd9f243d49ac914e4849524eb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9fbdecbbd9f243d49ac914e4849524eb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:20.808231+00:00",
+  "updated_at": "2026-09-07T08:51:20.808238+00:00"
+}

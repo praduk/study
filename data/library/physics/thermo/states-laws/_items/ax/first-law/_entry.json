@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9888a04d98e44effb70e4f4c691ea06d",
+  "title": "First law: energy accounting",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e311739d9f6d4e5090fb1d63372e5c1a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e311739d9f6d4e5090fb1d63372e5c1a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.543050+00:00",
+  "updated_at": "2026-09-07T08:57:24.543052+00:00"
+}

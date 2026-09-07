@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "53f6a52a5ccf49f0be8565b884e76266",
+  "title": "A controlled approximation states an error regime",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b27368af7a214c62a803abdd27a1bcc4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b27368af7a214c62a803abdd27a1bcc4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:14.366685+00:00",
+  "updated_at": "2026-09-07T08:52:14.366693+00:00"
+}

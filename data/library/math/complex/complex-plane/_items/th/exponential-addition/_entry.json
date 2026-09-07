@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1a30b7073eec484bba4ced8a1d263871",
+  "title": "Exponential addition law and its kernel",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:complex-plane:df:complex-exponential.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63d03ec26eb2465ba6eb8dbf342f87f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63d03ec26eb2465ba6eb8dbf342f87f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "04dad80425664af59d31dee342f4ab0b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.04dad80425664af59d31dee342f4ab0b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:53.762131+00:00",
+  "updated_at": "2026-09-07T08:25:54.866804+00:00"
+}

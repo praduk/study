@@ -1,0 +1,1 @@
+For a smooth solution of the string equation, energy per length $e=\mu y_t^2/2+Ty_x^2/2$ and power flux $j=-Ty_ty_x$ satisfy $e_t+j_x=0$. For $y=A\cos(kx-\omega t)$ with $\omega=ck>0$, the mean rightward power is $T\omega kA^2/2$.

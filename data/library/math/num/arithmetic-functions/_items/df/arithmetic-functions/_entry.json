@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6cd21a1cf0274a67b1797658a9c15b58",
+  "title": "Arithmetic functions and Dirichlet convolution",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3e71f9b2063248e89f857db183652efc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3e71f9b2063248e89f857db183652efc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:51.846861+00:00",
+  "updated_at": "2026-09-07T07:47:51.846868+00:00"
+}

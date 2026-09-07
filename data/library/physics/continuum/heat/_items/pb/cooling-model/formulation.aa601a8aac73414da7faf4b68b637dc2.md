@@ -1,0 +1,1 @@
+A body is approximated as having a single temperature $T(t)$, mass $m>0$, constant heat capacity $c_h>0$, and surface area $A>0$. Its environment is at $T_\infty$, and outward heat rate is modeled by $hA(T-T_\infty)$ with $h>0$. Find the temperature from $T(0)=T_0$ and the time to halve $|T-T_\infty|$. State the model assumption requiring a spatial check.

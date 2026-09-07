@@ -1,0 +1,1 @@
+Choose $n_k$ increasing so $\mu(E_k)<2^{-k}$, where $E_k=\{|f_{n_k}-f|>2^{-k}\}$. The set of points in infinitely many $E_k$ is contained in $\bigcup_{k\ge K}E_k$ for every $K$, and hence has measure at most $\sum_{k\ge K}2^{-k}\to0$. Outside this null set, eventually $|f_{n_k}-f|\le2^{-k}$, proving convergence.

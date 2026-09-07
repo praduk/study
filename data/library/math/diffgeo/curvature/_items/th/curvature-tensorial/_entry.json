@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "996dc0cc905c46b6b83310f992e00b66",
+  "title": "Curvature is tensorial",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "92319db95cc9481d842c474cc3a7e82f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.92319db95cc9481d842c474cc3a7e82f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "78bb6aa02f234871922791a0e8bbed5c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.78bb6aa02f234871922791a0e8bbed5c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:23.031689+00:00",
+  "updated_at": "2026-09-07T08:06:25.119481+00:00"
+}

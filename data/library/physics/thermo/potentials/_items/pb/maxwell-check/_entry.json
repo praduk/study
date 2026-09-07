@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "067f281660654e6e9ec9e3322ca845a9",
+  "title": "Entropy-volume dependence of an ideal gas",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "199914ac664644dcb9a174e863b6247e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.199914ac664644dcb9a174e863b6247e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c59f82e385d149e7976b13d3d565740d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c59f82e385d149e7976b13d3d565740d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:25.072447+00:00",
+  "updated_at": "2026-09-07T08:57:25.116721+00:00"
+}

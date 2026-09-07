@@ -1,0 +1,1 @@
+Differentiate $W=y_1y_2'-y_1'y_2$ to get $W'=y_1y_2''-y_1''y_2$. Substitute $y_i''=-py_i'-qy_i$; the $q$ terms cancel and $W'=-pW$. The first-order linear formula yields the stated identity, including the case $W(t_0)=0$. The exponential is positive.

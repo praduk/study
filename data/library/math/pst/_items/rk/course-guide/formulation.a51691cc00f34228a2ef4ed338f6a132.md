@@ -1,0 +1,5 @@
+Work through the numbered folders in order. Definitions fix conventions; theorem supplements give complete arguments for the claims they cover; problems have separate worked solutions. Try each problem before revealing its solution.
+
+The course develops general spaces, constructions, separation and countability, compactness and connectedness, then metric completeness, category, and metrization. A neighborhood need not itself be open. Compactness does not include Hausdorffness. Regular and normal spaces in this course include the $T_1$ condition. We work in ordinary set theory with choice; the arbitrary-product compactness theorem depends on a choice principle.
+
+The short proofs and examples are original instructional derivations. [Allen Hatcher's introductory point-set notes](https://pi.math.cornell.edu/~hatcher/Top/TopNotes.pdf) were inspected for standard scope and terminology. The advanced metrization result is explicitly stated as a theorem used without proof, with its source alongside it. These cards provide a substantial first-course core, not a treatment of general uniform spaces or set-theoretic topology.

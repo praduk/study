@@ -1,0 +1,1 @@
+Count pairs $(g,x)$ satisfying $g\cdot x=x$. Counting first by $g$ gives $\sum_g|X^g|$; counting first by $x$ gives $\sum_x|G_x|$. On an orbit of size $m$, every stabilizer has order $|G|/m$ by orbit–stabilizer, so that orbit contributes $|G|$. Divide the total by $|G|$. The argument also covers $X=\varnothing$.

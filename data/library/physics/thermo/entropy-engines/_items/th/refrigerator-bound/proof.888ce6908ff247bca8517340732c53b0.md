@@ -1,0 +1,1 @@
+Its heat signs are $+Q_c,-Q_h$ and work done by it is $-W_{\rm in}$. Thus $Q_h=Q_c+W_{\rm in}$. The entropy inequality gives $Q_c/T_c-Q_h/T_h\le0$, so $W_{\rm in}\ge Q_c(T_h/T_c-1)$. Rearranging proves the bound.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4aa0e0ea07b449878783a780b9b0b2f4",
+  "title": "A worldline with constant proper acceleration",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b83293df09f64d1a836f977ee3139b45",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b83293df09f64d1a836f977ee3139b45.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f997af1570d94a7e8ffea5be2de3750c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f997af1570d94a7e8ffea5be2de3750c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:00.138255+00:00",
+  "updated_at": "2026-09-07T09:03:00.210275+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "acd293f9d4f94538a0f13ffa44d8d116",
+  "title": "Stationary optical path in geometrical optics",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "59d50194e5fb4604973d40d33f985c7d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.59d50194e5fb4604973d40d33f985c7d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:17.920096+00:00",
+  "updated_at": "2026-09-07T09:04:17.920103+00:00"
+}

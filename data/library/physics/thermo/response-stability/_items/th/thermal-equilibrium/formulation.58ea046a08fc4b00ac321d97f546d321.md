@@ -1,0 +1,1 @@
+Two subsystems have differentiable entropies $S_1(U_1),S_2(U_2)$, fixed volumes and particle counts, and total energy $U$. If an interior entropy maximum occurs under energy exchange and both temperatures are positive, then $T_1=T_2$. If the entropies are twice differentiable and both heat capacities are positive, any such stationary point is a strict local maximum.

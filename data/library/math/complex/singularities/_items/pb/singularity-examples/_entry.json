@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8ff5df2190d74731a69975aeb8c40bae",
+  "title": "Classify three isolated singularities",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:complex:singularities:th:laurent-classification, @math:complex:complex-plane:df:complex-exponential.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "14648707bb4a4e6886b545399d3b3665",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.14648707bb4a4e6886b545399d3b3665.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3f5695ebab914102a1747b1fd5899778",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.3f5695ebab914102a1747b1fd5899778.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:35.024662+00:00",
+  "updated_at": "2026-09-07T08:26:30.988724+00:00"
+}

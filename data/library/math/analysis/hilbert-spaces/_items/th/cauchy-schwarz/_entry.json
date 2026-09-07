@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d6c1dbfaba6f4bdba2e3d711c028f91f",
+  "title": "Cauchy–Schwarz and the parallelogram identity",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:hilbert-spaces:df:hilbert.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f46bc3eb80042a89e31dc692a99aebe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f46bc3eb80042a89e31dc692a99aebe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "33d7977a5c7042308e3de50961f6bafe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.33d7977a5c7042308e3de50961f6bafe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:03.662651+00:00",
+  "updated_at": "2026-09-07T08:25:36.563246+00:00"
+}

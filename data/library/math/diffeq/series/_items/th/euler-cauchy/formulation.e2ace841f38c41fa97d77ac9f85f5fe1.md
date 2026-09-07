@@ -1,0 +1,1 @@
+For real constants $a,b$ and $x>0$, the substitution $t=\log x$, $u(t)=y(e^t)$ turns $x^2y''+axy'+by=0$ into $u''+(a-1)u'+bu=0$. Distinct real roots $r_1,r_2$ of $r(r-1)+ar+b=0$ give $x^{r_1},x^{r_2}$; a repeated root $r$ gives $x^r,x^r\log x$; roots $\alpha\pm i\beta$ give $x^\alpha\cos(\beta\log x),x^\alpha\sin(\beta\log x)$.

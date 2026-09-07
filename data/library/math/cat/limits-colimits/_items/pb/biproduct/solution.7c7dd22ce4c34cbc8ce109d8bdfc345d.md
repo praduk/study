@@ -1,0 +1,3 @@
+Given $f:X\to M$ and $g:X\to N$, the unique map to the direct sum with these projections is $x\mapsto(f(x),g(x))$. Given $u:M\to X$ and $v:N\to X$, the unique map from the direct sum with these restrictions is $(m,n)\mapsto u(m)+v(n)$. Both are module homomorphisms, proving the two properties.
+
+For an infinite family $(M_i)$ the product contains all tuples, whereas the direct sum contains only finite-support tuples. Maps into all factors define a map to the product, but the resulting tuple need not have finite support. The infinite direct sum remains the coproduct; it is generally not the product. For example the tuple $(1,1,\ldots)$ is in $\prod_{\N}\Z$ but not $\bigoplus_{\N}\Z$.

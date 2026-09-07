@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9f3b8293738d473bbba97d277bf936be",
+  "title": "Sylow existence, conjugacy, and counting",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "704be477acbb4f509ba38424d44c33d0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.704be477acbb4f509ba38424d44c33d0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c875bf7934cb4f0eb3cf3e15627880d8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c875bf7934cb4f0eb3cf3e15627880d8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:19.285809+00:00",
+  "updated_at": "2026-09-07T08:23:20.880074+00:00"
+}

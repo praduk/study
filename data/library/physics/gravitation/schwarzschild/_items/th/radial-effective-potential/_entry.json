@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4a097077935f48d0b86f85867e666bcd",
+  "title": "Timelike geodesic constants and effective potential",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f9bd9073dbf8404dae652f026bd41cbd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f9bd9073dbf8404dae652f026bd41cbd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a8ea7e55d60a421abc65d92f5cd0e7ed",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a8ea7e55d60a421abc65d92f5cd0e7ed.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.171980+00:00",
+  "updated_at": "2026-09-07T09:18:16.221998+00:00"
+}

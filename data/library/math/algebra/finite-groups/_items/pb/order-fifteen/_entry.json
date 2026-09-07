@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d7aff8bafc794383b0d4c5c10ae4d09d",
+  "title": "Classify groups of order fifteen",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c7563cbc0d7c4bb4b9ca4c22be8291d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c7563cbc0d7c4bb4b9ca4c22be8291d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "318b691ce9aa49239a8de72ae3359b4b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.318b691ce9aa49239a8de72ae3359b4b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:21.642580+00:00",
+  "updated_at": "2026-09-07T07:53:23.187958+00:00"
+}

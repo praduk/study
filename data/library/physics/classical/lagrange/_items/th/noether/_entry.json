@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "faacfb4d01f5414e99afc02702be2216",
+  "title": "Noether conservation for a fixed-time symmetry",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @physics:classical:lagrange:th:euler-lagrange.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef3d79aac9854e1cbeedaf62605c17e8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef3d79aac9854e1cbeedaf62605c17e8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eb01e46317d645239de8aee04e986989",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eb01e46317d645239de8aee04e986989.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.261485+00:00",
+  "updated_at": "2026-09-07T09:04:09.295891+00:00"
+}

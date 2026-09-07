@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ad6a67d8fa9642b98a7373d9baa551df",
+  "title": "Covariant representables preserve limits",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6eb9cec5197d4644a53fc9d2b50dbea2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6eb9cec5197d4644a53fc9d2b50dbea2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a62e6192075642c2b647fca55120650c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a62e6192075642c2b647fca55120650c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:34.982042+00:00",
+  "updated_at": "2026-09-07T08:24:00.287641+00:00"
+}

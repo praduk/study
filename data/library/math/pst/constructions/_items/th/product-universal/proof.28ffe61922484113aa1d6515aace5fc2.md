@@ -1,0 +1,1 @@
+If $f$ is continuous, each composite is continuous because the projections are continuous. In the reverse direction, the preimage of a basic set restricting a finite index set $F$ is $\bigcap_{i\in F}(p_i\circ f)^{-1}(U_i)$, a finite intersection of open sets. Arbitrary product-open sets are unions of these basic sets, so their preimages are open.

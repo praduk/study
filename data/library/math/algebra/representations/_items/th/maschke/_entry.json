@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "48de134d87394fab91d1e8dfd3de6f7f",
+  "title": "Maschke’s theorem",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "355367907a924603abbd2f8b639b12e1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.355367907a924603abbd2f8b639b12e1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6ea0be24495342deb53169e806a0477c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6ea0be24495342deb53169e806a0477c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:02.663005+00:00",
+  "updated_at": "2026-09-07T08:23:44.527825+00:00"
+}

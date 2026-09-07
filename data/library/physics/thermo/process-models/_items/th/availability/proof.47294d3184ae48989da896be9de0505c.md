@@ -1,0 +1,1 @@
+The energy balance is $\Delta U=Q-p_0\Delta V-W_{\rm useful}$. The total entropy inequality gives $\Delta S-Q/T_0\ge0$, so $Q\le T_0\Delta S$. Substitute this upper bound into $W_{\rm useful}=Q-\Delta U-p_0\Delta V$. Equality requires zero total entropy production within this ideal environment model. No instantaneous temperature need be assigned to the nonequilibrium system.

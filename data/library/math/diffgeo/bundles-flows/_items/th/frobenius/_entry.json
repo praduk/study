@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "806e0a46e65041cda07f005267e81fc0",
+  "title": "Frobenius integrability theorem",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "856ad3b692d04d2199d364b10874b887",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.856ad3b692d04d2199d364b10874b887.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:54.405858+00:00",
+  "updated_at": "2026-09-07T08:04:54.405865+00:00"
+}

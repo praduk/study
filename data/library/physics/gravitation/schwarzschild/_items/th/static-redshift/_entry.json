@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e3fd3e98636f4e8284baaa088e868189",
+  "title": "Redshift between static observers",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "107012552dd0443d91f44ab451f44af4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.107012552dd0443d91f44ab451f44af4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "02c88080539d4e81b80846885482808b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.02c88080539d4e81b80846885482808b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.335627+00:00",
+  "updated_at": "2026-09-07T09:18:16.390499+00:00"
+}

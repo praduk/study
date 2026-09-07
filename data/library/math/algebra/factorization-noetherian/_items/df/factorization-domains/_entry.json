@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9137119bde6c4e86a4b98df1ce5edde7",
+  "title": "Euclidean domains, PIDs, and UFDs",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5dc96b56f13949fa8e33fcd1a0b8e152",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5dc96b56f13949fa8e33fcd1a0b8e152.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:46.951589+00:00",
+  "updated_at": "2026-09-07T07:53:46.951596+00:00"
+}

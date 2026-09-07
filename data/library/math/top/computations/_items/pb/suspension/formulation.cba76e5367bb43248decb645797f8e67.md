@@ -1,0 +1,1 @@
+Let $X$ be a nonempty CW complex and $SX$ its unreduced suspension, obtained from $X\times[-1,1]$ by separately collapsing each end. Prove $\widetilde H_k(SX)\isoto\widetilde H_{k-1}(X)$ for $k\ge1$.

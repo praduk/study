@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5ff6c46ee0e444258764b775e7d833e1",
+  "title": "Residue theorem for a disk",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:residues-zeros:df:residue, @math:complex:contour-integration:th:cauchy-simply-connected, @math:complex:contour-integration:th:cauchy-formula.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f2be446a8a0645cab37f27ceff7cb305",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f2be446a8a0645cab37f27ceff7cb305.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7a4caea2f0524e91a8f90e1e57525f9b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7a4caea2f0524e91a8f90e1e57525f9b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:16:47.011720+00:00",
+  "updated_at": "2026-09-07T08:26:36.962366+00:00"
+}

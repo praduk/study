@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5a1ded2289064180851e77b47a1aa312",
+  "title": "Exterior derivative",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b35b63e20cfd4ddba4e45f41a6eda138",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b35b63e20cfd4ddba4e45f41a6eda138.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:00.865636+00:00",
+  "updated_at": "2026-09-07T08:27:09.203801+00:00"
+}

@@ -1,0 +1,1 @@
+For $|r|<1$, $\sum_{n=0}^{\infty}r^n=(1-r)^{-1}$. For a series $\sum a_n$, let $L=\limsup_n |a_n|^{1/n}$. If $L<1$ the series converges absolutely; if $L>1$ it diverges. When $L=1$ the test gives no conclusion.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "820690638638476583198a4c666a64fa",
+  "title": "Green operators require a support or boundary prescription",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4a5f5b574ae84d44917d52d1ea541633",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4a5f5b574ae84d44917d52d1ea541633.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:33.884371+00:00",
+  "updated_at": "2026-09-07T08:53:33.884378+00:00"
+}

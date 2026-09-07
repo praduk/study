@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "96e6de6f7e264b3bb8d27025e4747aaf",
+  "title": "Bose condensation and its thermodynamic-limit qualification",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "56a67413993d48559efbb93cb6b46a3c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.56a67413993d48559efbb93cb6b46a3c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:58.606894+00:00",
+  "updated_at": "2026-09-07T09:00:58.606897+00:00"
+}

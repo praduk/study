@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "816e1b98f5654865a247ec8c96d68fe7",
+  "title": "Ladder operators in a specified Fock representation",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "73bae320d4f844fc9015928143264c25",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.73bae320d4f844fc9015928143264c25.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "97de341c8c354d4ca87e79642c4720ec",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.97de341c8c354d4ca87e79642c4720ec.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.653641+00:00",
+  "updated_at": "2026-09-07T09:11:21.732983+00:00"
+}

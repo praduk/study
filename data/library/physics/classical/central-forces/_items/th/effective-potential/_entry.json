@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "dd79d27b4f6b4b36b42309ff10467b4f",
+  "title": "Planar motion and the effective radial potential",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "75f731e381f64a87a0185f94cb09fb4d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.75f731e381f64a87a0185f94cb09fb4d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5ac96d833265433989be510b551b9f4c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5ac96d833265433989be510b551b9f4c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.936902+00:00",
+  "updated_at": "2026-09-07T09:04:09.998794+00:00"
+}

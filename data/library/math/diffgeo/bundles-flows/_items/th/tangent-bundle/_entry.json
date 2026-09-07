@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "8b291d9be1024fd1aeeb59560e4bfe1c",
+  "title": "The tangent bundle is a smooth vector bundle",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0fd35b47b3c04640a48b04211d015ff5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0fd35b47b3c04640a48b04211d015ff5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "74792ac77fe84472b733f715d2edcd47",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.74792ac77fe84472b733f715d2edcd47.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:46.483859+00:00",
+  "updated_at": "2026-09-07T08:04:48.449506+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "458b81939f49447592a99b7512bb0283",
+  "title": "Interior variation of the gravitational action",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ace0c0601894c849f21ce7052582f11",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ace0c0601894c849f21ce7052582f11.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e52f81ade03b4b909b58735b4a4c995a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e52f81ade03b4b909b58735b4a4c995a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.961633+00:00",
+  "updated_at": "2026-09-07T09:18:16.002153+00:00"
+}

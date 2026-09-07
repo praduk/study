@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "331973675a8e44349d167d002665f463",
+  "title": "Derive the leading periapsis advance",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e995d44624a344189b11a9ac0b17c393",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e995d44624a344189b11a9ac0b17c393.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "97465edb70954e558bf111c9acab8d2d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.97465edb70954e558bf111c9acab8d2d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.575403+00:00",
+  "updated_at": "2026-09-07T09:18:16.641866+00:00"
+}

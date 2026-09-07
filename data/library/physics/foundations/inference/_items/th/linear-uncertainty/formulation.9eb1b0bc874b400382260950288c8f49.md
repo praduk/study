@@ -1,0 +1,1 @@
+Let a random perturbation $\delta x\in\R^n$ have zero mean and covariance $\Sigma$. For the linearized observable $\delta y=J\delta x$ with fixed real matrix $J$, the covariance is $J\Sigma J^T$. This is exact for the linear model; applying it to a nonlinear observation requires an additional remainder estimate.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0125bafb45ac48d3844722dbf868d9f8",
+  "title": "Deform a punctured Euclidean space onto a sphere",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "58ead34945054392b4fdcc0f4a1fe060",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.58ead34945054392b4fdcc0f4a1fe060.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ed63f115abc444ee9bbb200a2a79c955",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ed63f115abc444ee9bbb200a2a79c955.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:04.292270+00:00",
+  "updated_at": "2026-09-07T08:02:06.163187+00:00"
+}

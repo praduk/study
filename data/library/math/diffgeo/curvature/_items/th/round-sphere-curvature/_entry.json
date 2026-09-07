@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f73703953baf4634b169a798a85751c0",
+  "title": "Curvature of the unit round sphere",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f4c40b92e684ae696e94c60e3ec9f9e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f4c40b92e684ae696e94c60e3ec9f9e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0584a44591d041dc834d948a5ced6023",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0584a44591d041dc834d948a5ced6023.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:28.085032+00:00",
+  "updated_at": "2026-09-07T08:27:33.186591+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "44270a7f0bd04483863dd04ebba7f762",
+  "title": "Local continuity equation and reference density",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:continuum:balances:ax:mass-balance, @physics:continuum:kinematics:th:material-jacobian.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99e375c13a054f6bab6e4726bbbda7f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99e375c13a054f6bab6e4726bbbda7f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "846808af81064ecd836e056c8b239c4e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.846808af81064ecd836e056c8b239c4e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.490945+00:00",
+  "updated_at": "2026-09-07T09:04:12.519092+00:00"
+}

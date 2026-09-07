@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d2e14a9822f644f497b473f150836e36",
+  "title": "Separating center-of-mass and relative motion",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "44fcd96e997443c39967e03b254dec97",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.44fcd96e997443c39967e03b254dec97.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2cace504c3ef41889e6f4acc93c79e00",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2cace504c3ef41889e6f4acc93c79e00.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:09.842511+00:00",
+  "updated_at": "2026-09-07T09:04:09.903079+00:00"
+}

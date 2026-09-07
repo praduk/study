@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "77a8c792ce7d4897afb6a587e6904259",
+  "title": "Solving a linear congruence",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2309f3433e174ba59de15fd3c4706fe8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2309f3433e174ba59de15fd3c4706fe8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6999722b83b1472ca11c151764e78a48",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6999722b83b1472ca11c151764e78a48.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:43.044044+00:00",
+  "updated_at": "2026-09-07T07:47:44.248835+00:00"
+}

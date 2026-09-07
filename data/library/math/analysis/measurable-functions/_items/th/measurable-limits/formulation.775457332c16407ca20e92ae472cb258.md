@@ -1,0 +1,1 @@
+If $f_n:X\to\overline\R$ are measurable, then $\sup_n f_n$, $\inf_n f_n$, $\limsup_n f_n$, and $\liminf_n f_n$ are measurable. In particular, a pointwise limit of measurable real functions is measurable.

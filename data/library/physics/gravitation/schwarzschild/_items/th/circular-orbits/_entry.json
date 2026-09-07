@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "dff6abc7e14947348d76dd5f7a86ce3d",
+  "title": "Circular timelike orbits and stability",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ddddbbd86e4a4bfa841cf743d7c6f9e5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ddddbbd86e4a4bfa841cf743d7c6f9e5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e3bdfd13ba4347389d7caac87d6ca50e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e3bdfd13ba4347389d7caac87d6ca50e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.251099+00:00",
+  "updated_at": "2026-09-07T09:18:16.304353+00:00"
+}

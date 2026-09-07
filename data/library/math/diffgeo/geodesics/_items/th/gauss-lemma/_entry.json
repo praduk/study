@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "859a1407f23743ec850d3092e73c790f",
+  "title": "Gauss lemma and local minimizing geodesics",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e05cf6774e0840d3bb391610986aee97",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e05cf6774e0840d3bb391610986aee97.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:09.494819+00:00",
+  "updated_at": "2026-09-07T08:27:25.284326+00:00"
+}

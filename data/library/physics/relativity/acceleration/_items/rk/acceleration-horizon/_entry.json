@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1e8747c09ebf452b93e2a4c39eecee64",
+  "title": "Acceleration horizons and the role of an entire worldline",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "829835f64d154ef2a3f18e37d388eb1c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.829835f64d154ef2a3f18e37d388eb1c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:00.431102+00:00",
+  "updated_at": "2026-09-07T09:03:00.431108+00:00"
+}

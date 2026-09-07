@@ -1,0 +1,3 @@
+In this course a finite signed measure is a countably additive map $\nu:\mathcal A\to\R$. It is absolutely continuous with respect to a positive measure $\mu$, written $\nu\ll\mu$, when $\mu(A)=0$ implies $\nu(A)=0$.
+
+Two positive measures $\alpha,\beta$ are mutually singular, written $\alpha\perp\beta$, when some measurable $S$ satisfies $\alpha(X\setminus S)=0$ and $\beta(S)=0$. For a signed measure, singularity uses its total variation, defined after Jordan decomposition. Measure absolute continuity is a null-set property; it is distinct from the definition of absolute continuity of a real function.

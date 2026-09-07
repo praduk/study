@@ -1,0 +1,1 @@
+Two equal masses $m>0$ move on a line. Each is attached to a fixed wall by a spring of stiffness $k>0$, and a coupling spring of stiffness $c>0$ joins them. For displacements $(x_1,x_2)$, the potential is $k(x_1^2+x_2^2)/2+c(x_1-x_2)^2/2$. Find the normal frequencies and the motion from $(x_1,x_2)=(A,0)$ with both velocities zero.

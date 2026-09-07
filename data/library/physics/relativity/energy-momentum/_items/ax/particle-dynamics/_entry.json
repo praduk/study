@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "16eaa04b59104527bb3f91a78482a8ab",
+  "title": "Relativistic particle dynamics",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e2e11fb206b1414caac73bcf3f865194",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e2e11fb206b1414caac73bcf3f865194.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.535151+00:00",
+  "updated_at": "2026-09-07T09:02:59.535153+00:00"
+}

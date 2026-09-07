@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "42e09adf072447cfa5f7548cbe2e109a",
+  "title": "Enthalpy, Helmholtz energy, and Gibbs energy",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dfcb88fa227840f2a50a083a4f73c94f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dfcb88fa227840f2a50a083a4f73c94f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.851451+00:00",
+  "updated_at": "2026-09-07T08:57:24.851454+00:00"
+}

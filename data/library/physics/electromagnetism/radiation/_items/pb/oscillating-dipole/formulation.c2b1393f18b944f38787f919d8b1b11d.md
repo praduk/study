@@ -1,0 +1,1 @@
+In the electric-dipole radiation approximation let $\mathbf p(t)=p_0\cos(\omega t)\hat{\mathbf z}$ with real $p_0$ and $\omega>0$. Find the mean power per solid angle and total mean power. Identify the angular zeros and maxima, and state when the approximation applies.

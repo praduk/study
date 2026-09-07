@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "eb8d39455a6e486bbd6b79437707f1b7",
+  "title": "Euler’s criterion and multiplicativity",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "39f29b47d28942ef8737cc53f2030f5c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.39f29b47d28942ef8737cc53f2030f5c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c631e6266ece4c008c41297110bb1b03",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c631e6266ece4c008c41297110bb1b03.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:11.760627+00:00",
+  "updated_at": "2026-09-07T07:48:13.099478+00:00"
+}

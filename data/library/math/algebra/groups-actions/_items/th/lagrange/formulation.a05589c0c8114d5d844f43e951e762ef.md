@@ -1,0 +1,1 @@
+For a subgroup $H\le G$, the left cosets $gH$ partition $G$, and each has cardinality $|H|$. If $G$ is finite, then $|G|=[G:H]|H|$, where $[G:H]$ is the number of left cosets. In particular, the order of any element divides $|G|$.

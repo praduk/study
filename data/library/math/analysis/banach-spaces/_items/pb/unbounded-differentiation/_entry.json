@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3d9fe787a0d24d8abeaf8a7b11fd4a07",
+  "title": "Differentiation is unbounded in the supremum norm",
+  "rank": 9187343239835811840,
+  "header": "Prerequisites: @math:analysis:banach-spaces:th:bounded-inverse, @math:analysis:banach-spaces:df:banach-operator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "165dac769dd14f689a98c6b21cdf7fc6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.165dac769dd14f689a98c6b21cdf7fc6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "23b8db5c0f654afba4e3e6bf366ea76f",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.23b8db5c0f654afba4e3e6bf366ea76f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:52.759693+00:00",
+  "updated_at": "2026-09-07T08:13:55.355128+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4c5dcae7243845778c49afe431c1427c",
+  "title": "Compact Hausdorff spaces are normal",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2ba09b2e098745a18fea273f5cdfe38b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2ba09b2e098745a18fea273f5cdfe38b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e4ae906a271f4c6d9d7ab6860a4d5482",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e4ae906a271f4c6d9d7ab6860a4d5482.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:22.868570+00:00",
+  "updated_at": "2026-09-07T08:01:24.652663+00:00"
+}

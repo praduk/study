@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5c4734eb756945599e83661f12a26d75",
+  "title": "Accuracy and numerical stability answer different questions",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3dd2cbdf3fcb42d8aac2a37526dc45aa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3dd2cbdf3fcb42d8aac2a37526dc45aa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:18.657836+00:00",
+  "updated_at": "2026-09-07T07:49:18.657845+00:00"
+}

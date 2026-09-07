@@ -1,0 +1,1 @@
+Let $E_n=\{x:\norm{Tx}\le n\text{ for all }T\in\mathcal T\}$. Each is closed, and pointwise boundedness gives $X=\bigcup_n E_n$. Baire yields a ball $B(x_0,r)\subseteq E_N$ for some $N$. For $\norm h<r$, both $x_0+h$ and $x_0$ are in $E_N$, so $\norm{Th}\le2N$ for all $T$. Taking $h=(r/2)x$ with $\norm x\le1$ gives $\norm{Tx}\le4N/r$, uniformly in $T$.

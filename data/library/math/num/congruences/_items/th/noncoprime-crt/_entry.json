@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "55535a102ae243a4a480bd5cb004ac1a",
+  "title": "Two compatible noncoprime moduli",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d3b8686478444b10a0cefdbe9674796b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d3b8686478444b10a0cefdbe9674796b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f7ea54e18607499c8b3443b50c3a8984",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f7ea54e18607499c8b3443b50c3a8984.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:46.897248+00:00",
+  "updated_at": "2026-09-07T07:47:48.131051+00:00"
+}

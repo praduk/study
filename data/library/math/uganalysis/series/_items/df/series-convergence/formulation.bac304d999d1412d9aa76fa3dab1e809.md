@@ -1,0 +1,1 @@
+For real or complex terms $a_n$, the series $\sum_{n=1}^{\infty}a_n$ converges to $S$ when its partial sums $S_N=\sum_{n=1}^N a_n$ converge to $S$. It converges absolutely when $\sum |a_n|<\infty$, and conditionally when it converges but not absolutely. A necessary condition for convergence is $a_n\to0$, since $a_n=S_n-S_{n-1}$; that condition is not sufficient.

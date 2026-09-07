@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ea7a069691f94bdbb6818c5d8dd8936e",
+  "title": "Harmonic functions and harmonic conjugates",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:th:cauchy-riemann, @math:complex:analytic-consequences:th:taylor-cauchy.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "95b615ab694e4bb9b463e6c79ed42508",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.95b615ab694e4bb9b463e6c79ed42508.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:35.481027+00:00",
+  "updated_at": "2026-09-07T08:26:49.176850+00:00"
+}

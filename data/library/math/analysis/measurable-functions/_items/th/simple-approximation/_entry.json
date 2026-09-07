@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f82fa0efcef14717a5f88a58d3489000",
+  "title": "Increasing simple approximation",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:analysis:measurable-functions:df:measurable-function.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c70258a844744cfa097d369cc3879a8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c70258a844744cfa097d369cc3879a8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c40af7c0a92d42689ecf173c6adf306f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c40af7c0a92d42689ecf173c6adf306f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:38.391309+00:00",
+  "updated_at": "2026-09-07T08:24:58.016397+00:00"
+}

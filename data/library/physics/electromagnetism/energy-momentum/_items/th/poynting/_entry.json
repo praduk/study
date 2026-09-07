@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d1b5169ae6eb44a7bacce7673ece0d96",
+  "title": "Local and integral energy balance",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ce875e87f6048e48b284bfe0eadfb0b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ce875e87f6048e48b284bfe0eadfb0b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4704b33da0c44d02b15be6e06bf7bbeb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4704b33da0c44d02b15be6e06bf7bbeb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:57.100042+00:00",
+  "updated_at": "2026-09-07T09:02:57.157537+00:00"
+}

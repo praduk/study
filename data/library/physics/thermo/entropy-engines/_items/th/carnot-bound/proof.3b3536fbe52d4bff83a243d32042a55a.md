@@ -1,0 +1,1 @@
+A cycle has $\Delta U=\Delta S=0$. Energy balance gives $W=Q_h-Q_c$. Entropy balance gives $Q_h/T_h-Q_c/T_c\le0$, hence $Q_c/Q_h\ge T_c/T_h$. Substitute into $\eta=1-Q_c/Q_h$. Equality is zero entropy production under these assumptions.

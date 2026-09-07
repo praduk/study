@@ -1,0 +1,1 @@
+Write $x=a+mt$. The second congruence becomes $mt\equiv b-a\pmod n$. The linear-congruence theorem gives solvability exactly when $d\mid b-a$, with $t$ unique modulo $n/d$. Hence $x$ is unique modulo $m(n/d)$.

@@ -1,0 +1,3 @@
+The constant vectors form a trivial line $L$. The invariant plane $W=\{(a,b,c):a+b+c=0\}$ complements it. To prove $W$ irreducible, any proper nonzero invariant subspace would be a line. A 3-cycle has two distinct primitive cube-root eigenvalues on $W$, so an invariant line would be one of its eigenspaces. A transposition conjugates this 3-cycle to its inverse and exchanges the two eigenspaces, so neither line is invariant under all of $S_3$.
+
+The trace of a permutation matrix counts fixed coordinates; thus the character of $\C^3$ is $(3,1,0)$ on the three listed classes. Subtracting the trivial character $(1,1,1)$ gives $\chi_W=(2,0,-1)$. As a check, dimensions add to $1+2=3$.

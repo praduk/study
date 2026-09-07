@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1452e55901e4404690fd2d6ceafd43dc",
+  "title": "Holomorphic functions have Taylor expansions",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:complex:contour-integration:th:cauchy-formula, @math:complex:holomorphic-functions:df:power-series.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dd017f65ba614d28b117daa3e1f98586",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dd017f65ba614d28b117daa3e1f98586.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e1522aab0b5e46e7b3af2834aab91716",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e1522aab0b5e46e7b3af2834aab91716.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:49.643321+00:00",
+  "updated_at": "2026-09-07T08:26:24.945699+00:00"
+}

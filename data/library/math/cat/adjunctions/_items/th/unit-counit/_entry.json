@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3dced3d7d76c466f8b9f2c47947874d5",
+  "title": "The unit, counit, and triangle identities",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "71a00bf8ccd941ada970aa7c5ab75bcc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.71a00bf8ccd941ada970aa7c5ab75bcc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9a8e0ba7e812494b87d85062f423b1b8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9a8e0ba7e812494b87d85062f423b1b8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:56:40.646496+00:00",
+  "updated_at": "2026-09-07T08:24:04.236034+00:00"
+}

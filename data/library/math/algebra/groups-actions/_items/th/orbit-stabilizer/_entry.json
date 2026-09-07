@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d3650c73837c4d5496aa61362619935e",
+  "title": "Orbit–stabilizer and the class equation",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ea38d982449b4eb0a41755ebf29dc5f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ea38d982449b4eb0a41755ebf29dc5f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9963ac705d194895ab1cbf9e23fa44d6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9963ac705d194895ab1cbf9e23fa44d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:05.404682+00:00",
+  "updated_at": "2026-09-07T08:23:16.874283+00:00"
+}

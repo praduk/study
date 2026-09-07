@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "acbd5f587fe543609a63c4ff743440e3",
+  "title": "Equivalence principle and its local scope",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eab175102640492cbedb63f8b32495e5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eab175102640492cbedb63f8b32495e5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.573347+00:00",
+  "updated_at": "2026-09-07T09:18:15.573349+00:00"
+}

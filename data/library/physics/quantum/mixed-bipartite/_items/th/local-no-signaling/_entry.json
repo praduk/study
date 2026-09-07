@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2dc484a804b644659ff743b4dcc2c94e",
+  "title": "A local trace-preserving operation leaves the remote state unchanged",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ff1e51cdad14cadb97fd7f443432834",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ff1e51cdad14cadb97fd7f443432834.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e699c21144014d0a89abd9b98d72f674",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e699c21144014d0a89abd9b98d72f674.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:24.836017+00:00",
+  "updated_at": "2026-09-07T09:11:24.956362+00:00"
+}

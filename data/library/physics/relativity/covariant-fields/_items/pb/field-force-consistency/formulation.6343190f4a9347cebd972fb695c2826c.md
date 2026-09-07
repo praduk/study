@@ -1,0 +1,1 @@
+In $S$, a charge is momentarily at rest in a uniform electric field $E\hat{\mathbf y}$ with no magnetic field. A frame $S'$ moves at speed $v$ along $+x$. Compute the charge's instantaneous transverse three-force in $S'$ using the transformed fields, and check it against four-force transformation.

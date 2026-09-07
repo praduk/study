@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f4b5cd914961447da338e290fdc60aff",
+  "title": "Classical Mechanics for Mathematicians: Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Physics foundations using the Mathematics curriculum; SI units.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "acbc6c5fce3f4b71bab2c9cf2e962c9a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.acbc6c5fce3f4b71bab2c9cf2e962c9a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:08.985205+00:00",
+  "updated_at": "2026-09-07T09:04:08.985496+00:00"
+}

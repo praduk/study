@@ -1,0 +1,1 @@
+In spatially flat noncompact FLRW let $a(t)=At^q$ for all $t>0$, where $A>0$, $q>0$, the past boundary is $0$, and the future is unbounded. Determine when particle and event horizons exist, compute proper distances, and compare the Hubble radius.

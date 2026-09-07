@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9ab42e2c03ce4e4b81b986b977b429a8",
+  "title": "Simple-compressible equilibrium model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3adfcdd1c0314270aa201525a9e39afc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3adfcdd1c0314270aa201525a9e39afc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.825170+00:00",
+  "updated_at": "2026-09-07T08:57:24.825172+00:00"
+}

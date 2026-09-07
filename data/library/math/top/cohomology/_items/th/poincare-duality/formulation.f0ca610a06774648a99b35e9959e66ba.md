@@ -1,0 +1,3 @@
+For a closed oriented $n$-manifold $M$, capping with its fundamental class gives an isomorphism $H^k(M;\Z)\isoto H_{n-k}(M;\Z)$ for every $k$. The same statement holds with $\Q$ coefficients, using the image of the integral fundamental class in $H_n(M;\Q)$. With $\Z/2$ coefficients no orientability assumption is required. Ordinary absolute homology in this formula is not the correct version for general noncompact manifolds or manifolds with boundary.
+
+This structural theorem is used without proof here. See the inspected [Hatcher, *Algebraic Topology*, §3.3, Poincaré duality](https://pi.math.cornell.edu/~hatcher/AT/ATplain.pdf).

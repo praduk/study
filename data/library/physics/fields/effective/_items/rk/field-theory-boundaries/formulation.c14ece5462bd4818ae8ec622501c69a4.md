@@ -1,0 +1,3 @@
+The classical variation, current identities, free-mode algebra, and finite-dimensional perturbative examples here are exact under their stated hypotheses. They demonstrate structures used in field theory while keeping the argument reviewable.
+
+They do not prove the existence of interacting four-dimensional gauge theories, derive the Standard Model from first principles, quantize gravity, or provide a complete renormalization course. For a mathematical continuation use [Etingof's MIT notes](https://ocw.mit.edu/courses/18-238-geometry-and-quantum-field-theory-spring-2023/mit18_238_s23_lec_full.pdf); for physical calculations continue with the source courses linked in the guide.

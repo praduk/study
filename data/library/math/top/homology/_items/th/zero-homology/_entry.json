@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0487e609c4344b3aa36acda08a2d155e",
+  "title": "Zeroth homology counts path components",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "15b83b34a87c4bf780aac8e8e63a9dd9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.15b83b34a87c4bf780aac8e8e63a9dd9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "caf5be241b8f4b55ba1efceab661ec82",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.caf5be241b8f4b55ba1efceab661ec82.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:48.001828+00:00",
+  "updated_at": "2026-09-07T08:07:47.541357+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "ce38aa5a58da41c097317a93c98243e0",
+  "title": "Time ordering and the scope of the Dyson expansion",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8dec798a1327415f80f3758c88f40d81",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8dec798a1327415f80f3758c88f40d81.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:26.923923+00:00",
+  "updated_at": "2026-09-07T08:54:26.923930+00:00"
+}

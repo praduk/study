@@ -1,0 +1,1 @@
+Let $u:[0,T]\to[0,\infty)$ be continuous with $u(t)\le A+L\int_0^t u(s)\,ds$, where $A,L\ge0$. Then $u(t)\le Ae^{Lt}$. Consequently two solutions of the same $L$-Lipschitz equation, on a common interval where that bound holds, satisfy $\norm{y(t)-z(t)}\le e^{Lt}\norm{y(0)-z(0)}$ for $t\ge0$.

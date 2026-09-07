@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b9f14dda6da64bf5928677c24a834182",
+  "title": "Monotone convergence for real sequences",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:th:supremum-approximation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "370bc11334554f99a75eb0c34ec189ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.370bc11334554f99a75eb0c34ec189ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9b619231d929427caf440e92e1840f85",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9b619231d929427caf440e92e1840f85.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:25.082092+00:00",
+  "updated_at": "2026-09-07T08:08:27.325761+00:00"
+}

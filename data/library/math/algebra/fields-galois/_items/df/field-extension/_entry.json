@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "aeee987d61dc4a32af506c78c183f43d",
+  "title": "Field extensions and minimal polynomials",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f3641bb7364493a9e78029d3adf0c3e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f3641bb7364493a9e78029d3adf0c3e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:38.406055+00:00",
+  "updated_at": "2026-09-07T07:54:38.406067+00:00"
+}

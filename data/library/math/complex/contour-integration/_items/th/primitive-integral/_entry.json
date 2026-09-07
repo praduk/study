@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0bd91b67275743f080e8e90cc2e91329",
+  "title": "Primitives determine contour integrals",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:contour-integration:df:contour-integral, @math:complex:holomorphic-functions:th:holomorphic-rules, @math:uganalysis:riemann-integration:th:fundamental-theorem.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "80d5e22edbad41198774929f47c1299e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.80d5e22edbad41198774929f47c1299e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cc7b7c472fa5419cac6ff38b4c748963",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cc7b7c472fa5419cac6ff38b4c748963.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:32.071546+00:00",
+  "updated_at": "2026-09-07T08:26:12.992583+00:00"
+}

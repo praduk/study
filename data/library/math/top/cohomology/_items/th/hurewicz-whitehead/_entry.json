@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1f19d4e364ce4ff68a23de40b6ee2c96",
+  "title": "Hurewicz and Whitehead: first bridges from homotopy",
+  "rank": 9222246136947933184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e8b6bc27961b4e259d8c6cfdcadcbc52",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e8b6bc27961b4e259d8c6cfdcadcbc52.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:59.350130+00:00",
+  "updated_at": "2026-09-07T08:03:59.350150+00:00"
+}

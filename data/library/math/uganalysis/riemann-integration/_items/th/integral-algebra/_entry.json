@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d36768e173ae4eac8bc078c01ee41db3",
+  "title": "Algebra, order, and interval additivity of the Riemann integral",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:uganalysis:riemann-integration:th:darboux-criterion.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8351be756cff412a844201f8f474165b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8351be756cff412a844201f8f474165b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f977a2a2254d490aab0e5777252c72a2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f977a2a2254d490aab0e5777252c72a2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:10:00.855398+00:00",
+  "updated_at": "2026-09-07T08:24:31.936669+00:00"
+}

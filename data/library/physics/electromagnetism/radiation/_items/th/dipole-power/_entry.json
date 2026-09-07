@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2fc2f5a4e6504dc3876240a831120c6a",
+  "title": "Power implied by the dipole radiation field",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb071646468747db92c1ea4dbe974cf7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb071646468747db92c1ea4dbe974cf7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "61f42d4d520042a697adcba3c96f36eb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.61f42d4d520042a697adcba3c96f36eb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.398518+00:00",
+  "updated_at": "2026-09-07T09:02:58.495804+00:00"
+}

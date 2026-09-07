@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "aa439da4547240a9b3ed94edbd8442d3",
+  "title": "Euler–Cauchy equations on the positive half-line",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e2ace841f38c41fa97d77ac9f85f5fe1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e2ace841f38c41fa97d77ac9f85f5fe1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7230357fbab449af9026351f4386cb28",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7230357fbab449af9026351f4386cb28.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:33.840935+00:00",
+  "updated_at": "2026-09-07T07:51:35.219247+00:00"
+}

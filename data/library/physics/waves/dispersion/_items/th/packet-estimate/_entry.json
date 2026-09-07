@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b23d5f05c6df4053aa8a37d4c23f0c52",
+  "title": "A quantitative narrow-band packet approximation",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:waves:dispersion:df:phase-group.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0fa51a1a39f04f6ab6105b35859eb369",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0fa51a1a39f04f6ab6105b35859eb369.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "34c0eeaf88da4fb28410ca86126a41dc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.34c0eeaf88da4fb28410ca86126a41dc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.981832+00:00",
+  "updated_at": "2026-09-07T09:04:16.019401+00:00"
+}

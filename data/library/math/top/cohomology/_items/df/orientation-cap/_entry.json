@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "698f9d8e37ee42b08aeb35097b55dab8",
+  "title": "Fundamental class and cap product",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a99709c89d1340d38c9e78b9291f9c0c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a99709c89d1340d38c9e78b9291f9c0c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:45.572003+00:00",
+  "updated_at": "2026-09-07T08:03:45.572012+00:00"
+}

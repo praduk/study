@@ -1,0 +1,1 @@
+In the one-dimensional model $m\dot v=F-bv$, take constant known $F>0$, unknown $m,b>0$, and $v(0)=0$. Determine what one exact terminal-speed measurement identifies. What additional information is obtained from the exponential relaxation time?

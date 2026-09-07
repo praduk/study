@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b4ec24e82c594b71b09ddcae58647a9a",
+  "title": "Euler relation and Gibbs–Duhem",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "39376c4854f04b71bdca09be467a4501",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.39376c4854f04b71bdca09be467a4501.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a3e65a93a86347fca6d0fb6e8325cd84",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a3e65a93a86347fca6d0fb6e8325cd84.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.941181+00:00",
+  "updated_at": "2026-09-07T08:57:24.980758+00:00"
+}

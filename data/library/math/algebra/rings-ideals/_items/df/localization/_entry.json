@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "64419775f8e540749226f78cb2b15d55",
+  "title": "Localization and local rings",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2a3fb74c8944ecbb420377d4367b6d3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2a3fb74c8944ecbb420377d4367b6d3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:42.133904+00:00",
+  "updated_at": "2026-09-07T08:23:26.768451+00:00"
+}

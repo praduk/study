@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "084cfb973b504636857a1bcba35925f6",
+  "title": "Binary necklaces of length four",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "81e7fc5dfc48432690425a03e3934291",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.81e7fc5dfc48432690425a03e3934291.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7afd5414ecfa47529e3177b8349b560b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.7afd5414ecfa47529e3177b8349b560b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:09.986961+00:00",
+  "updated_at": "2026-09-07T07:53:11.407535+00:00"
+}

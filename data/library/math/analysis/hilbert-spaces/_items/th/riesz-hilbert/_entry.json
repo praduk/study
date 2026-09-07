@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c9bd86e9661b4c94ae1fc1d9d94e860e",
+  "title": "Riesz representation for Hilbert-space functionals",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:analysis:hilbert-spaces:th:projection, @math:analysis:hilbert-spaces:th:cauchy-schwarz.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1b9fd8893af440483bee05b13d5b193",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1b9fd8893af440483bee05b13d5b193.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7f4b4abb54ba43df83a7521f7acd0a5c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7f4b4abb54ba43df83a7521f7acd0a5c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:12.179887+00:00",
+  "updated_at": "2026-09-07T08:14:14.508831+00:00"
+}

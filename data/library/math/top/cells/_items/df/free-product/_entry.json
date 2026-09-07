@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7d5207bdc79b4e4cbb8959f7587baa6d",
+  "title": "Free products and group presentations",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93f2b84a5e554450a480f452b5abeb7f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93f2b84a5e554450a480f452b5abeb7f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:26.837428+00:00",
+  "updated_at": "2026-09-07T08:02:26.837436+00:00"
+}

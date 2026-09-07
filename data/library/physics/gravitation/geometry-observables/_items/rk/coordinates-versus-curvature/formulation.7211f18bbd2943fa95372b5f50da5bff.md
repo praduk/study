@@ -1,0 +1,3 @@
+Normal coordinates can arrange $g_{\mu\nu}(p)=\eta_{\mu\nu}$ and $\partial_\rho g_{\mu\nu}(p)=0$ at one event. Curvature enters at second order. A diverging coordinate component does not by itself establish a singularity: the metric may extend smoothly in another chart.
+
+Conversely, finite polynomial curvature scalars do not guarantee geodesic completeness. Singularity questions often concern inextendible incomplete causal geodesics and possible spacetime extensions. Operational observables include proper times, redshifts between specified observers, and tidal accelerations. Gravitational potential and gravitational energy need an explicit approximation or geometric setting.

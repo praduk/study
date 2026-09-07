@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "54b28fd340f74ecab9ed53c8031eebe4",
+  "title": "Cauchy derivative estimates",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:taylor-cauchy, @math:complex:contour-integration:th:ml-estimate.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "03d697c51aa545e4bd380477578e9981",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.03d697c51aa545e4bd380477578e9981.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2797618d0e9246adb14bd42a9b2c0ee5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2797618d0e9246adb14bd42a9b2c0ee5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:53.484400+00:00",
+  "updated_at": "2026-09-07T08:26:26.966904+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "a6558b6cb8804f4e92315dbf14fb33e5",
+  "title": "Decide a quadratic congruence using reciprocity",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3d3ec1aa86194a1a863dd5cb4c2678d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3d3ec1aa86194a1a863dd5cb4c2678d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b7f867aced4246b4b93f02e75011c205",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b7f867aced4246b4b93f02e75011c205.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:17.825914+00:00",
+  "updated_at": "2026-09-07T07:48:19.098088+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "541ee595c2fe481d8e5056b41c4c7f13",
+  "title": "Pointwise convergence for piecewise smooth periodic data",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ff07042d58a49489cc1eb7bc5adc3e8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ff07042d58a49489cc1eb7bc5adc3e8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:47.474408+00:00",
+  "updated_at": "2026-09-07T07:51:47.474414+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5d38cc14896d4d1b83ed67cb04e4d743",
+  "title": "A curvature obstruction on the torus",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba1f83eeaecd42ccaf321661f497bc07",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba1f83eeaecd42ccaf321661f497bc07.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5c3dfe70f95346a3a53d85a35811201d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5c3dfe70f95346a3a53d85a35811201d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:41.515362+00:00",
+  "updated_at": "2026-09-07T08:06:43.605494+00:00"
+}

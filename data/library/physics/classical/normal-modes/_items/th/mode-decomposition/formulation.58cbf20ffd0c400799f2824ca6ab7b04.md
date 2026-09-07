@@ -1,0 +1,1 @@
+For the quadratic model, $M\ddot\eta+K\eta=0$ has a basis of modes $Kv_j=\omega_j^2Mv_j$, orthonormal in $v_i^TMv_j=\delta_{ij}$. If $K$ is positive definite all $\omega_j^2>0$ and each mode oscillates independently.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5994eafb3fbe45eebaf2445e54f568ed",
+  "title": "Solve a resonantly forced oscillator",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1277075b3a0c4e228e3ea7e6147bceb0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1277075b3a0c4e228e3ea7e6147bceb0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8cf0fdd8dac34547bd1540389a1abe45",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.8cf0fdd8dac34547bd1540389a1abe45.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:30.797214+00:00",
+  "updated_at": "2026-09-07T07:49:32.170959+00:00"
+}

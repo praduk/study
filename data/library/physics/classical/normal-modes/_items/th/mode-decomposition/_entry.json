@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9aafebe46a9646eea2ea244ef000f402",
+  "title": "Mass-weighted normal modes",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:classical:normal-modes:ax:quadratic-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "58cbf20ffd0c400799f2824ca6ab7b04",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.58cbf20ffd0c400799f2824ca6ab7b04.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2530772358af4d52bd095d41a346ac02",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2530772358af4d52bd095d41a346ac02.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:11.022822+00:00",
+  "updated_at": "2026-09-07T09:04:11.109730+00:00"
+}

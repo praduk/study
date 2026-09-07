@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "2b18381fba014a919446d7e28dd7bd5a",
+  "title": "Parallel transport exists and preserves the metric",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "838ae851d86142cabcc6dcf262696b2c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.838ae851d86142cabcc6dcf262696b2c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "baf26751ad5247a18fb03584bab9a9ad",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.baf26751ad5247a18fb03584bab9a9ad.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:54.396703+00:00",
+  "updated_at": "2026-09-07T08:05:56.473057+00:00"
+}

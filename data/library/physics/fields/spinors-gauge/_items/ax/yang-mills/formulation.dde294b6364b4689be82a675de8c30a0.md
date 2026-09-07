@@ -1,0 +1,3 @@
+Given a Lorentzian spacetime metric and a compact gauge group with an invariant inner product on its Lie algebra, the vacuum Yang-Mills model uses a connection $A$, curvature $F$, and field equation $D_A(*F)=0$. The identity $D_AF=0$ is the geometric Bianchi identity, whereas the first equation is dynamics selected by the gauge action.
+
+For the abelian group $U(1)$ the curvature is locally $dA$ and the vacuum equations reduce to the differential-form Maxwell system after fixing physical normalization. Nonabelian curvature contains the quadratic term $A\wedge A$, so the classical vacuum equations themselves are nonlinear. Physical use also requires matter content and couplings.

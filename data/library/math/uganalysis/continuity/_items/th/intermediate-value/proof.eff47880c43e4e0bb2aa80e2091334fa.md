@@ -1,0 +1,1 @@
+Let $A=\{x\in[a,b]:f(x)<y\}$ and $c=\sup A$. Continuity at the endpoints shows $a<c<b$. There exist $x_n\in A$ with $x_n\to c$, so continuity gives $f(c)\le y$. If $f(c)<y$, continuity gives a point slightly to the right of $c$ with value below $y$, contradicting its upper-bound property. Thus $f(c)=y$. Replace $f$ by $-f$ for reversed inequalities.

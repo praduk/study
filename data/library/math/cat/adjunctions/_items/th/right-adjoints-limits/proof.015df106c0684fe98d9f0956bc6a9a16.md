@@ -1,0 +1,3 @@
+Fix an object $A$ of $\mathcal C$. The adjunction identifies maps $A\to GL$ with maps $FA\to L$. The limit property identifies the latter with cones $FA\to D(j)$. Transpose each component through the adjunction to obtain maps $A\to GD(j)$. Naturality in the target says that the original cone equalities hold exactly when the transposed ones do, so this is a bijection with cones from $A$ to $GD$.
+
+Under this chain, a map $u:A\to GL$ goes to the cone with components $G(\lambda_j)u$, by naturality of transposition. Thus every such cone factors uniquely through $GL$, precisely the limit property. Applying the argument in opposite categories proves the colimit statement.

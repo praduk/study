@@ -1,0 +1,1 @@
+Two Schwarzschild static observers remain at $r_A=4r_s$ and $r_B=9r_s$. Compare their proper times over the same coordinate-time interval and find the frequency ratio for light sent from $A$ to $B$. Which clocks need support? What would change for an orbiting clock?

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd5eead7d272463aae79413eec8743a4",
+  "title": "A string whose line density jumps",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09d5dee1172640ff9eef092bd86a07e7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09d5dee1172640ff9eef092bd86a07e7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "46a15065955c4d4791dba46fc9bfa23d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.46a15065955c4d4791dba46fc9bfa23d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.369134+00:00",
+  "updated_at": "2026-09-07T09:04:16.433798+00:00"
+}

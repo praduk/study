@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bf3e1005e4c94847be654b08c30efe53",
+  "title": "A finite p-group has nontrivial center",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f6b5f986834a4bde9b54e2eaf83e1b75",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f6b5f986834a4bde9b54e2eaf83e1b75.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "16a5a7f9801d4d21acb52d3c77ab6549",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.16a5a7f9801d4d21acb52d3c77ab6549.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:15.746938+00:00",
+  "updated_at": "2026-09-07T07:53:17.204451+00:00"
+}

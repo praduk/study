@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3e3d5cbf1a23442a9dbac2cc398ca40e",
+  "title": "General relativity for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "Lorentzian geometry as a physical model of gravitation, with matter, orbits, waves, and cosmology.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "064f90eb262f45f0a2b53c23873b67e5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.064f90eb262f45f0a2b53c23873b67e5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.563384+00:00",
+  "updated_at": "2026-09-07T09:18:15.563635+00:00"
+}

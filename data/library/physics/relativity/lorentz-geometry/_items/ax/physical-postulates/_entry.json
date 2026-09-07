@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b77a6706537f40f7980bb71474648461",
+  "title": "Inertial frames, light, and ideal clocks",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9c195d7d4ee4499ebdbc331af18f4dd2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9c195d7d4ee4499ebdbc331af18f4dd2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.728615+00:00",
+  "updated_at": "2026-09-07T09:02:58.728617+00:00"
+}

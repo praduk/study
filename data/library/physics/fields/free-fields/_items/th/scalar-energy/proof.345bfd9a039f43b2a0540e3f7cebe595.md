@@ -1,0 +1,1 @@
+Differentiate $e$ to get $\dot\phi\ddot\phi+\nabla\phi\cdot\nabla\dot\phi+m^2\phi\dot\phi$. The divergence of $\mathbf s$ is $-\nabla\dot\phi\cdot\nabla\phi-\dot\phi\Delta\phi$. Their sum is $\dot\phi(\ddot\phi-\Delta\phi+m^2\phi)=0$. Integrating yields conservation under the stated boundary condition.

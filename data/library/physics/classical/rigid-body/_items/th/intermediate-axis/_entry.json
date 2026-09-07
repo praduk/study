@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4488221c8031447bbb863cb0c06d3d84",
+  "title": "Linear instability of intermediate-axis rotation",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:classical:rigid-body:th:euler-rigid.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "49586ef411a04176be37d218755c8591",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.49586ef411a04176be37d218755c8591.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "995a8edd200c480bbc29ac27cb921202",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.995a8edd200c480bbc29ac27cb921202.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:10.638483+00:00",
+  "updated_at": "2026-09-07T09:04:10.717667+00:00"
+}

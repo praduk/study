@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c8602ace580d47b5a38945cc64abb98f",
+  "title": "Euclid’s lemma and unique prime factorization",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34ee1a9747594f0f9e467ee51d09dcde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34ee1a9747594f0f9e467ee51d09dcde.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21e9dbf12326416ebe3bdf3f151737fc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.21e9dbf12326416ebe3bdf3f151737fc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:37.344375+00:00",
+  "updated_at": "2026-09-07T07:47:38.525733+00:00"
+}

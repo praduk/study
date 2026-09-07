@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d20a02f65833437e8ca8141e7e70af56",
+  "title": "Hahn–Banach extension and separation",
+  "rank": 9151314442816847872,
+  "header": "Prerequisites: @math:analysis:banach-spaces:df:banach-operator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6cb23bc3858b458d8d4d4de5c759b82a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6cb23bc3858b458d8d4d4de5c759b82a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:49.683466+00:00",
+  "updated_at": "2026-09-07T08:13:49.683499+00:00"
+}

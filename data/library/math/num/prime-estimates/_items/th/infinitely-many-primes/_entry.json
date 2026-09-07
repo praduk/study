@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "821afbb1ccae4ab2971a551e2f8ba586",
+  "title": "Infinitely many primes",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8eff1a9f25344f5eb0cb4ea787456212",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8eff1a9f25344f5eb0cb4ea787456212.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dea1e61b1b8b48b5b037bd26bbf3da3c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.dea1e61b1b8b48b5b037bd26bbf3da3c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:42.587217+00:00",
+  "updated_at": "2026-09-07T07:48:43.922283+00:00"
+}

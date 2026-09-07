@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7dc542c8725942c38591dd52cc549c43",
+  "title": "Regulator, renormalized parameters, and predictions",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "65fc28c5829c4cbc91c88be2c6f917a2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.65fc28c5829c4cbc91c88be2c6f917a2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:38.248029+00:00",
+  "updated_at": "2026-09-07T08:54:38.248037+00:00"
+}

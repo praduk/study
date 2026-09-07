@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ee5d9e6c03ce407e9408717107be46c4",
+  "title": "Fraunhofer approximation is an aperture Fourier transform",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:waves:diffraction:ax:fresnel-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e73c01dc5ae6414082c9ef70233a9716",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e73c01dc5ae6414082c9ef70233a9716.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7e28892fec4a43ff85a414962dad2793",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7e28892fec4a43ff85a414962dad2793.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:17.339182+00:00",
+  "updated_at": "2026-09-07T09:04:17.426213+00:00"
+}

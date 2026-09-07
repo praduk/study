@@ -1,0 +1,3 @@
+In a uniform medium near an optical axis $z$, describe a ray by transverse height $y$ and small slope $\theta=dy/dz$. Free propagation over signed distance $d$ has matrix $P(d)=\begin{pmatrix}1&d\\0&1\end{pmatrix}$. An ideal thin lens of nonzero focal length $f$ has matrix $L(f)=\begin{pmatrix}1&0\\-1/f&1\end{pmatrix}$: height is unchanged and slope changes by $-y/f$.
+
+Positive $f$ describes convergence of an initially parallel ray bundle. These are paraxial model maps; finite lens thickness, aberrations, aperture stops, and diffraction are omitted. Matrix products apply from right to left in propagation order.

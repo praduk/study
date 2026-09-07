@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b4a956e203844c41afba5a7df76f6d2c",
+  "title": "Monomorphisms and epimorphisms in Set",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4260d5a51c8d47a6b0d54da116428fac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4260d5a51c8d47a6b0d54da116428fac.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7453d6163a064c3b9910d0ea97cfe1b6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7453d6163a064c3b9910d0ea97cfe1b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:26.765720+00:00",
+  "updated_at": "2026-09-07T07:55:28.748241+00:00"
+}

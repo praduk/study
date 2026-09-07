@@ -1,0 +1,1 @@
+Let $\chi(X)=(X_1+\gamma X_2,X_2,X_3)$ with dimensionless constant $\gamma$. Compute $F,J,E,\varepsilon$ and the exact stretch of a material line initially in the $X_2$ direction. Explain what the linear approximation misses.

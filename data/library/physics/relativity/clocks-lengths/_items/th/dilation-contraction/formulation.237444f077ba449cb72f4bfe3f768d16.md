@@ -1,0 +1,1 @@
+A clock moving at constant speed $v$ in $S$ has $\Delta\tau=\Delta t/\gamma$. A rod at rest in $S'$ with endpoint coordinate difference $L_0$ along the boost direction has length $L=L_0/\gamma$ when its endpoints are measured simultaneously in $S$. These are different choices of pairs of events.

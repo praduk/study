@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "db4510c228154cd093c380a7e56075b8",
+  "title": "Bolzano–Weierstrass theorem on the real line",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:th:nested-intervals.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8ec8e5c4d4ae44859714f73dd377fe5c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8ec8e5c4d4ae44859714f73dd377fe5c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "eeda618aa98640bfac366f0cc1f87241",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.eeda618aa98640bfac366f0cc1f87241.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:28.846894+00:00",
+  "updated_at": "2026-09-07T08:08:31.086276+00:00"
+}

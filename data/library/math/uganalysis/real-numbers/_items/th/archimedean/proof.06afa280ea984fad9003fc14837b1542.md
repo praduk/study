@@ -1,0 +1,1 @@
+If the positive integers had supremum $s$, choose an integer $n>s-1$. Then $n+1>s$, contradicting the upper bound. Given $x<y$, choose a positive integer $n$ with $n(y-x)>1$. The Archimedean property and well-ordering of the integers bounded below give a least integer $m>nx$. Its minimality gives $m-1\le nx$, so $nx<m\le nx+1<ny$. Thus $q=m/n$ works.

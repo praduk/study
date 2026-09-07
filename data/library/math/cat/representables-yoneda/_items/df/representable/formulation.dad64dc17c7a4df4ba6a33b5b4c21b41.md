@@ -1,0 +1,3 @@
+For an object $A$ of a locally small category, $\Hom(A,-):\mathcal C\to\Set$ acts by postcomposition, while $\Hom(-,A):\mathcal C^{\mathrm{op}}\to\Set$ acts by precomposition. A covariant set-valued functor is representable if naturally isomorphic to $\Hom(A,-)$ for some $A$; a contravariant one is representable if naturally isomorphic to $\Hom(-,A)$.
+
+A presheaf on a small category $\mathcal C$ is a functor $\mathcal C^{\mathrm{op}}\to\Set$. Their category is $[\mathcal C^{\mathrm{op}},\Set]$. The variance in these definitions is essential: $A$ occupies a different argument in the two Hom functors.

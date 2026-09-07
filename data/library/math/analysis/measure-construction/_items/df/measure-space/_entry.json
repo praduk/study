@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "478ad4fa733549f9bb8212849d746ead",
+  "title": "Sigma algebras and measures",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c12f8daba6b446de96c8d6a72da3c634",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c12f8daba6b446de96c8d6a72da3c634.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:03.209453+00:00",
+  "updated_at": "2026-09-07T08:24:47.930183+00:00"
+}

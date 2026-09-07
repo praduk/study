@@ -1,0 +1,1 @@
+For a closed subset $F\subseteq X$, extend an open cover of $F$ to ambient open sets and adjoin $X\setminus F$. A finite subcover of $X$ yields a finite subcover of $F$. For a continuous $f:X\to Y$, pull an open cover of $f(X)$ back along $f$. Finitely many preimages cover $X$, so the corresponding original sets cover $f(X)$.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b3b8f92504e24f5b8c6518b990a5cda4",
+  "title": "Stationary action as a classical field model",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36e3cd8b6bf14125a44ac50c479c635d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36e3cd8b6bf14125a44ac50c479c635d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:48.496576+00:00",
+  "updated_at": "2026-09-07T08:52:48.496583+00:00"
+}

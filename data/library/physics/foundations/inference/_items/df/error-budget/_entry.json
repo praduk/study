@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2ec3e5d8eab549f7880b97e24d74bc9e",
+  "title": "Measurement uncertainty and model discrepancy",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "85395d5f69f14b28aa31c54eb089634d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.85395d5f69f14b28aa31c54eb089634d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:29.209526+00:00",
+  "updated_at": "2026-09-07T08:52:29.209534+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b71f9fc5c06c4d319c70f3efe9df47f7",
+  "title": "Spin measured along a tilted axis",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "07b7a4e3732f44f9bbc3b604349eb511",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.07b7a4e3732f44f9bbc3b604349eb511.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "19d93ae4ff2f469e819e2c4a87bf07a1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.19d93ae4ff2f469e819e2c4a87bf07a1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:22.134499+00:00",
+  "updated_at": "2026-09-07T09:11:22.213832+00:00"
+}

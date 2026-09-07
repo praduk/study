@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "bd37de294ab94c7580c874e7fe52d1ef",
+  "title": "Closed forms, exact forms, and de Rham cohomology",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b15d251ce64c4c0a977f2583d9177178",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b15d251ce64c4c0a977f2583d9177178.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:20.241930+00:00",
+  "updated_at": "2026-09-07T08:27:13.260755+00:00"
+}

@@ -1,0 +1,1 @@
+Let $H|0\rangle=0$ and $H|1\rangle=\Delta|1\rangle$, where $\Delta>0$ and the two vectors are orthonormal. Start in $|+\rangle=(|0\rangle+|1\rangle)/\sqrt2$. Find the probability of the $|+\rangle$ projector at time $t$ and the first time it vanishes.

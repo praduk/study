@@ -1,0 +1,1 @@
+Near the initial point $y\ne0$, set $v=1/y$. Then $v'=-y'/y^2=v-1$, so $v'-v=-1$. Its solution is $v=1+Ce^t$, and $v(0)=2$ gives $C=1$. Hence $y=1/(1+e^t)$ for all real $t$. Substitution verifies the differential equation and initial value. The denominator never vanishes, so the interval is all of $\R$. The separate solution $y=0$ is not part of this initial-value problem.

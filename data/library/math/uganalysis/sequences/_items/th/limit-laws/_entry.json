@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3e7d426bc35b4273ba9f7d60680000e7",
+  "title": "Uniqueness and elementary limit laws",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:uganalysis:sequences:df:sequence-limit.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8d85cc20b54941e5b38da69765bb110d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8d85cc20b54941e5b38da69765bb110d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "821ac4f710d64c9cbec7e4edf3c42155",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.821ac4f710d64c9cbec7e4edf3c42155.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:21.320979+00:00",
+  "updated_at": "2026-09-07T08:08:23.577883+00:00"
+}

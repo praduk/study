@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b3c1710510c545c8981b6b9aac9029ab",
+  "title": "Killing symmetries produce geodesic constants",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2c192042328d41468acbeafe4fd42e5b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2c192042328d41468acbeafe4fd42e5b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1f852a245afb451c8ea7b05d1c2e94a6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1f852a245afb451c8ea7b05d1c2e94a6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.694305+00:00",
+  "updated_at": "2026-09-07T09:18:15.718667+00:00"
+}

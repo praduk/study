@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "17e1eb1c56dc45feb3e365115f528d10",
+  "title": "Physics for Mathematicians: Course Map",
+  "rank": 4611686018427387904,
+  "header": "Prerequisite: familiarity with the Mathematics curriculum.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "23f0cc9b4d5d4e94898a3c438d472037",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.23f0cc9b4d5d4e94898a3c438d472037.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:38.664306+00:00",
+  "updated_at": "2026-09-07T09:09:02.150230+00:00"
+}

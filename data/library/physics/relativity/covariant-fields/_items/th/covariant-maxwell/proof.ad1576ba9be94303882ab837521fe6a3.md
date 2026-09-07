@@ -1,0 +1,3 @@
+For $\mu=0$, the source equation is $\nabla\cdot\mathbf E/c=\mu_0c\rho$, precisely Gauss' law. For $\mu=i$, it is $-c^{-2}\partial_tE_i+(\nabla\times\mathbf B)_i=\mu_0j_i$. For spatial indices $(1,2,3)$, the cyclic homogeneous equation is $\nabla\cdot\mathbf B=0$. For $(0,i,j)$ it is $(\partial_t\epsilon_{ijk}B_k+\partial_iE_j-\partial_jE_i)/c=0$, the components of Faraday's law. Antisymmetry makes the other components repetitions or zeros, proving equivalence.
+
+Under a constant Lorentz change, $F$ transforms as a two-tensor, $J$ as a vector, and derivatives as covectors. Their contracted and antisymmetrized equations therefore transform tensorially. Translations leave these derivative equations unchanged.

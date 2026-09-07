@@ -1,0 +1,1 @@
+At a small detector, a weak plus wave has $h_+(t)=h_0\cos\omega t$ and $h_\times=0$. A transverse ring of comoving test masses surrounds the origin. Find fractional length change along a radius at angle $\theta$ to $x$. Compare orthogonal arms, then repeat for a pure cross wave.

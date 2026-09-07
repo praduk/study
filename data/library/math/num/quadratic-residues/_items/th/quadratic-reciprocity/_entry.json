@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "3f33b56911db440592b4fb16c053eb51",
+  "title": "Quadratic reciprocity",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5bb63f9b2af3437bb75476759cf42314",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5bb63f9b2af3437bb75476759cf42314.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "35ff328a68a54faf86ce04e1279d1dc5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.35ff328a68a54faf86ce04e1279d1dc5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:15.850197+00:00",
+  "updated_at": "2026-09-07T08:22:31.927565+00:00"
+}

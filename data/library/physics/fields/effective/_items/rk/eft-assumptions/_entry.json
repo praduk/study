@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "df7acef4fbb14110913159b23d6b3a89",
+  "title": "What an effective field theory expansion assumes",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ad341afe37d7498186b98a00b8e5f482",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ad341afe37d7498186b98a00b8e5f482.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:51.744675+00:00",
+  "updated_at": "2026-09-07T08:54:51.744684+00:00"
+}

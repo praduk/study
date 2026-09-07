@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8945a62aceeb45e8af5a3e002f6626de",
+  "title": "Course guide: Statistical Mechanics for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "From microscopic models and ensemble assumptions to measurable equilibrium quantities.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "96b08a8a4da741dabc75a33163461e56",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.96b08a8a4da741dabc75a33163461e56.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.349373+00:00",
+  "updated_at": "2026-09-07T09:00:57.349486+00:00"
+}

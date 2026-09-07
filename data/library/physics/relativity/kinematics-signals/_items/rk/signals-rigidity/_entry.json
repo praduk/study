@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "74c044ac5e474bb99586ef90ad57c9e0",
+  "title": "Causal signaling and the limits of rigid motion",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1108bfa433004fad8060d4fee1514228",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1108bfa433004fad8060d4fee1514228.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.432638+00:00",
+  "updated_at": "2026-09-07T09:02:59.432643+00:00"
+}

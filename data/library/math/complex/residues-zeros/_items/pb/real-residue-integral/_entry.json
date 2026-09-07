@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "870cecf00e604669a2de52b8a6547d83",
+  "title": "A real improper integral from residues",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:complex:residues-zeros:th:residue-theorem, @math:complex:contour-integration:th:ml-estimate.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "43a8c5aa0b4f4f99801459af13445602",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.43a8c5aa0b4f4f99801459af13445602.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "646872a0e9c841b396c03830356cf4b9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.646872a0e9c841b396c03830356cf4b9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:03.024208+00:00",
+  "updated_at": "2026-09-07T08:17:05.504264+00:00"
+}

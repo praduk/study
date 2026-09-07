@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1c06944ab4364ca09922da47394d8481",
+  "title": "What symmetry and idealization do",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ee62efada9eb4443973275db8d524a5e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ee62efada9eb4443973275db8d524a5e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.386167+00:00",
+  "updated_at": "2026-09-07T09:02:56.386169+00:00"
+}

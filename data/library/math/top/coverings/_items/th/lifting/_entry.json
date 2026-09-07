@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "94e62e701450479791271379f5e4a88a",
+  "title": "Path and homotopy lifting for coverings",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "20626745096047c397e57f30574370bf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.20626745096047c397e57f30574370bf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:10.338218+00:00",
+  "updated_at": "2026-09-07T08:02:10.338225+00:00"
+}

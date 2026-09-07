@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f864ce5eb7bf4091a550e757d83aa5cd",
+  "title": "Stress-energy and the perfect-fluid model",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7f93347e9f2a4ccc8566259c929bbfc1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7f93347e9f2a4ccc8566259c929bbfc1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.799113+00:00",
+  "updated_at": "2026-09-07T09:18:15.799115+00:00"
+}

@@ -1,0 +1,1 @@
+An insulating ball of radius $a>0$ has static uniform volume charge $\rho_0$, zero outside, and no external field. Assume rotational symmetry and a field bounded at the center. Find $\mathbf E$ inside and outside; check the interface and total charge.

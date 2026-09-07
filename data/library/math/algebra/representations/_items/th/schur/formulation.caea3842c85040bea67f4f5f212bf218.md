@@ -1,0 +1,1 @@
+An intertwiner between irreducible representations is either zero or an isomorphism. If the representations are finite-dimensional over an algebraically closed field $k$, every endomorphism of an irreducible representation is a scalar multiple of the identity.

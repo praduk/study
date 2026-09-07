@@ -1,0 +1,1 @@
+Successive divisions give $252=198+54$, $198=3\cdot54+36$, and $54=36+18$. Back-substitution yields $18=4\cdot252-5\cdot198$. Thus the gcd is $18$. Dividing the equation by $18$ gives $14x+11y=1$. Subtract the solution $(4,-5)$: $14(x-4)=-11(y+5)$. Coprimality forces $x-4=11t$ and $y+5=-14t$. All pairs are $(4+11t,-5-14t)$ for $t\in\Z$; substitution verifies them.

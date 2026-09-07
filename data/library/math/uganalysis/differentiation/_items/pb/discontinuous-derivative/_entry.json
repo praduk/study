@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "81399a4a2cae4145a47549eb8decaf9d",
+  "title": "A derivative that is not continuous",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:uganalysis:differentiation:th:derivative-rules.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0be6c45fa8a3486b91113ffd0b53c0dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0be6c45fa8a3486b91113ffd0b53c0dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3252a1b3c884f5d902c61319087907e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d3252a1b3c884f5d902c61319087907e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:09:48.108986+00:00",
+  "updated_at": "2026-09-07T08:09:50.447339+00:00"
+}

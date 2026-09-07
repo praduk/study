@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "0fb53f2426b049deb9ac27b8f4f28c6f",
+  "title": "The indicial equation and its limitations",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a48d8bc94c364367ab512eb037b170b5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a48d8bc94c364367ab512eb037b170b5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:36.040132+00:00",
+  "updated_at": "2026-09-07T07:51:36.040139+00:00"
+}

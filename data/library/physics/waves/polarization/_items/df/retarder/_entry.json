@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "fb478555747942fca172c21d8633bda6",
+  "title": "Ideal wave plates and retardance",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34cc3214182941a0b3c9bd40ad2a2375",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34cc3214182941a0b3c9bd40ad2a2375.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:19.317923+00:00",
+  "updated_at": "2026-09-07T09:04:19.317931+00:00"
+}

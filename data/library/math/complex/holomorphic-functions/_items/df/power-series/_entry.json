@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "1ba1cd13f2ea41d59a21f5ccd7324536",
+  "title": "Power series and analytic functions",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:df:holomorphic.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9b4d2f6f2284ed9b8e20151bd713092",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9b4d2f6f2284ed9b8e20151bd713092.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:22.372894+00:00",
+  "updated_at": "2026-09-07T08:26:06.962761+00:00"
+}

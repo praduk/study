@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "73789df2bb8e4d1f941ac3b14095a1c4",
+  "title": "Cartan formula for the Lie derivative of forms",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c14e805490ba4156a11ec86991da330b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c14e805490ba4156a11ec86991da330b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d9ad33e3a83d44909cd7996ac4e50f08",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d9ad33e3a83d44909cd7996ac4e50f08.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:07.246055+00:00",
+  "updated_at": "2026-09-07T08:05:09.224511+00:00"
+}

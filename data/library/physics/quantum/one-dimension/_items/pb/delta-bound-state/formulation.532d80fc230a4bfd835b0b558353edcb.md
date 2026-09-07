@@ -1,0 +1,1 @@
+Model $-\lambda\delta(x)$ with $\lambda>0$ by free motion away from zero, continuous $\psi$, and matching condition $\psi'(0^+)-\psi'(0^-)=-2m\lambda\psi(0)/\hbar^2$. Find every normalized negative-energy bound state and its energy.

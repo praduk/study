@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f223da62c2e84e45a997cbe4a2b3924b",
+  "title": "Representations, group algebras, and characters",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "415a6c6be71f4ccaa8108e7983f3a04c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.415a6c6be71f4ccaa8108e7983f3a04c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:01.199208+00:00",
+  "updated_at": "2026-09-07T07:55:01.199232+00:00"
+}

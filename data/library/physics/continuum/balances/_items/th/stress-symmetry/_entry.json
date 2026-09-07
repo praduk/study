@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c03971c8739d4409909c636379854fdc",
+  "title": "Angular-momentum balance enforces symmetric stress",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @physics:continuum:balances:th:local-momentum.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e13e8ab21bc344cf88fa225c08f77557",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e13e8ab21bc344cf88fa225c08f77557.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c35d5d606b654bc38b5c72f5fb99b73b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c35d5d606b654bc38b5c72f5fb99b73b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.616191+00:00",
+  "updated_at": "2026-09-07T09:04:12.652852+00:00"
+}

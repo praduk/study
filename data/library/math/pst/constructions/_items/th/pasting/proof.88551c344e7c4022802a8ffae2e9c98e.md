@@ -1,0 +1,1 @@
+Agreement ensures that the pointwise extension is well-defined. If $F$ is closed in $Y$, each $f_i^{-1}(F)$ is closed in $A_i$. Because $A_i$ is closed in $X$, it is also closed in $X$. Now $f^{-1}(F)=\bigcup_{i=1}^m f_i^{-1}(F)$ is a finite union of closed sets. Thus $f$ is continuous. Finiteness cannot simply be dropped: an arbitrary union of closed subsets need not be closed.

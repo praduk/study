@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1f4aa6d286ae45299366ff6649a5f9e2",
+  "title": "Cauchy’s theorem",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6858157e65824dd9bf8159951fc73f07",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6858157e65824dd9bf8159951fc73f07.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "74b05d726ff94bc18f8591e270bc1c99",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.74b05d726ff94bc18f8591e270bc1c99.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:13.450711+00:00",
+  "updated_at": "2026-09-07T07:53:14.887922+00:00"
+}

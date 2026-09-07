@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b4c416cfe8d340ea997861e6a0be12db",
+  "title": "Robertson uncertainty with domain assumptions",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "703be5b998a14d38ad29f90580d63c01",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.703be5b998a14d38ad29f90580d63c01.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d482e9b0c9fe402e8f2067593c08a32a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d482e9b0c9fe402e8f2067593c08a32a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.846542+00:00",
+  "updated_at": "2026-09-07T09:11:20.865490+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5780148147234ede8a2afbb085f3b358",
+  "title": "Idempotents in the integers modulo twelve",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "35c29405045e401fa398f3844ca03bd3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.35c29405045e401fa398f3844ca03bd3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8c6700c6cb894fbf9c0916963504ab7a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.8c6700c6cb894fbf9c0916963504ab7a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:53:39.722454+00:00",
+  "updated_at": "2026-09-07T07:53:41.216286+00:00"
+}

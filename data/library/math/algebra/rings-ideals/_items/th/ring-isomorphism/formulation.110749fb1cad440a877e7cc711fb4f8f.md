@@ -1,0 +1,1 @@
+For a unital homomorphism $f:R\to S$, $R/\ker f\cong f(R)$. For an ideal $I\trianglelefteq R$, the ideals of $R/I$ correspond bijectively to ideals of $R$ containing $I$, through inverse image and $J\mapsto J/I$.

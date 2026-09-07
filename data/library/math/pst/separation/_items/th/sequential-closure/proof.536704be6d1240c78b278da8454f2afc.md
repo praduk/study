@@ -1,0 +1,1 @@
+A limit of a sequence in $A$ lies in $\closure A$ because each neighborhood contains a tail and hence a point of $A$. For the converse choose a countable open local basis $U_1,U_2,\ldots$ at $x$ and set $V_n=U_1\cap\cdots\cap U_n$. Each $V_n$ meets $A$, so choose $a_n\in A\cap V_n$. Any neighborhood contains some $U_k$; for $n\ge k$, $a_n\in V_n\subseteq U_k$. Thus $a_n\to x$.

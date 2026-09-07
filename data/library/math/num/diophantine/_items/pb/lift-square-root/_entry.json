@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c6929ce88b8c494499ad0463ded989e4",
+  "title": "Lift a square root from 7 to 49",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ae4b973611d44e2f827726d769af74fe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ae4b973611d44e2f827726d769af74fe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "60aa1d5cd9144c50b832d845760f7066",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.60aa1d5cd9144c50b832d845760f7066.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:48:26.993067+00:00",
+  "updated_at": "2026-09-07T07:48:28.250160+00:00"
+}

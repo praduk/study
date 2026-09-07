@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "18124180788049dea6f68c4ad43ec18b",
+  "title": "Two supported clocks and a light signal",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f6e23e9595f44f6793a1a30e73c25383",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f6e23e9595f44f6793a1a30e73c25383.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "48ef686b39e141be8c15925ad412669b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.48ef686b39e141be8c15925ad412669b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:16.427015+00:00",
+  "updated_at": "2026-09-07T09:18:16.484625+00:00"
+}

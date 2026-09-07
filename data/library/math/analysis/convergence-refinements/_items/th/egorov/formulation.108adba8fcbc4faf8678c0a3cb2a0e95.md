@@ -1,0 +1,1 @@
+Suppose $\mu(X)<\infty$ and measurable finite real- or complex-valued functions $f_n$ and $f$ satisfy $f_n\to f$ almost everywhere. For every $\delta>0$ there is measurable $E$ with $\mu(E)<\delta$ such that $f_n\to f$ uniformly on $X\setminus E$.

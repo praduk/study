@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6ce2aae049fb4edcb80326194e8a6629",
+  "title": "Evanescent waves and finite-barrier tunneling",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fc1d2f1226594143b48071e891b6d675",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fc1d2f1226594143b48071e891b6d675.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.420636+00:00",
+  "updated_at": "2026-09-07T09:11:21.420641+00:00"
+}

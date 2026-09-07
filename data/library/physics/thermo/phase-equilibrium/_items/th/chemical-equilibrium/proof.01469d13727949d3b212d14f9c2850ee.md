@@ -1,0 +1,1 @@
+For a transfer $dN_1=d\xi$ and $dN_2=-d\xi$, the differential is $dG=(\mu_1-\mu_2)d\xi$. At an interior minimum both signs of $d\xi$ are available, so its coefficient is zero. Equality is necessary; curvature and competing phases still decide whether the stationary point is stable.

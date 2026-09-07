@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7bc40dcb1fce41899537982293ae4a71",
+  "title": "Finite lists form a monad on Set",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "281bda9b0d2347c08ac94a1b37efaa8d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.281bda9b0d2347c08ac94a1b37efaa8d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1ce6beceacaf4d72bb963e8687a290f9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.1ce6beceacaf4d72bb963e8687a290f9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:57:01.209831+00:00",
+  "updated_at": "2026-09-07T07:57:02.978629+00:00"
+}

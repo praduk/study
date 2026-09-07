@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c278e433828f4aa69d59666851d49218",
+  "title": "Cohomology is a natural graded-commutative ring",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9953a124c78943dba8af6d4d76a699dc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9953a124c78943dba8af6d4d76a699dc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:35.117415+00:00",
+  "updated_at": "2026-09-07T08:03:35.117423+00:00"
+}

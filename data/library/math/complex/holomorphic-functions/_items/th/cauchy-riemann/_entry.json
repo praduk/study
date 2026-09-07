@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "bfbccf44eac849678152c65dd406f6fd",
+  "title": "Cauchy–Riemann criterion with the correct regularity",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:df:holomorphic, @math:uganalysis:metric-multivariable:df:total-derivative.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cf98302a6b404c9a999ee1abdea572c8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cf98302a6b404c9a999ee1abdea572c8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6a7f012a835c49e1bf5aa6d6cb68ad29",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6a7f012a835c49e1bf5aa6d6cb68ad29.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:07.090456+00:00",
+  "updated_at": "2026-09-07T08:26:03.007209+00:00"
+}

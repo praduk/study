@@ -1,0 +1,1 @@
+For each divisor $g$ of $n$, the integers $1\le a\le n$ with $\gcd(a,n)=g$ have the form $a=gb$ with $1\le b\le n/g$ and $\gcd(b,n/g)=1$. There are $\varphi(n/g)$ of them. These disjoint sets partition the $n$ integers, giving the sum. Apply Möbius inversion to obtain $\varphi(n)=\sum_{d\mid n}\mu(d)(n/d)$, also equal to $n\prod_{p\mid n}(1-1/p)$.

@@ -1,0 +1,1 @@
+Let $|f(z)|\le M$ on $\C$. For any center $a$ and any $r>0$, Cauchy's estimate gives $|f'(a)|\le M/r$. Let $r\to\infty$ to obtain $f'(a)=0$. Since this holds at every point and $\C$ is connected, the zero-derivative theorem gives constancy.

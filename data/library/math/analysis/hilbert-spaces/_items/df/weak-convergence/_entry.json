@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8b510f68d1c1474ab611ff3ff0cddf0a",
+  "title": "Weak and weak-star convergence",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:hilbert-spaces:th:riesz-hilbert, @math:analysis:banach-spaces:df:banach-operator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb6bf356575a4fbfab3fd0686121bbc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb6bf356575a4fbfab3fd0686121bbc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:19.678682+00:00",
+  "updated_at": "2026-09-07T08:14:19.678689+00:00"
+}

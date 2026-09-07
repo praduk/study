@@ -1,0 +1,1 @@
+Let $\Sigma_g$, $g\ge1$, be the CW space obtained by attaching a disk to a wedge of $2g$ circles along the word $\prod_{j=1}^g a_jb_ja_j^{-1}b_j^{-1}$. Determine $\pi_1(\Sigma_g)$ and specialize to $g=1$.

@@ -1,0 +1,3 @@
+For a vacuum plane wave, take phase $\theta=k_\mu x^\mu=\mathbf k\cdot\mathbf x-\omega t$, with future null wavevector $k^\mu=(\omega/c,\mathbf k)$ and $\omega=c|\mathbf k|>0$. A Lorentz transformation preserves the scalar phase and transforms $k$ as a vector.
+
+An observer with four-velocity $U$ measures angular frequency $\omega_U=-k\cdot U$: along its worldline, $d\theta/d\tau=k\cdot U$, and frequency is the positive rate of phase decrease. The propagation direction is obtained from the spatial projection of $k$ into $U^\perp$. This definition requires a locally meaningful phase, as in geometric optics; an arbitrary transient need not have one sharply defined frequency.

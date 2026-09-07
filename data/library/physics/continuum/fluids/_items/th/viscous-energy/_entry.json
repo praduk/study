@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ebbeb4eb85194a9798c5f07685870584",
+  "title": "Viscosity dissipates kinetic energy in a closed vessel",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:continuum:fluids:th:navier-stokes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c269a7b76610493c99302d93e906c658",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c269a7b76610493c99302d93e906c658.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9a35c7f843994b6a8d6772583290aba3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9a35c7f843994b6a8d6772583290aba3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.052411+00:00",
+  "updated_at": "2026-09-07T09:04:13.106831+00:00"
+}

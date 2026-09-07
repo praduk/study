@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0ae888bee8204c6fa37fa7c0d2521635",
+  "title": "The static screened Green function",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0cf322a85def4e39903d194da3c4e8f9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0cf322a85def4e39903d194da3c4e8f9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6e8c98ed77d2411ebe8a57eea530b7d8",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.6e8c98ed77d2411ebe8a57eea530b7d8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:36.055111+00:00",
+  "updated_at": "2026-09-07T08:53:38.758103+00:00"
+}

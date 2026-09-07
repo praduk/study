@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "23cf08f7a16f4e8fb9286ff52bd1bc14",
+  "title": "Möbius inversion",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "272742bbf14545999fbccefb9a314b8e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.272742bbf14545999fbccefb9a314b8e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "939022551477455c9239ad764ffee0d6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.939022551477455c9239ad764ffee0d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:55.830032+00:00",
+  "updated_at": "2026-09-07T07:47:57.074615+00:00"
+}

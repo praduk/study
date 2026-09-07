@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "b5f1d428ad6c4f3a84ceff7867996893",
+  "title": "Smooth maps and diffeomorphisms",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6796f8569dfb45eaa8d6db52f9d0df9d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6796f8569dfb45eaa8d6db52f9d0df9d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:06.525895+00:00",
+  "updated_at": "2026-09-07T08:04:06.525914+00:00"
+}

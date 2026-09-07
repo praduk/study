@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "d88fbe390f5a4b6bb267493948f6ce4a",
+  "title": "Bounded inverse and closed graph theorems",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:banach-spaces:df:banach-operator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93026b2cdfb24951a93a4059206af116",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93026b2cdfb24951a93a4059206af116.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:47.451500+00:00",
+  "updated_at": "2026-09-07T08:13:47.451520+00:00"
+}

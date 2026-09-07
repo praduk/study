@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "51f1cbd1ef98449890f18c949083ec0a",
+  "title": "The fundamental group of the circle",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "790a4e08e30b46599366b0a4cfed7a38",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.790a4e08e30b46599366b0a4cfed7a38.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cc079ac085be45019c6815e229659491",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cc079ac085be45019c6815e229659491.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:14.895239+00:00",
+  "updated_at": "2026-09-07T08:02:16.726975+00:00"
+}

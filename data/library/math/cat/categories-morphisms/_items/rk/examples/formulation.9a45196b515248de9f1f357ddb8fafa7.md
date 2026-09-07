@@ -1,0 +1,3 @@
+In $\Set$, objects are sets and morphisms are functions. In $\Grp$, objects are groups and morphisms are group homomorphisms. In $\Vect_k$, morphisms are $k$-linear maps. The composition and identities are their usual ones.
+
+A partially ordered set becomes a category by taking one morphism $a\to b$ when $a\le b$ and none otherwise. Transitivity and reflexivity supply composition and identities. A monoid becomes a one-object category, with monoid elements as endomorphisms and multiplication as composition. A group is precisely a one-object category in which every morphism is invertible. A discrete category has only identity morphisms; it is more restrictive than a general poset category.

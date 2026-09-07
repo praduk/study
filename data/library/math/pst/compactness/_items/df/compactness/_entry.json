@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cb24f046e264449daeb9d013b0dfb235",
+  "title": "Compactness and the finite-intersection property",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dcdb82f7ab174ee8b7ff2d200918dfef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dcdb82f7ab174ee8b7ff2d200918dfef.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:00.081335+00:00",
+  "updated_at": "2026-09-07T08:01:00.081341+00:00"
+}

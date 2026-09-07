@@ -1,0 +1,1 @@
+Set $k=0$, $\Lambda=0$, and assume one positive-density fluid with constant $w>-1$ in an expanding universe. Solve for $a(t)$ up to scale and time origin. Give dust and radiation examples and determine acceleration conditions.

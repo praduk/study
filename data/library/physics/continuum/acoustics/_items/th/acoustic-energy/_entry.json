@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "205f051c815d4f439589c9c56da034e0",
+  "title": "Acoustic energy, intensity, and impedance",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @physics:continuum:acoustics:ax:acoustic-model.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09773fc8906e4900bce0cfa608e527f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09773fc8906e4900bce0cfa608e527f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "35f7e0ecd59342348112833917590b87",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.35f7e0ecd59342348112833917590b87.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.381027+00:00",
+  "updated_at": "2026-09-07T09:04:14.472033+00:00"
+}

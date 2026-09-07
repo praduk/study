@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "41bba0c045d5481c8f1e0e192ab0fdb3",
+  "title": "Tonelli’s theorem",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:analysis:product-measures:df:product-measure.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c6c54eb1f034c508f490883ce0183a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c6c54eb1f034c508f490883ce0183a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:43.870317+00:00",
+  "updated_at": "2026-09-07T08:25:24.467525+00:00"
+}

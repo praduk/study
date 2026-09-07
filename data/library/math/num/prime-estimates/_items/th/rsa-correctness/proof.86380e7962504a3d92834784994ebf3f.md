@@ -1,0 +1,1 @@
+Write $ed=1+k(p-1)(q-1)$. Modulo $p$, if $p\mid m$ both sides are zero. Otherwise Fermat’s theorem gives $m^{p-1}=1$, so $m^{ed}=m$. The same argument works modulo $q$. The Chinese remainder theorem then gives equality modulo $pq$. Checking the divisible-message case is necessary: Euler’s theorem modulo $n$ alone only handles units.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "630bb02777154427b81f8595ee608a56",
+  "title": "Betti-number symmetry and odd-dimensional Euler characteristic",
+  "rank": 9218868437227405312,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4bf98f37117d485a97c17577f1804662",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4bf98f37117d485a97c17577f1804662.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "929e8117e35c4a61a11cb8411c0bdd55",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.929e8117e35c4a61a11cb8411c0bdd55.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:03:53.261472+00:00",
+  "updated_at": "2026-09-07T08:03:55.588659+00:00"
+}

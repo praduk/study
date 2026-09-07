@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7fe367c4ca2748459f5a67bb83e93933",
+  "title": "Asymptotic stability for constant linear systems",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7596826c0ccc480cb47258c4ae39d160",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7596826c0ccc480cb47258c4ae39d160.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e76a6a3d83ea44ccbf20b0a1ae761f27",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e76a6a3d83ea44ccbf20b0a1ae761f27.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:16.174533+00:00",
+  "updated_at": "2026-09-07T07:51:17.539840+00:00"
+}

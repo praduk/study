@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "59764241be1349bfb971a50be0ee6afe",
+  "title": "Mathematics Course Map",
+  "rank": 4611686018427387904,
+  "header": "Course sequence and prerequisites; four graduate subjects and their undergraduate foundations.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09c157207c3541c8b9ee7fe3fa549f0e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09c157207c3541c8b9ee7fe3fa549f0e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:18:39.768892+00:00",
+  "updated_at": "2026-09-07T08:18:39.768913+00:00"
+}

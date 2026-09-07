@@ -1,0 +1,1 @@
+If $\varnothing\ne A\subseteq\R$ is bounded above and $s=\sup A$, then for every $\epsilon>0$ some $a\in A$ satisfies $s-\epsilon<a\le s$. Conversely, an upper bound $s$ with this approximation property is $\sup A$.

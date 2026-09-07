@@ -1,0 +1,1 @@
+Since $\log q_i=-\beta E_i-\log Z$, multiply by $p_i$, sum, and rearrange to obtain the identity. Relative entropy is nonnegative: applying $\log x\le x-1$ to $x=q_i/p_i$ on the support of $p$ gives $\sum p_i\log(q_i/p_i)\le\sum_{\{p_i>0\}}q_i-1\le0$. Equality requires full support and $p_i=q_i$ throughout. Therefore the asserted minimum and uniqueness follow.

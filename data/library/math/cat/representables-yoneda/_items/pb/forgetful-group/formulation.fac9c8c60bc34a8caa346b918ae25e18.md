@@ -1,0 +1,1 @@
+Let $U:\Grp\to\Set$ be the underlying-set functor. Show that $\Z$, viewed as an additive group, represents $U$, and identify the universal element. Work in fixed universes so the relevant Hom sets and natural transformations are legitimate.

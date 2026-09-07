@@ -1,0 +1,3 @@
+For an observer that remains on a Rindler orbit for all future time, the null asymptotes bound which signals can reach it. For example $x-ct=\xi e^{-a\eta/c}>0$ approaches zero but is never crossed on that orbit. A sufficiently late light signal emitted to the observer's left can fail to catch it.
+
+This horizon concerns the complete future worldline. An observer who accelerates only for a finite time and then coasts does not inherit the same eternal acceleration horizon. Horizon statements are global causal statements; they cannot be decided from an accelerometer reading at one event. The coordinate boundary of a Rindler chart is not a curvature singularity.

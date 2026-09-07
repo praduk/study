@@ -1,0 +1,1 @@
+Two infinite parallel plates lie at $y=0,h$ with $h>0$. The bottom plate is fixed and the top moves with speed $U$ in the $x$ direction. Assume a steady incompressible Newtonian flow $v=u(y)e_x$, constant $\eta>0$, and no pressure gradient or body force. Find the velocity, shear stress, and power per area supplied by the moving plate.

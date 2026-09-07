@@ -1,0 +1,1 @@
+Clapeyron gives $dp/dT=\ell p/(k_BT^2)$. For positive $p,T$, divide by $p$ and integrate from $T_1$ to $T_2$. The integral of $T^{-2}$ is $-T^{-1}$, giving the result. Replacing the true volume jump by the ideal vapor volume neglects condensed-phase volume, and taking constant $\ell$ is an additional approximation; neither is justified close to a critical point.

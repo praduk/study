@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "de99529ac5684c1c922012b23c471a1b",
+  "title": "Cauchy traction and force balance model",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "88d26063fb0542af93c7e1b3b736ae78",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.88d26063fb0542af93c7e1b3b736ae78.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:12.535938+00:00",
+  "updated_at": "2026-09-07T09:04:12.535943+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fea82a44f29e4675882e4d2601078d36",
+  "title": "Heine–Borel theorem",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fd4e631f50c84168ab297444d356642e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fd4e631f50c84168ab297444d356642e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dbcb8d4d1991438bb11f4ea5804ec66c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.dbcb8d4d1991438bb11f4ea5804ec66c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:31.703695+00:00",
+  "updated_at": "2026-09-07T08:01:33.508231+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "07daea75a05b47d1a4ca72047712f07b",
+  "title": "Positive elastic energy and the bulk modulus",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @physics:continuum:elasticity:ax:hooke.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f8adb93af3ac4c64bd5898d83006d2b7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f8adb93af3ac4c64bd5898d83006d2b7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0f23be4cd660408e8743ae021e8d47f5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0f23be4cd660408e8743ae021e8d47f5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:13.497648+00:00",
+  "updated_at": "2026-09-07T09:04:13.577259+00:00"
+}

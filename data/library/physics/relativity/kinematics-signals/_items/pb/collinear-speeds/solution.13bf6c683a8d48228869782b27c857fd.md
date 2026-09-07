@@ -1,0 +1,1 @@
+Invert the velocity transformation: $u=(u'+v)/(1+u'v/c^2)$. Inserting both speeds gives $u=(6c/5)/(34/25)=15c/17<c$. For the second method, write $\tanh\chi=3/5$. The combined rapidity is $2\chi$ and $\tanh(2\chi)=2(3/5)/(1+9/25)=15/17$. Ordinary addition would give $6c/5$; it omits the relativity-of-simultaneity term in the transformed time differential.

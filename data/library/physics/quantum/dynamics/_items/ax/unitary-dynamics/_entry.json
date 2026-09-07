@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "92c863bfdd6745f3ada4509ccf1ec75f",
+  "title": "Closed-system unitary dynamics postulate",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0760d20b315944f18c9322f080972157",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0760d20b315944f18c9322f080972157.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:20.925445+00:00",
+  "updated_at": "2026-09-07T09:11:20.925447+00:00"
+}

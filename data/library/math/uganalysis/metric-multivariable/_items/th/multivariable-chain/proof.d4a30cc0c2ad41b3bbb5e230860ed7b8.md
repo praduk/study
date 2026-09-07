@@ -1,0 +1,1 @@
+Write $f(a+h)=f(a)+Ah+r(h)$ with $r(h)=o(\norm h)$, and $g(f(a)+v)=g(f(a))+Bv+s(v)$ with $s(v)=o(\norm v)$. Every finite-dimensional linear map is bounded, so $v=Ah+r(h)=O(\norm h)$. Therefore $s(v)=o(\norm h)$ and $Br(h)=o(\norm h)$. Substitution gives the linear approximation $BAh+o(\norm h)$ required by the definition.

@@ -1,0 +1,3 @@
+Every nonempty simply connected proper domain $U\subsetneq\C$ is biholomorphic to the unit disk. Given $a\in U$, there is a unique such map $f$ with $f(a)=0$ and $f'(a)>0$ real.
+
+The existence proof is not included; see Lebl, [Guide to Cultivating Complex Analysis, Section 6.3](https://www.jirka.org/ca/ca.pdf). Uniqueness follows from the disk-automorphism theorem after comparing two normalized maps. Properness is essential: a holomorphic map from all of $\C$ into the disk is bounded and therefore constant. The theorem provides an existence statement, not a general elementary formula for the map.

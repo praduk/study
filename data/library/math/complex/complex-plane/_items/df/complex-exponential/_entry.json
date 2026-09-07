@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "bc35095c001543669cdfffefedf8ae65",
+  "title": "Complex exponential, sine, and cosine",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:complex-plane:df:complex-modulus, @math:uganalysis:uniform-limits:th:weierstrass-test.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "75809eb13c674a4ca5ab5c2fc75b1aa0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.75809eb13c674a4ca5ab5c2fc75b1aa0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:51.870903+00:00",
+  "updated_at": "2026-09-07T08:25:52.861017+00:00"
+}

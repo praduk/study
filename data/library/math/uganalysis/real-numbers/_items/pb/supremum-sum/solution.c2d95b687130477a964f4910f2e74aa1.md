@@ -1,0 +1,1 @@
+Write $\alpha=\sup A$, $\beta=\sup B$. Each $a+b\le\alpha+\beta$, so this is an upper bound. For $\epsilon>0$, choose $a>\alpha-\epsilon/2$ and $b>\beta-\epsilon/2$. Then $a+b>\alpha+\beta-\epsilon$. The supremum approximation criterion proves the equality. Nonemptiness guarantees the choices; boundedness guarantees finite suprema.

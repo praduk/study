@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f0c76e53006c4539969ec21bab5b4261",
+  "title": "Prime factor formulas for arithmetic functions",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3444948b167140cd9ad03717199a97e1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3444948b167140cd9ad03717199a97e1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ecf5f72122654bb0ba9a6447355e5945",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ecf5f72122654bb0ba9a6447355e5945.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:53.825547+00:00",
+  "updated_at": "2026-09-07T08:22:29.963991+00:00"
+}

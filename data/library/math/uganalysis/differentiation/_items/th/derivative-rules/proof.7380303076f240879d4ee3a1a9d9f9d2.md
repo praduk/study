@@ -1,0 +1,1 @@
+For the product, write the difference quotient as $f(x+h)[g(x+h)-g(x)]/h+g(x)[f(x+h)-f(x)]/h$ and use continuity of $f$. For the chain rule, write $f(x+h)-f(x)=ah+o(|h|)$ and $g(f(x)+k)-g(f(x))=bk+o(|k|)$. Here $k=O(|h|)$, so the second remainder is $o(|h|)$, including at values where $k=0$. Substitution yields $ab h+o(|h|)$.

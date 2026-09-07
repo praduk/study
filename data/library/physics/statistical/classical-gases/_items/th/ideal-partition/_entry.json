@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e541662cf36645d4a9bd25df2b776fc4",
+  "title": "Ideal-gas partition function and equation of state",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "46e716254e8745c48ece2af652876087",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.46e716254e8745c48ece2af652876087.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "36dfca565c504ad69526e7676bbf8a30",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.36dfca565c504ad69526e7676bbf8a30.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.680785+00:00",
+  "updated_at": "2026-09-07T09:00:57.719583+00:00"
+}

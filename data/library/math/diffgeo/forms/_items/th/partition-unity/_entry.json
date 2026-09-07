@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "dea4f114ad3748e0812b931e7c2ffae7",
+  "title": "Smooth partitions of unity",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7ac4431c413a4b1abfe32d561d3dc209",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7ac4431c413a4b1abfe32d561d3dc209.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:12.074715+00:00",
+  "updated_at": "2026-09-07T08:05:12.074723+00:00"
+}

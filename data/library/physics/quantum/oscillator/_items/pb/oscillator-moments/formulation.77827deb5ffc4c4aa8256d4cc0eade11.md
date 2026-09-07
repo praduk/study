@@ -1,0 +1,1 @@
+In the Fock model define $X=\sqrt{\hbar/(2m\omega)}(a+a^\dagger)$ and $P=i\sqrt{m\hbar\omega/2}(a^\dagger-a)$ on finite sequences. Compute the means and uncertainties in $|n\rangle$ and decide when the uncertainty lower bound is attained.

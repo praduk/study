@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9879d3cc5acc49f5960fab6871aaba68",
+  "title": "Microscopic reversibility and reduced dissipation",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93241160a94a43988902c51cdbd37e73",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93241160a94a43988902c51cdbd37e73.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:20.693476+00:00",
+  "updated_at": "2026-09-07T08:52:20.693483+00:00"
+}

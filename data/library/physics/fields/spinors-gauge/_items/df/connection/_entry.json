@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7934aeaac575413e964496c9f9b3ff5b",
+  "title": "Gauge potential as a connection",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4a3834fba9f94380b9e7c8038f6459ab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4a3834fba9f94380b9e7c8038f6459ab.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:54:09.201506+00:00",
+  "updated_at": "2026-09-07T08:54:09.201514+00:00"
+}

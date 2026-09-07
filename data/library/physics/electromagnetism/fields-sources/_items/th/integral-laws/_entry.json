@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "af402258e9e340df9cbc4799fe79a1ac",
+  "title": "Integral Maxwell laws for fixed surfaces",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c2aaf4342754438fa54272a9e0d9019c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c2aaf4342754438fa54272a9e0d9019c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7fc223e104094bf9b2795fcab9c2403f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7fc223e104094bf9b2795fcab9c2403f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.330475+00:00",
+  "updated_at": "2026-09-07T09:02:56.346415+00:00"
+}

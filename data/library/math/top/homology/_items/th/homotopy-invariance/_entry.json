@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "aed4c53f10dc40ef8973cbe51c10e72a",
+  "title": "Homotopy invariance of singular homology",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "386d833d789b4eac9e98a1e6d1755830",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.386d833d789b4eac9e98a1e6d1755830.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:02:55.570971+00:00",
+  "updated_at": "2026-09-07T08:02:55.570977+00:00"
+}

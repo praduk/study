@@ -1,0 +1,1 @@
+Energy conservation gives $T_f=(T_1+T_2)/2$. Evaluate entropy through hypothetical reversible endpoint paths: $\Delta S=C\log(T_f/T_1)+C\log(T_f/T_2)=C\log[(T_1+T_2)^2/(4T_1T_2)]$. This is nonnegative since $(T_1-T_2)^2\ge0$, with equality only when the initial temperatures agree. The actual transfer between unequal temperatures is irreversible.

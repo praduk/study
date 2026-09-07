@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f3222e38a1eb455fb2509b789799fcae",
+  "title": "Dominated convergence theorem",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:analysis:lebesgue-integration:th:fatou, @math:analysis:lebesgue-integration:th:integral-additivity, @math:analysis:lebesgue-integration:th:zero-integral.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1656f60af278432db8b6e95fa1d8a979",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1656f60af278432db8b6e95fa1d8a979.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3120f30318124c6e908604226fb67534",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3120f30318124c6e908604226fb67534.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:06.987417+00:00",
+  "updated_at": "2026-09-07T08:25:10.327939+00:00"
+}

@@ -1,0 +1,1 @@
+If $G$ is finite and $\operatorname{char}k$ does not divide $|G|$, every invariant subspace of a finite-dimensional representation has an invariant complement. Thus every finite-dimensional representation is a direct sum of irreducible representations.

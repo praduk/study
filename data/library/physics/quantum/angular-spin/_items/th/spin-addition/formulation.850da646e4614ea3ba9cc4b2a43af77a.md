@@ -1,0 +1,1 @@
+For two spin-one-half factors define $\mathbf J=\mathbf S\otimes I+I\otimes\mathbf S$. The antisymmetric vector $|s\rangle=(|01\rangle-|10\rangle)/\sqrt2$ has $J^2=0,J_z=0$. The three symmetric vectors $|00\rangle,(|01\rangle+|10\rangle)/\sqrt2,|11\rangle$ have $J^2=2\hbar^2$ and $J_z=\hbar,0,-\hbar$ respectively.

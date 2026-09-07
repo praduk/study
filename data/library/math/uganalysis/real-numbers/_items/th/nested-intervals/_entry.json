@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0c780cd45ad548868d4bac25c4c7d336",
+  "title": "Nested closed intervals",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:uganalysis:real-numbers:df:supremum.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ee106eeaf5dc40ec8a6e5b9145c27d78",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ee106eeaf5dc40ec8a6e5b9145c27d78.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ed487ccb05914f479004c39e6103f883",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ed487ccb05914f479004c39e6103f883.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:08:10.340348+00:00",
+  "updated_at": "2026-09-07T08:08:12.400180+00:00"
+}

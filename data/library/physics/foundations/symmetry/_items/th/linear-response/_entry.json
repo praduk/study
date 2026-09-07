@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6901e61a56a3443bbfc4836513988e25",
+  "title": "Response of a stable linear system",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9cb8086386ad4beb92f821389f6952da",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9cb8086386ad4beb92f821389f6952da.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "94a4be1fb19b43cf8ce30b27ac6a9673",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.94a4be1fb19b43cf8ce30b27ac6a9673.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:03.852274+00:00",
+  "updated_at": "2026-09-07T08:52:06.449889+00:00"
+}

@@ -1,0 +1,3 @@
+A left module $M$ over a ring $R$ is an abelian group with scalar multiplication satisfying $r(m+n)=rm+rn$, $(r+s)m=rm+sm$, $(rs)m=r(sm)$, and $1m=m$. A homomorphism is additive and preserves scalar multiplication. A submodule is an additive subgroup closed under scalars.
+
+A basis is a family $(e_i)$ such that every element has a unique finite linear combination in these elements. A module with a basis is free. The direct sum $\bigoplus_i M_i$ contains tuples of finite support. A module is finitely generated if finitely many elements span it; generators need not be a basis. For example $\Z/2\Z$ is a finitely generated, nonfree $\Z$-module.

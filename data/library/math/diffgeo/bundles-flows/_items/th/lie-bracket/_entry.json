@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b8a51ef7fb1a465295d3d6dcd822fd28",
+  "title": "The Lie bracket is a vector field",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "736e5fed4c1f49c78396baa0e6e053cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.736e5fed4c1f49c78396baa0e6e053cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3d1bd96d06a4206bdfcfc3030a74ce7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d3d1bd96d06a4206bdfcfc3030a74ce7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:33.633705+00:00",
+  "updated_at": "2026-09-07T08:27:07.230634+00:00"
+}

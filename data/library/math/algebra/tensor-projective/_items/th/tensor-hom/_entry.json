@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cc65665d4d84449794b87852921b9757",
+  "title": "Tensor–Hom adjunction for modules",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a4e7655e85f04a6fab16721cb759828e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a4e7655e85f04a6fab16721cb759828e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "51a06d1885ff4d4ba772587939e5e395",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.51a06d1885ff4d4ba772587939e5e395.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:29.455012+00:00",
+  "updated_at": "2026-09-07T08:23:38.643007+00:00"
+}

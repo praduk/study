@@ -1,0 +1,1 @@
+Let $f,g$ be piecewise continuous and of exponential order. Define $(f*g)(t)=\int_0^t f(u)g(t-u)\,du$. For sufficiently large real $s$, $\mathcal L\{f*g\}(s)=F(s)G(s)$. If $a\ge0$ and $H(t-a)$ is zero before $a$ and one after $a$, then $\mathcal L\{H(t-a)f(t-a)\}(s)=e^{-as}F(s)$.

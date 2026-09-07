@@ -1,0 +1,1 @@
+Multiply $U\cdot U=-c^2$ by $m^2$ and substitute $p^0=E/c$ to obtain $-E^2/c^2+|\mathbf p|^2=-m^2c^2$. The coordinate formula for $U$ gives $E$ and $\mathbf p$ directly, and their ratio gives velocity. Taylor's formula $(1-z)^{-1/2}=1+z/2+O(z^2)$ at $z=0$, with $z=|\mathbf v|^2/c^2$, gives the kinetic-energy expansion. The positive-energy branch is selected by future direction.

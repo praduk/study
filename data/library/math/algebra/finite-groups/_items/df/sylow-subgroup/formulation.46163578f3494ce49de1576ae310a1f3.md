@@ -1,0 +1,1 @@
+For a finite group of order $p^nm$ with $p$ prime and $p\nmid m$, a p-subgroup is a subgroup whose order is a power of $p$. A Sylow p-subgroup is a subgroup of order $p^n$. Write $n_p$ for the number of Sylow p-subgroups. The normalizer is $N_G(P)=\{g:gPg^{-1}=P\}$.

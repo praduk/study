@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ab022d3556184363b49cb6f2097a0f33",
+  "title": "A compact operator with a spectral value that is not an eigenvalue",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @math:analysis:spectral-theory:df:spectrum-compact, @math:analysis:spectral-theory:df:adjoint.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34c1b5060ec7483dbdc84c69a231ba93",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34c1b5060ec7483dbdc84c69a231ba93.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3b4b9e21fb124dc0a57aafba72e8a013",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.3b4b9e21fb124dc0a57aafba72e8a013.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:14:42.316198+00:00",
+  "updated_at": "2026-09-07T08:25:50.862827+00:00"
+}

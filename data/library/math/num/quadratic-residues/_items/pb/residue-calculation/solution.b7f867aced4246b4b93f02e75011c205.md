@@ -1,0 +1,1 @@
+Since $5\equiv1\pmod4$, reciprocity gives $(5/29)=(29/5)=(4/5)=1$. Testing squares finds $11^2=121\equiv5\pmod{29}$, so the solutions are $11$ and $-11\equiv18$. There are no others: a degree-two polynomial over the field has at most two roots.

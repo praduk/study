@@ -1,0 +1,1 @@
+Differentiate $e$: $e_t=\mu y_ty_{tt}+Ty_xy_{xt}=T(y_ty_{xx}+y_xy_{xt})=\partial_x(Ty_ty_x)$. This proves local conservation with the stated flux sign. For the traveling wave, $y_t=A\omega\sin(kx-\omega t)$ and $y_x=-Ak\sin(kx-\omega t)$, so $j=T\omega kA^2\sin^2(kx-\omega t)$. Average over a period. Units are $[e]=\mathrm{J\,m^{-1}}$ and $[j]=\mathrm W$.

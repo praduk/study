@@ -1,0 +1,1 @@
+In $S$, flashes occur at $(t,x)=(0,0)$ and $(0,L)$ with $L>0$. A frame $S'$ moves at $v=3c/5$ along $+x$. Find their coordinate separations in $S'$ and check the invariant interval. Explain why the result alone says nothing about which flash a particular observer sees first.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "302de8a7c2ef43e3817a21ec59854363",
+  "title": "Chain rule on manifolds",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5bacdb5a7f8e49eeb926391c5d555d05",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5bacdb5a7f8e49eeb926391c5d555d05.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3c17282e852a42879620a8b1b390520d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3c17282e852a42879620a8b1b390520d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:15.299153+00:00",
+  "updated_at": "2026-09-07T08:04:18.238587+00:00"
+}

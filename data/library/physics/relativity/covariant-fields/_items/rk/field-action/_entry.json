@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "22c635a601c4430fa9cdcaff163aa9fe",
+  "title": "Action formulation and what covariance does not determine",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2d95157157264a7788a5186cba1c8779",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2d95157157264a7788a5186cba1c8779.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:01.364388+00:00",
+  "updated_at": "2026-09-07T09:03:01.364394+00:00"
+}

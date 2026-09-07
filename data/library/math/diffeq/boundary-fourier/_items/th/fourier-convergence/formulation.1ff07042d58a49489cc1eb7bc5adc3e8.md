@@ -1,0 +1,3 @@
+Let $f$ be $2L$-periodic and piecewise $C^1$ on a period, with finitely many breakpoints and finite one-sided limits of both $f$ and $f'$ there. Its Fourier series converges at every $x$ to $(f(x-)+f(x+))/2$, using the periodic one-sided limits at endpoints. At points of continuity it therefore converges to $f(x)$.
+
+This theorem is stated without proof here. The inspected authority is [Lebl, Notes on Diffy Qs, Theorem 4.3.1](https://www.jirka.org/diffyqs/html/moreonfourier_section.html). The conclusion is pointwise; it does not justify arbitrary termwise differentiation or uniform convergence across a jump.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "84a958b5bc1544d88682a5d89c0cef31",
+  "title": "Physical law versus mathematical consequence",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a2f2f3f81d24880aa0a0805e9f8e04a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a2f2f3f81d24880aa0a0805e9f8e04a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:51:22.764714+00:00",
+  "updated_at": "2026-09-07T08:51:22.764722+00:00"
+}

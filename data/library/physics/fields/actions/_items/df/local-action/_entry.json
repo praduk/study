@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c93fcf68be4c467ea89186296c650b11",
+  "title": "Fields and a local first-derivative action",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "92b51994b66d4750a4a3b91a1249f2e1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.92b51994b66d4750a4a3b91a1249f2e1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:52:46.392998+00:00",
+  "updated_at": "2026-09-07T08:52:46.393005+00:00"
+}

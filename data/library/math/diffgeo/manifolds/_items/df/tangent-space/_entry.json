@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3b676eed7d0e44efae0387cf28625804",
+  "title": "Tangent vectors as derivations",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "758a67022b354f6d93d8417063cb22f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.758a67022b354f6d93d8417063cb22f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:08.182654+00:00",
+  "updated_at": "2026-09-07T08:04:08.182662+00:00"
+}

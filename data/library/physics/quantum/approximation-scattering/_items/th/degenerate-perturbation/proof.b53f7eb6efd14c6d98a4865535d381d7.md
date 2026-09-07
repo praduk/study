@@ -1,0 +1,1 @@
+Differentiate as in the nondegenerate calculation: $Vu_0+(H_0-E_0I)u'=E'u_0$. Multiplying by $P_0$ kills the second term, since $P_0H_0=E_0P_0$, and $P_0u_0=u_0$. This proves the equation. The result is a necessary first-order condition for the assumed differentiable branch; dividing by zero gaps between degenerate eigenvectors is unnecessary and invalid.

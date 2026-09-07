@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "e8721d5288c142d3b76fa1960ccd93f6",
+  "title": "Stationary states and interference frequencies",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2c26f2269cbe40dd9c5589601957b605",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2c26f2269cbe40dd9c5589601957b605.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:21.039454+00:00",
+  "updated_at": "2026-09-07T09:11:21.039459+00:00"
+}

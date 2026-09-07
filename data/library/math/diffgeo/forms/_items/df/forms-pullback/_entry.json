@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f08a217499e04e0c97dafc9852ec7851",
+  "title": "Differential forms and pullback",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9f7307e96a754581a1e6e91ade3c43fb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9f7307e96a754581a1e6e91ade3c43fb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:04:59.256142+00:00",
+  "updated_at": "2026-09-07T08:04:59.256148+00:00"
+}

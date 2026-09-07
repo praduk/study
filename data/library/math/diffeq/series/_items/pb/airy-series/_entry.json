@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "83913689837d44a8ab605975e98b7452",
+  "title": "Construct a convergent series solution",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c928a9bc8014a61b61546b9ca201736",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c928a9bc8014a61b61546b9ca201736.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d42f236e95e446dd999927e9a415e1a2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d42f236e95e446dd999927e9a415e1a2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:37.153108+00:00",
+  "updated_at": "2026-09-07T08:23:04.919889+00:00"
+}

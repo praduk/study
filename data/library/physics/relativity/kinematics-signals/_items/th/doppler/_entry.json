@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4ac6a727e8e34df3a37476f83b130e0d",
+  "title": "Doppler shift and aberration from a boost",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7e407c719e9341859570e8d40488a54c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7e407c719e9341859570e8d40488a54c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bf52684887ac4d748409835f5cca65fe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bf52684887ac4d748409835f5cca65fe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:59.348788+00:00",
+  "updated_at": "2026-09-07T09:02:59.400382+00:00"
+}

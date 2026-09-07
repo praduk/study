@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f43a0c2ebae345b391fed3dd9431f994",
+  "title": "Snell refraction from tangential phase matching",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @physics:waves:interfaces:ax:interface-models.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ca546d1436374db2861e66170272ed2a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ca546d1436374db2861e66170272ed2a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2b90065368f433ea3543170d1ad2e9c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a2b90065368f433ea3543170d1ad2e9c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.470102+00:00",
+  "updated_at": "2026-09-07T09:04:16.537047+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e4462af970d144c792b3d424b5bf5750",
+  "title": "A plucked string and its harmonic content",
+  "rank": 9079256848778919936,
+  "header": "Prerequisites: @physics:waves:mechanical-waves:th:fixed-string-modes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b2871b9e3d24407580cac5ea1cc85e78",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b2871b9e3d24407580cac5ea1cc85e78.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "819135f4601c479db40ec1e38d6b878e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.819135f4601c479db40ec1e38d6b878e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:15.846539+00:00",
+  "updated_at": "2026-09-07T09:04:15.875883+00:00"
+}

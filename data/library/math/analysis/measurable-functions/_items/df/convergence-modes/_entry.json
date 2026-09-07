@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a79b0e6fffc244a69581b25babc30b24",
+  "title": "Almost-everywhere, measure, and norm convergence",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "710ed404704f4e089387086f82f94244",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.710ed404704f4e089387086f82f94244.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:11:43.287552+00:00",
+  "updated_at": "2026-09-07T08:25:00.074311+00:00"
+}

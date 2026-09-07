@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "12262c874d1842a3a63bd1a608316e8b",
+  "title": "Minkowski’s inequality",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:analysis:lp-spaces:th:holder.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bfe7850aa6c44a969dd6af70cee381f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bfe7850aa6c44a969dd6af70cee381f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dc8b7a6341e5414581b4f63c2394496a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.dc8b7a6341e5414581b4f63c2394496a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:12:25.462865+00:00",
+  "updated_at": "2026-09-07T08:25:18.495478+00:00"
+}

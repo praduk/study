@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "050d95a8855047669e58853261a40be7",
+  "title": "Why identical-gas mixing is not extensive",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0dff220f9cdf4184ba895eb6540e38ed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0dff220f9cdf4184ba895eb6540e38ed.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "12587f2ac2bd47e3b8c37f8fd798638e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.12587f2ac2bd47e3b8c37f8fd798638e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.881400+00:00",
+  "updated_at": "2026-09-07T09:00:57.925329+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b98a63f8c6d24e19b308221b4fc50fac",
+  "title": "Convolution and delayed forcing",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "01542609affc44c1a6ce65299451d6d1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.01542609affc44c1a6ce65299451d6d1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "febfdd92869c4c39a00c8ceb3eb8b6de",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.febfdd92869c4c39a00c8ceb3eb8b6de.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:51:27.173043+00:00",
+  "updated_at": "2026-09-07T07:51:28.553739+00:00"
+}

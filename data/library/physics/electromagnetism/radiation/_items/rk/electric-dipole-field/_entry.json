@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "93ed20c913654f57a00f41cf93498cc6",
+  "title": "Leading electric-dipole radiation model",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d9528d8f0cd462282b3f0fc5f00e0c9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d9528d8f0cd462282b3f0fc5f00e0c9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:58.323519+00:00",
+  "updated_at": "2026-09-07T09:02:58.323523+00:00"
+}

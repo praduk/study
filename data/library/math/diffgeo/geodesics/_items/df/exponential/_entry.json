@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5bae008eca3b49f4917ba6c82f03e4ac",
+  "title": "Exponential map and normal coordinates",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "acaba515ba5a44e7bfecfcdfa858e06c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.acaba515ba5a44e7bfecfcdfa858e06c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:06:04.503129+00:00",
+  "updated_at": "2026-09-07T08:06:04.503137+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b7f5be9fc34e41379609f4b94e5a2844",
+  "title": "Field of a uniformly charged ball",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bc26954596884a74939a1671d57cf97d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bc26954596884a74939a1671d57cf97d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "028616ecec434b42962c33830560e515",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.028616ecec434b42962c33830560e515.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:02:56.356302+00:00",
+  "updated_at": "2026-09-07T09:02:56.375016+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4d208c04a4bc4b90abec0c48d333e435",
+  "title": "Number Theory Course Guide",
+  "rank": 4611686018427387904,
+  "header": "Upper-division undergraduate; proof fluency and elementary algebra.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3031c18f79b24f4e86f726543a21a8df",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3031c18f79b24f4e86f726543a21a8df.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:30.937888+00:00",
+  "updated_at": "2026-09-07T07:47:30.937906+00:00"
+}

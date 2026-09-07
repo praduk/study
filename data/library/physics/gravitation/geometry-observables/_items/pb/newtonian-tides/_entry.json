@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "faeb0f9ed5fb4dad9b3544923eba1028",
+  "title": "Radial stretching and transverse compression",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3422b31c929444d48992b90253dc018d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3422b31c929444d48992b90253dc018d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "db8479afc61b422a81f87aa5fccb9290",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.db8479afc61b422a81f87aa5fccb9290.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.618591+00:00",
+  "updated_at": "2026-09-07T09:18:15.636249+00:00"
+}

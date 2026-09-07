@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "20a8f5243e5e41859f2dc815c9b37289",
+  "title": "Energy and variance from the partition function",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c54a8003421f4dcea7bbe5e1b274f11e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c54a8003421f4dcea7bbe5e1b274f11e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1147e20bceec446594de39af3536ecbe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1147e20bceec446594de39af3536ecbe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:00:57.463739+00:00",
+  "updated_at": "2026-09-07T09:00:57.485061+00:00"
+}

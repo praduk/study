@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "83a9e925ea744915ac5db06faba311d9",
+  "title": "A holomorphic function with zero derivative is constant",
+  "rank": 8646911284551352320,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:df:holomorphic, @math:uganalysis:differentiation:th:derivative-monotonicity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "57290f2b4d284fa98b621b70c3de42f0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.57290f2b4d284fa98b621b70c3de42f0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fbfc91026bb247e884362dc0a125374a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fbfc91026bb247e884362dc0a125374a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:14.715528+00:00",
+  "updated_at": "2026-09-07T08:15:17.081482+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5355d5665f51463181bb01fce670d4b1",
+  "title": "Completeness and total boundedness",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "67e7cc436f0a4abc9f6b3630c75f9114",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.67e7cc436f0a4abc9f6b3630c75f9114.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:01:27.215881+00:00",
+  "updated_at": "2026-09-07T08:01:27.215886+00:00"
+}

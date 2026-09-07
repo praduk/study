@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "9b80779528994604a272c3c05dad6e5f",
+  "title": "Closure in a subspace",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dde0de58a0e84480b885653d642df074",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dde0de58a0e84480b885653d642df074.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ef277e856fbf4e428d0ae9a4e8ecf8b8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ef277e856fbf4e428d0ae9a4e8ecf8b8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:21.611985+00:00",
+  "updated_at": "2026-09-07T08:00:23.288365+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "b31cffaeb1a1450dae5e0a8eb01ebee1",
+  "title": "Open mapping theorem",
+  "rank": 6917529027641081856,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:identity-theorem, @math:complex:analytic-consequences:th:maximum-modulus.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "970d27e7c2594286a861194d9833f0d0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.970d27e7c2594286a861194d9833f0d0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "25c3117397da4e02bf12bcf56ad94dbf",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.25c3117397da4e02bf12bcf56ad94dbf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:11.281939+00:00",
+  "updated_at": "2026-09-07T08:17:13.794492+00:00"
+}

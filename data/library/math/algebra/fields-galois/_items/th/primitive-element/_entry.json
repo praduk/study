@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "36de38b6609040fb92065403499323b4",
+  "title": "Primitive elements for finite separable extensions over infinite fields",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8feaa8de3bb24f2297ba743d6a748635",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8feaa8de3bb24f2297ba743d6a748635.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1cad2e9e2f114b64a59f8997b612647f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1cad2e9e2f114b64a59f8997b612647f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:54:55.219371+00:00",
+  "updated_at": "2026-09-07T07:54:57.002430+00:00"
+}

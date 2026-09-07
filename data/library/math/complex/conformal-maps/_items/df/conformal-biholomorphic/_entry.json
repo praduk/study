@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6b6cfc0f006444ac9fa630ad1527e80d",
+  "title": "Conformal and biholomorphic maps",
+  "rank": 4611686018427387904,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:df:holomorphic, @math:complex:holomorphic-functions:th:holomorphic-rules.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "207cc3851b644e608f9a773dda61fa43",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.207cc3851b644e608f9a773dda61fa43.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:09.245748+00:00",
+  "updated_at": "2026-09-07T08:26:43.062131+00:00"
+}

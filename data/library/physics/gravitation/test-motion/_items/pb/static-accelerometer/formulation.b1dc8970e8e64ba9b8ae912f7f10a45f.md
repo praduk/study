@@ -1,0 +1,1 @@
+In a static region $ds^2=-N(\mathbf x)^2c^2dt^2+h_{ij}(\mathbf x)dx^idx^j$ with $N>0$, an observer holds fixed spatial coordinates. Find its four-acceleration and proper acceleration. Apply the result to $N=a\xi/c^2$ and $h=d\xi^2+dy^2+dz^2$.

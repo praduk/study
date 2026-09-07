@@ -1,0 +1,1 @@
+Use the Schwarzschild orbit equation $u''+u=GM/\ell^2+3GMu^2/c^2$, where $u=1/r$ and primes mean $d/d\phi$. Set $p=\ell^2/(GM)$, $GM/(pc^2)\ll1$, and $u_0=(1+e_{\rm orb}\cos\phi)/p$ with $0<e_{\rm orb}<1$. Find the resonant first-order correction and leading periapsis advance. At Newtonian order $p=a(1-e_{\rm orb}^2)$.

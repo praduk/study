@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "28ce7ba82c7a41c5989376d8abc583b6",
+  "title": "Four-dimensional Lorentz force",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "46803e2b2c4049a39f33e200fc526e84",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.46803e2b2c4049a39f33e200fc526e84.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2b86b913ffd496ebc30138f06b04e15",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a2b86b913ffd496ebc30138f06b04e15.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:03:00.785011+00:00",
+  "updated_at": "2026-09-07T09:03:00.883139+00:00"
+}

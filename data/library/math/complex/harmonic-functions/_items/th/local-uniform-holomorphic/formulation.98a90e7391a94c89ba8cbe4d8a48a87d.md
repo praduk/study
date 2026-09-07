@@ -1,0 +1,1 @@
+Suppose $f_n$ are holomorphic on an open set $U$ and converge uniformly on every compact subset of $U$ to $f$. Then $f$ is holomorphic. Moreover, derivatives of every fixed order converge locally uniformly to the corresponding derivatives of $f$.

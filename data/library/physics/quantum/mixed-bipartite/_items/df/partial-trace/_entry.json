@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "34ba0a2b38d5428fb7e35e81f123f578",
+  "title": "Reduced state and entanglement",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f82760c1b124f20bf0d4452d160a83f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f82760c1b124f20bf0d4452d160a83f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:24.492956+00:00",
+  "updated_at": "2026-09-07T09:11:24.492963+00:00"
+}

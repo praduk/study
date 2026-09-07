@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5286798c8e384e999c843085cd5aa5ed",
+  "title": "Course guide: Thermodynamics for mathematicians",
+  "rank": 4611686018427387904,
+  "header": "Macroscopic laws, equilibrium geometry, and measurable process constraints.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "49a4937cc9a944cd94d5450d76cd60c4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.49a4937cc9a944cd94d5450d76cd60c4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.519495+00:00",
+  "updated_at": "2026-09-07T08:57:24.519738+00:00"
+}

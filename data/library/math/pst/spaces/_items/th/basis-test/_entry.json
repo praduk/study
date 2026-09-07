@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fdb5aa3023584d70b5ef63aa284e2b2f",
+  "title": "The basis criterion generates a topology",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "78b841cc567b494d86a4851479b1c4be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.78b841cc567b494d86a4851479b1c4be.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dae9102899ef4a17852809578afa7156",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.dae9102899ef4a17852809578afa7156.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:00:05.517913+00:00",
+  "updated_at": "2026-09-07T08:00:07.169563+00:00"
+}

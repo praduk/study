@@ -1,0 +1,1 @@
+An ideal uniform slender rod of mass $M$ and length $\ell$ lies on the body $a_1$ axis, centered at zero. Find its inertia tensor and the moment about an axis perpendicular to the rod through one endpoint. State which zero moment is an artifact of the idealization.

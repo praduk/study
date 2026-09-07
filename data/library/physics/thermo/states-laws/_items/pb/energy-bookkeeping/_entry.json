@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7c94984bf6f145248735ef5313c5a3bd",
+  "title": "Expansion energy bookkeeping",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a91ef7d5979b48fb926f384b2ce89286",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a91ef7d5979b48fb926f384b2ce89286.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1c7d4abbd4a14c67a9d678a4e7a1d961",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.1c7d4abbd4a14c67a9d678a4e7a1d961.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:57:24.562470+00:00",
+  "updated_at": "2026-09-07T08:57:24.577900+00:00"
+}

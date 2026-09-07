@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "128d30a99b024e2f9f678e797d65e092",
+  "title": "Trace reversal and scalar curvature",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "650abbe5d681483fa9fd35f531ce7bbc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.650abbe5d681483fa9fd35f531ce7bbc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e328e30619d949f083bb4cc5cb727778",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e328e30619d949f083bb4cc5cb727778.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:18:15.874063+00:00",
+  "updated_at": "2026-09-07T09:18:15.910035+00:00"
+}

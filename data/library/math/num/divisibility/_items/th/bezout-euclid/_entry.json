@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ee65d47aeaa04ce58aa49d07165ce1da",
+  "title": "Bézout identity and the Euclidean algorithm",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f57d1f348370454bab396143f4967e88",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f57d1f348370454bab396143f4967e88.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "97a64a60bf3f4f9ba116e4660769c95c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.97a64a60bf3f4f9ba116e4660769c95c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:47:35.503024+00:00",
+  "updated_at": "2026-09-07T07:47:36.658505+00:00"
+}

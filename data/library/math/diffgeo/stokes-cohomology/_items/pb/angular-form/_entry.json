@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "d5cbc8c4e80a48acae02557aab8371c1",
+  "title": "A closed form that is not exact",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "66a8211671e243b7a7818317256270c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.66a8211671e243b7a7818317256270c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0f0040f3c27a43f8ba24ce914dd31f65",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0f0040f3c27a43f8ba24ce914dd31f65.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:05:25.043686+00:00",
+  "updated_at": "2026-09-07T08:05:27.041444+00:00"
+}

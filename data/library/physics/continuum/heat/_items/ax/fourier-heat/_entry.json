@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "bca8856408d14cee8f44e56ddeeeb0f8",
+  "title": "Fourier conduction and local thermal balance",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1bf38da546e74fdbb498e6e947700960",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1bf38da546e74fdbb498e6e947700960.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:14.750069+00:00",
+  "updated_at": "2026-09-07T09:04:14.750072+00:00"
+}

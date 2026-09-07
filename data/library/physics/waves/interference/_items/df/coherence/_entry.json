@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "19f0bd914c83412382d7f7abe7f5c0e1",
+  "title": "Relative phase and mutual coherence",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "affad3ea238546a4a6fec40fe594562b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.affad3ea238546a4a6fec40fe594562b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T09:04:16.728784+00:00",
+  "updated_at": "2026-09-07T09:04:16.728790+00:00"
+}

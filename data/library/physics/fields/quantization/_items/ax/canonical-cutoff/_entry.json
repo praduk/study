@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "308b9b0b269143748867ab69f7151481",
+  "title": "Canonical quantization of finitely many free modes",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f6f2331ed4c453fa259b8deead3952a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f6f2331ed4c453fa259b8deead3952a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T08:53:44.815980+00:00",
+  "updated_at": "2026-09-07T08:53:44.815987+00:00"
+}

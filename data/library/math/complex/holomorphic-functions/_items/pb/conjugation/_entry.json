@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "466b1cb3e97c43df935ab209e3bea446",
+  "title": "Conjugation and modulus squared",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:complex:holomorphic-functions:th:cauchy-riemann.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a77d606fe0994c1fa25a45d482ec6a32",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a77d606fe0994c1fa25a45d482ec6a32.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fcfad80add27484096d54ebc1a4b2995",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.fcfad80add27484096d54ebc1a4b2995.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:15:18.518102+00:00",
+  "updated_at": "2026-09-07T08:15:20.929153+00:00"
+}

@@ -1,0 +1,1 @@
+For $m\ge0$, a complex plane wave $e^{i(k\cdot x-\omega t)}$ solves the free scalar equation exactly when $\omega^2=|k|^2+m^2$. On the positive branch and away from $k=0$ when $m=0$, the group velocity is $\nabla_k\omega=k/\sqrt{|k|^2+m^2}$ and its magnitude is at most one.

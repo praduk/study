@@ -1,0 +1,1 @@
+If no such $a$ existed, $s-\epsilon$ would be a smaller upper bound. Conversely, if an upper bound $u<s$ existed, apply the approximation property with $\epsilon=s-u$ to obtain $a>u$, a contradiction.

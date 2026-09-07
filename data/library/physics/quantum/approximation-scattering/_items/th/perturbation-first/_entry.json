@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "292e2b2a5e3c4e40987be3f47e642e79",
+  "title": "First-order nondegenerate perturbation formula",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8d42255d605c46cd93ef8aa0a0731612",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8d42255d605c46cd93ef8aa0a0731612.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b897fc9892694ec4a886d1d14eacf6ec",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b897fc9892694ec4a886d1d14eacf6ec.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T09:11:23.083329+00:00",
+  "updated_at": "2026-09-07T09:11:23.177926+00:00"
+}

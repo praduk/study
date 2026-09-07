@@ -1,0 +1,3 @@
+A spacetime here is a smooth time-oriented four-manifold with a smooth Lorentzian metric $g$ of signature $(-+++)$. A massive observer has future timelike four-velocity $U$ normalized by $g(U,U)=-c^2$. Its proper time is $c^{-1}\int\sqrt{-g(\dot\gamma,\dot\gamma)}\,d\lambda$.
+
+Its rest space is $U^\perp$, with positive-definite induced metric, and spatial projector $h^\mu{}_{\nu}=\delta^\mu{}_{\nu}+U^\mu U_\nu/c^2$. A particle's measured energy is $-p\cdot U$; a geometric-optics wave's angular frequency is $-k\cdot U$. These contractions occur at one event. Comparing distant vectors needs an additional prescription, such as a specified transport path or measurement protocol.

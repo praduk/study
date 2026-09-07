@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "7be187fedf9646bf9762757f54f26167",
+  "title": "Schwarz lemma",
+  "rank": 8070450532247928832,
+  "header": "Prerequisites: @math:complex:analytic-consequences:th:maximum-modulus, @math:complex:analytic-consequences:th:taylor-cauchy.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "201b4f8c1a294abdba82f16e193287a6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.201b4f8c1a294abdba82f16e193287a6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a6aa0e12f71c46e6a154802208da0ec3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a6aa0e12f71c46e6a154802208da0ec3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:17:15.286247+00:00",
+  "updated_at": "2026-09-07T08:17:17.745821+00:00"
+}

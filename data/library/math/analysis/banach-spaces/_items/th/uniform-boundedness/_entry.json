@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "75e1925b039541f693f285243f00a469",
+  "title": "Uniform boundedness principle",
+  "rank": 8935141660703064064,
+  "header": "Prerequisites: @math:analysis:banach-spaces:th:baire, @math:analysis:banach-spaces:th:bounded-continuous.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "22ea40b4a6ad4dedac07e6909e0810f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.22ea40b4a6ad4dedac07e6909e0810f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "72dd0d148f8b4309b579e4d8aad71efe",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.72dd0d148f8b4309b579e4d8aad71efe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T08:13:42.422953+00:00",
+  "updated_at": "2026-09-07T08:13:44.979888+00:00"
+}

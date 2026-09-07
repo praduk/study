@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "fdb6f678b82641a38b840c9227235343",
+  "title": "Functor categories and equivalence",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0145466387784f24ade1c711fc3bfc39",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0145466387784f24ade1c711fc3bfc39.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-07T07:55:49.691149+00:00",
+  "updated_at": "2026-09-07T07:55:49.691167+00:00"
+}

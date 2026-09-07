@@ -1,0 +1,1 @@
+For the chain's positive-frequency branch and $0<k<\pi/a$, find $v_p$ and $v_g$. Compute their limits as $k\to0^+$ and $k\to(\pi/a)^-$. Explain the difference at the band edge without claiming transport of an arbitrary signal front.

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ee3db70c2c0c48d28b3d4a213fa329b1",
+  "title": "Local existence and uniqueness by successive approximation",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "984051fbdb774f01898191ef063515a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.984051fbdb774f01898191ef063515a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f1233566e3db4b78ad5dd65a52169db0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f1233566e3db4b78ad5dd65a52169db0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-07T07:49:10.109717+00:00",
+  "updated_at": "2026-09-07T07:49:11.434741+00:00"
+}
