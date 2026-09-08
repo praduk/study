@@ -84,7 +84,13 @@ def test_packaged_editor_waits_for_all_saves_and_keeps_failed_drafts(settings_fa
                 editor = page.locator(".editor-dialog .cm-content")
                 dialog = page.locator(".editor-dialog")
                 expect = playwright_api.expect
+                await expect(dialog).to_be_visible()
+                await dialog.get_by_role("button", name="Other", exact=True).click()
+                await editor.fill("Changed alternative that is held in flight")
+                await dialog.get_by_role("button", name="Main · main", exact=True).click()
                 await editor.fill("Draft that must survive failure")
+                await page.get_by_label("Title", exact=True).fill("Partially saved title")
+                await page.get_by_label("Tag", exact=True).fill("partially-saved-tag")
                 await page.route("**/api/entries/*/content/*", intercept)
                 await _vim_command(page, "wq")
                 await asyncio.wait_for(held.wait(), timeout=10)
@@ -121,13 +127,21 @@ def test_packaged_editor_waits_for_all_saves_and_keeps_failed_drafts(settings_fa
                 await expect(cancel).to_be_enabled()
                 assert await editor.inner_text() == "Draft that must survive failure"
                 assert store.get_entry(entry_id)["formulations"][0]["content"] == "Original main\n"
+                assert store.get_entry(entry_id)["title"] == "Partially saved title"
+                assert store.get_entry(entry_id)["tag"] == "partially-saved-tag"
                 await page.unroute("**/api/entries/*/content/*", intercept)
+                # Reverting metadata after a partial save must still write that
+                # intended value, although it equals the editor's old baseline.
+                await page.get_by_label("Title", exact=True).fill("Save regression")
+                await page.get_by_label("Tag", exact=True).fill("save-regression")
                 await editor.fill("Retry saves the retained draft")
                 await _vim_command(page, "wq")
                 await expect(dialog).to_have_count(0)
                 assert store.get_entry(entry_id)["formulations"][0]["content"] == (
                     "Retry saves the retained draft\n"
                 )
+                assert store.get_entry(entry_id)["title"] == "Save regression"
+                assert store.get_entry(entry_id)["tag"] == "save-regression"
                 assert errors == []
             finally:
                 release.set()

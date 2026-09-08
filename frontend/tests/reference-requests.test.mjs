@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { api, changesLibraryReads, getLibraryReadVersion, subscribeLibraryReads } from '../lib/api.ts';
+import { api, batchLibraryWrites, changesLibraryReads, getLibraryReadVersion, subscribeLibraryReads } from '../lib/api.ts';
 import { appendLinkedItems, linkedItemPath } from '../lib/linked-items.ts';
 import { createReferenceBatcher, referenceBatchPath } from '../lib/reference-batch.ts';
 
@@ -87,4 +87,34 @@ test('linked-item pagination keeps authored order and rejects a changed snapshot
   assert.equal(appendLinkedItems(base, { ...next, offset: 1 }), null);
   assert.equal(appendLinkedItems(base, { ...next, offset: 0, revision: 'two' }).revision, 'two');
   assert.equal(linkedItemPath({ canonical_tag: 'math:algebra:th:lagrange:pf:action' }), '/library/math/algebra/th/lagrange/pf/action');
+});
+
+test('related writes refresh readers once, after completion or partial failure', async () => {
+  const originalFetch = globalThis.fetch;
+  const before = getLibraryReadVersion();
+  let updates = 0;
+  const unsubscribe = subscribeLibraryReads(() => { updates += 1; });
+  globalThis.fetch = async (path) => path.endsWith('/failed')
+    ? new Response('{"detail":"failed"}', { status: 400 })
+    : new Response('{}', { status: 200 });
+  try {
+    await batchLibraryWrites(async () => {
+      await api('/api/entries/one', { method: 'PATCH', body: '{}' });
+      await batchLibraryWrites(async () => {
+        await api('/api/entries/one/content/two', { method: 'PUT', body: '{}' });
+      });
+      assert.equal(updates, 0, 'nested work must not expose an intermediate library');
+    });
+    assert.equal(updates, 1);
+    assert.equal(getLibraryReadVersion(), before + 1);
+    await assert.rejects(batchLibraryWrites(async () => {
+      await api('/api/entries/one', { method: 'PATCH', body: '{}' });
+      await api('/api/entries/failed', { method: 'PATCH', body: '{}' });
+    }), /failed/);
+    assert.equal(updates, 2, 'successful writes before a failure still invalidate readers');
+    await assert.rejects(batchLibraryWrites(async () => {
+      await api('/api/entries/failed', { method: 'PATCH', body: '{}' });
+    }), /failed/);
+    assert.equal(updates, 2, 'a failed-only batch changes no successful-read state');
+  } finally { globalThis.fetch = originalFetch; unsubscribe(); }
 });

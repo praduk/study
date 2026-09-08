@@ -111,6 +111,13 @@ snapshot after that atomic single-sidecar write only if the index matched disk b
 validated library-cache refresh finds no unexpected concurrent change; otherwise it invalidates the
 snapshot normally.
 
+Ordinary v2 entry edits retain the validated library cache only after checking the exact saved
+bytes and confirming that all other file signatures are unchanged. Content and metadata edits
+still invalidate the search snapshot immediately. The editor sends only changed fields and
+variants and defers mounted-reader refresh until all requests in that save have settled, including
+partially successful saves. This prevents reference and linked-item reads from repeatedly rebuilding
+the index between writes. Unchanged saves issue no writes or reader invalidations.
+
 A successful app-controlled Git pull synchronously reloads the index. To catch direct on-disk
 edits, Study checks `library.json` on every query and performs a signature sweep at most once every
 250 milliseconds. For aggregate v1 storage this covers the indexed Markdown paths. For sharded v2

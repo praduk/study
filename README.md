@@ -314,6 +314,12 @@ authentication tokens. `config.local.toml`, dependencies, and intermediate front
 are ignored. The complete release frontend and its local runtime assets are tracked under
 `study_app/web/`.
 
+The editor saves only changed fields and formulations. In v2, ordinary text, title, and header
+edits atomically replace just the affected entry files, with a small recovery journal under
+`data/runtime/`. Interrupted writes can restore those files without reverting unrelated entries;
+displaced bytes are retained there for inspection. Structural changes such as renaming a tag or
+moving a folder retain the full-tree transaction. Unchanged saves do not rewrite timestamps.
+
 Bayesian posterior grids are derived from `review-log.jsonl` and cached only in memory. They are not
 duplicated in `review.json`, which keeps ordinary grade diffs small and avoids versioning a large
 rebuildable array.

@@ -58,6 +58,7 @@ V2_ITEMS_DIRECTORY = "_items"
 V2_ENTRY_METADATA = "_entry.json"
 V2_ASSETS_DIRECTORY = "assets"
 V2_WRITE_JOURNAL = "library-write-journal.tmp"
+V2_ENTRY_WRITE_JOURNAL = "library-entry-write-journal.tmp"
 V2_RANK_GAP = 1 << 32
 V2_MAX_RANK = (1 << 63) - 1
 V2_MAX_RELATIVE_PATH = 768
@@ -345,6 +346,7 @@ class LibraryStore:
             _atomic_json(self.library_path, {"version": 2, "root": V2_LIBRARY_ROOT})
         version = self._format_version()
         if version == 2:
+            self._recover_v2_entry_write()
             self._recover_v2_write()
         content_root = self.library_dir if version == 2 else self.legacy_content_dir
         if version == 1:
@@ -363,6 +365,92 @@ class LibraryStore:
             raise StoreError(f"data directory escapes the configured data root: {content_root.name}")
         if not self.macros_path.exists():
             _atomic_json(self.macros_path, {"version": 1, "macros": {}})
+
+    def _entry_journal_files(self, value: dict[str, Any]) -> dict[Path, str]:
+        """Validate a small before-image journal before trusting any recovery path."""
+        if (
+            set(value) != {"version", "state", "files"}
+            or value.get("version") != 1
+            or value.get("state") not in {"prepared", "committed"}
+            or not isinstance(value.get("files"), dict)
+            or not value["files"]
+        ):
+            raise StoreError("entry write journal is invalid")
+        files: dict[Path, str] = {}
+        for relative, text in value["files"].items():
+            if not isinstance(relative, str) or not isinstance(text, str):
+                raise StoreError("entry write journal is invalid")
+            path = self.data_dir / relative
+            if (
+                "\\" in relative
+                or Path(relative).is_absolute()
+                or path.resolve() != path
+                or self.library_dir not in path.parents
+                or len(path.parts) < 4
+                or path.parent.parent.parent.name != V2_ITEMS_DIRECTORY
+                or path.parent.parent.name not in KINDS
+                or not SLUG_RE.fullmatch(path.parent.name)
+                or path.is_symlink()
+                or not path.parent.is_dir()
+            ):
+                raise StoreError("entry write journal has an unsafe path")
+            files[path] = text
+        parents = {path.parent for path in files}
+        if len(parents) != 1:
+            raise StoreError("entry write journal must describe one entry")
+        metadata_path = next(iter(parents)) / V2_ENTRY_METADATA
+        try:
+            metadata = json.loads(files[metadata_path])
+            names = {
+                variant["file"]
+                for group in ("formulations", "supplements")
+                for variant in metadata[group]
+            }
+        except (KeyError, TypeError, ValueError) as exc:
+            raise StoreError("entry write journal metadata is invalid") from exc
+        if any(
+            path != metadata_path and (path.suffix.casefold() != ".md" or path.name not in names)
+            for path in files
+        ):
+            raise StoreError("entry write journal contains an unrelated file")
+        return files
+
+    def _restore_v2_entry_files(self, files: dict[Path, str]) -> None:
+        # Retain displaced bytes for inspection, including a direct edit made
+        # after interruption. Unrelated entries are never part of this rollback.
+        failed = self.runtime_dir / f"library-entry-failed-{uuid.uuid4().hex}.tmp"
+        failed.mkdir()
+        for path in files:
+            if path.exists():
+                _atomic_bytes(failed / path.name, path.read_bytes())
+        for path, text in files.items():
+            _atomic_text(path, text)
+        _fsync_directory(next(iter(files)).parent)
+        self._invalidate_library_cache()
+        self._invalidate_search_index()
+
+    def _recover_v2_entry_write(self) -> None:
+        journal = self.runtime_dir / V2_ENTRY_WRITE_JOURNAL
+        if not journal.exists():
+            return
+        if (self.runtime_dir / V2_WRITE_JOURNAL).exists():
+            raise StoreError("conflicting unfinished library writes require recovery")
+        value = self._read_json_object(journal, "entry write journal")
+        files = self._entry_journal_files(value)
+        if value["state"] == "prepared":
+            # Recovery is exceptional: validate the complete proposed tree in
+            # isolation before replacing any live bytes from a journal.
+            check_root = self.runtime_dir / f"library-entry-check-{uuid.uuid4().hex}.tmp"
+            try:
+                shutil.copytree(self.library_dir, check_root, symlinks=True)
+                for path, text in files.items():
+                    _atomic_text(check_root / path.relative_to(self.library_dir), text)
+                self._read_v2(check_root)
+            finally:
+                shutil.rmtree(check_root, ignore_errors=True)
+            self._restore_v2_entry_files(files)
+        self._read_v2()
+        journal.unlink()
 
     def _recover_v2_write(self) -> None:
         journal = self.runtime_dir / V2_WRITE_JOURNAL
@@ -1235,7 +1323,7 @@ class LibraryStore:
 
     def _begin_v2_transaction(self) -> dict[str, Any]:
         journal = self.runtime_dir / V2_WRITE_JOURNAL
-        if journal.exists():
+        if journal.exists() or (self.runtime_dir / V2_ENTRY_WRITE_JOURNAL).exists():
             raise StoreError("an unfinished version 2 write requires recovery")
         backup = self.runtime_dir / f"library-write-backup-{uuid.uuid4().hex}.tmp"
         failed = self.runtime_dir / f"library-write-failed-{uuid.uuid4().hex}.tmp"
@@ -1374,6 +1462,106 @@ class LibraryStore:
         # loop instead of publishing signatures captured after that race.
         self._invalidate_library_cache()
         self._invalidate_search_index()
+
+    def _write_v2_entry_files(
+        self, library: dict[str, Any], entry: dict[str, Any], contents: dict[Path, str]
+    ) -> None:
+        """Save existing entry files without copying or reloading the whole library."""
+        entry_path = self._v2_entry_paths[entry["id"]]
+        metadata_path = entry_path / V2_ENTRY_METADATA
+        metadata = self._v2_entry_metadata(entry, self._v2_entry_ranks[entry["id"]], entry_path)
+        replacements = {
+            **contents,
+            metadata_path: json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        }
+        # IDs, paths, kinds, ordering, variants, and assets are unchanged here.
+        # Validate the edited fields against the already-validated folders.
+        try:
+            validate_library(
+                {"version": 2, "folders": library["folders"], "entries": [entry]},
+                self.data_dir, self.library_dir, self.media_dir, self.diagram_dir,
+            )
+        except LibraryValidationError as exc:
+            raise StoreError(str(exc)) from exc
+        prior_signatures = dict(self._library_signatures)
+        originals: dict[Path, str] = {}
+        for path in replacements:
+            expected = prior_signatures.get(path)
+            before = self._file_signature(path)
+            originals[path] = path.read_text(encoding="utf-8")
+            if expected is None or before != expected or self._file_signature(path) != expected:
+                self._invalidate_library_cache()
+                self._invalidate_search_index()
+                raise StoreError("entry changed before saving; reopen it and try again")
+        value = {
+            "version": 1, "state": "prepared",
+            "files": {self._v2_data_relative(path): text for path, text in originals.items()},
+        }
+        self._entry_journal_files(value)
+        journal = self.runtime_dir / V2_ENTRY_WRITE_JOURNAL
+        if journal.exists() or (self.runtime_dir / V2_WRITE_JOURNAL).exists():
+            raise StoreError("an unfinished library write requires recovery")
+        _atomic_json(journal, value)
+        _fsync_directory(self.runtime_dir)
+        self._invalidate_search_index()
+        try:
+            for path, text in replacements.items():
+                if self._file_signature(path) != prior_signatures[path]:
+                    raise StoreError("entry changed while saving")
+                _atomic_text(path, text)
+            _fsync_directory(entry_path)
+            _atomic_json(journal, {**value, "state": "committed"})
+        except BaseException:
+            self._restore_v2_entry_files(originals)
+            journal.unlink(missing_ok=True)
+            raise
+        # A committed write must not look failed because journal cleanup failed.
+        try:
+            journal.unlink()
+        except OSError:
+            pass
+        self._invalidate_search_index()
+        self._refresh_v2_entry_cache(library, replacements, prior_signatures)
+
+    def _refresh_v2_entry_cache(
+        self,
+        library: dict[str, Any],
+        replacements: dict[Path, str],
+        prior_signatures: dict[Path, tuple[int, int, int, int, int] | None],
+    ) -> None:
+        """Publish only signatures verified against our writes and unchanged neighbors."""
+        try:
+            written_signatures = {}
+            for path, text in replacements.items():
+                before = self._file_signature(path)
+                actual = path.read_text(encoding="utf-8")
+                after = self._file_signature(path)
+                if actual != text or before != after:
+                    self._invalidate_library_cache()
+                    return
+                written_signatures[path] = after
+            signatures = {
+                self.library_path: self._file_signature(self.library_path),
+                **self._v2_tree_signatures(),
+            }
+            signatures.update({
+                path: self._file_signature(path)
+                for path in self._v2_signature_paths if path not in signatures
+            })
+            changed_paths = {*replacements, *(path.parent for path in replacements)}
+            if (
+                set(signatures) != set(prior_signatures)
+                or any(signatures[path] != signature for path, signature in written_signatures.items())
+                or any(
+                    signatures[path] != signature
+                    for path, signature in prior_signatures.items() if path not in changed_paths
+                )
+            ):
+                self._invalidate_library_cache()
+                return
+            self._cache_validated_library(library, signatures=signatures)
+        except (OSError, StoreError, UnicodeDecodeError):
+            self._invalidate_library_cache()
 
     @staticmethod
     def _folder(library: dict[str, Any], folder_id: str) -> dict[str, Any]:
@@ -2167,6 +2355,7 @@ class LibraryStore:
         with self._lock:
             library = self._read()
             entry = self._entry(library, entry_id)
+            original = copy.deepcopy(entry)
             folder_id = updates.get("folder_id") or entry["folder_id"]
             kind = updates.get("kind") or entry["kind"]
             tag = _slug(updates.get("tag") or entry["tag"], "tag")
@@ -2210,7 +2399,14 @@ class LibraryStore:
             entry["review_modes"] = fixed_modes
             if updates.get("confusable_with") is not None:
                 entry["confusable_with"] = list(dict.fromkeys(updates["confusable_with"]))
+            if entry == original:
+                return self._decorate_entry(library, entry, True)
             entry["updated_at"] = _now()
+            if library["version"] == 2 and all(
+                entry[field] == original[field] for field in ("folder_id", "kind", "tag")
+            ):
+                self._write_v2_entry_files(library, entry, {})
+                return self.get_entry(entry_id)
             self._write(library)
             return self._decorate_entry(library, entry, True)
 
@@ -2236,6 +2432,15 @@ class LibraryStore:
             library = self._read()
             entry = self._entry(library, entry_id)
             variant = self._variant(entry, variant_id)
+            normalized = content.rstrip() + "\n"
+            if self._read_content(variant["file"]) == normalized:
+                return self._decorate_entry(library, entry, True)
+            if library["version"] == 2:
+                entry["updated_at"] = _now()
+                self._write_v2_entry_files(
+                    library, entry, {self._safe_content_path(variant["file"]): normalized}
+                )
+                return self.get_entry(entry_id)
             with self._v2_write_transaction():
                 self._write_content(variant["file"], content)
                 entry["updated_at"] = _now()

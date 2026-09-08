@@ -189,7 +189,7 @@ def test_v2_generic_write_does_not_cache_over_a_concurrent_direct_edit(
 ):
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
-    entry = store.create_entry(folder["id"], "df", "Old title", "group", "", "Body")
+    store.create_entry(folder["id"], "df", "Old title", "group", "", "Body")
     sidecar = next(store.library_dir.rglob("group/_entry.json"))
     original_apply = store._apply_v2_write
 
@@ -200,7 +200,9 @@ def test_v2_generic_write_does_not_cache_over_a_concurrent_direct_edit(
         sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
     monkeypatch.setattr(store, "_apply_v2_write", apply_then_edit)
-    store.update_entry(entry["id"], {"title": "Application title"})
+    # Folder edits still use the generic transaction; title edits now write
+    # only the entry sidecar and have their own concurrent-edit regression.
+    store.update_folder(folder["id"], {"name": "Application folder"})
 
     assert store.snapshot()["entries"][0]["title"] == "Concurrent direct title"
     assert LibraryStore(store.data_dir).snapshot()["entries"][0]["title"] == (
@@ -610,7 +612,7 @@ def test_committed_v2_write_does_not_report_cleanup_failure_as_write_failure(
     original_unlink = Path.unlink
 
     def fail_journal_cleanup(path: Path, *args, **kwargs):
-        if path.name == "library-write-journal.tmp":
+        if path.name in {"library-write-journal.tmp", "library-entry-write-journal.tmp"}:
             raise OSError("injected journal cleanup failure")
         return original_unlink(path, *args, **kwargs)
 
@@ -621,6 +623,7 @@ def test_committed_v2_write_does_not_report_cleanup_failure_as_write_failure(
     reopened = LibraryStore(store.data_dir)
     assert reopened.get_entry(entry["id"])["formulations"][0]["content"] == "Committed\n"
     assert not (store.runtime_dir / "library-write-journal.tmp").exists()
+    assert not (store.runtime_dir / "library-entry-write-journal.tmp").exists()
 
 
 def test_v2_deep_path_escape_preserves_full_namespace_and_supports_moves(tmp_path: Path):

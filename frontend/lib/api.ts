@@ -1,6 +1,8 @@
 let csrfToken = '';
 let libraryReadVersion = 0;
 const libraryReadListeners = new Set<() => void>();
+let libraryReadBatchDepth = 0;
+let libraryReadsPending = false;
 
 export function subscribeLibraryReads(listener: () => void) {
   libraryReadListeners.add(listener);
@@ -12,8 +14,26 @@ export function getServerLibraryReadVersion() { return 0; }
 
 /** Recheck mounted references after a successful content or namespace change. */
 export function invalidateLibraryReads() {
+  if (libraryReadBatchDepth > 0) {
+    libraryReadsPending = true;
+    return;
+  }
   libraryReadVersion += 1;
   libraryReadListeners.forEach((listener) => listener());
+}
+
+/** Refresh readers once after related writes settle, including partially successful saves. */
+export async function batchLibraryWrites<T>(write: () => Promise<T>): Promise<T> {
+  libraryReadBatchDepth += 1;
+  try {
+    return await write();
+  } finally {
+    libraryReadBatchDepth -= 1;
+    if (libraryReadBatchDepth === 0 && libraryReadsPending) {
+      libraryReadsPending = false;
+      invalidateLibraryReads();
+    }
+  }
 }
 
 export function changesLibraryReads(path: string, init: RequestInit): boolean {

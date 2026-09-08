@@ -14,7 +14,8 @@ import { ReferencePicker } from '@/components/ReferencePicker';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
-import { api } from '@/lib/api';
+import { api, batchLibraryWrites } from '@/lib/api';
+import { saveEditorChanges } from '@/lib/editor-save';
 import { activateEditorVimActions, editorVimCommands } from '@/lib/editor-vim-commands';
 import type { EntryDetail, EntryKind } from '@/lib/types';
 
@@ -59,6 +60,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   const editorRef = useRef<ReactCodeMirrorRef>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const savingRef = useRef(false);
+  const retryAllRef = useRef(false);
   const uploadsRef = useRef(0);
   const editorExtensions = useMemo(
     () => [vim({ status: true }), markdown(), EditorView.lineWrapping],
@@ -148,36 +150,43 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
         const createdVariants = [...created.formulations, ...created.supplements];
         const createdActiveId = created.formulations.find((item) => item.main)?.id || created.formulations[0]?.id || 'new';
         setWorking(created);
-        setDrafts((current) => Object.fromEntries(createdVariants.map((item) => [
-          item.id,
-          item.id === createdActiveId ? (current.new ?? item.content ?? '') : (item.content || ''),
-        ])));
+        setDrafts(Object.fromEntries(createdVariants.map((item) => [item.id, item.content || ''])));
+        setTitle(created.title);
+        setTag(created.tag);
+        setHeader(created.header);
         setActiveId(createdActiveId);
         onSaved(created);
         if (closeAfter) onClose();
         return;
       }
-      await api<EntryDetail>(`/api/entries/${working.id}`, {
-        method: 'PATCH',
-        body: JSON.stringify({ title, tag, kind, header }),
-      });
-      const writes = await Promise.allSettled(variants.map((variant) => api<EntryDetail>(`/api/entries/${working.id}/content/${variant.id}`, {
-        method: 'PUT', body: JSON.stringify({ content: drafts[variant.id] || '' }),
-      })));
-      // Keep the editor locked until every write finishes, even if one fails.
-      const failedWrite = writes.find((result) => result.status === 'rejected');
-      if (failedWrite?.status === 'rejected') throw failedWrite.reason;
-      const refreshed = await api<EntryDetail>(`/api/entries/${working.id}`);
-      setWorking(refreshed);
-      onSaved(refreshed);
+      const refreshed = await batchLibraryWrites(() => saveEditorChanges(
+        working, { title, tag, kind, header }, drafts,
+        (path, init) => api<EntryDetail>(path, init),
+        retryAllRef.current,
+      ));
+      retryAllRef.current = false;
+      if (refreshed) {
+        setWorking(refreshed);
+        setTitle(refreshed.title);
+        setTag(refreshed.tag);
+        setKind(refreshed.kind);
+        setHeader(refreshed.header);
+        setDrafts(Object.fromEntries([...refreshed.formulations, ...refreshed.supplements].map(
+          (item) => [item.id, item.content || ''],
+        )));
+        onSaved(refreshed);
+      }
       if (closeAfter) onClose();
     } catch (reason) {
+      // A failed save can have committed some requests. Retry every intended value,
+      // including fields the user reverted to their original value after the error.
+      retryAllRef.current = true;
       setError((reason as Error).message);
     } finally {
       savingRef.current = false;
       setSaving(false);
     }
-  }, [drafts, folderId, header, insertIndex, kind, onClose, onSaved, tag, title, variants, working]);
+  }, [drafts, folderId, header, insertIndex, kind, onClose, onSaved, tag, title, working]);
 
   useEffect(() => {
     if (!open) return;
