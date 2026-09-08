@@ -114,7 +114,7 @@ function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, in
               renderPreview={(previewContent, target) => (
                 <MathMarkdown
                   content={previewContent}
-                  className="reference-preview-markdown"
+                  className="markdown-body reference-preview-markdown"
                   folderId={target.folderId || folderId}
                   interactive={false}
                 />
