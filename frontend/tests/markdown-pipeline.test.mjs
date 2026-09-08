@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
+import { Vim } from '@replit/codemirror-vim';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import ReactMarkdown from 'react-markdown';
@@ -350,12 +351,19 @@ test('resolved references display the entry title instead of the authored tag', 
   );
 });
 
+test('editor commands register successfully with the installed Vim extension', () => {
+  for (const { name, prefix, run } of editorVimCommands) {
+    assert.doesNotThrow(() => Vim.defineEx(name, prefix, run));
+  }
+});
+
 test('Vim :w saves the active editor without closing it', () => {
   let saves = 0;
   let closes = 0;
   const deactivate = activateEditorVimActions({
     save: () => { saves += 1; },
     close: () => { closes += 1; },
+    saveAndClose: () => { throw new Error(':w must not request closing'); },
   });
   const write = editorVimCommands.find((command) => command.name === 'write');
   const quit = editorVimCommands.find((command) => command.name === 'quit');
@@ -372,4 +380,20 @@ test('Vim :w saves the active editor without closing it', () => {
   deactivate();
   write?.run();
   assert.equal(saves, 1);
+});
+
+test('Vim :wq delegates closing to the save operation, not to an immediate quit', () => {
+  let saveAndClose = 0;
+  const deactivate = activateEditorVimActions({
+    save: () => { throw new Error('wrong save mode'); },
+    close: () => { throw new Error('must wait for a successful save'); },
+    saveAndClose: () => { saveAndClose += 1; },
+  });
+  const command = editorVimCommands.find((item) => item.name === 'wq');
+  assert.equal(command?.prefix, 'wq');
+  command?.run();
+  assert.equal(saveAndClose, 1);
+  deactivate();
+  command?.run();
+  assert.equal(saveAndClose, 1);
 });

@@ -18,7 +18,7 @@ Server mode is password-protected and stores revocable sessions.
 - GitHub-flavored Markdown in the web reader, local MathJax, global LaTeX macros, and custom
   Markdown headers. PDF export currently uses portable CommonMark.
 - A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:w` saves
-  without closing, and `:q` closes the editor explicitly.
+  without closing, `:wq` saves and closes after success, and `:q` closes the editor explicitly.
 - Image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
 - Embedded Excalidraw scenes, a shared Excalidraw template library, LaTeX insertion into drawings,

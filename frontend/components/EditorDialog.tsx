@@ -49,6 +49,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   });
   const [preview, setPreview] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [uploads, setUploads] = useState(0);
   const [error, setError] = useState('');
   const [imageWidth, setImageWidth] = useState(76);
   const [invertImage, setInvertImage] = useState(true);
@@ -58,6 +59,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   const editorRef = useRef<ReactCodeMirrorRef>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const savingRef = useRef(false);
+  const uploadsRef = useRef(0);
   const editorExtensions = useMemo(
     () => [vim({ status: true }), markdown(), EditorView.lineWrapping],
     [],
@@ -80,7 +82,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
       if ((event.metaKey || event.ctrlKey) && event.shiftKey && event.key.toLowerCase() === 'k') {
         event.preventDefault();
         event.stopPropagation();
-        if (working?.folder_id || folderId) setReferenceOpen(true);
+        if (!savingRef.current && (working?.folder_id || folderId)) setReferenceOpen(true);
       }
     };
     window.addEventListener('keydown', handler, { capture: true });
@@ -88,6 +90,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   }, [folderId, open, working?.folder_id]);
 
   const insertAtCursor = (text: string) => {
+    if (savingRef.current) return;
     const view = editorRef.current?.view;
     if (!view) {
       setDrafts((current) => ({ ...current, [activeId]: `${current[activeId] || ''}\n${text}\n` }));
@@ -99,6 +102,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   };
 
   const uploadImage = async (file: File) => {
+    if (savingRef.current) return;
     if (!working) { setError('Save the entry before adding images.'); return; }
     setError('');
     const form = new FormData();
@@ -106,15 +110,21 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
     form.set('alt', file.name.replace(/\.[^.]+$/, '') || 'Pasted image');
     form.set('width', String(imageWidth));
     form.set('invert_lightness', String(invertImage));
+    uploadsRef.current += 1;
+    setUploads(uploadsRef.current);
     try {
       const result = await api<{ markdown: string }>(`/api/entries/${working.id}/images`, { method: 'POST', body: form });
       insertAtCursor(result.markdown);
     } catch (reason) {
       setError((reason as Error).message);
+    } finally {
+      uploadsRef.current -= 1;
+      setUploads(uploadsRef.current);
     }
   };
 
   const handlePaste = (event: React.ClipboardEvent<HTMLDivElement>) => {
+    if (savingRef.current) { event.preventDefault(); return; }
     const image = Array.from(event.clipboardData.files).find((file) => file.type.startsWith('image/'));
     if (!image) return;
     event.preventDefault();
@@ -124,6 +134,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   const save = useCallback(async ({ closeAfter = true }: { closeAfter?: boolean } = {}) => {
     if (savingRef.current) return;
     setError('');
+    if (uploadsRef.current) { setError('An image is still uploading. Save again when it finishes.'); return; }
     if (!folderId && !working) { setError('Choose a folder first.'); return; }
     if (!title.trim() || !tag.trim()) { setError('Title and tag are required.'); return; }
     savingRef.current = true;
@@ -150,9 +161,12 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
         method: 'PATCH',
         body: JSON.stringify({ title, tag, kind, header }),
       });
-      await Promise.all(variants.map((variant) => api<EntryDetail>(`/api/entries/${working.id}/content/${variant.id}`, {
+      const writes = await Promise.allSettled(variants.map((variant) => api<EntryDetail>(`/api/entries/${working.id}/content/${variant.id}`, {
         method: 'PUT', body: JSON.stringify({ content: drafts[variant.id] || '' }),
       })));
+      // Keep the editor locked until every write finishes, even if one fails.
+      const failedWrite = writes.find((result) => result.status === 'rejected');
+      if (failedWrite?.status === 'rejected') throw failedWrite.reason;
       const refreshed = await api<EntryDetail>(`/api/entries/${working.id}`);
       setWorking(refreshed);
       onSaved(refreshed);
@@ -168,13 +182,14 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   useEffect(() => {
     if (!open) return;
     return activateEditorVimActions({
-      close: onClose,
+      close: () => { if (!savingRef.current) onClose(); },
       save: () => void save({ closeAfter: false }),
+      saveAndClose: () => void save({ closeAfter: true }),
     });
   }, [onClose, open, save]);
 
   const addFormulation = async () => {
-    if (!working) return;
+    if (!working || savingRef.current) return;
     const label = window.prompt('Alternative formulation label (for example, Category-theoretic)');
     if (!label) return;
     const subtag = window.prompt('Unique subtag (for example, category)');
@@ -191,7 +206,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   };
 
   const addSupplement = async () => {
-    if (!working || !['th', 'pb'].includes(working.kind)) return;
+    if (!working || savingRef.current || !['th', 'pb'].includes(working.kind)) return;
     const supplementKind = working.kind === 'th' ? 'pf' : 'sl';
     const label = window.prompt(`${supplementKind === 'pf' ? 'Proof' : 'Solution'} label`, 'Main');
     if (!label) return;
@@ -210,7 +225,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   };
 
   const makeMain = async () => {
-    if (!working || !active) return;
+    if (!working || !active || savingRef.current) return;
     try {
       const updated = await api<EntryDetail>(`/api/entries/${working.id}/variants/${active.id}`, {
         method: 'PATCH', body: JSON.stringify({ main: true }),
@@ -221,33 +236,34 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
 
   return (
     <Dialog open={open} onOpenChange={(value, details) => {
+      if (!value && savingRef.current) return;
       if (!value && details.reason === 'escape-key') return;
       if (!value) onClose();
     }}>
-      <DialogContent className="editor-dialog" showCloseButton>
+      <DialogContent className="editor-dialog" showCloseButton={!saving} aria-busy={saving}>
         <DialogHeader className="editor-dialog-header">
           <DialogTitle>{working ? `Edit ${working.title}` : 'New study entry'}</DialogTitle>
           <p className="dialog-subtitle">Markdown + MathJax · Vim keybindings are active in the editor.</p>
         </DialogHeader>
         <div className="metadata-grid editor-metadata">
-          <label className="field-label title-field" htmlFor="entry-title">Title<Input id="entry-title" value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Fundamental theorem of algebra" /></label>
-          <label className="field-label">Type<select value={kind} onChange={(event) => setKind(event.target.value as EntryKind)}>{KINDS.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label>
-          <label className="field-label" htmlFor="entry-tag">Tag<Input id="entry-tag" value={tag} onChange={(event) => setTag(event.target.value.toLowerCase())} placeholder="fundamental-theorem" /></label>
-          <label className="field-label header-field">Custom Markdown header<textarea value={header} onChange={(event) => setHeader(event.target.value)} placeholder="Prerequisites, source, or a short orientation note…" /></label>
+          <label className="field-label title-field" htmlFor="entry-title">Title<Input id="entry-title" disabled={saving} value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Fundamental theorem of algebra" /></label>
+          <label className="field-label">Type<select disabled={saving} value={kind} onChange={(event) => setKind(event.target.value as EntryKind)}>{KINDS.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label>
+          <label className="field-label" htmlFor="entry-tag">Tag<Input id="entry-tag" disabled={saving} value={tag} onChange={(event) => setTag(event.target.value.toLowerCase())} placeholder="fundamental-theorem" /></label>
+          <label className="field-label header-field">Custom Markdown header<textarea disabled={saving} value={header} onChange={(event) => setHeader(event.target.value)} placeholder="Prerequisites, source, or a short orientation note…" /></label>
         </div>
         <div className="editor-variant-slot">{working && (
           <div className="variant-bar">
             <div className="variant-tabs editor-variant-tabs">
               {variants.map((variant) => (
-                <button key={variant.id} className={variant.id === activeId ? 'selected' : ''} onClick={() => setActiveId(variant.id)}>
+                <button key={variant.id} disabled={saving} className={variant.id === activeId ? 'selected' : ''} onClick={() => setActiveId(variant.id)}>
                   {variant.kind ? `${variant.kind}: ` : ''}{variant.label}{variant.main ? ' · main' : ''}
                 </button>
               ))}
             </div>
             <div className="variant-actions">
-              {['ax', 'df', 'th'].includes(working.kind) && <Button size="xs" variant="ghost" onClick={addFormulation}><Plus /> Formulation</Button>}
-              {['th', 'pb'].includes(working.kind) && <Button size="xs" variant="ghost" onClick={addSupplement}><Plus /> {working.kind === 'th' ? 'Proof' : 'Solution'}</Button>}
-              {active && !active.main && <Button size="xs" variant="ghost" onClick={makeMain}>Make main</Button>}
+              {['ax', 'df', 'th'].includes(working.kind) && <Button size="xs" variant="ghost" disabled={saving} onClick={addFormulation}><Plus /> Formulation</Button>}
+              {['th', 'pb'].includes(working.kind) && <Button size="xs" variant="ghost" disabled={saving} onClick={addSupplement}><Plus /> {working.kind === 'th' ? 'Proof' : 'Solution'}</Button>}
+              {active && !active.main && <Button size="xs" variant="ghost" disabled={saving} onClick={makeMain}>Make main</Button>}
             </div>
           </div>
         )}</div>
@@ -255,10 +271,10 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
           <div className="editor-column">
             <div className="editor-toolbar">
               <span className="vim-status">VIM</span>
-              <Button size="xs" variant="ghost" onClick={() => fileInput.current?.click()} disabled={!working}><ImagePlus /> Image</Button>
-              <Button size="xs" variant="ghost" onClick={() => setDrawingOpen(true)} disabled={!working}><Shapes /> Excalidraw</Button>
-              <Button size="xs" variant="ghost" onClick={() => setDiagramOpen(true)} disabled={!working}><GitCompareArrows /> Commutative</Button>
-              <Button size="xs" variant="ghost" aria-keyshortcuts="Control+Shift+K Meta+Shift+K" title="Insert reference (⌘/Ctrl+Shift+K)" onClick={() => setReferenceOpen(true)} disabled={!working?.folder_id && !folderId}><AtSign /> Reference</Button>
+              <Button size="xs" variant="ghost" onClick={() => fileInput.current?.click()} disabled={saving || !working}><ImagePlus /> Image</Button>
+              <Button size="xs" variant="ghost" onClick={() => setDrawingOpen(true)} disabled={saving || !working}><Shapes /> Excalidraw</Button>
+              <Button size="xs" variant="ghost" onClick={() => setDiagramOpen(true)} disabled={saving || !working}><GitCompareArrows /> Commutative</Button>
+              <Button size="xs" variant="ghost" aria-keyshortcuts="Control+Shift+K Meta+Shift+K" title="Insert reference (⌘/Ctrl+Shift+K)" onClick={() => setReferenceOpen(true)} disabled={saving || (!working?.folder_id && !folderId)}><AtSign /> Reference</Button>
               <Button size="xs" variant={preview ? 'secondary' : 'ghost'} onClick={() => setPreview((value) => !value)}><FileImage /> Preview</Button>
               <span className="toolbar-spacer" />
               <label className="range-field compact">Image width <input type="range" min="20" max="100" value={imageWidth} onChange={(event) => setImageWidth(Number(event.target.value))} /><span>{imageWidth}%</span></label>
@@ -269,6 +285,8 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
               ref={editorRef}
               className="study-markdown-editor"
               value={currentContent}
+              readOnly={saving}
+              editable={!saving}
               height="100%"
               theme={dark ? 'dark' : 'light'}
               extensions={editorExtensions}
@@ -284,7 +302,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
         </div>
         <div className="review-policy"><strong>Review</strong><span>{reviewPolicy}</span></div>
         <div className="editor-error-slot">{error && <div className="form-error" role="alert">{error}</div>}</div>
-        <div className="dialog-actions editor-actions"><Button variant="ghost" onClick={onClose}>Cancel</Button><Button onClick={() => void save()} disabled={saving}><Save /> {saving ? 'Saving…' : 'Save'}</Button></div>
+        <div className="dialog-actions editor-actions"><Button variant="ghost" onClick={onClose} disabled={saving}>Cancel</Button><Button onClick={() => void save()} disabled={saving || uploads > 0}><Save /> {saving ? 'Saving…' : uploads > 0 ? 'Uploading image…' : 'Save'}</Button></div>
         {working && <ExcalidrawDialog open={drawingOpen} entryId={working.id} dark={dark} onClose={() => setDrawingOpen(false)} onInsert={insertAtCursor} />}
         {working && <CommutativeDiagramDialog open={diagramOpen} entryId={working.id} onClose={() => setDiagramOpen(false)} onInsert={insertAtCursor} />}
         <ReferencePicker open={referenceOpen} folderId={working?.folder_id || folderId} onClose={() => setReferenceOpen(false)} onInsert={insertAtCursor} />
