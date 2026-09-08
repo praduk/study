@@ -1,0 +1,1 @@
+In three-dimensional Euclidean space away from the origin, take constant $n=1$ and outward phase $S(x)=r=|x|$. Find every radial amplitude $a(r)$ satisfying @physics:waves:geometry:th:amplitude-flux. Check the radial flux through a sphere and the exact Helmholtz residual for $r>0$. Explain why the result does not define a source-free smooth solution at the origin.

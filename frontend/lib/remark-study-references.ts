@@ -59,7 +59,7 @@ function decodeNumericReference(value: string): string {
  * references such as `&#64;tag`; neither form should become an active Study
  * reference after parsing.
  */
-function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
+function decodeReferenceText(raw: string, preserveEscapedDollars: boolean) {
   const protectedStarts = new Set<number>();
   let reconstructed = '';
   let rawIndex = 0;
@@ -73,7 +73,7 @@ function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
       if (next === '@' || next === '[' || next === ']') {
         protectedStarts.add(outputIndex);
       }
-      reconstructed += next;
+      reconstructed += next === '$' && preserveEscapedDollars ? '\\$' : next;
       rawIndex += 2;
       continue;
     }
@@ -103,21 +103,45 @@ function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
     rawIndex += literal.length;
   }
 
-  // Positions are useful only if our small Markdown text decoder exactly
-  // agrees with the parser. Fail closed when an unfamiliar transformation is
-  // encountered so escaped syntax cannot accidentally become interactive.
-  if (reconstructed !== rendered) {
-    const fallback = new Set<number>();
-    const pattern = new RegExp(
-      REFERENCE_PATTERN.source,
-      REFERENCE_PATTERN.flags,
-    );
-    for (const match of rendered.matchAll(pattern)) {
-      fallback.add(match.index ?? 0);
+  return { reconstructed, protectedStarts };
+}
+
+function alignReferenceText(raw: string, rendered: string, preserveEscapedDollars: boolean): Set<number> | null {
+  const { reconstructed, protectedStarts } = decodeReferenceText(raw, preserveEscapedDollars);
+  if (reconstructed === rendered) return protectedStarts;
+  const rawLines = reconstructed.split('\n');
+  const renderedLines = rendered.split('\n');
+  if (rawLines.length !== renderedLines.length) return null;
+  const aligned = new Set<number>();
+  let rawOffset = 0;
+  let renderedOffset = 0;
+  for (let line = 0; line < rawLines.length; line += 1) {
+    const rawLine = rawLines[line];
+    const renderedLine = renderedLines[line];
+    if (!rawLine.endsWith(renderedLine)) return null;
+    const removed = rawLine.length - renderedLine.length;
+    // A prose node's source span can cross blockquote markers and list
+    // indentation that the Markdown parser removes on continuation lines.
+    if (removed && (line === 0 || !/^(?:[ \t]*>[ \t]?)*[ \t]*$/.test(rawLine.slice(0, removed)))) return null;
+    for (const index of protectedStarts) {
+      if (index >= rawOffset + removed && index < rawOffset + rawLine.length) {
+        aligned.add(renderedOffset + index - rawOffset - removed);
+      }
     }
-    return fallback;
+    rawOffset += rawLine.length + 1;
+    renderedOffset += renderedLine.length + 1;
   }
-  return protectedStarts;
+  return aligned;
+}
+
+function nonLiteralReferenceStarts(raw: string, rendered: string): Set<number> {
+  // remarkStudyMath restores escaped dollars for MathJax. Accept its output
+  // as well as ordinary Markdown text, preserving exact syntax provenance.
+  const aligned = alignReferenceText(raw, rendered, false) ?? alignReferenceText(raw, rendered, true);
+  if (aligned) return aligned;
+  // Unfamiliar transformations still fail closed: escaped or encoded syntax
+  // must never become an active reference merely because parsing changed it.
+  return new Set([...rendered.matchAll(new RegExp(REFERENCE_PATTERN.source, REFERENCE_PATTERN.flags))].map((match) => match.index ?? 0));
 }
 
 /**

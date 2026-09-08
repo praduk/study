@@ -1,1 +1,3 @@
 Suppose $S(q,t)$ is $C^2$ and satisfies $S_t+H(q,S_q,t)=0$, with smooth $H$. If $q(t)$ solves $\dot q=H_p(q,S_q,t)$ and $p(t)=S_q(q(t),t)$, then $(q,p)$ solves Hamilton's equations. This local statement does not assert that a global single-valued $S$ exists.
+
+At fixed time, $p=d_qS$ is a Lagrangian graph by @math:diffgeo:geometric-structures:th:cotangent-symplectic. The Hamilton–Jacobi equation makes the time-dependent graph compatible with Hamiltonian evolution. This geometric interpretation is local: when its projection to configuration space ceases to be one-to-one, a single-valued generating function $S(q,t)$ may no longer describe every branch. The related wavefront geometry appears in @physics:waves:geometry:df:phase-space-rays.

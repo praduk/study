@@ -5,3 +5,5 @@ $$
 $$
 
 with fixed endpoints. Optical path length has units of metres. In a nondispersive medium $\mathcal L/c_0$ is a travel-time model; in a dispersive medium the phase index must not be confused with a group-delay index. Stationarity does not require every ray to be a global minimum. The ray model is a short-wavelength approximation and needs care near caustics and boundaries.
+
+Because $n\,ds$ is the length element of $g_{\mathrm{opt}}=n^2\delta$, stationary optical paths are geodesics of the optical metric after an affine optical-arclength parametrization. @physics:waves:geometry:th:optical-metric proves the equivalence with the component ray equation and the eikonal Hamiltonian. The metric packages the isotropic constitutive model; anisotropy generally requires a different dispersion geometry.

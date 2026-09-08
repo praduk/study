@@ -6,7 +6,7 @@ $$
 \theta=\sup\{\alpha+1:\alpha\in T\}.
 $$
 
-This is an ordinal. There can be no injection $j:\theta\to A$: otherwise transport the membership well-order on $\theta$ to $j[\theta]\subseteq A$. That well-ordering would have type $\theta$, so $\theta\in T$. The definition of $\theta$ would then imply $\theta+1\subseteq\theta$, impossible because $\theta\in\theta+1$ but $\theta\notin\theta$.
+This is an ordinal. There can be no injection $j:\theta\to A$: otherwise transport the membership @[well-order]math:set:orders-well-orders:df:well-order on $\theta$ to $j[\theta]\subseteq A$. That well-ordering would have type $\theta$, so $\theta\in T$. The definition of $\theta$ would then imply $\theta+1\subseteq\theta$, impossible because $\theta\in\theta+1$ but $\theta\notin\theta$.
 
 Thus at least one ordinal, namely $\theta$, does not inject into $A$. By Separation, the nonempty set
 

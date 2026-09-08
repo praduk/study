@@ -1,0 +1,5 @@
+A contact form on a $(2n+1)$-manifold is a one-form $\alpha$ for which $\alpha\w(d\alpha)^n$ never vanishes. Its contact distribution is $\ker\alpha$. Multiplication by a nowhere-zero function gives the same distribution. The Reeb field is the unique vector field $R$ with $\alpha(R)=1$ and $\iota_Rd\alpha=0$. Existence and uniqueness follow because $d\alpha$ is nondegenerate on $\ker\alpha$; otherwise the top wedge would vanish.
+
+An $n$-dimensional submanifold $L$ is Legendrian when the pullback of $\alpha$ to $L$ vanishes. In coordinates $(z,q^1,\ldots,q^n,p_1,\ldots,p_n)$, $\alpha=dz-p_i\,dq^i$ is contact and $R=\partial_z$. For any smooth $S(q)$, the graph $z=S(q),p_i=\partial_iS$ is Legendrian, since $dS-\partial_iS\,dq^i=0$.
+
+This is a geometric definition. Thermodynamic constitutive laws select particular Legendrian submanifolds; the contact condition alone supplies no equation of state. The operations are those of @math:diffgeo:forms:df:exterior-derivative and @math:diffgeo:forms:df:forms-pullback.

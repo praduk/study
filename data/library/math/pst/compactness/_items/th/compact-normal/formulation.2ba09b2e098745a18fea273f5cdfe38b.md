@@ -1,1 +1,1 @@
-Every compact Hausdorff space is normal.
+Every compact @[Hausdorff space]math:pst:separation:df:separation is normal.

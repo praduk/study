@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "4f8ccb188ebd4f60bc29271ac898663d",
+  "title": "Symplectic manifolds and Hamiltonian vector fields",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9f853f4d7fe94e699f182c78fcdeaaa0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9f853f4d7fe94e699f182c78fcdeaaa0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:40.870914+00:00",
+  "updated_at": "2026-09-08T00:02:40.870919+00:00"
+}

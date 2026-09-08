@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "047ca3852ab44379b66c47b942df725c",
+  "title": "Legendre changes preserve the thermodynamic contact form",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "54bce487903149a4bb63e1bab6fe0cce",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.54bce487903149a4bb63e1bab6fe0cce.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff6abd9dc64448d48529fc2e0cc7c5b9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ff6abd9dc64448d48529fc2e0cc7c5b9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:01.302846+00:00",
+  "updated_at": "2026-09-08T00:03:01.686835+00:00"
+}

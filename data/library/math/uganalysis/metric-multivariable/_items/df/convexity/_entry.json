@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "50a8a20ea8ca4663833306e3c0a84d04",
+  "title": "Convex sets, convex functions, and concavity",
+  "rank": 9079256848778919936,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ae9c4b48bb22478b8eab7c941d43044b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ae9c4b48bb22478b8eab7c941d43044b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:52.247007+00:00",
+  "updated_at": "2026-09-08T00:02:52.247012+00:00"
+}

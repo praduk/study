@@ -1,3 +1,5 @@
 The contracted differential Bianchi identity is $\nabla_\mu G^{\mu\nu}=0$. With metric compatibility, constant $\Lambda$, and Einstein's equation, it requires $\nabla_\mu T^{\mu\nu}=0$. This geometric identity is used here as background; its full contraction proof is not supplied.
 
 Covariant local balance does not imply a conserved coordinate integral of matter energy in arbitrary curved spacetime. If symmetric $T$ is conserved and $K$ is Killing, then $J^\mu=T^{\mu\nu}K_\nu$ satisfies $\nabla_\mu J^\mu=0$: the product rule leaves a contraction of symmetric $T$ with antisymmetric $\nabla K$. Flux integrals still require suitable boundaries. Generic expanding geometries have no timelike Killing field. Gravitational energy is not a universal local tensor added to matter $T_{\mu\nu}$.
+
+The precise closed-form current and the hypotheses required to integrate it into a conserved charge are proved in @physics:gravitation:intrinsic-fields:th:killing-current. Its dependence on an actual Killing field is the geometric reason that local stress-energy conservation alone does not define a global energy in every spacetime.

@@ -3,7 +3,7 @@
   "id": "7eb26b4e82714525a5287adf9837d672",
   "title": "Prevent Variable Capture",
   "rank": 51539607552,
-  "header": "Substitute the term $y$ for the free variable $x$.",
+  "header": "Substitute the term $y$ for the @[free variable]math:fol:syntax:df:free-bound-variable $x$.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

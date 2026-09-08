@@ -1,4 +1,4 @@
-Semantic consequence has these structural properties:
+@[Semantic consequence]math:prop:semantics:df:semantic-consequence has these structural properties:
 
 1. **Reflexivity:** if $A\in\Gamma$, then $\Gamma\models A$.
 2. **Monotonicity:** if $\Gamma\models A$ and $\Gamma\subseteq\Delta$, then $\Delta\models A$.

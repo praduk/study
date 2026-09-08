@@ -4,7 +4,7 @@ $$\neg A\equiv A\uparrow A,$$
 
 $$A\land B\equiv(A\uparrow B)\uparrow(A\uparrow B).$$
 
-Thus NAND can express $\neg$ and $\land$; functional completeness follows from @math:prop:normal-forms:th:standard-complete-bases.
+Thus NAND can express $\neg$ and $\land$; @[functional completeness]math:prop:normal-forms:df:functional-completeness follows from @math:prop:normal-forms:th:standard-complete-bases.
 
 Using only NOR,
 

@@ -4,7 +4,7 @@ $$
 S_g=\frac{c^3}{16\pi G}\int(R-2\Lambda)\sqrt{-\det g}\,d^4x.
 $$
 
-Define matter stress-energy by compactly supported inverse-metric variation,
+Define matter stress-energy by @[compactly supported]math:diffgeo:manifolds:df:partition-unity inverse-metric variation,
 
 $$
 \delta S_m=-\frac1{2c}\int T_{\mu\nu}\delta g^{\mu\nu}\sqrt{-\det g}\,d^4x.

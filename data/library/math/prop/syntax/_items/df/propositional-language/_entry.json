@@ -3,7 +3,7 @@
   "id": "9c341b3cbf9342ad92f11c8540fff0d6",
   "title": "Propositional Language",
   "rank": 8589934592,
-  "header": "The atom stock is fixed and countably infinite.",
+  "header": "The atom stock is fixed and @[countably infinite]math:set:cardinality-countability:df:countability.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

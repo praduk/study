@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "46e46a34975441eebe479946d4054ac6",
+  "title": "Geometric state spaces, observables, and evolution",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "04eff5d3abec49d7b2934f25ce22b796",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.04eff5d3abec49d7b2934f25ce22b796.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:47.696043+00:00",
+  "updated_at": "2026-09-08T00:02:47.696050+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7667a64d0848413582dc8a3adf7c4900",
+  "title": "Test functions and distributions",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "434bf2ef75c3495689c7bd01911ff6ff",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.434bf2ef75c3495689c7bd01911ff6ff.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:44.634233+00:00",
+  "updated_at": "2026-09-08T00:02:44.634238+00:00"
+}

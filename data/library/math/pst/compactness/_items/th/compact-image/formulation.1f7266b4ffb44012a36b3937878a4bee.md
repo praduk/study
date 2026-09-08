@@ -1,1 +1,1 @@
-A closed subset of a compact space is compact. The continuous image of a compact space is compact, with the subspace topology on the image.
+A closed subset of a @[compact space]math:pst:compactness:df:compactness is compact. The continuous image of a compact space is compact, with the @[subspace topology]math:pst:constructions:df:subspace on the image.

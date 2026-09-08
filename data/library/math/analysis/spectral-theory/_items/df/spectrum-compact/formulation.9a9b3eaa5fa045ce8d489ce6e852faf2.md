@@ -1,4 +1,4 @@
-For a bounded operator $T$ on a complex Banach space $X$, the spectrum is
+For a bounded operator $T$ on a complex @[Banach space]math:analysis:banach-spaces:df:banach-operator $X$, the spectrum is
 
 $$
 \sigma(T)=\{\lambda\in\C:T-\lambda I\text{ has no bounded everywhere-defined inverse}\}.

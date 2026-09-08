@@ -1,4 +1,4 @@
-Near a stationary equilibrium $q_0$ of a conservative mechanical system, write $\eta=q-q_0$. With a positive definite mass matrix $M$ and symmetric potential Hessian $K$, the quadratic approximation is
+Near a stationary equilibrium $q_0$ of a conservative mechanical system, write $\eta=q-q_0$. With a @[positive definite]math:algebra:linear-foundations:df:bilinear-forms mass matrix $M$ and symmetric potential @[Hessian]math:uganalysis:metric-multivariable:df:hessian $K$, the quadratic approximation is
 
 $$
 L_2=\tfrac12\dot\eta^TM\dot\eta-\tfrac12\eta^TK\eta.

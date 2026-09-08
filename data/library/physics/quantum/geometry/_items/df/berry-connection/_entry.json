@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "c345dca9ba464076b34e162feb5bb279",
+  "title": "Berry connection, curvature, and holonomy",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "97a975b0528b4308be60ada41847ea38",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.97a975b0528b4308be60ada41847ea38.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:05.696124+00:00",
+  "updated_at": "2026-09-08T00:03:05.696131+00:00"
+}

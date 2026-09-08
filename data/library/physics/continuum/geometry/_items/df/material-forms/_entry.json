@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8a00454cb9654733b9ff42873870c8fa",
+  "title": "Mass, circulation, and vorticity as differential forms",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "643479e2727849dfb9d177d3c3b3699f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.643479e2727849dfb9d177d3c3b3699f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:58.904262+00:00",
+  "updated_at": "2026-09-08T00:02:58.904268+00:00"
+}

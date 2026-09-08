@@ -8,7 +8,7 @@ The default level is upper-division undergraduate: more rigorous than the set ch
 
 ## Course plan
 
-The order is deliberate: formal setting and axioms; constructions; relations and functions; natural numbers and ordinary recursion; cardinality and countability; orders and well-orders; ordinals and transfinite methods; Hartogs' theorem; equivalent forms of Choice; cardinal arithmetic; Foundation and the cumulative hierarchy; and finally a precise survey boundary around the Continuum Hypothesis and independence.
+The order is deliberate: formal setting and axioms; constructions; relations and functions; natural numbers and ordinary recursion; cardinality and countability; orders and well-orders; ordinals and transfinite methods; Hartogs' theorem; equivalent forms of Choice; cardinal arithmetic; Foundation and the cumulative hierarchy; and finally a precise survey boundary around the @[Continuum Hypothesis]math:set:continuum-independence:df:continuum-hypothesis and independence.
 
 Unless an entry says otherwise, proofs are carried out in ZF. After the Axiom of Choice is introduced, statements requiring it are marked **(ZFC)**. A *class* is always metalinguistic shorthand for the sets satisfying a formula; this course does not silently move to a two-sorted class theory.
 

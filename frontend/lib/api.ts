@@ -1,4 +1,35 @@
 let csrfToken = '';
+let libraryReadVersion = 0;
+const libraryReadListeners = new Set<() => void>();
+
+export function subscribeLibraryReads(listener: () => void) {
+  libraryReadListeners.add(listener);
+  return () => { libraryReadListeners.delete(listener); };
+}
+
+export function getLibraryReadVersion() { return libraryReadVersion; }
+export function getServerLibraryReadVersion() { return 0; }
+
+/** Recheck mounted references after a successful content or namespace change. */
+export function invalidateLibraryReads() {
+  libraryReadVersion += 1;
+  libraryReadListeners.forEach((listener) => listener());
+}
+
+export function changesLibraryReads(path: string, init: RequestInit): boolean {
+  const method = (init.method || 'GET').toUpperCase();
+  if (method === 'GET' || method === 'HEAD') return false;
+  const route = path.split('?')[0];
+  if (route === '/api/git/pull') return true;
+  if (!/^\/api\/(?:entries|folders|items|macros)(?:\/|$)/.test(route)) return false;
+  if (method === 'PATCH' && /^\/api\/folders\/[^/]+$/.test(route) && typeof init.body === 'string') {
+    try {
+      const body = JSON.parse(init.body) as Record<string, unknown>;
+      if (Object.keys(body).length === 1 && typeof body.review_enabled === 'boolean') return false;
+    } catch { /* An invalid body cannot reach a successful mutation response. */ }
+  }
+  return true;
+}
 
 export function setCsrfToken(value: string | null | undefined) {
   csrfToken = value || '';
@@ -24,7 +55,9 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   }
   const response = await fetch(path, { ...init, headers, credentials: 'same-origin' });
   if (!response.ok) throw await parseError(response);
-  return (await response.json()) as T;
+  const result = (await response.json()) as T;
+  if (changesLibraryReads(path, init)) invalidateLibraryReads();
+  return result;
 }
 
 export async function apiFile(path: string, init: RequestInit): Promise<{ blob: Blob; filename: string }> {

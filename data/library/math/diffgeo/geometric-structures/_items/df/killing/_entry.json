@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "19e5cef31c384e68bd0e4a0e979521ec",
+  "title": "Killing fields and infinitesimal isometries",
+  "rank": 9222246136947933184,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb7ed76c0d954f6ca8c87c67671c3f9d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb7ed76c0d954f6ca8c87c67671c3f9d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:43.711628+00:00",
+  "updated_at": "2026-09-08T00:02:43.711635+00:00"
+}

@@ -1,4 +1,4 @@
-For every space $X$ and abelian group $G$, there is a natural short exact sequence
+For every space $X$ and @[abelian group]math:algebra:groups-actions:df:groups-homomorphisms $G$, there is a natural @[short exact sequence]math:algebra:modules-structure:df:exact-sequence
 
 $$
 0\to\operatorname{Ext}^1_{\Z}(H_{n-1}(X;\Z),G)\to H^n(X;G)\to\Hom(H_n(X;\Z),G)\to0.

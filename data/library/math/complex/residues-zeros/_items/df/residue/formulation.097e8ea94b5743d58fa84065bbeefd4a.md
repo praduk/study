@@ -1,4 +1,4 @@
-The residue of $f$ at an isolated singularity $a$ is the Laurent coefficient $c_{-1}$, denoted $\operatorname{Res}(f,a)$. Equivalently,
+The residue of $f$ at an @[isolated singularity]math:complex:singularities:df:isolated-singularity $a$ is the Laurent coefficient $c_{-1}$, denoted $\operatorname{Res}(f,a)$. Equivalently,
 
 $$
 \operatorname{Res}(f,a)=\frac1{2\pi i}\int_{|z-a|=\rho}f(z)\,dz

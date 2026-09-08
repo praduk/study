@@ -1,4 +1,4 @@
-For $T\in\mathcal B(H)$ on a Hilbert space, its adjoint is the unique bounded operator $T^*$ satisfying
+For $T\in\mathcal B(H)$ on a @[Hilbert space]math:analysis:hilbert-spaces:df:hilbert, its adjoint is the unique bounded operator $T^*$ satisfying
 
 $$
 \iprod{Tx}{y}=\iprod{x}{T^*y}\quad(x,y\in H).

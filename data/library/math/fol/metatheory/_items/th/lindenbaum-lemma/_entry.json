@@ -3,7 +3,7 @@
   "id": "26332073852a49f8842abda8445a8b28",
   "title": "Lindenbaum Lemma",
   "rank": 21474836480,
-  "header": "For any set-sized first-order language; use a well-ordering of its sentences.",
+  "header": "For any set-sized @[first-order language]math:fol:syntax:df:signature; use a well-ordering of its sentences.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

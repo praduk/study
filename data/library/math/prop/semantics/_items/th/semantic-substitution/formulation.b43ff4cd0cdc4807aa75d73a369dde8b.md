@@ -1,4 +1,4 @@
-Let $\sigma$ be a uniform substitution and $v$ a valuation. Define the induced valuation $v_{\sigma}$ by
+Let $\sigma$ be a @[uniform substitution]math:prop:syntax:df:uniform-substitution and $v$ a valuation. Define the induced valuation $v_{\sigma}$ by
 
 $$v_{\sigma}(p)=\llbracket\sigma(p)\rrbracket_v.$$
 

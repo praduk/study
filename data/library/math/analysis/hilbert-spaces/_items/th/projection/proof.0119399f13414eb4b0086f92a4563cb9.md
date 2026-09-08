@@ -1,4 +1,4 @@
-Let $d=\inf_{v\in M}\norm{x-v}$ and choose $m_n\in M$ with $\norm{x-m_n}\to d$. The parallelogram identity gives
+Let $d=\inf_{v\in M}\norm{x-v}$ and choose $m_n\in M$ with $\norm{x-m_n}\to d$. The @[parallelogram identity]math:analysis:hilbert-spaces:th:cauchy-schwarz gives
 
 $$
 \norm{m_n-m_k}^2

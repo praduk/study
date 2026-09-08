@@ -1,1 +1,1 @@
-For a set $S$, let $k^{(S)}$ be the vector space of finitely supported functions $S\to k$, with basis $e_s$. Show that $S\mapsto k^{(S)}$ is left adjoint to the underlying-set functor $U:\Vect_k\to\Set$. Describe its unit and counit.
+For a set $S$, let $k^{(S)}$ be the @[vector space]math:algebra:linear-foundations:df:vector-space of finitely supported functions $S\to k$, with basis $e_s$. Show that $S\mapsto k^{(S)}$ is left adjoint to the underlying-set functor $U:\Vect_k\to\Set$. Describe its unit and counit.

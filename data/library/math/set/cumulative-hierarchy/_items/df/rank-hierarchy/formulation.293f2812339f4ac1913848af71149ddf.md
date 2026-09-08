@@ -1,4 +1,4 @@
-The **cumulative hierarchy** is defined by transfinite recursion:
+The **cumulative hierarchy** is defined by @[transfinite recursion]math:set:ordinals:th:transfinite-recursion:
 
 $$
 V_0=\varnothing,
@@ -20,4 +20,4 @@ $$
 =\sup\{\operatorname{rank}(y)+1:y\in x\}.
 $$
 
-Then $x\in V_{\operatorname{rank}(x)+1}$. The symbol $V$ for “all sets” denotes the proper class $\bigcup_{\alpha\in\mathrm{Ord}}V_\alpha$, not a set-sized union.
+Then $x\in V_{\operatorname{rank}(x)+1}$. The symbol $V$ for “all sets” denotes the @[proper class]math:set:formal-setting:df:class $\bigcup_{\alpha\in\mathrm{Ord}}V_\alpha$, not a set-sized union.

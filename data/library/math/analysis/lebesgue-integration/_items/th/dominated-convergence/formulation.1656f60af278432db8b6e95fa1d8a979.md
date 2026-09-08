@@ -4,4 +4,4 @@ $$
 \int|f_n-f|\,d\mu\to0,\qquad \int f_n\,d\mu\to\int f\,d\mu.
 $$
 
-Assume $f$ is measurable if the measure space is incomplete.
+Assume $f$ is measurable if the @[measure space]math:analysis:measure-construction:df:measure-space is incomplete.

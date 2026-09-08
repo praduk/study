@@ -1,4 +1,4 @@
-A linear order $(W,<)$ is a **well-order** if every nonempty subset $A\subseteq W$ has a least element.
+A @[linear order]math:set:orders-well-orders:df:ordered-set $(W,<)$ is a **well-order** if every nonempty subset $A\subseteq W$ has a least element.
 
 For $w\in W$, the strict initial segment below $w$ is
 

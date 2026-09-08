@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "6776ee4751f7444a9dc9dbd358e60366",
+  "title": "Kinetic energy as a metric on configuration space",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "516057b261804e3fb54f084c6dbf7327",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.516057b261804e3fb54f084c6dbf7327.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:54.466905+00:00",
+  "updated_at": "2026-09-08T00:02:54.466910+00:00"
+}

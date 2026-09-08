@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7839391e2f4242c48f8a04c34f93fde3",
+  "title": "Linear combinations, independence, bases, and dimension",
+  "rank": 6917529027641081856,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "341382d3b19a4c61a45b02925a7fd870",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.341382d3b19a4c61a45b02925a7fd870.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:50.935804+00:00",
+  "updated_at": "2026-09-08T00:02:50.935809+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "0a95643d03c64ad7b396135b0ca5c274",
+  "title": "The eikonal equation, Hamiltonian rays, and the optical metric",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a6e9b1fb84a94cc4978394590244586f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a6e9b1fb84a94cc4978394590244586f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4e0b5a0429e34cc586d2ba9f9c2e5e41",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4e0b5a0429e34cc586d2ba9f9c2e5e41.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:57.174283+00:00",
+  "updated_at": "2026-09-08T00:02:57.534473+00:00"
+}

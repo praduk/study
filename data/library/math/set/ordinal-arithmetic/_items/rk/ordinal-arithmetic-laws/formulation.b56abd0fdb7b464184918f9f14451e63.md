@@ -1,4 +1,4 @@
-Transfinite induction gives associativity of ordinal addition and multiplication, and left distributivity
+@[Transfinite induction]math:set:ordinals:th:transfinite-induction gives associativity of ordinal addition and multiplication, and left distributivity
 
 $$
 \alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma.

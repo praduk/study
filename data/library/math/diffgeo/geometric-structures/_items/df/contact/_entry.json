@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5bfe37f6bd154089a136e0e1d40c9ca1",
+  "title": "Contact forms, Reeb fields, and Legendrian submanifolds",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e198394ec28f4d22b355dc5acb1edbd9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e198394ec28f4d22b355dc5acb1edbd9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:41.950516+00:00",
+  "updated_at": "2026-09-08T00:02:41.950522+00:00"
+}

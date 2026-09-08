@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6be09c2bdc854999b8a5aa1a2b3c3a38",
+  "title": "Transport of differential forms along a moving domain",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1eb4a8e228d74944b2cc165ab2a542fd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1eb4a8e228d74944b2cc165ab2a542fd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "db82aa94b8864f55aec2f6f70ef5c148",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.db82aa94b8864f55aec2f6f70ef5c148.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:42.812900+00:00",
+  "updated_at": "2026-09-08T00:02:43.092874+00:00"
+}

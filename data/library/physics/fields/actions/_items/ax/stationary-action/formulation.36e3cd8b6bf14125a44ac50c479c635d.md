@@ -1,3 +1,3 @@
-For a specified classical field model, admissible physical fields are postulated to make the action stationary under smooth compactly supported variations, or under variations satisfying the specified boundary data. Stationary does not mean a minimum. A Lagrangian is a model input whose physical adequacy requires evidence.
+For a specified classical field model, admissible physical fields are postulated to make the action stationary under smooth @[compactly supported]math:diffgeo:manifolds:df:partition-unity variations, or under variations satisfying the specified boundary data. Stationary does not mean a minimum. A Lagrangian is a model input whose physical adequacy requires evidence.
 
 The action in SI has the dimension of $\hbar$. The dimensionless phase used in quantum amplitudes is $S/\hbar$. Natural units suppress this conversion but do not turn the stationarity postulate into an empirical consequence of pure mathematics.

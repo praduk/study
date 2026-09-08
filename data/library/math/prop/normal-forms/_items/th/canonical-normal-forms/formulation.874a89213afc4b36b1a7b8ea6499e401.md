@@ -1,4 +1,4 @@
-Let $P=\operatorname{At}(A)=\{p_1,\ldots,p_n\}$. Using any fixed order of the finitely many assignments $a:P\to\{0,1\}$, the formula $A$ is logically equivalent both to
+Let $P=\operatorname{At}(A)=\{p_1,\ldots,p_n\}$. Using any fixed order of the finitely many assignments $a:P\to\{0,1\}$, the formula $A$ is @[logically equivalent]math:prop:semantics:df:logical-equivalence both to
 
 $$\bigvee_{a(A)=1}m_a$$
 

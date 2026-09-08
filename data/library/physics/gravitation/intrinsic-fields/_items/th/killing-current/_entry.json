@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f87af82eb9c743c6a4e495c6d7901f18",
+  "title": "A Killing symmetry gives a closed stress-energy current",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3b89a9f0280443719874d8c05c7b1b58",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3b89a9f0280443719874d8c05c7b1b58.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e844d9b14d264fa0a2802ba5646cf580",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e844d9b14d264fa0a2802ba5646cf580.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:49.158048+00:00",
+  "updated_at": "2026-09-08T00:02:49.468471+00:00"
+}

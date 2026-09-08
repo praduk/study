@@ -1,4 +1,4 @@
-An adjunction $F\dashv G$ has natural transformations $\eta:\id_{\mathcal C}\Rightarrow GF$ and $\varepsilon:FG\Rightarrow\id_{\mathcal D}$ defined by transposing identity maps. They satisfy
+An adjunction $F\dashv G$ has @[natural transformations]math:cat:functors-naturality:df:natural-transformation $\eta:\id_{\mathcal C}\Rightarrow GF$ and $\varepsilon:FG\Rightarrow\id_{\mathcal D}$ defined by transposing identity maps. They satisfy
 
 $$
 \varepsilon_{FA}F(\eta_A)=\id_{FA},\qquad G(\varepsilon_B)\eta_{GB}=\id_{GB}.

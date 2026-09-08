@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f5dc4e708ca44633b8bdd35bc66cafe6",
+  "title": "Determinants, traces, and characteristic polynomials",
+  "rank": 8646911284551352320,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a20ca0f1b99f41c7885adf309edfd9f3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a20ca0f1b99f41c7885adf309edfd9f3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:51.456014+00:00",
+  "updated_at": "2026-09-08T00:02:51.456019+00:00"
+}

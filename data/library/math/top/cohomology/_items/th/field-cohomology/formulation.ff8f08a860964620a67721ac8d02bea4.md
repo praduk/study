@@ -1,1 +1,1 @@
-For a chain complex $C$ of vector spaces over a field $F$, evaluation on cycles induces $H^n(\Hom_F(C,F))\isoto\Hom_F(H_n(C),F)$.
+For a @[chain complex]math:top:homology:df:chain-complex $C$ of @[vector spaces]math:algebra:linear-foundations:df:vector-space over a field $F$, evaluation on cycles induces $H^n(\Hom_F(C,F))\isoto\Hom_F(H_n(C),F)$.

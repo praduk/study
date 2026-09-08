@@ -5,3 +5,5 @@ S[\phi]=\int_\Omega\mathcal L(\phi^a,\partial_\mu\phi^a,x)\,d^4x.
 $$
 
 Locality here means dependence on fields and their derivatives at the same event, not on arbitrary distant values. The density and its coupling constants specify the model. Physical scalar, electromagnetic, fluid, and spinor fields have different state spaces and interpretations.
+
+The intrinsic formulation is @physics:fields:geometric-field-theory:df:bundle-fields. Integrating a top form explains why a Lagrangian density carries a coordinate Jacobian, while a scalar Lagrangian is multiplied by the metric volume form.

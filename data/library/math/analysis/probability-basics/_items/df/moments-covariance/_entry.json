@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "a44a21e22d104282b4bf430fcf762ca7",
+  "title": "Expectation, variance, and covariance of random variables",
+  "rank": 8070450532247928832,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "30accb061a72498b8899f253b9b73886",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.30accb061a72498b8899f253b9b73886.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:53.315582+00:00",
+  "updated_at": "2026-09-08T00:02:53.315588+00:00"
+}

@@ -8,4 +8,4 @@ $$
 \mu^*(E)\ge\sum_{n=1}^N\mu^*(E\cap A_n)+\mu^*(E\setminus A),\qquad A=\bigcup_n A_n.
 $$
 
-Let $N\to\infty$ and use $\mu^*(E\cap A)\le\sum_n\mu^*(E\cap A_n)$. The reverse Carathéodory inequality follows, so $A$ is measurable. Disjointizing arbitrary countable unions now proves sigma closure. With $E=A$, the same inequality and subadditivity give countable additivity. Finally, if $N$ has outer measure zero and $B\subseteq N$, then $\mu^*(E\cap B)=0$ and monotonicity yields $\mu^*(E)\ge\mu^*(E\setminus B)$. Together with subadditivity this proves that $B$ is measurable and null.
+Let $N\to\infty$ and use $\mu^*(E\cap A)\le\sum_n\mu^*(E\cap A_n)$. The reverse Carathéodory inequality follows, so $A$ is measurable. Disjointizing arbitrary countable unions now proves sigma closure. With $E=A$, the same inequality and subadditivity give countable additivity. Finally, if $N$ has @[outer measure]math:analysis:measure-construction:df:outer-measure zero and $B\subseteq N$, then $\mu^*(E\cap B)=0$ and monotonicity yields $\mu^*(E)\ge\mu^*(E\setminus B)$. Together with subadditivity this proves that $B$ is measurable and null.

@@ -1,3 +1,5 @@
 For a smooth real one-dimensional branch $\omega=\omega(k)$, phase velocity is $v_p=\omega(k)/k$ for $k\ne0$, and group velocity is $v_g=\omega'(k)$. In several dimensions the local group-velocity vector is $\nabla_k\omega$.
 
 A medium is nondispersive on a positive-wave-number band if $\omega=ck$ there for constant $c$, so both velocities equal $c$. A dispersive medium gives different phase rates to different components and can distort a packet. Group velocity describes a narrow-band envelope under a linearization condition; it is not by definition a universal information speed.
+
+For a local dispersion branch $\omega=\Omega(x,k)$, $k$ is a spatial covector. A dimensionless phase satisfying $\partial_tS+\Omega(x,d_xS)=0$ generates Hamiltonian rays $\dot x=\partial_k\Omega$, $\dot k=-\partial_x\Omega$ on the cotangent bundle; differentiating the phase equation proves graph tangency as in @physics:waves:geometry:th:optical-metric. Thus group velocity is the base projection of a Hamiltonian vector field, while phase velocity describes level sets of the phase. In a varying medium the momentum equation also describes refraction.

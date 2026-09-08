@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "f6555af67a774238a78e66ac2c247b15",
+  "title": "Relative entropy gives the local Fisher quadratic form",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d3e04adfee394fec9335009c8a64d5a5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d3e04adfee394fec9335009c8a64d5a5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e2678e507c1e48ba9ba7a926e8ef4ae7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e2678e507c1e48ba9ba7a926e8ef4ae7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:04.090523+00:00",
+  "updated_at": "2026-09-08T00:03:04.468925+00:00"
+}

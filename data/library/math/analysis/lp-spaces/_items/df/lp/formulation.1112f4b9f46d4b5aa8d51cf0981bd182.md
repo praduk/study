@@ -1,4 +1,4 @@
-For $1\le p<\infty$, $L^p(X,\mu)$ consists of equivalence classes of measurable real or complex functions with
+For $1\le p<\infty$, $L^p(X,\mu)$ consists of @[equivalence classes]math:set:relations-functions:df:equivalence-relation of measurable real or complex functions with
 
 $$
 \norm f_p=\left(\int|f|^p\,d\mu\right)^{1/p}<\infty.

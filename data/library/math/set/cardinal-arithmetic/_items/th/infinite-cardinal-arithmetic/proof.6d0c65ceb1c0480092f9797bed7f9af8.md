@@ -1,4 +1,4 @@
-It suffices to prove $|\kappa\times\kappa|=\kappa$. Proceed by induction over infinite cardinals. Well-order $\kappa\times\kappa$ first by
+It suffices to prove $|\kappa\times\kappa|=\kappa$. Proceed by induction over infinite cardinals. @[Well-order]math:set:orders-well-orders:df:well-order $\kappa\times\kappa$ first by
 $\max\{\alpha,\beta\}$ and then lexicographically within each level. The predecessors of $(\alpha,\beta)$ lie inside
 $(\gamma+1)\times(\gamma+1)$, where $\gamma=\max\{\alpha,\beta\}<\kappa$.
 

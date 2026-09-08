@@ -11,4 +11,4 @@ v_x=-u_y(x,y_0)+\int_{y_0}^y u_{xx}(x,s)\,ds
 =-u_y(x,y_0)-u_y(x,y)+u_y(x,y_0)=-u_y(x,y).
 $$
 
-The derivatives are continuous. Thus Cauchy–Riemann holds, and $u+iv$ is holomorphic. This proves local existence; it does not assert that arbitrary domains admit a global conjugate.
+The derivatives are continuous. Thus @[Cauchy–Riemann]math:complex:holomorphic-functions:th:cauchy-riemann holds, and $u+iv$ is holomorphic. This proves local existence; it does not assert that arbitrary domains admit a global conjugate.

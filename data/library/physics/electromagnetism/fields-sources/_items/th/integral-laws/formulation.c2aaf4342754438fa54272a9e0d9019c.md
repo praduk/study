@@ -9,3 +9,5 @@ $$
 $$
 
 For a bounded smooth volume $V$, the fluxes of $\mathbf E$ and $\mathbf B$ through $\partial V$ are respectively $\epsilon_0^{-1}\int_V\rho\,dV$ and zero.
+
+All four integral statements are applications of @math:diffgeo:stokes-cohomology:th:stokes to the field and excitation forms in @physics:electromagnetism:spacetime-forms:th:maxwell-forms. For moving surfaces, use @math:diffgeo:geometric-structures:th:transport-form; its Lie derivative supplies the extra transport term.

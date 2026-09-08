@@ -3,7 +3,7 @@
   "id": "728adce12dde4d288be6b82675795a92",
   "title": "Topology — graduate algebraic topology",
   "rank": 4611686018427387904,
-  "header": "Graduate course; prerequisites: point-set topology, groups, abelian groups, rings, and linear algebra.",
+  "header": "Graduate course; prerequisites: point-set topology, groups, @[abelian groups]math:algebra:groups-actions:df:groups-homomorphisms, rings, and linear algebra.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

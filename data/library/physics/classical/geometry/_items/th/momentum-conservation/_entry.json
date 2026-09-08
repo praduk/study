@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c04671f7066940a6936f37647b3fdd73",
+  "title": "Symmetry and conservation of the momentum map",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9c3af4808ac74f5ebbac0e4612351d22",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9c3af4808ac74f5ebbac0e4612351d22.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fdfbda2669634cdcabb7affdec5872d3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fdfbda2669634cdcabb7affdec5872d3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:55.644477+00:00",
+  "updated_at": "2026-09-08T00:02:56.035373+00:00"
+}

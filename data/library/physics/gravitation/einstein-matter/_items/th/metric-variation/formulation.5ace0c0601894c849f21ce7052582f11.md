@@ -1,1 +1,1 @@
-For smooth compactly supported inverse-metric variations, with matter variation defined in @physics:gravitation:einstein-matter:ax:einstein-hilbert-action, stationarity of $S_g+S_m$ at fixed matter fields is equivalent to Einstein's equation in the interior.
+For smooth @[compactly supported]math:diffgeo:manifolds:df:partition-unity inverse-metric variations, with matter variation defined in @physics:gravitation:einstein-matter:ax:einstein-hilbert-action, stationarity of $S_g+S_m$ at fixed matter fields is equivalent to Einstein's equation in the interior.

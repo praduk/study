@@ -1,1 +1,1 @@
-Set $g_N=\inf_{n\ge N}f_n$. Then $g_N\uparrow\liminf_n f_n$, while $g_N\le f_n$ for all $n\ge N$. Thus $\int g_N\le\inf_{n\ge N}\int f_n$. Apply monotone convergence on the left and take $N\to\infty$ on the right.
+Set $g_N=\inf_{n\ge N}f_n$. Then $g_N\uparrow\liminf_n f_n$, while $g_N\le f_n$ for all $n\ge N$. Thus $\int g_N\le\inf_{n\ge N}\int f_n$. Apply @[monotone convergence]math:analysis:lebesgue-integration:th:monotone-integrals on the left and take $N\to\infty$ on the right.

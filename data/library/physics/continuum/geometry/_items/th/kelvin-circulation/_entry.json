@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1a76064a35484ad8995b419545b165bd",
+  "title": "Kelvin circulation and transported vorticity",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8856099cc812463482c7777f32f245bc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8856099cc812463482c7777f32f245bc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e178bdf3f982408da05f2e39949328c1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e178bdf3f982408da05f2e39949328c1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:59.201801+00:00",
+  "updated_at": "2026-09-08T00:02:59.589393+00:00"
+}

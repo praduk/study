@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "cd64ce2c5ed748efa0994b7a7b5586a8",
+  "title": "Angular momentum from the rotation momentum map",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7b62e0849e5e41cb9453030b328b39d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7b62e0849e5e41cb9453030b328b39d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9c9315b0f7024986998894c74d9697a6",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9c9315b0f7024986998894c74d9697a6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:56.248364+00:00",
+  "updated_at": "2026-09-08T00:02:56.619316+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1184707e628940058220deb0ec06364c",
+  "title": "The covariant exterior derivative and Bianchi identity",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3375d7fa08d54c2bbaad16a304f03cda",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3375d7fa08d54c2bbaad16a304f03cda.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5dce5ddd99c142f1a7d5de97f5e1a55a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5dce5ddd99c142f1a7d5de97f5e1a55a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:42.388624+00:00",
+  "updated_at": "2026-09-08T00:02:42.652068+00:00"
+}

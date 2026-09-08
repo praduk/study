@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "56a5a1f586d748c6af2583ead039caf6",
+  "title": "Bundle-valued forms and exterior covariant differentiation",
+  "rank": 9223090561878065152,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d2d286fe4cd24f84aa24b25cad0c5146",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d2d286fe4cd24f84aa24b25cad0c5146.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:44.158672+00:00",
+  "updated_at": "2026-09-08T00:02:44.158676+00:00"
+}

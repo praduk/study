@@ -3,7 +3,7 @@
   "id": "9a6f94ef28b84f9a9049e6eb5c332665",
   "title": "Prenex Normal Form Theorem",
   "rank": 12884901888,
-  "header": "Bound variables must first be standardized apart.",
+  "header": "@[Bound variables]math:fol:syntax:df:free-bound-variable must first be standardized apart.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

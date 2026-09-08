@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "40043019b1cb43f59948bedbd0cae143",
+  "title": "Parallel transport and holonomy of a bundle connection",
+  "rank": 9221120237041090560,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "553f45da89f44392acae1a11cfd01d43",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.553f45da89f44392acae1a11cfd01d43.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:43.477910+00:00",
+  "updated_at": "2026-09-08T00:02:43.477914+00:00"
+}

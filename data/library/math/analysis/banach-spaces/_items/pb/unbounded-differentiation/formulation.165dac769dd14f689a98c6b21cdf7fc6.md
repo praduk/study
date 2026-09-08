@@ -1,1 +1,1 @@
-Equip $C^1([0,1])$ with $\norm f_\infty$ and $C([0,1])$ with the same norm. Show that $D:f\mapsto f'$ is linear but unbounded. Why does this not contradict the closed graph theorem?
+Equip $C^1([0,1])$ with $\norm f_\infty$ and $C([0,1])$ with the same norm. Show that $D:f\mapsto f'$ is linear but unbounded. Why does this not contradict the @[closed graph theorem]math:analysis:banach-spaces:th:bounded-inverse?

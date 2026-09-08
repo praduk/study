@@ -1,0 +1,3 @@
+The coordinate formula follows directly from evaluation of a covector on the base tangent vector. It also shows smoothness. The definition by $\pi$ is intrinsic, so the local expressions patch. The @math:diffgeo:forms:th:d-squared identity gives $d\omega=0$. If $V=a^i\partial_{q^i}+b_i\partial_{p_i}$, then $\iota_V\omega=a^i dp_i-b_i dq^i$; its vanishing forces every coefficient to vanish. Thus @math:diffgeo:geometric-structures:df:symplectic applies.
+
+The graph map $j_\alpha(q)=\alpha_q$ satisfies $j_\alpha^*\theta=\alpha$. Naturality gives $j_\alpha^*\omega=-d\alpha$. Its graph has half the ambient dimension, so this is exactly the stated Lagrangian criterion. Exact forms are closed by $d^2=0$.

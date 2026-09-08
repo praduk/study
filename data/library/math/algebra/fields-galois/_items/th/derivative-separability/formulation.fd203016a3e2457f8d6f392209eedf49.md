@@ -1,1 +1,1 @@
-A nonzero polynomial $f\in K[x]$ has no repeated root in a splitting field exactly when $\gcd(f,f')=1$. Every irreducible polynomial over a characteristic-zero field is separable.
+A nonzero polynomial $f\in K[x]$ has no repeated root in a @[splitting field]math:algebra:fields-galois:df:separable-normal exactly when $\gcd(f,f')=1$. Every irreducible polynomial over a characteristic-zero field is separable.

@@ -1,1 +1,3 @@
 Let $H(q,p)$ be $C^2$ on an open subset of $\mathbb R^{2n}$, and let its Hamiltonian vector field have a $C^1$ flow $\Phi_t$ defined on the domain and time interval considered. Then $\det D\Phi_t=1$.
+
+On an arbitrary symplectic phase space the preserved measure comes from $\omega^n/n!$, as proved in @math:diffgeo:geometric-structures:th:hamiltonian-flow; the determinant-one calculation is its canonical-coordinate expression. A transported probability density $f_t$ relative to this preserved volume obeys $\partial_tf_t+X_Hf_t=0$, by @math:diffgeo:geometric-structures:th:transport-form. This intrinsic Liouville equation still supplies no ergodicity or equilibration theorem.

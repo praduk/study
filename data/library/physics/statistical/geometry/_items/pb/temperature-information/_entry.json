@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "131beb3ebd3642189a30e413fd1cdf88",
+  "title": "Heat capacity as information about temperature",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e4f179926d124dda84ef30cea760393e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e4f179926d124dda84ef30cea760393e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3c744b4393154daa9aae8cdeca9e448b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.3c744b4393154daa9aae8cdeca9e448b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:04.701960+00:00",
+  "updated_at": "2026-09-08T00:03:05.088191+00:00"
+}

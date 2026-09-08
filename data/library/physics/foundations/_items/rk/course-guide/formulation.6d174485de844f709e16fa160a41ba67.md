@@ -7,3 +7,5 @@ Start here for quantity dimensions, model assumptions, conservation laws, bounda
 **Status of entries.** Axioms record physical postulates or model assumptions, not truths deducible from mathematics. Theorems are conditional mathematical consequences. Remarks explain interpretation, scope, or approximation. Problems ask for a prediction or diagnostic and contain separate solutions.
 
 **Inspected sources.** The [BIPM SI Brochure](https://www.bipm.org/en/publications/si-brochure) supplies the unit conventions. [Burgess's effective-field-theory review](https://arxiv.org/abs/hep-th/0701053) supplies context for scale separation. The algebraic examples and arguments below are internal derivations, with all assumptions stated.
+
+**Geometric route.** Begin the intrinsic reading route with @physics:foundations:geometric-models:df:geometric-state and @physics:foundations:geometric-models:th:conserved-current-form. Singular sources use @math:analysis:distributions-sobolev:df:distribution.

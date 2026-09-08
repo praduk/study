@@ -1,4 +1,4 @@
-A domain is simply connected when every continuous closed loop in it can be continuously contracted to a point within the domain. If $U$ is simply connected and $f$ is holomorphic on $U$, then
+A domain is @[simply connected]math:top:homotopy:df:fundamental-group when every continuous closed loop in it can be continuously contracted to a point within the domain. If $U$ is simply connected and $f$ is holomorphic on $U$, then
 
 $$
 \int_\gamma f(z)\,dz=0

@@ -1,4 +1,4 @@
-Let $(M,g)$ be a Riemannian manifold, and let $\exp_p$ be the exponential map of its Levi–Civita connection. Where $\exp_p$ is defined, Gauss lemma gives
+Let $(M,g)$ be a @[Riemannian manifold]math:diffgeo:connections:df:riemannian-metric, and let $\exp_p$ be the exponential map of its @[Levi–Civita connection]math:diffgeo:connections:th:levi-civita. Where $\exp_p$ is defined, Gauss lemma gives
 
 $$
 g_{\exp_p(v)}(d\exp_p|_v(v),d\exp_p|_v(w))=g_p(v,w).

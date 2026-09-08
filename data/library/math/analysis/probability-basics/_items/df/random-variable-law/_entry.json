@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "9e4b45ad098a4f2e9f094005b012f41a",
+  "title": "Random variables, laws, and probability densities",
+  "rank": 6917529027641081856,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "400a6cf705d5431ca7c200ceebabe8a5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.400a6cf705d5431ca7c200ceebabe8a5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:53.040311+00:00",
+  "updated_at": "2026-09-08T00:02:53.040315+00:00"
+}

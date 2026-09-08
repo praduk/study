@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "4600dbd0ae7042b4b4c03bd40bfa171a",
+  "title": "An exact vortex-stretching flow",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "005c0c0461ad4de9a5845fe11cf8fed3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.005c0c0461ad4de9a5845fe11cf8fed3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f104b7afd8e749afb07a2be074bf2eca",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f104b7afd8e749afb07a2be074bf2eca.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:00.395091+00:00",
+  "updated_at": "2026-09-08T00:03:00.774497+00:00"
+}

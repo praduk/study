@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fdb064370bda48b18aa56dee7f3089bb",
+  "title": "Charge conservation, local potentials, and global flux obstructions",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f13baa5c8a254d76a12bb5689b5cda89",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f13baa5c8a254d76a12bb5689b5cda89.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f3979afdbf3e4055a7347f6074adde05",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f3979afdbf3e4055a7347f6074adde05.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:46.283929+00:00",
+  "updated_at": "2026-09-08T00:02:46.574505+00:00"
+}

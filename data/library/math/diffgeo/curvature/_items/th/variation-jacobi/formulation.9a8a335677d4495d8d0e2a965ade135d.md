@@ -1,1 +1,1 @@
-Let $(M,g)$ be a Riemannian manifold with its Levi–Civita connection and the stated curvature convention. For a smooth variation $F(s,t)$ whose $t$-curves are geodesics, the variational field $J=\partial_sF|_{s=0}$ is Jacobi along $F(0,t)$.
+Let $(M,g)$ be a @[Riemannian manifold]math:diffgeo:connections:df:riemannian-metric with its @[Levi–Civita connection]math:diffgeo:connections:th:levi-civita and the stated curvature convention. For a smooth variation $F(s,t)$ whose $t$-curves are geodesics, the variational field $J=\partial_sF|_{s=0}$ is Jacobi along $F(0,t)$.

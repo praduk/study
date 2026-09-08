@@ -1,4 +1,4 @@
-Apply the dual of the covariant Yoneda lemma to the presheaf $\Hom(-,B)$. It gives a bijection
+Apply the dual of the covariant @[Yoneda lemma]math:cat:representables-yoneda:th:yoneda to the presheaf $\Hom(-,B)$. It gives a bijection
 
 $$
 \operatorname{Nat}(\Hom(-,A),\Hom(-,B))\cong\Hom(A,B).

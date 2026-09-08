@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f803c1f0ebc043848311b46ad36430bf",
+  "title": "Thermodynamic phase space and equilibrium submanifolds",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bb187ee4a43e450988efe6edc512f527",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bb187ee4a43e450988efe6edc512f527.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:01.002728+00:00",
+  "updated_at": "2026-09-08T00:03:01.002734+00:00"
+}

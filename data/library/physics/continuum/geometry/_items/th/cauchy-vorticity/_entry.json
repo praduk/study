@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "e293ac4b54694161b79de037f476da18",
+  "title": "Cauchy transport of vorticity relative to mass",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "41b49749397440f5bd091f970e8fb939",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.41b49749397440f5bd091f970e8fb939.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8a1ead7dfe094e5085cff7c651583fec",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8a1ead7dfe094e5085cff7c651583fec.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:59.809657+00:00",
+  "updated_at": "2026-09-08T00:03:00.175332+00:00"
+}

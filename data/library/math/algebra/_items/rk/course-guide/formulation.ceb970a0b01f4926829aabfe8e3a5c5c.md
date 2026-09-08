@@ -1,4 +1,4 @@
-This is a first graduate algebra core. Prerequisites are proof writing, elementary groups and rings, linear algebra, and basic set theory. Read in authored order: group actions and finite groups; rings and factorization; modules and tensor products; fields and Galois theory; representations. Definitions are included to fix conventions, but the pace assumes prior undergraduate exposure.
+This is a first graduate algebra core. Prerequisites are proof writing, elementary groups and rings, linear algebra, and basic set theory. Read in authored order: @[group actions]math:algebra:groups-actions:df:action and finite groups; rings and factorization; modules and @[tensor products]math:algebra:tensor-projective:df:tensor; fields and Galois theory; representations. Definitions are included to fix conventions, but the pace assumes prior undergraduate exposure.
 
 Rings are associative with identity; homomorphisms preserve identity. Modules are unital left modules. Commutativity is specified where needed. Fields satisfy $0\ne1$. Use $\Z/n\Z$ for residue classes and $C_n$ for a cyclic group of order $n$.
 

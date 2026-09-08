@@ -265,6 +265,33 @@ test('escaped and entity-encoded @tags stay literal', async () => {
   assert.match(html, /data-study-reference="@module"/);
 });
 
+test('quoted and indented continuation prose retains literal reference provenance', () => {
+  const html = renderMarkdown(String.raw`> @group
+> @ring and \@escaped.
+>
+> > @[a field]field
+> > &#64;encoded and @module.
+
+- @first
+  @second and @\[escaped label]label.
+`);
+  for (const tag of ['group', 'ring', 'field', 'module', 'first', 'second']) {
+    assert.ok(html.includes(`data-study-reference="@${tag}"`), tag);
+  }
+  for (const tag of ['escaped', 'encoded', 'label']) {
+    assert.ok(!html.includes(`data-study-reference="@${tag}"`), tag);
+  }
+});
+
+test('escaped dollars and CRLF lines do not hide adjacent prose references', () => {
+  const html = renderMarkdown(String.raw`\$ @group \$ and \@escaped.` + '\r\n\r\n> @ring\r\n> @module');
+  for (const tag of ['group', 'ring', 'module']) {
+    assert.ok(html.includes(`data-study-reference="@${tag}"`), tag);
+  }
+  assert.ok(!html.includes('data-study-reference="@escaped"'));
+  assert.match(html, /\\\$/);
+});
+
 test('commutative diagram tokens render only from Markdown prose', () => {
   const id = 'a'.repeat(32);
   const token = `[[commutative:${id}|width=61]]`;

@@ -1,1 +1,1 @@
-For small categories, a functor is an equivalence exactly when it is fully faithful and essentially surjective. The reverse implication uses the axiom of choice to select a representative and an isomorphism for each target object.
+For small categories, a functor is an equivalence exactly when it is fully faithful and @[essentially surjective]math:cat:functors-naturality:df:fully-faithful. The reverse implication uses the axiom of choice to select a representative and an isomorphism for each target object.

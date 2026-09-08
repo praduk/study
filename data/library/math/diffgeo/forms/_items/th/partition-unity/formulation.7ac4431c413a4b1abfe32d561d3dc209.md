@@ -1,3 +1,3 @@
-For every open cover of a smooth manifold there exists a locally finite collection of nonnegative smooth functions $\rho_i$ with $\sum_i\rho_i=1$ and each support contained in a member of the cover. Local finiteness means a neighborhood of each point meets only finitely many supports.
+For every open cover of a @[smooth manifold]math:diffgeo:manifolds:df:smooth-manifold there exists a locally finite collection of nonnegative smooth functions $\rho_i$ with $\sum_i\rho_i=1$ and each support contained in a member of the cover. Local finiteness means a neighborhood of each point meets only finitely many supports.
 
 This theorem is used without proof here. See the inspected [MIT differential-forms notes, appendix on bump functions and partitions of unity; the chartwise construction globalizes on second-countable manifolds](https://math.mit.edu/classes/18.952/2018SP/files/18.952_book.pdf).

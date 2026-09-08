@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "3842a9ec09894c44b47c5e2f0c1bb1a9",
+  "title": "Connection one-forms and curvature two-forms in a frame",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c072920435c34b72a463ea66dc1013d7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c072920435c34b72a463ea66dc1013d7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:49.654676+00:00",
+  "updated_at": "2026-09-08T00:15:20.817878+00:00"
+}

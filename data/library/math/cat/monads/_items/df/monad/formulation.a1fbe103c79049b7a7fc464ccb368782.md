@@ -1,4 +1,4 @@
-A monad on a category $\mathcal C$ is an endofunctor $T:\mathcal C\to\mathcal C$ with natural transformations $\eta:\id\Rightarrow T$ and $\mu:T^2\Rightarrow T$ satisfying, at every object $A$,
+A monad on a category $\mathcal C$ is an endofunctor $T:\mathcal C\to\mathcal C$ with @[natural transformations]math:cat:functors-naturality:df:natural-transformation $\eta:\id\Rightarrow T$ and $\mu:T^2\Rightarrow T$ satisfying, at every object $A$,
 
 $$
 \mu_A T(\eta_A)=\id_{TA}=\mu_A\eta_{TA},\qquad\mu_A T(\mu_A)=\mu_A\mu_{TA}.

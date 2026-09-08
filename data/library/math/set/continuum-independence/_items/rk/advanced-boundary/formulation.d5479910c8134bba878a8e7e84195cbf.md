@@ -7,4 +7,4 @@ The following are important follow-on subjects, not prerequisites silently smugg
 - descriptive set theory and determinacy;
 - fine structure of fragments of Choice.
 
-A graduate set-theory sequence usually begins by reviewing ZFC, ordinals, cardinals, transfinite recursion, Hartogs' theorem, Choice, and rank—the material developed here—then adds model-theoretic and metamathematical machinery. Naming an advanced result is not the same as proving it, and a relative-consistency result must never be reported as an unconditional theorem about the intended universe of sets.
+A graduate set-theory sequence usually begins by reviewing ZFC, ordinals, cardinals, @[transfinite recursion]math:set:ordinals:th:transfinite-recursion, Hartogs' theorem, Choice, and rank—the material developed here—then adds model-theoretic and metamathematical machinery. Naming an advanced result is not the same as proving it, and a relative-consistency result must never be reported as an unconditional theorem about the intended universe of sets.

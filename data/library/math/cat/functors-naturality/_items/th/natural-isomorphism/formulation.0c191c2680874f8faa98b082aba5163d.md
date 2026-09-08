@@ -1,1 +1,1 @@
-A natural transformation $\alpha:F\Rightarrow G$ has an inverse natural transformation exactly when each component $\alpha_A$ is an isomorphism.
+A @[natural transformation]math:cat:functors-naturality:df:natural-transformation $\alpha:F\Rightarrow G$ has an inverse natural transformation exactly when each component $\alpha_A$ is an isomorphism.

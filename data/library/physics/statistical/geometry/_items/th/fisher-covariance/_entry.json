@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "66f9cb2170d648e4a84822f6e3303aa3",
+  "title": "The Hessian of log partition is a covariance metric",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fe26cc5c95c440b989eea116e428c871",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fe26cc5c95c440b989eea116e428c871.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cbce8d38804e40ea89cc96efccd65621",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cbce8d38804e40ea89cc96efccd65621.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:03.483616+00:00",
+  "updated_at": "2026-09-08T00:03:03.860774+00:00"
+}

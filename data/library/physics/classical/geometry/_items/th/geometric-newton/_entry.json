@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "c3b75d6c4f5f4737b1720377190c7d03",
+  "title": "Newton dynamics as covariant acceleration",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d91c8169f78b4b91bc7d13af91c4eb78",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d91c8169f78b4b91bc7d13af91c4eb78.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d8feccd7951b49739c199d7b52c61814",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d8feccd7951b49739c199d7b52c61814.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:54.752262+00:00",
+  "updated_at": "2026-09-08T00:02:55.125727+00:00"
+}

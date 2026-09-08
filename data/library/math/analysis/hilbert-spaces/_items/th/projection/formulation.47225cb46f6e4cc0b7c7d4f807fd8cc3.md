@@ -1,1 +1,1 @@
-If $M$ is a closed linear subspace of a Hilbert space $H$, every $x\in H$ has a unique decomposition $x=m+z$ with $m\in M$ and $z\in M^\perp$. The vector $m$ uniquely minimizes $\norm{x-v}$ over $v\in M$.
+If $M$ is a closed @[linear subspace]math:algebra:linear-foundations:df:vector-space of a @[Hilbert space]math:analysis:hilbert-spaces:df:hilbert $H$, every $x\in H$ has a unique decomposition $x=m+z$ with $m\in M$ and $z\in M^\perp$. The vector $m$ uniquely minimizes $\norm{x-v}$ over $v\in M$.

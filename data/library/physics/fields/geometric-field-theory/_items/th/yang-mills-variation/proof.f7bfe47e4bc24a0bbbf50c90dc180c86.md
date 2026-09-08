@@ -1,0 +1,5 @@
+A variation $a=\delta A$ is a Lie-algebra-valued one-form (globally in the bundle whose local fibers are the @[Lie algebra]math:diffgeo:geometric-structures:df:lie-group with conjugation as frame changes). Differentiating $F$ gives $\delta F=da+A\w a+a\w A=d_Aa$. Symmetry of the metric pairing yields $\delta S=-\kappa^{-1}\int B(d_Aa\w\star F)$. Adjoint invariance cancels connection-commutator terms in the graded product rule:
+
+$$dB(a\w\star F)=B(d_Aa\w\star F)-B(a\w d_A\star F).$$
+
+Stokes and @[compact support]math:diffgeo:manifolds:df:partition-unity therefore give $\delta S=-\kappa^{-1}\int B(a\w d_A\star F)$. Nondegeneracy of $B$ and arbitrary test forms force $d_A\star F=0$, and this equation conversely makes the variation zero. The remaining equation is @math:diffgeo:geometric-structures:th:bianchi. Under a frame change $F$ and $d_A\star F$ conjugate, so adjoint invariance makes the action and equation globally meaningful. In the abelian case commutators vanish and this reduces to the vacuum form Maxwell equation, with physical coupling and units chosen separately.

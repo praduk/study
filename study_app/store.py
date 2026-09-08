@@ -3005,6 +3005,30 @@ class LibraryStore:
             except SearchIndexError as exc:
                 raise StoreError(str(exc)) from exc
 
+    def resolve_references(self, folder_id: str, references: list[str]) -> dict[str, Any]:
+        if not 1 <= len(references) <= 100 or sum(map(len, references)) > 65536:
+            raise StoreError("a reference batch requires 1 to 100 tags and at most 65536 characters")
+        with self._lock:
+            index = self._ensure_search_index()
+            try:
+                return {
+                    "revision": index.revision,
+                    "results": [
+                        {"tag": reference, "result": index.resolve(folder_id, reference)}
+                        for reference in references
+                    ],
+                }
+            except SearchIndexError as exc:
+                raise StoreError(str(exc)) from exc
+
+    def linked_items(self, entry_id: str, offset: int = 0, limit: int = 40) -> dict[str, Any]:
+        with self._lock:
+            index = self._ensure_search_index()
+            try:
+                return index.linked_items(entry_id, offset, limit)
+            except SearchIndexError as exc:
+                raise StoreError(str(exc)) from exc
+
     def reference_candidates(
         self, folder_id: str, query: str = "", limit: int = 40
     ) -> list[dict[str, Any]]:

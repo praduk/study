@@ -1,0 +1,5 @@
+A family of events $(A_i)_{i\in I}$ is independent when every finite selection of distinct indices satisfies $\mathbb P(\bigcap_{j=1}^m A_{i_j})=\prod_{j=1}^m\mathbb P(A_{i_j})$. A family of random variables is independent when the same product identity holds for events $\{X_{i_j}\in B_j\}$ for every finite selection and every measurable $B_j$ in the corresponding value spaces.
+
+Pairwise independence checks only pairs and is weaker than independence of a family. For independent fair bits $U,V$, the bits $U,V,U+V\pmod2$ are pairwise independent because each pair takes its four possible values with probability $1/4$. The triple is not independent: the event that all three equal one has probability zero, not $1/8$.
+
+For two square-integrable real independent random variables, the product integral factors by @math:analysis:product-measures:th:fubini and covariance vanishes. Zero covariance alone is weaker: if $X$ is uniform on $\{-1,0,1\}$ and $Y=X^2$, then $\operatorname{Cov}(X,Y)=0$, but $Y$ is determined by $X$ and is not constant, so the pair is not independent. For example $\mathbb P(Y=0\mid X=0)=1\ne\mathbb P(Y=0)=1/3$.

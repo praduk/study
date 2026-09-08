@@ -1,4 +1,4 @@
-In a partially ordered set $(P,\le)$:
+In a @[partially ordered set]math:set:orders-well-orders:df:ordered-set $(P,\le)$:
 
 - $m$ is **minimal** if no $x<m$ exists;
 - $M$ is **maximal** if no $x>M$ exists;

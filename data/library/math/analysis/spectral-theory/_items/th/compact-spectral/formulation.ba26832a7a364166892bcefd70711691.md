@@ -1,4 +1,4 @@
-Let $T$ be compact and self-adjoint on a separable real or complex Hilbert space $H$. There is an orthonormal basis of $H$ consisting of eigenvectors of $T$. Every nonzero eigenvalue is real and has finite-dimensional eigenspace; for every $\epsilon>0$, only finitely many eigenvalues, counted with multiplicity, have absolute value at least $\epsilon$.
+Let $T$ be compact and self-adjoint on a separable real or complex @[Hilbert space]math:analysis:hilbert-spaces:df:hilbert $H$. There is an orthonormal basis of $H$ consisting of eigenvectors of $T$. Every nonzero eigenvalue is real and has finite-dimensional eigenspace; for every $\epsilon>0$, only finitely many eigenvalues, counted with multiplicity, have absolute value at least $\epsilon$.
 
 Thus, with a finite or countable orthonormal eigenbasis $(e_j)$ and corresponding eigenvalues $\lambda_j$,
 

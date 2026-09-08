@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "ebe47d7be437400e8cd9e5575b3bb737",
+  "title": "Divergence-free currents are closed flux forms",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "15afe5a462f9473697fac9548f86da69",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.15afe5a462f9473697fac9548f86da69.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ce7b95c6dba44fbc84b01628f3624e3f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ce7b95c6dba44fbc84b01628f3624e3f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:47.932709+00:00",
+  "updated_at": "2026-09-08T00:02:48.228146+00:00"
+}

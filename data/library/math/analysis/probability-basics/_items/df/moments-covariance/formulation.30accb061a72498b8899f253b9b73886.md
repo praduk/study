@@ -1,0 +1,5 @@
+For an integrable real or complex random variable $X$, its expectation is $\mathbb E[X]=\int_\Omega X\,d\mathbb P$, the @math:analysis:lebesgue-integration:df:lebesgue-integral. For nonnegative $X$, expectation may equal $+\infty$. For a general signed variable no value is assigned by subtracting $\infty-\infty$.
+
+For square-integrable real $X,Y$, define $\operatorname{Var}(X)=\mathbb E[(X-\mathbb E X)^2]$ and $\operatorname{Cov}(X,Y)=\mathbb E[(X-\mathbb E X)(Y-\mathbb E Y)]$. Covariance is finite by @math:analysis:hilbert-spaces:th:cauchy-schwarz. For a real random vector $X=(X_1,\ldots,X_n)$ with square-integrable components, its covariance matrix has entries $C_{ij}=\operatorname{Cov}(X_i,X_j)$.
+
+The matrix is symmetric positive semidefinite: for any $a\in\R^n$, $a^TCa=\operatorname{Var}(\sum_i a_iX_i)\ge0$. These are classical probability definitions. Quantum expectations are specified by a state and an operator; a measurement distribution connects them to probability only after the observable and state have been specified.

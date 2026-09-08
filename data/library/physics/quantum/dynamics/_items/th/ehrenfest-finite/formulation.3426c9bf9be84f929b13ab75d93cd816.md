@@ -7,3 +7,5 @@ $$
 
 
 If $A$ is constant and commutes with $H(t)$ for all $t$, its expectation is conserved.
+
+For Hermitian observables, @physics:quantum:geometry:th:projective-dynamics turns the expectation commutator into a Poisson bracket on ray space: $\dot h_A=\partial_t h_A+\{h_A,h_H\}$. Since $[A,H]=-[H,A]$, its displayed bracket convention reproduces exactly $i\langle[H,A]\rangle/\hbar$. This geometry explains the correspondence with Hamiltonian observable evolution while preserving the finite-dimensional domain assumptions.

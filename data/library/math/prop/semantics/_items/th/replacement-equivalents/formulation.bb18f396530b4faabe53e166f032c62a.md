@@ -2,4 +2,4 @@ A **one-hole formula context** $C[\ast]$ is a formula tree with one distinguishe
 
 $$C[A]\equiv C[B].$$
 
-Thus a subformula may be replaced by a logically equivalent formula without changing the truth function of the whole formula.
+Thus a subformula may be replaced by a @[logically equivalent]math:prop:semantics:df:logical-equivalence formula without changing the truth function of the whole formula.

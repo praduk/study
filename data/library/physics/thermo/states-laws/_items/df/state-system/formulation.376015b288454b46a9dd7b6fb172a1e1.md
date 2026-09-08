@@ -1,3 +1,5 @@
 A system is a chosen material region or collection of matter. It is closed when it exchanges no particles, isolated when it exchanges neither energy nor particles, and open otherwise. Equilibrium has stationary macroscopic observables without sustained internal fluxes under fixed constraints. An equation of state constrains observables such as $p,V,T,N$.
 
 Extensive variables scale under bulk replication; intensive variables remain unchanged. Surface energy and long-range forces can spoil naive extensivity. State functions depend on endpoints; heat and work describe process transfers.
+
+A smooth family of equilibrium states is modeled as a manifold with state functions as scalar fields and thermodynamic differentials as one-forms. The ambient intensive/extensive variables form the contact space in @physics:thermo:geometry:df:thermodynamic-contact; a constitutive relation picks a Legendrian equilibrium submanifold. This geometric description presumes a smooth single-phase chart and does not identify an arbitrary nonequilibrium process with a curve of equilibrium states.

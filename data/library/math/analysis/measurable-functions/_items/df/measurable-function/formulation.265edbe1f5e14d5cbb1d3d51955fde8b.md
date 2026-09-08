@@ -1,3 +1,3 @@
 A function $f:X\to\overline\R=[-\infty,\infty]$ is measurable when $\{x:f(x)>a\}\in\mathcal A$ for every $a\in\R$. Equivalently, preimages of Borel subsets of $\overline\R$ are measurable. A complex-valued function is measurable when its real and imaginary parts are measurable.
 
-A statement holds almost everywhere when it fails only on a subset of some measurable null set. On an incomplete measure space, changing a measurable function arbitrarily on such a subset need not leave it measurable. An indicator $1_A$ is measurable exactly when $A$ is measurable.
+A statement holds almost everywhere when it fails only on a subset of some measurable null set. On an incomplete @[measure space]math:analysis:measure-construction:df:measure-space, changing a measurable function arbitrarily on such a subset need not leave it measurable. An indicator $1_A$ is measurable exactly when $A$ is measurable.

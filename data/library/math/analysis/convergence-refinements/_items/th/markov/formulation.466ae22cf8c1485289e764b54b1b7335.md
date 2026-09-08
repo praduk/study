@@ -1,1 +1,1 @@
-If $h\ge0$ is measurable and $t>0$, then $\mu(\{h>t\})\le t^{-1}\int h\,d\mu$. Consequently, for $1\le p<\infty$, convergence in $L^p$ implies convergence in measure.
+If $h\ge0$ is measurable and $t>0$, then $\mu(\{h>t\})\le t^{-1}\int h\,d\mu$. Consequently, for $1\le p<\infty$, convergence in $L^p$ implies @[convergence in measure]math:analysis:measurable-functions:df:convergence-modes.

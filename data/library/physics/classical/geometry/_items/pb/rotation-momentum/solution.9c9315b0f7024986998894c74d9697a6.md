@@ -1,0 +1,3 @@
+The scalar component is $J_a=p\cdot(a\times q)=a\cdot(q\times p)$. Hence $J=q\times p$ after the chosen identification of $\mathfrak{so}(3)^*$ with $\R^3$. Rotations preserve both $|p|$ and $|q|$, so @physics:classical:geometry:th:momentum-conservation makes all three angular-momentum components constant wherever the trajectory avoids the potential's singularities. When $p=m\dot q$, this is $q\times m\dot q$.
+
+Before using the Euclidean metric, $p$ is a linear functional on $T_qQ$ and $J$ is a functional on infinitesimal rotations. The invariant statement is $J_\xi=p(\xi_Q)$; a cross product representation uses metric and orientation. Angular momentum has units $\mathrm{kg\,m^2\,s^{-1}}$, namely action.

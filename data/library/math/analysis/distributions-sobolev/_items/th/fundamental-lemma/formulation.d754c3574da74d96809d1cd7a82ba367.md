@@ -1,0 +1,1 @@
+Let $\Omega\subseteq\mathbb R^n$ be open. If $f:\Omega\to\mathbb R$ is continuous and $\int_\Omega f\phi=0$ for every real $\phi\in C_c^\infty(\Omega)$, then $f=0$. For vector coefficients the same conclusion holds componentwise when the test components are independent.

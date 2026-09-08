@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "add72cc343604401839d851550287736",
+  "title": "Conformal invariance of the vacuum Maxwell field equations",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ef6efc70488483ea9a6d5b8a38a17cc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ef6efc70488483ea9a6d5b8a38a17cc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "225cefd92d274eefa0246e919733a52b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.225cefd92d274eefa0246e919733a52b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:47.222946+00:00",
+  "updated_at": "2026-09-08T00:02:47.517671+00:00"
+}

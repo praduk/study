@@ -1,3 +1,5 @@
 An electrostatic potential on a region $\Omega$ is a scalar $\phi$ with $\mathbf E=-\nabla\phi$. It exists on simply connected open regions for a smooth curl-free field, and locally on small balls. Maxwell's equation becomes $\Delta\phi=-\rho/\epsilon_0$. Potential differences have units volts; adding a constant changes no field.
 
 Dirichlet data prescribe $\phi$ on the boundary. Neumann data prescribe $\partial_n\phi$, equivalently the normal electric field with a minus sign. Neumann data must satisfy $\int_{\partial\Omega}\partial_n\phi\,dS=-\epsilon_0^{-1}\int_\Omega\rho\,dV$. An ideal conductor in electrostatic equilibrium is modeled as an equipotential body with zero interior electric field. The surface charge is then part of the solution.
+
+On an oriented Riemannian spatial manifold, $e=\mathbf E^\flat=-d\phi$ and Gauss' equation is $d\star_3e=(\rho/\epsilon_0)\operatorname{vol}_g$. Hence $d\star_3d\phi=-(\rho/\epsilon_0)\operatorname{vol}_g$. This is the metric Laplace equation in differential-form language; its flat coordinates recover the displayed Poisson equation. Exactness of $e$ is controlled by @math:diffgeo:stokes-cohomology:df:de-rham.

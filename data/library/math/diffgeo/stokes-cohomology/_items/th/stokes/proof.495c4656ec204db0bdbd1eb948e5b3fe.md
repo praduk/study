@@ -1,4 +1,4 @@
-A subordinate partition of unity writes $\omega$ as a finite sum of forms supported in individual coordinate charts. Because $\sum\rho_i=1$, we have $d\omega=\sum d(\rho_i\omega)$. It suffices to prove the identity for one chart, extending coefficients by zero outside its compact support.
+A subordinate @[partition of unity]math:diffgeo:manifolds:df:partition-unity writes $\omega$ as a finite sum of forms supported in individual coordinate charts. Because $\sum\rho_i=1$, we have $d\omega=\sum d(\rho_i\omega)$. It suffices to prove the identity for one chart, extending coefficients by zero outside its compact support.
 
 In an interior chart write $\omega=\sum_j(-1)^{j-1}a_j\,dx^1\w\cdots\widehat{dx^j}\cdots\w dx^n$. Then $d\omega=(\sum_j\partial_ja_j)\,dx^1\w\cdots\w dx^n$. Every integral of $\partial_ja_j$ over $\R^n$ is zero by iterated integration and compact support.
 

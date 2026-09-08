@@ -1,3 +1,3 @@
-For abelian groups $A,G$, choose a free resolution $0\to F_1\xrightarrow{d}F_0\to A\to0$. Define $\operatorname{Ext}^1_{\Z}(A,G)$ as the cokernel of $\Hom(F_0,G)\to\Hom(F_1,G)$ and $\operatorname{Tor}^{\Z}_1(A,G)$ as the kernel of $F_1\tensor G\to F_0\tensor G$. Their isomorphism types are independent of the chosen free resolution.
+For @[abelian groups]math:algebra:groups-actions:df:groups-homomorphisms $A,G$, choose a free resolution $0\to F_1\xrightarrow{d}F_0\to A\to0$. Define $\operatorname{Ext}^1_{\Z}(A,G)$ as the cokernel of $\Hom(F_0,G)\to\Hom(F_1,G)$ and $\operatorname{Tor}^{\Z}_1(A,G)$ as the kernel of $F_1\tensor G\to F_0\tensor G$. Their isomorphism types are independent of the chosen free resolution.
 
 For $A=\Z/m\Z$, the resolution uses $d=m$, giving $\operatorname{Ext}^1(A,G)\isoto G/mG$ and $\operatorname{Tor}_1(A,G)\isoto\{g\in G:mg=0\}$. These formulas explain where torsion enters universal coefficient theorems.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "497bee46429c4a69a96b2d6b66329d19",
+  "title": "The Hessian and critical points",
+  "rank": 9151314442816847872,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ad091b35673246cdbd4c473b15bc5b1a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ad091b35673246cdbd4c473b15bc5b1a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:52.515350+00:00",
+  "updated_at": "2026-09-08T00:02:52.515356+00:00"
+}

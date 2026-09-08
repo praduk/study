@@ -6,7 +6,7 @@ s(u)=\{s(v):v<u\}
 \quad\text{for every }u\le w.
 $$
 
-Any two approximations agree on their common domain. Otherwise the well-order would supply a least point $u$ where they differ; they agree below $u$, so the displayed equation gives the same value at $u$, a contradiction.
+Any two approximations agree on their common domain. Otherwise the @[well-order]math:set:orders-well-orders:df:well-order would supply a least point $u$ where they differ; they agree below $u$, so the displayed equation gives the same value at $u$, a contradiction.
 
 We now prove by well-order induction that an approximation exists through every $w$. Assume the unique approximation $s_v$ exists for each $v<w$. Replacement collects the $s_v$ for $v<w$, and compatibility makes
 $h=\bigcup_{v<w}s_v$ a function with domain $W_{<w}$. Set

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "cc378bda3a9644ec8651011de8c528a7",
+  "title": "Pseudo-Riemannian metrics and musical isomorphisms",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7fa053910aed44d8b89e3c9abd1f3560",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7fa053910aed44d8b89e3c9abd1f3560.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:40.038170+00:00",
+  "updated_at": "2026-09-08T00:02:40.038177+00:00"
+}

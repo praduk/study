@@ -1,1 +1,1 @@
-Show that $3$ is a primitive root modulo $17$, then list every primitive root modulo $17$.
+Show that $3$ is a @[primitive root]math:num:orders:df:order-primitive-root modulo $17$, then list every primitive root modulo $17$.

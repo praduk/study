@@ -1,0 +1,5 @@
+On a @math:analysis:probability-basics:df:probability-space, a random variable with values in a measurable space $(S,\mathcal S)$ is a measurable map $X:\Omega\to S$: $X^{-1}(B)\in\mathcal F$ for every $B\in\mathcal S$. Its law is the pushforward probability measure $\mathbb P_X(B)=\mathbb P(X^{-1}(B))$. Real and complex random variables use the corresponding Borel @[sigma algebra]math:analysis:measure-construction:df:measure-space.
+
+A probability density of this law with respect to a specified reference measure $\mu$ is a measurable function $p\ge0$ such that $\mathbb P_X(B)=\int_Bp\,d\mu$ for every measurable $B$. It then satisfies $\int_Sp\,d\mu=1$ and is determined only up to $\mu$-almost-everywhere equality. Existence requires absolute continuity; see @math:analysis:signed-measures:th:radon-nikodym under its hypotheses.
+
+A point mass has no density with respect to Lebesgue measure: a singleton has zero Lebesgue measure but positive probability. Density values are not themselves point probabilities. The chosen measure, including any volume or density-of-states factor, is part of the definition.

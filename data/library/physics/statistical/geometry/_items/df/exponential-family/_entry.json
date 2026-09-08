@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f86b7b40747844c48fab562414720b02",
+  "title": "Exponential families and the Fisher information metric",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "726f13fa0617417cb7b8aa5cdf9f3588",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.726f13fa0617417cb7b8aa5cdf9f3588.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:03.156746+00:00",
+  "updated_at": "2026-09-08T00:03:03.156752+00:00"
+}

@@ -511,6 +511,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def get_entry(entry_id: str, _session: Auth) -> dict[str, Any]:
         return store.get_entry(entry_id)
 
+    @app.get("/api/entries/{entry_id}/linked-items")
+    def linked_items(
+        entry_id: str,
+        _session: Auth,
+        offset: Annotated[int, Query(ge=0)] = 0,
+        limit: Annotated[int, Query(ge=1, le=200)] = 40,
+    ) -> dict[str, Any]:
+        return store.linked_items(entry_id, offset, limit)
+
     @app.get("/api/search")
     def search(
         q: Annotated[str, Query(min_length=1, max_length=1000)],
@@ -527,6 +536,17 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         _session: Auth,
     ) -> dict[str, Any]:
         return store.resolve_reference(folder_id, tag)
+
+    @app.get("/api/references/resolve-batch")
+    def resolve_references(
+        folder_id: Annotated[str, Query(min_length=1, max_length=128)],
+        tag: Annotated[
+            list[Annotated[str, Query(min_length=1, max_length=MAX_REFERENCE_QUERY_LENGTH)]],
+            Query(min_length=1, max_length=100),
+        ],
+        _session: Auth,
+    ) -> dict[str, Any]:
+        return store.resolve_references(folder_id, tag)
 
     @app.get("/api/references/candidates")
     def reference_candidates(

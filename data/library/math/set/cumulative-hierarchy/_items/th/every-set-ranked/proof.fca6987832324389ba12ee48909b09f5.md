@@ -1,4 +1,4 @@
-First, transfinite induction on $\beta$ shows that every $V_\beta$ is transitive and that $V_\alpha\subseteq V_\beta$ for $\alpha\le\beta$. At a successor stage, transitivity follows because members of subsets of $V_\alpha$ remain in $V_\alpha$; at a limit, it follows from taking a union of nested transitive stages.
+First, @[transfinite induction]math:set:ordinals:th:transfinite-induction on $\beta$ shows that every $V_\beta$ is transitive and that $V_\alpha\subseteq V_\beta$ for $\alpha\le\beta$. At a successor stage, transitivity follows because members of subsets of $V_\alpha$ remain in $V_\alpha$; at a limit, it follows from taking a union of nested transitive stages.
 
 Apply Set Induction to the assertion “$x$ lies in some hierarchy stage.” Assume it holds for every $y\in x$. For each $y\in x$, choose the least ordinal $r_y$ with $y\subseteq V_{r_y}$; this choice is definable and Replacement collects the $r_y$. Let
 

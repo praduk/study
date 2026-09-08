@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "5cbbb411761c4097afd27aabff86d8e9",
+  "title": "Vector-bundle connections and local gauge transformations",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "191c1f81f08243dd98eaeec44f3712bc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.191c1f81f08243dd98eaeec44f3712bc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:42.176539+00:00",
+  "updated_at": "2026-09-08T00:02:42.176545+00:00"
+}

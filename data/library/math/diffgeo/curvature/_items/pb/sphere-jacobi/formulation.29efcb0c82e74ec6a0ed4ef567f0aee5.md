@@ -1,1 +1,1 @@
-Let $\gamma$ be a unit-speed great-circle geodesic on $S^n$, $n\ge2$, and let $E(t)$ be a parallel unit field perpendicular to $\dot\gamma$. Find all Jacobi fields of the form $J(t)=f(t)E(t)$, and locate the first positive zero for the one with $f(0)=0$, $f'(0)=1$.
+Let $\gamma$ be a unit-speed great-circle geodesic on $S^n$, $n\ge2$, and let $E(t)$ be a parallel unit field perpendicular to $\dot\gamma$. Find all @[Jacobi fields]math:diffgeo:curvature:df:jacobi-field of the form $J(t)=f(t)E(t)$, and locate the first positive zero for the one with $f(0)=0$, $f'(0)=1$.

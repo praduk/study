@@ -1,0 +1,5 @@
+The support of a function on a @[topological space]math:pst:spaces:df:topology is the closure of the set where it is nonzero. It is compactly supported if that closure is compact. A family of subsets is locally finite when each point has a neighborhood meeting only finitely many of them.
+
+On a @[smooth manifold]math:diffgeo:manifolds:df:smooth-manifold $M$, a smooth partition of unity is a family $(\rho_i)$ of nonnegative smooth real functions whose supports are locally finite and whose sum equals one at every point. It is subordinate to an open cover $(U_a)$ when for each $i$ there is an index $a(i)$ with $\operatorname{supp}\rho_i\subseteq U_{a(i)}$. Local finiteness makes the sum locally finite, so it is a smooth function and may be differentiated term by term.
+
+This definition states the conditions, not an existence theorem. The existence result under the manifold conventions of this library is @math:diffgeo:forms:th:partition-unity. A collection of functions summing to one need not be a smooth partition unless smoothness, nonnegativity, and local finiteness also hold.

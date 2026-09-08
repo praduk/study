@@ -1,4 +1,4 @@
-Lebesgue outer measure on $\R$ is
+Lebesgue @[outer measure]math:analysis:measure-construction:df:outer-measure on $\R$ is
 
 $$
 m^*(E)=\inf\left\{\sum_{n=1}^{\infty}|I_n|:E\subseteq\bigcup_n I_n,\ I_n\text{ open intervals}\right\},

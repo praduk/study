@@ -1,4 +1,4 @@
-Every Riemannian metric has a unique torsion-free compatible connection. It is determined by the Koszul formula
+Every @[Riemannian metric]math:diffgeo:connections:df:riemannian-metric has a unique torsion-free compatible connection. It is determined by the Koszul formula
 
 $$
 \begin{aligned}

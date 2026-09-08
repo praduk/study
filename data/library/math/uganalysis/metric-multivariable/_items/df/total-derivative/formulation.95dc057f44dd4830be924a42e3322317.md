@@ -1,4 +1,4 @@
-For open $U\subseteq\R^n$, a function $f:U\to\R^m$ is differentiable at $a$ if there exists a linear map $Df(a):\R^n\to\R^m$ such that
+For open $U\subseteq\R^n$, a function $f:U\to\R^m$ is differentiable at $a$ if there exists a @[linear map]math:algebra:linear-foundations:df:vector-space $Df(a):\R^n\to\R^m$ such that
 
 $$
 \frac{\norm{f(a+h)-f(a)-Df(a)h}}{\norm h}\longrightarrow0\quad(h\to0,\ h\ne0).

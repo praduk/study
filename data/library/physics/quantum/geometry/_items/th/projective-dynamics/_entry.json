@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1bcb02c34e1c41a5a21036fe654594cc",
+  "title": "Schrödinger evolution is Hamiltonian on projective space",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9afb1841cb734f319b385090f173723f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9afb1841cb734f319b385090f173723f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "439970ce3b4c4d6dac721ba88c8f0d95",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.439970ce3b4c4d6dac721ba88c8f0d95.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:06.034384+00:00",
+  "updated_at": "2026-09-08T00:03:06.453086+00:00"
+}

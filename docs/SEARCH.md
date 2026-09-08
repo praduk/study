@@ -36,11 +36,26 @@ alter `@` characters inside prose, code, or mathematics.
   `ambiguous`. A resolved response includes the selected variant, entry header, and main
   formulation Markdown for hover preview. A global fallback reports `resolution: "global"` and
   leaves `matched_folder_id` and `scope_distance` null because it has no single ancestor scope.
+- `GET /api/references/resolve-batch?folder_id=...&tag=@group&tag=@field` resolves
+  1–100 tags against one snapshot and returns `{revision, results: [{tag, result}]}` in
+  input order. Each `result` has the single-resolution shape. Individual tags retain the
+  8,192-character limit; a batch is bounded at 65,536 tag characters. The reader groups
+  simultaneous same-folder requests and deduplicates requests already in flight. It does
+  not retain completed results across page visits, so client caches cannot mask disk edits.
+- `GET /api/entries/{entry_id}/linked-items?offset=0&limit=40` returns incoming references
+  from headers, formulations, alternative formulations, proofs, and solutions. The response
+  contains `entry_id`, `revision`, `total`, `offset`, `limit`, `next_offset`, and `items`.
+  Entries appear once in authored order, including self-references when explicitly authored.
+  Each item includes its source entry ID/title/kind, folder ID/namespace, and the canonical tag
+  and variant ID of its first referencing location. A header location links to the main
+  formulation and has a null variant ID. `reference_count` counts distinct source locations,
+  not repeated mentions. Links to any target formulation or supplement count as links to the
+  owning entry. Clients must reset pagination when the returned snapshot revision changes.
 - `GET /api/references/candidates?folder_id=...&q=...&limit=40` returns targets selected by the same
   local-to-global precedence for the insertion picker. The UI inserts the returned `insert_text`
   verbatim.
 
-All three endpoints require the normal Study session (with local-mode bypass applying only to a
+All of these endpoints require the normal Study session (with local-mode bypass applying only to a
 loopback client). Limits are bounded at 200 results. Folder depth is capped at 64 and exact
 reference input at 8,192 characters, so every valid canonical tag fits without accepting an
 unbounded URL parameter.
@@ -53,7 +68,22 @@ unbounded URL parameter.
 - `(folder_id, local_reference)` and exact-canonical-tag hash maps;
 - local-reference target rows sorted by folder preorder rank for binary-searched subtree ranges;
 - normalized entry and variant documents, including normalized ranking fields;
-- trigram-to-document inverted indexes for full-content and insertion search.
+- trigram-to-document inverted indexes for full-content and insertion search;
+- an incoming-reference map, built lazily on the first linked-items request for that snapshot.
+
+The incoming map parses Markdown prose tokens rather than searching for `@` with a whole-file
+regular expression. It recognizes labeled references and excludes code, mathematics (both dollar
+and slash delimiters), Markdown links, autolinks, HTML nodes, image alt text, emails, and escaped or
+entity-encoded reference syntax. GFM tables and strikethrough are prose. The parser uses the same
+literal-tag boundary rules as the reader. Only uniquely resolved targets form edges: missing,
+ambiguous, and shadowed farther matches do not produce guessed links. The source-text parse cache
+holds at most 8,192 documents across snapshots; its keys are exact content, so edits cannot reuse
+stale parsing. Lexical resolution is recomputed for every new snapshot.
+
+After the first incoming-map build, linked-items queries retrieve one precomputed list and copy
+only the requested page. They do not scan Markdown or resolve the whole library on every page view.
+Batch resolution checks disk coherence once for the entire batch rather than once per tag. Both
+responses carry the opaque revision of the snapshot used; replacing a snapshot changes its revision.
 
 A query intersects the smallest trigram posting lists first, then verifies the complete normalized
 substring before ranking results. This verification prevents n-gram false positives. Ranking is

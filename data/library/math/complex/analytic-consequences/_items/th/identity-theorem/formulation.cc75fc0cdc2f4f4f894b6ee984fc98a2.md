@@ -1,1 +1,1 @@
-If a holomorphic function on a domain is not identically zero, each of its zeros is isolated and has a finite positive order. If two holomorphic functions on a domain agree on a set with an accumulation point inside the domain, they agree everywhere.
+If a holomorphic function on a domain is not identically zero, each of its zeros is isolated and has a finite positive order. If two @[holomorphic functions]math:complex:holomorphic-functions:df:holomorphic on a domain agree on a set with an accumulation point inside the domain, they agree everywhere.

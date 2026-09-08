@@ -6,7 +6,7 @@ $$
 \delta R_{\mu\nu}=\nabla_\rho C^\rho_{\nu\mu}-\nabla_\nu C^\rho_{\rho\mu}.
 $$
 
-Indeed the partial-derivative terms are $\partial_\rho C^\rho_{\nu\mu}-\partial_\nu C^\rho_{\rho\mu}$; the four product-rule terms from the two connection products are exactly the connection corrections to these two covariant derivatives, using symmetry of their lower indices. Metric compatibility then makes $g^{\mu\nu}\delta R_{\mu\nu}=\nabla_\rho V^\rho$ for $V^\rho=g^{\mu\nu}C^\rho_{\mu\nu}-g^{\mu\rho}C^\lambda_{\lambda\mu}$. Its integral vanishes because $\sqrt{-g}\nabla_\rho V^\rho=\partial_\rho(\sqrt{-g}V^\rho)$ and $V$ has compact support.
+Indeed the partial-derivative terms are $\partial_\rho C^\rho_{\nu\mu}-\partial_\nu C^\rho_{\rho\mu}$; the four product-rule terms from the two connection products are exactly the connection corrections to these two covariant derivatives, using symmetry of their lower indices. Metric compatibility then makes $g^{\mu\nu}\delta R_{\mu\nu}=\nabla_\rho V^\rho$ for $V^\rho=g^{\mu\nu}C^\rho_{\mu\nu}-g^{\mu\rho}C^\lambda_{\lambda\mu}$. Its integral vanishes because $\sqrt{-g}\nabla_\rho V^\rho=\partial_\rho(\sqrt{-g}V^\rho)$ and $V$ has @[compact support]math:diffgeo:manifolds:df:partition-unity.
 
 Vary $R=g^{\mu\nu}R_{\mu\nu}$ and the volume element. The surviving terms give
 

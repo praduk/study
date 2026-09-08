@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "5ee2d80178eb47f6bc551da7dec94332",
+  "title": "Observer splitting reconstructs the electromagnetic two-form",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d44d5ebc6cd54a39b6f8f00c23ab44d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d44d5ebc6cd54a39b6f8f00c23ab44d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3171220038a45d2b88d4f6f7b67c7bb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d3171220038a45d2b88d4f6f7b67c7bb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:48.660029+00:00",
+  "updated_at": "2026-09-08T00:02:48.970485+00:00"
+}

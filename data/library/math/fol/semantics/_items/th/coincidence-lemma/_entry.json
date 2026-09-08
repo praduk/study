@@ -3,7 +3,7 @@
   "id": "ddc99bff7508434a8d4b42b533a15998",
   "title": "Coincidence Lemma",
   "rank": 25769803776,
-  "header": "Only values assigned to free variables can affect satisfaction.",
+  "header": "Only values assigned to @[free variables]math:fol:syntax:df:free-bound-variable can affect satisfaction.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

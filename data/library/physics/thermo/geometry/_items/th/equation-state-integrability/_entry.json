@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "310c0fb3d22b4e6baa265f30181f6374",
+  "title": "When temperature and pressure define an energy potential",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8b045910b3294a3289a4981d07200edc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8b045910b3294a3289a4981d07200edc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "64559453872c4dfb842da6845c8064a4",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.64559453872c4dfb842da6845c8064a4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:03:01.914150+00:00",
+  "updated_at": "2026-09-08T00:03:02.298038+00:00"
+}

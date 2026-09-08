@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, useSyncExternalStore, type ReactNode } from 'react';
 
 import {
   Popover,
@@ -10,7 +10,8 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { api } from '@/lib/api';
+import { api, getLibraryReadVersion, getServerLibraryReadVersion, subscribeLibraryReads } from '@/lib/api';
+import { createReferenceBatcher, referenceBatchPath } from '@/lib/reference-batch';
 import { referenceDisplayText } from '@/lib/reference-display';
 import { cn } from '@/lib/utils';
 
@@ -156,15 +157,16 @@ export function queryTagFromLiteral(literalTag: string): string {
 }
 
 /** Resolve a reference without ever inferring a target client-side. */
+const requestReference = createReferenceBatcher<StudyReferenceResolution>(async (folderId, tags) => {
+  const payload = await api<{ results: { tag: string; result: unknown }[] }>(referenceBatchPath(folderId, tags));
+  return new Map(payload.results.map(({ tag, result }) => [tag, normalizeStudyReferenceResolution(result)]));
+});
+
 export async function resolveStudyReference(
   folderId: string,
   tag: string,
 ): Promise<StudyReferenceResolution> {
-  const parameters = new URLSearchParams({ folder_id: folderId, tag });
-  const payload = await api<unknown>(
-    `/api/references/resolve?${parameters.toString()}`,
-  );
-  return normalizeStudyReferenceResolution(payload);
+  return requestReference(folderId, tag, getLibraryReadVersion());
 }
 
 function kindLabel(kind: string | undefined): string | undefined {
@@ -192,7 +194,8 @@ export function StudyReference({
 }: StudyReferenceProps) {
   const queryTag = queryTagFromLiteral(literalTag);
   const authoredText = sourceText || literalTag;
-  const requestKey = `${currentFolderId}\u0000${queryTag}`;
+  const version = useSyncExternalStore(subscribeLibraryReads, getLibraryReadVersion, getServerLibraryReadVersion);
+  const requestKey = `${version}\u0000${currentFolderId}\u0000${queryTag}`;
   const [result, setResult] = useState<{
     requestKey: string;
     resolution: StudyReferenceResolution;
@@ -325,11 +328,12 @@ export function StudyReference({
         delay={180}
         closeDelay={180}
         className={cn(
-          'inline cursor-pointer border-0 bg-transparent p-0 font-[inherit] text-primary underline decoration-dotted underline-offset-[3px] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2',
+          'study-reference-link',
           className,
         )}
         aria-label={`Preview reference ${previewTitle}${displayText !== previewTitle ? `, displayed as ${displayText}` : ''}${authoredText !== previewTitle ? ` (${authoredText})` : ''}`}
         data-study-reference-status="resolved"
+        data-study-reference-kind={target.kind}
       >
         {displayText}
       </PopoverTrigger>

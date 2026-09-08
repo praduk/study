@@ -1,3 +1,3 @@
-A product of objects $(A_i)_{i\in I}$ is an object $P$ with projections $p_i:P\to A_i$ such that each family $f_i:X\to A_i$ factors uniquely as $f_i=p_i f$. It is the limit of the discrete diagram on $I$. The empty product is a terminal object.
+A product of objects $(A_i)_{i\in I}$ is an object $P$ with projections $p_i:P\to A_i$ such that each family $f_i:X\to A_i$ factors uniquely as $f_i=p_i f$. It is the limit of the discrete diagram on $I$. The empty product is a @[terminal object]math:cat:categories-morphisms:df:initial-terminal.
 
 Dually, a coproduct has injections $\iota_i:A_i\to S$ and uniquely represents families of maps out of the $A_i$. The empty coproduct is initial. In $\Set$ these are Cartesian products and disjoint unions. In modules, finite products and finite coproducts are both finite direct sums, but their specified structural maps differ.

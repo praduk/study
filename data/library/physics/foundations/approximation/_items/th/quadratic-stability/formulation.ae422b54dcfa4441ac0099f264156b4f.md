@@ -1,1 +1,1 @@
-Consider $\dot x=Ax+r(x)$ near $0\in\R^n$, with a locally Lipschitz vector field, $r(x)=o(|x|)$, and a symmetric positive definite matrix $P$ satisfying $A^TP+PA=-I$. Then the equilibrium $x=0$ is locally asymptotically stable.
+Consider $\dot x=Ax+r(x)$ near $0\in\R^n$, with a locally Lipschitz vector field, $r(x)=o(|x|)$, and a symmetric @[positive definite]math:algebra:linear-foundations:df:bilinear-forms matrix $P$ satisfying $A^TP+PA=-I$. Then the equilibrium $x=0$ is locally asymptotically stable.

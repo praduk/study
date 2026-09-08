@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "77eca142f7cf4874acf6137aeeba24b0",
+  "title": "Electromagnetic field, excitation, and charge-current forms",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5aa0b6ce5e984f88a506960ed4def151",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5aa0b6ce5e984f88a506960ed4def151.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:45.574858+00:00",
+  "updated_at": "2026-09-08T00:02:45.574863+00:00"
+}

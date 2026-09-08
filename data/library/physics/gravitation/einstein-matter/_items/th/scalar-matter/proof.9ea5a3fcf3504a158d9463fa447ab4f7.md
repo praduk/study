@@ -8,4 +8,4 @@ $$
 \nabla_\mu T^{\mu}{}_{\nu}=(\Box_g\varphi)\partial_\nu\varphi+\partial^\mu\varphi\nabla_\mu\partial_\nu\varphi-\tfrac12\nabla_\nu(\partial_\alpha\varphi\partial^\alpha\varphi)-V'\partial_\nu\varphi.
 $$
 
-The middle two terms cancel by metric compatibility and symmetry of the scalar Hessian. The remainder is $(\Box_g\varphi-V')\partial_\nu\varphi$, zero on shell.
+The middle two terms cancel by metric compatibility and symmetry of the scalar @[Hessian]math:uganalysis:metric-multivariable:df:hessian. The remainder is $(\Box_g\varphi-V')\partial_\nu\varphi$, zero on shell.

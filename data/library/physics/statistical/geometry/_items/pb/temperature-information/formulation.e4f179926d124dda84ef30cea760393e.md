@@ -1,0 +1,1 @@
+For a two-level canonical system with energies $0$ and $\Delta>0$, let $q(T)$ be the upper-level probability at $T>0$. Find the Fisher coefficient in coordinates $\beta=1/(k_BT)$ and $T$. Express the latter in terms of heat capacity and give the quadratic relative entropy between temperatures $T$ and $T+dT$. Treat $\Delta$ as independent of temperature.

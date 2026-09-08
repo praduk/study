@@ -1,0 +1,3 @@
+For $r>0$, $|\nabla r|=1$ and $\Delta r=2/r$. The transport equation becomes $2a'+2a/r=0$, so $a=C/r$ for a complex constant $C$. The flux is $j=|C|^2r^{-2}\partial_r$, and its integral over a sphere is $4\pi|C|^2$, independent of radius.
+
+Since $\Delta(C/r)=0$ for $r>0$, the exact residual in @physics:waves:geometry:th:amplitude-flux vanishes: $u=(C/r)e^{ik_0r/\varepsilon}$ solves that homogeneous Helmholtz equation on the punctured domain. If $C\ne0$, neither its amplitude nor its radial phase chart is regular at the origin. A smooth divergence-free flux on a ball would have zero total boundary flux by Stokes, whereas this field has nonzero flux. The puncture represents a source or an excluded singular region; the outgoing rays coalesce there.

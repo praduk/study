@@ -6,6 +6,6 @@ The organization and conventions were checked against the Open Logic Project's [
 
 ## Course path
 
-The sequence is: formal syntax; Tarskian semantics; classical natural deduction; soundness and completeness; compactness and Löwenheim–Skolem; then normal forms, Skolemization, and computability limits. Function and relation symbols have fixed finite arities, equality is logical identity, and variable assignments are used for open formulas. Bound variables may be renamed only capture-free. Skolemization preserves satisfiability in an expanded language, not logical equivalence.
+The sequence is: formal syntax; Tarskian semantics; classical natural deduction; soundness and completeness; compactness and Löwenheim–Skolem; then normal forms, @[Skolemization]math:fol:normal-forms-computability:df:skolemization, and computability limits. Function and relation symbols have fixed finite arities, equality is logical identity, and variable assignments are used for open formulas. @[Bound variables]math:fol:syntax:df:free-bound-variable may be renamed only capture-free. Skolemization preserves satisfiability in an expanded language, not logical equivalence.
 
 A complete first course should combine statement recall with actual derivations, countermodels, and metatheoretic proofs. The worked problems here are representative rather than an exhaustive exercise bank.

@@ -1,1 +1,1 @@
-For every bounded linear functional $\ell:H\to\F$ on a Hilbert space there is a unique $y\in H$ with $\ell(x)=\iprod{x}{y}$ for all $x$, and $\norm\ell=\norm y$.
+For every @[bounded linear functional]math:analysis:banach-spaces:df:banach-operator $\ell:H\to\F$ on a @[Hilbert space]math:analysis:hilbert-spaces:df:hilbert there is a unique $y\in H$ with $\ell(x)=\iprod{x}{y}$ for all $x$, and $\norm\ell=\norm y$.

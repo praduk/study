@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "94808f531f374cbca4b2474cefd35828",
+  "title": "Fields as sections and Lagrangians as top forms",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7b975f1a9cf04ef29f31ee499493fdf8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7b975f1a9cf04ef29f31ee499493fdf8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:49.913525+00:00",
+  "updated_at": "2026-09-08T00:02:49.913530+00:00"
+}

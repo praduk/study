@@ -1,1 +1,1 @@
-Every smooth manifold under the course's Hausdorff and second-countable conventions has a Riemannian metric.
+Every @[smooth manifold]math:diffgeo:manifolds:df:smooth-manifold under the course's Hausdorff and @[second-countable]math:pst:separation:df:countability conventions has a @[Riemannian metric]math:diffgeo:connections:df:riemannian-metric.

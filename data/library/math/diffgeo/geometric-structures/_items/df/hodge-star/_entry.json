@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "2c96c37352534f778d79051e2425aad9",
+  "title": "The Hodge star on an oriented metric manifold",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bcbc89c83aa945c2910941cb8b813cec",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bcbc89c83aa945c2910941cb8b813cec.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:40.238569+00:00",
+  "updated_at": "2026-09-08T00:02:40.238575+00:00"
+}

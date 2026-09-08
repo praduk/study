@@ -3,7 +3,7 @@
   "id": "b9c922ac0ae348d8b7e9c406e1826166",
   "title": "Local Soundness of Natural-Deduction Rules",
   "rank": 8589934592,
-  "header": "Each rule preserves semantic consequence relative to the open assumptions of its premise subderivations.",
+  "header": "Each rule preserves @[semantic consequence]math:fol:semantics:df:semantic-consequence relative to the open assumptions of its premise subderivations.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [

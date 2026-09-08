@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "6df250f89f3343ee81deaedaa0921335",
+  "title": "Maxwell equations as exterior differential equations",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7b1f02795fb84ef5b21cea638d2c860c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7b1f02795fb84ef5b21cea638d2c860c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d977a852e496482c8f0ad931835f3cdc",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d977a852e496482c8f0ad931835f3cdc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:45.806914+00:00",
+  "updated_at": "2026-09-08T00:02:46.110857+00:00"
+}

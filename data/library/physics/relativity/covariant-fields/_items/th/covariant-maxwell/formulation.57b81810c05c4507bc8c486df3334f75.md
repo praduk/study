@@ -6,3 +6,5 @@ $$
 $$
 
 Their form is invariant under Poincaré transformations. Notice the order of the two indices in the source equation.
+
+Equivalently, on oriented Minkowski spacetime, $F$ is a two-form and $dF=0$, $d\star F=\mu_0\star J^\flat$. See @physics:electromagnetism:spacetime-forms:th:maxwell-forms for the exact SI signs and both directions of equivalence. Naturality of @math:diffgeo:forms:df:forms-pullback and preservation of the metric and orientation by proper Lorentz transformations explain the covariance without organizing individual curl components.

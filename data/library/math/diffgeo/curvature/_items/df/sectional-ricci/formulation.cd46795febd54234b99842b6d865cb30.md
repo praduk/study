@@ -1,4 +1,4 @@
-For linearly independent $u,v\in T_pM$, define
+For @[linearly independent]math:algebra:linear-foundations:df:basis-dimension $u,v\in T_pM$, define
 
 $$
 K(u\w v)=\frac{g(R(u,v)v,u)}{g(u,u)g(v,v)-g(u,v)^2}.

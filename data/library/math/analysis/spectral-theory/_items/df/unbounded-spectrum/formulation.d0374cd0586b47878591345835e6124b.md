@@ -1,0 +1,5 @@
+Let $X$ be a complex @[Banach space]math:analysis:banach-spaces:df:banach-operator. A possibly unbounded linear operator is a @[linear map]math:algebra:linear-foundations:df:vector-space $T:D(T)\to X$ from a specified linear subspace $D(T)\subseteq X$. It is densely defined when $D(T)$ is dense in $X$, and closed when $x_n\in D(T)$, $x_n\to x$, and $Tx_n\to y$ imply $x\in D(T)$ and $Tx=y$.
+
+For a closed densely defined $T$, a scalar $\lambda\in\C$ lies in the resolvent set when $T-\lambda I:D(T)\to X$ is bijective and its inverse, viewed as a map $X\to X$ with image in $D(T)$, is bounded. The spectrum is the complement of the resolvent set. An eigenvalue additionally requires a nonzero $x\in D(T)$ with $Tx=\lambda x$. This agrees with @math:analysis:spectral-theory:df:spectrum-compact when $T$ is bounded and everywhere defined.
+
+The domain is part of the operator, so specifying a differential expression alone does not specify its spectrum. For example, boundary conditions change domains. This definition does not identify every spectral value with an eigenvalue and does not supply a spectral theorem for arbitrary closed operators.

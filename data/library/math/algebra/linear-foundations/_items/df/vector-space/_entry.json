@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "f8f9b34d401e48dbb2d51bd45c71ae5b",
+  "title": "Vector spaces, subspaces, and linear maps",
+  "rank": 4611686018427387904,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cc87a2644dce450d88ff9e4a945ab056",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cc87a2644dce450d88ff9e4a945ab056.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:50.679978+00:00",
+  "updated_at": "2026-09-08T00:02:50.679983+00:00"
+}

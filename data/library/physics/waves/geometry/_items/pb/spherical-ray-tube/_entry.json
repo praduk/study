@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "40c4628ac51748adb4968ba49824955e",
+  "title": "Spherical spreading and the limit of a ray chart",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0042f8a1da6248c1be44a20aaf8438a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0042f8a1da6248c1be44a20aaf8438a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "829c1c707f484fbdb79b8cbf1e997379",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.829c1c707f484fbdb79b8cbf1e997379.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:58.325369+00:00",
+  "updated_at": "2026-09-08T00:02:58.684401+00:00"
+}

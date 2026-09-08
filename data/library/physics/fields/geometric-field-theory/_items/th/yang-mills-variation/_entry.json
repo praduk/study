@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "1a4215ec59724d57b0ae41285c7fc26a",
+  "title": "Variation of the source-free Yang-Mills action",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9af9e9d54f004d609af9b1abdf712e07",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9af9e9d54f004d609af9b1abdf712e07.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f7bfe47e4bc24a0bbbf50c90dc180c86",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f7bfe47e4bc24a0bbbf50c90dc180c86.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:50.172146+00:00",
+  "updated_at": "2026-09-08T00:02:50.489858+00:00"
+}

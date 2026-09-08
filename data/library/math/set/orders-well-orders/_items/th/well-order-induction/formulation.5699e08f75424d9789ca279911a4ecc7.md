@@ -1,4 +1,4 @@
-Let $(W,<)$ be a well-order and let $X\subseteq W$. If
+Let $(W,<)$ be a @[well-order]math:set:orders-well-orders:df:well-order and let $X\subseteq W$. If
 
 $$
 \forall w\in W\,

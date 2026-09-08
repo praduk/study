@@ -1,4 +1,4 @@
-A holomorphic logarithm of a nonvanishing function $f$ on a domain $U$ is a holomorphic function $L:U\to\C$ satisfying $e^{L(z)}=f(z)$. For $f(z)=z$, the principal branch is
+A holomorphic logarithm of a nonvanishing function $f$ on a domain $U$ is a @[holomorphic function]math:complex:holomorphic-functions:df:holomorphic $L:U\to\C$ satisfying $e^{L(z)}=f(z)$. For $f(z)=z$, the principal branch is
 
 $$
 \operatorname{Log}z=\log|z|+i\operatorname{Arg}z,\qquad -\pi<\operatorname{Arg}z<\pi,

@@ -1,4 +1,4 @@
-For a small category $\mathcal C$, object $A$, and functor $F:\mathcal C\to\Set$, evaluation at the identity is a bijection
+For a @[small category]math:cat:categories-morphisms:df:category $\mathcal C$, object $A$, and functor $F:\mathcal C\to\Set$, evaluation at the identity is a bijection
 
 $$
 \operatorname{Nat}(\Hom(A,-),F)\longrightarrow F(A),\qquad\alpha\longmapsto\alpha_A(\id_A).

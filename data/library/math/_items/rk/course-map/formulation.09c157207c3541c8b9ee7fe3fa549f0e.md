@@ -18,9 +18,9 @@ Mathematics is organized as a sequence of core courses. **Algebra, Analysis, Top
 ## Graduate courses
 
 - @math:algebra:rk:course-guide — groups and actions, Sylow theory, rings, factorization, Noetherian conditions, modules and tensors, fields and Galois theory, and introductory representations.
-- @math:analysis:rk:course-guide — measure and Lebesgue integration, convergence theorems, $L^p$ spaces, product and signed measures, and Banach, Hilbert, and compact-operator theory.
-- @math:top:rk:course-guide — algebraic topology: homotopy, fundamental groups, covering spaces, CW complexes, homology, cohomology, and duality. Point-set foundations have their own course above.
-- @math:diffgeo:rk:course-guide — smooth manifolds, tangent and vector bundles, flows, differential forms, Stokes and de Rham theory, connections, geodesics, and Riemannian curvature.
+- @math:analysis:rk:course-guide — measure and @[Lebesgue integration]math:analysis:lebesgue-integration:df:lebesgue-integral, convergence theorems, $L^p$ spaces, product and signed measures, and Banach, Hilbert, and compact-operator theory.
+- @math:top:rk:course-guide — algebraic topology: homotopy, @[fundamental groups]math:top:homotopy:df:fundamental-group, covering spaces, @[CW complexes]math:top:cells:df:cw-complex, homology, cohomology, and duality. Point-set foundations have their own course above.
+- @math:diffgeo:rk:course-guide — @[smooth manifolds]math:diffgeo:manifolds:df:smooth-manifold, tangent and vector bundles, flows, @[differential forms]math:diffgeo:forms:df:forms-pullback, Stokes and de Rham theory, connections, geodesics, and Riemannian curvature.
 
 ## Suggested dependencies
 

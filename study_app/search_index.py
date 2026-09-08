@@ -2,11 +2,14 @@ from __future__ import annotations
 
 import re
 import unicodedata
+import uuid
 from bisect import bisect_left
 from collections import defaultdict
 from dataclasses import dataclass
 from functools import lru_cache
 from typing import Any
+
+from .markdown_references import markdown_references
 
 REFERENCE_RE = re.compile(r"^[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*$")
 SPACE_RE = re.compile(r"\s+")
@@ -140,6 +143,8 @@ class LibrarySearchIndex:
         folder_namespaces: dict[str, str],
         content_by_path: dict[str, str],
     ):
+        self.revision = uuid.uuid4().hex
+        self._incoming_by_entry: dict[str, tuple[dict[str, Any], ...]] | None = None
         self.folder_by_id = {folder["id"]: folder for folder in library["folders"]}
         self.ancestry_by_folder = {
             folder_id: self._ancestry(folder_id) for folder_id in self.folder_by_id
@@ -316,6 +321,69 @@ class LibrarySearchIndex:
         self._cached_visible_target_keys = lru_cache(maxsize=512)(
             self._ranked_visible_target_keys
         )
+
+    def _build_incoming_links(self) -> dict[str, tuple[dict[str, Any], ...]]:
+        # One pass over source locations; resolution shares the lexical buckets
+        # used by the reader, so ambiguous and shadowed names cannot form edges.
+        incoming: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+        headers_seen: set[str] = set()
+        for source in self.targets.values():
+            locations = [(source.target_type, source.content)]
+            if source.entry_id not in headers_seen:
+                headers_seen.add(source.entry_id)
+                locations.insert(0, ("header", source.header))
+            for location, content in locations:
+                destination_entries: set[str] = set()
+                for reference in markdown_references(content):
+                    keys = self.canonical_buckets.get(reference)
+                    if keys is None:
+                        group = self._cached_visible_group(source.folder_id, reference)
+                        keys = group.target_keys if group else ()
+                    if len(keys) == 1:
+                        destination_entries.add(self.targets[keys[0]].entry_id)
+                for destination_id in destination_entries:
+                    previous = incoming[destination_id].get(source.entry_id)
+                    if previous is not None:
+                        previous["reference_count"] += 1
+                        continue
+                    incoming[destination_id][source.entry_id] = {
+                        "entry_id": source.entry_id,
+                        "title": source.title,
+                        "kind": source.kind,
+                        "canonical_tag": source.main_canonical_tag
+                        if location == "header" else source.canonical_tag,
+                        "folder_id": source.folder_id,
+                        "folder_namespace": source.folder_namespace,
+                        "variant_id": None if location == "header" else source.variant_id,
+                        "source": location,
+                        "label": "Header" if location == "header" else source.label,
+                        "reference_count": 1,
+                    }
+        return {
+            destination_id: tuple(
+                sorted(rows.values(), key=lambda row: self.entry_documents[row["entry_id"]].authored_order)
+            )
+            for destination_id, rows in incoming.items()
+        }
+
+    def linked_items(self, entry_id: str, offset: int = 0, limit: int = 40) -> dict[str, Any]:
+        if entry_id not in self.entry_documents:
+            raise SearchIndexError("entry not found")
+        if offset < 0 or not 1 <= limit <= 200:
+            raise SearchIndexError("linked-item offset must be nonnegative and limit between 1 and 200")
+        if self._incoming_by_entry is None:
+            self._incoming_by_entry = self._build_incoming_links()
+        rows = self._incoming_by_entry.get(entry_id, ())
+        end = min(offset + limit, len(rows))
+        return {
+            "entry_id": entry_id,
+            "revision": self.revision,
+            "total": len(rows),
+            "offset": offset,
+            "limit": limit,
+            "next_offset": end if end < len(rows) else None,
+            "items": [dict(row) for row in rows[offset:end]],
+        }
 
     def _ancestry(self, folder_id: str) -> tuple[str, ...]:
         result: list[str] = []

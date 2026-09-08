@@ -11,6 +11,7 @@ import { DeleteItemDialog, type DeleteTarget } from '@/components/DeleteItemDial
 import { ExportDialog } from '@/components/ExportDialog';
 import { GitSyncDialog } from '@/components/GitSyncDialog';
 import { MacrosDialog } from '@/components/MacrosDialog';
+import { LinkedItems } from '@/components/LinkedItems';
 import { MathMarkdown } from '@/components/MathMarkdown';
 import { MoveFolderDialog } from '@/components/MoveFolderDialog';
 import { Button } from '@/components/ui/button';
@@ -251,6 +252,7 @@ function ReadingPane({ entry, folders, canEdit, inactive, previousEntry, nextEnt
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
     {!!entry.supplements.length && <section className="supplement-list"><h2>{entry.kind === 'th' ? 'Proofs' : 'Solutions'}</h2>{entry.supplements.map((item) => <details key={item.id} open={target.supplementId ? target.supplementId === item.id : item.main}><summary><span>{item.label}</span><code>{item.canonical_tag}</code></summary><MathMarkdown content={item.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} /></details>)}</section>}
+    <LinkedItems entryId={entry.id} onOpenEntry={onOpenEntry} />
     <nav className="reading-sequence-nav" aria-label="Adjacent entries in authored order">
       <Button variant="outline" disabled={!previousEntry} onClick={() => previousEntry && onNavigate(previousEntry)}><ChevronLeft /><span><small>Previous</small><strong>{previousEntry?.title || 'Start of library'}</strong></span></Button>
       <Button variant="outline" disabled={!nextEntry} onClick={() => nextEntry && onNavigate(nextEntry)}><span><small>Next</small><strong>{nextEntry?.title || 'End of library'}</strong></span><ChevronRight /></Button>

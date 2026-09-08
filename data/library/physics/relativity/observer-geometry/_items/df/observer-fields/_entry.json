@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "7ff041d8c27649c8bcc364b770c83a10",
+  "title": "Electric and magnetic fields measured by an observer",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "908c3ae648b74624af2da403af373763",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.908c3ae648b74624af2da403af373763.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:48.409596+00:00",
+  "updated_at": "2026-09-08T00:02:48.409601+00:00"
+}

@@ -1,0 +1,1 @@
+For a cotangent-lifted action and its @physics:classical:geometry:df:moment-map, one has $\iota_{\xi_{T^*Q}}\omega=dJ_\xi$. If a smooth Hamiltonian $H$ is invariant under the action, then $J_\xi$ is conserved along its Hamiltonian flow for every $\xi$. The conclusion is local in time wherever the flow exists.

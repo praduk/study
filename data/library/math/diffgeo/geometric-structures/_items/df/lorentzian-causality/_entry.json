@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "90bcd793c6c24c02a7f0a4877ed5ba61",
+  "title": "Causal vectors, time orientation, and spacelike surfaces",
+  "rank": 9223231299366420480,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36c42c6ff7944e14b5c68399a0c877af",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36c42c6ff7944e14b5c68399a0c877af.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:44.385819+00:00",
+  "updated_at": "2026-09-08T00:02:44.385824+00:00"
+}

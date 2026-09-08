@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "id": "fc9a841c21aa4a10a739dee3d455219a",
+  "title": "The differential-form Maxwell action and gauge invariance",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6bb3c502aaad4a0fb9c1c52c11ef3101",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6bb3c502aaad4a0fb9c1c52c11ef3101.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f7de52429577495997ec5b338a89f33a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f7de52429577495997ec5b338a89f33a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:46.748955+00:00",
+  "updated_at": "2026-09-08T00:02:47.039947+00:00"
+}

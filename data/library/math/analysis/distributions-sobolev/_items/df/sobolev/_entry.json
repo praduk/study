@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "65b3966fbb60405c9e7b572d26b50eb5",
+  "title": "Weak derivatives and Sobolev spaces",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "40bf4d7b581649e89141112c405ba09f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.40bf4d7b581649e89141112c405ba09f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:44.864789+00:00",
+  "updated_at": "2026-09-08T00:02:44.864793+00:00"
+}

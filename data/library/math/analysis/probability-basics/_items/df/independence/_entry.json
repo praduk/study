@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "8ae8ecb2b2b3407b98998d1d150894ed",
+  "title": "Independent events and independent random variables",
+  "rank": 8646911284551352320,
+  "header": "Mathematical prerequisite; definitions and directly checked examples.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "12fb7bec66a14d589a6e20c6567b92f3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.12fb7bec66a14d589a6e20c6567b92f3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:53.582332+00:00",
+  "updated_at": "2026-09-08T00:02:53.582338+00:00"
+}

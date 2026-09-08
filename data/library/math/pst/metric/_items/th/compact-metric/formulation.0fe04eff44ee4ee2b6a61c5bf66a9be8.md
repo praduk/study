@@ -1,1 +1,1 @@
-For a metric space $X$, the following are equivalent: compactness; sequential compactness (every sequence has a convergent subsequence); completeness plus total boundedness.
+For a @[metric space]math:uganalysis:metric-multivariable:df:metric-completeness $X$, the following are equivalent: compactness; sequential compactness (every sequence has a convergent subsequence); completeness plus @[total boundedness]math:pst:metric:df:complete-total-bounded.

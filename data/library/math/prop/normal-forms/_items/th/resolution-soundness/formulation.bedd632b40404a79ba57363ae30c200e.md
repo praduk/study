@@ -1,1 +1,1 @@
-Every resolvent is a semantic consequence of its two parent clauses. Consequently, a clause set with a resolution refutation is unsatisfiable.
+Every resolvent is a @[semantic consequence]math:prop:semantics:df:semantic-consequence of its two parent clauses. Consequently, a clause set with a @[resolution refutation]math:prop:normal-forms:df:resolution is unsatisfiable.

@@ -1,1 +1,1 @@
-For any outer measure $\mu^*$, its Carathéodory measurable sets form a sigma algebra $\mathcal M$, and $\mu^*|_{\mathcal M}$ is a complete measure.
+For any @[outer measure]math:analysis:measure-construction:df:outer-measure $\mu^*$, its Carathéodory measurable sets form a @[sigma algebra]math:analysis:measure-construction:df:measure-space $\mathcal M$, and $\mu^*|_{\mathcal M}$ is a complete measure.

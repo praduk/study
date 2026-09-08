@@ -1,1 +1,1 @@
-If $N\trianglelefteq G$ and both $N$ and $G/N$ are solvable, then $G$ is solvable. Subgroups and quotient groups of solvable groups are solvable.
+If $N\trianglelefteq G$ and both $N$ and $G/N$ are solvable, then $G$ is solvable. Subgroups and @[quotient groups]math:algebra:groups-actions:df:normal-quotient of @[solvable groups]math:algebra:finite-groups:df:solvable are solvable.

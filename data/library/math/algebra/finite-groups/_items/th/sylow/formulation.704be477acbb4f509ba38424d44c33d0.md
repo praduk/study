@@ -1,4 +1,4 @@
-If $|G|=p^nm$ with $p\nmid m$, then Sylow p-subgroups exist; every p-subgroup is contained in a conjugate of any fixed Sylow p-subgroup; and
+If $|G|=p^nm$ with $p\nmid m$, then Sylow @[p-subgroups]math:algebra:finite-groups:df:sylow-subgroup exist; every p-subgroup is contained in a conjugate of any fixed Sylow p-subgroup; and
 
 $$
 n_p\mid m,\qquad n_p\equiv1\pmod p.

@@ -1,3 +1,3 @@
-For a Banach space $X$, the closed unit ball of $X^*$ is compact in the weak-star topology. The general compactness proof is not included; see Hunter and Nachtergaele, [Applied Analysis, Theorem 5.61](https://www.math.ucdavis.edu/~hunter/book/ch5.pdf).
+For a @[Banach space]math:analysis:banach-spaces:df:banach-operator $X$, the closed unit ball of $X^*$ is compact in the @[weak-star topology]math:analysis:hilbert-spaces:df:weak-convergence. The general compactness proof is not included; see Hunter and Nachtergaele, [Applied Analysis, Theorem 5.61](https://www.math.ucdavis.edu/~hunter/book/ch5.pdf).
 
 This asserts topological compactness. Without extra hypotheses, it does not assert that every bounded sequence in $X^*$ has a weak-star convergent subsequence. It also concerns the dual ball with the weak-star topology, not norm compactness of an infinite-dimensional unit ball.

@@ -1,0 +1,1 @@
+On a @math:diffgeo:geometric-structures:df:symplectic manifold, a Hamiltonian flow preserves $\omega$, its volume form $\omega^n/n!$, and its Hamiltonian when the latter is time independent. Its bracket obeys the Jacobi identity. All flow claims hold on the domain of the @math:diffgeo:bundles-flows:th:local-flow; completeness is not assumed.

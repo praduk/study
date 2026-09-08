@@ -1,4 +1,4 @@
-Transfinite recursion defines ordinal arithmetic in the **right-hand argument**:
+@[Transfinite recursion]math:set:ordinals:th:transfinite-recursion defines ordinal arithmetic in the **right-hand argument**:
 
 $$
 \begin{aligned}

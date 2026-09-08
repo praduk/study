@@ -1,1 +1,1 @@
-There are terminating algorithms deciding, for any finite input of propositional formulas, satisfiability, tautologicity, logical equivalence, finite-premise semantic consequence, and derivability in the declared calculus.
+There are terminating algorithms deciding, for any finite input of propositional formulas, satisfiability, tautologicity, @[logical equivalence]math:prop:semantics:df:logical-equivalence, finite-premise @[semantic consequence]math:prop:semantics:df:semantic-consequence, and derivability in the declared calculus.

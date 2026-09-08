@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "919d08d490fd440bbbeb5643249676a6",
+  "title": "Clifford algebras and spinor representations",
+  "rank": 9222809086901354496,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f6f25b21038482794c7059a61deb983",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f6f25b21038482794c7059a61deb983.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-09-08T00:02:43.934424+00:00",
+  "updated_at": "2026-09-08T00:02:43.934429+00:00"
+}
