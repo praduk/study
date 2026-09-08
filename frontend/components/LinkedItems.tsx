@@ -69,7 +69,6 @@ function LinkedItemsList({ entryId, onOpenEntry }: {
   return <section className="linked-items" aria-labelledby={`linked-items-${entryId}`} aria-busy={loading}>
     <div className="linked-items-heading">
       <h2 id={`linked-items-${entryId}`}><Link2 aria-hidden="true" /> Linked items {page && <span className="linked-items-count">{page.total}</span>}</h2>
-      <p>Items that use a tag for this entry or one of its formulations, proofs, or solutions.</p>
     </div>
     {page && page.total === 0 && <p className="linked-items-status">No items reference this entry yet.</p>}
     {!!page?.items.length && <ul className="linked-items-list">{page.items.map((item) => <li key={item.entry_id}>
