@@ -28,7 +28,7 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import { api, setCsrfToken } from '@/lib/api';
 import { folderPathIds, libraryPathForEntry, resolveLibraryPath } from '@/lib/library-path';
-import { hydrateBootstrap, updateBootstrapFolder } from '@/lib/library-tree';
+import { hydrateBootstrap, entryReviewStatus, updateBootstrapEntryReview, updateBootstrapFolder } from '@/lib/library-tree';
 import { configureMathJax } from '@/lib/mathjax';
 import { readingVariantSelection } from '@/lib/reference-navigation';
 import type { Bootstrap, BootstrapPayload, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus, ReviewStats } from '@/lib/types';
@@ -159,12 +159,13 @@ function InsertionPoint({ parentFolderId, folderName, entryIndex, folderIndex, e
   </div>;
 }
 
-function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReviewFolders, readOnly, onToggle, onSelectEntry, onSelectFolder, onReviewToggle, onMove, onInsertEntry, onInsertFolder }: {
+function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReviewPreferences, readOnly, onToggle, onSelectEntry, onSelectFolder, onReviewToggle, onEntryReviewToggle, onMove, onInsertEntry, onInsertFolder }: {
   node: FolderNode; selectedEntry: string | null; selectedFolder: string | null; expanded: Set<string>;
-  pendingReviewFolders: Set<string>;
+  pendingReviewPreferences: Set<string>;
   readOnly: boolean;
   onToggle: (id: string) => void; onSelectEntry: (id: string, folderId: string) => void;
   onSelectFolder: (id: string) => void; onReviewToggle: (id: string, enabled: boolean) => void;
+  onEntryReviewToggle: (id: string, enabled: boolean) => void;
   onMove: (payload: DragPayload, destination: string | null, index: number) => void;
   onInsertEntry: (folderId: string, index: number, kind: EntryKind) => void;
   onInsertFolder: (parentId: string | null, index: number) => void;
@@ -178,21 +179,23 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReview
       onDragLeave={(event) => event.currentTarget.classList.remove('drop-target')}
       onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.remove('drop-target'); const payload = parseDrag(event); if (payload && payload.id !== node.id) onMove(payload, node.id, payload.type === 'entry' ? node.entries.length : node.children.length); }}>
       <button className="tree-chevron" aria-label={open ? 'Collapse folder' : 'Expand folder'} onClick={() => onToggle(node.id)}>{open ? <ChevronDown /> : <ChevronRight />}</button>
-      <Checkbox checked={node.review_enabled} disabled={readOnly || pendingReviewFolders.size > 0} aria-label={`Include ${node.name} in review`} onCheckedChange={(checked) => !readOnly && onReviewToggle(node.id, Boolean(checked))} />
+      <Checkbox checked={node.review_enabled} disabled={readOnly || pendingReviewPreferences.size > 0} aria-label={`Include ${node.name} in review`} onCheckedChange={(checked) => !readOnly && onReviewToggle(node.id, Boolean(checked))} />
       <button className="folder-name" onClick={() => { onSelectFolder(node.id); if (!open) onToggle(node.id); }}>{node.name}</button>
       <span className="count">{count}</span>
     </div>
     {open && <div className="tree-children"><div className="entry-list">
       {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} entryIndex={0} folderIndex={!node.entries.length ? 0 : undefined} empty={!node.entries.length && !node.children.length} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
-      {node.entries.map((entry, index) => <div className="entry-row-group" key={entry.id}><button
+      {node.entries.map((entry, index) => <div className="entry-row-group" key={entry.id}><div className="entry-review-row">
+        {!readOnly && <Checkbox checked={entry.review_enabled !== false} disabled={pendingReviewPreferences.size > 0} aria-label={`Include ${entry.title} in review`} onCheckedChange={(checked) => onEntryReviewToggle(entry.id, Boolean(checked))} />}
+        <button
         className={`entry-row ${selectedEntry === entry.id ? 'active' : ''}`} draggable={!readOnly}
         onDragStart={readOnly ? undefined : (event) => beginDrag(event, { type: 'entry', id: entry.id }, entry.title)}
         onDragOver={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); }}
         onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); const payload = parseDrag(event); if (payload?.type === 'entry') onMove(payload, node.id, index); }}
-        onClick={() => onSelectEntry(entry.id, node.id)}><span className={`type-chip type-${entry.kind}`}>{entry.kind}</span><span>{entry.title}</span></button>
+        onClick={() => onSelectEntry(entry.id, node.id)}><span className={`type-chip type-${entry.kind}`}>{entry.kind}</span><span>{entry.title}</span></button></div>
         {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} entryIndex={index + 1} folderIndex={index === node.entries.length - 1 ? 0 : undefined} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
       </div>)}</div>
-      {node.children.map((child, index) => <div className="folder-row-group" key={child.id}><TreeNode node={child} selectedEntry={selectedEntry} selectedFolder={selectedFolder} expanded={expanded} pendingReviewFolders={pendingReviewFolders} readOnly={readOnly} onToggle={onToggle} onSelectEntry={onSelectEntry} onSelectFolder={onSelectFolder} onReviewToggle={onReviewToggle} onMove={onMove} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} />
+      {node.children.map((child, index) => <div className="folder-row-group" key={child.id}><TreeNode node={child} selectedEntry={selectedEntry} selectedFolder={selectedFolder} expanded={expanded} pendingReviewPreferences={pendingReviewPreferences} readOnly={readOnly} onToggle={onToggle} onSelectEntry={onSelectEntry} onSelectFolder={onSelectFolder} onReviewToggle={onReviewToggle} onEntryReviewToggle={onEntryReviewToggle} onMove={onMove} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} />
         {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} folderIndex={index + 1} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
       </div>)}
     </div>}
@@ -242,12 +245,16 @@ function LoginScreen({ onLogin }: { onLogin: (csrf: string) => void }) {
   return <main className="login-screen"><form className="login-card" onSubmit={submit}><span className="brand-mark large"><Sigma /></span><h1>Study</h1><p>Your mathematical library is password protected.</p><label className="field-label" htmlFor="study-password">Password<Input id="study-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} /></label>{error && <div className="form-error">{error}</div>}<Button type="submit" disabled={busy || !password}><LogIn /> {busy ? 'Opening…' : 'Open library'}</Button></form></main>;
 }
 
-function ReadingPane({ entry, folders, canEdit, inactive, previousEntry, nextEntry, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry, onNavigate }: { entry: EntryDetail | null; folders: Folder[]; canEdit: boolean; inactive: boolean; previousEntry: EntrySummary | null; nextEntry: EntrySummary | null; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void; onNavigate: (entry: EntrySummary) => void }) {
+function ReadingPane({ entry, folders, onReviewToggle, canEdit, inactive, previousEntry, nextEntry, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry, onNavigate }: { entry: EntryDetail | null; folders: Folder[]; onReviewToggle: (id: string, enabled: boolean) => void; canEdit: boolean; inactive: boolean; previousEntry: EntrySummary | null; nextEntry: EntrySummary | null; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void; onNavigate: (entry: EntrySummary) => void }) {
   if (!entry) return <article className="reading-pane empty-library" inert={inactive || undefined} tabIndex={-1}><div><span className="brand-mark large"><Library /></span><h1>Your study library</h1><p>Select an entry, or create one in a folder. Content is stored as ordinary Markdown under <code>data/</code>.</p></div></article>;
   const target = readingVariantSelection(entry, selectedVariantId);
   const folder = folders.find((item) => item.id === entry.folder_id); const active = entry.formulations.find((item) => item.id === target.formulationId) || entry.formulations[0];
   return <article className="reading-pane" inert={inactive || undefined} tabIndex={-1}><div className="breadcrumbs">{folder?.namespace.split(':').join(' / ')} <span>/</span> {KIND_LABEL[entry.kind]}</div>
     <div className="document-heading"><div><span className="canonical-tag">{active?.canonical_tag || entry.canonical_tag}</span><h1>{entry.title}</h1></div><div className="document-actions desktop-write"><Button variant="outline" disabled={!canEdit} onClick={onEdit}>Edit</Button><Button variant="destructive" disabled={!canEdit} onClick={onDelete}><Trash2 /> Delete</Button></div></div>
+    <div className="entry-review-control">
+      <label htmlFor="entry-review-enabled"><Checkbox id="entry-review-enabled" checked={entry.review_enabled !== false} disabled={!canEdit} onCheckedChange={(checked) => onReviewToggle(entry.id, Boolean(checked))} /> Include this item in review</label>
+      <output>{entryReviewStatus(entry, folders)}</output>
+    </div>
     {entry.header && <MathMarkdown content={entry.header} className="content-header" folderId={entry.folder_id} onOpenEntry={onOpenEntry} />}
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
@@ -265,12 +272,12 @@ export default function Home() {
   const [session, setSession] = useState({ loading: true, authenticated: false, authRequired: false });
   const [data, setData] = useState<Bootstrap | null>(null); const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null); const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null); const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null); const [entry, setEntry] = useState<EntryDetail | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set()); const dark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => false); const [mode, setMode] = useState<'library' | 'review' | 'calendar'>('library'); const [editorOpen, setEditorOpen] = useState(false); const [createEntry, setCreateEntry] = useState(false); const [createKind, setCreateKind] = useState<EntryKind>('df'); const [createIndex, setCreateIndex] = useState<number | null>(null);
-  const [pendingReviewFolders, setPendingReviewFolders] = useState<Set<string>>(new Set());
-  const reviewPreferencePending = pendingReviewFolders.size > 0;
+  const [pendingReviewPreferences, setPendingReviewPreferences] = useState<Set<string>>(new Set());
+  const reviewPreferencePending = pendingReviewPreferences.size > 0;
   const [gitOpen, setGitOpen] = useState(false); const [exportOpen, setExportOpen] = useState(false); const [macrosOpen, setMacrosOpen] = useState(false); const [moveFolderOpen, setMoveFolderOpen] = useState(false); const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null); const [mobileLibrary, setMobileLibrary] = useState(false); const [libraryOpen, setLibraryOpen] = useState(true); const [libraryWidth, setLibraryWidth] = useState(270); const [query, setQuery] = useState(''); const [searchResults, setSearchResults] = useState<SearchResult[]>([]); const [searching, setSearching] = useState(false); const [notice, setNotice] = useState(''); const [error, setError] = useState(''); const searchRef = useRef<HTMLInputElement>(null);
   const [librarySynchronized, setLibrarySynchronized] = useState(true); const [pullReloadError, setPullReloadError] = useState(''); const [locationError, setLocationError] = useState('');
   const dataRef = useRef<Bootstrap | null>(null);
-  const pendingReviewFoldersRef = useRef<Set<string>>(new Set());
+  const pendingReviewPreferencesRef = useRef<Set<string>>(new Set());
   const locationInitialized = useRef(false);
   const editorOpenRef = useRef(false);
   const pendingPopstate = useRef(false);
@@ -425,8 +432,8 @@ export default function Home() {
   }, [query]);
   useEffect(() => { const context = document.modelContext; if (!context?.registerTool || !data) return; const lifecycle = new AbortController(); const report = (reason: unknown) => setError(reason instanceof Error ? reason.message : String(reason)); const registrations = [
     context.registerTool({ name: 'read_study_library_summary', title: 'Read Study library summary', description: 'Return folder, entry, and due-review counts without changing the library.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: true, untrustedContentHint: false }, execute: () => api('/api/webmcp/library-summary') }, { signal: lifecycle.signal }),
-    context.registerTool({ name: 'start_study_review', title: 'Start review', description: 'Open the visible due-review flow in authored library order.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: () => { if (!librarySynchronized || pendingReviewFoldersRef.current.size) throw new Error('Study is still saving a library preference.'); setMode('review'); return { status: 'opened', due: data.review.due }; } }, { signal: lifecycle.signal }),
-    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { if (pendingReviewFoldersRef.current.size) throw new Error('Study is still saving a library preference.'); const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); chooseEntry(created.id, created.folder_id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
+    context.registerTool({ name: 'start_study_review', title: 'Start review', description: 'Open the visible due-review flow in authored library order.', inputSchema: { type: 'object', properties: {}, additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: () => { if (!librarySynchronized || pendingReviewPreferencesRef.current.size) throw new Error('Study is still saving a library preference.'); setMode('review'); return { status: 'opened', due: data.review.due }; } }, { signal: lifecycle.signal }),
+    ...(!isMobile && librarySynchronized ? [context.registerTool({ name: 'create_study_entry', title: 'Create study entry', description: 'Create one Markdown mathematics entry in a named folder using the same action as the editor.', inputSchema: { type: 'object', properties: { folder_id: { type: 'string' }, kind: { type: 'string', enum: ['ax', 'df', 'rk', 'th', 'pb'] }, title: { type: 'string' }, tag: { type: 'string' }, content: { type: 'string' } }, required: ['folder_id', 'kind', 'title', 'tag', 'content'], additionalProperties: false }, annotations: { readOnlyHint: false, untrustedContentHint: false }, execute: async (input) => { if (pendingReviewPreferencesRef.current.size) throw new Error('Study is still saving a library preference.'); const value = input as { folder_id: string; kind: EntryKind; title: string; tag: string; content: string }; const created = await api<EntryDetail>('/api/entries', { method: 'POST', body: JSON.stringify({ ...value, header: '' }) }); await load(); chooseEntry(created.id, created.folder_id); return { id: created.id, canonical_tag: created.canonical_tag }; } }, { signal: lifecycle.signal })] : []),
   ]; registrations.forEach((registration) => void Promise.resolve(registration).catch(report)); return () => lifecycle.abort(); }, [chooseEntry, data, isMobile, librarySynchronized, load]);
 
   const orderedEntries = useMemo(() => authoredEntries(data?.tree || []), [data?.tree]);
@@ -486,20 +493,24 @@ export default function Home() {
       throw new Error(message);
     }
   }, [selectedEntryId, selectedFolderId]);
-  const updateFolderReview = async (id: string, enabled: boolean) => {
-    if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size > 0) return;
+  const updateReviewPreference = async (type: 'folder' | 'entry', id: string, enabled: boolean) => {
+    if ((type === 'folder' && isMobile) || !librarySynchronized || pendingReviewPreferencesRef.current.size > 0) return;
     const snapshot = dataRef.current;
-    const currentFolder = snapshot?.folders.find((folder) => folder.id === id);
-    if (!snapshot || !currentFolder || currentFolder.review_enabled === enabled) return;
+    const current = type === 'folder' ? snapshot?.folders.find((folder) => folder.id === id)
+      : snapshot?.entries.find((entry) => entry.id === id);
+    if (!snapshot || !current || (current.review_enabled !== false) === enabled) return;
+    const applyPreference = (value: Bootstrap, preference: boolean) => type === 'folder'
+      ? updateBootstrapFolder(value, { ...value.folders.find((folder) => folder.id === id)!, review_enabled: preference })
+      : updateBootstrapEntryReview(value, id, preference);
 
-    pendingReviewFoldersRef.current.add(id);
-    setPendingReviewFolders(new Set(pendingReviewFoldersRef.current));
-    const optimistic = updateBootstrapFolder(snapshot, { ...currentFolder, review_enabled: enabled });
+    pendingReviewPreferencesRef.current.add(id);
+    setPendingReviewPreferences(new Set(pendingReviewPreferencesRef.current));
+    const optimistic = applyPreference(snapshot, enabled);
     dataRef.current = optimistic;
     setData(optimistic);
     try {
-      const result = await api<{ folder: Folder; review: ReviewStats; git: GitStatus }>(
-        `/api/folders/${id}?include_review_stats=true`,
+      const result = await api<{ folder?: Folder; entry?: EntryDetail; review: ReviewStats; git: GitStatus }>(
+        `/api/${type === 'folder' ? 'folders' : 'entries'}/${id}?include_review_stats=true`,
         { method: 'PATCH', body: JSON.stringify({ review_enabled: enabled }) },
       );
       const latest = dataRef.current;
@@ -512,16 +523,11 @@ export default function Home() {
           }
           return;
         }
-        const latestFolder = latest.folders.find((folder) => folder.id === id);
-        if (!latestFolder) {
-          const reconciled = await load();
-          if (!reconciled) setLibrarySynchronized(false);
-          return;
+        const saved = type === 'folder' ? result.folder : result.entry;
+        if (!saved || typeof saved.review_enabled !== 'boolean' || !result.review || !result.git) {
+          throw new Error('The running server does not support this review control. Restart Study and reload');
         }
-        const authoritative = updateBootstrapFolder(latest, {
-          ...latestFolder,
-          review_enabled: result.folder.review_enabled,
-        });
+        const authoritative = applyPreference(latest, saved.review_enabled);
         const next = { ...authoritative, review: result.review, git: result.git };
         dataRef.current = next;
         setData(next);
@@ -538,16 +544,16 @@ export default function Home() {
         setError(`Study could not verify that preference or reload the library (${detail}). Reload Study before making more changes.`);
       }
     } finally {
-      pendingReviewFoldersRef.current.delete(id);
-      setPendingReviewFolders(new Set(pendingReviewFoldersRef.current));
+      pendingReviewPreferencesRef.current.delete(id);
+      setPendingReviewPreferences(new Set(pendingReviewPreferencesRef.current));
     }
   };
   const refreshSelectedEntry = async (syncFolder: boolean) => { if (!selectedEntryId) return; const refreshed = await api<EntryDetail>(`/api/entries/${selectedEntryId}`); setEntry(refreshed); if (syncFolder) setSelectedFolderId(refreshed.folder_id); setExpanded((current) => { const next = new Set(current); folderPathIds(refreshed.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); return refreshed; };
-  const moveItem = async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } };
-  const addFolder = async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } };
-  const renameFolder = async () => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
+  const moveItem = async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } };
+  const addFolder = async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } };
+  const renameFolder = async () => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
   const beginDeleteFolder = () => {
-    if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size || !data || !selectedFolderId) return;
+    if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size || !data || !selectedFolderId) return;
     const folder = data.folders.find((item) => item.id === selectedFolderId);
     if (!folder) return;
     const subtree = folderSubtreeIds(folder.id, data.folders);
@@ -601,7 +607,7 @@ export default function Home() {
     }
     setNotice(`${target.type === 'folder' ? 'Folder' : 'Entry'} deleted.`);
   };
-  const beginCreateEntry = (folderId: string, index: number | null, kind: EntryKind = 'df') => { if (isMobile || !librarySynchronized || pendingReviewFoldersRef.current.size) return; setSelectedFolderId(folderId); setCreateKind(kind); setCreateIndex(index); setCreateEntry(true); setEditorOpen(true); };
+  const beginCreateEntry = (folderId: string, index: number | null, kind: EntryKind = 'df') => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size) return; setSelectedFolderId(folderId); setCreateKind(kind); setCreateIndex(index); setCreateEntry(true); setEditorOpen(true); };
   const handleSaved = async (saved: EntryDetail) => { const existed = Boolean(dataRef.current?.entries.some((item) => item.id === saved.id)); const savedVariantIds = new Set([...saved.formulations, ...saved.supplements].map((item) => item.id)); const nextVariantId = existed && selectedVariantId && savedVariantIds.has(selectedVariantId) ? selectedVariantId : null; writeEntryPath(saved, nextVariantId, existed ? 'replace' : 'push'); setSelectedEntryId(saved.id); setSelectedFolderId(saved.folder_id); setSelectedVariantId(nextVariantId); setEntry(saved); setExpanded((current) => { const next = new Set(current); folderPathIds(saved.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); setLocationError(''); await load(); setNotice('Saved.'); };
   const logout = async () => { await api('/api/logout', { method: 'POST' }); setCsrfToken(null); setSession({ loading: false, authenticated: false, authRequired: true }); dataRef.current = null; locationInitialized.current = false; setData(null); };
 
@@ -615,13 +621,14 @@ export default function Home() {
   const selectedEntryIndex = orderedEntries.findIndex((item) => item.id === selectedEntryId);
   const previousEntry = selectedEntryIndex > 0 ? orderedEntries[selectedEntryIndex - 1] : null;
   const nextEntry = selectedEntryIndex >= 0 && selectedEntryIndex < orderedEntries.length - 1 ? orderedEntries[selectedEntryIndex + 1] : null;
-  const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, pendingReviewFolders, readOnly: isMobile || !librarySynchronized, onToggle: (id: string) => setExpanded((current) => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; }), onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: updateFolderReview, onMove: moveItem, onInsertEntry: beginCreateEntry, onInsertFolder: addFolder };
+  const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, pendingReviewPreferences, readOnly: isMobile || !librarySynchronized, onToggle: (id: string) => setExpanded((current) => { const next = new Set(current); if (next.has(id)) next.delete(id); else next.add(id); return next; }), onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: (id: string, enabled: boolean) => updateReviewPreference('folder', id, enabled),
+    onEntryReviewToggle: (id: string, enabled: boolean) => updateReviewPreference('entry', id, enabled), onMove: moveItem, onInsertEntry: beginCreateEntry, onInsertFolder: addFolder };
   return <main className={`app-frame ${libraryOpen ? '' : 'library-closed'}`} style={{ '--library-width': `${libraryWidth}px` } as CSSProperties}><header className="topbar" inert={isMobile && mobileLibrary ? true : undefined}><div className="brand-cluster"><Button className="library-toggle" variant="ghost" size="icon-sm" aria-label={libraryOpen ? 'Hide library panel' : 'Show library panel'} onClick={() => setLibraryOpen((value) => !value)}>{libraryOpen ? <PanelLeftClose /> : <PanelLeftOpen />}</Button><button ref={mobileLibraryTriggerRef} className="brand" aria-label="Open Study library" aria-controls="study-library-sidebar" aria-expanded={isMobile ? mobileLibrary : libraryOpen} onClick={() => { if (isMobile) { setQuery(''); setSearchResults([]); setMobileLibrary(true); } else setLibraryOpen(true); }}><span className="brand-mark"><Sigma className="desktop-brand-icon" /><Menu className="mobile-brand-icon" /></span><span>Study</span></button></div>
     <div className="searchbox"><Search /><input ref={searchRef} type="search" maxLength={1000} aria-label="Search your library" aria-controls="study-search-results" placeholder="Search definitions, theorems, problems…" value={query} onChange={(event) => { const value = event.target.value; setQuery(value); setSearchResults([]); setSearching(Boolean(value.trim())); }} onKeyDown={(event) => { if (event.key === 'Enter' && searchResults[0]) { event.preventDefault(); chooseSearchResult(searchResults[0]); } else if (event.key === 'Escape') { setQuery(''); setSearchResults([]); setSearching(false); } }} /><kbd>⌘ K</kbd>{query.trim() && <section id="study-search-results" className="search-results" aria-label="Search results"><div className="search-status" aria-live="polite">{searching ? 'Searching…' : `${searchResults.length} result${searchResults.length === 1 ? '' : 's'}`}</div>{!searching && searchResults.map((result) => <button key={result.id} type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => chooseSearchResult(result)}><span className={`type-chip type-${result.kind}`}>{result.kind}</span><span><strong>{result.title}</strong><code>{result.canonical_tag}</code></span></button>)}</section>}</div>
     <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" disabled={!librarySynchronized || reviewPreferencePending} aria-label={`Start review, ${data?.review.due || 0} due`} onClick={() => setMode('review')}><BookOpen /><span className="review-label">Review</span><span className="review-count-badge">{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
     <aside id="study-library-sidebar" className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`} role={isMobile && mobileLibrary ? 'dialog' : 'complementary'} aria-label="Study library" aria-modal={isMobile && mobileLibrary ? true : undefined} aria-hidden={isMobile && !mobileLibrary ? true : undefined}><div className="sidebar-heading"><span>Library</span><Button ref={mobileLibraryCloseRef} className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => { setMobileLibrary(false); window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus()); }}><X /></Button></div><div className="mobile-sidebar-actions"><Button disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('review'); }}><BookOpen /> Review <span className="review-count-badge">{data?.review.due || 0}</span></Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('calendar'); }}><CalendarDays /> Calendar</Button><Button variant="outline" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />} {dark ? 'Light mode' : 'Dark mode'}</Button>{session.authRequired && <Button variant="outline" onClick={() => void logout()}><LogOut /> Log out</Button>}</div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
     {libraryOpen && <LibraryResizeHandle value={libraryWidth} onChange={resizeLibrary} />}
-    <ReadingPane entry={entry} folders={data?.folders || []} canEdit={librarySynchronized && !reviewPreferencePending} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
+    <ReadingPane entry={entry ? { ...entry, review_enabled: data?.entries.find((item) => item.id === entry.id)?.review_enabled ?? entry.review_enabled } : null} onReviewToggle={(id, enabled) => void updateReviewPreference('entry', id, enabled)} folders={data?.folders || []} canEdit={librarySynchronized && !reviewPreferencePending} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
     {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : locationError ? <button className="toast-error" onClick={() => setLocationError('')}>{locationError}</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
     {editorOpen && <Suspense fallback={<output className="dialog-loading"><LoaderCircle className="spin" /><span>Opening editor…</span></output>}><EditorDialog open entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} /></Suspense>}
     <DeleteItemDialog target={deleteTarget} onClose={() => setDeleteTarget(null)} onDelete={deleteItem} />

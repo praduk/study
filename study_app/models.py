@@ -58,6 +58,7 @@ class EntryCreate(BaseModel):
     title: str = Field(min_length=1, max_length=240)
     tag: str = Field(min_length=1, max_length=80)
     header: str = Field(default="", max_length=4000)
+    review_enabled: bool = Field(default=True, strict=True)
     review_modes: list[str] | None = Field(default=None, max_length=12)
     content: str = Field(default="", max_length=8_000_000)
 
@@ -76,6 +77,7 @@ class EntryUpdate(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=240)
     tag: str | None = Field(default=None, min_length=1, max_length=80)
     header: str | None = Field(default=None, max_length=4000)
+    review_enabled: bool | None = Field(default=None, strict=True)
     review_modes: list[str] | None = Field(default=None, max_length=12)
     problem_family: str | None = Field(default=None, max_length=120)
     confusable_with: list[str] | None = Field(default=None, max_length=100)

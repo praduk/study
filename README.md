@@ -253,7 +253,12 @@ Due cards follow authored order: root folders, each folder's direct entries, the
 recursively. Entries and sibling folders use their stored `order`; theorem statement precedes proof.
 Cards that are not due are skipped without disturbing the relative
 order of eligible cards. Disabling a folder excludes that folder and all descendants, even if a
-descendant's own checkbox is enabled.
+descendant's own checkbox is enabled. Each item also has an **Include this item in review**
+checkbox in the reader (including on phones), and a checkbox in the desktop library tree.
+Unchecking an item excludes all its review tasks while preserving its schedules and history.
+An enabled item is still paused while any containing folder is disabled; the reader shows why.
+Existing items without an explicit preference remain enabled. New items can be created with
+`review_enabled: false` through the API without changing their folder or neighboring items.
 
 An Again grade sets the next due time to ten minutes and also inserts a retry after up to three
 currently available intervening cards. Hard, Good, and Easy update a per-card stability estimate and

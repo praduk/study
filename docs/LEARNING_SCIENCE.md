@@ -96,7 +96,10 @@ preorder:
 
 Only eligible due/new cards are emitted, so skipping a not-due card does not alter the relative order
 of those that remain. Disabling a folder excludes its direct entries and all descendant folders. A
-child marked enabled is still excluded while an ancestor is disabled.
+child marked enabled is still excluded while an ancestor is disabled. Each entry also has a
+`review_enabled` preference (missing means true for compatibility). Disabling it excludes all of
+that entry's tasks without changing authored order, schedules, pending attempts, or history.
+Re-enabling it restores eligibility subject to containing folders, task availability, and due time.
 
 Authored order is not the same as blocked practice. An author can deliberately alternate confusable
 problem families or place a definition before the theorem that depends on it. Study does not
@@ -229,9 +232,9 @@ limited to 366 days. With neither bound supplied, it starts at the current UTC d
 days; supplying only one bound creates the same 90-day span on the other side.
 
 Each event is the one currently stored next-due time for a reviewed card, not a generated recurrence.
-Active cards are derived from the current library, fixed task availability, and inherited folder
-review setting. New cards have no stored schedule and are omitted. Deleted entries and tasks that no
-longer exist are purged. With `include_inactive=true`, existing entries whose review is disabled may
+Active cards are derived from the current library, fixed task availability, the entry
+review preference, and inherited folder review setting. New cards have no stored schedule and are
+omitted. Deleted entries and tasks that no longer exist are purged. With `include_inactive=true`, existing entries whose review is disabled may
 still be shown. The stored schedule at the last grade is returned with the current entry title,
 canonical tag, task label, and active-state classification. The endpoint reconstructs state from
 the complete log and fails closed on malformed history. It is byte-for-byte read-only while the

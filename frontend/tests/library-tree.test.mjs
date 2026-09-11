@@ -156,3 +156,19 @@ test('an update for an unknown folder preserves the complete snapshot identity',
     snapshot,
   );
 });
+
+test('entry preferences update the tree without changing folder preferences or order', async () => {
+  const { updateBootstrapEntryReview, entryReviewStatus } = await import('../lib/library-tree.ts');
+  const folders = [folder('parent', 'Parent', 0), folder('child', 'Child', 0, 'parent')];
+  const entries = [entry('one', 'child', 'One', 0), entry('two', 'child', 'Two', 1)];
+  const original = hydrateBootstrap(compactPayload(folders, entries));
+  const updated = updateBootstrapEntryReview(original, 'one', false);
+  assert.equal(updated.tree[0].children[0].entries[0].review_enabled, false);
+  assert.deepEqual(updated.folders, original.folders);
+  assert.deepEqual(updated.entries.map((item) => item.id), ['one', 'two']);
+  assert.equal(original.entries[0].review_enabled, undefined);
+  assert.equal(entryReviewStatus(updated.entries[0], folders), 'Excluded from review');
+  assert.equal(entryReviewStatus(entries[0], folders), 'Included in review');
+  assert.equal(entryReviewStatus(entries[0], [{ ...folders[0], review_enabled: false }, folders[1]]), 'Paused by folder: Parent');
+  assert.equal(entryReviewStatus({ ...entries[0], kind: 'pb', review_modes: [] }, folders), 'Needs a solution before review');
+});

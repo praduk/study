@@ -446,6 +446,8 @@ def validate_library(
         if not isinstance(entry.get("header"), str) or len(entry["header"]) > 4000:
             raise LibraryValidationError(f"entry {entry_id} header must be text")
         _order(entry.get("order"), f"entry {entry_id}")
+        if not isinstance(entry.get("review_enabled", True), bool):
+            raise LibraryValidationError(f"entry {entry_id} review_enabled must be true or false")
 
         formulations = _validate_variant_group(
             entry_id=entry_id,

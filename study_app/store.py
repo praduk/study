@@ -689,6 +689,7 @@ class LibraryStore:
                     "title",
                     "rank",
                     "header",
+                    "review_enabled",
                     "problem_family",
                     "confusable_with",
                     "formulations",
@@ -1170,6 +1171,8 @@ class LibraryStore:
             "supplements": copy.deepcopy(entry.get("supplements", [])),
             "assets": copy.deepcopy(entry.get("assets", [])),
         }
+        if "review_enabled" in entry:
+            value["review_enabled"] = entry["review_enabled"]
         for variant in (*value["formulations"], *value["supplements"]):
             variant.pop("content", None)
             variant.pop("canonical_tag", None)
@@ -1715,6 +1718,7 @@ class LibraryStore:
         namespaces: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         result = copy.deepcopy(entry)
+        result["review_enabled"] = entry.get("review_enabled", True)
         result["review_modes"] = self.review_modes_for_entry(result)
         result["canonical_tag"] = self._entry_tag(library, entry, namespaces)
         if full:
@@ -2247,6 +2251,7 @@ class LibraryStore:
         content: str,
         review_modes: list[str] | None = None,
         index: int | None = None,
+        review_enabled: bool = True,
     ) -> dict[str, Any]:
         with self._lock:
             library = self._read()
@@ -2286,6 +2291,7 @@ class LibraryStore:
                 "tag": tag,
                 "header": header.strip(),
                 "order": insertion_index,
+                "review_enabled": review_enabled,
                 "review_modes": modes,
                 "problem_family": "",
                 "confusable_with": [],
@@ -2397,6 +2403,8 @@ class LibraryStore:
             ) != fixed_modes:
                 raise StoreError("review modes are fixed for this content type")
             entry["review_modes"] = fixed_modes
+            if updates.get("review_enabled") is not None:
+                entry["review_enabled"] = updates["review_enabled"]
             if updates.get("confusable_with") is not None:
                 entry["confusable_with"] = list(dict.fromkeys(updates["confusable_with"]))
             if entry == original:
@@ -2863,6 +2871,8 @@ class LibraryStore:
                     not review_only or is_review_enabled(folder["id"])
                 ):
                     for entry in entries_by_folder.get(folder["id"], []):
+                        if review_only and not entry.get("review_enabled", True):
+                            continue
                         if kinds is None or entry["kind"] in kinds:
                             ordered.append(
                                 self._decorate_entry(library, entry, True, namespaces)

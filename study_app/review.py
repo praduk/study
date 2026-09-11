@@ -1069,7 +1069,10 @@ class ReviewEngine:
             for node in nodes:
                 enabled = parent_enabled and bool(node.get("review_enabled", True))
                 if enabled:
-                    entries.extend(node.get("entries", []))
+                    entries.extend(
+                        entry for entry in node.get("entries", [])
+                        if entry.get("review_enabled", True)
+                    )
                 visit(node.get("children", []), enabled)
 
         visit(snapshot["tree"], True)

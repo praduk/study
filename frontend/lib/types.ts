@@ -31,6 +31,7 @@ export interface EntrySummary {
   header: string;
   order: number;
   canonical_tag: string;
+  review_enabled: boolean;
   review_modes: ReviewMode[];
   problem_family?: string;
   confusable_with?: string[];

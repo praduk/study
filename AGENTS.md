@@ -115,7 +115,8 @@ produce `math:algebra`.
 ### Entries
 
 Every entry, including a problem, has an `id`, `folder_id`, `kind`, `title`, `tag`, `header`, `order`,
-`review_modes`, `problem_family`, `confusable_with`, `formulations`, `supplements`, and `assets`.
+`review_enabled`, `review_modes`, `problem_family`, `confusable_with`, `formulations`, `supplements`,
+and `assets`.
 
 Allowed kinds are:
 
@@ -189,9 +190,10 @@ math:algebra:pb:z12-subgroups:sl:generators
 Review tasks are fixed, not author-selectable:
 
 - When the user asks to populate Study or create new content, keep every newly created entry out of
-  review initially unless the user explicitly asks to include it. Review inclusion is currently
-  folder-scoped: use a review-disabled destination without disabling review for pre-existing content,
-  and report the constraint if the requested destination is already review-enabled.
+  review initially unless the user explicitly asks to include it. Set `review_enabled: false` on
+  each new entry; do not disable its folder or change pre-existing content. An entry is eligible
+  only when its own preference and all containing folders are enabled. Missing entry preferences
+  mean true for backward compatibility. Disabling review preserves schedules and history.
 - Axioms, definitions, and remarks use `statement`.
 - Theorems use `statement`, followed by internal mode ID `proof-plan` when a main proof exists. The
   user-visible task is “Proof of theorem” and requires the complete proof, not merely a plan.

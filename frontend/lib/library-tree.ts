@@ -89,3 +89,20 @@ export function updateBootstrapFolder(snapshot: Bootstrap, folder: Folder): Boot
     tree: replaceTreeFolder(snapshot.tree, folder),
   };
 }
+
+export function updateBootstrapEntryReview(snapshot: Bootstrap, id: string, enabled: boolean): Bootstrap {
+  const entries = snapshot.entries.map((entry) => entry.id === id
+    ? { ...entry, review_enabled: enabled } : entry);
+  return { ...snapshot, entries, tree: buildLibraryTree(snapshot.folders, entries) };
+}
+
+export function entryReviewStatus(entry: EntrySummary, folders: Folder[]): string {
+  if (entry.review_enabled === false) return 'Excluded from review';
+  let folder = folders.find((item) => item.id === entry.folder_id);
+  while (folder) {
+    if (!folder.review_enabled) return `Paused by folder: ${folder.name}`;
+    folder = folders.find((item) => item.id === folder?.parent_id);
+  }
+  if (!entry.review_modes.length) return 'Needs a solution before review';
+  return 'Included in review';
+}

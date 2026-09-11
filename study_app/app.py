@@ -606,18 +606,27 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             payload.content,
             payload.review_modes,
             payload.index,
+            payload.review_enabled,
         )
 
     @app.patch("/api/entries/{entry_id}")
-    def update_entry(entry_id: str, payload: EntryUpdate, _session: Mutation) -> dict[str, Any]:
+    def update_entry(
+        entry_id: str,
+        payload: EntryUpdate,
+        _session: Mutation,
+        include_review_stats: Annotated[bool, Query()] = False,
+    ) -> dict[str, Any]:
         updates = payload.model_dump(exclude_unset=True)
-        if "kind" not in updates:
-            return store.update_entry(entry_id, updates)
         with store.mutation_lock:
-            review.validate_log()
+            if "kind" in updates:
+                review.validate_log()
             updated = store.update_entry(entry_id, updates)
-            review.prune_to_current_library()
-            return updated
+            if "kind" in updates:
+                review.prune_to_current_library()
+            if not include_review_stats:
+                return updated
+            review_stats = review.stats(store.snapshot())
+        return {"entry": updated, "review": review_stats, "git": git.status()}
 
     @app.delete("/api/entries/{entry_id}")
     def delete_entry(entry_id: str, _session: Mutation) -> dict[str, Any]:
