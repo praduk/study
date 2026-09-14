@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "94ac113b5c134e9ea0c71916b792ebf4",
+  "title": "Coset Representatives",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "24b6a15c54d143e4ad2b39a9833f6c81",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.24b6a15c54d143e4ad2b39a9833f6c81.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T16:10:49.478940+00:00",
+  "updated_at": "2026-09-14T16:12:09.115410+00:00"
+}

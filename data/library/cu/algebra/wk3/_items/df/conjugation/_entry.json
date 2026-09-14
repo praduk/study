@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d414b7eba76e48a5b17434fcf6d1b524",
+  "title": "Conjugation",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3adacb6bee934177b74eb3b3a4cdf302",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3adacb6bee934177b74eb3b3a4cdf302.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T15:49:58.814212+00:00",
+  "updated_at": "2026-09-14T15:49:58.814229+00:00"
+}

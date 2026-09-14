@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e85018094517483db3016c020db5462b",
+  "title": "Centralizer",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7435c2e6c6e44612a86586288d74941b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7435c2e6c6e44612a86586288d74941b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T15:51:01.301314+00:00",
+  "updated_at": "2026-09-14T16:42:53.532456+00:00"
+}

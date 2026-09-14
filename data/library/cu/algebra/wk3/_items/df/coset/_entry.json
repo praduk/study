@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "50dd600458ce4f33a04f3cd5071d7544",
+  "title": "Coset",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b0d6d12189c54a899558aa024107dfa1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b0d6d12189c54a899558aa024107dfa1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T16:06:48.803844+00:00",
+  "updated_at": "2026-09-14T16:45:22.130678+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "dfdc1563de81457cb766734f71ec3bcb",
+  "title": "Normalizer",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b8d4c7a76dcf46e48e2e7459d98567f9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b8d4c7a76dcf46e48e2e7459d98567f9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T15:55:36.869041+00:00",
+  "updated_at": "2026-09-14T16:43:50.208763+00:00"
+}

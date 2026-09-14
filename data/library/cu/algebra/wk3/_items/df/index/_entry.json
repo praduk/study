@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "441cffecd654419694252024a24f2eda",
+  "title": "Index",
+  "rank": 9214364837600034816,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce6cc7a7586041ffb5b2e1814bbfa18c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce6cc7a7586041ffb5b2e1814bbfa18c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-14T16:13:49.592221+00:00",
+  "updated_at": "2026-09-14T16:13:49.592238+00:00"
+}
