@@ -1,0 +1,1037 @@
+{
+  "method": "Chromium; fresh context per sample; persistent prewarmed local server; disposable data copy",
+  "source_root": "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/baseline",
+  "git_root": "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/baseline",
+  "samples_per_viewport": 3,
+  "readiness_poll_ms": 10,
+  "search_key_delay_ms": 20,
+  "actions": {
+    "desktop.cold_content_ready": {
+      "samples_ms": [
+        545.37,
+        388.28,
+        385.3
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 388.28,
+      "min_ms": 385.3,
+      "max_ms": 545.37
+    },
+    "desktop.cold_settled": {
+      "samples_ms": [
+        1056.25,
+        536.18,
+        533.16
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 536.18,
+      "min_ms": 533.16,
+      "max_ms": 1056.25
+    },
+    "desktop.warm_reload_settled": {
+      "samples_ms": [
+        394.26,
+        479.17,
+        462.89
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 462.89,
+      "min_ms": 394.26,
+      "max_ms": 479.17
+    },
+    "desktop.next_entry": {
+      "samples_ms": [
+        85.39,
+        80.55,
+        78.9
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 80.55,
+      "min_ms": 78.9,
+      "max_ms": 85.39
+    },
+    "desktop.previous_entry": {
+      "samples_ms": [
+        96.47,
+        77.62,
+        80.24
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 80.24,
+      "min_ms": 77.62,
+      "max_ms": 96.47
+    },
+    "desktop.search_results": {
+      "samples_ms": [
+        164.2,
+        190.05,
+        189.07
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 189.07,
+      "min_ms": 164.2,
+      "max_ms": 190.05
+    },
+    "desktop.search_typing_results": {
+      "samples_ms": [
+        295.42,
+        286.42,
+        287.64
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 287.64,
+      "min_ms": 286.42,
+      "max_ms": 295.42
+    },
+    "desktop.reference_preview": {
+      "samples_ms": [
+        254.57,
+        249.43,
+        257.67
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 254.57,
+      "min_ms": 249.43,
+      "max_ms": 257.67
+    },
+    "desktop.dark_theme": {
+      "samples_ms": [
+        61.72,
+        52.02,
+        63.61
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 61.72,
+      "min_ms": 52.02,
+      "max_ms": 63.61
+    },
+    "desktop.entry_review_toggle": {
+      "samples_ms": [
+        502.09,
+        528.34,
+        533.17
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 528.34,
+      "min_ms": 502.09,
+      "max_ms": 533.17
+    },
+    "desktop.folder_review_toggle": {
+      "samples_ms": [
+        400.51,
+        491.0,
+        473.27
+      ],
+      "api_requests": [
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        },
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        },
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 473.27,
+      "min_ms": 400.51,
+      "max_ms": 491.0
+    },
+    "desktop.library_resize": {
+      "samples_ms": [
+        27.51,
+        29.49,
+        30.53
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 29.49,
+      "min_ms": 27.51,
+      "max_ms": 30.53
+    },
+    "desktop.library_hide": {
+      "samples_ms": [
+        30.96,
+        25.33,
+        26.4
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 26.4,
+      "min_ms": 25.33,
+      "max_ms": 30.96
+    },
+    "desktop.library_expand_collapse": {
+      "samples_ms": [
+        25.48,
+        24.76,
+        25.11
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 25.11,
+      "min_ms": 24.76,
+      "max_ms": 25.48
+    },
+    "desktop.calendar_open": {
+      "samples_ms": [
+        901.01,
+        901.47,
+        906.02
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 901.47,
+      "min_ms": 901.01,
+      "max_ms": 906.02
+    },
+    "desktop.calendar_next_month": {
+      "samples_ms": [
+        541.56,
+        548.61,
+        555.47
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 548.61,
+      "min_ms": 541.56,
+      "max_ms": 555.47
+    },
+    "desktop.review_open": {
+      "samples_ms": [
+        531.83,
+        455.89,
+        458.36
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 458.36,
+      "min_ms": 455.89,
+      "max_ms": 531.83
+    },
+    "desktop.review_reveal_synthetic": {
+      "samples_ms": [
+        138.4,
+        207.83,
+        211.2
+      ],
+      "api_requests": [
+        {
+          "POST /api/review/77fc12dadd2f411980a79fe78130abf3%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/9ad8ba948d874b62b7d774b038602b6d%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/035eecdfd8c945bd80c8b92c3f3609ad%3A%3Astatement/reveal": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 207.83,
+      "min_ms": 138.4,
+      "max_ms": 211.2
+    },
+    "desktop.review_grade_synthetic": {
+      "samples_ms": [
+        268.34,
+        275.69,
+        293.01
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/77fc12dadd2f411980a79fe78130abf3%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/9ad8ba948d874b62b7d774b038602b6d%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/035eecdfd8c945bd80c8b92c3f3609ad%3A%3Astatement/grade": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 275.69,
+      "min_ms": 268.34,
+      "max_ms": 293.01
+    },
+    "desktop.editor_open": {
+      "samples_ms": [
+        350.71,
+        345.88,
+        344.46
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 345.88,
+      "min_ms": 344.46,
+      "max_ms": 350.71
+    },
+    "desktop.editor_title_save": {
+      "samples_ms": [
+        1893.36,
+        2024.73,
+        2010.96
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 2010.96,
+      "min_ms": 1893.36,
+      "max_ms": 2024.73
+    },
+    "desktop.editor_reopen": {
+      "samples_ms": [
+        33.21,
+        33.37,
+        33.26
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 33.26,
+      "min_ms": 33.21,
+      "max_ms": 33.37
+    },
+    "desktop.editor_body_save": {
+      "samples_ms": [
+        2030.71,
+        2079.4,
+        1960.9
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 2030.71,
+      "min_ms": 1960.9,
+      "max_ms": 2079.4
+    },
+    "desktop.editor_unchanged_save": {
+      "samples_ms": [
+        236.64,
+        271.17,
+        268.17
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 268.17,
+      "min_ms": 236.64,
+      "max_ms": 271.17
+    },
+    "desktop.dialogs_reopen": {
+      "samples_ms": [
+        1954.77,
+        1787.57,
+        1991.39
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 1954.77,
+      "min_ms": 1787.57,
+      "max_ms": 1991.39
+    },
+    "phone.cold_content_ready": {
+      "samples_ms": [
+        369.19,
+        369.83,
+        437.63
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 369.83,
+      "min_ms": 369.19,
+      "max_ms": 437.63
+    },
+    "phone.cold_settled": {
+      "samples_ms": [
+        521.57,
+        519.69,
+        590.24
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 521.57,
+      "min_ms": 519.69,
+      "max_ms": 590.24
+    },
+    "phone.warm_reload_settled": {
+      "samples_ms": [
+        450.27,
+        462.61,
+        463.61
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 462.61,
+      "min_ms": 450.27,
+      "max_ms": 463.61
+    },
+    "phone.next_entry": {
+      "samples_ms": [
+        72.32,
+        77.48,
+        79.08
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 77.48,
+      "min_ms": 72.32,
+      "max_ms": 79.08
+    },
+    "phone.previous_entry": {
+      "samples_ms": [
+        75.11,
+        74.46,
+        74.45
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 74.46,
+      "min_ms": 74.45,
+      "max_ms": 75.11
+    },
+    "phone.search_results": {
+      "samples_ms": [
+        186.72,
+        184.22,
+        179.5
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 184.22,
+      "min_ms": 179.5,
+      "max_ms": 186.72
+    },
+    "phone.search_typing_results": {
+      "samples_ms": [
+        281.91,
+        282.58,
+        282.21
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 282.21,
+      "min_ms": 281.91,
+      "max_ms": 282.58
+    },
+    "phone.reference_preview": {
+      "samples_ms": [
+        72.11,
+        70.76,
+        70.08
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 70.76,
+      "min_ms": 70.08,
+      "max_ms": 72.11
+    },
+    "phone.dark_theme": {
+      "samples_ms": [
+        86.36,
+        85.68,
+        86.34
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 86.34,
+      "min_ms": 85.68,
+      "max_ms": 86.36
+    },
+    "phone.entry_review_toggle": {
+      "samples_ms": [
+        510.6,
+        513.44,
+        528.74
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 513.44,
+      "min_ms": 510.6,
+      "max_ms": 528.74
+    },
+    "phone.library_drawer": {
+      "samples_ms": [
+        21.4,
+        26.86,
+        30.45
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 26.86,
+      "min_ms": 21.4,
+      "max_ms": 30.45
+    },
+    "phone.calendar_open": {
+      "samples_ms": [
+        846.35,
+        912.96,
+        918.6
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 912.96,
+      "min_ms": 846.35,
+      "max_ms": 918.6
+    },
+    "phone.calendar_next_month": {
+      "samples_ms": [
+        532.39,
+        565.24,
+        581.41
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 565.24,
+      "min_ms": 532.39,
+      "max_ms": 581.41
+    },
+    "phone.review_open": {
+      "samples_ms": [
+        552.85,
+        537.62,
+        546.41
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 546.41,
+      "min_ms": 537.62,
+      "max_ms": 552.85
+    },
+    "phone.review_reveal_synthetic": {
+      "samples_ms": [
+        139.8,
+        143.09,
+        141.12
+      ],
+      "api_requests": [
+        {
+          "POST /api/review/4841fdde3bb04f4093fa070ea19fa8d1%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/f78a675099474a2b903c12016b2495d4%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/1a4b758f8d0c40c79406aed851666955%3A%3Astatement/reveal": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 141.12,
+      "min_ms": 139.8,
+      "max_ms": 143.09
+    },
+    "phone.review_grade_synthetic": {
+      "samples_ms": [
+        281.45,
+        292.71,
+        293.44
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/4841fdde3bb04f4093fa070ea19fa8d1%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/f78a675099474a2b903c12016b2495d4%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/1a4b758f8d0c40c79406aed851666955%3A%3Astatement/grade": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 292.71,
+      "min_ms": 281.45,
+      "max_ms": 293.44
+    }
+  },
+  "browser_errors": [],
+  "screenshots": [
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-1-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-1-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-1-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-1-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-1-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-2-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-2-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-2-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-2-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-2-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-3-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-3-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-3-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-3-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/desktop-3-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-1-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-1-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-1-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-1-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-1-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-2-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-2-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-2-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-2-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-2-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-3-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-3-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-3-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-3-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-baseline-screenshots/phone-3-review.png"
+  ],
+  "library": {
+    "entries": 1454,
+    "folders": 242
+  },
+  "target": {
+    "entry_id": "e6acb5516fe947a9a7a92cd8cb0c643b",
+    "canonical_tag": "math:algebra:factorization-noetherian:th:euclidean-pid"
+  }
+}

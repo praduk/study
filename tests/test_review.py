@@ -87,6 +87,97 @@ def test_review_stats_from_snapshot_matches_queue_without_loading_answers(
     assert review.stats(snapshot)["due"] == expected_due
 
 
+@pytest.mark.parametrize("version", [1, 2])
+def test_review_queue_reads_only_prompt_entries_in_the_selected_batch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, version: int
+):
+    data = tmp_path / "data"
+    if version == 1:
+        data.mkdir()
+        (data / "library.json").write_text('{"version":1,"folders":[],"entries":[]}')
+    store = LibraryStore(data)
+    folder = store.create_folder("Algebra", "algebra", None)
+    definition = _entry(store, folder["id"], "Group", "group")
+    theorem = store.create_entry(
+        folder["id"], "th", "Orbit theorem", "orbit", "", "Theorem statement"
+    )
+    theorem = store.add_supplement(
+        theorem["id"], {"kind": "pf", "label": "Proof", "content": "Proof"}
+    )
+    problem = store.create_entry(
+        folder["id"], "pb", "Compute orbit", "compute-orbit", "", "Problem statement"
+    )
+    problem = store.add_supplement(
+        problem["id"], {"kind": "sl", "label": "Solution", "content": "Solution"}
+    )
+    review = ReviewEngine(store)
+    read_files: list[str] = []
+    read_content = store._read_content
+
+    def record_read(relative: str) -> str:
+        read_files.append(relative)
+        return read_content(relative)
+
+    monkeypatch.setattr(store, "_read_content", record_read)
+    first = review.queue(limit=2)
+    assert [card["entry_id"] for card in first] == [definition["id"], theorem["id"]]
+    assert read_files == []
+
+    batch = review.queue(limit=3)
+    assert [card["mode"] for card in batch] == ["statement", "statement", "proof-plan"]
+    assert batch[-1]["prompt_body"] == "Theorem statement\n"
+    assert set(read_files) == {
+        variant["file"] for variant in theorem["formulations"] + theorem["supplements"]
+    }
+
+    # Grading the proof leaves its statement card due, but the queue should no
+    # longer load that theorem's answer family to emit its statement prompt.
+    attempt = review.reveal(
+        batch[-1]["id"], {"attempt": "Proof", "confidence": 2, "overt": True}
+    )
+    review.grade(batch[-1]["id"], attempt["attempt_id"], 2)
+    read_files.clear()
+    batch = review.queue(limit=3)
+    assert [card["entry_id"] for card in batch] == [
+        definition["id"], theorem["id"], problem["id"]
+    ]
+    assert batch[-1]["prompt_body"] == "Problem statement\n"
+    assert set(read_files) == {
+        variant["file"] for variant in problem["formulations"] + problem["supplements"]
+    }
+
+
+@pytest.mark.parametrize("version", [1, 2])
+def test_review_metadata_traversal_preserves_stable_authored_order_ties(
+    tmp_path: Path, version: int
+):
+    data = tmp_path / "data"
+    if version == 1:
+        data.mkdir()
+        (data / "library.json").write_text('{"version":1,"folders":[],"entries":[]}')
+    store = LibraryStore(data)
+    zulu = store.create_folder("Zulu", "zulu", None)
+    alpha = store.create_folder("Alpha", "alpha", None)
+    child = store.create_folder("Child", "child", zulu["id"])
+    for folder, titles in [(zulu, ("Zulu", "Alpha")), (alpha, ("Other",)),
+                           (child, ("Nested",))]:
+        for title in titles:
+            _entry(store, folder["id"], title, title.lower())
+    # Tied order values are valid; the reader tree's alphabetic tie breaker must
+    # not silently replace the queue's stable stored-order tie breaker.
+    paths = [data / "library.json"] if version == 1 else [
+        *data.rglob("_folder.json"), *data.rglob("_entry.json")
+    ]
+    for path in paths:
+        value = json.loads(path.read_text())
+        records = value["folders"] + value["entries"] if version == 1 else [value]
+        for record in records:
+            record["order" if version == 1 else "rank"] = 1
+        path.write_text(json.dumps(value))
+    expected = [entry["id"] for entry in store.ordered_entries(review_only=True)]
+    assert [card["entry_id"] for card in ReviewEngine(store).queue()] == expected
+
+
 def test_statement_prompts_name_the_definition_axiom_or_theorem(tmp_path: Path):
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Foundations", "foundations", None)

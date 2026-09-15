@@ -12,6 +12,7 @@ interface Props { open: boolean; macros: Record<string, string | (string | numbe
 function MacrosDialogSession({ open, macros, onClose }: Props) {
   const [text, setText] = useState(() => JSON.stringify(macros, null, 2));
   const [error, setError] = useState('');
+  if (!open) return null;
   const save = async () => {
     setError('');
     try {

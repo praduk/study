@@ -43,6 +43,8 @@ function MoveFolderDialogSession({ open, folder, folders, tree, onClose, onMove 
     () => folder ? descendantIds(folder.id, folders) : new Set<string>(),
     [folder, folders],
   );
+  // Closed dialogs must not rebuild the complete destination tree on reader updates.
+  if (!open) return null;
   const destination = folders.find((item) => item.id === destinationId);
   const nextNamespace = folder
     ? destination ? `${destination.namespace}:${folder.slug}` : folder.slug

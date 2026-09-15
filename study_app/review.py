@@ -594,7 +594,7 @@ class ReviewEngine:
 
     def _current_card_ids(self, snapshot: dict[str, Any] | None = None) -> set[str]:
         current: set[str] = set()
-        for entry in (snapshot or self.store.snapshot())["entries"]:
+        for entry in (snapshot or self.store.snapshot(include_tree=False))["entries"]:
             for mode in entry.get("review_modes", []):
                 if self.store.review_mode_available(entry, mode):
                     current.add(self.card_id(entry["id"], mode))
@@ -604,7 +604,7 @@ class ReviewEngine:
         """Compact stale review data after a live direct library edit."""
         with self._lock:
             current_cards = frozenset(self._current_card_ids(snapshot))
-            if current_cards != self._known_current_cards:
+            if current_cards != self._known_current_cards or self.store.pending_deletions():
                 self.prune_to_current_library(snapshot)
 
     def prune_to_current_library(
@@ -612,6 +612,10 @@ class ReviewEngine:
     ) -> dict[str, int]:
         """Remove review data for entries and review tasks that no longer exist."""
         with self._lock:
+            pending_deletions = self.store.pending_deletions()
+            deleted_entry_ids = {
+                entry_id for entry_ids in pending_deletions.values() for entry_id in entry_ids
+            }
             state = self._read()
             records: list[dict[str, Any]] = []
             _, _, replayed_changed = self._sync_state_with_log(
@@ -621,20 +625,27 @@ class ReviewEngine:
             )
             validated_log_signature = self._log_signature()
             current_cards = self._current_card_ids(snapshot)
+            # A committed deletion also clears historical state if the same
+            # authored ID was restored before cleanup could finish. A durable
+            # acknowledgment below retires that intent before new grading.
+            retained_card_ids = {
+                card_id for card_id in current_cards
+                if self.split_card_id(card_id)[0] not in deleted_entry_ids
+            }
             retained_records = [
-                record for record in records if record["card_id"] in current_cards
+                record for record in records if record["card_id"] in retained_card_ids
             ]
             removed_log_records = len(records) - len(retained_records)
 
             retained_cards = {
                 card_id: card
                 for card_id, card in state["cards"].items()
-                if card_id in current_cards
+                if card_id in retained_card_ids
             }
             retained_attempts = {
                 attempt_id: attempt
                 for attempt_id, attempt in state["pending_attempts"].items()
-                if attempt["card_id"] in current_cards
+                if attempt["card_id"] in retained_card_ids
             }
             removed_cards = len(state["cards"]) - len(retained_cards)
             removed_pending_attempts = (
@@ -644,6 +655,7 @@ class ReviewEngine:
             if not (removed_log_records or removed_cards or removed_pending_attempts):
                 if replayed_changed:
                     self._write(state)
+                self.store.complete_pending_deletions(pending_deletions)
                 self._calibration_verified = True
                 self._known_current_cards = frozenset(current_cards)
                 return {
@@ -686,6 +698,7 @@ class ReviewEngine:
                 self._calibration_verified = False
                 self._sync_state_with_log(state, force_rebuild=True)
             self._write(state)
+            self.store.complete_pending_deletions(pending_deletions)
             self._calibration_verified = True
             self._known_current_cards = frozenset(current_cards)
             return {
@@ -783,8 +796,10 @@ class ReviewEngine:
 
     def queue(self, include_not_due: bool = False, limit: int = 100) -> list[dict[str, Any]]:
         now = _now()
+        limit = max(1, limit)
         with self._lock:
-            self._prune_if_library_changed()
+            snapshot = self.store.snapshot(include_tree=False)
+            self._prune_if_library_changed(snapshot)
             state = self._read()
             _, _, changed = self._sync_state_with_log(state)
             if changed:
@@ -792,8 +807,8 @@ class ReviewEngine:
                 # atomic write, even if the browser never retries that request.
                 self._write(state)
             self._calibration_verified = True
-            queue: list[dict[str, Any]] = []
-            for entry in self.store.ordered_entries(review_only=True):
+            selected: list[tuple[dict[str, Any], str, dict[str, Any]]] = []
+            for entry in self._snapshot_ordered_entries(snapshot, review_only=True):
                 for mode in entry.get("review_modes") or self.store.default_review_modes(
                     entry["kind"]
                 ):
@@ -804,13 +819,26 @@ class ReviewEngine:
                     due_text = card_state.get("due_at")
                     due = datetime.fromisoformat(due_text) if due_text else None
                     if include_not_due or due is None or due <= now:
-                        prompt = self._prompt(entry, mode)
-                        prompt["due_at"] = due_text
-                        prompt["new"] = due is None
-                        prompt["repetitions"] = int(card_state.get("repetitions", 0))
-                        queue.append(prompt)
-                        if len(queue) >= limit:
-                            return queue
+                        selected.append((entry, mode, card_state))
+                        if len(selected) >= limit:
+                            break
+                if len(selected) >= limit:
+                    break
+
+            # Statement recall needs only metadata. Read prompt bodies for the
+            # selected theorem-proof and problem cards in one library lookup.
+            prompt_entries = self.store.get_entries(
+                entry["id"]
+                for entry, mode, _ in selected
+                if mode in {"solve", "proof-plan"}
+            )
+            queue: list[dict[str, Any]] = []
+            for entry, mode, card_state in selected:
+                prompt = self._prompt(prompt_entries.get(entry["id"], entry), mode)
+                prompt["due_at"] = card_state.get("due_at")
+                prompt["new"] = card_state.get("due_at") is None
+                prompt["repetitions"] = int(card_state.get("repetitions", 0))
+                queue.append(prompt)
             return queue
 
     @staticmethod
@@ -945,9 +973,10 @@ class ReviewEngine:
                     bucket["again_lapses"] += 1
 
         with self._lock:
-            self._prune_if_library_changed()
-            all_entries = self.store.ordered_entries(review_only=False)
-            active_entries = self.store.ordered_entries(review_only=True)
+            snapshot = self.store.snapshot(include_tree=False)
+            self._prune_if_library_changed(snapshot)
+            all_entries = self._snapshot_ordered_entries(snapshot)
+            active_entries = self._snapshot_ordered_entries(snapshot, review_only=True)
             entry_by_id = {entry["id"]: entry for entry in all_entries}
             active_entry_ids = {entry["id"] for entry in active_entries}
             authored_order = {
@@ -1062,25 +1091,40 @@ class ReviewEngine:
         }
 
     @staticmethod
-    def _snapshot_review_entries(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
+    def _snapshot_ordered_entries(
+        snapshot: dict[str, Any], *, review_only: bool = False
+    ) -> list[dict[str, Any]]:
+        """Traverse metadata in the same stable authored order as ordered_entries."""
+        children: dict[str | None, list[dict[str, Any]]] = {}
+        entries_by_folder: dict[str, list[dict[str, Any]]] = {}
+        for folder in snapshot["folders"]:
+            children.setdefault(folder.get("parent_id"), []).append(folder)
+        for entry in snapshot["entries"]:
+            entries_by_folder.setdefault(entry["folder_id"], []).append(entry)
+        for folders in children.values():
+            folders.sort(key=lambda folder: folder.get("order", 0))
+        for folder_entries in entries_by_folder.values():
+            folder_entries.sort(key=lambda entry: entry.get("order", 0))
+
         entries: list[dict[str, Any]] = []
-
-        def visit(nodes: list[dict[str, Any]], parent_enabled: bool) -> None:
-            for node in nodes:
-                enabled = parent_enabled and bool(node.get("review_enabled", True))
-                if enabled:
-                    entries.extend(
-                        entry for entry in node.get("entries", [])
-                        if entry.get("review_enabled", True)
-                    )
-                visit(node.get("children", []), enabled)
-
-        visit(snapshot["tree"], True)
+        pending = [(folder, True) for folder in reversed(children.get(None, []))]
+        while pending:
+            folder, parent_enabled = pending.pop()
+            enabled = parent_enabled and bool(folder.get("review_enabled", True))
+            if not review_only or enabled:
+                entries.extend(
+                    entry for entry in entries_by_folder.get(folder["id"], [])
+                    if not review_only or entry.get("review_enabled", True)
+                )
+            pending.extend(
+                (child, enabled)
+                for child in reversed(children.get(folder["id"], []))
+            )
         return entries
 
     def stats(self, snapshot: dict[str, Any] | None = None) -> dict[str, Any]:
         with self._lock:
-            snapshot = snapshot or self.store.snapshot()
+            snapshot = snapshot or self.store.snapshot(include_tree=False)
             self._prune_if_library_changed(snapshot)
             state = self._read()
             _, calibration, changed = self._sync_state_with_log(state)
@@ -1089,7 +1133,7 @@ class ReviewEngine:
             self._calibration_verified = True
             now = _now()
             due = 0
-            for entry in self._snapshot_review_entries(snapshot):
+            for entry in self._snapshot_ordered_entries(snapshot, review_only=True):
                 modes = entry.get("review_modes") or self.store.default_review_modes(
                     entry["kind"]
                 )

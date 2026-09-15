@@ -67,6 +67,7 @@ test('only successful content-changing API calls refresh mounted library reads',
     await api('/api/entries/one/content/two', { method: 'PUT', body: '{}' });
     assert.equal(getLibraryReadVersion(), before + 1);
     await api('/api/folders/one', { method: 'PATCH', body: '{"review_enabled":true}' });
+    await api('/api/entries/one?include_review_stats=true', { method: 'PATCH', body: '{"review_enabled":false}' });
     await api('/api/review/grade', { method: 'POST', body: '{}' });
     await api('/api/entries/one');
     assert.equal(updates, 1);
@@ -76,6 +77,8 @@ test('only successful content-changing API calls refresh mounted library reads',
   } finally { globalThis.fetch = originalFetch; unsubscribe(); }
   assert.equal(changesLibraryReads('/api/git/pull', { method: 'POST' }), true);
   assert.equal(changesLibraryReads('/api/folders/one', { method: 'PATCH', body: '{"slug":"new"}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"review_enabled":false,"title":"New title"}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"review_enabled":"false"}' }), true);
 });
 
 test('linked-item pagination keeps authored order and rejects a changed snapshot', () => {
@@ -117,4 +120,27 @@ test('related writes refresh readers once, after completion or partial failure',
     }), /failed/);
     assert.equal(updates, 2, 'a failed-only batch changes no successful-read state');
   } finally { globalThis.fetch = originalFetch; unsubscribe(); }
+});
+
+test('deletion skips the unused library payload while preserving recursion and explicit options', async () => {
+  const originalFetch = globalThis.fetch;
+  const requested = [];
+  globalThis.fetch = async (path) => {
+    requested.push(path);
+    return new Response('{}', { status: 200 });
+  };
+  try {
+    await api('/api/entries/one', { method: 'DELETE' });
+    await api('/api/folders/one?recursive=true', { method: 'DELETE' });
+    await api('/api/folders/one?include_library=true', { method: 'DELETE' });
+    await api('/api/entries/one');
+    await api('/api/entries/one/content/two', { method: 'DELETE' });
+    assert.deepEqual(requested, [
+      '/api/entries/one?include_library=false',
+      '/api/folders/one?recursive=true&include_library=false',
+      '/api/folders/one?include_library=true',
+      '/api/entries/one',
+      '/api/entries/one/content/two',
+    ]);
+  } finally { globalThis.fetch = originalFetch; }
 });

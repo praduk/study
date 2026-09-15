@@ -4,6 +4,7 @@ import test from 'node:test';
 import {
   buildLibraryTree,
   hydrateBootstrap,
+  updateBootstrapEntryReview,
   updateBootstrapFolder,
 } from '../lib/library-tree.ts';
 
@@ -171,4 +172,21 @@ test('entry preferences update the tree without changing folder preferences or o
   assert.equal(entryReviewStatus(entries[0], folders), 'Included in review');
   assert.equal(entryReviewStatus(entries[0], [{ ...folders[0], review_enabled: false }, folders[1]]), 'Paused by folder: Parent');
   assert.equal(entryReviewStatus({ ...entries[0], kind: 'pb', review_modes: [] }, folders), 'Needs a solution before review');
+});
+
+test('entry preferences preserve unrelated tree branches and unchanged snapshots', () => {
+  const folders = [folder('root', 'Root', 0), folder('child', 'Child', 0, 'root'), folder('sibling', 'Sibling', 1, 'root'), folder('other', 'Other', 1)];
+  const entries = [entry('one', 'child', 'One', 0), entry('two', 'child', 'Two', 1), entry('three', 'sibling', 'Three', 0)];
+  const original = hydrateBootstrap(compactPayload(folders, entries));
+  const updated = updateBootstrapEntryReview(original, 'one', false);
+
+  assert.strictEqual(updated.folders, original.folders);
+  assert.strictEqual(updated.tree[1], original.tree[1]);
+  assert.strictEqual(updated.tree[0].children[1], original.tree[0].children[1]);
+  assert.strictEqual(updated.tree[0].entries, original.tree[0].entries);
+  assert.strictEqual(updated.tree[0].children[0].children, original.tree[0].children[0].children);
+  assert.strictEqual(updated.tree[0].children[0].entries[1], entries[1]);
+  assert.strictEqual(updated.tree[0].children[0].entries[0], updated.entries[0]);
+  assert.strictEqual(updateBootstrapEntryReview(updated, 'one', false), updated);
+  assert.strictEqual(updateBootstrapEntryReview(updated, 'missing', false), updated);
 });

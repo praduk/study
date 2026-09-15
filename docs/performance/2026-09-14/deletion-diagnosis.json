@@ -1,0 +1,31 @@
+{
+  "method": "Unprofiled sequential app-equivalent deletion phases on disposable current-data copy; existing startup review cleanup performed first. Single sample per case.",
+  "initial_entries": 1454,
+  "initial_reviewed_existing_entries": 17,
+  "initial_log_records": 23,
+  "cases": {
+    "unreviewed": {
+      "validate_log_ms": 9.758,
+      "store_delete_entry_ms": 2661.162,
+      "prune_to_current_library_ms": 1112.961,
+      "response_snapshot_ms": 52.866,
+      "response_encoding_ms": 100.733,
+      "total_ms": 3937.48,
+      "response_bytes": 2893365
+    },
+    "reviewed": {
+      "validate_log_ms": 10.028,
+      "store_delete_entry_ms": 2775.857,
+      "prune_to_current_library_ms": 1129.261,
+      "response_snapshot_ms": 54.862,
+      "response_encoding_ms": 151.333,
+      "total_ms": 4121.341,
+      "response_bytes": 2891904
+    }
+  },
+  "warm_prune_profile": {
+    "total_ms": 69,
+    "current_card_ids_including_metadata_snapshot_ms": 66,
+    "unprofiled_wall_time_measured": false
+  }
+}

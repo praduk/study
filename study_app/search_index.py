@@ -142,6 +142,8 @@ class LibrarySearchIndex:
         library: dict[str, Any],
         folder_namespaces: dict[str, str],
         content_by_path: dict[str, str],
+        *,
+        previous: LibrarySearchIndex | None = None,
     ):
         self.revision = uuid.uuid4().hex
         self._incoming_by_entry: dict[str, tuple[dict[str, Any], ...]] | None = None
@@ -307,10 +309,20 @@ class LibrarySearchIndex:
             for reference, rows in reference_rank_targets.items()
         }
         self.entry_postings = self._build_postings(
-            {key: document.search_text for key, document in self.entry_documents.items()}
+            {key: document.search_text for key, document in self.entry_documents.items()},
+            previous_documents=(
+                {key: document.search_text for key, document in previous.entry_documents.items()}
+                if previous is not None else None
+            ),
+            previous_postings=previous.entry_postings if previous is not None else None,
         )
         self.target_postings = self._build_postings(
-            {key: document.search_text for key, document in self.target_documents.items()}
+            {key: document.search_text for key, document in self.target_documents.items()},
+            previous_documents=(
+                {key: document.search_text for key, document in previous.target_documents.items()}
+                if previous is not None else None
+            ),
+            previous_postings=previous.target_postings if previous is not None else None,
         )
         # These wrappers are per immutable index snapshot. They are thread-safe,
         # bounded, and disappear with the snapshot after any library change.
@@ -455,12 +467,57 @@ class LibrarySearchIndex:
         return (target.authored_order, target.canonical_tag)
 
     @staticmethod
-    def _build_postings(documents: dict[str, str]) -> dict[str, frozenset[str]]:
-        postings: dict[str, set[str]] = defaultdict(set)
+    def _build_postings(
+        documents: dict[str, str],
+        *,
+        previous_documents: dict[str, str] | None = None,
+        previous_postings: dict[str, frozenset[str]] | None = None,
+    ) -> dict[str, frozenset[str]]:
+        if not documents:
+            return {}
+        if previous_documents is not None and previous_postings is not None:
+            updates: list[tuple[str, str | None, str | None]] = []
+            changed_text_size = 0
+            for key in previous_documents.keys() | documents.keys():
+                old_text = previous_documents.get(key)
+                new_text = documents.get(key)
+                if old_text != new_text:
+                    updates.append((key, old_text, new_text))
+                    changed_text_size += len(old_text or "") + len(new_text or "")
+            # Incremental changes tokenize both the old and new text. Estimate
+            # that work by character count and prefer a fresh build when a broad
+            # rename/replacement would tokenize at least as much as all new text.
+            if changed_text_size >= sum(map(len, documents.values())):
+                return LibrarySearchIndex._build_postings(documents)
+            # Only posting membership is reusable. All metadata, scope buckets,
+            # incoming links and query caches belong to the new snapshot above.
+            # Copy the mapping and replace changed immutable sets; never mutate
+            # a posting set still used by a reader of the previous snapshot.
+            postings = previous_postings.copy()
+            changed: dict[str, set[str]] = {}
+            for key, old_text, new_text in updates:
+                old_grams = _trigrams(old_text) if old_text is not None else frozenset()
+                new_grams = _trigrams(new_text) if new_text is not None else frozenset()
+                for gram in old_grams - new_grams:
+                    if gram not in changed:
+                        changed[gram] = set(postings[gram])
+                    changed[gram].discard(key)
+                for gram in new_grams - old_grams:
+                    if gram not in changed:
+                        changed[gram] = set(postings.get(gram, ()))
+                    changed[gram].add(key)
+            for gram, keys in changed.items():
+                if keys:
+                    postings[gram] = frozenset(keys)
+                else:
+                    postings.pop(gram, None)
+            return postings
+
+        memberships: dict[str, set[str]] = defaultdict(set)
         for key, text in documents.items():
             for trigram in _trigrams(text):
-                postings[trigram].add(key)
-        return {trigram: frozenset(keys) for trigram, keys in postings.items()}
+                memberships[trigram].add(key)
+        return {trigram: frozenset(keys) for trigram, keys in memberships.items()}
 
     @staticmethod
     def _posting_candidates(

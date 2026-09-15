@@ -1,0 +1,1027 @@
+{
+  "method": "Chromium; fresh context per sample; persistent prewarmed local server; disposable data copy",
+  "source_root": "/Users/pradu/git/study",
+  "git_root": "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/baseline",
+  "samples_per_viewport": 3,
+  "readiness_poll_ms": 10,
+  "search_key_delay_ms": 20,
+  "focus": "everyday",
+  "actions": {
+    "desktop.cold_content_ready": {
+      "samples_ms": [
+        469.62,
+        305.66,
+        298.98
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 305.66,
+      "min_ms": 298.98,
+      "max_ms": 469.62
+    },
+    "desktop.cold_settled": {
+      "samples_ms": [
+        898.35,
+        435.13,
+        430.61
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 435.13,
+      "min_ms": 430.61,
+      "max_ms": 898.35
+    },
+    "desktop.warm_reload_settled": {
+      "samples_ms": [
+        296.41,
+        306.43,
+        310.05
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 306.43,
+      "min_ms": 296.41,
+      "max_ms": 310.05
+    },
+    "desktop.next_entry": {
+      "samples_ms": [
+        65.23,
+        66.21,
+        59.43
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 65.23,
+      "min_ms": 59.43,
+      "max_ms": 66.21
+    },
+    "desktop.previous_entry": {
+      "samples_ms": [
+        54.56,
+        54.53,
+        53.92
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 54.53,
+      "min_ms": 53.92,
+      "max_ms": 54.56
+    },
+    "desktop.search_results": {
+      "samples_ms": [
+        184.19,
+        184.92,
+        186.94
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 184.92,
+      "min_ms": 184.19,
+      "max_ms": 186.94
+    },
+    "desktop.search_typing_results": {
+      "samples_ms": [
+        288.76,
+        283.51,
+        283.67
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 283.67,
+      "min_ms": 283.51,
+      "max_ms": 288.76
+    },
+    "desktop.reference_preview": {
+      "samples_ms": [
+        260.93,
+        261.32,
+        260.72
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 260.93,
+      "min_ms": 260.72,
+      "max_ms": 261.32
+    },
+    "desktop.dark_theme": {
+      "samples_ms": [
+        53.09,
+        52.9,
+        53.37
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 53.09,
+      "min_ms": 52.9,
+      "max_ms": 53.37
+    },
+    "desktop.entry_review_toggle": {
+      "samples_ms": [
+        397.18,
+        401.75,
+        334.56
+      ],
+      "api_requests": [
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 397.18,
+      "min_ms": 334.56,
+      "max_ms": 401.75
+    },
+    "desktop.folder_review_toggle": {
+      "samples_ms": [
+        374.8,
+        406.1,
+        404.89
+      ],
+      "api_requests": [
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        },
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        },
+        {
+          "PATCH /api/folders/44da2cf663364e53a2546fea207a3693": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 404.89,
+      "min_ms": 374.8,
+      "max_ms": 406.1
+    },
+    "desktop.library_resize": {
+      "samples_ms": [
+        25.48,
+        13.84,
+        11.72
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 13.84,
+      "min_ms": 11.72,
+      "max_ms": 25.48
+    },
+    "desktop.library_hide": {
+      "samples_ms": [
+        20.74,
+        20.71,
+        20.35
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 20.71,
+      "min_ms": 20.35,
+      "max_ms": 20.74
+    },
+    "desktop.library_expand_collapse": {
+      "samples_ms": [
+        29.33,
+        20.9,
+        22.24
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 22.24,
+      "min_ms": 20.9,
+      "max_ms": 29.33
+    },
+    "desktop.calendar_open": {
+      "samples_ms": [
+        436.51,
+        438.27,
+        423.27
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 436.51,
+      "min_ms": 423.27,
+      "max_ms": 438.27
+    },
+    "desktop.calendar_next_month": {
+      "samples_ms": [
+        86.3,
+        79.64,
+        86.19
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 86.19,
+      "min_ms": 79.64,
+      "max_ms": 86.3
+    },
+    "desktop.review_open": {
+      "samples_ms": [
+        385.33,
+        388.26,
+        393.14
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 388.26,
+      "min_ms": 385.33,
+      "max_ms": 393.14
+    },
+    "desktop.review_reveal_synthetic": {
+      "samples_ms": [
+        80.74,
+        83.45,
+        142.5
+      ],
+      "api_requests": [
+        {
+          "POST /api/review/36509e47a0824aa8b306952de35cc0b9%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/6faa1cf4e976491a8dcbda4bc9fbd0d6%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/5f3ded579ddf4307b65b78fa23f6cd37%3A%3Astatement/reveal": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 83.45,
+      "min_ms": 80.74,
+      "max_ms": 142.5
+    },
+    "desktop.review_grade_synthetic": {
+      "samples_ms": [
+        99.49,
+        101.57,
+        102.51
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/36509e47a0824aa8b306952de35cc0b9%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/6faa1cf4e976491a8dcbda4bc9fbd0d6%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/5f3ded579ddf4307b65b78fa23f6cd37%3A%3Astatement/grade": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 101.57,
+      "min_ms": 99.49,
+      "max_ms": 102.51
+    },
+    "desktop.editor_open": {
+      "samples_ms": [
+        340.31,
+        344.55,
+        340.11
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 340.31,
+      "min_ms": 340.11,
+      "max_ms": 344.55
+    },
+    "desktop.editor_title_save": {
+      "samples_ms": [
+        835.84,
+        787.51,
+        828.27
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 828.27,
+      "min_ms": 787.51,
+      "max_ms": 835.84
+    },
+    "desktop.editor_reopen": {
+      "samples_ms": [
+        33.94,
+        24.86,
+        26.84
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 26.84,
+      "min_ms": 24.86,
+      "max_ms": 33.94
+    },
+    "desktop.editor_body_save": {
+      "samples_ms": [
+        675.94,
+        795.36,
+        809.48
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 2,
+          "PUT /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/content/8e8397e744a5425bbd55cfe6e3345e3a": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 795.36,
+      "min_ms": 675.94,
+      "max_ms": 809.48
+    },
+    "desktop.editor_unchanged_save": {
+      "samples_ms": [
+        194.4,
+        270.6,
+        266.55
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 266.55,
+      "min_ms": 194.4,
+      "max_ms": 270.6
+    },
+    "desktop.dialogs_reopen": {
+      "samples_ms": [
+        1813.95,
+        2004.59,
+        1922.54
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 1922.54,
+      "min_ms": 1813.95,
+      "max_ms": 2004.59
+    },
+    "phone.cold_content_ready": {
+      "samples_ms": [
+        275.92,
+        278.73,
+        271.92
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 275.92,
+      "min_ms": 271.92,
+      "max_ms": 278.73
+    },
+    "phone.cold_settled": {
+      "samples_ms": [
+        417.47,
+        420.43,
+        421.39
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 420.43,
+      "min_ms": 417.47,
+      "max_ms": 421.39
+    },
+    "phone.warm_reload_settled": {
+      "samples_ms": [
+        283.7,
+        283.15,
+        286.79
+      ],
+      "api_requests": [
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        },
+        {
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1,
+          "GET /api/session": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 283.7,
+      "min_ms": 283.15,
+      "max_ms": 286.79
+    },
+    "phone.next_entry": {
+      "samples_ms": [
+        62.58,
+        56.46,
+        53.08
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5": 1,
+          "GET /api/entries/2c5a82ac261945e6b9aeab065669a8c5/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 56.46,
+      "min_ms": 53.08,
+      "max_ms": 62.58
+    },
+    "phone.previous_entry": {
+      "samples_ms": [
+        61.58,
+        52.02,
+        53.22
+      ],
+      "api_requests": [
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1,
+          "GET /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b/linked-items": 1,
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 53.22,
+      "min_ms": 52.02,
+      "max_ms": 61.58
+    },
+    "phone.search_results": {
+      "samples_ms": [
+        184.04,
+        184.68,
+        182.2
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 184.04,
+      "min_ms": 182.2,
+      "max_ms": 184.68
+    },
+    "phone.search_typing_results": {
+      "samples_ms": [
+        279.85,
+        283.1,
+        274.22
+      ],
+      "api_requests": [
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        },
+        {
+          "GET /api/search": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 279.85,
+      "min_ms": 274.22,
+      "max_ms": 283.1
+    },
+    "phone.reference_preview": {
+      "samples_ms": [
+        68.72,
+        67.89,
+        69.12
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 68.72,
+      "min_ms": 67.89,
+      "max_ms": 69.12
+    },
+    "phone.dark_theme": {
+      "samples_ms": [
+        83.55,
+        83.1,
+        75.31
+      ],
+      "api_requests": [
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        },
+        {
+          "GET /api/references/resolve-batch": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 83.1,
+      "min_ms": 75.31,
+      "max_ms": 83.55
+    },
+    "phone.entry_review_toggle": {
+      "samples_ms": [
+        333.06,
+        391.66,
+        333.2
+      ],
+      "api_requests": [
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        },
+        {
+          "PATCH /api/entries/e6acb5516fe947a9a7a92cd8cb0c643b": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 333.2,
+      "min_ms": 333.06,
+      "max_ms": 391.66
+    },
+    "phone.library_drawer": {
+      "samples_ms": [
+        29.34,
+        34.13,
+        31.27
+      ],
+      "api_requests": [
+        {},
+        {},
+        {}
+      ],
+      "n": 3,
+      "median_ms": 31.27,
+      "min_ms": 29.34,
+      "max_ms": 34.13
+    },
+    "phone.calendar_open": {
+      "samples_ms": [
+        457.86,
+        453.2,
+        454.49
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 454.49,
+      "min_ms": 453.2,
+      "max_ms": 457.86
+    },
+    "phone.calendar_next_month": {
+      "samples_ms": [
+        69.17,
+        75.97,
+        74.28
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        },
+        {
+          "GET /api/review/calendar": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 74.28,
+      "min_ms": 69.17,
+      "max_ms": 75.97
+    },
+    "phone.review_open": {
+      "samples_ms": [
+        406.17,
+        405.81,
+        408.48
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        },
+        {
+          "GET /api/review/queue": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 406.17,
+      "min_ms": 405.81,
+      "max_ms": 408.48
+    },
+    "phone.review_reveal_synthetic": {
+      "samples_ms": [
+        82.95,
+        80.54,
+        80.68
+      ],
+      "api_requests": [
+        {
+          "POST /api/review/5996d66c8b6a40b59b292caaf0d9e869%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/5bc023329f494e9d9792752cf7abd0b1%3A%3Astatement/reveal": 1
+        },
+        {
+          "POST /api/review/46506dac1fa2405c8c923fe5f6315fdb%3A%3Astatement/reveal": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 80.68,
+      "min_ms": 80.54,
+      "max_ms": 82.95
+    },
+    "phone.review_grade_synthetic": {
+      "samples_ms": [
+        167.94,
+        108.59,
+        110.35
+      ],
+      "api_requests": [
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/5996d66c8b6a40b59b292caaf0d9e869%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/5bc023329f494e9d9792752cf7abd0b1%3A%3Astatement/grade": 1
+        },
+        {
+          "GET /api/review/queue": 1,
+          "POST /api/review/46506dac1fa2405c8c923fe5f6315fdb%3A%3Astatement/grade": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 110.35,
+      "min_ms": 108.59,
+      "max_ms": 167.94
+    }
+  },
+  "browser_errors": [],
+  "api_errors": [],
+  "screenshots": [
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-1-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-1-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-1-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-1-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-1-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-2-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-2-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-2-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-2-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-2-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-3-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-3-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-3-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-3-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/desktop-3-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-1-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-1-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-1-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-1-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-1-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-2-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-2-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-2-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-2-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-2-review.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-3-reader-light.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-3-reference.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-3-reader-dark.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-3-calendar.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-after-final-screenshots/phone-3-review.png"
+  ],
+  "library": {
+    "entries": 1454,
+    "folders": 242
+  },
+  "target": {
+    "entry_id": "e6acb5516fe947a9a7a92cd8cb0c643b",
+    "canonical_tag": "math:algebra:factorization-noetherian:th:euclidean-pid"
+  }
+}

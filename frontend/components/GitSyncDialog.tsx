@@ -24,6 +24,8 @@ function GitSyncDialogSession({ open, initial, onClose, onChanged, onPulled }: P
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
 
+  if (!open) return null;
+
   const refresh = async () => {
     const next = await api<GitStatus>('/api/git/status');
     setStatus(next); onChanged(next);

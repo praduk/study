@@ -1,0 +1,123 @@
+{
+  "method": "Chromium; fresh context per sample; persistent prewarmed local server; disposable data copy",
+  "source_root": "/Users/pradu/git/study",
+  "git_root": "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/baseline",
+  "samples_per_viewport": 3,
+  "readiness_poll_ms": 10,
+  "search_key_delay_ms": 20,
+  "focus": "deletion",
+  "actions": {
+    "desktop.delete_entry": {
+      "samples_ms": [
+        3386.68,
+        3428.28,
+        3380.54
+      ],
+      "api_requests": [
+        {
+          "DELETE /api/entries/efc414089d2442cabad6d8fc6e68f662": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/30ec225391a04287823d7e0bafd0a0de": 1,
+          "GET /api/entries/30ec225391a04287823d7e0bafd0a0de/linked-items": 1,
+          "GET /api/entries/efc414089d2442cabad6d8fc6e68f662/linked-items": 1
+        },
+        {
+          "DELETE /api/entries/d908e636c30040248172fbde39f8a104": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/0dd9462a5349474babf4996644dad2b3": 1,
+          "GET /api/entries/0dd9462a5349474babf4996644dad2b3/linked-items": 1,
+          "GET /api/entries/d908e636c30040248172fbde39f8a104/linked-items": 1
+        },
+        {
+          "DELETE /api/entries/00a298d6ec994dd6a198a6f70ff29252": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/00a298d6ec994dd6a198a6f70ff29252/linked-items": 1,
+          "GET /api/entries/5c41735c0ccc4d809ef3486f5c331e5f": 1,
+          "GET /api/entries/5c41735c0ccc4d809ef3486f5c331e5f/linked-items": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 3386.68,
+      "min_ms": 3380.54,
+      "max_ms": 3428.28
+    },
+    "desktop.delete_empty_folder": {
+      "samples_ms": [
+        3447.36,
+        3443.6,
+        3466.76
+      ],
+      "api_requests": [
+        {
+          "DELETE /api/folders/71fe29a5d6374a3ca8091123e0f8f554": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/30ec225391a04287823d7e0bafd0a0de/linked-items": 1
+        },
+        {
+          "DELETE /api/folders/34f73cfe7ac04222b91c1d5ae9c79996": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/0dd9462a5349474babf4996644dad2b3/linked-items": 1
+        },
+        {
+          "DELETE /api/folders/bc517b73d13e44cdb74b7ef414636a1c": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/5c41735c0ccc4d809ef3486f5c331e5f/linked-items": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 3447.36,
+      "min_ms": 3443.6,
+      "max_ms": 3466.76
+    },
+    "desktop.delete_folder_subtree": {
+      "samples_ms": [
+        3502.97,
+        3390.2,
+        3447.88
+      ],
+      "api_requests": [
+        {
+          "DELETE /api/folders/3e7532d730af4eab876af28993303cf5": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/30ec225391a04287823d7e0bafd0a0de/linked-items": 1
+        },
+        {
+          "DELETE /api/folders/f59f5e69d13049e8a4608e8a8476cefe": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/0dd9462a5349474babf4996644dad2b3/linked-items": 1
+        },
+        {
+          "DELETE /api/folders/28bdc5ef7ec44e3198dedf080285a10c": 1,
+          "GET /api/bootstrap": 1,
+          "GET /api/entries/5c41735c0ccc4d809ef3486f5c331e5f/linked-items": 1
+        }
+      ],
+      "n": 3,
+      "median_ms": 3447.88,
+      "min_ms": 3390.2,
+      "max_ms": 3502.97
+    }
+  },
+  "browser_errors": [],
+  "api_errors": [],
+  "screenshots": [
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-1-deleted-entry.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-1-deleted-empty-folder.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-1-deleted-subtree.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-2-deleted-entry.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-2-deleted-empty-folder.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-2-deleted-subtree.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-3-deleted-entry.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-3-deleted-empty-folder.png",
+    "/private/var/folders/ky/8sm_0b3x1jz2c_nqlz0gw39w0000gn/T/study-performance-yb_77jkj/results/browser-deletion-after-screenshots/desktop-3-deleted-subtree.png"
+  ],
+  "library": {
+    "entries": 1454,
+    "folders": 242
+  },
+  "target": {
+    "entry_id": "e6acb5516fe947a9a7a92cd8cb0c643b",
+    "canonical_tag": "math:algebra:factorization-noetherian:th:euclidean-pid"
+  },
+  "deletion_method": "Desktop confirmation submit to dialog close, correct surviving selection, math/backlinks settled; only synthetic records are deleted."
+}

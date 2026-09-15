@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import pytest
 from fastapi.testclient import TestClient
 
 import study_app.app as app_module
@@ -14,6 +15,36 @@ def _client(app):
         base_url="http://127.0.0.1",
         client=("127.0.0.1", 50000),
     )
+
+
+@pytest.mark.parametrize("item_type", ["entries", "folders"])
+def test_delete_can_omit_discarded_library_without_building_tree(
+    settings_factory, monkeypatch, item_type,
+):
+    app = create_app(settings_factory(), local_mode=True)
+    store = app.state.store
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Definition")
+    survivor = store.create_entry(folder["id"], "df", "Ring", "ring", "", "Definition")
+    empty_folder = store.create_folder("Empty", "empty", None)
+    item_id = entry["id"] if item_type == "entries" else empty_folder["id"]
+
+    def unexpected_tree(*args, **kwargs):
+        raise AssertionError("omitted deletion library must not construct a nested tree")
+
+    monkeypatch.setattr(store, "_tree", unexpected_tree)
+    with _client(app) as client:
+        response = client.delete(
+            f"/api/{item_type}/{item_id}?include_library=false", headers=LOCAL_HEADERS,
+        )
+        refreshed = client.get("/api/bootstrap?compact=true")
+
+    assert response.status_code == 200
+    assert set(response.json()) == {"ok", "deletion", "review_cleanup"}
+    assert response.json()["ok"] is True
+    assert refreshed.status_code == 200
+    assert survivor["id"] in {entry["id"] for entry in refreshed.json()["entries"]}
+    assert item_id not in {item["id"] for item in refreshed.json()[item_type]}
 
 
 def test_compact_bootstrap_omits_only_the_derived_tree(settings_factory, monkeypatch):
@@ -37,6 +68,21 @@ def test_compact_bootstrap_omits_only_the_derived_tree(settings_factory, monkeyp
     assert {
         key: value for key, value in full_payload.items() if key != "tree"
     } == compact_payload
+
+
+def test_compact_bootstrap_does_not_construct_discarded_tree(settings_factory, monkeypatch):
+    app = create_app(settings_factory(), local_mode=True)
+    folder = app.state.store.create_folder("Algebra", "algebra", None)
+    app.state.store.create_entry(folder["id"], "df", "Group", "group", "", "Definition")
+
+    def unexpected_tree(*args, **kwargs):
+        raise AssertionError("compact bootstrap must not construct the nested library tree")
+
+    monkeypatch.setattr(app.state.store, "_tree", unexpected_tree)
+    with _client(app) as client:
+        response = client.get("/api/bootstrap?compact=true")
+    assert response.status_code == 200
+    assert len(response.json()["entries"]) == 1
 
 
 def test_folder_patch_keeps_the_legacy_response_unless_review_stats_are_requested(

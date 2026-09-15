@@ -225,11 +225,8 @@ class GitRepository:
         if problem:
             return {"available": False, "message": problem}
 
-        branch = (
-            self._run(["branch", "--show-current"], check=False).stdout.strip() or "detached HEAD"
-        )
         status_result = self._run(
-            ["status", "--porcelain=v1", "-z", "--no-renames", "--untracked-files=all"],
+            ["status", "--porcelain=v2", "--branch", "-z", "--no-renames", "--untracked-files=all"],
             check=False,
         )
         if status_result.returncode != 0:
@@ -240,18 +237,65 @@ class GitRepository:
 
         changed: list[dict[str, str]] = []
         data_changed: list[dict[str, str]] = []
+        branch = "detached HEAD"
+        upstream = ""
+        ahead = behind = None
+        invalid_status = {"available": False, "message": "Git returned an invalid status record"}
         for record in status_result.stdout.split("\0"):
-            if len(record) < 4:
+            if record.startswith("# branch.head "):
+                value = record.removeprefix("# branch.head ")
+                branch = "detached HEAD" if value == "(detached)" else value
                 continue
-            item = {"status": record[:2], "path": record[3:]}
+            if record.startswith("# branch.upstream "):
+                upstream = record.removeprefix("# branch.upstream ")
+                continue
+            if record.startswith("# branch.ab "):
+                pieces = record.removeprefix("# branch.ab ").split()
+                if (
+                    len(pieces) != 2
+                    or not pieces[0].startswith("+")
+                    or not pieces[1].startswith("-")
+                    or not pieces[0][1:].isascii()
+                    or not pieces[1][1:].isascii()
+                    or not pieces[0][1:].isdigit()
+                    or not pieces[1][1:].isdigit()
+                ):
+                    return invalid_status
+                ahead, behind = int(pieces[0]), -int(pieces[1])
+                continue
+            if not record or record.startswith("# "):
+                continue
+            if record.startswith("? "):
+                item = {"status": "??", "path": record[2:]}
+            elif record.startswith(("1 ", "u ")):
+                # Split only the fixed fields: filenames can contain spaces,
+                # tabs and newlines. --no-renames avoids two-path records.
+                field_count = 9 if record.startswith("1 ") else 11
+                fields = record.split(" ", field_count - 1)
+                if (
+                    len(fields) != field_count
+                    or not all(fields)
+                    or len(fields[1]) != 2
+                    or any(code not in ".MADRCUT" for code in fields[1])
+                ):
+                    return invalid_status
+                item = {"status": fields[1].replace(".", " "), "path": fields[-1]}
+            else:
+                return {"available": False, "message": "Git returned an unsupported status record"}
+            if not item["path"]:
+                return invalid_status
             changed.append(item)
             if self._is_authored_content(item["path"]):
                 data_changed.append(item)
 
-        upstream_result = self._run(
-            ["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{upstream}"], check=False
-        )
-        upstream = upstream_result.stdout.strip() if upstream_result.returncode == 0 else ""
+        if upstream and ahead is None:
+            # A configured but deleted upstream still appears in v2 headers.
+            # The missing counts can also mean an unborn local branch with a
+            # valid upstream, so verify only this uncommon ambiguous case.
+            exists = self._run(["rev-parse", "--verify", "@{upstream}"], check=False)
+            if exists.returncode != 0:
+                upstream = ""
+
         remote_name = ""
         remote = ""
         if branch != "detached HEAD":
@@ -264,14 +308,6 @@ class GitRepository:
                 ).stdout.strip()
                 remote = self._display_remote(remote)
 
-        ahead = behind = None
-        divergence = self._run(
-            ["rev-list", "--left-right", "--count", "@{upstream}...HEAD"], check=False
-        )
-        if divergence.returncode == 0:
-            pieces = divergence.stdout.split()
-            if len(pieces) == 2:
-                behind, ahead = (int(pieces[0]), int(pieces[1]))
         return {
             "available": True,
             "branch": branch,

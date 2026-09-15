@@ -35,6 +35,84 @@ def _initialize_repository(root: Path) -> None:
     _git(root, "config", "user.email", "study-tests@example.invalid")
 
 
+def test_git_status_preserves_filenames_and_legacy_change_codes(tmp_path):
+    root = tmp_path / "repository"
+    _initialize_repository(root)
+    (root / "data").mkdir()
+    for name in ("staged.md", "removed.md", "space tab\tnewline\n.md"):
+        (root / "data" / name).write_text("initial\n")
+    _git(root, "add", ".")
+    _git(root, "commit", "-m", "initial")
+    (root / "data" / "staged.md").write_text("staged\n")
+    _git(root, "add", "data/staged.md")
+    (root / "data" / "staged.md").write_text("staged and unstaged\n")
+    (root / "data" / "removed.md").unlink()
+    (root / "data" / "space tab\tnewline\n.md").write_text("changed\n")
+    (root / "data" / "untracked space.md").write_text("new\n")
+    status = GitRepository(root, root / "data").status()
+    # The helper strips initial whitespace, so obtain the exact byte stream here.
+    raw = subprocess.check_output(
+        ["git", "-C", str(root), "status", "--porcelain=v1", "-z", "--no-renames", "--untracked-files=all"],
+        text=True,
+    )
+    assert status["changed"] == [
+        {"status": item[:2], "path": item[3:]} for item in raw.split("\0") if item
+    ]
+    assert status["content_changed"] == status["changed"]
+    assert status["branch"] == "main"
+    assert status["upstream"] is None
+    assert status["ahead"] is None and status["behind"] is None
+
+
+def test_git_status_reports_tracking_divergence_detached_and_unborn(tmp_path):
+    root = tmp_path / "repository"
+    _initialize_repository(root)
+    repository = GitRepository(root, root / "data")
+    unborn = repository.status()
+    assert unborn["available"] and unborn["branch"] == "main"
+    (root / "data").mkdir()
+    (root / "data" / "entry.md").write_text("initial\n")
+    _git(root, "add", ".")
+    _git(root, "commit", "-m", "initial")
+    _git(root, "branch", "tracking")
+    _git(root, "branch", "--set-upstream-to=tracking")
+    (root / "data" / "entry.md").write_text("local\n")
+    _git(root, "commit", "-am", "local")
+    tracked = repository.status()
+    assert (tracked["ahead"], tracked["behind"], tracked["upstream"]) == (1, 0, "tracking")
+    _git(root, "switch", "tracking")
+    (root / "data" / "entry.md").write_text("other\n")
+    _git(root, "commit", "-am", "other")
+    _git(root, "switch", "main")
+    tracked = repository.status()
+    assert (tracked["ahead"], tracked["behind"]) == (1, 1)
+    _git(root, "checkout", "--detach")
+    detached = repository.status()
+    assert detached["branch"] == "detached HEAD"
+    assert detached["upstream"] is None
+    assert detached["ahead"] is None and detached["behind"] is None
+
+
+def test_git_status_keeps_unmerged_paths_dirty(tmp_path):
+    root = tmp_path / "repository"
+    _initialize_repository(root)
+    (root / "data").mkdir()
+    (root / "data" / "entry.md").write_text("initial\n")
+    _git(root, "add", ".")
+    _git(root, "commit", "-m", "initial")
+    _git(root, "switch", "-c", "other")
+    (root / "data" / "entry.md").write_text("other\n")
+    _git(root, "commit", "-am", "other")
+    _git(root, "switch", "main")
+    (root / "data" / "entry.md").write_text("main\n")
+    _git(root, "commit", "-am", "main")
+    result = subprocess.run(["git", "-C", str(root), "merge", "other"], capture_output=True, check=False)
+    assert result.returncode != 0
+    status = GitRepository(root, root / "data").status()
+    assert status["dirty"] and status["content_dirty"]
+    assert status["changed"] == [{"status": "UU", "path": "data/entry.md"}]
+
+
 def _v1_store(data_dir: Path) -> LibraryStore:
     data_dir.mkdir(parents=True, exist_ok=True)
     (data_dir / "library.json").write_text(
@@ -867,3 +945,55 @@ def test_pdf_export_uses_only_vendored_mathjax(tmp_path: Path):
         raise
     assert target.read_bytes().startswith(b"%PDF-")
     assert target.stat().st_size > 1000
+
+
+def test_git_status_distinguishes_deleted_and_unborn_upstreams(tmp_path: Path):
+    root = tmp_path / "repo"
+    _initialize_repository(root)
+    (root / "data").mkdir()
+    (root / "data" / "item.md").write_text("Initial content\n")
+    _git(root, "add", ".")
+    _git(root, "commit", "-m", "Initial")
+    _git(root, "branch", "other")
+    _git(root, "branch", "--set-upstream-to=other")
+    repository = GitRepository(root, root / "data")
+    assert repository.status()["upstream"] == "other"
+    _git(root, "branch", "-D", "other")
+    missing = repository.status()
+    assert missing["upstream"] is None
+    assert missing["ahead"] is missing["behind"] is None
+
+    _git(root, "checkout", "--orphan", "unborn")
+    _git(root, "config", "branch.unborn.remote", ".")
+    _git(root, "config", "branch.unborn.merge", "refs/heads/main")
+    unborn = repository.status()
+    assert unborn["branch"] == "unborn"
+    assert unborn["upstream"] == "main"
+    assert unborn["ahead"] is unborn["behind"] is None
+
+
+@pytest.mark.parametrize("record", [
+    "1 .M N... truncated",
+    "u UU N... truncated",
+    "1 ?M N... 100644 100644 100644 deadbeef deadbeef data/item.md",
+    "1 .M N... 100644 100644 100644 deadbeef deadbeef ",
+    "? ",
+    "# branch.ab +? -?",
+    "# branch.ab +1",
+])
+def test_git_status_rejects_malformed_porcelain_records(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, record: str
+):
+    repository = GitRepository(tmp_path, tmp_path / "data")
+    monkeypatch.setattr(repository, "_repository_problem", lambda: None)
+    monkeypatch.setattr(
+        repository,
+        "_run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(
+            args, 0, stdout=f"# branch.head main\0{record}\0", stderr=""
+        ),
+    )
+    assert repository.status() == {
+        "available": False,
+        "message": "Git returned an invalid status record",
+    }

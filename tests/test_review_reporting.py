@@ -63,6 +63,41 @@ def test_read_only_stats_do_not_persist_derived_calibration(tmp_path):
     assert review.state_path.read_bytes() == before
 
 
+def test_calendar_uses_one_metadata_snapshot_without_reading_markdown(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+):
+    current = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    monkeypatch.setattr(review_module, "_now", lambda: current)
+    store = LibraryStore(tmp_path / "data")
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "th", "Orbit", "orbit", "", "Statement")
+    store.add_supplement(entry["id"], {"kind": "pf", "label": "Proof", "content": "Proof"})
+    review = ReviewEngine(store)
+    card = review.queue()[0]
+    attempt = review.reveal(
+        card["id"], {"attempt": "Statement", "confidence": 2, "overt": True}
+    )
+    review.grade(card["id"], attempt["attempt_id"], 2)
+    expected = review.calendar(start=current, end=current + timedelta(days=10))
+
+    def reject_answer_read(*_args, **_kwargs):
+        pytest.fail("review calendar must use metadata without loading Markdown answers")
+
+    snapshot = store.snapshot
+    calls: list[bool] = []
+
+    def record_snapshot(*, include_tree=True):
+        calls.append(include_tree)
+        return snapshot(include_tree=include_tree)
+
+    monkeypatch.setattr(store, "_read_content", reject_answer_read)
+    monkeypatch.setattr(store, "ordered_entries", reject_answer_read)
+    monkeypatch.setattr(store, "snapshot", record_snapshot)
+    actual = review.calendar(start=current, end=current + timedelta(days=10))
+    assert actual == expected
+    assert calls == [False]
+
+
 def test_calendar_api_reports_schedules_repeated_attempts_and_bayesian_diagnostics(
     settings_factory, monkeypatch: pytest.MonkeyPatch
 ):
@@ -218,7 +253,8 @@ def test_calendar_can_show_disabled_items_but_never_deleted_items(
     assert payload["statistics"]["attempts"] == 1
 
 
-def test_entry_delete_api_purges_review_state_and_log(settings_factory):
+@pytest.mark.parametrize("include_library", [True, False])
+def test_entry_delete_api_purges_review_state_and_log(settings_factory, include_library):
     app = create_app(settings_factory(), local_mode=True)
     folder = app.state.store.create_folder("Foundations", "foundations", None)
     entry = app.state.store.create_entry(
@@ -248,10 +284,13 @@ def test_entry_delete_api_purges_review_state_and_log(settings_factory):
         ).json()
 
         deleted = client.delete(
-            f"/api/entries/{entry['id']}", headers=LOCAL_HEADERS
+            f"/api/entries/{entry['id']}",
+            params={"include_library": str(include_library).lower()},
+            headers=LOCAL_HEADERS,
         )
 
     assert deleted.status_code == 200
+    assert ("library" in deleted.json()) is include_library
     assert deleted.json()["review_cleanup"] == {
         "removed_cards": 1,
         "removed_pending_attempts": 1,
@@ -266,7 +305,10 @@ def test_entry_delete_api_purges_review_state_and_log(settings_factory):
     assert app.state.review.log_path.read_bytes() == b""
 
 
-def test_recursive_folder_delete_api_purges_subtree_review_history(settings_factory):
+@pytest.mark.parametrize("include_library", [True, False])
+def test_recursive_folder_delete_api_purges_subtree_review_history(
+    settings_factory, include_library,
+):
     app = create_app(settings_factory(), local_mode=True)
     parent = app.state.store.create_folder("Parent", "parent", None)
     child = app.state.store.create_folder("Child", "child", parent["id"])
@@ -294,11 +336,12 @@ def test_recursive_folder_delete_api_purges_subtree_review_history(settings_fact
 
         deleted = client.delete(
             f"/api/folders/{parent['id']}",
-            params={"recursive": "true"},
+            params={"recursive": "true", "include_library": str(include_library).lower()},
             headers=LOCAL_HEADERS,
         )
 
     assert deleted.status_code == 200
+    assert ("library" in deleted.json()) is include_library
     assert deleted.json()["review_cleanup"] == {
         "removed_cards": 2,
         "removed_pending_attempts": 0,

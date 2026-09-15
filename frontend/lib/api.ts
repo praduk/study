@@ -42,7 +42,7 @@ export function changesLibraryReads(path: string, init: RequestInit): boolean {
   const route = path.split('?')[0];
   if (route === '/api/git/pull') return true;
   if (!/^\/api\/(?:entries|folders|items|macros)(?:\/|$)/.test(route)) return false;
-  if (method === 'PATCH' && /^\/api\/folders\/[^/]+$/.test(route) && typeof init.body === 'string') {
+  if (method === 'PATCH' && /^\/api\/(?:folders|entries)\/[^/]+$/.test(route) && typeof init.body === 'string') {
     try {
       const body = JSON.parse(init.body) as Record<string, unknown>;
       if (Object.keys(body).length === 1 && typeof body.review_enabled === 'boolean') return false;
@@ -66,6 +66,15 @@ async function parseError(response: Response): Promise<Error> {
 
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const method = (init.method || 'GET').toUpperCase();
+  let requestPath = path;
+  const [route, query = ''] = path.split('?', 2);
+  if (method === 'DELETE' && /^\/api\/(?:entries|folders)\/[^/]+$/.test(route)) {
+    const parameters = new URLSearchParams(query);
+    // The deletion flow reloads the authoritative compact bootstrap itself.
+    // Avoid also transferring an unused full library in the deletion response.
+    if (!parameters.has('include_library')) parameters.set('include_library', 'false');
+    requestPath = `${route}?${parameters}`;
+  }
   const headers = new Headers(init.headers);
   if (method !== 'GET' && method !== 'HEAD' && csrfToken) {
     headers.set('x-study-csrf', csrfToken);
@@ -73,7 +82,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   if (init.body && !(init.body instanceof FormData) && !headers.has('content-type')) {
     headers.set('content-type', 'application/json');
   }
-  const response = await fetch(path, { ...init, headers, credentials: 'same-origin' });
+  const response = await fetch(requestPath, { ...init, headers, credentials: 'same-origin' });
   if (!response.ok) throw await parseError(response);
   const result = (await response.json()) as T;
   if (changesLibraryReads(path, init)) invalidateLibraryReads();

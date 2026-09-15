@@ -35,6 +35,7 @@ from .library_validation import (
     LibraryValidationError,
     validate_library,
 )
+from .scoped_deletion import ScopedDeletionError, ScopedDeletions
 from .search_index import LibrarySearchIndex, SearchIndexError
 
 SLUG_RE = re.compile(r"^[a-z][a-z0-9-]*$")
@@ -254,10 +255,14 @@ class LibraryStore:
         self.runtime_dir = self.data_dir / "runtime"
         self._lock = _InterprocessRLock(self.runtime_dir / "library-lock.tmp")
         self._search_index: LibrarySearchIndex | None = None
+        self._last_search_index: LibrarySearchIndex | None = None
         self._search_signatures: dict[Path, tuple[int, int, int, int, int] | None] = {}
         self._next_search_staleness_check = 0.0
         self._search_build_count = 0
         self._search_content_read_count = 0
+        self._search_content_cache: dict[
+            str, tuple[str, Path, tuple[int, int, int, int, int]]
+        ] = {}
         self._library_cache: dict[str, Any] | None = None
         self._library_signatures: dict[
             Path, tuple[int, int, int, int, int] | None
@@ -268,6 +273,7 @@ class LibraryStore:
         self._v2_entry_ranks: dict[str, int] = {}
         self._v2_signature_paths: set[Path] = set()
         self._v2_transaction_depth = 0
+        self._scoped_deletions = ScopedDeletions(self.data_dir, _atomic_json, _fsync_directory)
         with self._lock:
             self._ensure_layout()
 
@@ -345,6 +351,13 @@ class LibraryStore:
                 _atomic_json(root_metadata, {"version": 1})
             _atomic_json(self.library_path, {"version": 2, "root": V2_LIBRARY_ROOT})
         version = self._format_version()
+        try:
+            self._scoped_deletions.recover(conflicting_writes=any(
+                (self.runtime_dir / name).exists() or (self.runtime_dir / name).is_symlink()
+                for name in (V2_WRITE_JOURNAL, V2_ENTRY_WRITE_JOURNAL)
+            ))
+        except (ScopedDeletionError, OSError) as exc:
+            raise StoreError(str(exc)) from exc
         if version == 2:
             self._recover_v2_entry_write()
             self._recover_v2_write()
@@ -498,6 +511,12 @@ class LibraryStore:
             self._ensure_layout()
 
     def _library_cache_is_current(self) -> bool:
+        try:
+            self._scoped_deletions.ensure_ready()
+        except (ScopedDeletionError, OSError) as exc:
+            self._invalidate_library_cache()
+            self._invalidate_search_index()
+            raise StoreError(str(exc)) from exc
         if (
             self._library_cache is None
             or self._library_cache.get("version") != 2
@@ -563,6 +582,18 @@ class LibraryStore:
             if attempt == 1:
                 raise StoreError("library changed repeatedly while loading")
         raise AssertionError("unreachable")
+
+    def _read_view(self) -> dict[str, Any]:
+        """Read under the store lock without copying metadata that callers only inspect.
+
+        The view must never escape or be mutated. Public readers decorate/copy
+        their results; writers continue to use the independent `_read` copy.
+        Disk signatures are still checked on every read.
+        """
+        if self._library_cache_is_current():
+            assert self._library_cache is not None
+            return self._library_cache
+        return self._read()
 
     def _read_uncached(self) -> dict[str, Any]:
         try:
@@ -1320,7 +1351,11 @@ class LibraryStore:
                 pass
 
         try:
-            self._read_v2()
+            # Validate the finished tree with before/after signatures and retain
+            # that exact snapshot for the next read. Never attach a later scan
+            # to the pre-write metadata supplied by the caller.
+            self._invalidate_library_cache()
+            self._read()
         finally:
             shutil.rmtree(trash_root, ignore_errors=True)
 
@@ -1358,6 +1393,8 @@ class LibraryStore:
         }
 
     def _rollback_v2_transaction(self, transaction: dict[str, Any]) -> None:
+        self._invalidate_library_cache()
+        self._invalidate_search_index()
         backup: Path = transaction["backup"]
         failed: Path = transaction["failed"]
         journal: Path = transaction["journal"]
@@ -1384,7 +1421,6 @@ class LibraryStore:
             self._v2_entry_ranks,
             self._v2_signature_paths,
         ) = transaction["old_state"]
-        self._invalidate_search_index()
         journal.unlink(missing_ok=True)
         # A failed tree can contain content not present in the prior snapshot.
         # Preserve it under runtime for explicit inspection.
@@ -1460,16 +1496,26 @@ class LibraryStore:
             self._write_v2(library)
         else:
             _atomic_json(self.library_path, library)
-        # A generic write may race an out-of-band direct edit after its final
-        # validation. Let the next read use the normal before/after validation
-        # loop instead of publishing signatures captured after that race.
-        self._invalidate_library_cache()
+            self._invalidate_library_cache()
+        # V2's final read already bracketed full validation with signatures.
+        # A direct edit after that read changes those recorded signatures and
+        # forces fresh validation rather than being hidden by a post-write scan.
         self._invalidate_search_index()
 
     def _write_v2_entry_files(
-        self, library: dict[str, Any], entry: dict[str, Any], contents: dict[Path, str]
+        self,
+        library: dict[str, Any],
+        entry: dict[str, Any],
+        contents: dict[Path, str],
+        *,
+        preserve_search: bool = False,
     ) -> None:
         """Save existing entry files without copying or reloading the whole library."""
+        preserved_index = None
+        preserved_signatures = {}
+        if preserve_search and not contents and self._search_snapshot_matches_disk():
+            preserved_index = self._search_index
+            preserved_signatures = dict(self._search_signatures)
         entry_path = self._v2_entry_paths[entry["id"]]
         metadata_path = entry_path / V2_ENTRY_METADATA
         metadata = self._v2_entry_metadata(entry, self._v2_entry_ranks[entry["id"]], entry_path)
@@ -1524,14 +1570,20 @@ class LibraryStore:
         except OSError:
             pass
         self._invalidate_search_index()
-        self._refresh_v2_entry_cache(library, replacements, prior_signatures)
+        cache_refreshed = self._refresh_v2_entry_cache(library, replacements, prior_signatures)
+        if preserved_index is not None and cache_refreshed:
+            # Only the review preference changed. Restore the previous index
+            # after verifying the exact saved bytes and every unchanged neighbor.
+            self._search_index = preserved_index
+            self._search_signatures = preserved_signatures
+            self._refresh_search_signatures({*replacements, entry_path})
 
     def _refresh_v2_entry_cache(
         self,
         library: dict[str, Any],
         replacements: dict[Path, str],
         prior_signatures: dict[Path, tuple[int, int, int, int, int] | None],
-    ) -> None:
+    ) -> bool:
         """Publish only signatures verified against our writes and unchanged neighbors."""
         try:
             written_signatures = {}
@@ -1541,7 +1593,7 @@ class LibraryStore:
                 after = self._file_signature(path)
                 if actual != text or before != after:
                     self._invalidate_library_cache()
-                    return
+                    return False
                 written_signatures[path] = after
             signatures = {
                 self.library_path: self._file_signature(self.library_path),
@@ -1561,10 +1613,12 @@ class LibraryStore:
                 )
             ):
                 self._invalidate_library_cache()
-                return
+                return False
             self._cache_validated_library(library, signatures=signatures)
+            return True
         except (OSError, StoreError, UnicodeDecodeError):
             self._invalidate_library_cache()
+            return False
 
     @staticmethod
     def _folder(library: dict[str, Any], folder_id: str) -> dict[str, Any]:
@@ -1734,9 +1788,9 @@ class LibraryStore:
                 )
         return result
 
-    def snapshot(self) -> dict[str, Any]:
+    def snapshot(self, *, include_tree: bool = True) -> dict[str, Any]:
         with self._lock:
-            library = self._read()
+            library = self._read_view()
             namespaces = self._folder_namespaces(library)
             folders = copy.deepcopy(library["folders"])
             entries = [
@@ -1745,13 +1799,15 @@ class LibraryStore:
             ]
             for folder in folders:
                 folder["namespace"] = namespaces[folder["id"]]
-            return {
+            result = {
                 "version": library["version"],
                 "folders": folders,
                 "entries": entries,
-                "tree": self._tree(library, namespaces),
                 "macros": self.get_macros(),
             }
+            if include_tree:
+                result["tree"] = self._tree(library, namespaces)
+            return result
 
     def _tree(
         self, library: dict[str, Any], namespaces: dict[str, str] | None = None
@@ -1787,9 +1843,23 @@ class LibraryStore:
         return nodes(None)
 
     def get_entry(self, entry_id: str) -> dict[str, Any]:
+        return self.get_entries((entry_id,))[entry_id]
+
+    def get_entries(self, entry_ids: Iterable[str]) -> dict[str, dict[str, Any]]:
+        """Hydrate selected entries with one validation of the library."""
+        selected_ids = tuple(dict.fromkeys(entry_ids))
+        if not selected_ids:
+            return {}
         with self._lock:
-            library = self._read()
-            return self._decorate_entry(library, self._entry(library, entry_id), True)
+            library = self._read_view()
+            entries = {entry["id"]: entry for entry in library["entries"]}
+            if any(entry_id not in entries for entry_id in selected_ids):
+                raise StoreError("entry not found")
+            namespaces = self._folder_namespaces(library)
+            return {
+                entry_id: self._decorate_entry(library, entries[entry_id], True, namespaces)
+                for entry_id in selected_ids
+            }
 
     def create_folder(
         self, name: str, slug: str, parent_id: str | None, index: int | None = None
@@ -2075,6 +2145,10 @@ class LibraryStore:
         asset_files: dict[Path, tuple[str, set[str]]],
         surviving_entries: list[dict[str, Any]],
     ) -> tuple[dict[Path, str], dict[Path, str]]:
+        if not asset_files:
+            # Only asset deletion depends on surviving Markdown references.
+            # With no candidate assets, no survivor content needs to be read.
+            return dict(content_files), {}
         surviving_asset_paths, surviving_asset_tokens, surviving_markdown = (
             self._surviving_asset_references(
                 surviving_entries
@@ -2152,6 +2226,158 @@ class LibraryStore:
             "cleanup_pending_paths": pending,
         }
 
+    def pending_deletions(self) -> dict[str, list[str]]:
+        """Durable deleted-entry tombstones awaiting successful review pruning."""
+        with self._lock:
+            try:
+                return self._scoped_deletions.pending()
+            except (ScopedDeletionError, OSError) as exc:
+                raise StoreError(str(exc)) from exc
+
+    def complete_pending_deletions(self, transaction_ids: Iterable[str]) -> None:
+        transaction_ids = list(transaction_ids)
+        if not transaction_ids:
+            return
+        with self._lock:
+            try:
+                self._scoped_deletions.complete(transaction_ids)
+            except (ScopedDeletionError, OSError) as exc:
+                raise StoreError(str(exc)) from exc
+
+    def cleanup_completed_deletions(self) -> None:
+        """Remove acknowledged, inert trash outside the deletion response path."""
+        with self._lock:
+            try:
+                self._scoped_deletions.cleanup()
+            except (ScopedDeletionError, OSError) as exc:
+                raise StoreError(str(exc)) from exc
+
+    @staticmethod
+    def _deletion_tree_signatures(root: Path) -> dict[Path, tuple[int, int, int, int, int]]:
+        """Inspect tree topology and lstat signatures without following symlinks."""
+        import stat
+
+        result = {}
+        pending = [root]
+        while pending:
+            path = pending.pop()
+            status = path.lstat()
+            if stat.S_ISLNK(status.st_mode):
+                raise StoreError("library changed to contain a symbolic link during deletion")
+            result[path] = (status.st_dev, status.st_ino, status.st_size,
+                            status.st_mtime_ns, status.st_ctime_ns)
+            if stat.S_ISDIR(status.st_mode):
+                with os.scandir(path) as children:
+                    pending.extend(path / child.name for child in children)
+            elif not stat.S_ISREG(status.st_mode):
+                raise StoreError("library changed to contain an unsafe file during deletion")
+        return result
+
+    def _verify_scoped_deletion(
+        self, before: dict[Path, Any], mapping: dict[Path, Path],
+    ) -> dict[Path, Any]:
+        """Prove the only change is detaching the declared, unchanged roots."""
+        removed = {path for path in before if any(
+            path == source or source in path.parents for source in mapping
+        )}
+        next_signatures = self._deletion_tree_signatures(self.library_dir)
+        next_signatures[self.library_path] = self._file_signature(self.library_path)
+        for path in set(before) - removed - set(next_signatures):
+            if path.is_symlink() or path.resolve() != path:
+                raise StoreError("library asset changed to an unsafe path during deletion")
+            next_signatures[path] = self._file_signature(path)
+        if set(next_signatures) != set(before) - removed:
+            raise StoreError("library topology changed during deletion")
+        changed_parents = {source.parent for source in mapping}
+        for path, signature in next_signatures.items():
+            expected = before[path]
+            if signature is None or (
+                signature[:2] != expected[:2] if path in changed_parents else signature != expected
+            ):
+                raise StoreError("library changed during deletion")
+        # The detached bytes remain authoritative until commit. A concurrent
+        # direct edit inside a renamed root is preserved by rollback, not lost.
+        for source, saved in mapping.items():
+            actual = self._deletion_tree_signatures(saved)
+            expected = {saved / path.relative_to(source): signature
+                        for path, signature in before.items()
+                        if path == source or source in path.parents}
+            if set(actual) != set(expected):
+                raise StoreError("deleted content changed during deletion")
+            for path, signature in actual.items():
+                previous = expected[path]
+                # Renaming the root changes its ctime, but not its bytes,
+                # children, identity, size or modification time.
+                if (signature[:4] != previous[:4] if path == saved else signature != previous):
+                    raise StoreError("deleted content changed during deletion")
+        return next_signatures
+
+    def _delete_v2_scoped(
+        self, library: dict[str, Any], deleted_entry_ids: set[str],
+        deleted_folder_ids: set[str], deletions: dict[Path, str], preserved: dict[Path, str],
+    ) -> dict[str, Any]:
+        if any((self.runtime_dir / name).exists() or (self.runtime_dir / name).is_symlink()
+               for name in (V2_WRITE_JOURNAL, V2_ENTRY_WRITE_JOURNAL)):
+            raise StoreError("an interrupted library write requires recovery before deletion")
+        # The caller starts from a validated independent metadata copy. A second
+        # complete signature check covers asset planning and direct-file races.
+        if not self._library_cache_is_current():
+            self._invalidate_library_cache()
+            self._invalidate_search_index()
+            raise StoreError("library changed while planning deletion; retry")
+        before = dict(self._library_signatures)
+        selected = [(self._v2_folder_paths[item_id], "folder", item_id)
+                    for item_id in deleted_folder_ids]
+        selected += [(self._v2_entry_paths[item_id], "entry", item_id)
+                     for item_id in deleted_entry_ids]
+        selected.sort(key=lambda item: (len(item[0].parts), str(item[0])))
+        minimal: list[tuple[Path, str, str | None]] = []
+        for path, kind, item_id in selected:
+            if not any(parent in path.parents for parent, _, _ in minimal):
+                minimal.append((path, kind, item_id))
+        if any(path == root or root in path.parents for path in preserved for root, _, _ in minimal):
+            raise StoreError("cannot delete a directory containing a surviving shared asset")
+        for path in deletions:
+            if not any(root == path or root in path.parents for root, _, _ in minimal):
+                minimal.append((path, "asset", None))
+        roots = []
+        for path, kind, item_id in minimal:
+            signature = before.get(path)
+            if signature is None:
+                raise StoreError("deletion root is not in the validated library")
+            roots.append({"path": path.relative_to(self.data_dir).as_posix(), "kind": kind,
+                          "id": item_id, "identity": list(signature[:2])})
+        next_signatures: dict[Path, Any] = {}
+
+        def verify(mapping: dict[Path, Path]) -> None:
+            next_signatures.update(self._verify_scoped_deletion(before, mapping))
+
+        try:
+            self._scoped_deletions.commit(roots, sorted(deleted_entry_ids), verify)
+            self._v2_entry_paths = {key: value for key, value in self._v2_entry_paths.items()
+                                    if key not in deleted_entry_ids}
+            self._v2_folder_paths = {key: value for key, value in self._v2_folder_paths.items()
+                                     if key not in deleted_folder_ids}
+            self._v2_entry_ranks = {key: value for key, value in self._v2_entry_ranks.items()
+                                    if key not in deleted_entry_ids}
+            self._v2_folder_ranks = {key: value for key, value in self._v2_folder_ranks.items()
+                                     if key not in deleted_folder_ids}
+            self._v2_signature_paths.intersection_update(next_signatures)
+            self._cache_validated_library(library, signatures=next_signatures)
+            self._invalidate_search_index()
+        except BaseException as exc:
+            self._invalidate_library_cache()
+            self._invalidate_search_index()
+            if isinstance(exc, (ScopedDeletionError, OSError)):
+                raise StoreError(str(exc)) from exc
+            raise
+        # Authored paths are gone; their bytes stay in recoverable trash until
+        # review pruning acknowledges the transaction and background cleanup runs.
+        return {"deleted_file_count": len(deletions), "deleted_paths": sorted(deletions.values()),
+                "preserved_shared_file_count": len(preserved),
+                "preserved_shared_paths": sorted(preserved.values()),
+                "cleanup_pending_count": 0, "cleanup_pending_paths": []}
+
     def delete_entry(self, entry_id: str) -> dict[str, Any]:
         """Delete one entry and its exclusively owned files."""
         with self._lock:
@@ -2175,8 +2401,11 @@ class LibraryStore:
 
             # Commit metadata first. A later unlink failure can leave an inert orphan,
             # but it can never leave the library pointing at a deleted file.
-            self._write(library)
-            files = self._delete_planned_files(deletions, preserved)
+            if library["version"] == 2:
+                files = self._delete_v2_scoped(library, {entry_id}, set(), deletions, preserved)
+            else:
+                self._write(library)
+                files = self._delete_planned_files(deletions, preserved)
             return {
                 "item_type": "entry",
                 "item_id": entry_id,
@@ -2229,8 +2458,14 @@ class LibraryStore:
                 candidate for candidate in library["folders"] if candidate["id"] not in folder_ids
             ]
             self._renumber_folders(library, folder.get("parent_id"))
-            self._write(library)
-            files = self._delete_planned_files(deletions, preserved)
+            if library["version"] == 2:
+                files = self._delete_v2_scoped(
+                    library, {entry["id"] for entry in deleted_entries}, folder_ids,
+                    deletions, preserved,
+                )
+            else:
+                self._write(library)
+                files = self._delete_planned_files(deletions, preserved)
             return {
                 "item_type": "folder",
                 "item_id": folder_id,
@@ -2413,7 +2648,19 @@ class LibraryStore:
             if library["version"] == 2 and all(
                 entry[field] == original[field] for field in ("folder_id", "kind", "tag")
             ):
-                self._write_v2_entry_files(library, entry, {})
+                review_preference_only = set(updates) == {"review_enabled"} and all(
+                    entry.get(field) == original.get(field)
+                    for field in entry.keys() | original.keys()
+                    if field not in {"review_enabled", "updated_at"}
+                )
+                try:
+                    self._write_v2_entry_files(
+                        library, entry, {}, preserve_search=review_preference_only
+                    )
+                except BaseException:
+                    self._invalidate_library_cache()
+                    self._invalidate_search_index()
+                    raise
                 return self.get_entry(entry_id)
             self._write(library)
             return self._decorate_entry(library, entry, True)
@@ -3047,15 +3294,34 @@ class LibraryStore:
     def _v2_tree_signatures(
         self,
     ) -> dict[Path, tuple[int, int, int, int, int] | None]:
-        signatures: dict[Path, tuple[int, int, int, int, int] | None] = {}
+        signatures = {self.library_dir: self._file_signature(self.library_dir)}
+        if self.library_dir.is_symlink() or not self.library_dir.is_dir():
+            return signatures
         pending = [self.library_dir]
         while pending:
             path = pending.pop()
-            signatures[path] = self._file_signature(path)
-            if path.is_symlink() or not path.is_dir():
+            # A directory may have been replaced since its parent was scanned.
+            # Never follow a replacement symlink into a different tree.
+            if path.is_symlink():
                 continue
             try:
-                pending.extend(path.iterdir())
+                with os.scandir(path) as children:
+                    for child in children:
+                        child_path = path / child.name
+                        try:
+                            status = child.stat()
+                        except FileNotFoundError:
+                            signatures[child_path] = None
+                            continue
+                        signatures[child_path] = (
+                            status.st_dev,
+                            status.st_ino,
+                            status.st_size,
+                            status.st_mtime_ns,
+                            status.st_ctime_ns,
+                        )
+                        if child.is_dir(follow_symlinks=False):
+                            pending.append(child_path)
             except OSError as exc:
                 raise StoreError("cannot inspect the version 2 library tree") from exc
         return signatures
@@ -3134,7 +3400,7 @@ class LibraryStore:
             library_before = self._file_signature(self.library_path)
             version_before = self._format_version()
             v2_tree_before = self._v2_tree_signatures() if version_before == 2 else {}
-            library = self._read()
+            library = self._read_view()
             relative_paths = sorted(
                 {
                     variant["file"]
@@ -3147,10 +3413,27 @@ class LibraryStore:
             )
             content_by_path: dict[str, str] = {}
             indexed_paths: dict[Path, tuple[int, int, int, int, int] | None] = {}
+            next_content_cache: dict[
+                str, tuple[str, Path, tuple[int, int, int, int, int]]
+            ] = {}
             for relative in relative_paths:
-                content, path, signature = self._read_indexed_content(relative)
+                cached = self._search_content_cache.get(relative)
+                if (
+                    library["version"] == 2
+                    and cached is not None
+                    and cached[1] == self.data_dir / relative
+                    and v2_tree_before.get(cached[1]) == cached[2]
+                ):
+                    # Reuse only previously validated bytes at the same path.
+                    # The full before/after tree checks below still cover
+                    # replacement files, directory changes, and concurrent edits.
+                    content, path, signature = cached
+                else:
+                    content, path, signature = self._read_indexed_content(relative)
                 content_by_path[relative] = content
                 indexed_paths[path] = signature
+                if library["version"] == 2 and signature is not None:
+                    next_content_cache[relative] = (content, path, signature)
             library_after = self._file_signature(self.library_path)
             v2_tree_after = (
                 self._v2_tree_signatures() if library.get("version") == 2 else {}
@@ -3162,7 +3445,9 @@ class LibraryStore:
 
         try:
             namespaces = self._folder_namespaces(library)
-            index = LibrarySearchIndex(library, namespaces, content_by_path)
+            index = LibrarySearchIndex(
+                library, namespaces, content_by_path, previous=self._last_search_index
+            )
         except (KeyError, SearchIndexError) as exc:
             raise StoreError(str(exc)) from exc
         self._search_index = index
@@ -3171,6 +3456,12 @@ class LibraryStore:
             **v2_tree_after,
             **indexed_paths,
         }
+        # Publish only a completed, coherent build; replacing the dictionary
+        # also drops every path that is no longer part of the current library.
+        self._search_content_cache = next_content_cache
+        # Retain one completed index solely for immutable posting reuse. Queries
+        # use `_search_index` only after its normal disk-coherence checks.
+        self._last_search_index = index
         self._next_search_staleness_check = time.monotonic() + SEARCH_STALENESS_SECONDS
         self._search_build_count += 1
         return index

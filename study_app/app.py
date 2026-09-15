@@ -18,6 +18,7 @@ from typing import Annotated, Any
 from urllib.parse import urlsplit
 
 from fastapi import (
+    BackgroundTasks,
     Depends,
     FastAPI,
     File,
@@ -293,6 +294,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     store.reload_search_index()
     review = ReviewEngine(store)
     review.prune_to_current_library()
+    store.cleanup_completed_deletions()
     sessions = SessionStore(
         store.runtime_dir / "sessions.sqlite3",
         settings.session_days,
@@ -490,10 +492,8 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         compact: Annotated[bool, Query()] = False,
     ) -> dict[str, Any]:
         with store.mutation_lock:
-            library = store.snapshot()
+            library = store.snapshot(include_tree=not compact)
             review_stats = review.stats(library)
-        if compact:
-            library.pop("tree", None)
         return {
             **library,
             "review": review_stats,
@@ -573,7 +573,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             return store.update_folder(folder_id, updates)
         with store.mutation_lock:
             folder = store.update_folder(folder_id, updates)
-            snapshot = store.snapshot()
+            snapshot = store.snapshot(include_tree=False)
             folder = next(item for item in snapshot["folders"] if item["id"] == folder_id)
             review_stats = review.stats(snapshot)
         return {"folder": folder, "review": review_stats, "git": git.status()}
@@ -582,17 +582,21 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def delete_folder(
         folder_id: str,
         _session: Mutation,
+        background_tasks: BackgroundTasks,
         recursive: Annotated[bool, Query()] = False,
+        include_library: Annotated[bool, Query()] = True,
     ) -> dict[str, Any]:
         with store.mutation_lock:
             review.validate_log()
             deletion = store.delete_folder(folder_id, recursive=recursive)
-            review_cleanup = review.prune_to_current_library()
+            snapshot = store.snapshot(include_tree=include_library)
+            review_cleanup = review.prune_to_current_library(snapshot)
+            background_tasks.add_task(store.cleanup_completed_deletions)
             return {
                 "ok": True,
                 "deletion": deletion,
                 "review_cleanup": review_cleanup,
-                "library": store.snapshot(),
+                **({"library": snapshot} if include_library else {}),
             }
 
     @app.post("/api/entries")
@@ -625,20 +629,27 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                 review.prune_to_current_library()
             if not include_review_stats:
                 return updated
-            review_stats = review.stats(store.snapshot())
+            review_stats = review.stats(store.snapshot(include_tree=False))
         return {"entry": updated, "review": review_stats, "git": git.status()}
 
     @app.delete("/api/entries/{entry_id}")
-    def delete_entry(entry_id: str, _session: Mutation) -> dict[str, Any]:
+    def delete_entry(
+        entry_id: str,
+        _session: Mutation,
+        background_tasks: BackgroundTasks,
+        include_library: Annotated[bool, Query()] = True,
+    ) -> dict[str, Any]:
         with store.mutation_lock:
             review.validate_log()
             deletion = store.delete_entry(entry_id)
-            review_cleanup = review.prune_to_current_library()
+            snapshot = store.snapshot(include_tree=include_library)
+            review_cleanup = review.prune_to_current_library(snapshot)
+            background_tasks.add_task(store.cleanup_completed_deletions)
             return {
                 "ok": True,
                 "deletion": deletion,
                 "review_cleanup": review_cleanup,
-                "library": store.snapshot(),
+                **({"library": snapshot} if include_library else {}),
             }
 
     @app.put("/api/entries/{entry_id}/content/{variant_id}")

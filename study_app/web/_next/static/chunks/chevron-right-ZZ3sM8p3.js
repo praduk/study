@@ -1,0 +1,1 @@
+import{E as e}from"./api-DPBc_9mW.js";var t=e(`chevron-right`,[[`path`,{d:`m9 18 6-6-6-6`,key:`mthhwq`}]]);export{t};

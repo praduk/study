@@ -103,20 +103,48 @@ and the matches in the first nonempty stage, not library size. Full-text query c
 to the smallest intersected posting lists plus verified matches. Very common terms can still
 approach a full scan; the result cap bounds response size, not that honest worst case.
 
-Markdown files are read once when a snapshot is built, not once per query. Every store write that
-can affect indexed content, canonical tags, lexical scope, or ranking invalidates the snapshot
-immediately. The sole v2 exception is an update containing only a non-null folder
+Markdown files are read once for the first snapshot, not once per query. Later v2 builds reuse
+unchanged Markdown strings from the previous completed build only when both their validated
+absolute paths and five-part file signatures match the complete pre-build tree scan. New or
+changed files go through the normal guarded reads. Full library/tree signatures must still match
+before and after loading, and only successful index construction publishes the replacement content
+cache, pruning removed paths. This cache contains at most the Markdown paths in one completed
+library snapshot; v1 builds retain full reads and clear it. A metadata-only edit therefore rereads
+no unchanged Markdown, while an edit to one body rereads that file. Every rebuild still creates new
+metadata, ranking, scope-resolution, and incoming-reference indexes so title, namespace, and link
+changes cannot inherit old results.
+
+The previous completed index may supply immutable trigram posting memberships for the new build.
+Only documents whose normalized searchable text changed, including added or removed document keys,
+require membership updates; unchanged posting sets are shared. The new index still constructs its
+current titles, tags, authored order, targets, and lexical scopes, starts with empty query caches,
+and builds its own incoming links lazily. It retains no predecessor link. The store keeps only the
+last completed index for this reuse, and never serves that retained index after invalidation.
+For broad replacements, the builder compares the amount of old/new text that would need
+retokenizing with a fresh build and chooses the smaller estimated workload.
+
+Every store write that can affect indexed content, canonical tags, lexical scope, or ranking
+invalidates the snapshot immediately. The v2 exceptions are updates containing only a non-null folder or entry
 `review_enabled` preference, which search does not consume. Study preserves the existing search
-snapshot after that atomic single-sidecar write only if the index matched disk beforehand and the
-validated library-cache refresh finds no unexpected concurrent change; otherwise it invalidates the
-snapshot normally.
+snapshot and revision after those atomic single-sidecar writes only if the index matched disk
+beforehand and the validated library-cache refresh finds no unexpected concurrent change;
+otherwise it invalidates the snapshot normally. Entry preferences retain the same recovery journal
+and rollback checks as other entry edits.
 
 Ordinary v2 entry edits retain the validated library cache only after checking the exact saved
-bytes and confirming that all other file signatures are unchanged. Content and metadata edits
+bytes and confirming that all other file signatures are unchanged. Content and other metadata edits
 still invalidate the search snapshot immediately. The editor sends only changed fields and
 variants and defers mounted-reader refresh until all requests in that save have settled, including
 partially successful saves. This prevents reference and linked-item reads from repeatedly rebuilding
 the index between writes. Unchanged saves issue no writes or reader invalidations.
+
+Snapshot, entry, and search-index reads inspect the validated metadata without copying the whole
+library before copying their returned entries. Compact bootstrap and review snapshots omit the derived
+tree, and batched entry reads validate once before loading only the selected entries. The public
+results remain independent copies; writes use their own mutable metadata copy. Ordinary metadata
+and entry reads still check disk signatures on every operation. Signature walks use directory
+entries to avoid redundant file-type checks while retaining every file and directory signature,
+symlink rejection during validation, and before/after checks around index construction.
 
 A successful app-controlled Git pull synchronously reloads the index. To catch direct on-disk
 edits, Study checks `library.json` on every query and performs a signature sweep at most once every

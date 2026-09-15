@@ -91,9 +91,25 @@ export function updateBootstrapFolder(snapshot: Bootstrap, folder: Folder): Boot
 }
 
 export function updateBootstrapEntryReview(snapshot: Bootstrap, id: string, enabled: boolean): Bootstrap {
-  const entries = snapshot.entries.map((entry) => entry.id === id
-    ? { ...entry, review_enabled: enabled } : entry);
-  return { ...snapshot, entries, tree: buildLibraryTree(snapshot.folders, entries) };
+  const current = snapshot.entries.find((entry) => entry.id === id);
+  if (!current || current.review_enabled === enabled) return snapshot;
+  const updated = { ...current, review_enabled: enabled };
+  const entries = snapshot.entries.map((entry) => entry.id === id ? updated : entry);
+  const replaceEntry = (nodes: FolderNode[]): FolderNode[] => {
+    let changed = false;
+    const next = nodes.map((node) => {
+      if (node.id === updated.folder_id) {
+        changed = true;
+        return { ...node, entries: node.entries.map((entry) => entry.id === id ? updated : entry) };
+      }
+      const children = replaceEntry(node.children);
+      if (children === node.children) return node;
+      changed = true;
+      return { ...node, children };
+    });
+    return changed ? next : nodes;
+  };
+  return { ...snapshot, entries, tree: replaceEntry(snapshot.tree) };
 }
 
 export function entryReviewStatus(entry: EntrySummary, folders: Folder[]): string {

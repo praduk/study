@@ -109,10 +109,44 @@ signature forces another complete parse and validation. Study also compares sign
 and after an uncached load, so a tree that changes while it is being read is never admitted to the
 cache. Version 1 retains its existing uncached validation behavior.
 
+Most structural writes keep a complete independent backup and prepared/committed recovery journal.
+Their final validation reads the finished tree between full signature sweeps and retains that
+validated snapshot. Rollback discards the newly validated cache before restoring normal reads.
+
+Version 2 deletion instead uses a scoped, durable transaction. Starting from a trusted metadata
+snapshot, Study checks every recorded disk signature, applies the deletion to an independent copy,
+and moves only the minimal deleted entry/folder directories into transaction trash. Logical
+subtrees that use `_deep` may require several independent physical moves. Surviving sidecars keep
+their exact bytes and sparse ranks. Exclusive legacy assets outside the library tree are staged
+individually; shared asset and surviving-Markdown guards still apply. When there are no candidate
+assets, deletion skips scanning unrelated Markdown bodies.
+
+Before committing, Study compares the complete surviving tree topology and signatures and checks
+all detached files against their original signatures. Only the expected parent-directory changes
+and detached roots' rename timestamps may differ. An unexpected direct edit aborts the deletion;
+rollback restores detached directories and preserves conflicting new live paths under the
+transaction's `conflicts/` directory. Unsafe or ambiguous recovery fails closed and retains its
+recovery material. Normal unchanged deletion does not copy or reparse/validate the whole library.
+Its cache contains the independently transformed metadata and the signatures proved by these
+checks; edits after that proof still invalidate the next read.
+
+Each transaction lives under `data/runtime/library-delete-<id>.tmp/`. Its prepared journal is
+published durably before any authored directory moves. Startup rolls back prepared transactions;
+committed transactions never resurrect deleted entries. Committed journals retain exact deleted
+entry IDs until the review engine has purged their schedules, pending attempts, and history,
+including when the same entry ID was restored through an external edit before that purge. Review
+file renames are synced before the journal is durably marked `review-complete`. Only then may
+background cleanup remove the trash. Multiple committed deletions can await this acknowledgement.
+Acknowledged or successfully rolled-back directories are renamed out of the active journal
+namespace before recursive cleanup, so interrupted cleanup cannot invalidate a live library.
+Preparatory directories left before journal publication and conflicted rollbacks remain inert in
+runtime storage for inspection. Unfinished transactions from the older full-library/entry-write
+protocols block a new scoped deletion until recovery. Version 1 retains its original deletion path.
+
 Study's search index watches v2 sidecars, Markdown files, and the relevant directory signatures.
 A valid direct edit becomes visible on the next query after the bounded 250 ms staleness check.
 Structural and content-changing v2 mutations use a prepared/committed recovery journal. The narrow
-exception is an update whose only field is a non-null `review_enabled`: that preference has no path,
+exception is a folder update whose only field is a non-null `review_enabled`: that preference has no path,
 namespace, ordering, or indexed-content effect, so Study atomically replaces only the affected
 folder's `_folder.json`. Before replacing it, Study verifies that the sidecar still matches the
 signature used to build the current snapshot; a concurrent direct edit aborts the preference write

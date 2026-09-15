@@ -102,6 +102,74 @@ def test_unchanged_entry_save_preserves_timestamp_and_search_snapshot(
     assert _authored_bytes(store) == before
 
 
+def test_entry_review_preference_preserves_verified_search_and_linked_items(entry_library):
+    store, entry, _ = entry_library
+    linked = store.linked_items(entry["id"])
+    index = store._search_index
+    stats = store.search_index_stats()
+    for enabled in (False, True):
+        result = store.update_entry(entry["id"], {"review_enabled": enabled})
+        assert result["review_enabled"] is enabled
+        assert store._search_index is index
+        assert store.linked_items(entry["id"])["revision"] == linked["revision"]
+        assert store.search("Original")[0]["id"] == entry["id"]
+        assert store.search_index_stats() == stats
+
+
+@pytest.mark.parametrize("operation", ["title", "content", "mixed"])
+def test_searchable_entry_changes_still_replace_search_snapshot(entry_library, operation: str):
+    store, entry, _ = entry_library
+    original = store.linked_items(entry["id"])["revision"]
+    if operation == "content":
+        store.write_variant_content(entry["id"], entry["formulations"][0]["id"], "Changed token")
+    else:
+        changes = {"title": "Changed token"}
+        if operation == "mixed":
+            changes["review_enabled"] = False
+        store.update_entry(entry["id"], changes)
+    assert store._search_index is None
+    assert store.search("Changed token")[0]["id"] == entry["id"]
+    assert store.linked_items(entry["id"])["revision"] != original
+
+
+def test_entry_review_preference_does_not_preserve_an_already_stale_index(entry_library):
+    store, entry, other = entry_library
+    store.search("Original")
+    other_content, _ = _paths(store, other)
+    other_content.write_text("External unique token\n", encoding="utf-8")
+
+    store.update_entry(entry["id"], {"review_enabled": False})
+
+    assert store._search_index is None
+    assert store.search("External unique token")[0]["id"] == other["id"]
+
+
+@pytest.mark.parametrize("failure", [OSError, KeyboardInterrupt])
+def test_failed_entry_review_preference_invalidates_search_and_restores_bytes(
+    entry_library, monkeypatch: pytest.MonkeyPatch, failure: type[BaseException]
+):
+    store, entry, _ = entry_library
+    store.search("Original")
+    _content, metadata = _paths(store, entry)
+    before = _authored_bytes(store)
+    atomic_text = store_module._atomic_text
+    failed = False
+
+    def fail_metadata_once(path: Path, text: str):
+        nonlocal failed
+        if path == metadata and not failed:
+            failed = True
+            raise failure("injected preference failure")
+        atomic_text(path, text)
+
+    monkeypatch.setattr(store_module, "_atomic_text", fail_metadata_once)
+    with pytest.raises(failure, match="injected preference failure"):
+        store.update_entry(entry["id"], {"review_enabled": False})
+    assert store._search_index is None
+    assert _authored_bytes(store) == before
+    assert LibraryStore(store.data_dir).get_entry(entry["id"])["review_enabled"] is True
+
+
 @pytest.mark.parametrize("failure", [OSError, KeyboardInterrupt])
 def test_second_entry_file_write_failure_restores_bytes_and_reopens(
     entry_library, monkeypatch: pytest.MonkeyPatch, failure: type[BaseException]
@@ -240,14 +308,16 @@ def test_unsafe_entry_journal_is_rejected_before_any_live_file_is_replaced(
 
 
 @pytest.mark.parametrize("changed", ["target-metadata", "other-metadata", "other-content", "new-file"])
+@pytest.mark.parametrize("operation", ["content", "review"])
 def test_direct_edit_during_entry_save_cannot_be_attached_to_a_stale_cache(
-    entry_library, monkeypatch: pytest.MonkeyPatch, changed: str
+    entry_library, monkeypatch: pytest.MonkeyPatch, changed: str, operation: str
 ):
     store, entry, other = entry_library
     content, metadata = _paths(store, entry)
     other_content, other_metadata = _paths(store, other)
     refresh = store._refresh_v2_entry_cache
     invalidated = False
+    store.search("Original")
 
     def edit_before_cache_refresh(*args):
         nonlocal invalidated
@@ -264,19 +334,28 @@ def test_direct_edit_during_entry_save_cannot_be_attached_to_a_stale_cache(
         invalidated = store._library_cache is None
 
     monkeypatch.setattr(store, "_refresh_v2_entry_cache", edit_before_cache_refresh)
+
+    def save():
+        if operation == "review":
+            return store.update_entry(entry["id"], {"review_enabled": False})
+        return store.write_variant_content(entry["id"], entry["formulations"][0]["id"], "Saved")
+
     if changed == "new-file":
         with pytest.raises(StoreError, match="unrecognized path"):
-            store.write_variant_content(entry["id"], entry["formulations"][0]["id"], "Saved")
+            save()
         assert store._library_cache is None
     else:
-        store.write_variant_content(entry["id"], entry["formulations"][0]["id"], "Saved")
+        save()
         if changed == "other-content":
             assert store.get_entry(other["id"])["formulations"][0]["content"] == "External body\n"
         else:
             changed_entry = entry if changed == "target-metadata" else other
             assert store.get_entry(changed_entry["id"])["title"] == "External title"
     assert invalidated
-    assert content.read_text(encoding="utf-8") == "Saved\n"
+    assert store._search_index is None
+    assert content.read_text(encoding="utf-8") == (
+        "Original\n" if operation == "review" else "Saved\n"
+    )
 
 
 def test_valid_uppercase_markdown_variant_remains_editable(entry_library):
