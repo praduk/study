@@ -1,0 +1,1 @@
+Let $\sigma=(a_1\ a_2\ \cdots\ a_m)$. Prove that $\sigma^i(a_k)=a_{k+i}$ for $i\in\{1,\ldots,m\}$, with indices read cyclically modulo $m$ (residues represented by $1,\ldots,m$). Deduce that $|\sigma|=m$.

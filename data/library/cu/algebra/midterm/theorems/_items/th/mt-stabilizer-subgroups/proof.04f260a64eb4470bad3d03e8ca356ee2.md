@@ -1,0 +1,2 @@
+The identity lies in both sets. If $x,y$ fix every point of $A$, so does $y^{-1}$, and therefore so does $xy^{-1}$. If $xA=A$ and $yA=A$, then $y^{-1}A=A$ and $xy^{-1}A=A$. The subgroup criterion proves both claims. Finally, an element is in every point stabilizer exactly when it fixes all points of $B$, the definition of the kernel.
+Under conjugation, apply this result to get subgroup proofs for $C_G(A)$, $N_G(A)$, and $Z(G)$.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d55c2163c9144675af3261223aaa883d",
+  "title": "Actions, kernels, and Cayley’s theorem",
+  "header": "Dummit–Foote §1.7, pp. 41–44; Week 2, pp. 5–6. Proof reconstructed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5791a596620d4881902515df1dc5be3a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5791a596620d4881902515df1dc5be3a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0ebb6b6e86d24c13b6ac6917a9b3ed9e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0ebb6b6e86d24c13b6ac6917a9b3ed9e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 34359738368
+}

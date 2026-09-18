@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "73f1fdd44f1f408e85994a8e94dfd651",
+  "title": "Quotient group (lecture context)",
+  "header": "Week 3, pp. 10–13. Not asserted to be an additional exam requirement.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ccede04599640aa985991c819e53255",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ccede04599640aa985991c819e53255.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 8589934592
+}

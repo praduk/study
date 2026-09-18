@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "df5f1a995b084447a3098ac44aad7156",
+  "title": "Subgroup and proper subgroup",
+  "header": "Dummit–Foote §2.1, pp. 46–48; Week 1, p. 10.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a96e8c5401974a5592793bd4e714abee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a96e8c5401974a5592793bd4e714abee.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 12884901888
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "db7b6def432c4097be2fbebac5247267",
+  "title": "Maximal subgroup",
+  "header": "Dummit–Foote §2.4, Exercise 16, p. 65; Week 2, p. 12.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1c23cfc5dc64bd387db9d6270309cf6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1c23cfc5dc64bd387db9d6270309cf6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 81604378624
+}

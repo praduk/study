@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "1eb42b312cb446d689c170fcf308ab1a",
+  "title": "1.1.9 — The group built from square root of two",
+  "rank": 4294967296,
+  "header": "Dummit–Foote, §1.1, Exercise 9; printed p. 22. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c1e08491a76d4204b575d70604afd410",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c1e08491a76d4204b575d70604afd410.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ef6da255d6af478cb60580c94234685f",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ef6da255d6af478cb60580c94234685f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:26.424300+00:00",
+  "updated_at": "2026-09-18T08:20:29.670611+00:00"
+}

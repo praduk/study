@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3d44996959084a5f90ca2c93815b9efa",
+  "title": "Design a counterexample that breaks one hypothesis",
+  "header": "Proof-method synthesis for the assigned homework; examples refer to Dummit–Foote exercise numbers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce27610afaac4cb2baf1226767db78de",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce27610afaac4cb2baf1226767db78de.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 38654705664
+}

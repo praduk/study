@@ -1,0 +1,1 @@
+For a homomorphism $\varphi:G\to H$, one has $\varphi(1)=1$, $\varphi(g^{-1})=\varphi(g)^{-1}$, and $\varphi(g^m)=\varphi(g)^m$ for every integer $m$. The kernel and image are subgroups, and $\varphi$ is injective iff $\ker\varphi=\{1\}$.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "96b50c3f570348d1a8a0fc76b5fc2181",
+  "title": "Orbit",
+  "header": "Dummit–Foote §1.7, Exercise 18, p. 45; Week 3, p. 4.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6da99e8ea630410a99c24ac2f26becbe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6da99e8ea630410a99c24ac2f26becbe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 64424509440
+}

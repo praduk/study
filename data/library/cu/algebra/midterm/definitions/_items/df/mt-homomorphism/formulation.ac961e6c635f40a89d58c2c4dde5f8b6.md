@@ -1,0 +1,2 @@
+A **homomorphism** $\varphi:G\to H$ satisfies $\varphi(xy)=\varphi(x)\varphi(y)$ for all $x,y\in G$. An **isomorphism** is a bijective homomorphism; write $G\cong H$ if one exists. An **automorphism** is an isomorphism $G\to G$, and $\operatorname{Aut}(G)$ is the group of automorphisms under composition.
+A candidate isomorphism must be well-defined, operation-preserving, injective, and surjective. Matching group orders is not enough: $C_4$ and $C_2\times C_2$ both have order four but different element orders.

@@ -1,0 +1,1 @@
+If $\varphi:G\to H$ is an isomorphism, prove that $G$ is abelian if and only if $H$ is abelian. For a homomorphism $\varphi:G\to H$, what additional condition suffices to conclude that $H$ is abelian when $G$ is abelian?

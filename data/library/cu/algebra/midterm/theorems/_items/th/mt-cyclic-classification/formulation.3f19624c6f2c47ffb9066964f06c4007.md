@@ -1,0 +1,1 @@
+An infinite cyclic group is isomorphic to $(\Z,+)$; a cyclic group of order $n$ is isomorphic to $(\Z/n\Z,+)$. Every subgroup of a cyclic group is cyclic. A cyclic group of order $n$ has exactly one subgroup of each order $d\mid n$, namely $\langle x^{n/d}\rangle$ if $x$ is a generator.

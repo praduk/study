@@ -1,0 +1,2 @@
+Put $d=\gcd(n,k)$, $n=dn'$, $k=dk'$ with $\gcd(n',k')=1$. For positive $m$, $(x^k)^m=1$ iff $n\mid km$, iff $n'\mid k'm$, iff $n'\mid m$. The smallest such $m$ is $n'$. The subgroup has $n$ elements precisely when $d=1$.
+For infinite order, $(x^k)^m=1$ with $m>0$ would give a nonzero identity exponent $km$, impossible. If $\langle x^k\rangle=\langle x\rangle$, then $x=x^{kj}$ for some integer $j$, giving $kj=1$ and $k=\pm1$; those two values clearly work. For $k=0$, $x^k=1$ has order one.

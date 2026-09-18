@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "27e144c9215845efab497d021a14a447",
+  "title": "Use contradiction, unions, and maximality",
+  "header": "Proof-method synthesis for the assigned homework; examples refer to Dummit–Foote exercise numbers.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "729ec57a0f844584b81d05da896dee86",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.729ec57a0f844584b81d05da896dee86.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 42949672960
+}

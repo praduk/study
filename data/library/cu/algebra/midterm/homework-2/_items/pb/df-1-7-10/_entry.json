@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b8d2d5ee9ee7484cbce8e03e39b94e56",
+  "title": "1.7.10 — Faithfulness on subsets and tuples",
+  "header": "Dummit–Foote, §1.7, Exercise 10; printed p. 44. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e20c4de391044ebeb2d92dbcaec8454b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e20c4de391044ebeb2d92dbcaec8454b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f149d297cfd4451a8b7163d362c60d1d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f149d297cfd4451a8b7163d362c60d1d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 38654705664
+}

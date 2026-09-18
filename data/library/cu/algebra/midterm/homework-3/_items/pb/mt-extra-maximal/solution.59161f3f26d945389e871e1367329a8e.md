@@ -1,0 +1,4 @@
+If $G=\{1\}$, it is cyclic. Suppose instead that $G$ is finite and not cyclic. For every $g\in G$, the cyclic subgroup $\langle g\rangle$ is proper, so by Exercise 2.4.16(a) it is contained in a maximal subgroup. Thus $G$ is the union of all its maximal subgroups.
+There is at least one maximal subgroup since the trivial subgroup is proper. If there is only one, this union says that $G$ equals a proper subgroup, impossible. If there are two, it says that $G$ is the union of two proper subgroups, impossible by Exercise 2.1.8. These contradictions prove that $G$ is cyclic.
+
+**Technique:** prove the contrapositive, place every element into a maximal subgroup, and combine two earlier homework results. Finiteness is essential for the maximal-subgroup existence step used here. The converse is false: a cyclic group of order $30$ has three maximal subgroups, of orders $15,10,6$.

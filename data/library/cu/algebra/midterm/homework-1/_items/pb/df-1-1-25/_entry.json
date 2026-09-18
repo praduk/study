@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a98ecbc22f97400b8e1bc4b57a390d6b",
+  "title": "1.1.25 — Groups of exponent at most two",
+  "rank": 17179869184,
+  "header": "Dummit–Foote, §1.1, Exercise 25; printed p. 22. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec63f0b3d3ac4c4780519d2c1c2955bb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec63f0b3d3ac4c4780519d2c1c2955bb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1188e5c4a76f4b95b5e9f96b887ee818",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.1188e5c4a76f4b95b5e9f96b887ee818.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:40.950909+00:00",
+  "updated_at": "2026-09-18T08:20:44.265330+00:00"
+}

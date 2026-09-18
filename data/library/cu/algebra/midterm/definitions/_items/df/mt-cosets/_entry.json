@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "08bcd7f9ecfd451381fa7bb92481e425",
+  "title": "Cosets, representatives, and index",
+  "header": "Dummit–Foote §1.7, Exercise 19, p. 45; Week 3, p. 6.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7cb485d468954700984af2f64f709dff",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7cb485d468954700984af2f64f709dff.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 73014444032
+}

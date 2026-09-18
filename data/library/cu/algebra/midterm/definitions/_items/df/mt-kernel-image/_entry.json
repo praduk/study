@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "cbd5706e2be14cee8253eea59aa7b19b",
+  "title": "Kernel and image of a homomorphism",
+  "header": "Dummit–Foote §1.6, Exercises 13–16, p. 40; Week 2, pp. 1–2.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "903a2df713a047389369538a4f44bc15",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.903a2df713a047389369538a4f44bc15.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 47244640256
+}

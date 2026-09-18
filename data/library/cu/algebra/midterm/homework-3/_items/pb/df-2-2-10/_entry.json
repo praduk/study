@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "f3cb59afd28f48fab0437eb65f8b1918",
+  "title": "2.2.10 — Normalizer of a subgroup of order two",
+  "header": "Dummit–Foote, §2.2, Exercise 10; printed p. 53. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6966c57f865847b781180898549e19dd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6966c57f865847b781180898549e19dd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b84a470289b04986a49164f57dacdb22",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b84a470289b04986a49164f57dacdb22.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 25769803776
+}

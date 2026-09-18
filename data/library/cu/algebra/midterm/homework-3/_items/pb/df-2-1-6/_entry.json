@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fd759a735b7c4271b876a1d398c79170",
+  "title": "2.1.6 — Torsion elements and the abelian hypothesis",
+  "header": "Dummit–Foote, §2.1, Exercise 6; printed p. 48. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "858277b4460549bf8ec5fc964da5098a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.858277b4460549bf8ec5fc964da5098a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "33e6492663a2431b9d0b01cfb8a706d9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.33e6492663a2431b9d0b01cfb8a706d9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 4294967296
+}

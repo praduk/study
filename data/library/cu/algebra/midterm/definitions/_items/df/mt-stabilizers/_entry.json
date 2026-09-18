@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e662d5a868de4a0fa170da7633243aa2",
+  "title": "Point stabilizers, pointwise stabilizers, and weak stabilizers",
+  "header": "Dummit–Foote §2.2, pp. 51–52; Week 2, pp. 13–14. The lecture uses “weak stabilizer” for setwise stabilizer.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "35ef96decce64503be207b54b224cbbe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.35ef96decce64503be207b54b224cbbe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 60129542144
+}

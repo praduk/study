@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ed70bb438e724936aefb14c3857f2449",
+  "title": "1.6.3 — Commutativity and homomorphisms",
+  "header": "Dummit–Foote, §1.6, Exercise 3; printed p. 40. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6e3bac9de3a04191aff0b5800542997c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6e3bac9de3a04191aff0b5800542997c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "31a878da565c4414990bc08b3259f2d8",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.31a878da565c4414990bc08b3259f2d8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 21474836480
+}

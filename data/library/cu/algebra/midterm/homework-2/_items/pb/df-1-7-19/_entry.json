@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "03885418d0af47ec88dc31f461ac46bc",
+  "title": "1.7.19 — Lagrange’s theorem from an action",
+  "header": "Dummit–Foote, §1.7, Exercise 19; printed p. 45. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e2247687b4d4d84a5ef5ad9d1d9cf5a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e2247687b4d4d84a5ef5ad9d1d9cf5a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a393c9f659f14628b8e68e634b7623bf",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a393c9f659f14628b8e68e634b7623bf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 55834574848
+}

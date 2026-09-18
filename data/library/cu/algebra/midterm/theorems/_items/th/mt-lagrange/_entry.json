@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "cd7759dbbb63437e92c6e33b0164217e",
+  "title": "Lagrange’s theorem and immediate consequences",
+  "header": "Dummit–Foote §1.7, Exercise 19, p. 45; Week 3, p. 6. Proof reconstructed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63e1334f93244a1fb4e947a662d09d5e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63e1334f93244a1fb4e947a662d09d5e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "111202b17ff54d50849dafa32d5e034f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.111202b17ff54d50849dafa32d5e034f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 42949672960
+}

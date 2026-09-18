@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2a94040ac85d491b95fc9fa01a26c06b",
+  "title": "1.1.29 — When a direct product is abelian",
+  "rank": 25769803776,
+  "header": "Dummit–Foote, §1.1, Exercise 29; printed p. 23. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d44353a5f4b54ab98990308b4560f843",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d44353a5f4b54ab98990308b4560f843.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "98ff2440fc8d4148ad45f41e18ed76e3",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.98ff2440fc8d4148ad45f41e18ed76e3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:50.747272+00:00",
+  "updated_at": "2026-09-18T08:20:53.941448+00:00"
+}

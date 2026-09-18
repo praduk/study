@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3f3c44fbc458452399a94d7e697952d0",
+  "title": "Order divides every identity exponent",
+  "header": "Dummit–Foote §2.3, Propositions 2–3, p. 55. Proof reconstructed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1dcf7817b0be4cf89eb97daaa16de710",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1dcf7817b0be4cf89eb97daaa16de710.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3d7eda66f6bc423a8ef134ac53a17f13",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.3d7eda66f6bc423a8ef134ac53a17f13.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 12884901888
+}

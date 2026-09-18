@@ -1,0 +1,2 @@
+Necessity follows from the subgroup axioms. Conversely choose $x\in H$; then $xx^{-1}=1\in H$. Thus $1y^{-1}=y^{-1}\in H$, and then $x(y^{-1})^{-1}=xy\in H$.
+For the finite version, multiplication by any fixed $h\in H$ maps $H$ injectively into itself by cancellation, hence surjectively. Since $h\in H$, some $e\in H$ has $he=h$, and cancellation gives $e=1$. Since $1\in H$, surjectivity gives some $k\in H$ with $hk=1$, so $k=h^{-1}$. Thus inverses lie in $H$.

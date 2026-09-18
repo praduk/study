@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "92c8a236dfa84603a3ed878f022d10e4",
+  "title": "The center of a dihedral group",
+  "header": "Dummit–Foote §1.2, Exercises 4–5, p. 28 and §2.2, Exercise 7; Week 3, p. 2. Proof reconstructed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d7390953a6843e19d227e883b91aa14",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d7390953a6843e19d227e883b91aa14.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "154ccc954b60453d941dd257d92f8a08",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.154ccc954b60453d941dd257d92f8a08.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 51539607552
+}

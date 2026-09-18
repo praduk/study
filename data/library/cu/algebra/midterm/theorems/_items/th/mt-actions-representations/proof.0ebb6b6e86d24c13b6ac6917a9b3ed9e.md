@@ -1,0 +1,2 @@
+For an action, $\rho(g):a\mapsto g\cdot a$ is bijective with inverse $\rho(g^{-1})$. The action law gives $\rho(gh)=\rho(g)\rho(h)$. Conversely such a homomorphism defines an action, since it preserves the identity and products.
+Its kernel is exactly the set of elements fixing every point, establishing the faithfulness criterion. For Cayley's theorem, use left multiplication $\lambda_g(x)=gx$. It is an action, and $\lambda_g=\id$ implies $g=\lambda_g(1)=1$. Hence $g\mapsto\lambda_g$ is injective. For finite $G$, labeling its $n$ elements identifies $S_G$ with $S_n$.

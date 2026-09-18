@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3fa99fc8c3344bbb89c354c8e1bb53ec",
+  "title": "1.7.8 — Actions on subsets",
+  "header": "Dummit–Foote, §1.7, Exercise 8; printed p. 44. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "325b2712fff246f7b7a1a40007865941",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.325b2712fff246f7b7a1a40007865941.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "91d810cbe0644175a8c25b4dcb5283e9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.91d810cbe0644175a8c25b4dcb5283e9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 34359738368
+}

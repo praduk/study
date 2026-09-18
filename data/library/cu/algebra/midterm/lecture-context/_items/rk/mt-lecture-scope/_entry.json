@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d942308cdddb49b18b53d16a46e940c2",
+  "title": "Lecture coverage and homework boundary",
+  "header": "Sources: 026F6130Week1.pdf (13 pages), 026F6130Week2.pdf (14 pages), 026F6130Week3.pdf (13 pages); visually inspected.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "93149e1fc92c4472ae2fba234b30c805",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.93149e1fc92c4472ae2fba234b30c805.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 4294967296
+}

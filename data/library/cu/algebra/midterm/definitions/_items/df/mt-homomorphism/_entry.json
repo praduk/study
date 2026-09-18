@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4a5a910a96504c3fabf59d039b8ea568",
+  "title": "Homomorphism, isomorphism, automorphism",
+  "header": "Dummit–Foote §1.6, pp. 36–41; Week 2, pp. 1–4.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ac961e6c635f40a89d58c2c4dde5f8b6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ac961e6c635f40a89d58c2c4dde5f8b6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 42949672960
+}

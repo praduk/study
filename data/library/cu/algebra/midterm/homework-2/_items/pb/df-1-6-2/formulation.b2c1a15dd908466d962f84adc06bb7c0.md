@@ -1,0 +1,1 @@
+If $\varphi:G\to H$ is an isomorphism, prove that $|\varphi(x)|=|x|$ for every $x\in G$. Deduce that isomorphic groups have the same number of elements of each positive finite order $n$. Does this remain true for a homomorphism?

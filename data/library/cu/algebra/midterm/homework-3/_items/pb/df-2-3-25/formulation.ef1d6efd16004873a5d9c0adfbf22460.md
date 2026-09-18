@@ -1,0 +1,1 @@
+Let $G$ be cyclic of finite order $n$ and let $k\in\Z$ satisfy $\gcd(k,n)=1$. Prove that $x\mapsto x^k$ is surjective. Then use Lagrange’s theorem to prove the same result for any finite group of order $n$.

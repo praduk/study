@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a747493fff4d46288a447b99dc186b8f",
+  "title": "Left action and permutation representation",
+  "header": "Dummit–Foote §1.7, pp. 41–45; Week 2, pp. 5–6 and Week 3, p. 4.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9c9809acdb6340fabef672f8e9647373",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9c9809acdb6340fabef672f8e9647373.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 51539607552
+}

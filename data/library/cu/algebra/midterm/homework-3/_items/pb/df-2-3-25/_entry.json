@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "095235725a1c430fbcffddce5b695e49",
+  "title": "2.3.25 — Coprime power maps",
+  "header": "Dummit–Foote, §2.3, Exercise 25; printed p. 61. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef1d6efd16004873a5d9c0adfbf22460",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef1d6efd16004873a5d9c0adfbf22460.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f0a160bb5f1349adbeca2665cca13db2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f0a160bb5f1349adbeca2665cca13db2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 34359738368
+}

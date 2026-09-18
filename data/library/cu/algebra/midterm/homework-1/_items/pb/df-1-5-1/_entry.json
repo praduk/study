@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "418147863caa41cb9ef91b4afcdce6ba",
+  "title": "1.5.1 — Element orders in the quaternion group",
+  "rank": 55834574848,
+  "header": "Dummit–Foote, §1.5, Exercise 1; printed p. 36. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6edb6a1a200140d780ce626f2d31240f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6edb6a1a200140d780ce626f2d31240f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "81a8ad4e7066421788c1e5fb0e74b520",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.81a8ad4e7066421788c1e5fb0e74b520.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:21:25.322854+00:00",
+  "updated_at": "2026-09-18T08:21:28.674924+00:00"
+}

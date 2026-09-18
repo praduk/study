@@ -1,0 +1,3 @@
+From $\varphi(1)=\varphi(1)^2$, cancellation gives $\varphi(1)=1$. Apply $\varphi$ to $gg^{-1}=1$ to get the inverse identity. Induction gives positive powers, the identity gives exponent zero, and inverses give negative powers.
+The kernel contains $1$, and $x,y\in\ker\varphi$ implies $\varphi(xy^{-1})=1$. The image contains $1$, and $\varphi(a)\varphi(b)^{-1}=\varphi(ab^{-1})$ lies in the image. Apply the subgroup criterion.
+If $\varphi$ is injective, only $1$ maps to $1$. Conversely, if its kernel is trivial and $\varphi(a)=\varphi(b)$, then $\varphi(ab^{-1})=1$, whence $ab^{-1}=1$ and $a=b$.

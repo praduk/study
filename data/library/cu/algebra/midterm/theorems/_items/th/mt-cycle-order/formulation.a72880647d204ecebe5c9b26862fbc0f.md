@@ -1,0 +1,1 @@
+Every permutation of a finite set has a decomposition into disjoint cycles, unique up to ordering the cycles and cyclically rotating each cycle. Its order is the least common multiple of their lengths.

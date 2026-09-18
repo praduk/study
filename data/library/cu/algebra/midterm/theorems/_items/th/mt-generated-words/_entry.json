@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b9f23fcbec40461fa34f7cda451bac3f",
+  "title": "Intersection and word descriptions of generated subgroups",
+  "header": "Dummit–Foote §2.4, Propositions 8–9 and discussion, pp. 62–64; Week 2, p. 10. Proof reconstructed.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e91a2219123849d59ef7377c118761c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e91a2219123849d59ef7377c118761c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "135b1a4f18cf49e2960506a466e0c846",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.135b1a4f18cf49e2960506a466e0c846.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 47244640256
+}

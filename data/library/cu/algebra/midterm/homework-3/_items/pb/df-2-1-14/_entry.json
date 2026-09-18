@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "77408f921ecc4ca7900b18415c4f49e2",
+  "title": "2.1.14 — Involutions in a dihedral group need not form a subgroup",
+  "header": "Dummit–Foote, §2.1, Exercise 14; printed p. 49. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ab91d0646ee343a6bbf2e5737f5b0ada",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ab91d0646ee343a6bbf2e5737f5b0ada.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a09826e86b874e4b9a2f96939d82302e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a09826e86b874e4b9a2f96939d82302e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 17179869184
+}

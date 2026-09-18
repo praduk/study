@@ -1,0 +1,1 @@
+Left actions of $G$ on $A$ correspond to homomorphisms $\rho:G\to S_A$. The action is faithful iff $\ker\rho=\{1\}$. Every group is isomorphic to a subgroup of $S_G$; in particular a finite group of order $n$ embeds in $S_n$.

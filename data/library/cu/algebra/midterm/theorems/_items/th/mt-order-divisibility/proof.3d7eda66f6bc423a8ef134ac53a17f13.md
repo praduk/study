@@ -1,0 +1,1 @@
+Write $m=qn+r$ with $0\le r<n$. Then $x^m=x^r$. If it is $1$, minimality of the positive order forces $r=0$; the converse is immediate. Apply this to $a-b$ for equality of powers. In the infinite case equality of distinct powers gives a nonzero identity exponent; taking its absolute value gives a positive one, contradiction.

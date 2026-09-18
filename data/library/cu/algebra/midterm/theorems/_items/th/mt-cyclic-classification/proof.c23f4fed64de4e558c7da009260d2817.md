@@ -1,0 +1,3 @@
+The map $m\mapsto x^m$ is a surjective homomorphism. For infinite order it is injective. For order $n$, equality of powers is exactly equality modulo $n$, giving a well-defined bijective homomorphism $\overline m\mapsto x^m$.
+Let $K\le\langle x\rangle$. If $K=\{1\}$ it is cyclic. Otherwise choose the least positive $a$ with $x^a\in K$ (invert a negative power if necessary). For $x^m\in K$, write $m=qa+r$, $0\le r<a$. Then $x^r=x^m(x^a)^{-q}\in K$, so minimality forces $r=0$. Thus $K=\langle x^a\rangle$.
+If $|x|=n$, the same division argument applied to $n$ shows $a\mid n$. Hence $|K|=n/a$. For prescribed order $d$, necessarily $a=n/d$, proving uniqueness; the power-order formula proves existence. The trivial subgroup is obtained when $d=1$.

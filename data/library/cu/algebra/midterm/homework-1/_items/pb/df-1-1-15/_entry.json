@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "39aa2cb9fad742fca0c20582b49b2810",
+  "title": "1.1.15 — Inverse of a product",
+  "rank": 8589934592,
+  "header": "Dummit–Foote, §1.1, Exercise 15; printed p. 22. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "681194c87c7648afa10012cf9e91d0bc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.681194c87c7648afa10012cf9e91d0bc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a3a1a0ce0978457f8b096223e6b79cfc",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a3a1a0ce0978457f8b096223e6b79cfc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:31.267472+00:00",
+  "updated_at": "2026-09-18T08:20:34.505106+00:00"
+}

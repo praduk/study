@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5f0b6ce2238e43ea9acee82361ca0ff8",
+  "title": "2.2.6 — Subgroups and their normalizers and centralizers",
+  "header": "Dummit–Foote, §2.2, Exercise 6; printed p. 52. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "74847d82c6094f6ab0a4b3630e10cb3d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.74847d82c6094f6ab0a4b3630e10cb3d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0b73d439f63a48e1b8d6b9f74538ca46",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0b73d439f63a48e1b8d6b9f74538ca46.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 21474836480
+}

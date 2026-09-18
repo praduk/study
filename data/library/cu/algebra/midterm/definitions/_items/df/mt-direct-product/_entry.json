@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4fcb084c075047a5b6822096bac9e356",
+  "title": "Direct product of groups",
+  "header": "Dummit–Foote §1.1, p. 18 and Exercises 28–30, pp. 22–23.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9e74dfb870d84a139b62831a3e7bd4a8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9e74dfb870d84a139b62831a3e7bd4a8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 21474836480
+}

@@ -1,0 +1,1 @@
+Show that $\langle a,b\mid a^2=b^2=(ab)^n=1\rangle$ is a presentation of $D_{2n}$ with $a=s$ and $b=sr$. Check the relations in both directions against $D_{2n}=\langle r,s\mid r^n=s^2=1,\ rs=sr^{-1}\rangle$.

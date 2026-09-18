@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a1ec62a2767f4b2bb4c24f7e68bb0477",
+  "title": "2.1.8 — When a union is a subgroup",
+  "header": "Dummit–Foote, §2.1, Exercise 8; printed p. 48. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b563fa37d4204ce3875dbeb84b79b0ac",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b563fa37d4204ce3875dbeb84b79b0ac.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "59d05f305f2945e9a2db36bf5d490e47",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.59d05f305f2945e9a2db36bf5d490e47.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:22:03.902258+00:00",
+  "updated_at": "2026-09-18T08:22:03.902258+00:00",
+  "rank": 8589934592
+}

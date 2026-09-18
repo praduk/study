@@ -1,0 +1,1 @@
+In a group, the identity and every inverse are unique. Moreover $(ab)^{-1}=b^{-1}a^{-1}$ and $(a^{-1})^{-1}=a$. The equations $ax=b$ and $ya=b$ have unique solutions $x=a^{-1}b$ and $y=ba^{-1}$. Consequently left and right cancellation hold.

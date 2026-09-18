@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a9bd619a9b354d689ab882706fc2598b",
+  "title": "1.2.5 — Center of an odd dihedral group",
+  "rank": 30064771072,
+  "header": "Dummit–Foote, §1.2, Exercise 5; printed p. 28. Statement transcribed with notation normalized; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6cafc8a61ab74aff9415c212a009fa98",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6cafc8a61ab74aff9415c212a009fa98.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2d36eb0730a9400eacbc2c9d749e39bd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2d36eb0730a9400eacbc2c9d749e39bd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:55.550242+00:00",
+  "updated_at": "2026-09-18T08:20:58.940048+00:00"
+}
