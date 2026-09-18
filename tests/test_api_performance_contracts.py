@@ -9,6 +9,49 @@ from study_app.app import create_app
 LOCAL_HEADERS = {"origin": "http://127.0.0.1", "x-study-csrf": "local"}
 
 
+def test_navigation_bootstrap_keeps_links_and_stats_without_editor_metadata(settings_factory):
+    app = create_app(settings_factory(), local_mode=True)
+    store = app.state.store
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "th", "Theorem", "theorem", "A long header", "Body")
+    store.add_formulation(entry["id"], {"label": "Alternative", "subtag": "alt", "content": "Alternative body"})
+    store.add_supplement(entry["id"], {"kind": "pf", "label": "Proof", "content": "Proof body"})
+    with _client(app) as client:
+        full = client.get("/api/bootstrap?compact=true").json()
+        small = client.get("/api/bootstrap?navigation=true").json()
+        detail = client.get(f"/api/entries/{entry['id']}").json()
+    assert "tree" not in small
+    assert small["review"] == full["review"]
+    assert small["folders"] == full["folders"]
+    summary = small["entries"][0]
+    assert summary["canonical_tag"] == "algebra:th:theorem"
+    assert "header" not in summary and "assets" not in summary
+    for group in ("formulations", "supplements"):
+        assert summary[group] == [{key: variant[key] for key in ("id", "main", "subtag", "kind") if key in variant}
+                                  for variant in full["entries"][0][group]]
+        assert all("file" not in variant and "content" not in variant for variant in summary[group])
+    assert detail["header"] == "A long header"
+    assert detail["formulations"][0]["content"] == "Body\n"
+
+
+def test_interactive_authored_writes_do_not_back_up_the_whole_library(settings_factory, monkeypatch):
+    app = create_app(settings_factory(), local_mode=True)
+    store = app.state.store
+
+    def forbidden():
+        pytest.fail("interactive writes must not copy the whole library for rollback")
+
+    monkeypatch.setattr(store, "_begin_v2_transaction", forbidden)
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "th", "Theorem", "theorem", "", "Body")
+    store.add_formulation(entry["id"], {"label": "Alternative", "subtag": "alt", "content": "Alternative"})
+    store.add_supplement(entry["id"], {"kind": "pf", "label": "Proof", "content": "Proof"})
+    store.update_entry(entry["id"], {"tag": "new-tag"})
+    store.update_folder(folder["id"], {"slug": "groups"})
+    assert store.get_entry(entry["id"])["canonical_tag"] == "groups:th:new-tag"
+    assert store.check_data()["entries"] == 1
+
+
 def _client(app):
     return TestClient(
         app,

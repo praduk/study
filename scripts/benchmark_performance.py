@@ -39,6 +39,8 @@ def main():
         "--git-root", type=Path, help="Read-only Git status root; defaults to source"
     )
     parser.add_argument("--samples", type=int, default=7)
+    parser.add_argument("--interactive", action="store_true",
+                        help="Use the current UI's navigation bootstrap and small move responses")
     parser.add_argument("--pdf", action="store_true")
     args = parser.parse_args()
     if args.samples < 1:
@@ -96,6 +98,11 @@ def main():
         ) as client:
 
             def request(method, url, **kwargs):
+                if args.interactive:
+                    if url == "/api/bootstrap?compact=true":
+                        url += "&navigation=true"
+                    elif method == "POST" and url.startswith("/api/items/") and url.endswith("/move"):
+                        url += "?include_library=false"
                 response = client.request(method, url, **kwargs)
                 response.raise_for_status()
                 return response

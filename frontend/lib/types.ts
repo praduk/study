@@ -22,25 +22,27 @@ export interface Asset {
   invert_lightness?: boolean;
 }
 
+export type VariantSummary = Pick<Variant, 'id' | 'subtag' | 'main' | 'kind'>;
+
 export interface EntrySummary {
   id: string;
   folder_id: string;
   kind: EntryKind;
   title: string;
   tag: string;
-  header: string;
   order: number;
   canonical_tag: string;
   review_enabled: boolean;
   review_modes: ReviewMode[];
   problem_family?: string;
   confusable_with?: string[];
-  formulations: Omit<Variant, 'content'>[];
-  supplements: Omit<Variant, 'content'>[];
-  assets: Asset[];
+  formulations: VariantSummary[];
+  supplements: VariantSummary[];
 }
 
 export interface EntryDetail extends EntrySummary {
+  header: string;
+  assets: Asset[];
   formulations: Variant[];
   supplements: Variant[];
 }

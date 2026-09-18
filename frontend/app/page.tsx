@@ -26,8 +26,9 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { api, setCsrfToken } from '@/lib/api';
+import { api, batchLibraryWrites, setCsrfToken } from '@/lib/api';
 import { folderPathIds, libraryPathForEntry, resolveLibraryPath } from '@/lib/library-path';
+import { acceptLibraryDrag, LIBRARY_DRAG_TYPE } from '@/lib/library-drag';
 import { hydrateBootstrap, entryReviewStatus, updateBootstrapEntryReview, updateBootstrapFolder } from '@/lib/library-tree';
 import { configureMathJax } from '@/lib/mathjax';
 import { readingVariantSelection } from '@/lib/reference-navigation';
@@ -63,14 +64,14 @@ function getThemeSnapshot() {
 }
 
 function parseDrag(event: React.DragEvent): DragPayload | null {
-  try { return JSON.parse(event.dataTransfer.getData('application/x-study-item')) as DragPayload; }
+  try { return JSON.parse(event.dataTransfer.getData(LIBRARY_DRAG_TYPE)) as DragPayload; }
   catch { return null; }
 }
 
 function beginDrag(event: React.DragEvent, payload: DragPayload, label: string) {
   event.stopPropagation();
   event.dataTransfer.effectAllowed = 'move';
-  event.dataTransfer.setData('application/x-study-item', JSON.stringify(payload));
+  event.dataTransfer.setData(LIBRARY_DRAG_TYPE, JSON.stringify(payload));
   const preview = document.createElement('div');
   preview.className = 'tree-drag-preview';
   preview.textContent = label;
@@ -122,7 +123,8 @@ function InsertionPoint({ parentFolderId, folderName, entryIndex, folderIndex, e
   const position = entryIndex ?? folderIndex ?? 0;
   return <div
     className={`entry-insert-slot ${allowsEntries ? 'entry-slot' : ''} ${allowsFolders ? 'folder-slot' : ''} ${empty ? 'empty' : ''}`}
-    onDragOver={(event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.add('drop-target'); }}
+    onDragEnter={acceptLibraryDrag}
+    onDragOver={acceptLibraryDrag}
     onDragLeave={(event) => event.currentTarget.classList.remove('drop-target')}
     onDrop={(event) => {
       event.preventDefault();
@@ -175,7 +177,8 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReview
   return <div className="tree-node">
     <div className={`tree-row folder-row ${selectedFolder === node.id ? 'selected-folder' : ''}`} draggable={!readOnly}
       onDragStart={readOnly ? undefined : (event) => beginDrag(event, { type: 'folder', id: node.id }, node.name)}
-      onDragOver={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.add('drop-target'); }}
+      onDragEnter={readOnly ? undefined : acceptLibraryDrag}
+      onDragOver={readOnly ? undefined : acceptLibraryDrag}
       onDragLeave={(event) => event.currentTarget.classList.remove('drop-target')}
       onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.remove('drop-target'); const payload = parseDrag(event); if (payload && payload.id !== node.id) onMove(payload, node.id, payload.type === 'entry' ? node.entries.length : node.children.length); }}>
       <button className="tree-chevron" aria-label={open ? 'Collapse folder' : 'Expand folder'} onClick={() => onToggle(node.id)}>{open ? <ChevronDown /> : <ChevronRight />}</button>
@@ -190,8 +193,10 @@ function TreeNode({ node, selectedEntry, selectedFolder, expanded, pendingReview
         <button
         className={`entry-row ${selectedEntry === entry.id ? 'active' : ''}`} draggable={!readOnly}
         onDragStart={readOnly ? undefined : (event) => beginDrag(event, { type: 'entry', id: entry.id }, entry.title)}
-        onDragOver={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); }}
-        onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); const payload = parseDrag(event); if (payload?.type === 'entry') onMove(payload, node.id, index); }}
+        onDragEnter={readOnly ? undefined : acceptLibraryDrag}
+        onDragOver={readOnly ? undefined : acceptLibraryDrag}
+        onDragLeave={(event) => event.currentTarget.classList.remove('drop-target')}
+        onDrop={readOnly ? undefined : (event) => { event.preventDefault(); event.stopPropagation(); event.currentTarget.classList.remove('drop-target'); const payload = parseDrag(event); if (payload?.type === 'entry') onMove(payload, node.id, index); }}
         onClick={() => onSelectEntry(entry.id, node.id)}><span className={`type-chip type-${entry.kind}`}>{entry.kind}</span><span>{entry.title}</span></button></div>
         {!readOnly && <InsertionPoint parentFolderId={node.id} folderName={node.name} entryIndex={index + 1} folderIndex={index === node.entries.length - 1 ? 0 : undefined} onInsertEntry={onInsertEntry} onInsertFolder={onInsertFolder} onMove={onMove} />}
       </div>)}</div>
@@ -278,6 +283,7 @@ export default function Home() {
   const [librarySynchronized, setLibrarySynchronized] = useState(true); const [pullReloadError, setPullReloadError] = useState(''); const [locationError, setLocationError] = useState('');
   const dataRef = useRef<Bootstrap | null>(null);
   const pendingReviewPreferencesRef = useRef<Set<string>>(new Set());
+  const movePendingRef = useRef(false);
   const locationInitialized = useRef(false);
   const editorOpenRef = useRef(false);
   const pendingPopstate = useRef(false);
@@ -345,7 +351,7 @@ export default function Home() {
     if (target) writeEntryPath(target, variantId, 'push');
   }, [isMobile, writeEntryPath]);
 
-  const load = useCallback(async () => { try { const payload = await api<BootstrapPayload>('/api/bootstrap?compact=true'); const next = hydrateBootstrap(payload); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
+  const load = useCallback(async () => { try { const payload = await api<BootstrapPayload>('/api/bootstrap?compact=true&navigation=true'); const next = hydrateBootstrap(payload); dataRef.current = next; setData(next); configureMathJax(next.macros); if (!locationInitialized.current) { locationInitialized.current = true; selectFromPath(next, window.location.pathname); return next; } setExpanded((current) => { const valid = new Set(next.folders.map((folder) => folder.id)); return new Set([...current].filter((id) => valid.has(id))); }); setSelectedEntryId((current) => current && next.entries.some((item) => item.id === current) ? current : next.entries[0]?.id || null); setSelectedFolderId((current) => current && next.folders.some((item) => item.id === current) ? current : next.entries[0]?.folder_id || next.folders[0]?.id || null); return next; } catch (reason) { setError((reason as Error).message); return undefined; } }, [selectFromPath]);
   useEffect(() => { api<{ authenticated: boolean; auth_required: boolean; csrf: string | null }>('/api/session').then((result) => { setCsrfToken(result.csrf); setSession({ loading: false, authenticated: result.authenticated, authRequired: result.auth_required }); if (result.authenticated) return load(); }).catch((reason: Error) => { setSession({ loading: false, authenticated: false, authRequired: true }); setError(reason.message); }); }, [load]);
   useEffect(() => { dataRef.current = data; }, [data]);
   useEffect(() => {
@@ -460,7 +466,7 @@ export default function Home() {
     setCreateIndex(null);
     setEntry(null);
     try {
-      const next = hydrateBootstrap(await api<BootstrapPayload>('/api/bootstrap?compact=true'));
+      const next = hydrateBootstrap(await api<BootstrapPayload>('/api/bootstrap?compact=true&navigation=true'));
       const nextEntryId = selectedEntryId && next.entries.some((item) => item.id === selectedEntryId)
         ? selectedEntryId
         : next.entries[0]?.id || null;
@@ -549,7 +555,33 @@ export default function Home() {
     }
   }, [isMobile, librarySynchronized, load]);
   const refreshSelectedEntry = useCallback(async (syncFolder: boolean) => { if (!selectedEntryId) return; const refreshed = await api<EntryDetail>(`/api/entries/${selectedEntryId}`); setEntry(refreshed); if (syncFolder) setSelectedFolderId(refreshed.folder_id); setExpanded((current) => { const next = new Set(current); folderPathIds(refreshed.folder_id, dataRef.current?.folders || []).forEach((id) => next.add(id)); return next; }); return refreshed; }, [selectedEntryId]);
-  const moveItem = useCallback(async (payload: DragPayload, destination: string | null, index: number) => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size) return false; try { await api(`/api/items/${payload.type}/${payload.id}/move`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) }); await load(); if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry'); setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.'); return true; } catch (reason) { setError((reason as Error).message); return false; } }, [isMobile, librarySynchronized, load, selectedEntryId, refreshSelectedEntry]);
+  const moveItem = useCallback(async (payload: DragPayload, destination: string | null, index: number) => {
+    if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size || movePendingRef.current) return false;
+    movePendingRef.current = true;
+    setError('');
+    setNotice(payload.type === 'folder' ? 'Moving folder…' : 'Moving entry…');
+    try {
+      await batchLibraryWrites(async () => {
+        await api(`/api/items/${payload.type}/${payload.id}/move?include_library=false`, { method: 'POST', body: JSON.stringify({ destination_folder_id: destination, index }) });
+        const refreshed = await load();
+        if (!refreshed) throw new Error('The move was saved, but the library could not be refreshed. Reload Study.');
+        if (destination) setExpanded((current) => {
+          const next = new Set(current);
+          folderPathIds(destination, refreshed.folders).forEach((id) => next.add(id));
+          return next;
+        });
+        if (selectedEntryId && (payload.type === 'folder' || payload.id === selectedEntryId)) await refreshSelectedEntry(payload.type === 'entry');
+      });
+      setNotice(payload.type === 'folder' ? 'Folder moved. Its canonical namespace has changed.' : 'Entry moved. Its canonical namespace has changed.');
+      return true;
+    } catch (reason) {
+      setNotice('');
+      setError((reason as Error).message);
+      return false;
+    } finally {
+      movePendingRef.current = false;
+    }
+  }, [isMobile, librarySynchronized, load, selectedEntryId, refreshSelectedEntry]);
   const addFolder = useCallback(async (parentId: string | null, index: number | null = null) => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size) return; const name = window.prompt(parentId ? 'Subfolder name' : 'Top-level folder name'); if (!name) return; const slug = window.prompt('Namespace segment', name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')); if (!slug) return; try { const created = await api<Folder>('/api/folders', { method: 'POST', body: JSON.stringify({ name, slug, parent_id: parentId, index }) }); setSelectedFolderId(created.id); setExpanded((current) => new Set(current).add(parentId || created.id)); await load(); } catch (reason) { setError((reason as Error).message); } }, [isMobile, librarySynchronized, load]);
   const renameFolder = async () => { if (isMobile || !librarySynchronized || pendingReviewPreferencesRef.current.size || !data || !selectedFolderId) return; const folder = data.folders.find((item) => item.id === selectedFolderId); if (!folder) return; const name = window.prompt('Folder name', folder.name); if (!name) return; const slug = window.prompt('Namespace segment', folder.slug); if (!slug) return; try { await api(`/api/folders/${folder.id}`, { method: 'PATCH', body: JSON.stringify({ name, slug }) }); await load(); await refreshSelectedEntry(false); } catch (reason) { setError((reason as Error).message); } };
   const beginDeleteFolder = () => {

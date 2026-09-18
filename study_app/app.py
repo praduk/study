@@ -288,7 +288,7 @@ def _frontend_html_response(path: Path, *, cache_control: str | None = None) -> 
 
 
 def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
-    store = LibraryStore(settings.data_dir)
+    store = LibraryStore(settings.data_dir, recovery_backups=False)
     # Warm the immutable search snapshot so the first editor picker/hover has
     # no disk-indexing latency.
     store.reload_search_index()
@@ -490,9 +490,10 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def bootstrap(
         _session: Auth,
         compact: Annotated[bool, Query()] = False,
+        navigation: Annotated[bool, Query()] = False,
     ) -> dict[str, Any]:
         with store.mutation_lock:
-            library = store.snapshot(include_tree=not compact)
+            library = store.snapshot(include_tree=not (compact or navigation), navigation_only=navigation)
             review_stats = review.stats(library)
         return {
             **library,
@@ -669,9 +670,12 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         return store.update_variant(entry_id, variant_id, payload.model_dump(exclude_unset=True))
 
     @app.post("/api/items/{item_type}/{item_id}/move")
-    def move_item(item_type: str, item_id: str, payload: MoveRequest, _session: Mutation):
+    def move_item(
+        item_type: str, item_id: str, payload: MoveRequest, _session: Mutation,
+        include_library: Annotated[bool, Query()] = True,
+    ):
         store.move_item(item_type, item_id, payload.destination_folder_id, payload.index)
-        return {"ok": True, "library": store.snapshot()}
+        return {"ok": True, **({"library": store.snapshot()} if include_library else {})}
 
     @app.put("/api/folders/{folder_id}/order")
     def reorder(folder_id: str, payload: ReorderRequest, _session: Mutation):
@@ -996,7 +1000,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         }
 
     @app.get("/{path:path}")
-    def frontend(path: str):
+    def frontend(path: str, request: Request):
         if path in {"api", "media"} or path.startswith(("api/", "media/")):
             raise HTTPException(status_code=404, detail="API route not found")
         root = settings.frontend_public
@@ -1011,7 +1015,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                 if path.startswith("vendor/")
                 else "no-cache"
             )
-            return FileResponse(candidate, headers={"Cache-Control": cache_control})
+            response = FileResponse(candidate, stat_result=candidate.stat(),
+                                    headers={"Cache-Control": cache_control})
+            validators = request.headers.get("if-none-match", "")
+            if any(value.strip().removeprefix("W/") in {"*", response.headers["etag"]}
+                   for value in validators.split(",")):
+                return Response(status_code=304, headers={
+                    key: response.headers[key] for key in ("etag", "last-modified", "cache-control")
+                })
+            return response
         if path in {"_next", "vendor"} or path.startswith(("_next/", "vendor/")):
             raise HTTPException(status_code=404, detail="Frontend asset not found")
         if Path(path).suffix:

@@ -242,8 +242,9 @@ def _slug(value: str, label: str = "slug") -> str:
 class LibraryStore:
     """Git-friendly content store with atomic metadata and Markdown writes."""
 
-    def __init__(self, data_dir: Path):
+    def __init__(self, data_dir: Path, *, recovery_backups: bool = True):
         self.data_dir = data_dir.resolve()
+        self.recovery_backups = recovery_backups
         self.library_path = self.data_dir / "library.json"
         self.macros_path = self.data_dir / "macros.json"
         self.legacy_content_dir = self.data_dir / "content"
@@ -504,6 +505,131 @@ class LibraryStore:
         if backup.exists():
             shutil.rmtree(backup, ignore_errors=True)
         journal.unlink(missing_ok=True)
+
+    def _move_v2_entry(self, library: dict[str, Any], item: dict[str, Any]) -> bool:
+        """Move one entry without backing up or rewriting unrelated entries.
+
+        Rare exhausted sparse-rank gaps use the generic transaction, which can
+        safely renumber several peers. Folder moves retain that path too.
+        """
+        source = self._v2_entry_paths[item["id"]]
+        destination = (self._v2_folder_paths[item["folder_id"]]
+                       / V2_ITEMS_DIRECTORY / item["kind"] / item["tag"])
+        peers = sorted((entry for entry in library["entries"]
+                        if entry["folder_id"] == item["folder_id"]),
+                       key=lambda entry: (entry.get("order", 0), entry["id"]))
+        ranks = self._sparse_ranks([entry["id"] for entry in peers], {
+            key: rank for key, rank in self._v2_entry_ranks.items() if key != item["id"]
+        })
+        if any(rank != self._v2_entry_ranks[key]
+               for key, rank in ranks.items() if key != item["id"]):
+            return False
+        if source == destination:
+            previous_rank = self._v2_entry_ranks[item["id"]]
+            self._v2_entry_ranks[item["id"]] = ranks[item["id"]]
+            try:
+                self._write_v2_entry_files(library, item, {})
+            except BaseException:
+                self._v2_entry_ranks[item["id"]] = previous_rank
+                raise
+            return True
+        self._v2_data_relative(destination)
+        if destination.exists() or destination.is_symlink():
+            raise StoreError("entry move destination already exists")
+        if any((self.runtime_dir / name).exists() or (self.runtime_dir / name).is_symlink()
+               for name in (V2_WRITE_JOURNAL, V2_ENTRY_WRITE_JOURNAL)):
+            raise StoreError("an unfinished library write requires recovery")
+        before = dict(self._library_signatures)
+        original_metadata = (source / V2_ENTRY_METADATA).read_bytes()
+        if not self._library_cache_is_current():
+            raise StoreError("library changed while planning the move; retry")
+        created_parents = {path for path in (destination.parent, destination.parent.parent)
+                           if not path.exists()}
+        self._invalidate_library_cache()
+        self._invalidate_search_index()
+        moved = False
+        try:
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            os.rename(source, destination)
+            moved = True
+            metadata = self._v2_entry_metadata(item, ranks[item["id"]], destination)
+            _atomic_json(destination / V2_ENTRY_METADATA, metadata)
+            if not self._cache_v2_entry_move(
+                library, item, source, destination, ranks[item["id"]], metadata,
+                before, created_parents,
+            ):
+                # Unexpected disk changes require the ordinary complete parse.
+                self._read()
+        except Exception as exc:
+            self._invalidate_library_cache()
+            self._invalidate_search_index()
+            if moved:
+                try:
+                    _atomic_bytes(destination / V2_ENTRY_METADATA, original_metadata)
+                    os.rename(destination, source)
+                except OSError as rollback_error:
+                    raise StoreError("the move could not be undone; reload Study to inspect its location") from rollback_error
+            raise StoreError(str(exc)) from exc
+        return True
+
+    def _cache_v2_entry_move(
+        self, library: dict[str, Any], item: dict[str, Any], source: Path, destination: Path,
+        rank: int, metadata: dict[str, Any],
+        before: dict[Path, tuple[int, int, int, int, int] | None], created_parents: set[Path],
+    ) -> bool:
+        """Validate the moved entry and prove every other file stayed unchanged."""
+        source_parts = source.parts
+
+        def moved(path: Path) -> Path:
+            return (destination.joinpath(*path.parts[len(source_parts):])
+                    if path.parts[:len(source_parts)] == source_parts else path)
+
+        for variant in (*item["formulations"], *item["supplements"]):
+            variant["file"] = self._v2_data_relative(moved(self.data_dir / variant["file"]))
+        for asset in item["assets"]:
+            for field in ("path", "source"):
+                if field in asset:
+                    asset[field] = self._v2_data_relative(moved(self.data_dir / asset[field]))
+        metadata_path = destination / V2_ENTRY_METADATA
+        expected_text = json.dumps(metadata, ensure_ascii=False, indent=2) + "\n"
+        try:
+            if any(path.is_symlink() or not path.is_dir() for path in created_parents):
+                return False
+            saved_signature = self._file_signature(metadata_path)
+            if metadata_path.read_text(encoding="utf-8") != expected_text:
+                return False
+            validate_library(
+                {"version": 2, "folders": library["folders"], "entries": [item]},
+                self.data_dir, self.library_dir, self.media_dir, self.diagram_dir,
+            )
+            expected = {moved(path): signature for path, signature in before.items()}
+            signatures = {self.library_path: self._file_signature(self.library_path),
+                          **self._v2_tree_signatures()}
+            signatures.update({path: self._file_signature(path)
+                               for path in expected if path not in signatures})
+            if (set(signatures) != set(expected) | created_parents
+                    or any(signature is None for signature in signatures.values())
+                    or signatures[metadata_path] != saved_signature):
+                return False
+            changed_dirs = {destination, source.parent, destination.parent,
+                            destination.parent.parent, destination.parent.parent.parent}
+            for path, signature in expected.items():
+                if path == metadata_path:
+                    continue
+                if path in changed_dirs:
+                    if signatures[path][:2] != signature[:2]:
+                        return False
+                elif signatures[path] != signature:
+                    return False
+            self._v2_entry_paths[item["id"]] = destination
+            self._v2_entry_ranks[item["id"]] = rank
+            self._v2_signature_paths = {moved(path) for path in self._v2_signature_paths}
+            library["updated_at"] = _now()
+            self._cache_validated_library(library, signatures=signatures)
+            return True
+        except (OSError, UnicodeDecodeError, LibraryValidationError, StoreError):
+            self._invalidate_library_cache()
+            return False
 
     def ensure_layout(self) -> None:
         """Recheck/recreate safe auxiliary directories after a Git fast-forward."""
@@ -1451,6 +1577,22 @@ class LibraryStore:
         if self._format_version() != 2 or self._v2_transaction_depth:
             yield
             return
+        if not self.recovery_backups:
+            if any((self.runtime_dir / name).exists() or (self.runtime_dir / name).is_symlink()
+                   for name in (V2_WRITE_JOURNAL, V2_ENTRY_WRITE_JOURNAL)):
+                raise StoreError("an unfinished library write requires recovery")
+            # Interactive writes prioritize latency over crash rollback. Individual
+            # files remain atomic; a multi-file operation is not a crash transaction.
+            self._v2_transaction_depth = 1
+            try:
+                yield
+            except BaseException:
+                self._invalidate_library_cache()
+                self._invalidate_search_index()
+                raise
+            finally:
+                self._v2_transaction_depth = 0
+            return
         transaction = self._begin_v2_transaction()
         self._v2_transaction_depth = 1
         try:
@@ -1788,13 +1930,14 @@ class LibraryStore:
                 )
         return result
 
-    def snapshot(self, *, include_tree: bool = True) -> dict[str, Any]:
+    def snapshot(self, *, include_tree: bool = True, navigation_only: bool = False) -> dict[str, Any]:
         with self._lock:
             library = self._read_view()
             namespaces = self._folder_namespaces(library)
             folders = copy.deepcopy(library["folders"])
             entries = [
-                self._decorate_entry(library, entry, False, namespaces)
+                self._navigation_entry(library, entry, namespaces) if navigation_only
+                else self._decorate_entry(library, entry, False, namespaces)
                 for entry in library["entries"]
             ]
             for folder in folders:
@@ -1808,6 +1951,20 @@ class LibraryStore:
             if include_tree:
                 result["tree"] = self._tree(library, namespaces)
             return result
+
+    def _navigation_entry(
+        self, library: dict[str, Any], entry: dict[str, Any], namespaces: dict[str, str],
+    ) -> dict[str, Any]:
+        """Only metadata needed for the tree, deep links, and review eligibility."""
+        return {
+            **{key: entry[key] for key in ("id", "folder_id", "kind", "title", "tag", "order")},
+            "canonical_tag": self._entry_tag(library, entry, namespaces),
+            "review_enabled": entry.get("review_enabled", True),
+            "review_modes": self.review_modes_for_entry(entry),
+            **{group: [{key: variant[key] for key in ("id", "main", "subtag", "kind") if key in variant}
+                       for variant in entry[group]]
+               for group in ("formulations", "supplements")},
+        }
 
     def _tree(
         self, library: dict[str, Any], namespaces: dict[str, str] | None = None
@@ -2952,6 +3109,9 @@ class LibraryStore:
                 item["updated_at"] = _now()
             else:
                 raise StoreError("item type must be folder or entry")
+            if (library["version"] == 2 and item_type == "entry" and not self.recovery_backups
+                    and self._move_v2_entry(library, item)):
+                return
             self._write(library)
 
     @staticmethod

@@ -19,7 +19,15 @@ import type { FileId, OrderedExcalidrawElement } from '@excalidraw/excalidraw/el
 
 const LazyExcalidraw = lazy(async () => {
   window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/fonts/';
-  const excalidraw = await import('@excalidraw/excalidraw');
+  const styles = new Promise<void>((resolve, reject) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/vendor/excalidraw/index.css';
+    link.onload = () => resolve();
+    link.onerror = () => reject(new Error('The drawing stylesheet could not be loaded.'));
+    document.head.appendChild(link);
+  });
+  const [excalidraw] = await Promise.all([import('@excalidraw/excalidraw'), styles]);
   return { default: excalidraw.Excalidraw };
 });
 

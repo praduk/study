@@ -65,6 +65,7 @@ def test_every_initial_frontend_asset_is_shipped(settings_factory):
         responses = {path: client.get(path) for path in parser.paths}
 
     assert parser.paths
+    assert "/vendor/excalidraw/index.css" not in parser.paths
     assert all(
         (settings.frontend_public / path.removeprefix("/").split("?", 1)[0]).is_file()
         for path in parser.paths
@@ -74,6 +75,19 @@ def test_every_initial_frontend_asset_is_shipped(settings_factory):
         not response.headers.get("content-type", "").startswith("text/html")
         for response in responses.values()
     )
+
+
+def test_static_revalidation_returns_no_body_for_unchanged_vendor_asset(settings_factory):
+    with _client(create_app(settings_factory(), local_mode=True)) as client:
+        asset = client.get("/vendor/excalidraw/index.css")
+        etag = asset.headers["etag"]
+        unchanged = client.get("/vendor/excalidraw/index.css", headers={"if-none-match": f'"old", W/{etag}'})
+        changed = client.get("/vendor/excalidraw/index.css", headers={"if-none-match": '"old"'})
+    assert unchanged.status_code == 304
+    assert unchanged.content == b""
+    assert unchanged.headers["etag"] == etag
+    assert changed.status_code == 200
+    assert changed.content == asset.content
 
 
 def test_every_local_css_asset_is_shipped(settings_factory):

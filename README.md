@@ -9,6 +9,21 @@ links and previews, and PDF controls.
 Study has one library and no user accounts. Local mode is loopback-only and skips the password.
 Server mode is password-protected and stores revocable sessions.
 
+## Performance priorities
+
+Study prioritizes fast interaction and low bandwidth. The reader requests a small navigation
+snapshot and fetches entry bodies only when opened; drawing code and styles load only when needed.
+Content-changing actions batch reader refreshes, and move responses omit unused library copies.
+Static assets support browser caching and conditional requests.
+
+The interactive app does not copy the whole library for rollback before a multi-file write.
+Individual metadata and Markdown files are still written atomically, but interrupted multi-file
+operations are not guaranteed to roll back. Ordinary entry moves rename the existing directory,
+preserve its content and stable IDs, and update only its position metadata. Whole-library reparsing
+is skipped when the moved entry validates and disk signatures confirm that other files are unchanged.
+Direct `LibraryStore` callers retain the optional conservative backup default; the web app explicitly
+uses `recovery_backups=False`. Existing deletion guards and review semantics remain in effect.
+
 ## What Study supports
 
 - Nested folders with computed namespaces such as `math:algebra`.

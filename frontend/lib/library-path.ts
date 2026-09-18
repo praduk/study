@@ -1,4 +1,4 @@
-import type { EntrySummary, Folder, Variant } from '@/lib/types';
+import type { EntrySummary, Folder, VariantSummary } from '@/lib/types';
 
 const LIBRARY_PREFIX = '/library/';
 const PATH_SEGMENT = /^[a-z][a-z0-9-]*$/;
@@ -13,13 +13,13 @@ export type LibraryPathResolution =
     }
   | { kind: 'missing' };
 
-function formulationCanonicalTag(entry: EntrySummary, formulation: Omit<Variant, 'content'>) {
+function formulationCanonicalTag(entry: EntrySummary, formulation: VariantSummary) {
   return formulation.main || !formulation.subtag
     ? entry.canonical_tag
     : `${entry.canonical_tag}:${formulation.subtag}`;
 }
 
-function supplementCanonicalTag(entry: EntrySummary, supplement: Omit<Variant, 'content'>) {
+function supplementCanonicalTag(entry: EntrySummary, supplement: VariantSummary) {
   if (!supplement.kind) return '';
   const base = `${entry.canonical_tag}:${supplement.kind}`;
   return supplement.main || !supplement.subtag ? base : `${base}:${supplement.subtag}`;

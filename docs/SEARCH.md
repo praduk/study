@@ -138,6 +138,13 @@ variants and defers mounted-reader refresh until all requests in that save have 
 partially successful saves. This prevents reference and linked-item reads from repeatedly rebuilding
 the index between writes. Unchanged saves issue no writes or reader invalidations.
 
+Cross-folder entry moves in the interactive app
+validate the relocated entry and verify moved-file signatures, exact saved metadata, directory
+identity, and unchanged neighbors before retaining the cache. Unexpected disk changes force a
+complete parse. Moves invalidate search immediately, while the frontend batches reader refreshes
+until the library and selected entry are updated. Navigation-only bootstrap responses omit headers,
+asset records, and variant file paths; entry-detail and legacy bootstrap responses remain complete.
+
 Snapshot, entry, and search-index reads inspect the validated metadata without copying the whole
 library before copying their returned entries. Compact bootstrap and review snapshots omit the derived
 tree, and batched entry reads validate once before loading only the selected entries. The public

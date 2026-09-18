@@ -272,8 +272,9 @@ def test_v2_review_preference_does_not_overwrite_a_concurrent_target_edit(
     assert LibraryStore(store.data_dir).snapshot()["folders"][0] == current
 
 
-def test_v2_assets_are_colocated_and_follow_entry_moves_and_deletion(tmp_path: Path):
-    store = LibraryStore(tmp_path / "data")
+@pytest.mark.parametrize("recovery_backups", [True, False])
+def test_v2_assets_are_colocated_and_follow_entry_moves_and_deletion(tmp_path: Path, recovery_backups):
+    store = LibraryStore(tmp_path / "data", recovery_backups=recovery_backups)
     source = store.create_folder("Source", "source", None)
     destination = store.create_folder("Destination", "destination", None)
     entry = store.create_entry(source["id"], "df", "Diagram", "diagram", "", "Body")

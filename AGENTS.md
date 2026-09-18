@@ -6,6 +6,11 @@ and prefer a smaller verified change over a broad speculative one.
 
 ## Product invariants
 
+- Prioritize measured interaction speed and low bandwidth over additional crash-recovery machinery.
+  Avoid full-library copies, unused response data, and eager loading of authoring assets in ordinary
+  interactive paths. Verify before/after timings and transfer sizes on disposable data. Preserve
+  content correctness, stable IDs, authorization, and deliberate deletion controls.
+
 - The product name is **Study** in prose and user-visible UI.
 - Study is a single-owner, local-first web application. It has no user/account model.
 - With no arguments, `python study.py` binds only to `127.0.0.1`, bypasses the password, and opens a

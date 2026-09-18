@@ -58,6 +58,19 @@ test('root, unknown, and malformed paths are distinguished', () => {
   }
 });
 
+test('navigation-only summaries preserve alternative and proof deep links', () => {
+  const small = { ...entry };
+  delete small.header;
+  delete small.assets;
+  for (const group of ['formulations', 'supplements']) {
+    small[group] = entry[group].map(({ id, main, subtag, kind }) => ({ id, main, subtag, kind }));
+  }
+  for (const path of ['', '/action', '/pf', '/pf/orbits']) {
+    const url = `/library/math/algebra/th/lagrange${path}`;
+    assert.equal(resolveLibraryPath(url, [small]).variantId, resolveLibraryPath(url, [entry]).variantId);
+  }
+});
+
 test('only the selected folder ancestry is expanded initially', () => {
   const folders = [
     { id: 'math', parent_id: null },
