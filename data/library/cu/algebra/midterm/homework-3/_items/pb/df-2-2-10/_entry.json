@@ -2,6 +2,7 @@
   "version": 1,
   "id": "f3cb59afd28f48fab0437eb65f8b1918",
   "title": "2.2.10 — Normalizer of a subgroup of order two",
+  "rank": 25769803776,
   "header": "Dummit–Foote, §2.2, Exercise 10; printed p. 53. Statement transcribed with notation normalized; solution independently derived.",
   "problem_family": "",
   "confusable_with": [],
@@ -27,6 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 25769803776
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }

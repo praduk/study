@@ -2,6 +2,7 @@
   "version": 1,
   "id": "136588711e704cceaaae5e6431b74437",
   "title": "2.1.9 — The special linear group is a subgroup",
+  "rank": 12884901888,
   "header": "Dummit–Foote, §2.1, Exercise 9; printed p. 48. Statement transcribed with notation normalized; solution independently derived.",
   "problem_family": "",
   "confusable_with": [],
@@ -27,6 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 12884901888
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }

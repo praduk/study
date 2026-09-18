@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "24204bb6503641c2af3a4734528d30a1",
+  "title": "Binary Operation",
+  "rank": 2147483648,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e290b37348114095b6456b7e23608266",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e290b37348114095b6456b7e23608266.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-18T09:11:49.897258+00:00",
+  "updated_at": "2026-09-18T09:11:49.897323+00:00"
+}

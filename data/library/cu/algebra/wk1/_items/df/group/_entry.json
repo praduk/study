@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f9cc23295c034d4f90329164a37c869d",
+  "title": "Group",
+  "rank": 3221225472,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e1669c95cb1b4be59e61f5a4248f180e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e1669c95cb1b4be59e61f5a4248f180e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-18T09:14:49.519413+00:00",
+  "updated_at": "2026-09-18T09:16:35.326786+00:00"
+}

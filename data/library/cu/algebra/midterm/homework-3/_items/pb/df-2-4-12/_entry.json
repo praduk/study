@@ -2,6 +2,7 @@
   "version": 1,
   "id": "38cb4a974f3e402fad543256448cadcd",
   "title": "2.4.12 — Upper triangular matrices over F2 form D8",
+  "rank": 42949672960,
   "header": "Dummit–Foote, §2.4, Exercise 12; printed p. 65. Statement transcribed with notation normalized; solution independently derived.",
   "problem_family": "",
   "confusable_with": [],
@@ -27,6 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 42949672960
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }

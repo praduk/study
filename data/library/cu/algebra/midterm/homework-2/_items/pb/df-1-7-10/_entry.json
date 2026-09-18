@@ -2,6 +2,7 @@
   "version": 1,
   "id": "b8d2d5ee9ee7484cbce8e03e39b94e56",
   "title": "1.7.10 — Faithfulness on subsets and tuples",
+  "rank": 38654705664,
   "header": "Dummit–Foote, §1.7, Exercise 10; printed p. 44. Statement transcribed with notation normalized; solution independently derived.",
   "problem_family": "",
   "confusable_with": [],
@@ -27,6 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 38654705664
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }

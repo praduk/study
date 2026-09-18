@@ -2,6 +2,7 @@
   "version": 1,
   "id": "ed70bb438e724936aefb14c3857f2449",
   "title": "1.6.3 — Commutativity and homomorphisms",
+  "rank": 21474836480,
   "header": "Dummit–Foote, §1.6, Exercise 3; printed p. 40. Statement transcribed with notation normalized; solution independently derived.",
   "problem_family": "",
   "confusable_with": [],
@@ -27,6 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 21474836480
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }

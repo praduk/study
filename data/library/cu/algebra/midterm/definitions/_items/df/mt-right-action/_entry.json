@@ -2,6 +2,7 @@
   "version": 1,
   "id": "af2961cd2c334e61974040c8d682f7dc",
   "title": "Right actions and conversion to left actions",
+  "rank": 55834574848,
   "header": "Dummit–Foote §1.7, Exercises 14–15, p. 45; Week 3, p. 5.",
   "problem_family": "",
   "confusable_with": [],
@@ -18,6 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-09-18T08:22:03.902258+00:00",
-  "updated_at": "2026-09-18T08:22:03.902258+00:00",
-  "rank": 55834574848
+  "updated_at": "2026-09-18T08:22:03.902258+00:00"
 }
