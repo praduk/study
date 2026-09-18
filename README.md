@@ -24,6 +24,11 @@ is skipped when the moved entry validates and disk signatures confirm that other
 Direct `LibraryStore` callers retain the optional conservative backup default; the web app explicitly
 uses `recovery_backups=False`. Existing deletion guards and review semantics remain in effect.
 
+Routine entry/folder creation and folder renaming/moving also write only affected sidecars.
+Folder moves rename the directory as a unit, retaining descendant Markdown and assets. Validated
+metadata is reused only when the resulting tree matches the planned changes; outside edits trigger
+a full reload. Moves that change the special deep-folder storage layout retain the general writer.
+
 ## What Study supports
 
 - Nested folders with computed namespaces such as `math:algebra`.

@@ -506,6 +506,183 @@ class LibraryStore:
             shutil.rmtree(backup, ignore_errors=True)
         journal.unlink(missing_ok=True)
 
+    def _write_v2_structure(
+        self, library: dict[str, Any], contents: dict[Path, str] | None = None,
+    ) -> bool:
+        """Persist creation/folder changes against a validated snapshot.
+
+        Existing entries may only change their derived order here. Whole-folder
+        renames preserve local files; deep-path layout transitions use the general
+        writer. Publish the new snapshot only when every disk change is accounted
+        for, otherwise reload through the normal validator.
+        """
+        if library["version"] != 2 or self.recovery_backups or self._library_cache is None:
+            return False
+        previous = self._library_cache
+        old_entries = {entry["id"]: entry for entry in previous["entries"]}
+        old_folders = {folder["id"]: folder for folder in previous["folders"]}
+        entries = {entry["id"]: entry for entry in library["entries"]}
+        folders = {folder["id"]: folder for folder in library["folders"]}
+        if (len(entries) != len(library["entries"]) or len(folders) != len(library["folders"])
+                or not old_entries.keys() <= entries.keys()
+                or not old_folders.keys() <= folders.keys()):
+            return False
+        for entry_id, old in old_entries.items():
+            if {**old, "order": entries[entry_id]["order"]} != entries[entry_id]:
+                return False
+        try:
+            validate_library(
+                {"folders": library["folders"], "entries": []},
+                self.data_dir, self.library_dir, self.media_dir, self.diagram_dir,
+            )
+        except LibraryValidationError as exc:
+            raise StoreError(str(exc)) from exc
+        folder_paths = self._desired_v2_folder_paths(library)
+        entry_paths = {}
+        for entry_id, entry in entries.items():
+            folder_id = entry["folder_id"]
+            if (entry_id in self._v2_entry_paths
+                    and folder_paths[folder_id] == self._v2_folder_paths[folder_id]):
+                entry_paths[entry_id] = self._v2_entry_paths[entry_id]
+            else:
+                path = folder_paths[folder_id] / V2_ITEMS_DIRECTORY / entry["kind"] / entry["tag"]
+                self._v2_data_relative(path)
+                entry_paths[entry_id] = path
+        relocations: list[tuple[Path, Path]] = []
+        for folder_id, old in sorted(self._v2_folder_paths.items(), key=lambda pair: len(pair[1].parts)):
+            new = folder_paths[folder_id]
+            if old == new:
+                continue
+            if old.parent.name == V2_DEEP_DIRECTORY or new.parent.name == V2_DEEP_DIRECTORY:
+                return False
+            if not any(old.is_relative_to(source) for source, _ in relocations):
+                relocations.append((old, new))
+
+        def relocated(path: Path) -> Path:
+            for source, destination in relocations:
+                if path.parts[:len(source.parts)] == source.parts:
+                    return destination.joinpath(*path.parts[len(source.parts):])
+            return path
+
+        if any(relocated(old) != folder_paths[key] for key, old in self._v2_folder_paths.items()):
+            return False
+        if any(relocated(old) != entry_paths[key] for key, old in self._v2_entry_paths.items()):
+            return False
+        # New IDs must not alias any existing entry, variant, asset, or folder.
+        known_ids = set(old_folders)
+        for entry in old_entries.values():
+            known_ids.add(entry["id"])
+            known_ids.update(record["id"] for group in ("formulations", "supplements", "assets")
+                             for record in entry[group])
+        new_ids = [key for key in folders if key not in old_folders]
+        new_entries = [entry for key, entry in entries.items() if key not in old_entries]
+        for entry in new_entries:
+            new_ids.append(entry["id"])
+            new_ids.extend(record["id"] for group in ("formulations", "supplements", "assets")
+                           for record in entry[group])
+        if len(set(new_ids)) != len(new_ids) or known_ids.intersection(new_ids):
+            raise StoreError("duplicate record id in new records")
+        entry_keys = [(entry["folder_id"], entry["kind"], entry["tag"]) for entry in entries.values()]
+        if len(set(entry_keys)) != len(entry_keys):
+            raise StoreError("entry tags must be unique within a folder and content type")
+
+        def ranks(records: list[dict[str, Any]], parent_key: str, existing: dict[str, int]) -> dict[str, int]:
+            groups: dict[str | None, list[dict[str, Any]]] = {}
+            for record in records:
+                groups.setdefault(record.get(parent_key), []).append(record)
+            result = {}
+            for group in groups.values():
+                group.sort(key=lambda record: (record["order"], record["id"]))
+                result.update(self._sparse_ranks([record["id"] for record in group], existing))
+            return result
+
+        folder_ranks = ranks(library["folders"], "parent_id", self._v2_folder_ranks)
+        entry_ranks = ranks(library["entries"], "folder_id", self._v2_entry_ranks)
+        writes: dict[Path, str] = dict(contents or {})
+        for folder_id, folder in folders.items():
+            new = self._v2_folder_metadata(folder, folder_ranks[folder_id], folder_paths[folder_id])
+            old = (self._v2_folder_metadata(old_folders[folder_id], self._v2_folder_ranks[folder_id],
+                                          self._v2_folder_paths[folder_id])
+                   if folder_id in old_folders else None)
+            if old != new:
+                writes[folder_paths[folder_id] / V2_FOLDER_METADATA] = json.dumps(new, ensure_ascii=False, indent=2) + "\n"
+        for entry_id, entry in entries.items():
+            if entry_id not in old_entries or entry_ranks[entry_id] != self._v2_entry_ranks[entry_id]:
+                metadata = self._v2_entry_metadata(entry, entry_ranks[entry_id], entry_paths[entry_id])
+                writes[entry_paths[entry_id] / V2_ENTRY_METADATA] = json.dumps(metadata, ensure_ascii=False, indent=2) + "\n"
+        if not self._library_cache_is_current():
+            raise StoreError("library changed while planning the write; retry")
+        before = dict(self._library_signatures)
+        expected = {relocated(path): signature for path, signature in before.items()}
+        created_dirs: set[Path] = set()
+        changed_dirs: set[Path] = set()
+        for source, destination in relocations:
+            if destination.exists() or destination.is_symlink():
+                raise StoreError("folder destination already exists")
+            changed_dirs.update((source.parent, destination.parent, destination))
+        for path in (*folder_paths.values(), *(path.parent for path in writes)):
+            while path != self.library_dir and path not in expected:
+                if path.exists() or path.is_symlink():
+                    raise StoreError("write destination contains unvalidated files")
+                created_dirs.add(path)
+                changed_dirs.add(path.parent)
+                path = path.parent
+        changed_dirs.update(path.parent for path in writes)
+        saved: dict[Path, tuple[int, int, int, int, int] | None] = {}
+        self._invalidate_search_index()
+        with self._v2_write_transaction():
+            self._invalidate_library_cache()
+            for path in sorted(created_dirs, key=lambda path: len(path.parts)):
+                path.mkdir(exist_ok=True)
+            for source, destination in relocations:
+                os.rename(source, destination)
+            for path, text in writes.items():
+                _atomic_text(path, text)
+                saved[path] = self._file_signature(path)
+            for entry in library["entries"]:
+                if (entry["id"] not in old_entries
+                        or entry_paths[entry["id"]] == self._v2_entry_paths[entry["id"]]):
+                    continue
+                for variant in (*entry["formulations"], *entry["supplements"]):
+                    variant["file"] = self._v2_data_relative(relocated(self.data_dir / variant["file"]))
+                for asset in entry["assets"]:
+                    for field in ("path", "source"):
+                        if field in asset:
+                            asset[field] = self._v2_data_relative(relocated(self.data_dir / asset[field]))
+            try:
+                validate_library(
+                    {"version": 2, "folders": library["folders"], "entries": new_entries},
+                    self.data_dir, self.library_dir, self.media_dir, self.diagram_dir,
+                )
+                exact_writes = all(path.read_text(encoding="utf-8") == text for path, text in writes.items())
+                signatures = {self.library_path: self._file_signature(self.library_path),
+                              **self._v2_tree_signatures()}
+                signatures.update({path: self._file_signature(path) for path in expected if path not in signatures})
+                valid = (exact_writes and not any(path.is_symlink() for path in created_dirs | set(writes))
+                         and set(signatures) == set(expected) | created_dirs | set(writes)
+                         and all(signature is not None for signature in signatures.values())
+                         and all(signatures[path] == signature for path, signature in saved.items()))
+                for path, signature in expected.items():
+                    if path in writes:
+                        continue
+                    if path in changed_dirs:
+                        valid = valid and signatures[path][:2] == signature[:2]
+                    else:
+                        valid = valid and signatures[path] == signature
+                if valid:
+                    self._v2_folder_paths = folder_paths
+                    self._v2_entry_paths = entry_paths
+                    self._v2_folder_ranks = folder_ranks
+                    self._v2_entry_ranks = entry_ranks
+                    self._v2_signature_paths = {relocated(path) for path in self._v2_signature_paths} | set(writes)
+                    library["updated_at"] = _now()
+                    self._cache_validated_library(library, signatures=signatures)
+                else:
+                    self._read()
+            except LibraryValidationError as exc:
+                raise StoreError(str(exc)) from exc
+        return True
+
     def _move_v2_entry(self, library: dict[str, Any], item: dict[str, Any]) -> bool:
         """Move one entry without backing up or rewriting unrelated entries.
 
@@ -763,14 +940,19 @@ class LibraryStore:
         return value
 
     def _v2_data_relative(self, path: Path, *, logical_path: Path | None = None) -> str:
-        try:
-            relative = path.relative_to(self.data_dir).as_posix()
-        except ValueError as exc:
-            raise StoreError("version 2 library path escapes data") from exc
-        try:
-            logical_relative = (logical_path or path).relative_to(self.data_dir).as_posix()
-        except ValueError as exc:
-            raise StoreError("version 2 logical library path escapes data") from exc
+        # Both paths are absolute, lexical paths here. Comparing their components
+        # has the same containment semantics as Path.relative_to, without its
+        # repeated ancestor construction on Python 3.12. Disk/symlink containment
+        # is enforced separately by validation and guarded file access.
+        prefix = self.data_dir.parts
+        if path.parts[:len(prefix)] != prefix:
+            raise StoreError("version 2 library path escapes data")
+        relative = "/".join(path.parts[len(prefix):]) or "."
+        logical_relative = relative
+        if logical_path is not None:
+            if logical_path.parts[:len(prefix)] != prefix:
+                raise StoreError("version 2 logical library path escapes data")
+            logical_relative = "/".join(logical_path.parts[len(prefix):]) or "."
         if len(logical_relative.encode("utf-8")) > V2_MAX_RELATIVE_PATH:
             raise StoreError(
                 "version 2 library path exceeds "
@@ -2051,7 +2233,8 @@ class LibraryStore:
                 "created_at": _now(),
             }
             library["folders"].append(folder)
-            self._write(library)
+            if not self._write_v2_structure(library):
+                self._write(library)
             return {**folder, "namespace": self.folder_namespace(library, folder["id"])}
 
     def update_folder(self, folder_id: str, updates: dict[str, Any]) -> dict[str, Any]:
@@ -2101,7 +2284,8 @@ class LibraryStore:
             if updates.get("review_enabled") is not None:
                 folder["review_enabled"] = bool(updates["review_enabled"])
             folder["updated_at"] = _now()
-            self._write(library)
+            if not self._write_v2_structure(library):
+                self._write(library)
             return {**copy.deepcopy(folder), "namespace": self.folder_namespace(library, folder_id)}
 
     def _write_v2_folder_review_preference(
@@ -2701,10 +2885,11 @@ class LibraryStore:
                 "created_at": _now(),
                 "updated_at": _now(),
             }
-            with self._v2_write_transaction():
-                self._write_content(relative, content)
-                library["entries"].append(entry)
-                self._write(library)
+            library["entries"].append(entry)
+            if not self._write_v2_structure(library, {self.data_dir / relative: content.rstrip() + "\n"}):
+                with self._v2_write_transaction():
+                    self._write_content(relative, content)
+                    self._write(library)
             return self._decorate_entry(library, entry, True)
 
     @staticmethod
@@ -3111,6 +3296,8 @@ class LibraryStore:
                 raise StoreError("item type must be folder or entry")
             if (library["version"] == 2 and item_type == "entry" and not self.recovery_backups
                     and self._move_v2_entry(library, item)):
+                return
+            if item_type == "folder" and self._write_v2_structure(library):
                 return
             self._write(library)
 

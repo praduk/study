@@ -145,6 +145,14 @@ complete parse. Moves invalidate search immediately, while the frontend batches 
 until the library and selected entry are updated. Navigation-only bootstrap responses omit headers,
 asset records, and variant file paths; entry-detail and legacy bootstrap responses remain complete.
 
+Interactive v2 creation and folder changes similarly retain validated metadata after checking the
+folder graph, new record IDs/tags, new entry contents, exact written bytes, and the complete resulting
+tree signatures. Folder moves relocate existing directories and remap the cached paths of their
+descendants. Unchanged files retain their prior signatures; only planned metadata writes and affected
+directory timestamps may differ. These operations invalidate search immediately so canonical tags,
+lexical scope, and incoming references are rebuilt. Unexpected disk changes require full validation;
+special deep-folder layout transitions and recovery-enabled stores keep the general write path.
+
 Snapshot, entry, and search-index reads inspect the validated metadata without copying the whole
 library before copying their returned entries. Compact bootstrap and review snapshots omit the derived
 tree, and batched entry reads validate once before loading only the selected entries. The public

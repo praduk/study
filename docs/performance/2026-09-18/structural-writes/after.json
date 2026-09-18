@@ -1,0 +1,73 @@
+{
+  "method": "HTTP over loopback, gzip, disposable data copy, three samples",
+  "actions": {
+    "folder_create": {
+      "median_ms": 598.92,
+      "samples_ms": [
+        598.92,
+        652.62,
+        464.18
+      ]
+    },
+    "entry_create": {
+      "median_ms": 600.19,
+      "samples_ms": [
+        600.19,
+        482.87,
+        608.06
+      ]
+    },
+    "content_save": {
+      "median_ms": 446.23,
+      "samples_ms": [
+        446.23,
+        519.64,
+        424.13
+      ]
+    },
+    "entry_move": {
+      "median_ms": 552.57,
+      "samples_ms": [
+        552.57,
+        564.13,
+        442.08
+      ]
+    },
+    "navigation_after_move": {
+      "median_ms": 196.98,
+      "samples_ms": [
+        1120.56,
+        196.98,
+        190.07
+      ]
+    },
+    "populated_folder_rename": {
+      "median_ms": 585.86,
+      "samples_ms": [
+        585.86,
+        607.83,
+        492.87
+      ]
+    },
+    "populated_folder_move": {
+      "median_ms": 615.53,
+      "samples_ms": [
+        618.91,
+        506.27,
+        615.53
+      ]
+    }
+  },
+  "library": {
+    "version": 2,
+    "folders": 250,
+    "entries": 1542,
+    "markdown_files": 2471
+  },
+  "validated_copy": {
+    "version": 2,
+    "folders": 253,
+    "entries": 1545,
+    "markdown_files": 2474
+  }
+}
