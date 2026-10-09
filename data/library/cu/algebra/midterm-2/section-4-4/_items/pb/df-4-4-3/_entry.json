@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8eb1fb171f0648798de3a9cbed6ba86f",
+  "title": "4.4.3 — Bounding automorphisms of D₈",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §4.4, Exercise 3; printed p. 137 (PDF p. 151). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6264680ce30b4dd4a9caafeb7631cff2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6264680ce30b4dd4a9caafeb7631cff2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c4112e1301d14be1a789b1c608c08ecd",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.c4112e1301d14be1a789b1c608c08ecd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:00.944895+00:00",
+  "updated_at": "2026-10-09T03:14:01.157018+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8fa6bea9ac34456f87f345fe7f0e2ab3",
+  "title": "3.2.8 — Coprime subgroup orders give trivial intersection",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §3.2, Exercise 8; printed p. 95 (PDF p. 109). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "13315960f89d4d1bb29e6042fdbbcf51",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.13315960f89d4d1bb29e6042fdbbcf51.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6459a0da0b6048b28b148966f364313e",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.6459a0da0b6048b28b148966f364313e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:22.696029+00:00",
+  "updated_at": "2026-10-09T03:13:22.902200+00:00"
+}

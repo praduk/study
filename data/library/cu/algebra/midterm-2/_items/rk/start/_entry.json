@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9e065b64e73b4bb29ff2f8e168e3bc11",
+  "title": "Algebra Midterm 2 — Scope and study map",
+  "rank": 4611686018427387904,
+  "header": "Homework-aligned study based on the supplied textbook and Weeks 4–6 lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8792ca21682a47ffbd6757bdfdd2b06f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8792ca21682a47ffbd6757bdfdd2b06f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:44.329692+00:00",
+  "updated_at": "2026-10-09T03:14:44.329700+00:00"
+}

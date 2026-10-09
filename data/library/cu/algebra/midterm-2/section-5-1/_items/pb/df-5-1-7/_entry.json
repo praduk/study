@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3033985837464d369c82224715c8e131",
+  "title": "5.1.7 — Permuting direct-product factors",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §5.1, Exercise 7; printed p. 156 (PDF p. 170). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bf2dd0f60178432db5dba74b86fd484d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bf2dd0f60178432db5dba74b86fd484d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5e3432f311c74744907b4512a7585226",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.5e3432f311c74744907b4512a7585226.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:08.571479+00:00",
+  "updated_at": "2026-10-09T03:18:41.278414+00:00"
+}

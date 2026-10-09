@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "8d3923e01ad14bfdb4df1fca5451eda2",
+  "title": "2.5.12 — Subgroup lattice of C₂ × C₄",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §2.5, Exercise 12; printed pp. 71–72 (PDF pp. 85–86). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "daec0f83e2104e89b8c7e5dda3fd4067",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.daec0f83e2104e89b8c7e5dda3fd4067.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "52236d13d2b54dee8a7d6373aebc4b97",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.52236d13d2b54dee8a7d6373aebc4b97.md",
+      "main": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "ec1600f995824023b0af0d84dfb99990",
+      "kind": "image",
+      "path": "assets/5f96f3c7c5bea64d2746bf4565750c89f1a887159fc8e101ac015d4778dc0e13.png",
+      "alt": "Complete subgroup lattice for 2.5.12 — Subgroup lattice of C₂ × C₄",
+      "width": 100,
+      "invert_lightness": true,
+      "pixels": [
+        1600,
+        1180
+      ]
+    }
+  ],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:05.775411+00:00",
+  "updated_at": "2026-10-09T03:18:34.273932+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "64af58f488c24fbcb8f5e3c3dac9c239",
+  "title": "4.3.23 — Normalizers and conjugates of a maximal subgroup",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §4.3, Exercise 23; printed p. 131 (PDF p. 145). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4ce96a6c60764a36820294df4b152430",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4ce96a6c60764a36820294df4b152430.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5d6fdb5203e745f68434b02f2a2c7fff",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.5d6fdb5203e745f68434b02f2a2c7fff.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:57.910730+00:00",
+  "updated_at": "2026-10-09T03:18:39.633167+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d1de0265aefe482e86a10a481d910a6b",
+  "title": "4.3.19 — Splitting a conjugacy class in a normal subgroup",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §4.3, Exercise 19; printed p. 131 (PDF p. 145). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "25c3f7e4cb9a49108521eb6e133313ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.25c3f7e4cb9a49108521eb6e133313ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6f12b102b95e4feb95fda5137f92c2df",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.6f12b102b95e4feb95fda5137f92c2df.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:56.393789+00:00",
+  "updated_at": "2026-10-09T03:18:39.481133+00:00"
+}

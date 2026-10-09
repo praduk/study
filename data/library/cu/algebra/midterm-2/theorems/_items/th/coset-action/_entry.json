@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a4a2b5a7bfe3468d97d0cf6b043e4328",
+  "title": "Coset actions, core, Cayley, and smallest-prime index",
+  "rank": 9218868437227405312,
+  "header": "Dummit–Foote §4.2 Theorem 3 and Corollaries 4–5; Week 5 p. 10 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7f961e8c3c4743a9ac6593c377d29d6f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7f961e8c3c4743a9ac6593c377d29d6f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0d3e3347b6914053b2cc3a2164b614d7",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.0d3e3347b6914053b2cc3a2164b614d7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:31.030082+00:00",
+  "updated_at": "2026-10-09T03:18:44.876588+00:00"
+}

@@ -1,0 +1,1 @@
+Let $A=\langle a,b\mid a^2=b^4=1,\ ab=ba\rangle\cong C_2\times C_4$. Its three subgroups of order $4$ are $\langle a,b^2\rangle$, $\langle b\rangle$, and $\langle ab\rangle$, and every proper subgroup lies in one of these. Draw the complete subgroup lattice, expressing every subgroup using at most two generators.

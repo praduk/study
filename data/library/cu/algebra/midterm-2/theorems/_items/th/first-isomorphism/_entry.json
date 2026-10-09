@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "833cd2b863bd42049a66ade6bbe249e1",
+  "title": "First Isomorphism Theorem",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote §3.3 Theorem 16; Week 4 p. 5 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ef8eb81a76e7424bb69fa6d6af29ff68",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ef8eb81a76e7424bb69fa6d6af29ff68.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e8cd791444fe4b55b76cb18914ef0dbf",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.e8cd791444fe4b55b76cb18914ef0dbf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:19.980326+00:00",
+  "updated_at": "2026-10-09T03:18:43.564624+00:00"
+}

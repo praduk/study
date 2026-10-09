@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "413642bf0639446581666593f3172f24",
+  "title": "Commutator criterion for abelian quotients",
+  "rank": 9187343239835811840,
+  "header": "Dummit–Foote §3.1 Exercises 40–41 and §5.4; Week 5 p. 4 and Week 6 p. 10 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36cf91db61654f809f62a448b2f4be7b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36cf91db61654f809f62a448b2f4be7b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a45d328c694b4da1929895c08e34ead7",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.a45d328c694b4da1929895c08e34ead7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:26.293707+00:00",
+  "updated_at": "2026-10-09T03:18:44.348351+00:00"
+}

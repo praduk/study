@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "dd054b5a1b9042d48491b0e58983274a",
+  "title": "Lecture map and scope boundaries",
+  "rank": 4611686018427387904,
+  "header": "Source map: supplied Week 4, Week 5, and Week 6 lecture PDFs, all 36 pages visually inspected. Page numbers above are PDF pages.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec8c65ef50254f91a9efd5fd5847f1b3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec8c65ef50254f91a9efd5fd5847f1b3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:42.104422+00:00",
+  "updated_at": "2026-10-09T03:14:42.104428+00:00"
+}

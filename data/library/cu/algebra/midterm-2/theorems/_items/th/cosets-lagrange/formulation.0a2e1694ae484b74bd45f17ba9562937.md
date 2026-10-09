@@ -1,0 +1,1 @@
+For $H\le G$, the left cosets partition $G$, and each has the same cardinality as $H$. Thus for finite $G$, $|G|=[G:H]|H|$. If $H\le K\le G$ have finite indices, then $[G:H]=[G:K][K:H]$. In particular, the order of an element of a finite group divides the group order.

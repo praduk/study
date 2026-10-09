@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "28987a712a8b45c9bbeb87a68d517dbc",
+  "title": "4.4.18 — Automorphisms of Sₙ are inner for n ≠ 6",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §4.4, Exercise 18; printed p. 138 (PDF p. 152). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d221fb0476ff497985361685ab7ae5ab",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d221fb0476ff497985361685ab7ae5ab.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b22f25c2ea8f46abb9836e805c1a3b7c",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.b22f25c2ea8f46abb9836e805c1a3b7c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:03.977840+00:00",
+  "updated_at": "2026-10-09T03:18:40.359356+00:00"
+}

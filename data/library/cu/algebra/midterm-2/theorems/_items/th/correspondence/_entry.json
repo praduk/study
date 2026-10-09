@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fa2cc40089794601958746b78c1d3350",
+  "title": "Subgroup correspondence (Lattice Isomorphism Theorem)",
+  "rank": 9151314442816847872,
+  "header": "Dummit–Foote §3.3 Theorem 20; Week 4 p. 8 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0b3009d6ce0942118d8d31421d3d450b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0b3009d6ce0942118d8d31421d3d450b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ed0b89000e804878a71e2accf10e1bfe",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.ed0b89000e804878a71e2accf10e1bfe.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:24.705509+00:00",
+  "updated_at": "2026-10-09T03:18:44.130459+00:00"
+}

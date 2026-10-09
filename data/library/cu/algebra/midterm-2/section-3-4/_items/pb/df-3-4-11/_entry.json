@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4d473796e34e42d2860558530f40dce6",
+  "title": "3.4.11 — An abelian normal subgroup inside a solvable group",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §3.4, Exercise 11; printed p. 106 (PDF p. 120). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e9a563934c2e423e8bbc1e64be2f1a7e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e9a563934c2e423e8bbc1e64be2f1a7e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8dca53153bf34ea489974ef2ae7f4104",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.8dca53153bf34ea489974ef2ae7f4104.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:41.302445+00:00",
+  "updated_at": "2026-10-09T03:18:37.828236+00:00"
+}

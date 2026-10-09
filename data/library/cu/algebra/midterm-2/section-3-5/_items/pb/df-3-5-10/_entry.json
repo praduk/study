@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3e67ec0ba2d9479e84796af0cb9b2a5c",
+  "title": "3.5.10 — A composition series for A₄",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §3.5, Exercise 10; printed p. 111 (PDF p. 125). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ea296d4c3c145f58d5f3f18ec6d6f76",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ea296d4c3c145f58d5f3f18ec6d6f76.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "763e6d800b2943a392cf5545b58dc55b",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.763e6d800b2943a392cf5545b58dc55b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:45.795521+00:00",
+  "updated_at": "2026-10-09T03:18:38.377287+00:00"
+}

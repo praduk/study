@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "1b837cb9b19d4fa792c1ad280dd25f1e",
+  "title": "Conjugacy classes and cycle type",
+  "rank": 9222246136947933184,
+  "header": "Dummit–Foote §4.3; Week 5 pp. 11–13 and Week 6 p. 1 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "83b4fd9804c34c2789424433b0e3b2a6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.83b4fd9804c34c2789424433b0e3b2a6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:42.492533+00:00",
+  "updated_at": "2026-10-09T03:14:42.492540+00:00"
+}

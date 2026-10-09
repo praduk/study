@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c51202048e1941db8e1808a4dfe76781",
+  "title": "Automorphisms, inner automorphisms, and characteristic subgroups",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote §4.4; Week 6 pp. 8–10 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "acf7be52c6584b689952607825023cd0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.acf7be52c6584b689952607825023cd0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:14.686231+00:00",
+  "updated_at": "2026-10-09T03:14:14.686236+00:00"
+}

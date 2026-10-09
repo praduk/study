@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a20d6073f1394bfc8aa28782f0c67a02",
+  "title": "Technique — Minimality and maximality turn containment into a dichotomy",
+  "rank": 9151314442816847872,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4e7bf76911d24cee97224da31f027ec0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4e7bf76911d24cee97224da31f027ec0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:41.698029+00:00",
+  "updated_at": "2026-10-09T03:14:41.698037+00:00"
+}

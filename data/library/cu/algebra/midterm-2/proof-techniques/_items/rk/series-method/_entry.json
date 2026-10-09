@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "b4717a6b25eb409db1a85001389c86a9",
+  "title": "Technique — Build below and above a normal subgroup",
+  "rank": 9079256848778919936,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "de2af7f459a74e81a8c4e8e71137932f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.de2af7f459a74e81a8c4e8e71137932f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:41.528350+00:00",
+  "updated_at": "2026-10-09T03:14:41.528355+00:00"
+}

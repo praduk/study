@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "9f55bd0bd0ad4c918b7ca3e4cf873c3a",
+  "title": "3.3.7 — Two normal factors and a product quotient",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §3.3, Exercise 7; printed p. 101 (PDF p. 115). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "71ad974b7be5489482f581d57f980423",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.71ad974b7be5489482f581d57f980423.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dfa25b2e8cce4df38c3ef3df884f4c71",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.dfa25b2e8cce4df38c3ef3df884f4c71.md",
+      "main": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "81ee8d026ae0469e9822ae801ec11af6",
+      "kind": "image",
+      "path": "assets/79418aea22de5ff10603f3663da5003131e031948402ef450552d43882ed7603.png",
+      "alt": "Inclusion diamond with G=MN above M and N above their intersection",
+      "width": 100,
+      "invert_lightness": true,
+      "pixels": [
+        1600,
+        950
+      ]
+    }
+  ],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:31.472354+00:00",
+  "updated_at": "2026-10-09T03:18:36.950032+00:00"
+}

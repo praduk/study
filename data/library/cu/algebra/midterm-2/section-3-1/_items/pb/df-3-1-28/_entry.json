@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "24e965e3de304e7a83643f1a88d1dc24",
+  "title": "3.1.28 — Checking a normalizer on generators",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §3.1, Exercise 28; printed p. 88 (PDF p. 102). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8339377a49af42b68f2f1bbbcbbab905",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8339377a49af42b68f2f1bbbcbbab905.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5a5b84d2d59d4694bfc89b44a3865231",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.5a5b84d2d59d4694bfc89b44a3865231.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:16.875286+00:00",
+  "updated_at": "2026-10-09T03:18:35.162739+00:00"
+}

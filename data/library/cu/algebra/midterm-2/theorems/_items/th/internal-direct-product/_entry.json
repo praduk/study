@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "7984e92130c849879f02877c1fc5765b",
+  "title": "Recognizing an internal direct product",
+  "rank": 9222246136947933184,
+  "header": "Dummit–Foote §5.4 Theorem 9; Week 6 p. 12 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36f566fd662b412583467212c4cbd703",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36f566fd662b412583467212c4cbd703.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4ae597a5fa5549e092dff2822bf8c883",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.4ae597a5fa5549e092dff2822bf8c883.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:34.153684+00:00",
+  "updated_at": "2026-10-09T03:18:45.462861+00:00"
+}

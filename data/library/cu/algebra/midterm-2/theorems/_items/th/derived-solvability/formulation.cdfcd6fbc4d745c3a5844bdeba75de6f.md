@@ -1,0 +1,1 @@
+A group $G$ is solvable if and only if $G^{(t)}=1$ for some finite $t$. Subgroups and quotient groups of solvable groups are solvable. If $N\nsubg G$, then $G$ is solvable if and only if both $N$ and $G/N$ are solvable.

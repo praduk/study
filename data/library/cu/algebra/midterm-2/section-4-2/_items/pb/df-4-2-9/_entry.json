@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e95bad4c77ba4fce8c2db7458b917402",
+  "title": "4.2.9 — Index-p subgroups in p-groups",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §4.2, Exercise 9; printed p. 122 (PDF p. 136). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6b05b5a3120448b19b632f2802df337a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6b05b5a3120448b19b632f2802df337a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a7929dad461748ee8280d8b3b7516854",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.a7929dad461748ee8280d8b3b7516854.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:50.360880+00:00",
+  "updated_at": "2026-10-09T03:18:38.756360+00:00"
+}

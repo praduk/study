@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ac28048541114323b25fac987e1d5d6d",
+  "title": "3.4.7 — A composition series through a given normal subgroup",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §3.4, Exercise 7; printed p. 106 (PDF p. 120). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce3dc3ddf7594d8fa98b3fc8b97c57e8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce3dc3ddf7594d8fa98b3fc8b97c57e8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f27358f3a7d544e0a1a4990fde40ee21",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.f27358f3a7d544e0a1a4990fde40ee21.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:39.819722+00:00",
+  "updated_at": "2026-10-09T03:18:37.665155+00:00"
+}

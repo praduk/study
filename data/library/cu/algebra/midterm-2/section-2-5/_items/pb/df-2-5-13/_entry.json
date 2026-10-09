@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "042cfd91abaa479791b1c61dd6b84422",
+  "title": "2.5.13 — Subgroup lattice of C₂ × C₈",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §2.5, Exercise 13; printed p. 72 (PDF p. 86). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4437a4c63635453daa21b41e1225bb0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4437a4c63635453daa21b41e1225bb0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7355414563574be79717b0a13c86da41",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.7355414563574be79717b0a13c86da41.md",
+      "main": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "f196eea0967443cdbf30e8eddcc22ea8",
+      "kind": "image",
+      "path": "assets/486cca2d3d843ee688aeee8f6efb357336e9d992fd62737db7259cee9652d14a.png",
+      "alt": "Complete subgroup lattice for 2.5.13 — Subgroup lattice of C₂ × C₈",
+      "width": 100,
+      "invert_lightness": true,
+      "pixels": [
+        1600,
+        1450
+      ]
+    }
+  ],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:08.501450+00:00",
+  "updated_at": "2026-10-09T03:18:34.471535+00:00"
+}

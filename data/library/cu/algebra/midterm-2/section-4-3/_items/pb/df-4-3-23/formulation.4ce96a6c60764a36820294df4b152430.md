@@ -1,0 +1,1 @@
+Let $M$ be a maximal proper subgroup of $G$. Prove $N_G(M)$ is either $M$ or $G$. If $G$ is finite and $M$ is not normal, deduce that at most $(|M|-1)[G:M]$ nonidentity elements lie in conjugates of $M$.

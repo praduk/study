@@ -1,0 +1,1 @@
+For a group action and $a\in A$, the map $gG_a\mapsto g\cdot a$ is a bijection from the left cosets of $G_a$ onto $G\cdot a$. Hence $|G\cdot a|=[G:G_a]$. The kernel of the permutation representation is $\bigcap_{a\in A}G_a$.

@@ -1,0 +1,5 @@
+Elements $x,y\in G$ are conjugate if $y=gxg^{-1}$ for some $g\in G$. The conjugacy class of $x$ is $\{gxg^{-1}:g\in G\}$. Conjugacy is an equivalence relation: the identity gives reflexivity, inversion of the conjugating element gives symmetry, and multiplication of conjugating elements gives transitivity.
+
+The cycle type of a permutation is the multiset of lengths of its disjoint cycles, including fixed points as $1$-cycles. Two permutations in $S_n$ are conjugate exactly when their cycle types agree. One direction follows because conjugation relabels cycles and preserves lengths. For the other, match cycles of the same lengths and send consecutive points in each first cycle to consecutive points in its matched second cycle; this defines the conjugating permutation.
+
+Conjugacy in $A_n$ is finer: some even $S_n$-classes split into two $A_n$-classes. The normal-subgroup class-splitting formula in 4.3.19 determines when. Normal subgroups are unions of conjugacy classes, but an arbitrary union of classes need not be a subgroup.

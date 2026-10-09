@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "74460c99a3724d789ab8502cbf9fe362",
+  "title": "Inner automorphisms and characteristic-to-normal transfer",
+  "rank": 9221120237041090560,
+  "header": "Dummit–Foote §4.4; Week 6 pp. 8–10 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "406087962f2d41e5a1c9263a55539ca4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.406087962f2d41e5a1c9263a55539ca4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b4b27b55aa444ffcb5fe3b1005794249",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.b4b27b55aa444ffcb5fe3b1005794249.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:32.590245+00:00",
+  "updated_at": "2026-10-09T03:18:45.083956+00:00"
+}

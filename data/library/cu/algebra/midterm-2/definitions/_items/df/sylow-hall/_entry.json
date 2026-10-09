@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "1bd7c3a46eef401d9c560c0892f6fb4c",
+  "title": "p-subgroups, Sylow subgroups, and Hall subgroups",
+  "rank": 9214364837600034816,
+  "header": "Dummit–Foote §3.3 Exercises 9–10 and §4.5 definition; background for the assigned homework, not an additional exercise assignment.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6be420cdfb104472ba0e4dbdd3b21111",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6be420cdfb104472ba0e4dbdd3b21111.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:14.904672+00:00",
+  "updated_at": "2026-10-09T03:14:14.904679+00:00"
+}

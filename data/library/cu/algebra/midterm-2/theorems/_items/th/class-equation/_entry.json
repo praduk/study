@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "aad4354c622c433980caeb9b80f93929",
+  "title": "Conjugacy classes, the class equation, and p-group centers",
+  "rank": 9214364837600034816,
+  "header": "Dummit–Foote §4.3 Theorem 7 and Theorem 8/Corollary 9; Week 6 p. 5 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e460b0e0ec34c4a857cae1f7effe3d1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e460b0e0ec34c4a857cae1f7effe3d1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "248363c5455c4453b9e366e173ccc7b6",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.248363c5455c4453b9e366e173ccc7b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:29.458993+00:00",
+  "updated_at": "2026-10-09T03:18:44.712774+00:00"
+}

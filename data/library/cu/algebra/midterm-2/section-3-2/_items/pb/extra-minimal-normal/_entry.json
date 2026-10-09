@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d1ae03eacd574f7bbb02904894b6e30f",
+  "title": "Additional problem — Minimal abelian normal subgroup and complement",
+  "rank": 8935141660703064064,
+  "header": "Additional problem supplied directly in the request; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "12a7b05e243942d5b41901af8d826536",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.12a7b05e243942d5b41901af8d826536.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "00f5bf0d2f2e43e6ab700984c3457dc7",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.00f5bf0d2f2e43e6ab700984c3457dc7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:27.198862+00:00",
+  "updated_at": "2026-10-09T03:18:36.379819+00:00"
+}

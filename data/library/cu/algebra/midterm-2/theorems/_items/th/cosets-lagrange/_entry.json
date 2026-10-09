@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "55a46ee445fe435e93f15e0b72b06d54",
+  "title": "Cosets, Lagrange, and multiplicativity of index",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote §3.1 Proposition 4 and §3.2 Theorem 8; prior lecture prerequisite.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a2e1694ae484b74bd45f17ba9562937",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a2e1694ae484b74bd45f17ba9562937.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7d89122f3658418ebb33371531f7f15a",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.7d89122f3658418ebb33371531f7f15a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:15.289606+00:00",
+  "updated_at": "2026-10-09T03:14:15.459390+00:00"
+}

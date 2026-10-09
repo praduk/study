@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5103351300a94eefaf61b51f6f6bf5ab",
+  "title": "3.4.2 — All composition series of Q₈ and D₈",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §3.4, Exercise 2; printed p. 106 (PDF p. 120). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fea9fd5adce745ff84e6a800cf38eac6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fea9fd5adce745ff84e6a800cf38eac6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "23a83123a6ff43b288a4a32bad9e6e76",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.23a83123a6ff43b288a4a32bad9e6e76.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:37.219783+00:00",
+  "updated_at": "2026-10-09T03:18:37.459655+00:00"
+}

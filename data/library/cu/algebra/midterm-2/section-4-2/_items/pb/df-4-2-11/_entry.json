@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9d443565229d4743a5f765687a1560c3",
+  "title": "4.2.11 — Cycle structure in the regular representation",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §4.2, Exercise 11; printed p. 122 (PDF p. 136). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48c1d7b318d5400eb906a9eb5e3e47d2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48c1d7b318d5400eb906a9eb5e3e47d2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e5e743ebeed64359b29d4b5e62eff794",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.e5e743ebeed64359b29d4b5e62eff794.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:51.872152+00:00",
+  "updated_at": "2026-10-09T03:18:38.920223+00:00"
+}

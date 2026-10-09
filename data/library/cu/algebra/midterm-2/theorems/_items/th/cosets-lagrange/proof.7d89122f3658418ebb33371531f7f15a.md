@@ -1,0 +1,5 @@
+**Coset equality criterion.** We have $aH=bH$ exactly when $b^{-1}a\in H$. If $aH=bH$, then $a=bh$ for some $h\in H$, so $b^{-1}a=h\in H$. Conversely if $a=bh$ with $h\in H$, then $aH=bhH=bH$. If two left cosets intersect, write $ah_1=bh_2$; then $b^{-1}a=h_2h_1^{-1}\in H$, so the cosets are equal. Every element $g$ belongs to $gH$, so distinct cosets give a partition.
+
+**Sizes.** Multiplication by $a$ is a bijection $H\to aH$ with inverse multiplication by $a^{-1}$. For finite $G$, counting the partition gives $|G|=[G:H]|H|$. Apply this with $H=\langle x\rangle$ to obtain element-order divisibility.
+
+**Indices in a chain.** Choose representatives $g_i$ of left $K$-cosets in $G$, and representatives $k_j$ of left $H$-cosets in $K$. Every element of $G$ is some $g_i k_j h$, so the cosets $g_i k_jH$ cover $G$. If $g_i k_jH=g_{i'}k_{j'}H$, then the two cosets lie in the same left $K$-coset, so $i=i'$. Cancellation then gives $k_jH=k_{j'}H$ and $j=j'$. Thus these are exactly $[G:K][K:H]$ distinct left $H$-cosets, proving the formula.

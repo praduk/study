@@ -1,0 +1,1 @@
+Let $G$ be finite and $\pi:G\to S_G$ be the left regular representation. If $|x|=n$ and $|G|=mn$, prove $\pi(x)$ is a product of $m$ disjoint $n$-cycles. Deduce that it is odd if and only if $n$ is even and $m=|G|/n$ is odd.

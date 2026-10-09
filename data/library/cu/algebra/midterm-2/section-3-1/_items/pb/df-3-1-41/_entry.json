@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2a4ca7fcd9684cc691deb14e0852b89e",
+  "title": "3.1.41 — The commutator subgroup and abelianization",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, §3.1, Exercise 41; printed p. 89 (PDF p. 103). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e06c2be6f5744d47a4aa8ee8a37084c6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e06c2be6f5744d47a4aa8ee8a37084c6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "82237be24d494665a8898b1fb3ebbdb7",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.82237be24d494665a8898b1fb3ebbdb7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:19.788275+00:00",
+  "updated_at": "2026-10-09T03:18:35.668973+00:00"
+}

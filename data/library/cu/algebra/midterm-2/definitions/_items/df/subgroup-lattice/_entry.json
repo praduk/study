@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "61341a1237384fff85e7837068b5f4d5",
+  "title": "Subgroup lattices and Hasse diagrams",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote §2.5; printed pp. 66–72.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e3b4eedb6de4ef4803a9e5296148add",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e3b4eedb6de4ef4803a9e5296148add.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:13.361897+00:00",
+  "updated_at": "2026-10-09T03:14:13.361904+00:00"
+}

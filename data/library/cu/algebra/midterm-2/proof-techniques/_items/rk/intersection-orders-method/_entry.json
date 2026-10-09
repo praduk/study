@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "04cc11e4a9634d1894659f75dff48a14",
+  "title": "Technique — Two divisibility constraints on one subgroup or image",
+  "rank": 8070450532247928832,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6c3dfa9b139c462c84557fcb89973aeb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6c3dfa9b139c462c84557fcb89973aeb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:40.910788+00:00",
+  "updated_at": "2026-10-09T03:14:40.910795+00:00"
+}

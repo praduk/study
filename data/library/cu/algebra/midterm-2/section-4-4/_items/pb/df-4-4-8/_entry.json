@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4e089a21326f4caab87d3e3e5fbffc92",
+  "title": "4.4.8 — Characteristic subgroups — (b)–(c)",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §4.4, Exercise 8; printed p. 137 (PDF p. 151). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0cd4c05c7834962be063defd9e6d3d3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0cd4c05c7834962be063defd9e6d3d3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "894f7a276322467abd3a66a88ad9d267",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.894f7a276322467abd3a66a88ad9d267.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:02.453544+00:00",
+  "updated_at": "2026-10-09T03:18:40.016413+00:00"
+}

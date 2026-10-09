@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6fcdf6327e9441b5876d69dc1a0fc537",
+  "title": "3.3.10 — Hall subgroups under intersection and quotient",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §3.3, Exercise 10; printed p. 101 (PDF p. 115). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9045e99c51d64051925dea203297a0f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9045e99c51d64051925dea203297a0f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a694ebfe8a4b4e0196470ebcd01191d9",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.a694ebfe8a4b4e0196470ebcd01191d9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:35.732251+00:00",
+  "updated_at": "2026-10-09T03:18:37.305580+00:00"
+}

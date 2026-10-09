@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2f569b46d84847f5871fd7fd29f2409d",
+  "title": "Commutators, derived subgroups, and perfectness",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote §3.1 Exercise 41 and §5.4; Week 5 p. 4 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "acd6fee1267e4d189708d8d16b028b96",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.acd6fee1267e4d189708d8d16b028b96.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:13.734615+00:00",
+  "updated_at": "2026-10-09T03:18:42.033636+00:00"
+}

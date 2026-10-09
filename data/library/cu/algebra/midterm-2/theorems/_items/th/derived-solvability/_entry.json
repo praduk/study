@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5d2c340ec2334a0da3607db5ade2460f",
+  "title": "Derived sequence criterion and solvable extensions",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote §3.4 and §5.4; Week 5 pp. 4–5 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cdfcd6fbc4d745c3a5844bdeba75de6f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cdfcd6fbc4d745c3a5844bdeba75de6f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "03220bfb921340e5a02798c076717e2e",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.03220bfb921340e5a02798c076717e2e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:27.892391+00:00",
+  "updated_at": "2026-10-09T03:18:44.507005+00:00"
+}

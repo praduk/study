@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a83ee141fe6d489bb3a90d3b030f2eb4",
+  "title": "4.3.13 — Finite groups with two conjugacy classes",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §4.3, Exercise 13; printed p. 130 (PDF p. 144). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dc33a1b7e0cc4ea4922af021512cd5c4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dc33a1b7e0cc4ea4922af021512cd5c4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "43f864f3cded4a3d8de60394caa115c3",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.43f864f3cded4a3d8de60394caa115c3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:54.874685+00:00",
+  "updated_at": "2026-10-09T03:18:39.276854+00:00"
+}

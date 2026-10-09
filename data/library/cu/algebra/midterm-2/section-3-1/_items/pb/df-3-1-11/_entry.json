@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3d74c04731a744c2a7a2896e2280b16d",
+  "title": "3.1.11 — Upper triangular homomorphisms and fibers",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §3.1, Exercise 11; printed p. 86 (PDF p. 100). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fa414ca3771247a3859c4212b17a2146",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fa414ca3771247a3859c4212b17a2146.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "115a84dcc84947638921b0f86f9568a5",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.115a84dcc84947638921b0f86f9568a5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:13.936514+00:00",
+  "updated_at": "2026-10-09T03:18:34.953622+00:00"
+}

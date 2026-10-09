@@ -1,0 +1,1 @@
+Let $M=\langle u,v\mid u^2=v^8=1,\ vu=uv^5\rangle$ be the modular group of order $16$. Prove $\langle v^4\rangle\nsubg M$. Use the Lattice Isomorphism Theorem to draw the subgroup lattice of $M/\langle v^4\rangle$, compare it with groups of order $8$, and determine its isomorphism type using generators and relations.

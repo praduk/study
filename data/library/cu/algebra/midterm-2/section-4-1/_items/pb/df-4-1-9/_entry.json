@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fcd95c89e542420599e5510ba1320904",
+  "title": "4.1.9 — Orbits of a normal subgroup",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §4.1, Exercise 9; printed p. 117 (PDF p. 131). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8bc7621758bd4fa29de79c2971a4f8a7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8bc7621758bd4fa29de79c2971a4f8a7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "aa4badb379b64f82a3b026e09167c9db",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.aa4badb379b64f82a3b026e09167c9db.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:48.830683+00:00",
+  "updated_at": "2026-10-09T03:18:38.542975+00:00"
+}

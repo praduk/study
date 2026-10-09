@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0d6a629adcdc4f118bd45946131e928a",
+  "title": "Orbit counting by fixed points",
+  "rank": 9223231299366420480,
+  "header": "Week 6 pp. 6–7 (PDF pages), labeled Cauchy–Frobenius in the notes; elementary double-counting derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8b690a37548240d095c5226acbfbfb0a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8b690a37548240d095c5226acbfbfb0a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e87b63c71a9a4301945724b312bfe4b6",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.e87b63c71a9a4301945724b312bfe4b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:38.947567+00:00",
+  "updated_at": "2026-10-09T03:18:46.184020+00:00"
+}

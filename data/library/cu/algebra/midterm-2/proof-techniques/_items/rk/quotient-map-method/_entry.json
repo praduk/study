@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3d0eb15c77334d9898d669830aa8fb93",
+  "title": "Technique — Define a map before manipulating quotients",
+  "rank": 4611686018427387904,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bdab78448bf547a584a100da6cb89ccb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bdab78448bf547a584a100da6cb89ccb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:40.519096+00:00",
+  "updated_at": "2026-10-09T03:14:40.519102+00:00"
+}

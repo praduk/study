@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9baef5a857d04a30a479bcbc7a5da7da",
+  "title": "Third Isomorphism Theorem",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote §3.3 Theorem 19; Week 4 p. 7 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "02c8a2d81c414896aa75ccdd2c520001",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.02c8a2d81c414896aa75ccdd2c520001.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "830a39992a524d95855a15e178196185",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.830a39992a524d95855a15e178196185.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:23.110890+00:00",
+  "updated_at": "2026-10-09T03:18:43.960537+00:00"
+}

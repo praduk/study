@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e162e62181ec471ca4f88fae4bfb836c",
+  "title": "4.4.20 — The Thompson subgroup — (a)–(b)",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §4.4, Exercise 20; printed p. 139 (PDF p. 153). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5b1ed0974aa748b1a8a71dc5af5c7dc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5b1ed0974aa748b1a8a71dc5af5c7dc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "58c7dec9360447e89f2582e06ae0f3ee",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.58c7dec9360447e89f2582e06ae0f3ee.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:05.508053+00:00",
+  "updated_at": "2026-10-09T03:18:40.708178+00:00"
+}

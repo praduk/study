@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2a9a68666e614a7dbf6ae48c1333e342",
+  "title": "Technique — Prove invariance on generators, then on words",
+  "rank": 6917529027641081856,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3257abfe177c42859a80f3f5081d6cc4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3257abfe177c42859a80f3f5081d6cc4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:40.743725+00:00",
+  "updated_at": "2026-10-09T03:14:40.743732+00:00"
+}

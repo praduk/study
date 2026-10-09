@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "cb11130b4f9f4a0cac60916ed8b6f824",
+  "title": "Blocks and primitive permutation actions",
+  "rank": 9187343239835811840,
+  "header": "Dummit–Foote §4.1 Exercise 7; terminology needed by the assigned homework.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a7799c7eafd4475a61b2271e33c62cf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a7799c7eafd4475a61b2271e33c62cf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:14.513455+00:00",
+  "updated_at": "2026-10-09T03:14:14.513462+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a1486d89f1f1449595f6a0612c1085eb",
+  "title": "4.1.7 — Blocks, primitivity, and maximal point stabilizers",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §4.1, Exercise 7; printed p. 117 (PDF p. 131). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "05d9264870aa4871b33ede0a8e4f9f51",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.05d9264870aa4871b33ede0a8e4f9f51.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8634e529fe6942098bac967979c20ef0",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.8634e529fe6942098bac967979c20ef0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:47.302654+00:00",
+  "updated_at": "2026-10-09T03:13:47.516433+00:00"
+}

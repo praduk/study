@@ -1,0 +1,1 @@
+One has $\operatorname{Inn}(G)\cong G/Z(G)$ and $\operatorname{Inn}(G)\nsubg\operatorname{Aut}(G)$. Characteristic subgroups are normal; characteristicity is transitive; and a characteristic subgroup of a normal subgroup is normal in the whole group.

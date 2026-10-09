@@ -1,0 +1,1 @@
+Let $G=\langle x,y\mid x^2=y^8=1,\ xy=yx\rangle\cong C_2\times C_8$. Its three order-$8$ subgroups are $\langle x,y^2\rangle$, $\langle y\rangle$, and $\langle xy\rangle$, and every proper subgroup lies in one of them. Draw the complete subgroup lattice with at most two generators per subgroup.

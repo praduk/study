@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5cd995135b824f42bd0674d04fd6bdb5",
+  "title": "Technique — Conjugate supports and pair transpositions",
+  "rank": 8935141660703064064,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b7aaaffc2ce04500bcf5cbc18875770e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b7aaaffc2ce04500bcf5cbc18875770e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:41.303261+00:00",
+  "updated_at": "2026-10-09T03:18:46.401927+00:00"
+}

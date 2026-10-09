@@ -1,0 +1,1 @@
+Every finite group has a composition series. Any two composition series have the same length and the same multiset of simple factor isomorphism types (Jordan–Hölder). The order of those factors and the intermediate subgroups may differ.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d24f6e12da9947faaef2c84522afb7bc",
+  "title": "Actions, orbits, stabilizers, and kernels",
+  "rank": 9151314442816847872,
+  "header": "Dummit–Foote §4.1; Week 4 pp. 2–4 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2b7a44fb0f094566a160f64e5f50b796",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2b7a44fb0f094566a160f64e5f50b796.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:14.271465+00:00",
+  "updated_at": "2026-10-09T03:18:42.567606+00:00"
+}

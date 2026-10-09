@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "fdde6445b26e47af9ed43260546135f6",
+  "title": "Solvable groups",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote §3.4; Week 5 pp. 4–5 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d14fe893be0d4e6b808e95c89d51d801",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d14fe893be0d4e6b808e95c89d51d801.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:14.107555+00:00",
+  "updated_at": "2026-10-09T03:18:42.410535+00:00"
+}

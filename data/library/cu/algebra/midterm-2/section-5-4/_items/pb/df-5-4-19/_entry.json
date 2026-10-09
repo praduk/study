@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "41976bb3b881418ebd3757db279e3ab6",
+  "title": "5.4.19 — Perfect subgroups and the maximal perfect subgroup",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §5.4, Exercise 19; printed p. 174 (PDF p. 188). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2fe22ce147bf4540ac9c31e4272556ed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2fe22ce147bf4540ac9c31e4272556ed.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bc75923ac8864d4dac4bd5bd48a0146c",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.bc75923ac8864d4dac4bd5bd48a0146c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:11.622859+00:00",
+  "updated_at": "2026-10-09T03:18:41.638809+00:00"
+}

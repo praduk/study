@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "549605dc5d8344d0a5227386ff4639c7",
+  "title": "4.3.24 — A finite group is not covered by conjugates of one proper subgroup",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §4.3, Exercise 24; printed p. 131 (PDF p. 145). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c1db9507fa9341828d08ca4a92c5c420",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c1db9507fa9341828d08ca4a92c5c420.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "371fa0ce2dab4a8bb650f1f85bdff3fa",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.371fa0ce2dab4a8bb650f1f85bdff3fa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:59.416450+00:00",
+  "updated_at": "2026-10-09T03:18:39.840919+00:00"
+}

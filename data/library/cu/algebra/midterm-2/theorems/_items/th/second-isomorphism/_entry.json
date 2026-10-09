@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "02383b4f69624a8aaaeb65c162280b56",
+  "title": "Second (diamond) Isomorphism Theorem",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote §3.3 Theorem 18; Week 4 p. 6 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6be8bbc963524377babe1f940d5a5a60",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6be8bbc963524377babe1f940d5a5a60.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f1b50aa425c74acbaea62c8305663e3b",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.f1b50aa425c74acbaea62c8305663e3b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:21.544470+00:00",
+  "updated_at": "2026-10-09T03:18:43.740053+00:00"
+}

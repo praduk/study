@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9c85612da7494761b49d56a3316ae55e",
+  "title": "3.1.36 — A cyclic central quotient forces commutativity",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §3.1, Exercise 36; printed p. 89 (PDF p. 103). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3eb908a0c766465582db5e20573825df",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3eb908a0c766465582db5e20573825df.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a1e5590532f5498ea9dca6b051417bbf",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.a1e5590532f5498ea9dca6b051417bbf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:18.335328+00:00",
+  "updated_at": "2026-10-09T03:18:35.312760+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b7680fc017b648b9908c3ab91d7642e2",
+  "title": "3.2.18 — Coprime order and quotient index",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §3.2, Exercise 18; printed p. 96 (PDF p. 110). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d4f760ec3d747a9aa6642dcf3847f48",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d4f760ec3d747a9aa6642dcf3847f48.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "93c8989027074c82aec734b6535283f8",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.93c8989027074c82aec734b6535283f8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:25.624280+00:00",
+  "updated_at": "2026-10-09T03:18:36.225376+00:00"
+}

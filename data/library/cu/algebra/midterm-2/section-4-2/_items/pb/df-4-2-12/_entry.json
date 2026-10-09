@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2762e3b2246d4e1284afc65db145ba5e",
+  "title": "4.2.12 — An odd regular permutation produces an index-2 subgroup",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §4.2, Exercise 12; printed p. 122 (PDF p. 136). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5d0c66667ee540c2bebb9984dcc7d560",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5d0c66667ee540c2bebb9984dcc7d560.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b482f88c698e471b9469debedb9e7e33",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.b482f88c698e471b9469debedb9e7e33.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:53.360698+00:00",
+  "updated_at": "2026-10-09T03:18:39.126369+00:00"
+}

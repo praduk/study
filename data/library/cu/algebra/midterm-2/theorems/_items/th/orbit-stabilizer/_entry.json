@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "41440ec97ff44cc396383519159ddcd5",
+  "title": "Orbit–stabilizer and the kernel of an action",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote §4.1 Proposition 2; Week 4 p. 3 (PDF page).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "023234b4b3f6498fb017358ff511117a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.023234b4b3f6498fb017358ff511117a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9a6cacf37fd24c7c90e0004e1f78e089",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.9a6cacf37fd24c7c90e0004e1f78e089.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:18.427327+00:00",
+  "updated_at": "2026-10-09T03:18:43.211647+00:00"
+}

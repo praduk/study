@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3632a6d0bc9247dcae39c61e659daf57",
+  "title": "3.2.9 — Cauchy’s theorem by cyclic rotation — (a)–(f)",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §3.2, Exercise 9; printed p. 96 (PDF p. 110). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "df9dbdde2eb74dd2b2fa6970df7a0e21",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.df9dbdde2eb74dd2b2fa6970df7a0e21.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dc34a0152b054f55b0aa555bfb6fd882",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.dc34a0152b054f55b0aa555bfb6fd882.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:24.155081+00:00",
+  "updated_at": "2026-10-09T03:18:36.027045+00:00"
+}

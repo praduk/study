@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "id": "b826384c7b6a44a79b2223ae9172c06d",
+  "title": "3.3.6 — Quotient lattice of the modular group",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §3.3, Exercise 6; printed p. 101 (PDF p. 115). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb8c7267883448459562df2f999b94af",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb8c7267883448459562df2f999b94af.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0d918f18b72b4f698e1b8a3bf03ac03e",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.0d918f18b72b4f698e1b8a3bf03ac03e.md",
+      "main": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "3124907c7373420ea184c10ce1c32110",
+      "kind": "image",
+      "path": "assets/b5055cd981d56a32e86a7a6d65bcdc22f4ff6377263a0844196cf97d431d2395.png",
+      "alt": "Complete subgroup lattice for 3.3.6 — Quotient lattice of the modular group",
+      "width": 100,
+      "invert_lightness": true,
+      "pixels": [
+        1600,
+        1180
+      ]
+    }
+  ],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:28.669879+00:00",
+  "updated_at": "2026-10-09T03:18:36.592499+00:00"
+}

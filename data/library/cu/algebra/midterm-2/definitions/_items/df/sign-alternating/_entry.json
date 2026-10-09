@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0c3de29bdefd437fb2e111b538c4b7a3",
+  "title": "Sign and alternating groups",
+  "rank": 9221120237041090560,
+  "header": "Dummit–Foote §3.5; Week 5 pp. 6–9 (PDF pages).",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b89b46a00f894d408eab818a3c08d897",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b89b46a00f894d408eab818a3c08d897.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:42.323173+00:00",
+  "updated_at": "2026-10-09T03:18:46.669604+00:00"
+}

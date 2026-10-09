@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a2025d0a7ae54d04b55eee71b2981d74",
+  "title": "4.6.4 — Three-cycles generate Aₙ",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §4.6, Exercise 4; printed p. 151 (PDF p. 165). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "50ac99ff097c42be959be3691d614aed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.50ac99ff097c42be959be3691d614aed.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c02d6d24baf1457490a57d7e50690266",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.c02d6d24baf1457490a57d7e50690266.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:07.032803+00:00",
+  "updated_at": "2026-10-09T03:18:40.917240+00:00"
+}

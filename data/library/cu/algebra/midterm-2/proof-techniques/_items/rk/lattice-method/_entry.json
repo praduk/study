@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "153889e4a20847d2921d69018cd3f6fc",
+  "title": "Technique — Exhaust maximal subgroups before drawing a lattice",
+  "rank": 9187343239835811840,
+  "header": "Homework-aligned proof guidance; internally derived from the supplied textbook and lecture notes.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "691cb56eaf29454d8cb2a1349beecec2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.691cb56eaf29454d8cb2a1349beecec2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:41.938248+00:00",
+  "updated_at": "2026-10-09T03:14:41.938256+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4f48ce4ad1b14f4ebce64a0c9a496f84",
+  "title": "Normal subgroups, quotient groups, and coset order",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote §3.1; prerequisite terminology for Week 4 isomorphism theorems.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b5f023f59b8408ea5f23f8cf04d16cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b5f023f59b8408ea5f23f8cf04d16cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:13.145442+00:00",
+  "updated_at": "2026-10-09T03:14:13.145449+00:00"
+}

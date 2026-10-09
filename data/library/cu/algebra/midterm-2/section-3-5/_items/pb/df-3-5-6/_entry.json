@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "430ec3d7fc464734b047d7d97c965343",
+  "title": "3.5.6 — A proper dihedral subgroup of S₄",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §3.5, Exercise 6; printed p. 111 (PDF p. 125). Statement normalized from the supplied book; solution independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2c90d5441f4e4b1892650b06d4eabc02",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2c90d5441f4e4b1892650b06d4eabc02.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3926c5a64d4d4930b7c66df1dea3718f",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.3926c5a64d4d4930b7c66df1dea3718f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:44.302004+00:00",
+  "updated_at": "2026-10-09T03:18:38.177935+00:00"
+}

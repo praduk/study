@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9e3751f2e7db40d2becd866e2c8e47a8",
+  "title": "Cauchy’s theorem",
+  "rank": 9223301668110598144,
+  "header": "Dummit–Foote §3.2 Exercise 9; detailed cyclic-rotation proof using orbit–stabilizer from Week 4 p. 3.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c403231c76d41f28b34dc4b52189ee0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c403231c76d41f28b34dc4b52189ee0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d29375fbc166474c87443c7c6a337f99",
+      "kind": "pf",
+      "label": "Detailed proof",
+      "subtag": null,
+      "file": "proof.d29375fbc166474c87443c7c6a337f99.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:14:42.718377+00:00",
+  "updated_at": "2026-10-09T03:14:42.907986+00:00"
+}
