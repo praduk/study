@@ -3,8 +3,6 @@ import remarkMath from 'remark-math';
 import { unified } from 'unified';
 
 export const DEFAULT_TIKZCD = String.raw`\begin{tikzcd}
-A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
-C \arrow[r, "k"'] & D
 \end{tikzcd}`;
 
 export { macroPreamble } from '../vendor/tikzjax/study-svg.mjs';

@@ -8,3 +8,9 @@ The script exposes the existing worker API and disables document scanning and
 injected CSS; Study loads the local font stylesheet and owns each rendered SVG.
 Study's helper modules are separate source files here. Quiver 1.4.2's MIT-licensed
 stylesheet is added to the TeX filesystem for compatible curved-arrow exports.
+
+Study also patches the bundled DVI-to-SVG converter's picture-marker handling.
+Nested pictures that open and close in a single DVI special (including empty
+TikZ-CD matrix cells) must update nesting depth in order, rather than emitting
+extra SVG roots based on the final depth. The source patch is
+`study-picture-markers.mjs`, injected by `copy-vendor.mjs`.

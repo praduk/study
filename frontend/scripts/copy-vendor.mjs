@@ -11,6 +11,7 @@ import {
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
+import { svgPictureMarkers } from '../vendor/tikzjax/study-picture-markers.mjs';
 
 const frontend = dirname(dirname(fileURLToPath(import.meta.url)));
 const publicVendor = join(frontend, 'public', 'vendor');
@@ -95,6 +96,14 @@ runtime = replaceRequired(runtime,
   'window.StudyTikzJax={render:async(source,options)=>{const worker=await V;return worker.texify(source,options)},stop:async()=>{await n.terminate(await V);window.TikzJax=false}}');
 writeFileSync(join(tikz, 'tikzjax.js'), runtime);
 let worker = readFileSync(join(tikz, 'run-tex.js'), 'utf8');
+// Upstream computes the final depth before emitting picture tags. A nested
+// empty matrix cell can open and close in one special, creating an extra SVG
+// opening with no closing tag. Process the markers in their actual order.
+const svgDepthStart = worker.indexOf('this.svgDepth+=(A.match(');
+const svgDepthEnd = worker.indexOf('A=(A=A.replace(/{\\?x}/g', svgDepthStart);
+if (svgDepthStart < 0 || svgDepthEnd <= svgDepthStart) throw new Error('The pinned SVG converter changed.');
+worker = replaceRequired(worker, worker.slice(svgDepthStart, svgDepthEnd),
+  `A=(${svgPictureMarkers.toString()})(A,this),`);
 worker = replaceRequired(worker, 'const Xn=async A=>{',
   'const Xn=async A=>{if(!/^(?:tex\\.wasm\\.gz|core\\.dump\\.gz|tex_files\\/[A-Za-z0-9_.+-]+\\.gz)$/.test(A))throw new Error("Invalid TeX resource path");');
 // TeX may probe a missing optional package. Never fall back to fetching a URL

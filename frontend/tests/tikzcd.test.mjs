@@ -3,11 +3,29 @@ import test from 'node:test';
 import { DEFAULT_TIKZCD, macroPreamble, tikzCdAtCursor, tikzCdMarkdown } from '../lib/tikzcd.ts';
 import { mathJaxOptions } from '../lib/mathjax-options.mjs';
 import extensions from '../../study_app/mathjax_extensions.json' with { type: 'json' };
+import { svgPictureMarkers } from '../vendor/tikzjax/study-picture-markers.mjs';
+
+test('empty nested pictures keep one balanced SVG root across DVI specials', () => {
+  const machine = { svgDepth: 0, paperwidth: 120, paperheight: 80 };
+  const parts = [
+    '<svg beginpicture><g>',
+    '<svg beginpicture><g></g></svg endpicture><svg beginpicture>',
+    '<text>A</text></svg endpicture>',
+    '<svg beginpicture></svg endpicture></g></svg endpicture>',
+  ];
+  const output = parts.map(source => svgPictureMarkers(source, machine)).join('');
+  assert.equal(machine.svgDepth, 0);
+  assert.equal((output.match(/<svg\b/g) || []).length, 1);
+  assert.equal((output.match(/<\/svg>/g) || []).length, 1);
+  assert.ok(output.endsWith('<g></g><text>A</text></g></svg>'));
+  assert.ok(!output.includes('beginpicture') && !output.includes('endpicture'));
+  assert.throws(() => svgPictureMarkers('</svg endpicture>', machine), /Unbalanced/);
+});
 
 test('TikZ-CD editing selects only the containing dedicated code fence', () => {
   const block = tikzCdMarkdown(DEFAULT_TIKZCD);
   const source = `Before.\n\n${block}\n\nAfter.`;
-  const target = tikzCdAtCursor(source, source.indexOf('arrow'));
+  const target = tikzCdAtCursor(source, source.indexOf('begin{tikzcd}'));
   assert.equal(target.original, block);
   assert.equal(target.source.trim(), DEFAULT_TIKZCD);
   assert.equal(source.slice(0, target.from), 'Before.\n\n');
@@ -19,11 +37,15 @@ test('TikZ-CD editing selects only the containing dedicated code fence', () => {
 });
 
 test('diagram fences protect embedded backticks and preserve TikZ syntax', () => {
-  const code = DEFAULT_TIKZCD.replace('A ', '{A`B} ');
+  const code = DEFAULT_TIKZCD.replace('\\end{tikzcd}', '{A`B}\n\\end{tikzcd}');
   const block = tikzCdMarkdown(code);
   assert.equal(tikzCdAtCursor(block, 20).source.trim(), code);
   const longer = tikzCdMarkdown(code + '\n% ``` is a comment');
   assert.ok(longer.startsWith('````tikzcd\n'));
+});
+
+test('new diagrams start with an empty TikZ-CD environment', () => {
+  assert.equal(DEFAULT_TIKZCD, '\\begin{tikzcd}\n\\end{tikzcd}');
 });
 
 test('shared macros become scoped-compatible LaTeX definitions with exact arities', () => {

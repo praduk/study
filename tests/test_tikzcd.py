@@ -16,6 +16,19 @@ SOURCE = r'''\begin{tikzcd}
 \R \arrow[r, "f"] & B
 \end{tikzcd}'''
 
+# Sparse matrix cells and marking labels reproduced malformed SVG in production.
+DIAMOND_SOURCE = r'''\begin{tikzcd}
+    & {G=HN} & \\
+    H && N \\
+    & {H\cap N}
+    \arrow[draw=none, from=1-2, to=2-1]
+    \arrow[shift left=3, no head, from=1-2, to=2-1]
+    \arrow["\shortmid"{marking}, no head, from=1-2, to=2-3]
+    \arrow["\shortmid"{marking}, no head, from=2-1, to=3-2]
+    \arrow[draw=none, from=2-3, to=3-2]
+    \arrow[shift left=3, no head, from=2-3, to=3-2]
+\end{tikzcd}'''
+
 
 def test_only_quiver_editor_can_be_framed(settings_factory):
     app = create_app(settings_factory(), local_mode=True)
@@ -55,7 +68,7 @@ def test_packaged_tikz_button_create_edit_code_canvas_and_font_size(settings_fac
     entry = store.create_entry(folder['id'], 'th', 'Diagram fixture', 'fixture', '',
                                'Before $B$.\n\n```tikzcd\n' + SOURCE + '\n```\n\nAfter.', review_enabled=False)
     store.add_supplement(entry['id'], {'kind': 'pf', 'label': 'Main', 'main': True,
-                                     'subtag': None, 'content': 'Proof $B$.\n\n```tikzcd\n' + SOURCE + '\n```'})
+                                     'subtag': None, 'content': 'Proof $B$.\n\n```tikzcd\n' + SOURCE + '\n```\n\n```tikzcd\n' + DIAMOND_SOURCE + '\n```'})
     sock = socket.socket()
     sock.bind(('127.0.0.1', 0))
     port = sock.getsockname()[1]
@@ -85,6 +98,9 @@ def test_packaged_tikz_button_create_edit_code_canvas_and_font_size(settings_fac
             try:
                 await page.goto(base + '/library/diagram-checks/th/fixture')
                 await page.locator('.reading-pane .tikzcd-svg svg').last.wait_for()
+                await playwright_api.expect(page.locator('.reading-pane .tikzcd-svg > svg')).to_have_count(3)
+                assert not await page.locator('.reading-pane .tikzcd-view .form-error').count()
+                assert not await page.locator('.reading-pane .tikzcd-svg svg svg').count()
                 await page.evaluate('document.fonts.ready')
                 async def sizes(selector):
                     return await page.locator(selector).evaluate('''el => {
@@ -126,6 +142,14 @@ def test_packaged_tikz_button_create_edit_code_canvas_and_font_size(settings_fac
                 await editor.press('g')
                 await button.click()
                 await playwright_api.expect(page.get_by_role('button', name='Insert TikZ-CD', exact=True)).to_be_visible()
+                await playwright_api.expect(code).to_have_value('\\begin{tikzcd}\n\\end{tikzcd}')
+                await playwright_api.expect(page.get_by_role('button', name='Apply code to canvas', exact=True)).to_be_enabled()
+                assert await frame.locator('.vertex').count() == 0
+                # Author the first object directly on the blank canvas.
+                await frame.locator('body').dblclick(position={'x': 220, 'y': 250})
+                await playwright_api.expect(frame.locator('.vertex')).to_have_count(1)
+                await frame.locator('.label-input').fill('X')
+                await playwright_api.expect(code).to_have_value(re.compile('X'))
                 await page.locator('.tikzcd-dialog').get_by_role('button', name='Cancel', exact=True).click()
                 await editor.locator('.cm-line').filter(has_text=r'\begin{tikzcd}').click()
                 await button.click()
