@@ -3,6 +3,7 @@
   "id": "080abedde5ae434fb9335db7518da865",
   "name": "Week 3",
   "rank": 4611686022722355200,
-  "review_enabled": true,
-  "created_at": "2026-09-14T15:42:34.958595+00:00"
+  "review_enabled": false,
+  "created_at": "2026-09-14T15:42:34.958595+00:00",
+  "updated_at": "2026-10-09T03:28:15.837614+00:00"
 }
