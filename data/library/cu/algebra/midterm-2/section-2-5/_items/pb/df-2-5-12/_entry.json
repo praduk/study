@@ -3,7 +3,7 @@
   "id": "8d3923e01ad14bfdb4df1fca5451eda2",
   "title": "2.5.12 — Subgroup lattice of C₂ × C₄",
   "rank": 4611686018427387904,
-  "header": "Dummit–Foote, §2.5, Exercise 12; printed pp. 71–72 (PDF pp. 85–86). Statement normalized from the supplied book; solution independently derived.",
+  "header": "Optional Problem.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -41,5 +41,5 @@
   ],
   "review_enabled": false,
   "created_at": "2026-10-09T03:13:05.775411+00:00",
-  "updated_at": "2026-10-09T03:18:34.273932+00:00"
+  "updated_at": "2026-10-09T04:07:14.142327+00:00"
 }
