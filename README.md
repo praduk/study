@@ -38,8 +38,9 @@ a full reload. Moves that change the special deep-folder storage layout retain t
 - GitHub-flavored Markdown in the web reader, local MathJax, global LaTeX macros, and custom
   Markdown headers with a full-width, vertically resizable input. PDF export currently uses portable
   CommonMark.
-- A CodeMirror editor with Vim keybindings and a live preview. Escape stays inside Vim; `:w` saves
-  without closing, `:wq` saves and closes after success, and `:q` closes the editor explicitly.
+- A CodeMirror editor with Vim keybindings and a preview that updates after 500 ms without typing.
+  Escape stays inside Vim; `:w` saves without closing, `:wq` saves and closes after success, and `:q`
+  closes the editor explicitly.
 - Image upload or clipboard paste, selectable width, and optional HSL-lightness inversion in dark
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
 - Embedded Excalidraw scenes with sharp strokes and plain text by default, a shared template library,

@@ -9,7 +9,7 @@ import { AtSign, FileImage, GitCompareArrows, ImagePlus, Plus, Save, Shapes } fr
 
 import { CommutativeDiagramDialog } from '@/components/CommutativeDiagramDialog';
 import { ExcalidrawDialog } from '@/components/ExcalidrawDialog';
-import { MathMarkdown } from '@/components/MathMarkdown';
+import { EditorPreview } from '@/components/EditorPreview';
 import { ReferencePicker } from '@/components/ReferencePicker';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -284,7 +284,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
               <Button size="xs" variant="ghost" onClick={() => setDrawingOpen(true)} disabled={saving || !working}><Shapes /> Excalidraw</Button>
               <Button size="xs" variant="ghost" onClick={() => setDiagramOpen(true)} disabled={saving || !working}><GitCompareArrows /> Commutative</Button>
               <Button size="xs" variant="ghost" aria-keyshortcuts="Control+Shift+K Meta+Shift+K" title="Insert reference (⌘/Ctrl+Shift+K)" onClick={() => setReferenceOpen(true)} disabled={saving || (!working?.folder_id && !folderId)}><AtSign /> Reference</Button>
-              <Button size="xs" variant={preview ? 'secondary' : 'ghost'} onClick={() => setPreview((value) => !value)}><FileImage /> Preview</Button>
+              <Button size="xs" variant={preview ? 'secondary' : 'ghost'} title="Preview updates after 500 ms without typing" onClick={() => setPreview((value) => !value)}><FileImage /> Preview</Button>
               <span className="toolbar-spacer" />
               <label className="range-field compact">Image width <input type="range" min="20" max="100" value={imageWidth} onChange={(event) => setImageWidth(Number(event.target.value))} /><span>{imageWidth}%</span></label>
               <label className="tiny-check"><input type="checkbox" checked={invertImage} onChange={(event) => setInvertImage(event.target.checked)} /> dark invert</label>
@@ -304,10 +304,8 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
               aria-label="Markdown editor with Vim keybindings"
             />
           </div>
-          {preview && <div className="editor-preview">
-            {header && <MathMarkdown content={header} className="content-header editor-header-preview" folderId={working?.folder_id || folderId || ''} />}
-            <MathMarkdown content={currentContent} folderId={working?.folder_id || folderId || ''} />
-          </div>}
+          {preview && <EditorPreview key={activeId} header={header} content={currentContent}
+            folderId={working?.folder_id || folderId || ''} />}
         </div>
         <div className="review-policy"><strong>Review</strong><span>{reviewPolicy}</span></div>
         <div className="editor-error-slot">{error && <div className="form-error" role="alert">{error}</div>}</div>
