@@ -1,0 +1,7 @@
+/* Quiver measures this wrapper after Study's MathJax promise resolves. */
+.katex { display: inline-block; line-height: 1; }
+.katex > svg { display: block; max-width: none; }
+#logo-link { display: none; }
+#welcome-pane { display: none; }
+/* Study's code pane owns import/export and its shared MathJax macros. */
+.panel.global { display: none; }
