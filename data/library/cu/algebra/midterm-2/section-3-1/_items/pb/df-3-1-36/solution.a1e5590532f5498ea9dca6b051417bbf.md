@@ -1,15 +1,19 @@
-Let $xZ(G)$ generate $G/Z(G)$. This includes the trivial quotient: then we may take $x=1$. Every $g\in G$ has $gZ(G)=x^aZ(G)$ for some integer $a$. Equality of these cosets means $x^{-a}g\in Z(G)$, so $g=x^az$ for some $z\in Z(G)$.
-
-Take arbitrary $g=x^az$ and $h=x^bw$, with $z,w$ central. Central elements commute with $x$ and with one another, and powers of the same element commute. Therefore
-
+Let $H=Z(G)$. Let $xH$ generate $G/H$. Let $g_1,g_2\in G$.  Then there exist $k_1,k_2\in \Z$ so that
 $$
-gh=x^azx^bw=x^{a+b}zw=x^{b+a}wz=x^bwx^az=hg.
+\begin{aligned}
+g_1 H &= x^{k_1} H \\
+g_2 H &= x^{k_2} H
+\end{aligned}
+$$
+From the above, there exist $h_1,h_2\in H$ so that
+$$
+\begin{aligned}
+g_1 &= x^{k_1}h_1 \\
+g_2 &= x^{k_2}h_2.
+\end{aligned}
 $$
 
-Since $g,h$ were arbitrary, $G$ is abelian.
-
-**Boundary check.** An abelian quotient by an arbitrary normal subgroup does not imply $G$ is abelian: $S_3/A_3\cong C_2$. The argument works here because the kernel is the center, so the extra factors $z,w$ commute with everything.
-
-**Technique:** equality in a quotient gives a normal form modulo the kernel. Identify exactly what property of the kernel allows the next calculation.
-
-**Foundations:** @cu:algebra:midterm-2:definitions:df:normal-quotient, @cu:algebra:midterm-2:theorems:th:commutator-criterion.
+Because elements in $H$ commute with everything in $G$ and because powers of $x$ commute with itself,
+$$
+g_1g_2 = x^{k_1}h_1 x^{k_2} h_2 = x^{k_2} h_2x^{k_1} h_1 = g_2 g_1.
+$$
