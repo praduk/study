@@ -41,6 +41,34 @@ export function clearMathJax(element: HTMLElement) {
   return typesetChain;
 }
 
+/** Render with the reader's macro configuration and queue; embed all SVG glyphs. */
+export function renderEquationSvg(latex: string) {
+  const result = typesetChain.catch(() => undefined).then(async () => {
+    await waitForMathJax();
+    const wrapper = await window.MathJax?.tex2svgPromise?.(latex, { display: true });
+    const svg = wrapper?.querySelector('svg');
+    if (!wrapper || !svg) throw new Error('MathJax is not ready yet.');
+    const invalid = svg.querySelector('[data-mml-node="merror"]');
+    if (invalid) throw new Error(invalid.getAttribute('data-mjx-error') || 'Invalid LaTeX.');
+    wrapper.style.cssText = 'position:fixed;left:-100000px;top:0;font-size:24px;visibility:hidden;';
+    document.body.appendChild(wrapper);
+    try {
+      const bounds = svg.getBoundingClientRect();
+      const width = Math.max(20, Math.ceil(bounds.width));
+      const height = Math.max(20, Math.ceil(bounds.height));
+      svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      svg.setAttribute('width', String(width));
+      svg.setAttribute('height', String(height));
+      svg.style.color = '#1e1e1e';
+      return { svg: new XMLSerializer().serializeToString(svg), width, height };
+    } finally {
+      wrapper.remove();
+    }
+  });
+  typesetChain = result;
+  return result;
+}
+
 export function configureMathJax(macros: Record<string, string | (string | number)[]>) {
   if (typeof window === 'undefined') return;
   const existing = document.getElementById('study-mathjax') as HTMLScriptElement | null;

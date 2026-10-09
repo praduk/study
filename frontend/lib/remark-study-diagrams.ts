@@ -107,7 +107,9 @@ export function transformStudyDiagrams(tree: MarkdownNode): void {
   for (const child of tree.children) transformStudyDiagrams(child);
 
   tree.children = tree.children.flatMap((child) =>
-    child.type === 'paragraph' ? splitParagraph(child) : [child],
+    child.type === 'html' && /^\s*<!-- excalidraw:[a-f0-9]{32}\.excalidraw -->\s*$/.test(child.value ?? '')
+      ? []
+      : child.type === 'paragraph' ? splitParagraph(child) : [child],
   );
 }
 

@@ -58,6 +58,18 @@ export default defineConfig(async () => {
       },
     },
     plugins: [
+      {
+        name: 'excalidraw-local-font-fallback',
+        transform(code: string, id: string) {
+          if (!id.includes('/@excalidraw/excalidraw/dist/') || !code.includes('"ASSETS_FALLBACK_URL"')) return;
+          // Upstream always appends a CDN fallback, even with EXCALIDRAW_ASSET_PATH.
+          // Keep that fallback same-origin too, without changing its font loader.
+          const local = code.replace(/`https:\/\/esm\.sh\/[^;]+?\/dist\/prod\/`/,
+            '(typeof window === "undefined" ? "http://localhost/vendor/excalidraw/" : window.location.origin + "/vendor/excalidraw/")');
+          if (local === code) throw new Error('Excalidraw font fallback changed; check its offline asset configuration.');
+          return { code: local, map: null };
+        },
+      },
       vinext(),
       sites(),
       cloudflare({

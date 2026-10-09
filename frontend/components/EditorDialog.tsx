@@ -258,7 +258,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
           <label className="field-label title-field" htmlFor="entry-title">Title<Input id="entry-title" disabled={saving} value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Fundamental theorem of algebra" /></label>
           <label className="field-label">Type<select disabled={saving} value={kind} onChange={(event) => setKind(event.target.value as EntryKind)}>{KINDS.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label>
           <label className="field-label" htmlFor="entry-tag">Tag<Input id="entry-tag" disabled={saving} value={tag} onChange={(event) => setTag(event.target.value.toLowerCase())} placeholder="fundamental-theorem" /></label>
-          <label className="field-label header-field">Custom Markdown header<textarea disabled={saving} value={header} onChange={(event) => setHeader(event.target.value)} placeholder="Prerequisites, source, or a short orientation note…" /></label>
+          <label className="field-label header-field" htmlFor="entry-header">Custom Markdown header<textarea id="entry-header" rows={4} disabled={saving} value={header} onChange={(event) => setHeader(event.target.value)} placeholder="Prerequisites, source, or a short orientation note…" /></label>
         </div>
         <div className="editor-variant-slot">{working && (
           <div className="variant-bar">

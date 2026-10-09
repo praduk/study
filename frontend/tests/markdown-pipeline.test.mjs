@@ -397,3 +397,13 @@ test('Vim :wq delegates closing to the save operation, not to an immediate quit'
   command?.run();
   assert.equal(saveAndClose, 1);
 });
+
+test('drawing source markers stay hidden while code examples remain literal', () => {
+  const marker = '<!-- excalidraw:0123456789abcdef0123456789abcdef.excalidraw -->';
+  const rendered = renderMarkdown(`![Diagram](/media/diagram.png)\n${marker}\n\nBody.`);
+  assert.ok(rendered.includes('alt="Diagram"'));
+  assert.ok(rendered.includes('Body.'));
+  assert.ok(!rendered.includes('excalidraw:'));
+  assert.ok(renderMarkdown(`\`\`\`text\n${marker}\n\`\`\``).includes('excalidraw:'));
+  assert.ok(renderMarkdown(`\`${marker}\``).includes('excalidraw:'));
+});

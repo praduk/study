@@ -1,24 +1,21 @@
 'use client';
 
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
-import { Sigma } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { api } from '@/lib/api';
-import { waitForMathJax } from '@/lib/mathjax';
 import type {
   AppState,
   BinaryFiles,
-  DataURL,
   ExcalidrawImperativeAPI,
   LibraryItems,
 } from '@excalidraw/excalidraw/types';
-import type { FileId, OrderedExcalidrawElement } from '@excalidraw/excalidraw/element/types';
+import type { OrderedExcalidrawElement } from '@excalidraw/excalidraw/element/types';
 
 const LazyExcalidraw = lazy(async () => {
-  window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/fonts/';
+  window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/';
   const styles = new Promise<void>((resolve, reject) => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -31,12 +28,7 @@ const LazyExcalidraw = lazy(async () => {
   return { default: excalidraw.Excalidraw };
 });
 
-function utf8Base64(value: string): string {
-  const bytes = new TextEncoder().encode(value);
-  let binary = '';
-  for (const byte of bytes) binary += String.fromCharCode(byte);
-  return btoa(binary);
-}
+const LazyExcaliMathTools = lazy(() => import('@/components/ExcaliMathTools'));
 
 interface Props {
   open: boolean;
@@ -50,7 +42,7 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
   const [name, setName] = useState('Excalidraw diagram');
   const [width, setWidth] = useState(76);
   const [invert, setInvert] = useState(true);
-  const [latex, setLatex] = useState('\\varphi: A \\to B');
+  const [drawingApi, setDrawingApi] = useState<ExcalidrawImperativeAPI | null>(null);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
   const sceneRef = useRef<{
@@ -70,36 +62,6 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
       })
       .catch(() => undefined);
   }, [open]);
-
-  const insertLatex = async () => {
-    setError('');
-    try {
-      await waitForMathJax();
-      const wrapper = await window.MathJax?.tex2svgPromise?.(latex, { display: true });
-      const svg = wrapper?.querySelector('svg');
-      if (!svg || !apiRef.current) throw new Error('MathJax is not ready yet.');
-      const serialized = new XMLSerializer().serializeToString(svg);
-      const dataURL = `data:image/svg+xml;base64,${utf8Base64(serialized)}` as DataURL;
-      const fileId = crypto.randomUUID().replaceAll('-', '').slice(0, 40) as FileId;
-      apiRef.current.addFiles([{ id: fileId, dataURL, mimeType: 'image/svg+xml', created: Date.now() }]);
-      const existing = apiRef.current.getSceneElements();
-      const element = {
-        id: crypto.randomUUID().replaceAll('-', '').slice(0, 20), type: 'image', x: 120, y: 120,
-        width: 260, height: 90, angle: 0, strokeColor: 'transparent', backgroundColor: 'transparent',
-        fillStyle: 'solid', strokeWidth: 1, strokeStyle: 'solid', roughness: 0, opacity: 100,
-        groupIds: [], frameId: null, index: null, roundness: null, seed: Math.floor(Math.random() * 2 ** 30),
-        version: 1, versionNonce: Math.floor(Math.random() * 2 ** 30), isDeleted: false,
-        boundElements: null, updated: Date.now(), link: null, locked: false, status: 'saved', fileId,
-        scale: [1, 1], crop: null, customData: { studyLatex: latex },
-      };
-      apiRef.current.updateScene({
-        elements: [...existing, element as unknown as OrderedExcalidrawElement],
-        captureUpdate: 'IMMEDIATELY',
-      });
-    } catch (reason) {
-      setError((reason as Error).message);
-    }
-  };
 
   const save = async () => {
     setError('');
@@ -122,7 +84,7 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
       form.set('width', String(width));
       form.set('invert_lightness', String(invert));
       const result = await api<{ markdown: string }>(`/api/entries/${entryId}/diagrams/excalidraw`, { method: 'POST', body: form });
-      onInsert(result.markdown);
+      onInsert(`\n\n${result.markdown}\n\n`);
       onClose();
     } catch (reason) {
       setError((reason as Error).message);
@@ -137,7 +99,6 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
         <DialogHeader><DialogTitle>Excalidraw</DialogTitle></DialogHeader>
         <div className="drawing-toolbar">
           <Input value={name} aria-label="Drawing name" onChange={(event) => setName(event.target.value)} />
-          <div className="latex-insert"><Input value={latex} aria-label="LaTeX to insert" onChange={(event) => setLatex(event.target.value)} /><Button variant="outline" onClick={insertLatex}><Sigma /> Insert LaTeX</Button></div>
           <label className="range-field">Width <input type="range" min="20" max="100" value={width} onChange={(event) => setWidth(Number(event.target.value))} /><span>{width}%</span></label>
           <label className="tiny-check"><input type="checkbox" checked={invert} onChange={(event) => setInvert(event.target.checked)} /> invert HSL lightness in dark mode</label>
         </div>
@@ -145,8 +106,13 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
           <Suspense fallback={<div className="canvas-loading">Loading drawing tools…</div>}>
             <LazyExcalidraw
               theme={dark ? 'dark' : 'light'}
+              initialData={{ appState: { currentItemRoughness: 0, currentItemRoundness: 'sharp', currentItemFontFamily: 2, currentItemFillStyle: 'solid' } }}
+              renderTopRightUI={() => drawingApi && <Suspense fallback={<span>Loading math tools…</span>}>
+                <LazyExcaliMathTools drawingApi={drawingApi} dark={dark} />
+              </Suspense>}
               excalidrawAPI={(drawingApi) => {
                 apiRef.current = drawingApi;
+                setDrawingApi(drawingApi);
                 void drawingApi.updateLibrary({ libraryItems: libraryRef.current, merge: false });
               }}
               onChange={(elements, appState, files) => { sceneRef.current = { elements, appState, files }; }}

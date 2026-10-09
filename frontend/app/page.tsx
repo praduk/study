@@ -35,6 +35,8 @@ import { readingVariantSelection } from '@/lib/reference-navigation';
 import type { Bootstrap, BootstrapPayload, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus, ReviewStats } from '@/lib/types';
 
 const EditorDialog = lazy(async () => {
+  // Shared drawing chunks can initialize font faces while the editor loads.
+  window.EXCALIDRAW_ASSET_PATH = '/vendor/excalidraw/';
   const loaded = await import('@/components/EditorDialog');
   return { default: loaded.EditorDialog };
 });
