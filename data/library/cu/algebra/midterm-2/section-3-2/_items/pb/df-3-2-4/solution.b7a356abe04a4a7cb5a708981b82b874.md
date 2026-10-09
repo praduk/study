@@ -1,9 +1,6 @@
-Suppose $Z(G)\ne1$. By Lagrange, its order divides $pq$, so it is $p,q$, or $pq$ (when $p=q$, the distinct possibilities are $p,p^2$).
+If $|G|=pq$ for primes $p,q$, possibly equal, prove that either $G$ is abelian or $Z(G)=1$.
 
-If $|Z(G)|=pq$, then $Z(G)=G$, which is the definition of $G$ being abelian. Otherwise $G/Z(G)$ has prime order: its order is $q$ when $|Z(G)|=p$, or $p$ when $|Z(G)|=q$. A group of prime order is cyclic, since any nonidentity element generates a nontrivial subgroup whose order divides that prime. Exercise 3.1.36 now gives that $G$ is abelian.
+Suppose $Z(G)\neq 1$.  Then there are two cases.
 
-Thus a nontrivial center forces $G$ abelian. Equivalently, if $G$ is not abelian, its center must be trivial.
-
-**Technique:** constrain the order of the center, then inspect the central quotient. This alone does not assert that a nonabelian group of order $pq$ exists.
-
-**Foundations:** @cu:algebra:midterm-2:theorems:th:cosets-lagrange, @cu:algebra:midterm-2:theorems:th:first-isomorphism, @cu:algebra:midterm-2:theorems:th:orbit-stabilizer.
+Suppose $Z(G)=G$.  Then $G$ is abelian.
+Suppose $Z(G)\neq G$.  Then by Lagrange $|Z(G)|=p$ or $|Z(G)|=q$.  Then $G/Z(G)$ has order $p$ or order $q$, and therefore it is cyclic.  But beacuse $G/Z(G)$ is cyclic, $G$ is abelian.

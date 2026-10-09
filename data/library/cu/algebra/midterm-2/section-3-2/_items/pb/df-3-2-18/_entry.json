@@ -25,8 +25,29 @@
       "main": true
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "id": "6b6ca269e77949898b328ca3f5311e7a",
+      "kind": "excalidraw",
+      "source": "assets/6b6ca269e77949898b328ca3f5311e7a.excalidraw",
+      "path": "assets/801fa86fbd422015ee7fcf67068ca93b2f89d3fcba000bccf0b41d53ab0fda3a.png",
+      "alt": "Second Isomorphism Theorem",
+      "width": 76,
+      "invert_lightness": true,
+      "pixels": [
+        158,
+        140
+      ]
+    },
+    {
+      "id": "e93ac1f96f674bb39db3a4efa888826d",
+      "kind": "commutative",
+      "source": "assets/e93ac1f96f674bb39db3a4efa888826d.commutative.json",
+      "alt": "Commutative diagram",
+      "width": 76
+    }
+  ],
   "review_enabled": true,
   "created_at": "2026-10-09T03:13:25.624280+00:00",
-  "updated_at": "2026-10-09T04:30:34.385908+00:00"
+  "updated_at": "2026-10-09T06:22:04.824651+00:00"
 }

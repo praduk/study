@@ -3,6 +3,7 @@
   "id": "dd0c1b02030b4e129555bfcf52c3afe1",
   "name": "Important Theorems",
   "rank": 6917529027641081856,
-  "review_enabled": true,
-  "created_at": "2026-10-09T03:13:02.972197+00:00"
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:02.972197+00:00",
+  "updated_at": "2026-10-09T05:41:38.550899+00:00"
 }

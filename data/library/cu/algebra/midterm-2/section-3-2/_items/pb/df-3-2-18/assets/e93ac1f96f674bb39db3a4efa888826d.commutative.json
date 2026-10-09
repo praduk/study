@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "name": "Commutative diagram",
+  "width": 76,
+  "nodes": [
+    {
+      "id": "n01",
+      "label": "A",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "id": "n20",
+      "label": "B",
+      "row": 2,
+      "column": 0
+    }
+  ],
+  "arrows": []
+}

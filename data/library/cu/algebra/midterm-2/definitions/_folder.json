@@ -3,6 +3,7 @@
   "id": "c3a0ba6e4ea54eae868b7b227e74bc78",
   "name": "Definitions",
   "rank": 4611686018427387904,
-  "review_enabled": true,
-  "created_at": "2026-10-09T03:13:02.835680+00:00"
+  "review_enabled": false,
+  "created_at": "2026-10-09T03:13:02.835680+00:00",
+  "updated_at": "2026-10-09T05:41:37.304352+00:00"
 }

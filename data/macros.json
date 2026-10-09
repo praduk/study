@@ -156,7 +156,11 @@
     "Orb": "\\operatorname{Orb}",
     "nsubg": "\\triangleleft",
     "subg": "\\le",
-    "semid": "\\ltimes"
+    "semid": "\\ltimes",
+    "align": [
+      "\\begin{aligned}#1\\end{aligned}",
+      1
+    ]
   },
-  "updated_at": "2026-10-05T16:05:52.951875+00:00"
+  "updated_at": "2026-10-09T05:26:14.827085+00:00"
 }
