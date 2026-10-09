@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "464439c67bf542a1941acf700317b139",
+  "title": "Transposition",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c914db67ca30429581de15aa2a4b4bd3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c914db67ca30429581de15aa2a4b4bd3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:12:21.872636+00:00",
+  "updated_at": "2026-09-28T16:12:21.872691+00:00"
+}

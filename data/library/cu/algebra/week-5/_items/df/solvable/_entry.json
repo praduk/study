@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "86703e51cc784479b786efe6c0fb461b",
+  "title": "Solvable",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6dcacaeef415412ea08233f2daf54468",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6dcacaeef415412ea08233f2daf54468.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:09:59.296780+00:00",
+  "updated_at": "2026-09-28T16:09:59.296833+00:00"
+}

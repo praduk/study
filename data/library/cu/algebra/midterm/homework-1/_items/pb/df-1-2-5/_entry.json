@@ -23,10 +23,18 @@
       "subtag": null,
       "file": "solution.2d36eb0730a9400eacbc2c9d749e39bd.md",
       "main": true
+    },
+    {
+      "id": "ea85698083cc4c03bc084466340aa34d",
+      "kind": "sl",
+      "label": "aisln",
+      "subtag": "alsln",
+      "file": "solution.ea85698083cc4c03bc084466340aa34d.md",
+      "main": false
     }
   ],
   "assets": [],
-  "review_enabled": false,
+  "review_enabled": true,
   "created_at": "2026-09-18T08:20:55.550242+00:00",
-  "updated_at": "2026-09-18T08:20:58.940048+00:00"
+  "updated_at": "2026-09-18T10:49:13.039154+00:00"
 }

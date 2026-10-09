@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "cc24cadfc2774fa99a0fb4317a0c53e3",
+  "title": "First Isomorphism Theorem",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b9a46c99654b4d40bb5de12ad270a8d1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b9a46c99654b4d40bb5de12ad270a8d1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-21T14:45:25.793470+00:00",
+  "updated_at": "2026-09-21T14:48:52.365922+00:00"
+}

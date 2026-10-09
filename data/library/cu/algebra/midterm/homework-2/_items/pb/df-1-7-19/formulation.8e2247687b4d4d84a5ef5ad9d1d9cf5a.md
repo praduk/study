@@ -1,1 +1,1 @@
-Let $H\le G$ with $G$ finite, and let $H$ act on $G$ by left multiplication. For $x\in G$, let $\mathcal O$ be its orbit. Prove that $H\to\mathcal O$, $h\mapsto hx$, is a bijection. Deduce that $|H|$ divides $|G|$.
+Let $H\le G$ with $G$ finite, and let $H$ act on $G$ by left multiplication. For $x\in G$, let $\Orb_H(x)$ be its orbit. Prove that $H\to\Orb_H(x)$, $h\mapsto hx$, is a bijection. Deduce that $|H|$ divides $|G|$.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3fdd89ff6012486d8bd7b87f5fb2bf76",
+  "title": "When $HK$ is a group",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b1b303abbbc6415fa25e0edf4e96a2c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b1b303abbbc6415fa25e0edf4e96a2c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-21T14:16:04.461661+00:00",
+  "updated_at": "2026-09-21T14:48:45.219365+00:00"
+}

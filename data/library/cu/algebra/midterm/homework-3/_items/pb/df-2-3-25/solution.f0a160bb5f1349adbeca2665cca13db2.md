@@ -1,10 +1,21 @@
-Choose integers $u,v$ with $ku+nv=1$ by Bézout's identity. In any finite group of order $n$, Lagrange's theorem applied to $\langle g\rangle$ gives $g^n=1$. Thus
+Let $G$ be cyclic of finite order $n$ and let $k\in\Z$ satisfy $\gcd(k,n)=1$. Prove that $x\mapsto x^k$ is surjective. Then use Lagrange’s theorem to prove the same result for any finite group of order $n$.
 
+(a) Let $G$ be cyclic of finite order.  Let $G=\genby{x}$.  We have that
 $$
-(g^u)^k=g^{uk}=g^{1-nv}=g.
+|x^k| = \frac{|x|}{\gcd(|x|,k)} = |x| = |G|.
 $$
 
-Every element has a $k$th root, proving the general assertion and hence the cyclic case. Alternatively, for $G=\langle a\rangle$, $a^k$ is a generator because $|a^k|=n/\gcd(n,k)=n$.
-The inverse function is $g\mapsto g^u$, so the power map is in fact bijective. In a nonabelian group it need not be a homomorphism; no such claim was used.
+So $|\genby{x^k}|=|G|$  therefore the map $x\mapsto x^k$ is surjective.
 
-**Technique:** use Bézout to invert an exponent modulo the group order, then apply Lagrange element by element.
+(b) Let $G$ be a finite group of order $n$.  Let $x\in G$.  Then $|x|$ divides
+$|G|$ by Lagrange.  Let
+$$
+c = \frac{|G|}{|x|}.
+$$
+
+We have
+$$
+\gcd(k,|G|) = 1 \iff \exists a,b\in \, 1 = ak + b|G| = ak + bc|x| \iff \gcd(k,|x|)=1.
+$$
+
+Let $g\in G$.  Define $\Psi_g:\genby{g}\to\genby{g}$ map $x\mapsto x^k$.  By (a) $\Psi_g$ is surjective.  So there exists a $z=\Psi_y^{-1}(g)\in G$ so that $z^k = g$.

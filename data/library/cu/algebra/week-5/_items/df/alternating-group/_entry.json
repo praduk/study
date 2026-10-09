@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d5d587647b8f47088f602cd6450e03be",
+  "title": "Alternating Group",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bd7e9853bd4e4b7ebcf5d4ccddc536e4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bd7e9853bd4e4b7ebcf5d4ccddc536e4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:15:50.186456+00:00",
+  "updated_at": "2026-09-28T16:15:50.186487+00:00"
+}

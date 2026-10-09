@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0f373574408e4820affdc56eecd2dbfb",
+  "title": "Direct Product",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2a329959723142da90f57f97a71d0bde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2a329959723142da90f57f97a71d0bde.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-05T16:02:18.633099+00:00",
+  "updated_at": "2026-10-05T16:03:13.689994+00:00"
+}

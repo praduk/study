@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d8f5646f6cbb404aa3de2c92e3705392",
+  "title": "GCD and LCM",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "759e527746e84ec9b9bddd1872c75349",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.759e527746e84ec9b9bddd1872c75349.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-18T10:16:18.899775+00:00",
+  "updated_at": "2026-09-18T10:16:18.899843+00:00"
+}

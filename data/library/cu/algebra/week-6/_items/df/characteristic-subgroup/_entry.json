@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2fc7f5fa3a424945aa59a9b3377ad9ae",
+  "title": "Characteristic Subgroup",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "66672a73de1b419b9a12af031f8e3931",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.66672a73de1b419b9a12af031f8e3931.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-05T16:01:00.138492+00:00",
+  "updated_at": "2026-10-05T16:01:00.138545+00:00"
+}

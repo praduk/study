@@ -3,6 +3,7 @@
   "id": "faf632960a374e38b10644cae4c15272",
   "name": "Homework 1",
   "rank": 8646911284551352320,
-  "review_enabled": true,
-  "created_at": "2026-09-18T08:20:14.372977+00:00"
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:14.372977+00:00",
+  "updated_at": "2026-09-20T01:49:32.907978+00:00"
 }

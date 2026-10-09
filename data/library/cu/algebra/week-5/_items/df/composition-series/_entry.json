@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2b443b77e0674e808f729038895d7352",
+  "title": "Composition Series",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ec68caae665e429ab1be4788e0f0c095",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ec68caae665e429ab1be4788e0f0c095.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:06:45.268499+00:00",
+  "updated_at": "2026-09-28T16:06:45.268528+00:00"
+}

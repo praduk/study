@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "06758b27995e4663bb8ed07a020bb4bb",
+  "title": "Commutator Subgroup",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5a28973eacca461da9127cbd03a9db12",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5a28973eacca461da9127cbd03a9db12.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:10:56.175221+00:00",
+  "updated_at": "2026-09-28T16:10:56.175304+00:00"
+}

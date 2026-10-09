@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "94e7209c5fa34fb1a666867b44aca412",
+  "title": "Automorphism Group",
+  "rank": 2305843009213693952,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "47a82e590e144c6bb3d342440b6dc35a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.47a82e590e144c6bb3d342440b6dc35a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-05T15:59:38.262030+00:00",
+  "updated_at": "2026-10-05T16:09:09.280522+00:00"
+}

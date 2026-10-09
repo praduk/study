@@ -10,28 +10,6 @@ The homework list is the confirmed study scope from your request. Later lecture 
 
 Start with the proof techniques, attempt the problem statements, then use the separate solutions to check every inference. Pay particular attention to where finiteness, commutativity, and injectivity or surjectivity enter.
 
-### Definitions
-
-- @cu:algebra:midterm:definitions:df:mt-group
-- @cu:algebra:midterm:definitions:df:mt-element-order
-- @cu:algebra:midterm:definitions:df:mt-subgroup
-- @cu:algebra:midterm:definitions:df:mt-generated
-- @cu:algebra:midterm:definitions:df:mt-direct-product
-- @cu:algebra:midterm:definitions:df:mt-dihedral
-- @cu:algebra:midterm:definitions:df:mt-permutations
-- @cu:algebra:midterm:definitions:df:mt-field-matrices
-- @cu:algebra:midterm:definitions:df:mt-quaternion
-- @cu:algebra:midterm:definitions:df:mt-homomorphism
-- @cu:algebra:midterm:definitions:df:mt-kernel-image
-- @cu:algebra:midterm:definitions:df:mt-left-action
-- @cu:algebra:midterm:definitions:df:mt-right-action
-- @cu:algebra:midterm:definitions:df:mt-stabilizers
-- @cu:algebra:midterm:definitions:df:mt-orbit
-- @cu:algebra:midterm:definitions:df:mt-centralizer-normalizer
-- @cu:algebra:midterm:definitions:df:mt-cosets
-- @cu:algebra:midterm:definitions:df:mt-torsion
-- @cu:algebra:midterm:definitions:df:mt-maximal
-
 ### Important theorems
 
 - @cu:algebra:midterm:theorems:th:mt-cancellation

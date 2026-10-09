@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "edaf8228cbd84aeba7276bb89ab8d57b",
+  "title": "Second Isomorphism Theorem",
+  "rank": 9007199254740992000,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0f6ee5beaebc4f2998f5ee04086aee3a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0f6ee5beaebc4f2998f5ee04086aee3a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-21T14:58:13.575715+00:00",
+  "updated_at": "2026-09-21T15:00:59.481375+00:00"
+}

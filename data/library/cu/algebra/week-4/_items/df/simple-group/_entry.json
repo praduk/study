@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2657e56142464b13b42fff8f93c8e5c9",
+  "title": "Simple Group",
+  "rank": 9115285645797883904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fcc90b3b0e3b4d0898e546d9db4eedf1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fcc90b3b0e3b4d0898e546d9db4eedf1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-21T14:46:37.889415+00:00",
+  "updated_at": "2026-09-21T15:32:51.325628+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9dce712295b24656818e01c05a787b0c",
+  "title": "Sign of a Permutation",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "384a200a9e33438394b269b848824f15",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.384a200a9e33438394b269b848824f15.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:14:32.635026+00:00",
+  "updated_at": "2026-09-28T16:14:32.635098+00:00"
+}

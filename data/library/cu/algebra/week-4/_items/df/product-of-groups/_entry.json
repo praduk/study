@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "ab6b5b9a7fd7417e81222c816dc8d21f",
+  "title": "Product of Groups",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f7c502c83aed41ca80e9a09f242df392",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f7c502c83aed41ca80e9a09f242df392.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-21T14:13:41.683870+00:00",
+  "updated_at": "2026-09-21T14:13:41.683886+00:00"
+}

@@ -3,6 +3,7 @@
   "id": "4468cf01d6fb468bab69a69f694d18fa",
   "name": "Proof Techniques",
   "rank": 8070450532247928832,
-  "review_enabled": true,
-  "created_at": "2026-09-18T08:20:12.081060+00:00"
+  "review_enabled": false,
+  "created_at": "2026-09-18T08:20:12.081060+00:00",
+  "updated_at": "2026-09-20T01:49:30.084161+00:00"
 }

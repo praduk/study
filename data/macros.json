@@ -148,11 +148,15 @@
     ],
     "genby": [
       "\\left\\langle{#1}\\right\\rangle",
-      2
+      1
     ],
+    "lcm": "\\operatorname{lcm}",
     "Stab": "\\operatorname{Stab}",
     "WStab": "\\operatorname{WStab}",
-    "Orb": "\\operatorname{Orb}"
+    "Orb": "\\operatorname{Orb}",
+    "nsubg": "\\triangleleft",
+    "subg": "\\le",
+    "semid": "\\ltimes"
   },
-  "updated_at": "2026-09-17T05:26:36.361122+00:00"
+  "updated_at": "2026-10-05T16:05:52.951875+00:00"
 }

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "6188f7869e5e4b6a9c52caab1a81d65d",
+  "title": "Conjugacy Classes",
+  "rank": 9151314442816847872,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ee54a07224264f4f82987c7c8492346d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ee54a07224264f4f82987c7c8492346d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-09-28T16:17:36.753949+00:00",
+  "updated_at": "2026-09-28T18:08:03.054182+00:00"
+}

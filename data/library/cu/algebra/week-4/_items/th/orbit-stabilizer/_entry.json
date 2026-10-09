@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "35c9ad1093f448edac4261b11dc06800",
+  "title": "Orbit-Stabilizer",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8cc16e9f3fac4861b6624d8644a52acd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8cc16e9f3fac4861b6624d8644a52acd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-09-21T14:18:18.522475+00:00",
+  "updated_at": "2026-09-21T14:48:47.482819+00:00"
+}
