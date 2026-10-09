@@ -14,3 +14,8 @@ Nested pictures that open and close in a single DVI special (including empty
 TikZ-CD matrix cells) must update nesting depth in order, rather than emitting
 extra SVG roots based on the final depth. The source patch is
 `study-picture-markers.mjs`, injected by `copy-vendor.mjs`.
+
+The build fingerprints the patched runtime and worker in
+`frontend/lib/tikz-runtime.json`. Study requests the runtime with this version,
+which also propagates to the worker URL, so browser caches cannot retain an
+older worker after a changed renderer is deployed.

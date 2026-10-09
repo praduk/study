@@ -11,6 +11,7 @@ import {
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
+import { createHash } from 'node:crypto';
 import { svgPictureMarkers } from '../vendor/tikzjax/study-picture-markers.mjs';
 
 const frontend = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -91,6 +92,9 @@ cpSync(join(frontend, 'node_modules', '@planktimerr', 'tikzjax', 'dist'), tikz, 
 cpSync(join(frontend, 'vendor', 'tikzjax'), tikz, { recursive: true });
 let runtime = readFileSync(join(tikz, 'tikzjax.js'), 'utf8');
 runtime = replaceRequired(runtime, 'M()(A.A,B);', '');
+// Carry the build fingerprint through to the worker. A changed runtime must
+// not reuse a cached worker from an earlier deployment under the same URL.
+runtime = replaceRequired(runtime, 'new o(`${e}/run-tex.js`)', 'new o(`${e}/run-tex.js${N.search}`)');
 runtime = replaceRequired(runtime,
   '"complete"==document.readyState?K():window.addEventListener("load",K)',
   'window.StudyTikzJax={render:async(source,options)=>{const worker=await V;return worker.texify(source,options)},stop:async()=>{await n.terminate(await V);window.TikzJax=false}}');
@@ -113,6 +117,8 @@ worker = replaceRequired(worker,
 worker = replaceRequired(worker, 'const g=dn("input.dvi").buffer;',
   'const log=new TextDecoder().decode(dn("input.log"));if(/(^|\\n)!/.test(log))throw new Error(log.match(/(?:^|\\n)![^\\n]*/)[0].trim());const g=dn("input.dvi").buffer;');
 writeFileSync(join(tikz, 'run-tex.js'), worker);
+const tikzVersion = createHash('sha256').update(runtime).update(worker).digest('hex').slice(0, 16);
+writeFileSync(join(frontend, 'lib', 'tikz-runtime.json'), JSON.stringify({ version: tikzVersion }) + '\n');
 writeFileSync(join(tikz, 'tex_files', 'quiver.sty.gz'),
   gzipSync(readFileSync(join(quiver, 'quiver.sty'))));
 

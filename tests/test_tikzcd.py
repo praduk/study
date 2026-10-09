@@ -4,10 +4,12 @@ import asyncio
 import re
 import socket
 import threading
+from urllib.parse import urlsplit
 
 import pytest
 import uvicorn
 from fastapi.testclient import TestClient
+from starlette.responses import Response
 
 from study_app.app import create_app
 from study_app.export import build_export_html
@@ -62,6 +64,18 @@ def test_packaged_tikz_button_create_edit_code_canvas_and_font_size(settings_fac
     playwright_api = pytest.importorskip('playwright.async_api')
     settings = settings_factory()
     app = create_app(settings, local_mode=True)
+    primed_old_worker = False
+
+    @app.middleware('http')
+    async def cached_previous_worker(request, call_next):
+        nonlocal primed_old_worker
+        if request.url.path == '/vendor/tikzjax/run-tex.js' and not request.url.query and not primed_old_worker:
+            primed_old_worker = True
+            return Response('throw new Error("Stale worker from previous deployment");',
+                            media_type='application/javascript',
+                            headers={'Cache-Control': 'private, max-age=3600'})
+        return await call_next(request)
+
     store = app.state.store
     folder = store.create_folder('Diagram checks', 'diagram-checks', None)
     store.set_macros({'R': r'\mathbb{R}', 'Hom': r'\operatorname{Hom}'})
@@ -91,16 +105,25 @@ def test_packaged_tikz_button_create_edit_code_canvas_and_font_size(settings_fac
                 raise
             page = await browser.new_page(viewport={'width': 1440, 'height': 1000})
             page.set_default_timeout(30000)
-            errors, remote = [], []
+            errors, remote, tikz_requests = [], [], []
             page.on('pageerror', lambda error: errors.append(error.stack))
             page.on('request', lambda request: remote.append(request.url)
                     if not request.url.startswith((base, 'data:', 'blob:')) else None)
+            page.on('request', lambda request: tikz_requests.append(request.url)
+                    if '/vendor/tikzjax/' in request.url else None)
             try:
+                # A previously cached worker must not survive a new runtime version.
+                await page.goto(base + '/vendor/tikzjax/run-tex.js')
+                assert primed_old_worker
                 await page.goto(base + '/library/diagram-checks/th/fixture')
                 await page.locator('.reading-pane .tikzcd-svg svg').last.wait_for()
                 await playwright_api.expect(page.locator('.reading-pane .tikzcd-svg > svg')).to_have_count(3)
                 assert not await page.locator('.reading-pane .tikzcd-view .form-error').count()
                 assert not await page.locator('.reading-pane .tikzcd-svg svg svg').count()
+                runtime_url = next(url for url in tikz_requests if '/tikzjax.js?' in url)
+                worker_url = next(url for url in tikz_requests if '/run-tex.js?' in url)
+                assert urlsplit(runtime_url).query == urlsplit(worker_url).query
+                assert re.fullmatch('v=[a-f0-9]{16}', urlsplit(worker_url).query)
                 await page.evaluate('document.fonts.ready')
                 async def sizes(selector):
                     return await page.locator(selector).evaluate('''el => {

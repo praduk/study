@@ -1,5 +1,6 @@
 import { getSharedMathMacros } from '@/lib/mathjax';
 import { macroPreamble } from '@/lib/tikzcd';
+import { version } from './tikz-runtime.json';
 
 type Runtime = { render: (source: string, options: Record<string, string>) => Promise<[string, string]>; stop: () => Promise<void> };
 let loading: Promise<Runtime> | null = null;
@@ -13,7 +14,7 @@ function loadRuntime() {
     css.rel = 'stylesheet'; css.href = '/vendor/tikzjax/fonts.css';
     if (!document.querySelector('link[href="/vendor/tikzjax/fonts.css"]')) document.head.appendChild(css);
     const script = document.createElement('script');
-    script.id = 'study-tikzjax'; script.src = '/vendor/tikzjax/tikzjax.js';
+    script.id = 'study-tikzjax'; script.src = `/vendor/tikzjax/tikzjax.js?v=${version}`;
     script.onload = () => window.StudyTikzJax ? resolve(window.StudyTikzJax) : reject(new Error('TikZ could not start.'));
     script.onerror = () => { loading = null; script.remove(); reject(new Error('The local TikZ renderer could not load.')); };
     document.head.appendChild(script);
