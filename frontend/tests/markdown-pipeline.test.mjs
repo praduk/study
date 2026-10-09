@@ -407,3 +407,14 @@ test('drawing source markers stay hidden while code examples remain literal', ()
   assert.ok(renderMarkdown(`\`\`\`text\n${marker}\n\`\`\``).includes('excalidraw:'));
   assert.ok(renderMarkdown(`\`${marker}\``).includes('excalidraw:'));
 });
+
+test('TikZ-CD fences and display math become diagrams while ordinary code stays literal', () => {
+  const source = String.raw`\begin{tikzcd} A \arrow[r] & B \end{tikzcd}`;
+  const fenced = renderMarkdown('```tikzcd\n'+source+'\n```');
+  assert.ok(fenced.includes('data-study-tikzcd='));
+  assert.ok(!fenced.includes('<code'));
+  assert.ok(renderMarkdown('```tikz-cd\n'+source+'\n```').includes('data-study-tikzcd='));
+  assert.ok(renderMarkdown('$$\n'+source+'\n$$').includes('data-study-tikzcd='));
+  assert.ok(!renderMarkdown('```latex\n'+source+'\n```').includes('data-study-tikzcd='));
+  assert.ok(!renderMarkdown('`'+source+'`').includes('data-study-tikzcd='));
+});

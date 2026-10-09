@@ -18,6 +18,11 @@ declare global {
   }
 
   interface Window {
+    TikzJax?: boolean;
+    StudyTikzJax?: {
+      render: (source: string, options: Record<string, string>) => Promise<[string, string]>;
+      stop: () => Promise<void>;
+    };
     EXCALIDRAW_ASSET_PATH?: string;
     MathJax?: {
       startup?: { promise?: Promise<unknown>; [key: string]: unknown };

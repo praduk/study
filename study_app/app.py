@@ -369,13 +369,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             response = await call_next(request)
         response.headers.setdefault("X-Content-Type-Options", "nosniff")
         response.headers.setdefault("Referrer-Policy", "same-origin")
-        response.headers.setdefault("X-Frame-Options", "DENY")
+        quiver_frame = request.url.path == "/vendor/quiver/index.html"
+        response.headers.setdefault("X-Frame-Options", "SAMEORIGIN" if quiver_frame else "DENY")
         response.headers.setdefault(
             "Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
         )
         response.headers.setdefault(
             "Content-Security-Policy",
-            _content_security_policy(),
+            _content_security_policy().replace("frame-ancestors 'none'", "frame-ancestors 'self'")
+            if quiver_frame else _content_security_policy(),
         )
         if request.url.path.startswith("/api/"):
             response.headers.setdefault("Cache-Control", "no-store")
@@ -1007,7 +1009,12 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         candidate = (root / path).resolve()
         if root.exists() and root.resolve() in candidate.parents and candidate.is_file():
             if candidate.suffix.casefold() == ".html":
-                return _frontend_html_response(candidate)
+                response = _frontend_html_response(candidate)
+                if path == "vendor/quiver/index.html":
+                    response.headers["Content-Security-Policy"] = response.headers[
+                        "Content-Security-Policy"
+                    ].replace("frame-ancestors 'none'", "frame-ancestors 'self'")
+                return response
             cache_control = (
                 "private, max-age=31536000, immutable"
                 if path.startswith("_next/static/")

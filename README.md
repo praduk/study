@@ -45,7 +45,7 @@ a full reload. Moves that change the special deep-folder storage layout retain t
   mode. Hue and saturation are preserved; this is not an RGB color inversion.
 - Embedded Excalidraw scenes with sharp strokes and plain text by default, a shared template library,
   ExcaliMath function graphs and STEM shapes, editable equations using the reader's MathJax macros,
-  and a grid-based commutative-diagram editor.
+  and a locally hosted Quiver canvas with editable TikZ-CD code.
 - Exact-position insertion controls for entries and folders, drag-and-drop ordering, and a tree
   picker for moving a folder under another folder. Canonical namespaces are recomputed after a move.
 - Confirmed deletion for entries and folders. Deleting a non-empty folder requires typing its name
@@ -239,12 +239,46 @@ settings in its URL fragment:
 Use the editor for images and diagrams whenever possible so the source file, preview, asset
 metadata, width, and entry association remain consistent. Excalidraw source remains editable beside
 the entry it belongs to; its Markdown includes a preview and an `excalidraw` source comment.
-Commutative diagrams likewise keep their JSON source with the entry and use an insertion token such
-as:
+Existing commutative diagrams keep their JSON source with the entry and remain supported via tokens
+such as:
 
 ```text
 [[commutative:0123456789abcdef0123456789abcdef|width=76]]
 ```
+
+New commutative diagrams are stored directly as editable TikZ-CD source:
+
+````markdown
+```tikzcd
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
+C \arrow[r, "k"'] & D
+\end{tikzcd}
+```
+````
+
+The **TikZ-CD** button opens a local Quiver canvas beside a code pane. Double-click to place
+objects and drag between objects to create arrows. Code edits use **Apply code to canvas**;
+**Render preview** checks the actual TikZ output. Place the Markdown cursor inside an existing
+`tikzcd` or `tikz-cd` fence and press **TikZ-CD** to replace that block. Inserting validates the
+code before changing the draft. TikZ-CD in display math is also rendered; ordinary LaTeX code
+examples stay literal. Diagram object labels inherit the surrounding text size in the reader,
+preview, and PDF export; arrow labels retain TikZ-CD's usual smaller size. PDF export uses the
+same local TikZ compiler and shared macro definitions.
+
+Quiver imports a supported subset of TikZ-CD. Import diagnostics preserve the original code and
+keep that canvas read-only; the code pane and renderer remain usable. The local compiler uses the
+classic Quiver 1.4.2 styles. A canvas feature that cannot be faithfully exported is reported rather
+than silently dropped. TikZ compilation runs in a worker, is loaded only for diagrams, and has a
+20-second timeout. No system TeX installation or external rendering service is required.
+
+MathJax's current TeX extensions and their extra font data are shipped locally. Compatible modern
+extensions are enabled for reading, preview, and PDF export. `physics`, `colorv2`, `fontsizev3`, and
+`noerrors` can be requested explicitly with `\require{...}` because they redefine commands or error
+presentation. The configuration-changing `setoptions` extension and unfiltered-HTML `texhtml`
+extension remain disabled. TikZ-CD is a separate TeX package, rendered by TikZJax rather than MathJax.
+Study's shared macros render labels on the canvas and are supplied to TikZ as LaTeX definitions;
+MathJax-only commands still need a LaTeX equivalent in TikZ source.
 
 Raw HTML is not a portable content format in Study and is disabled by the PDF renderer. The web
 reader supports GitHub-flavored additions such as tables; the PDF path currently renders CommonMark,

@@ -1,3 +1,8 @@
+import { mathJaxOptions } from './mathjax-options.mjs';
+
+let sharedMacros: Record<string, string | (string | number)[]> = {};
+export function getSharedMathMacros() { return sharedMacros; }
+
 let typesetChain = Promise.resolve<unknown>(undefined);
 let markMathJaxReady: () => void;
 let markMathJaxFailed: (reason: unknown) => void;
@@ -77,24 +82,8 @@ export function configureMathJax(macros: Record<string, string | (string | numbe
     else existing.addEventListener('load', () => void finishMathJaxStartup(), { once: true });
     return;
   }
-  window.MathJax = {
-    loader: {
-      paths: {
-        mathjax: '/vendor/mathjax',
-        'mathjax-newcm': '/vendor/mathjax-newcm-font',
-      },
-      load: ['ui/safe'],
-    },
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      macros,
-    },
-    options: { enableMenu: false },
-    svg: { displayOverflow: 'linebreak', fontCache: 'local' },
-    startup: { typeset: false },
-  };
+  sharedMacros = macros;
+  window.MathJax = mathJaxOptions(macros);
   const script = document.createElement('script');
   script.id = 'study-mathjax';
   script.src = '/vendor/mathjax/tex-svg.js';

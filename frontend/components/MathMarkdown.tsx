@@ -7,6 +7,7 @@ import remarkMath from 'remark-math';
 
 import { CommutativeDiagramView } from '@/components/CommutativeDiagramView';
 import { LightnessImage } from '@/components/LightnessImage';
+import { TikzCdView } from '@/components/TikzCdView';
 import {
   StudyReferenceMarkdownSpan,
   type StudyReferenceTarget,
@@ -17,6 +18,7 @@ import {
   remarkStudyDiagrams,
   STUDY_COMMUTATIVE_ATTRIBUTE,
   STUDY_COMMUTATIVE_WIDTH_ATTRIBUTE,
+  STUDY_TIKZCD_ATTRIBUTE,
 } from '@/lib/remark-study-diagrams';
 import { remarkStudyReferences } from '@/lib/remark-study-references';
 
@@ -73,6 +75,8 @@ function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, in
           },
           div({ node: _node, children, ...props }) {
             const diagramProperties = props as typeof props & Record<string, unknown>;
+            const tikzSource = diagramProperties[STUDY_TIKZCD_ATTRIBUTE];
+            if (typeof tikzSource === 'string') return <TikzCdView source={tikzSource} />;
             const id = diagramProperties[STUDY_COMMUTATIVE_ATTRIBUTE];
             if (typeof id === 'string') {
               const requestedWidth = Number(

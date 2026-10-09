@@ -457,3 +457,16 @@ canvas.content-image { aspect-ratio: auto; }
 .study-equation-panel p { margin: 0; font-size: 12px; color: var(--muted-foreground); }
 .study-equation-preview { min-height: 85px; display: grid; place-items: center; padding: 12px; background: white; border-radius: 7px; overflow: auto; }
 .study-equation-preview img { max-width: 100%; }
+
+[data-slot="dialog-content"].tikzcd-dialog { width: 97vw; max-width: 1650px; height: 94vh; padding: 16px; grid-template-rows: auto minmax(0,1fr) auto auto; overflow: hidden; }
+.tikzcd-editor-layout { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(330px,1fr); gap: 12px; min-height: 0; }
+.quiver-frame-wrapper { position: relative; min-height: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 9px; }
+.quiver-frame { width: 100%; height: 100%; border: 0; }.quiver-frame.inactive { pointer-events: none; }
+.quiver-frame-notice { position: absolute; bottom: 10px; left: 10px; right: 10px; padding: 10px; border: 1px solid var(--border); border-radius: 7px; color: var(--foreground); background: var(--card); font-size: 12px; }
+.tikzcd-code-pane { display: flex; flex-direction: column; min-width: 0; min-height: 0; gap: 10px; overflow: auto; }
+.tikzcd-code-pane > textarea { width: 100%; flex: 1 1 50%; min-height: 200px; resize: vertical; padding: 12px; border: 1px solid var(--input); border-radius: 8px; color: var(--foreground); background: var(--page); font: 13px/1.6 ui-monospace,monospace; }
+.tikzcd-code-actions { display: flex; flex-wrap: wrap; gap: 7px; }.tikzcd-code-preview { min-height: 150px; overflow: auto; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--page); }
+.tikzcd-code-preview > p { margin: 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.5; }
+.tikzcd-view { max-width: 100%; margin: 20px auto; color: var(--foreground); text-align: center; }
+.tikzcd-svg { max-width: 100%; overflow: auto; }.tikzcd-svg > svg { display: inline-block; height: auto; }
+.tikzcd-view figcaption { padding: 12px; color: var(--muted-foreground); font: 12px ui-sans-serif,system-ui; }

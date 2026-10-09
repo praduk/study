@@ -272,6 +272,8 @@ def _render_markdown(markdown: MarkdownIt, source: str, store: LibraryStore) -> 
 def _mathjax_tex(content: str, options: dict[str, Any]) -> str:
     """Preserve TeX for MathJax while keeping Markdown raw HTML disabled."""
     escaped = html.escape(content, quote=False)
+    if options["display_mode"] and "\\begin{tikzcd}" in content:
+        return f'<div class="tikzcd-export" data-tikzcd-source="{html.escape(content, quote=True)}"></div>'
     if options["display_mode"]:
         return f"\\[{escaped}\\]"
     return f"\\({escaped}\\)"
@@ -310,6 +312,15 @@ def build_export_html(
     markdown.add_render_rule("math_inline", render_mathjax)
     markdown.add_render_rule("math_block", render_mathjax)
     markdown.add_render_rule("math_block_eqno", render_mathjax)
+    default_fence = markdown.renderer.rules["fence"]
+
+    def render_fence(tokens: list[Any], index: int, options: Any, environment: Any) -> str:
+        token = tokens[index]
+        if token.info.strip() in {"tikzcd", "tikz-cd"}:
+            return f'<div class="tikzcd-export" data-tikzcd-source="{html.escape(token.content, quote=True)}"></div>'
+        return default_fence(tokens, index, options, environment)
+
+    markdown.renderer.rules["fence"] = render_fence
     sections: list[str] = []
     labels = {"ax": "Axiom", "df": "Definition", "rk": "Remark", "th": "Theorem", "pb": "Problem"}
     for entry in entries:
@@ -356,11 +367,21 @@ def build_export_html(
         .replace("\u2029", "\\u2029")
     )
     script_src = html.escape(mathjax_src, quote=True)
+    extensions = json.loads(Path(__file__).with_name("mathjax_extensions.json").read_text())
+    extension_loads = json.dumps(["ui/safe", *[f"[tex]/{name}" for name in extensions["enabled"]]])
+    extension_packages = json.dumps({"[+]": extensions["enabled"]})
+    tikz_scripts = (
+        '<link rel="stylesheet" href="/vendor/tikzjax/fonts.css">'
+        '<script src="/vendor/tikzjax/tikzjax.js"></script>'
+        '<script type="module" src="/vendor/tikzjax/study-export.mjs"></script>'
+        if "data-tikzcd-source=" in body else ""
+    )
     return f'''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>{html.escape(title)}</title>
-<script>window.MathJax={{loader:{{paths:{{mathjax:'/vendor/mathjax','mathjax-newcm':'/vendor/mathjax-newcm-font'}},load:['ui/safe']}},tex:{{inlineMath:[['$','$'],['\\\\(','\\\\)']],displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true,macros:{macros}}},options:{{enableMenu:false}},chtml:{{displayOverflow:'linebreak'}},svg:{{displayOverflow:'linebreak',fontCache:'local'}}}};</script>
+<script>window.MathJax={{loader:{{paths:{{mathjax:'/vendor/mathjax','mathjax-newcm':'/vendor/mathjax-newcm-font',fonts:'/vendor/mathjax-fonts'}},load:{extension_loads}}},tex:{{inlineMath:[['$','$'],['\\\\(','\\\\)']],displayMath:[['$$','$$'],['\\\\[','\\\\]']],processEscapes:true,macros:{macros},packages:{extension_packages}}},options:{{enableMenu:false}},chtml:{{displayOverflow:'linebreak'}},svg:{{displayOverflow:'linebreak',fontCache:'local'}}}};</script>
 <script id="MathJax-script" src="{script_src}"></script>
+{tikz_scripts}
 <style>
 @page {{ size: Letter; margin: .72in .7in .78in; }}
 body {{ margin:0; color:#17211e; font:11pt/1.56 Georgia,serif; }}
@@ -371,6 +392,7 @@ h2 {{ margin:5pt 0 10pt; font-size:18pt; break-after:avoid; }} h3 {{ color:#174f
 code {{ color:#174f45; font-size:8pt; text-transform:none; }} pre {{ white-space:pre-wrap; padding:9pt; background:#f0f2ee; break-inside:avoid; }}
 img {{ display:block; max-width:100%; max-height:7in; margin:12pt auto; object-fit:contain; }} table {{ width:100%; border-collapse:collapse; }} th,td {{ padding:5pt; border:1px solid #c9d0cc; }}
 a {{ color:#174f45; }} mjx-container[display="true"] {{ margin:14pt 0 !important; }}
+.tikzcd-export {{ margin:14pt auto; text-align:center; break-inside:avoid; }} .tikzcd-export svg {{ max-width:100%; height:auto; }}
 .commutative {{ margin:14pt auto; break-inside:avoid; }} .commutative > svg {{ display:block; width:100%; overflow:visible; }}
 .commutative figcaption {{ margin-top:4pt; color:#60716a; font:italic 9pt Georgia,serif; text-align:center; }}
 .diagram-arrow {{ stroke:#174f45; stroke-width:2; fill:none; }} .diagram-arrow-head {{ fill:#174f45; }}
@@ -380,7 +402,7 @@ a {{ color:#174f45; }} mjx-container[display="true"] {{ margin:14pt 0 !important
 </style></head><body><h1>{html.escape(title)}</h1>{body}</body></html>'''
 
 
-def _local_resource(url: str, roots: dict[str, Path]) -> Path | None:
+def _local_resource(url: str, roots: dict[str, Path], *, allow_missing: bool = False) -> Path | None:
     parsed = urlsplit(url)
     if parsed.scheme != "http" or parsed.netloc != "study.invalid":
         return None
@@ -389,7 +411,7 @@ def _local_resource(url: str, roots: dict[str, Path]) -> Path | None:
         if not path.startswith(prefix):
             continue
         candidate = (root / path[len(prefix) :]).resolve()
-        if root in candidate.parents and candidate.is_file():
+        if root in candidate.parents and (allow_missing or candidate.is_file()):
             return candidate
     return None
 
@@ -429,6 +451,8 @@ async def export_pdf(
     roots = {
         "/vendor/mathjax/": mathjax_root,
         "/vendor/mathjax-newcm-font/": font_root,
+        "/vendor/mathjax-fonts/": mathjax_root.parent / "mathjax-fonts",
+        "/vendor/tikzjax/": mathjax_root.parent / "tikzjax",
     }
     unexpected: set[str] = set()
     browser = None
@@ -443,11 +467,18 @@ async def export_pdf(
                 if request_url == "http://study.invalid/export.html":
                     await route.fulfill(body=document, content_type="text/html; charset=utf-8")
                     return
-                resource = _local_resource(request_url, roots)
+                resource = _local_resource(request_url, roots, allow_missing=True)
                 if resource is not None:
+                    if not resource.is_file():
+                        # TeX probes some optional library names before choosing
+                        # an available variant. A contained local miss is a 404.
+                        await route.fulfill(status=404, body="", content_type="text/plain")
+                        return
                     content_type = (
                         "text/javascript; charset=utf-8"
-                        if resource.suffix.casefold() == ".js"
+                        if resource.suffix.casefold() in {".js", ".mjs"}
+                        else "text/css; charset=utf-8"
+                        if resource.suffix.casefold() == ".css"
                         else "application/octet-stream"
                     )
                     await route.fulfill(path=resource, content_type=content_type)
@@ -463,6 +494,10 @@ async def export_pdf(
             await page.evaluate(
                 """async () => {
                     await MathJax.startup.promise;
+                    if (document.querySelector('[data-tikzcd-source]')) {
+                        if (!window.studyTikzExportDone) throw new Error('TikZ export did not start');
+                        await window.studyTikzExportDone;
+                    }
                     if (MathJax.typesetPromise) await MathJax.typesetPromise();
                     if (document.fonts) await document.fonts.ready;
                     await Promise.all(Array.from(document.images, image =>

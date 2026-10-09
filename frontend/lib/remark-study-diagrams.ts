@@ -1,9 +1,11 @@
 export const STUDY_COMMUTATIVE_ATTRIBUTE = 'data-study-commutative';
 export const STUDY_COMMUTATIVE_WIDTH_ATTRIBUTE = 'data-study-width';
+export const STUDY_TIKZCD_ATTRIBUTE = 'data-study-tikzcd';
 
 interface MarkdownNode {
   type: string;
   value?: string;
+  lang?: string | null;
   data?: Record<string, unknown>;
   children?: MarkdownNode[];
 }
@@ -107,7 +109,10 @@ export function transformStudyDiagrams(tree: MarkdownNode): void {
   for (const child of tree.children) transformStudyDiagrams(child);
 
   tree.children = tree.children.flatMap((child) =>
-    child.type === 'html' && /^\s*<!-- excalidraw:[a-f0-9]{32}\.excalidraw -->\s*$/.test(child.value ?? '')
+    ((child.type === 'code' && ['tikzcd', 'tikz-cd'].includes(child.lang || ''))
+      || (child.type === 'math' && child.value?.includes('\\begin{tikzcd}')))
+      ? [{ type: 'studyTikzCd', data: { hName: 'div', hProperties: { [STUDY_TIKZCD_ATTRIBUTE]: child.value || '' } } }]
+      : child.type === 'html' && /^\s*<!-- excalidraw:[a-f0-9]{32}\.excalidraw -->\s*$/.test(child.value ?? '')
       ? []
       : child.type === 'paragraph' ? splitParagraph(child) : [child],
   );

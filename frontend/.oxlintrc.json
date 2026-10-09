@@ -29,7 +29,14 @@
     "build/**",
     "dist/**",
     "coverage/**",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "vendor/quiver/arrow.mjs",
+    "vendor/quiver/curve.mjs",
+    "vendor/quiver/dom.mjs",
+    "vendor/quiver/ds.mjs",
+    "vendor/quiver/parser.mjs",
+    "vendor/quiver/quiver.mjs",
+    "vendor/quiver/ui.mjs"
   ],
   "rules": {
     "no-array-constructor": "error",

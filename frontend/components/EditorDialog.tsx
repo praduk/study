@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { api, batchLibraryWrites } from '@/lib/api';
 import { saveEditorChanges } from '@/lib/editor-save';
 import { activateEditorVimActions, editorVimCommands } from '@/lib/editor-vim-commands';
+import { tikzCdAtCursor } from '@/lib/tikzcd';
 import type { EntryDetail, EntryKind } from '@/lib/types';
 
 const KINDS: { value: EntryKind; label: string }[] = [
@@ -56,6 +57,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
   const [invertImage, setInvertImage] = useState(true);
   const [drawingOpen, setDrawingOpen] = useState(false);
   const [diagramOpen, setDiagramOpen] = useState(false);
+  const [diagramTarget, setDiagramTarget] = useState<ReturnType<typeof tikzCdAtCursor>>(null);
   const [referenceOpen, setReferenceOpen] = useState(false);
   const editorRef = useRef<ReactCodeMirrorRef>(null);
   const fileInput = useRef<HTMLInputElement>(null);
@@ -101,6 +103,23 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
     const position = view.state.selection.main.head;
     view.dispatch({ changes: { from: position, insert: text }, selection: { anchor: position + text.length } });
     view.focus();
+  };
+
+  const openDiagram = () => {
+    const view = editorRef.current?.view;
+    const selection = view?.state.selection.main;
+    setDiagramTarget(selection ? tikzCdAtCursor(view!.state.doc.toString(), selection.anchor, selection.head) : null);
+    setDiagramOpen(true);
+  };
+
+  const insertDiagram = (markdown: string) => {
+    const view = editorRef.current?.view;
+    if (diagramTarget && view) {
+      if (view.state.doc.sliceString(diagramTarget.from, diagramTarget.to) !== diagramTarget.original) {
+        setError('The diagram source changed. Reopen it before replacing it.'); return;
+      }
+      view.dispatch({ changes: { from: diagramTarget.from, to: diagramTarget.to, insert: markdown } });
+    } else insertAtCursor(`\n\n${markdown}\n\n`);
   };
 
   const uploadImage = async (file: File) => {
@@ -282,7 +301,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
               <span className="vim-status">VIM</span>
               <Button size="xs" variant="ghost" onClick={() => fileInput.current?.click()} disabled={saving || !working}><ImagePlus /> Image</Button>
               <Button size="xs" variant="ghost" onClick={() => setDrawingOpen(true)} disabled={saving || !working}><Shapes /> Excalidraw</Button>
-              <Button size="xs" variant="ghost" onClick={() => setDiagramOpen(true)} disabled={saving || !working}><GitCompareArrows /> Commutative</Button>
+              <Button size="xs" variant="ghost" title="Create a diagram, or place the cursor in a TikZ-CD block to edit it" onClick={openDiagram} disabled={saving}><GitCompareArrows /> TikZ-CD</Button>
               <Button size="xs" variant="ghost" aria-keyshortcuts="Control+Shift+K Meta+Shift+K" title="Insert reference (⌘/Ctrl+Shift+K)" onClick={() => setReferenceOpen(true)} disabled={saving || (!working?.folder_id && !folderId)}><AtSign /> Reference</Button>
               <Button size="xs" variant={preview ? 'secondary' : 'ghost'} title="Preview updates after 500 ms without typing" onClick={() => setPreview((value) => !value)}><FileImage /> Preview</Button>
               <span className="toolbar-spacer" />
@@ -311,7 +330,7 @@ function EditorDialogSession({ open, entry, folderId, initialKind = 'df', insert
         <div className="editor-error-slot">{error && <div className="form-error" role="alert">{error}</div>}</div>
         <div className="dialog-actions editor-actions"><Button variant="ghost" onClick={onClose} disabled={saving}>Cancel</Button><Button onClick={() => void save()} disabled={saving || uploads > 0}><Save /> {saving ? 'Saving…' : uploads > 0 ? 'Uploading image…' : 'Save'}</Button></div>
         {working && <ExcalidrawDialog open={drawingOpen} entryId={working.id} dark={dark} onClose={() => setDrawingOpen(false)} onInsert={insertAtCursor} />}
-        {working && <CommutativeDiagramDialog open={diagramOpen} entryId={working.id} onClose={() => setDiagramOpen(false)} onInsert={insertAtCursor} />}
+        {diagramOpen && <CommutativeDiagramDialog open dark={dark} initialSource={diagramTarget?.source} onClose={() => setDiagramOpen(false)} onInsert={insertDiagram} />}
         <ReferencePicker open={referenceOpen} folderId={working?.folder_id || folderId} onClose={() => setReferenceOpen(false)} onInsert={insertAtCursor} />
       </DialogContent>
     </Dialog>
