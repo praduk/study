@@ -157,10 +157,10 @@
     "nsubg": "\\triangleleft",
     "subg": "\\le",
     "semid": "\\ltimes",
-    "align": [
+    "aligned": [
       "\\begin{aligned}#1\\end{aligned}",
       1
     ]
   },
-  "updated_at": "2026-10-09T05:26:14.827085+00:00"
+  "updated_at": "2026-10-09T08:18:18.573025+00:00"
 }

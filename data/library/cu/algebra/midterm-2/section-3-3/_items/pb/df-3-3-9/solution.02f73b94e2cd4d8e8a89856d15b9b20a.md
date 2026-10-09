@@ -1,3 +1,21 @@
+
+
+```tikzcd
+\begin{tikzcd}
+	& G & \\
+	& NP \\
+	N && P \\
+	& {N\cap P}
+	\arrow[no head, from=1-2, to=2-2]
+	\arrow[no head, from=2-2, to=3-3]
+	\arrow["\shortmid"{marking}, no head, from=3-1, to=2-2]
+	\arrow["\shortmid"{marking}, no head, from=3-3, to=4-2]
+	\arrow[no head, from=4-2, to=3-1]
+\end{tikzcd}
+```
+
+
+
 Because $P\cap N\le P$, its order is a power $p^c$. Since it is also a subgroup of $N$, Lagrange gives $c\le b$. Normality of $N$ makes $PN$ a subgroup, and the product-order formula gives
 
 $$
