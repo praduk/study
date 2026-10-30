@@ -3,6 +3,7 @@ The upper central series of a group $G$ is a sequence of subgroups
 $$
 \aligned{
 Z_0(G) &= 1 \\
+Z_1(G) &= Z(G) \\
 Z_k(G) &= \pi_{k-1}^{-1}(Z(G/Z_{k-1}(G))) \\
 }
 $$
