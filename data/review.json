@@ -945,8 +945,35 @@
         "target_attainable": null,
         "calibrated_interval_used": false
       }
+    },
+    "1c0aaba28dc8460389fceec7426ac1e4::statement": {
+      "due_at": "2026-10-31T10:00:19.970104+00:00",
+      "last_reviewed_at": "2026-10-30T10:00:19.970104+00:00",
+      "last_grade": 1,
+      "last_elapsed_ms": 10189,
+      "stability_days": 1.0,
+      "difficulty": 5.2,
+      "repetitions": 1,
+      "lapses": 0,
+      "last_confidence": 3,
+      "last_calibration": 1,
+      "scheduler": {
+        "model": "discounted-bayesian-self-grade-v2",
+        "target_grade": "good-or-easy",
+        "target_probability": 0.9,
+        "calibrated": false,
+        "source": "fallback",
+        "observations": 6,
+        "distinct_cards": 6,
+        "effective_observations": 5.925,
+        "interval_factor": 1.0,
+        "interval_days": 1,
+        "bounded_direction": null,
+        "target_attainable": null,
+        "calibrated_interval_used": false
+      }
     }
   },
   "pending_attempts": {},
-  "updated_at": "2026-10-09T17:15:25.838881+00:00"
+  "updated_at": "2026-10-30T10:00:20.256196+00:00"
 }
