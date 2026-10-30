@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "023dbe69e51a4d6685829f9b341e5b6e",
+  "title": "20-minute review 1: classify groups of order 52 (12 minutes)",
+  "rank": 2305843009213693952,
+  "header": "**Timing:** 12 minutes of the 20-minute review.\n\n**Prerequisites:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Normal Sylow criterion]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Groups of order p²]cu:algebra:midterm-3:sylow:th:mt3-p-square-abelian; @[Internal semidirect recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition; @[Cyclic automorphisms and actions]cu:algebra:midterm-3:semidirect:th:mt3-cyclic-actions; @[Center]cu:algebra:midterm-3:foundations:df:mt3-center.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b771307633b64ba99150c3a4db261139",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b771307633b64ba99150c3a4db261139.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4dd944cfe83143018797a3fc2db445db",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.4dd944cfe83143018797a3fc2db445db.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T16:40:56.959555+00:00",
+  "updated_at": "2026-10-30T16:40:57.220439+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "78829ac215124ff0b488ae7554df2779",
+  "title": "20-minute review 2: central series and solvability of D24 (8 minutes)",
+  "rank": 3458764513820540928,
+  "header": "Target: 8 minutes (about 6 for part (a), 2 for part (b)).\n\nPrerequisites: @[Center]cu:algebra:midterm-3:foundations:df:mt3-center; @[Quotient groups]cu:algebra:midterm-3:foundations:df:mt3-quotient; @[Commutators]cu:algebra:midterm-3:foundations:df:mt3-series; @[Upper central series]cu:algebra:midterm-3:foundations:df:mt3-upper-central; @[Lower central series]cu:algebra:midterm-3:foundations:df:mt3-lower-central; @[Derived series]cu:algebra:midterm-3:foundations:df:mt3-derived-series; @[Nilpotence and class]cu:algebra:midterm-3:foundations:df:mt3-nilpotent-definition; @[Solvability and derived length]cu:algebra:midterm-3:foundations:df:mt3-solvable-definition; @[Equivalent central-series criteria]cu:algebra:midterm-3:central:th:mt3-central-series-equivalence.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90e125c714914745b420775aa6db5a8c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90e125c714914745b420775aa6db5a8c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8c6c874fde4d4d78b919a6f6b284d9b4",
+      "kind": "sl",
+      "label": "Detailed solution",
+      "subtag": null,
+      "file": "solution.8c6c874fde4d4d78b919a6f6b284d9b4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T16:40:58.708102+00:00",
+  "updated_at": "2026-10-30T16:40:58.879662+00:00"
+}
