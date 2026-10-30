@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9375a8642c394e458c3b5164bb0ca0ba",
+  "title": "Ring Left Action",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1fa240e862234348bcae6a163b93e6cc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1fa240e862234348bcae6a163b93e6cc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:27:48.013410+00:00",
+  "updated_at": "2026-10-26T16:27:48.013456+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a7fedac92c054158932f22dea3e8ad36",
+  "title": "Coxeter Group",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5dd5b3e4be1b4b7c8c2f95ba0a88f86b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5dd5b3e4be1b4b7c8c2f95ba0a88f86b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:17:03.346707+00:00",
+  "updated_at": "2026-10-26T16:17:03.346755+00:00"
+}

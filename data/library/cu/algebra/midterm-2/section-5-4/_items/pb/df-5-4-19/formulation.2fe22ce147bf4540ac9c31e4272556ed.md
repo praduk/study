@@ -1,4 +1,4 @@
-A group $H$ is perfect if $H'=H$.
+A group $H$ is perfect if $[H,H]=H$.
 
 (a) Prove every nonabelian simple group is perfect.
 

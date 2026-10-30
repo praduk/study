@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a034a96f9d3742a6a124f0124facd76b",
+  "title": "Ring Homomorphism",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9e09b6b321dc4d87887828351a509a30",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9e09b6b321dc4d87887828351a509a30.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:22:06.137306+00:00",
+  "updated_at": "2026-10-26T16:22:34.632496+00:00"
+}

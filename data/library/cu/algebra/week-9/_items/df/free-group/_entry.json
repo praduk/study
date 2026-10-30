@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "b5e6d9bd8c9a42aea6f144be765bf71b",
+  "title": "Free Group",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e4177d9777f74644b902b8312cae106c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e4177d9777f74644b902b8312cae106c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:08:29.648378+00:00",
+  "updated_at": "2026-10-26T16:33:37.214812+00:00"
+}

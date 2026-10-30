@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e1daeb6c1a95498fade2a67fa9355510",
+  "title": "Semidirect Product",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "16c60025d9da48a3b8d2609b40a58104",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.16c60025d9da48a3b8d2609b40a58104.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-12T14:23:20.113533+00:00",
+  "updated_at": "2026-10-12T15:34:34.785465+00:00"
+}

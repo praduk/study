@@ -1,7 +1,9 @@
 {
   "version": 1,
   "macros": {
+    "Syl": "\\operatorname{Syl}",
     "Hom": "\\operatorname{Hom}",
+    "Aut": "\\operatorname{Aut}",
     "Obj": "\\operatorname{Obj}",
     "End": "\\operatorname{End}",
     "Mor": "\\operatorname{Mor}",
@@ -156,11 +158,12 @@
     "Orb": "\\operatorname{Orb}",
     "nsubg": "\\triangleleft",
     "subg": "\\le",
-    "semid": "\\ltimes",
+    "semid": "\\rtimes",
+    "semidop": "\\ltimes",
     "aligned": [
       "\\begin{aligned}#1\\end{aligned}",
       1
     ]
   },
-  "updated_at": "2026-10-09T08:18:18.573025+00:00"
+  "updated_at": "2026-10-12T15:25:35.047505+00:00"
 }

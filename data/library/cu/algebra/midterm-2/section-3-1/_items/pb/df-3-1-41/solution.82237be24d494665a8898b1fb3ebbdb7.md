@@ -2,7 +2,7 @@
 Let $n$ be a generator of $G$.  So there exist $x,y\in G$ such that $n=x^{-1}y^{-1}xy$.
 But then for some $g\in G$
 $$
-\align{
+\aligned{
 gng^{-1} &= gx^{-1}y^{-1}xyg^{-1} \\
 &= (gxg^{-1})^{-1} (gyg^{-1})^{-1} (gxg^{-1}) (gyg^{-1})
 }

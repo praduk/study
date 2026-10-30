@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "60bfbbdf62bd41f78053afc282a5ec9c",
+  "title": "Complement",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b573e8d00cd748f5913014b13f5ee50f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b573e8d00cd748f5913014b13f5ee50f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-12T15:22:57.093380+00:00",
+  "updated_at": "2026-10-12T15:22:57.093437+00:00"
+}

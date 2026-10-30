@@ -1,17 +1,105 @@
-**Step 1: partition K by H-conjugacy.** Every $G$-conjugate of $x$ lies in $H$ by normality. Conjugating such an element by $H$ keeps it in $K$, so $K$ is partitioned into $H$-conjugacy classes.
+Previous result:
 
-**Step 2: show these classes have equal size.** For $g\in G$, conjugation by $g$ sends the $H$-class of $x$ onto the $H$-class of $gxg^{-1}$:
+Suppose $G$ acts transitively on a finite nonempty set $A$, and $H\nsubg G$. Let $O_1,\ldots,O_r$ be the $H$-orbits.
 
+(a) $G$ permutes these orbits transitively, and all have equal cardinality.
+
+(b) For $a\in O_1$, $|O_1|=[H:H\cap \Stab_G(a)]$ and $r=[G:H\Stab_G(a)]$.
+
+---
+Let $H\trianglelefteq G$, and let $K\subseteq H$ be a conjugacy class of $G$. Choose $x\in K$.
+
+## (a) Prove that $K$ is a union of $k=[G:HC_G(x)]$ conjugacy classes of $H$, all of equal cardinality.
+
+Consider the action of $G$ on $K$ by conjugation:
 $$
-g\{hxh^{-1}:h\in H\}g^{-1}=\{h'(gxg^{-1})h'^{-1}:h'\in H\}.
+\begin{aligned}
+G\times K &\to K\\
+(g,y)&\mapsto gyg^{-1}.
+\end{aligned}
 $$
 
-The equality uses $gHg^{-1}=H$. This map is a bijection, with inverse conjugation by $g^{-1}$. Since every element of $K$ is some $gxg^{-1}$, all $H$-classes in $K$ have equal cardinality.
+Since $K$ is a conjugacy class of $G$, this action is transitive.
 
-**Step 3: count the H-classes using an action.** The group $G$ acts transitively on this collection of classes by conjugation. A group element $g$ stabilizes the class of $x$ exactly when $gxg^{-1}=hxh^{-1}$ for some $h\in H$. This equality is equivalent to $h^{-1}g\in C_G(x)$, or $g\in HC_G(x)$. Conversely any $g=hc$ with $c\in C_G(x)$ sends $x$ to $hxh^{-1}$ and stabilizes its $H$-class. Thus the stabilizer is $HC_G(x)$, a subgroup because $H$ is normal. Orbit–stabilizer gives the number of $H$-classes as $[G:HC_G(x)]$. This argument also works for infinite groups and avoids cancellation of infinite cardinalities.
+Now restrict the action to $H$. For any $y\in K$, the $H$-orbit of $y$ is
+$$
+\Orb_H(y)=\{hyh^{-1}:h\in H\},
+$$
+which is precisely the conjugacy class of $y$ in $H$.
 
-**Step 4: specialize to Aₙ.** For $n\ge2$, $A_n\nsubg S_n$ has index $2$. The subgroup $A_nC_{S_n}(x)$ lies between $A_n$ and $S_n$, so it is either $A_n$ or $S_n$. Its index is therefore $2$ or $1$. The previous steps say the $S_n$-class splits into exactly that many equally sized $A_n$-classes. For $n=1$, both groups are trivial and there is one class.
+Since $K\subseteq H$, every such orbit is a conjugacy class of $H$. Furthermore, the $H$-orbits partition $K$. Therefore,
+$$
+K=O_1\sqcup\cdots\sqcup O_k,
+$$
+where each $O_i$ is a conjugacy class of $H$.
 
-**Technique:** regard the smaller conjugacy classes themselves as points of an action. This is the normal-subgroup orbit argument from 4.1.9.
+By the previously established result for a normal subgroup acting on a transitive $G$-set, all $H$-orbits have equal cardinality.
 
-**Foundations:** @cu:algebra:midterm-2:theorems:th:orbit-stabilizer, @cu:algebra:midterm-2:definitions:df:normalizer-centralizer.
+It remains to determine the number $k$ of these orbits.
+
+The stabilizer of $x$ under the conjugation action is
+$$
+\begin{aligned}
+G_x
+&=\{g\in G:gxg^{-1}=x\}\\
+&=\{g\in G:gx=xg\}\\
+&=C_G(x).
+\end{aligned}
+$$
+
+By the previously established orbit-counting result, the number of $H$-orbits is
+$$
+k=[G:HG_x].
+$$
+
+Substituting $G_x=C_G(x)$ gives
+$$
+\boxed{k=[G:HC_G(x)]}.
+$$
+
+Therefore, $K$ is the disjoint union of exactly $k=[G:HC_G(x)]$ conjugacy classes of $H$, all of equal cardinality.
+
+## (b) Deduce that a conjugacy class of $S_n$ consisting of even permutations is either a single conjugacy class of $A_n$ or a union of two conjugacy classes of $A_n$ of equal cardinality.
+
+Let $G=S_n$ and $H=A_n$, where $n\ge 2$.
+
+Since $A_n\trianglelefteq S_n$, we may apply part (a).
+
+Let $K$ be a conjugacy class of $S_n$ consisting of even permutations, and choose $x\in K$.
+
+Since every element of $K$ is even, we have $K\subseteq A_n$.
+
+By part (a), $K$ is the disjoint union of
+$$
+k=[S_n:A_nC_{S_n}(x)]
+$$
+conjugacy classes of $A_n$, all of equal cardinality.
+
+Observe that
+$$
+A_n\le A_nC_{S_n}(x)\le S_n.
+$$
+
+By multiplicativity of subgroup indices,
+$$
+[S_n:A_n]
+=
+[S_n:A_nC_{S_n}(x)]
+[A_nC_{S_n}(x):A_n].
+$$
+
+Since $[S_n:A_n]=2$, we obtain
+$$
+2=k[A_nC_{S_n}(x):A_n].
+$$
+
+Both factors on the right are positive integers. Therefore,
+$$
+k\mid 2,
+$$
+so
+$$
+\boxed{k\in\{1,2\}}.
+$$
+
+Hence $K$ is either a single conjugacy class of $A_n$ or the disjoint union of two conjugacy classes of $A_n$ of equal cardinality.

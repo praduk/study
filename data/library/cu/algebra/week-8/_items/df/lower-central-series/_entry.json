@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e79920fddc7d46ddacb3f5bcf9033ddc",
+  "title": "Lower Central Series",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "59db23584d4746b69d4cf2d33e7a07e2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.59db23584d4746b69d4cf2d33e7a07e2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-19T16:17:23.679240+00:00",
+  "updated_at": "2026-10-26T16:40:14.123671+00:00"
+}

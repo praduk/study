@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "baa570cee02e4a22a205e5bd9c9001da",
+  "title": "Ring",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e3f2f870072a4812999a7a3c3e58a189",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e3f2f870072a4812999a7a3c3e58a189.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:20:47.842593+00:00",
+  "updated_at": "2026-10-26T16:20:47.842626+00:00"
+}

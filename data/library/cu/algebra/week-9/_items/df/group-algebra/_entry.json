@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "b8930e7cbc99426d909d030835d66587",
+  "title": "Group Algebra",
+  "rank": 9187343239835811840,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "55efead749d748aeb50f4f698fc64273",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.55efead749d748aeb50f4f698fc64273.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-10-26T16:45:15.758935+00:00",
+  "updated_at": "2026-10-26T16:45:15.758970+00:00"
+}
