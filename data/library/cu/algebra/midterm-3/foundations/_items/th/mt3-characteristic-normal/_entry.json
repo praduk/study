@@ -26,7 +26,8 @@
     }
   ],
   "assets": [],
-  "review_enabled": true,
+  "review_enabled": false,
+  "proof_review_enabled": false,
   "created_at": "2026-10-30T09:31:07.347316+00:00",
-  "updated_at": "2026-10-30T10:03:54.648894+00:00"
+  "updated_at": "2026-10-30T10:35:24.530180+00:00"
 }

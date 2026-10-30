@@ -5,3 +5,6 @@ G^{(0)}=G,\qquad G^{(i+1)}=[G^{(i)},G^{(i)}].
 $$
 
 This is the **derived series**. Its first terms are $G,G',G'',\ldots$. Unlike the lower central series, the next term takes commutators **within the current term**. Both series start with $G'=L_1(G)$, but later terms need not coincide.
+
+
+Note that the commutator subgroup $[G,G]$ is the smallest normal subgroup of $G$ such that $G/[G,G]$ is the largest abelian quotient.

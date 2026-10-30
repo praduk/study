@@ -32,6 +32,8 @@ $$
 
 If the order is $24$, the normalizer has index $5$. The faithful coset action of the nonabelian simple group would embed $G$ in $A_5$, impossible because $120>60$.
 
+Explaning in detail let $G$ act on $H=N_G(D)$.  Then $G/H$ has order 120/24=5.  Therefore there is an left-action on the cosets $G/H$, $\phi:G\to S_5$.  Using the sign homomorphism it has to lie in $A_5$.  $\phi$ is injective but that means 120 must embed into a subgroup of order 60, which is impossible.
+
 If the order is $40$, its index is $3$, giving the equally impossible embedding $G\hookrightarrow A_3$.
 
 All possibilities fail, so no group of order $120$ is simple.

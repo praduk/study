@@ -4,4 +4,4 @@ $$
 \Aut(C_n)\cong(\Z/n\Z)^\times.
 $$
 
-For prime $p$ and $a\ge1$, $|\Aut(C_{p^a})|=p^{a-1}(p-1)$. For prime $q$, this automorphism group is cyclic of order $q-1$.
+For prime $p$ and $a\ge1$, $|\Aut(C_{p^a})|=p^{a-1}(p-1)$. For prime $q$, the automorphism group of $C_q$ is cyclic of order $q-1$.
