@@ -124,9 +124,10 @@ For broad replacements, the builder compares the amount of old/new text that wou
 retokenizing with a fresh build and chooses the smaller estimated workload.
 
 Every store write that can affect indexed content, canonical tags, lexical scope, or ranking
-invalidates the snapshot immediately. The v2 exceptions are updates containing only a non-null folder or entry
-`review_enabled` preference, which search does not consume. Study preserves the existing search
-snapshot and revision after those atomic single-sidecar writes only if the index matched disk
+invalidates the snapshot immediately. The v2 exceptions are folder `review_enabled` updates and
+entry updates limited to `review_enabled`, `proof_review_enabled`, or both. Search does not consume
+these inclusion preferences. Study preserves the existing search snapshot and revision after those
+atomic single-sidecar writes only if the index matched disk
 beforehand and the validated library-cache refresh finds no unexpected concurrent change;
 otherwise it invalidates the snapshot normally. Entry preferences retain the same recovery journal
 and rollback checks as other entry edits.

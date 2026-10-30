@@ -121,7 +121,7 @@ produce `math:algebra`.
 
 Every entry, including a problem, has an `id`, `folder_id`, `kind`, `title`, `tag`, `header`, `order`,
 `review_enabled`, `review_modes`, `problem_family`, `confusable_with`, `formulations`, `supplements`,
-and `assets`.
+and `assets`. Theorems also have a `proof_review_enabled` preference; a missing value means true.
 
 Allowed kinds are:
 
@@ -192,7 +192,7 @@ math:algebra:pb:z12-subgroups:sl:generators
 
 ### Review metadata
 
-Review tasks are fixed, not author-selectable:
+Review task types are fixed by kind and content; theorem proof inclusion is separately selectable:
 
 - When the user asks to populate Study or create new content, keep every newly created entry out of
   review initially unless the user explicitly asks to include it. Set `review_enabled: false` on
@@ -202,10 +202,18 @@ Review tasks are fixed, not author-selectable:
 - Axioms, definitions, and remarks use `statement`.
 - Theorems use `statement`, followed by internal mode ID `proof-plan` when a main proof exists. The
   user-visible task is “Proof of theorem” and requires the complete proof, not merely a plan.
+  The per-theorem `proof_review_enabled` preference defaults to true (including when absent).
+  Setting it false excludes only proof review, leaving statement eligibility unchanged. It does
+  not remove the proof or change `review_modes`, and preserves schedules, pending attempts,
+  history, and calibration evidence. Re-enabling uses the stored due time subject to item and
+  folder inclusion. New proof reveals are blocked while opted out; an already-revealed attempt
+  may still be graded.
 - Problems use `solve` when a main solution exists and remain out of review until then.
 
-The store derives `review_modes`; never hand-author a different list. `problem_family` and
-`confusable_with` are free-form metadata today; the scheduler does not interpret them. When a mode
+The store derives capability `review_modes`; never hand-author a different list or filter it by
+inclusion preferences. Keep capability validity separate from eligibility so a preference change
+cannot purge review data. `problem_family` and `confusable_with` are free-form metadata today; the
+scheduler does not interpret them. When a mode
 ceases to exist, its schedules, pending attempts, and log records are purged rather than silently
 reclassified.
 

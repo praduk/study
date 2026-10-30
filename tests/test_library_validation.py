@@ -129,6 +129,27 @@ def test_invalid_review_mode_dependency_is_rejected(tmp_path: Path):
         store.get_entry(theorem["id"])
 
 
+@pytest.mark.parametrize("version", [1, 2])
+@pytest.mark.parametrize("invalid", [None, 0, 1, "false", []])
+def test_proof_review_preference_rejects_nonboolean_authored_values(
+    tmp_path: Path, version: int, invalid
+):
+    data = tmp_path / "data"
+    store = _v1_store(data) if version == 1 else LibraryStore(data)
+    folder = store.create_folder("Algebra", "algebra", None)
+    store.create_entry(folder["id"], "th", "Result", "result", "", "Statement")
+    path = data / "library.json" if version == 1 else next(data.rglob("_entry.json"))
+    value = json.loads(path.read_text())
+    record = value["entries"][0] if version == 1 else value
+    record["proof_review_enabled"] = invalid
+    path.write_text(json.dumps(value))
+    before = path.read_bytes()
+
+    with pytest.raises(StoreError, match="proof_review_enabled must be true or false"):
+        LibraryStore(data).check_data()
+    assert path.read_bytes() == before
+
+
 def test_valid_image_and_diagram_asset_records_are_accepted(tmp_path: Path):
     store, entry = _store_with_entry(tmp_path)
     preview_name = f"{'a' * 64}.png"

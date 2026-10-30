@@ -68,6 +68,8 @@ test('only successful content-changing API calls refresh mounted library reads',
     assert.equal(getLibraryReadVersion(), before + 1);
     await api('/api/folders/one', { method: 'PATCH', body: '{"review_enabled":true}' });
     await api('/api/entries/one?include_review_stats=true', { method: 'PATCH', body: '{"review_enabled":false}' });
+    await api('/api/entries/one?include_review_stats=true', { method: 'PATCH', body: '{"proof_review_enabled":false}' });
+    await api('/api/entries/one', { method: 'PATCH', body: '{"review_enabled":true,"proof_review_enabled":true}' });
     await api('/api/review/grade', { method: 'POST', body: '{}' });
     await api('/api/entries/one');
     assert.equal(updates, 1);
@@ -79,6 +81,11 @@ test('only successful content-changing API calls refresh mounted library reads',
   assert.equal(changesLibraryReads('/api/folders/one', { method: 'PATCH', body: '{"slug":"new"}' }), true);
   assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"review_enabled":false,"title":"New title"}' }), true);
   assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"review_enabled":"false"}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"proof_review_enabled":false,"title":"New title"}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"proof_review_enabled":"false"}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{"proof_review_enabled":null}' }), true);
+  assert.equal(changesLibraryReads('/api/entries/one', { method: 'PATCH', body: '{}' }), true);
+  assert.equal(changesLibraryReads('/api/folders/one', { method: 'PATCH', body: '{"proof_review_enabled":false}' }), true);
 });
 
 test('linked-item pagination keeps authored order and rejects a changed snapshot', () => {

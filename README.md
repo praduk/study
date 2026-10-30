@@ -286,11 +286,11 @@ so do not put essential meaning in a web-only extension without checking the exp
 
 ## Review, exactly as implemented
 
-Each fixed review task of an entry is a separate card: axioms, definitions, and remarks have
-Statement; theorems have Statement and, when a main proof exists, Proof of theorem; problems have
-Solve once a main solution exists. Review loads new or due cards in authored
-order in batches of at most 200. After a batch is exhausted, it fetches the next due batch and only
-reports completion after a fresh request returns no cards. The flow for each card is:
+Each available review task of an entry is a separate card: axioms, definitions, and remarks have
+Statement; theorems have Statement and, when a main proof exists, an optional Proof of theorem task
+that is enabled by default; problems have Solve once a main solution exists. Review loads new or due
+cards in authored order in batches of at most 200. After a batch is exhausted, it fetches the next
+due batch and only reports completion after a fresh request returns no cards. The flow for each card is:
 
 1. Read the kind-specific prompt: definitions say “Define,” axioms and theorems say “State,” theorem
    proofs say “Prove,” and problems say “Solve.” Proof and problem tasks also display the main
@@ -317,6 +317,14 @@ An enabled item is still paused while any containing folder is disabled; the rea
 Existing items without an explicit preference remain enabled. New items can be created with
 `review_enabled: false` through the API without changing their folder or neighboring items.
 
+Theorems also have an **Include proof in review** checkbox. Unchecking it keeps statement review
+enabled under the item's usual settings and leaves the stored proof available to read. The
+`proof_review_enabled` preference defaults to true, including for older items without that field;
+it does not change the content-derived `review_modes`. Opting out preserves the proof card's
+schedule, history, and pending attempts. An already-revealed attempt can still be graded, but no new
+proof attempt can be revealed while opted out. Re-enabling proof review uses the stored due time,
+subject to the item and its containing folders being enabled and a main proof being available.
+
 An Again grade sets the next due time to ten minutes and also inserts a retry after up to three
 currently available intervening cards. Hard, Good, and Easy update a per-card stability estimate and
 schedule an integer-day interval. After enough genuinely delayed observations, a bounded Bayesian
@@ -330,8 +338,9 @@ mastery. Its formulas, gates, assumptions, and constants are transparent in
 scientifically validated optimum.
 
 The Calendar view reports the next scheduled due time for every active, previously reviewed card in
-the selected month; a toggle also reveals disabled or unavailable scheduled cards. Selecting an
-event shows the stability and difficulty heuristics, repetitions, lapses, scheduling source,
+the selected month; a toggle also reveals disabled or unavailable scheduled cards, including proofs
+excluded from review. Those proofs' past attempts remain in history and model calibration. Selecting
+an event shows the stability and difficulty heuristics, repetitions, lapses, scheduling source,
 posterior interval-scale median and 90% model-conditional credible interval, boundary checks,
 distinct-card evidence, and predicted Good-or-Easy self-grade probability now and at the due time.
 Predictions are omitted for sub-six-hour or beyond-cap delays rather than extrapolated. The report

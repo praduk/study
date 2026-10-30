@@ -71,18 +71,23 @@ For each card, Study does the following:
 Study does not parse the attempt, check a proof, or infer correctness. The learner's self-grade drives
 the schedule. That is a material limitation, not an implementation detail.
 
-### Fixed review tasks
+### Review task types and proof inclusion
 
 - **Definition:** “Define `<title>`.”
 - **Axiom:** “State `<title>`.”
 - **Remark:** state the content precisely.
-- **Theorem:** “State `<title>`.” When a main proof exists, a second task says “Prove
-  `<title>`.” and displays the theorem statement.
+- **Theorem:** “State `<title>`.” When a main proof exists, an optional second task says “Prove
+  `<title>`.” and displays the theorem statement. This proof task is enabled by default.
 - **Problem:** “Solve the following problem.” The problem statement is displayed, and the task
   exists only when a main solution is stored.
 
-These tasks are intentionally not configurable. The internal `proof-plan` card ID is retained for
-schedule compatibility, but the prompt and visible label require a proof, not merely a plan.
+Task types are derived from the entry kind and its stored content; `review_modes` records those
+capabilities, not inclusion preferences. Each theorem separately has a `proof_review_enabled`
+preference, controlled by **Include proof in review**. Missing preferences mean true for backward
+compatibility. Turning it off excludes only the proof task; it does not alter statement review or
+remove the stored proof. The internal `proof-plan` card ID is retained for schedule compatibility,
+but the prompt and visible label require a complete proof, not merely a plan. Proof inclusion is a
+user control over study scope, not a measure of proof knowledge or a validated learning rule.
 
 ## Authored-order review
 
@@ -91,7 +96,7 @@ preorder:
 
 1. root folders by stored `order`;
 2. each folder's direct entries by stored `order`;
-3. each entry's fixed tasks—statement before theorem proof;
+3. each entry's eligible tasks—statement before theorem proof;
 4. then the folder's child folders recursively, each by stored `order`.
 
 Only eligible due/new cards are emitted, so skipping a not-due card does not alter the relative order
@@ -100,6 +105,14 @@ child marked enabled is still excluded while an ancestor is disabled. Each entry
 `review_enabled` preference (missing means true for compatibility). Disabling it excludes all of
 that entry's tasks without changing authored order, schedules, pending attempts, or history.
 Re-enabling it restores eligibility subject to containing folders, task availability, and due time.
+
+Disabling a theorem's proof review likewise preserves its proof schedule, pending attempts, and
+history, including evidence already used by the scheduling model. It excludes the proof card from
+the queue and due count and prevents a new proof reveal. An already-revealed pending attempt may
+still be graded, and retries of an already-recorded grade remain idempotent. Re-enabling proof
+review uses the stored due time; it does not reset the card or bypass entry and folder preferences.
+If a content change leaves no main proof, the proof task ceases to exist and its review data are
+purged; changing its inclusion preference does not do that.
 
 Authored order is not the same as blocked practice. An author can deliberately alternate confusable
 problem families or place a definition before the theorem that depends on it. Study does not
@@ -232,11 +245,14 @@ limited to 366 days. With neither bound supplied, it starts at the current UTC d
 days; supplying only one bound creates the same 90-day span on the other side.
 
 Each event is the one currently stored next-due time for a reviewed card, not a generated recurrence.
-Active cards are derived from the current library, fixed task availability, the entry
-review preference, and inherited folder review setting. New cards have no stored schedule and are
-omitted. Deleted entries and tasks that no longer exist are purged. With `include_inactive=true`, existing entries whose review is disabled may
-still be shown. The stored schedule at the last grade is returned with the current entry title,
-canonical tag, task label, and active-state classification. The endpoint reconstructs state from
+Active cards are derived from the current library, task availability, the entry review preference,
+the theorem's proof preference for proof cards, and inherited folder review settings. New cards have
+no stored schedule and are omitted. Deleted entries and tasks that no longer exist are purged. With
+`include_inactive=true`, existing scheduled cards excluded by any review preference may still be
+shown. An opted-out proof has `active: false` and `inactive_reason: proof-review-disabled` when its
+entry and folders remain enabled; the event's `review_enabled` field continues to describe the
+entry and folder settings. The stored schedule at the last grade is returned with the current entry
+title, canonical tag, task label, and active-state classification. The endpoint reconstructs state from
 the complete log and fails closed on malformed history. It is byte-for-byte read-only while the
 library and review state are synchronized; after an out-of-band deletion or task change, it first
 compacts stale review data so the persisted files again describe only current items.
@@ -246,7 +262,8 @@ attempts remain distinct. They include elapsed minutes, the four self-grade coun
 the Good-or-Easy self-grade rate, and zero-filled daily buckets. Buckets use UTC by default; an
 optional bounded `timezone` query accepts an IANA time-zone name for local calendar labels without
 changing the instant-based range or totals. These history totals retain attempts for content that is
-now review-disabled, but deletion removes an item's attempts from both reporting and calibration.
+now review-disabled, including opted-out proofs. Proof opt-out also retains their model evidence;
+deletion removes an item's attempts from both reporting and calibration.
 
 Bayesian reporting includes each posterior interval-scale median and equal-tail 90% credible
 interval, endpoint mass, distinct-card count, readiness gates, suggested interval factor, target

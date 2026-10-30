@@ -614,6 +614,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             payload.review_modes,
             payload.index,
             payload.review_enabled,
+            payload.proof_review_enabled,
         )
 
     @app.patch("/api/entries/{entry_id}")

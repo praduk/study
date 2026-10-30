@@ -3,7 +3,9 @@ import test from 'node:test';
 
 import {
   buildLibraryTree,
+  entryReviewStatus,
   hydrateBootstrap,
+  proofReviewAvailable,
   updateBootstrapEntryReview,
   updateBootstrapFolder,
 } from '../lib/library-tree.ts';
@@ -189,4 +191,60 @@ test('entry preferences preserve unrelated tree branches and unchanged snapshots
   assert.strictEqual(updated.tree[0].children[0].entries[0], updated.entries[0]);
   assert.strictEqual(updateBootstrapEntryReview(updated, 'one', false), updated);
   assert.strictEqual(updateBootstrapEntryReview(updated, 'missing', false), updated);
+});
+
+test('proof inclusion is independent of item inclusion and preserves review capabilities and content', () => {
+  const folders = [folder('root', 'Root', 0), folder('child', 'Child', 0, 'root'), folder('other', 'Other', 1)];
+  const theorem = {
+    ...entry('theorem', 'child', 'Theorem', 0),
+    kind: 'th',
+    review_enabled: true,
+    review_modes: ['statement', 'proof-plan'],
+    supplements: [{ id: 'proof', kind: 'pf', main: true, subtag: null, content: 'The full proof.' }],
+  };
+  const unrelated = entry('definition', 'other', 'Definition', 0);
+  const original = hydrateBootstrap(compactPayload(folders, [theorem, unrelated]));
+  const changed = updateBootstrapEntryReview(original, theorem.id, false, 'proof_review_enabled');
+
+  assert.equal(changed.entries[0].proof_review_enabled, false);
+  assert.equal(changed.entries[0].review_enabled, true);
+  assert.equal(entryReviewStatus(changed.entries[0], folders), 'Statement only');
+  assert.equal(proofReviewAvailable(changed.entries[0]), true, 'preference does not remove the available proof task');
+  assert.strictEqual(changed.entries[0].review_modes, theorem.review_modes);
+  assert.strictEqual(changed.entries[0].supplements, theorem.supplements);
+  assert.equal(changed.entries[0].supplements[0].content, 'The full proof.');
+  assert.strictEqual(changed.entries[0].formulations, theorem.formulations);
+  assert.strictEqual(changed.folders, original.folders);
+  assert.strictEqual(changed.tree[1], original.tree[1]);
+  assert.strictEqual(changed.entries[1], unrelated);
+  assert.strictEqual(changed.tree[0].children[0].entries[0], changed.entries[0]);
+  assert.equal(original.entries[0].proof_review_enabled, undefined, 'the pre-request snapshot remains valid for rollback');
+
+  const paused = updateBootstrapEntryReview(changed, theorem.id, false);
+  assert.equal(paused.entries[0].proof_review_enabled, false);
+  assert.equal(entryReviewStatus(paused.entries[0], folders), 'Excluded from review');
+  const resumed = updateBootstrapEntryReview(paused, theorem.id, true);
+  assert.equal(entryReviewStatus(resumed.entries[0], folders), 'Statement only');
+  const proofResumed = updateBootstrapEntryReview(resumed, theorem.id, true, 'proof_review_enabled');
+  assert.equal(entryReviewStatus(proofResumed.entries[0], folders), 'Included in review');
+  assert.deepEqual(proofResumed.entries[0].review_modes, ['statement', 'proof-plan']);
+});
+
+test('proof review defaults to included and respects theorem capability and folder pauses', () => {
+  const folders = [folder('root', 'Root', 0), folder('child', 'Child', 0, 'root')];
+  const theorem = { ...entry('theorem', 'child', 'Theorem', 0), kind: 'th', review_modes: ['statement', 'proof-plan'] };
+  const definition = entry('definition', 'child', 'Definition', 1);
+  const snapshot = hydrateBootstrap(compactPayload(folders, [theorem, definition]));
+
+  assert.equal(proofReviewAvailable(theorem), true);
+  assert.equal(entryReviewStatus(theorem, folders), 'Included in review');
+  assert.strictEqual(updateBootstrapEntryReview(snapshot, theorem.id, true, 'proof_review_enabled'), snapshot);
+  assert.strictEqual(updateBootstrapEntryReview(snapshot, 'missing', false, 'proof_review_enabled'), snapshot);
+  assert.strictEqual(updateBootstrapEntryReview(snapshot, definition.id, false, 'proof_review_enabled'), snapshot);
+  assert.equal(proofReviewAvailable(definition), false);
+  assert.equal(proofReviewAvailable({ ...theorem, review_modes: ['statement'] }), false);
+  assert.equal(entryReviewStatus({ ...theorem, proof_review_enabled: false }, [{ ...folders[0], review_enabled: false }, folders[1]]), 'Paused by folder: Root');
+
+  const optedOut = updateBootstrapEntryReview(snapshot, theorem.id, false, 'proof_review_enabled');
+  assert.strictEqual(updateBootstrapEntryReview(optedOut, theorem.id, false, 'proof_review_enabled'), optedOut);
 });

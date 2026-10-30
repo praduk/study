@@ -29,7 +29,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { api, batchLibraryWrites, setCsrfToken } from '@/lib/api';
 import { folderPathIds, libraryPathForEntry, resolveLibraryPath } from '@/lib/library-path';
 import { acceptLibraryDrag, LIBRARY_DRAG_TYPE } from '@/lib/library-drag';
-import { hydrateBootstrap, entryReviewStatus, updateBootstrapEntryReview, updateBootstrapFolder } from '@/lib/library-tree';
+import { hydrateBootstrap, entryReviewStatus, proofReviewAvailable, updateBootstrapEntryReview, updateBootstrapFolder } from '@/lib/library-tree';
 import { configureMathJax } from '@/lib/mathjax';
 import { readingVariantSelection } from '@/lib/reference-navigation';
 import type { Bootstrap, BootstrapPayload, EntryDetail, EntryKind, EntrySummary, Folder, FolderNode, GitStatus, ReviewStats } from '@/lib/types';
@@ -252,9 +252,10 @@ function LoginScreen({ onLogin }: { onLogin: (csrf: string) => void }) {
   return <main className="login-screen"><form className="login-card" onSubmit={submit}><span className="brand-mark large"><Sigma /></span><h1>Study</h1><p>Your mathematical library is password protected.</p><label className="field-label" htmlFor="study-password">Password<Input id="study-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} /></label>{error && <div className="form-error">{error}</div>}<Button type="submit" disabled={busy || !password}><LogIn /> {busy ? 'Opening…' : 'Open library'}</Button></form></main>;
 }
 
-function ReadingPane({ entry, folders, onReviewToggle, canEdit, inactive, previousEntry, nextEntry, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry, onNavigate }: { entry: EntryDetail | null; folders: Folder[]; onReviewToggle: (id: string, enabled: boolean) => void; canEdit: boolean; inactive: boolean; previousEntry: EntrySummary | null; nextEntry: EntrySummary | null; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void; onNavigate: (entry: EntrySummary) => void }) {
+function ReadingPane({ entry, folders, onReviewToggle, onProofReviewToggle, canEdit, inactive, previousEntry, nextEntry, selectedVariantId, onSelectVariant, onEdit, onDelete, onOpenEntry, onNavigate }: { entry: EntryDetail | null; folders: Folder[]; onReviewToggle: (id: string, enabled: boolean) => void; onProofReviewToggle: (id: string, enabled: boolean) => void; canEdit: boolean; inactive: boolean; previousEntry: EntrySummary | null; nextEntry: EntrySummary | null; selectedVariantId: string | null; onSelectVariant: (variantId: string) => void; onEdit: () => void; onDelete: () => void; onOpenEntry: (entryId: string, variantId?: string) => void; onNavigate: (entry: EntrySummary) => void }) {
   if (!entry) return <article className="reading-pane empty-library" inert={inactive || undefined} tabIndex={-1}><div><span className="brand-mark large"><Library /></span><h1>Your study library</h1><p>Select an entry, or create one in a folder. Content is stored as ordinary Markdown under <code>data/</code>.</p></div></article>;
   const target = readingVariantSelection(entry, selectedVariantId);
+  const hasProofReview = proofReviewAvailable(entry);
   const folder = folders.find((item) => item.id === entry.folder_id); const active = entry.formulations.find((item) => item.id === target.formulationId) || entry.formulations[0];
   return <article className="reading-pane" inert={inactive || undefined} tabIndex={-1}><div className="breadcrumbs">{folder?.namespace.split(':').join(' / ')} <span>/</span> {KIND_LABEL[entry.kind]}</div>
     <div className="document-heading"><div><span className="canonical-tag">{active?.canonical_tag || entry.canonical_tag}</span><h1>{entry.title}</h1></div><div className="document-actions desktop-write"><Button variant="outline" disabled={!canEdit} onClick={onEdit}>Edit</Button><Button variant="destructive" disabled={!canEdit} onClick={onDelete}><Trash2 /> Delete</Button></div></div>
@@ -262,6 +263,10 @@ function ReadingPane({ entry, folders, onReviewToggle, canEdit, inactive, previo
       <label htmlFor="entry-review-enabled"><Checkbox id="entry-review-enabled" checked={entry.review_enabled !== false} disabled={!canEdit} onCheckedChange={(checked) => onReviewToggle(entry.id, Boolean(checked))} /> Include this item in review</label>
       <output>{entryReviewStatus(entry, folders)}</output>
     </div>
+    {entry.kind === 'th' && <div className="entry-review-control">
+      <label htmlFor="entry-proof-review-enabled"><Checkbox id="entry-proof-review-enabled" checked={entry.proof_review_enabled !== false} disabled={!canEdit || !hasProofReview} aria-describedby={!hasProofReview ? 'entry-proof-review-help' : undefined} onCheckedChange={(checked) => onProofReviewToggle(entry.id, Boolean(checked))} /> Include proof in review</label>
+      {!hasProofReview && <output id="entry-proof-review-help">Add a main proof to review it</output>}
+    </div>}
     {entry.header && <MathMarkdown content={entry.header} className="content-header" folderId={entry.folder_id} onOpenEntry={onOpenEntry} />}
     {entry.formulations.length > 1 && <div className="variant-tabs">{entry.formulations.map((item) => <button key={item.id} className={active?.id === item.id ? 'selected' : ''} onClick={() => onSelectVariant(item.id)}>{item.label}{item.main ? ' · main' : ''}</button>)}</div>}
     <MathMarkdown content={active?.content || ''} folderId={entry.folder_id} onOpenEntry={onOpenEntry} />
@@ -501,15 +506,19 @@ export default function Home() {
       throw new Error(message);
     }
   }, [selectedEntryId, selectedFolderId]);
-  const updateReviewPreference = useCallback(async (type: 'folder' | 'entry', id: string, enabled: boolean) => {
+  const updateReviewPreference = useCallback(async (type: 'folder' | 'entry' | 'proof', id: string, enabled: boolean) => {
     if ((type === 'folder' && isMobile) || !librarySynchronized || pendingReviewPreferencesRef.current.size > 0) return;
     const snapshot = dataRef.current;
+    const currentEntry = snapshot?.entries.find((entry) => entry.id === id);
     const current = type === 'folder' ? snapshot?.folders.find((folder) => folder.id === id)
-      : snapshot?.entries.find((entry) => entry.id === id);
-    if (!snapshot || !current || (current.review_enabled !== false) === enabled) return;
+      : currentEntry;
+    const preferenceField = type === 'proof' ? 'proof_review_enabled' : 'review_enabled';
+    const currentPreference = type === 'proof' ? currentEntry?.proof_review_enabled : current?.review_enabled;
+    if (!snapshot || !current || (currentPreference !== false) === enabled) return;
+    if (type === 'proof' && (!currentEntry || !proofReviewAvailable(currentEntry))) return;
     const applyPreference = (value: Bootstrap, preference: boolean) => type === 'folder'
       ? updateBootstrapFolder(value, { ...value.folders.find((folder) => folder.id === id)!, review_enabled: preference })
-      : updateBootstrapEntryReview(value, id, preference);
+      : updateBootstrapEntryReview(value, id, preference, preferenceField);
 
     pendingReviewPreferencesRef.current.add(id);
     setPendingReviewPreferences(new Set(pendingReviewPreferencesRef.current));
@@ -519,7 +528,7 @@ export default function Home() {
     try {
       const result = await api<{ folder?: Folder; entry?: EntryDetail; review: ReviewStats; git: GitStatus }>(
         `/api/${type === 'folder' ? 'folders' : 'entries'}/${id}?include_review_stats=true`,
-        { method: 'PATCH', body: JSON.stringify({ review_enabled: enabled }) },
+        { method: 'PATCH', body: JSON.stringify({ [preferenceField]: enabled }) },
       );
       const latest = dataRef.current;
       if (latest) {
@@ -532,10 +541,11 @@ export default function Home() {
           return;
         }
         const saved = type === 'folder' ? result.folder : result.entry;
-        if (!saved || typeof saved.review_enabled !== 'boolean' || !result.review || !result.git) {
+        const savedPreference = type === 'proof' ? result.entry?.proof_review_enabled : saved?.review_enabled;
+        if (!saved || typeof savedPreference !== 'boolean' || !result.review || !result.git) {
           throw new Error('The running server does not support this review control. Restart Study and reload');
         }
-        const authoritative = applyPreference(latest, saved.review_enabled);
+        const authoritative = applyPreference(latest, savedPreference);
         const next = { ...authoritative, review: result.review, git: result.git };
         dataRef.current = next;
         setData(next);
@@ -657,6 +667,9 @@ export default function Home() {
   const toggleEntryReview = useCallback((id: string, enabled: boolean) => {
     void updateReviewPreference('entry', id, enabled);
   }, [updateReviewPreference]);
+  const toggleProofReview = useCallback((id: string, enabled: boolean) => {
+    void updateReviewPreference('proof', id, enabled);
+  }, [updateReviewPreference]);
 
   if (session.loading) return <div className="app-loading"><LoaderCircle className="spin" /><span>Opening Study…</span></div>;
   if (!session.authenticated && session.authRequired) return <LoginScreen onLogin={(csrf) => { setCsrfToken(csrf); setSession({ loading: false, authenticated: true, authRequired: true }); void load(); }} />;
@@ -666,6 +679,7 @@ export default function Home() {
   const resizeLibrary = (width: number) => setLibraryWidth(width);
   const selectedFolder = data?.folders.find((folder) => folder.id === selectedFolderId) || null;
   const selectedEntryIndex = orderedEntries.findIndex((item) => item.id === selectedEntryId);
+  const selectedEntrySummary = data?.entries.find((item) => item.id === entry?.id);
   const previousEntry = selectedEntryIndex > 0 ? orderedEntries[selectedEntryIndex - 1] : null;
   const nextEntry = selectedEntryIndex >= 0 && selectedEntryIndex < orderedEntries.length - 1 ? orderedEntries[selectedEntryIndex + 1] : null;
   const treeProps = { tree: data?.tree || [], selectedEntry: selectedEntryId, selectedFolder: selectedFolderId, expanded, pendingReviewPreferences, readOnly: isMobile || !librarySynchronized, onToggle: toggleFolder, onSelectEntry: chooseEntry, onSelectFolder: setSelectedFolderId, onReviewToggle: toggleFolderReview,
@@ -675,7 +689,7 @@ export default function Home() {
     <div className="top-actions"><Button variant="ghost" size="icon" aria-label="Edit global LaTeX macros" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMacrosOpen(true)}><Braces /></Button>{data?.capabilities.pdf_export && <Button variant="ghost" size="icon" aria-label="Export PDF" onClick={() => setExportOpen(true)}><Download /></Button>}<Button variant="ghost" size="icon" aria-label="Toggle dark mode" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setGitOpen(true)}><GitBranch /> {data?.git.content_dirty ? 'Changes' : data?.git.branch || 'Git'}</Button><Button variant="outline" className="calendar-button" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => setMode('calendar')}><CalendarDays /> Calendar</Button><Button className="review-button" disabled={!librarySynchronized || reviewPreferencePending} aria-label={`Start review, ${data?.review.due || 0} due`} onClick={() => setMode('review')}><BookOpen /><span className="review-label">Review</span><span className="review-count-badge">{data?.review.due || 0}</span></Button>{session.authRequired && <Button variant="ghost" size="icon" aria-label="Log out" onClick={() => void logout()}><LogOut /></Button>}</div></header>
     <aside id="study-library-sidebar" className={`library-sidebar ${mobileLibrary ? 'mobile-open' : ''}`} role={isMobile && mobileLibrary ? 'dialog' : 'complementary'} aria-label="Study library" aria-modal={isMobile && mobileLibrary ? true : undefined} aria-hidden={isMobile && !mobileLibrary ? true : undefined}><div className="sidebar-heading"><span>Library</span><Button ref={mobileLibraryCloseRef} className="mobile-close" variant="ghost" size="icon-sm" aria-label="Close library" onClick={() => { setMobileLibrary(false); window.requestAnimationFrame(() => mobileLibraryTriggerRef.current?.focus()); }}><X /></Button></div><div className="mobile-sidebar-actions"><Button disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('review'); }}><BookOpen /> Review <span className="review-count-badge">{data?.review.due || 0}</span></Button><Button variant="outline" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => { setMobileLibrary(false); setMode('calendar'); }}><CalendarDays /> Calendar</Button><Button variant="outline" onClick={toggleTheme}>{dark ? <Sun /> : <Moon />} {dark ? 'Light mode' : 'Dark mode'}</Button>{session.authRequired && <Button variant="outline" onClick={() => void logout()}><LogOut /> Log out</Button>}</div>{data && <LibraryTree {...treeProps} />}<div className="sidebar-create desktop-write"><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending} onClick={() => void addFolder(null)}><FolderPlus /> Top-level</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => void addFolder(selectedFolderId)}><FolderInput /> Subfolder</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => selectedFolderId && beginCreateEntry(selectedFolderId, null)}><FilePlus2 /> Entry</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={() => setMoveFolderOpen(true)}><FolderTree /> Move</Button><Button size="sm" variant="ghost" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={renameFolder}><FolderPen /> Rename</Button><Button size="sm" variant="destructive" disabled={!librarySynchronized || reviewPreferencePending || !selectedFolderId} onClick={beginDeleteFolder}><Trash2 /> Delete</Button></div></aside>
     {libraryOpen && <LibraryResizeHandle value={libraryWidth} onChange={resizeLibrary} />}
-    <ReadingPane entry={entry ? { ...entry, review_enabled: data?.entries.find((item) => item.id === entry.id)?.review_enabled ?? entry.review_enabled } : null} onReviewToggle={toggleEntryReview} folders={data?.folders || []} canEdit={librarySynchronized && !reviewPreferencePending} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
+    <ReadingPane entry={entry ? { ...entry, review_enabled: selectedEntrySummary?.review_enabled ?? entry.review_enabled, proof_review_enabled: selectedEntrySummary?.proof_review_enabled ?? entry.proof_review_enabled } : null} onReviewToggle={toggleEntryReview} onProofReviewToggle={toggleProofReview} folders={data?.folders || []} canEdit={librarySynchronized && !reviewPreferencePending} inactive={isMobile && mobileLibrary} previousEntry={previousEntry} nextEntry={nextEntry} selectedVariantId={selectedVariantId} onSelectVariant={chooseVariant} onEdit={() => { setCreateEntry(false); setCreateIndex(null); setEditorOpen(true); }} onDelete={() => entry && setDeleteTarget({ type: 'entry', id: entry.id, title: entry.title, canonicalTag: entry.canonical_tag })} onOpenEntry={openEntryReference} onNavigate={(target) => chooseEntry(target.id, target.folder_id)} />
     {notice && <button className="toast-notice" onClick={() => setNotice('')}>{notice}</button>}{pullReloadError ? <button className="toast-error" onClick={() => window.location.reload()}>{pullReloadError} Reload Study.</button> : locationError ? <button className="toast-error" onClick={() => setLocationError('')}>{locationError}</button> : error && <button className="toast-error" onClick={() => setError('')}>{error}</button>}
     {editorOpen && <Suspense fallback={<output className="dialog-loading"><LoaderCircle className="spin" /><span>Opening editor…</span></output>}><EditorDialog open entry={createEntry ? null : entry} folderId={selectedFolderId} initialKind={createKind} insertIndex={createIndex} dark={dark} onClose={() => { setEditorOpen(false); setCreateEntry(false); setCreateIndex(null); }} onSaved={handleSaved} /></Suspense>}
     <DeleteItemDialog target={deleteTarget} onClose={() => setDeleteTarget(null)} onDelete={deleteItem} />

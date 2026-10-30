@@ -45,7 +45,11 @@ export function changesLibraryReads(path: string, init: RequestInit): boolean {
   if (method === 'PATCH' && /^\/api\/(?:folders|entries)\/[^/]+$/.test(route) && typeof init.body === 'string') {
     try {
       const body = JSON.parse(init.body) as Record<string, unknown>;
-      if (Object.keys(body).length === 1 && typeof body.review_enabled === 'boolean') return false;
+      const keys = Object.keys(body);
+      const isEntry = route.startsWith('/api/entries/');
+      if (keys.length && keys.every((key) => (
+        key === 'review_enabled' || (isEntry && key === 'proof_review_enabled')
+      ) && typeof body[key] === 'boolean')) return false;
     } catch { /* An invalid body cannot reach a successful mutation response. */ }
   }
   return true;

@@ -90,10 +90,16 @@ export function updateBootstrapFolder(snapshot: Bootstrap, folder: Folder): Boot
   };
 }
 
-export function updateBootstrapEntryReview(snapshot: Bootstrap, id: string, enabled: boolean): Bootstrap {
+export function updateBootstrapEntryReview(
+  snapshot: Bootstrap,
+  id: string,
+  enabled: boolean,
+  preference: 'review_enabled' | 'proof_review_enabled' = 'review_enabled',
+): Bootstrap {
   const current = snapshot.entries.find((entry) => entry.id === id);
-  if (!current || current.review_enabled === enabled) return snapshot;
-  const updated = { ...current, review_enabled: enabled };
+  if (!current || (current[preference] !== false) === enabled) return snapshot;
+  if (preference === 'proof_review_enabled' && current.kind !== 'th') return snapshot;
+  const updated = { ...current, [preference]: enabled };
   const entries = snapshot.entries.map((entry) => entry.id === id ? updated : entry);
   const replaceEntry = (nodes: FolderNode[]): FolderNode[] => {
     let changed = false;
@@ -112,6 +118,10 @@ export function updateBootstrapEntryReview(snapshot: Bootstrap, id: string, enab
   return { ...snapshot, entries, tree: replaceEntry(snapshot.tree) };
 }
 
+export function proofReviewAvailable(entry: EntrySummary): boolean {
+  return entry.kind === 'th' && entry.review_modes.includes('proof-plan');
+}
+
 export function entryReviewStatus(entry: EntrySummary, folders: Folder[]): string {
   if (entry.review_enabled === false) return 'Excluded from review';
   let folder = folders.find((item) => item.id === entry.folder_id);
@@ -120,5 +130,6 @@ export function entryReviewStatus(entry: EntrySummary, folders: Folder[]): strin
     folder = folders.find((item) => item.id === folder?.parent_id);
   }
   if (!entry.review_modes.length) return 'Needs a solution before review';
+  if (proofReviewAvailable(entry) && entry.proof_review_enabled === false) return 'Statement only';
   return 'Included in review';
 }

@@ -18,6 +18,23 @@ def entry_library(tmp_path: Path):
     return store, entry, other
 
 
+@pytest.fixture
+def theorem_review_library(entry_library):
+    store, entry, other = entry_library
+    store.update_entry(entry["id"], {"kind": "th"})
+    entry = store.add_supplement(
+        entry["id"], {"kind": "pf", "label": "Proof", "content": "Complete proof"}
+    )
+    return store, entry, other
+
+
+REVIEW_PREFERENCE_FIELDS = [
+    pytest.param(("review_enabled",), id="entry"),
+    pytest.param(("proof_review_enabled",), id="proof"),
+    pytest.param(("review_enabled", "proof_review_enabled"), id="both"),
+]
+
+
 def _paths(store: LibraryStore, entry: dict) -> tuple[Path, Path]:
     content = store.data_dir / entry["formulations"][0]["file"]
     return content, content.parent / "_entry.json"
@@ -102,53 +119,66 @@ def test_unchanged_entry_save_preserves_timestamp_and_search_snapshot(
     assert _authored_bytes(store) == before
 
 
-def test_entry_review_preference_preserves_verified_search_and_linked_items(entry_library):
-    store, entry, _ = entry_library
+@pytest.mark.parametrize("fields", REVIEW_PREFERENCE_FIELDS)
+def test_entry_review_preference_preserves_verified_search_and_linked_items(
+    theorem_review_library, fields: tuple[str, ...]
+):
+    store, entry, _ = theorem_review_library
     linked = store.linked_items(entry["id"])
     index = store._search_index
     stats = store.search_index_stats()
     for enabled in (False, True):
-        result = store.update_entry(entry["id"], {"review_enabled": enabled})
-        assert result["review_enabled"] is enabled
+        result = store.update_entry(entry["id"], {field: enabled for field in fields})
+        assert all(result[field] is enabled for field in fields)
+        assert result["review_modes"] == ["statement", "proof-plan"]
         assert store._search_index is index
         assert store.linked_items(entry["id"])["revision"] == linked["revision"]
         assert store.search("Original")[0]["id"] == entry["id"]
         assert store.search_index_stats() == stats
 
 
-@pytest.mark.parametrize("operation", ["title", "content", "mixed"])
-def test_searchable_entry_changes_still_replace_search_snapshot(entry_library, operation: str):
-    store, entry, _ = entry_library
+@pytest.mark.parametrize("operation", ["title", "content", "mixed", "mixed-proof", "mixed-both"])
+def test_searchable_entry_changes_still_replace_search_snapshot(
+    theorem_review_library, operation: str
+):
+    store, entry, _ = theorem_review_library
     original = store.linked_items(entry["id"])["revision"]
     if operation == "content":
         store.write_variant_content(entry["id"], entry["formulations"][0]["id"], "Changed token")
     else:
         changes = {"title": "Changed token"}
-        if operation == "mixed":
+        if operation in {"mixed", "mixed-both"}:
             changes["review_enabled"] = False
+        if operation in {"mixed-proof", "mixed-both"}:
+            changes["proof_review_enabled"] = False
         store.update_entry(entry["id"], changes)
     assert store._search_index is None
     assert store.search("Changed token")[0]["id"] == entry["id"]
     assert store.linked_items(entry["id"])["revision"] != original
 
 
-def test_entry_review_preference_does_not_preserve_an_already_stale_index(entry_library):
-    store, entry, other = entry_library
+@pytest.mark.parametrize("fields", REVIEW_PREFERENCE_FIELDS)
+def test_entry_review_preference_does_not_preserve_an_already_stale_index(
+    theorem_review_library, fields: tuple[str, ...]
+):
+    store, entry, other = theorem_review_library
     store.search("Original")
     other_content, _ = _paths(store, other)
     other_content.write_text("External unique token\n", encoding="utf-8")
 
-    store.update_entry(entry["id"], {"review_enabled": False})
+    store.update_entry(entry["id"], {field: False for field in fields})
 
     assert store._search_index is None
     assert store.search("External unique token")[0]["id"] == other["id"]
 
 
 @pytest.mark.parametrize("failure", [OSError, KeyboardInterrupt])
+@pytest.mark.parametrize("fields", REVIEW_PREFERENCE_FIELDS)
 def test_failed_entry_review_preference_invalidates_search_and_restores_bytes(
-    entry_library, monkeypatch: pytest.MonkeyPatch, failure: type[BaseException]
+    theorem_review_library, monkeypatch: pytest.MonkeyPatch, failure: type[BaseException],
+    fields: tuple[str, ...],
 ):
-    store, entry, _ = entry_library
+    store, entry, _ = theorem_review_library
     store.search("Original")
     _content, metadata = _paths(store, entry)
     before = _authored_bytes(store)
@@ -164,10 +194,11 @@ def test_failed_entry_review_preference_invalidates_search_and_restores_bytes(
 
     monkeypatch.setattr(store_module, "_atomic_text", fail_metadata_once)
     with pytest.raises(failure, match="injected preference failure"):
-        store.update_entry(entry["id"], {"review_enabled": False})
+        store.update_entry(entry["id"], {field: False for field in fields})
     assert store._search_index is None
     assert _authored_bytes(store) == before
-    assert LibraryStore(store.data_dir).get_entry(entry["id"])["review_enabled"] is True
+    restored = LibraryStore(store.data_dir).get_entry(entry["id"])
+    assert all(restored[field] is True for field in fields)
 
 
 @pytest.mark.parametrize("failure", [OSError, KeyboardInterrupt])

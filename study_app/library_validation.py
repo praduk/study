@@ -448,6 +448,10 @@ def validate_library(
         _order(entry.get("order"), f"entry {entry_id}")
         if not isinstance(entry.get("review_enabled", True), bool):
             raise LibraryValidationError(f"entry {entry_id} review_enabled must be true or false")
+        if not isinstance(entry.get("proof_review_enabled", True), bool):
+            raise LibraryValidationError(
+                f"entry {entry_id} proof_review_enabled must be true or false"
+            )
 
         formulations = _validate_variant_group(
             entry_id=entry_id,

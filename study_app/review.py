@@ -812,7 +812,7 @@ class ReviewEngine:
                 for mode in entry.get("review_modes") or self.store.default_review_modes(
                     entry["kind"]
                 ):
-                    if not self.store.review_mode_available(entry, mode):
+                    if not self.store.review_mode_enabled(entry, mode):
                         continue
                     card_id = self.card_id(entry["id"], mode)
                     card_state = state["cards"].get(card_id, {})
@@ -996,7 +996,8 @@ class ReviewEngine:
                     card_id = self.card_id(entry["id"], mode)
                     current_cards.add(card_id)
                     mode_order[card_id] = index
-                    if entry["id"] in active_entry_ids:
+                    if (entry["id"] in active_entry_ids
+                            and self.store.review_mode_enabled(entry, mode)):
                         active_cards.add(card_id)
 
             state = self._read()
@@ -1029,8 +1030,10 @@ class ReviewEngine:
                     inactive_reason = None
                 elif card_id not in current_cards:
                     inactive_reason = "mode-unavailable"
-                else:
+                elif not review_enabled:
                     inactive_reason = "review-disabled"
+                else:
+                    inactive_reason = "proof-review-disabled"
                 last_reviewed = self._aware_datetime(
                     schedule["last_reviewed_at"], "review time"
                 )
@@ -1138,7 +1141,7 @@ class ReviewEngine:
                     entry["kind"]
                 )
                 for mode in modes:
-                    if not self.store.review_mode_available(entry, mode):
+                    if not self.store.review_mode_enabled(entry, mode):
                         continue
                     due_text = state["cards"].get(
                         self.card_id(entry["id"], mode), {}
@@ -1179,7 +1182,7 @@ class ReviewEngine:
             entry = self.store.get_entry(entry_id)
             if mode not in entry.get(
                 "review_modes", []
-            ) or not self.store.review_mode_available(entry, mode):
+            ) or not self.store.review_mode_enabled(entry, mode):
                 raise StoreError("this review mode is not enabled for the entry")
             attempt_id = uuid.uuid4().hex
             created = {

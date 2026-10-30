@@ -104,7 +104,7 @@ function EventDetail({ event, timeZone }: { event: ReviewCalendarEvent; timeZone
         <h2>{eventLabel(event)}</h2>
         {event.canonical_tag && <code>{event.canonical_tag}</code>}
       </div>
-      {!event.active && <span className="calendar-status">{event.inactive_reason === 'review-disabled' ? 'Review disabled' : 'Unavailable'}</span>}
+      {!event.active && <span className="calendar-status">{event.inactive_reason === 'proof-review-disabled' ? 'Proof review disabled' : event.inactive_reason === 'review-disabled' ? 'Review disabled' : 'Unavailable'}</span>}
     </div>
     <dl className="calendar-schedule">
       <div><dt>Due</dt><dd>{formatDate(event.due_at, timeZone, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</dd></div>

@@ -345,11 +345,18 @@ heterogeneity, and domain transfer. “Remaining gap” states what Study would 
 | Again retry after up to three available cards and ten-minute due time | P7 | Engineering approximation; not a validated criterion schedule |
 | Authored-order queue with folder and individual-entry inclusion | P8 | Enables deliberate sequencing; inclusion is a user control, not a validated scheduling rule |
 | Matching statement, proof, or solution revealed after attempt | P5, P9 | Useful feedback/novice support; no automatic fading |
-| Fixed kind-specific define/state, theorem-proof, and problem-solve tasks | P3, P5, P11 | Clear retrieval targets; exact prompt verbs are product copy, and repeated success does not establish transfer |
+| Kind-specific define/state, theorem-proof, and problem-solve tasks, with optional proof inclusion per theorem | P3, P5, P11 | Clear retrieval targets; proof inclusion is a user control, not a validated learning rule, and repeated success does not establish transfer |
 | Optional written response on larger screens; fixed think-only review on phones | P4 | Overt retrieval has a small average advantage; the device rule is a usability choice, not an evidence-derived breakpoint |
 | No streak or universal target failure rate | P12 | Appropriate guardrail |
 | No sleep-derived scheduling | P13 | Appropriate evidentiary and privacy boundary |
 | Bayesian interval fitting to delayed Good/Easy self-grades | P14, P15 | Transparent personalized prediction; prospective calibration unestablished and not an objective mastery measure |
+
+The proof-inclusion preference is enabled by default and does not change the content-derived task
+types. Opting out leaves statement review unchanged and preserves proof schedules, pending
+attempts, history, and calibration evidence. An already-revealed attempt may still be graded;
+re-enabling proof review uses its stored due time. These are continuity and study-scope choices,
+not new learning-science claims. The preference does not measure proof knowledge, and the existing
+limits on interpreting statement recall remain in force.
 
 ## Research maintenance rules
 

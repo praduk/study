@@ -1029,6 +1029,7 @@ class LibraryStore:
                     "rank",
                     "header",
                     "review_enabled",
+                    "proof_review_enabled",
                     "problem_family",
                     "confusable_with",
                     "formulations",
@@ -1512,6 +1513,8 @@ class LibraryStore:
         }
         if "review_enabled" in entry:
             value["review_enabled"] = entry["review_enabled"]
+        if "proof_review_enabled" in entry:
+            value["proof_review_enabled"] = entry["proof_review_enabled"]
         for variant in (*value["formulations"], *value["supplements"]):
             variant.pop("content", None)
             variant.pop("canonical_tag", None)
@@ -2097,6 +2100,8 @@ class LibraryStore:
     ) -> dict[str, Any]:
         result = copy.deepcopy(entry)
         result["review_enabled"] = entry.get("review_enabled", True)
+        if entry["kind"] == "th":
+            result["proof_review_enabled"] = entry.get("proof_review_enabled", True)
         result["review_modes"] = self.review_modes_for_entry(result)
         result["canonical_tag"] = self._entry_tag(library, entry, namespaces)
         if full:
@@ -2142,6 +2147,8 @@ class LibraryStore:
             **{key: entry[key] for key in ("id", "folder_id", "kind", "title", "tag", "order")},
             "canonical_tag": self._entry_tag(library, entry, namespaces),
             "review_enabled": entry.get("review_enabled", True),
+            **({"proof_review_enabled": entry.get("proof_review_enabled", True)}
+               if entry["kind"] == "th" else {}),
             "review_modes": self.review_modes_for_entry(entry),
             **{group: [{key: variant[key] for key in ("id", "main", "subtag", "kind") if key in variant}
                        for variant in entry[group]]
@@ -2828,6 +2835,7 @@ class LibraryStore:
         review_modes: list[str] | None = None,
         index: int | None = None,
         review_enabled: bool = True,
+        proof_review_enabled: bool = True,
     ) -> dict[str, Any]:
         with self._lock:
             library = self._read()
@@ -2868,6 +2876,8 @@ class LibraryStore:
                 "header": header.strip(),
                 "order": insertion_index,
                 "review_enabled": review_enabled,
+                **({"proof_review_enabled": proof_review_enabled}
+                   if kind == "th" or proof_review_enabled is not True else {}),
                 "review_modes": modes,
                 "problem_family": "",
                 "confusable_with": [],
@@ -2934,6 +2944,13 @@ class LibraryStore:
             for supplement in entry.get("supplements", [])
         )
 
+    @classmethod
+    def review_mode_enabled(cls, entry: dict[str, Any], mode: str) -> bool:
+        """Apply task preferences without changing the cards retained in history."""
+        return cls.review_mode_available(entry, mode) and (
+            mode != "proof-plan" or entry.get("proof_review_enabled", True)
+        )
+
     def update_entry(self, entry_id: str, updates: dict[str, Any]) -> dict[str, Any]:
         with self._lock:
             library = self._read()
@@ -2982,6 +2999,8 @@ class LibraryStore:
             entry["review_modes"] = fixed_modes
             if updates.get("review_enabled") is not None:
                 entry["review_enabled"] = updates["review_enabled"]
+            if updates.get("proof_review_enabled") is not None:
+                entry["proof_review_enabled"] = updates["proof_review_enabled"]
             if updates.get("confusable_with") is not None:
                 entry["confusable_with"] = list(dict.fromkeys(updates["confusable_with"]))
             if entry == original:
@@ -2990,10 +3009,11 @@ class LibraryStore:
             if library["version"] == 2 and all(
                 entry[field] == original[field] for field in ("folder_id", "kind", "tag")
             ):
-                review_preference_only = set(updates) == {"review_enabled"} and all(
+                preference_fields = {"review_enabled", "proof_review_enabled"}
+                review_preference_only = set(updates) <= preference_fields and all(
                     entry.get(field) == original.get(field)
                     for field in entry.keys() | original.keys()
-                    if field not in {"review_enabled", "updated_at"}
+                    if field not in preference_fields | {"updated_at"}
                 )
                 try:
                     self._write_v2_entry_files(
