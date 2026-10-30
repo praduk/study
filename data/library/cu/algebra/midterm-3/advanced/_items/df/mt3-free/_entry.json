@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e78c2a6dcfae4b1a91938f2c6a599f73",
+  "title": "Free groups, presentations, and universal-property proofs",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote §6.3 pp.215–221; Week9 pp.6–11; assigned Exercises10,12.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ad1606bb5e3c4032ada444a501c49b65",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ad1606bb5e3c4032ada444a501c49b65.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:05.262770+00:00",
+  "updated_at": "2026-10-30T08:18:52.674702+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "353666984d144e72be4262f1f2c6ba08",
+  "title": "D&F 6.2.22 — The normalizer is not a p-group",
+  "rank": 9187343239835811840,
+  "header": "Dummit–Foote, §6.2, exercise 22, printed p. 214 (PDF p. 228).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1bef47b8669c41a5b750875b9a61dc36",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1bef47b8669c41a5b750875b9a61dc36.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "905abbdb62814e7392ec031a2066dcf2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.905abbdb62814e7392ec031a2066dcf2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:56.643450+00:00",
+  "updated_at": "2026-10-30T08:24:45.671712+00:00"
+}

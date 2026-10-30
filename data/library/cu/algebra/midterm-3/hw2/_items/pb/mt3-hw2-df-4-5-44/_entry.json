@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3077f16af97844f78814dd37588ede8a",
+  "title": "D&F 4.5.44 — A cyclic Sylow subgroup for the smallest prime",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 44, printed p. 148 (PDF p. 162).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0b30e14406ce49478e0c1fc2cd9b3d14",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0b30e14406ce49478e0c1fc2cd9b3d14.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d6b2f930166549138dcca5397577a888",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d6b2f930166549138dcca5397577a888.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:27.208829+00:00",
+  "updated_at": "2026-10-30T08:24:42.077147+00:00"
+}

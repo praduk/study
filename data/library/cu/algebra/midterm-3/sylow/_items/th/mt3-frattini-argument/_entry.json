@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0ceddeb065eb4e1d8bff7ae12fa1a5dc",
+  "title": "Frattini argument: lift conjugacy from a normal subgroup",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote §6.1 Proposition6, printed p.193; Week8 PDF p.8.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2aef6399f06c4219af60c1ccd716958c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2aef6399f06c4219af60c1ccd716958c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5bead060e3ab469fbfc64921d5bd011c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5bead060e3ab469fbfc64921d5bd011c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:53.977969+00:00",
+  "updated_at": "2026-10-30T08:24:47.230780+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "f273541ac66c411cb48994e301fc0413",
+  "title": "D&F 5.5.10 — All six groups of order 147",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 10(a)–(h), printed pp. 185–186 (PDF pp. 199–200).\n\nPrerequisites: @mt3-linear, @mt3-pgroups, @mt3-semidirect, @mt3-classify.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e7e14b271014f9485e353a64555b959",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e7e14b271014f9485e353a64555b959.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "565c2884e2fd4afa94848d6f17ff6f0e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.565c2884e2fd4afa94848d6f17ff6f0e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:11.567959+00:00",
+  "updated_at": "2026-10-30T08:24:40.109652+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "68f4c73662f94110a88a11af12f101d1",
+  "title": "D&F 6.2.4 — Counting forces nonsimplicity",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, §6.2, exercise 4, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09f04a9eaad14defb7ff4a9f6a0e7b41",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09f04a9eaad14defb7ff4a9f6a0e7b41.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2ae4cb828e254d8db329fa92dcb3e4e0",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2ae4cb828e254d8db329fa92dcb3e4e0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:45.138323+00:00",
+  "updated_at": "2026-10-30T08:24:44.264616+00:00"
+}

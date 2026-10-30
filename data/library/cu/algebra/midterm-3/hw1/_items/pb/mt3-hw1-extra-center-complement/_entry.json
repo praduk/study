@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0822a8fdaa004b47a0fcb8fdf2ef593d",
+  "title": "Professor extra — A nonabelian p-group cannot split over its center",
+  "rank": 9214364837600034816,
+  "header": "User-supplied Homework 1 extra problem; proof independently derived.\n\nPrerequisites: @mt3-pgroups, @mt3-semidirect.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e7cac255438a49b6a6da65e561a964f4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e7cac255438a49b6a6da65e561a964f4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9bc82fb410d3425d811b6ece163c22d5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9bc82fb410d3425d811b6ece163c22d5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:19.392400+00:00",
+  "updated_at": "2026-10-30T08:24:41.130004+00:00"
+}

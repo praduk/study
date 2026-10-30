@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e385e5abf93b4381b1f41c189fe2c238",
+  "title": "D&F 6.2.12 — Enlarge a normalizer twice",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote, §6.2, exercise 12, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ec42d7e7a484a36aaa36f2cf99f85a9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ec42d7e7a484a36aaa36f2cf99f85a9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f98fb6c996ef4e139b9e70addb532944",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.f98fb6c996ef4e139b9e70addb532944.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:53.342318+00:00",
+  "updated_at": "2026-10-30T08:24:45.275560+00:00"
+}

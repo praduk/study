@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f9875ca9424746e894563d13390a610d",
+  "title": "The three series: definitions, indexing, and a diagnostic example",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote §6.1 pp.190–195; Week8 pp.2–5.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a71a965a29f942778d7c12128b185e09",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a71a965a29f942778d7c12128b185e09.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:50.760199+00:00",
+  "updated_at": "2026-10-30T08:18:49.870458+00:00"
+}

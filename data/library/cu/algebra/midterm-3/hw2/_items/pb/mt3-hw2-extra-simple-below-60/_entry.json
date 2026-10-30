@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2c1778aaf756434089effd0d491dafb8",
+  "title": "Homework 2 extra — Every simple group of order below 60 is abelian",
+  "rank": 9222809086901354496,
+  "header": "Professor-supplied extra problem in the assignment; independent elementary derivation using Sylow theory and permutation actions.\n\nPrerequisites: @mt3-actions, @mt3-sylow, @mt3-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "13f69148f9dc47c98c2dae14b0264d25",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.13f69148f9dc47c98c2dae14b0264d25.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d2574f507e4f46bda93c6582553b37bd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d2574f507e4f46bda93c6582553b37bd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:43.490069+00:00",
+  "updated_at": "2026-10-30T08:24:44.087251+00:00"
+}

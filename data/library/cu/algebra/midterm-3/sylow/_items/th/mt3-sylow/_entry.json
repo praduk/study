@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4c6694b5642c474b88af46302cd68b24",
+  "title": "Sylow theorem and the normalizer lemma",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote §4.5; Week 7 pp.4–8.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dcaaf44b4ea64723a3ac354fe79d4e35",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dcaaf44b4ea64723a3ac354fe79d4e35.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6325608a736d47c3a2899df40a880143",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6325608a736d47c3a2899df40a880143.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:50.967924+00:00",
+  "updated_at": "2026-10-30T08:24:46.845900+00:00"
+}

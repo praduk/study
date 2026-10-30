@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5bb7c7ceddb94917ac86d0fe2ecf19a3",
+  "title": "Priority: Sylow (N)+, with a complete orbit proof",
+  "rank": 8646911284551352320,
+  "header": "Exact course lemma: Week 8 PDF p.10 and Week 9 PDF p.2; related Dummit–Foote §6.2 Lemma 13 and Exercise 21.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "db11713b680141b39333a6c7d68ca06b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.db11713b680141b39333a6c7d68ca06b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "863429a4e0764a3598af7f92db11621c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.863429a4e0764a3598af7f92db11621c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:55.497950+00:00",
+  "updated_at": "2026-10-30T08:24:47.392079+00:00"
+}

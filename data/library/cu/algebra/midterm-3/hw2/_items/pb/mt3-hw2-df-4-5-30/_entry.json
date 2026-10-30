@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e1120203c0194eb88ef227b42736010e",
+  "title": "D&F 4.5.30 — Elements of order 7 in a simple group of order 168",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 30, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "80499f9cfad54808a22ea98b617fb2fe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.80499f9cfad54808a22ea98b617fb2fe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dabf97f76bc345e4ab0f69541c1872f6",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.dabf97f76bc345e4ab0f69541c1872f6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:22.497711+00:00",
+  "updated_at": "2026-10-30T08:24:41.512061+00:00"
+}

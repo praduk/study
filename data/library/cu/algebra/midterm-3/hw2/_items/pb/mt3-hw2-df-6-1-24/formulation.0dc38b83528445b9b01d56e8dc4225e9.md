@@ -1,0 +1,1 @@
+Let $|G|>1$ and $\Phi(G)$ be the intersection of its maximal proper subgroups, with $\Phi(G)=G$ if there are none. Call $x\in G$ a nongenerator if $\langle H,x\rangle<G$ for every proper subgroup $H<G$. Prove that the nongenerators are exactly $\Phi(G)$.

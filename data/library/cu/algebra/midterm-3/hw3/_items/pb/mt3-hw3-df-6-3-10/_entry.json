@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "cfd75648a04543a6996ad883deea3601",
+  "title": "D&F 6.3.10 — An outer automorphism of S6",
+  "rank": 9214364837600034816,
+  "header": "Dummit–Foote, §6.3, exercise 10, printed p. 221 (PDF p. 235); Coxeter presentation in Example 5, printed p. 219. Week 9 lecture notes, PDF pp. 10–11, discuss presentations and Coxeter groups.\n\nPrerequisites: @mt3-series, @mt3-free.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8f1167cee1be47f09350a1e51de7642a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8f1167cee1be47f09350a1e51de7642a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7efbbb7c77c247c381b2151729be981f",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.7efbbb7c77c247c381b2151729be981f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:59.974984+00:00",
+  "updated_at": "2026-10-30T08:24:46.054355+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "13b34248c6b44b8e9522488ba4815875",
+  "title": "D&F 6.1.10 — When a dihedral group is nilpotent",
+  "rank": 9187343239835811840,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 10, printed p. 198 (PDF p. 212).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e72a5bd928f24f7488ad7822c83809ad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e72a5bd928f24f7488ad7822c83809ad.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d91490c203f34d7a926f8f265c8eb270",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d91490c203f34d7a926f8f265c8eb270.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:33.719424+00:00",
+  "updated_at": "2026-10-30T08:24:42.907365+00:00"
+}

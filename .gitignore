@@ -23,6 +23,7 @@ frontend/public/vendor/
 study_app/.web-stage-*/
 study_app/.web-backup-*/
 *.tsbuildinfo
+output/*
 
 # Editors and operating systems
 .DS_Store

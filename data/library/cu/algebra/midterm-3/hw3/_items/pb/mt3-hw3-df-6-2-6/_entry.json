@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "34a7a11fe55444dea062fdf612a070b6",
+  "title": "D&F 6.2.6 — Small permutation degrees",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, §6.2, exercise 6, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ce415a06e54c4524a08dc22d9db5d25f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ce415a06e54c4524a08dc22d9db5d25f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d8ea6c3a6b494180b69b34d922e5375c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d8ea6c3a6b494180b69b34d922e5375c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:48.439387+00:00",
+  "updated_at": "2026-10-30T08:24:44.655374+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "1f50f1020f454e70a8de0b413038157d",
+  "title": "D&F 6.1.24 — Frattini subgroup equals the nongenerators",
+  "rank": 9214364837600034816,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 24, printed p. 199 (PDF p. 213).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0dc38b83528445b9b01d56e8dc4225e9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0dc38b83528445b9b01d56e8dc4225e9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "81c46edb052247e0b214a933aefcdee9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.81c46edb052247e0b214a933aefcdee9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:37.003222+00:00",
+  "updated_at": "2026-10-30T08:24:43.314773+00:00"
+}

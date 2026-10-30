@@ -1,0 +1,1 @@
+Let $\mu_\infty\le\C^\times$ be the group of all complex roots of unity, and define $\widehat G=\Hom(G,\mu_\infty)$. (a) Show that pointwise multiplication makes $\widehat G$ an abelian group. (b) If $G$ is finite abelian, prove $\widehat G\cong G$.

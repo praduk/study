@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "20777e57a145427690ddbaf2efbb419d",
+  "title": "D&F 4.5.32 — Sylow normalizers are self-normalizing",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 32, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b17c7e6ac0b4ec585a600fafcd5c12f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b17c7e6ac0b4ec585a600fafcd5c12f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "85304d07748440ba9656f3002cb5ed7c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.85304d07748440ba9656f3002cb5ed7c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:24.065621+00:00",
+  "updated_at": "2026-10-30T08:24:41.672214+00:00"
+}

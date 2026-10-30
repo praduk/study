@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "bf434071b01d450696ef72c2c6389652",
+  "title": "Maximal Sylow intersections and normalizer-centralizer strategy",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote §6.2, Exercises 13 and22; lecture Week9 p.5.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6ead6bba3a5e4b4994a0c240da750b73",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6ead6bba3a5e4b4994a0c240da750b73.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f423444cf9ec434ebcc6406cf6bdc7df",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f423444cf9ec434ebcc6406cf6bdc7df.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:58.529111+00:00",
+  "updated_at": "2026-10-30T08:24:47.808937+00:00"
+}

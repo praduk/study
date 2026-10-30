@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "215d67af12294e02888aafbdd041d542",
+  "title": "Nilpotence: equivalent tests and closure properties",
+  "rank": 4611686018427387904,
+  "header": "Dummit–Foote §6.1 Theorems3,8 and Proposition7; Week8 pp.5,7–8.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99e43fb045f342648892f6062825868c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99e43fb045f342648892f6062825868c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "aa8fef6015f64fb18a1db09fb0a18e07",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.aa8fef6015f64fb18a1db09fb0a18e07.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:00.623826+00:00",
+  "updated_at": "2026-10-30T08:24:48.030909+00:00"
+}

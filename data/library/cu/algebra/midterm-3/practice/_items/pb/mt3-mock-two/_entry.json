@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4c6e35a4c5d644b18b5b3c840fe52ed7",
+  "title": "Mock Question 2: the (N)+ corollary in four parts (25 minutes)",
+  "rank": 6917529027641081856,
+  "header": "Original rehearsal; part(b) deliberately practices the professor-identified corollary.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b6ad71294e1544159edab1accc7627c2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b6ad71294e1544159edab1accc7627c2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0c445602c30945b186f98cb5e5b7512d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0c445602c30945b186f98cb5e5b7512d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:14:06.610968+00:00",
+  "updated_at": "2026-10-30T08:24:48.791205+00:00"
+}

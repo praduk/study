@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "299c2464589347ac86b5585967bc454d",
+  "title": "Professor extra — Simple groups of orders 61 through 100",
+  "rank": 9221120237041090560,
+  "header": "Professor-supplied problem in the assignment; solution below is an internal derivation using Sylow theory and p-groups, without Feit–Thompson.\n\nPrerequisites: @mt3-actions, @mt3-sylow, @mt3-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90f10b70187340eca1deb2a3a3655b37",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90f10b70187340eca1deb2a3a3655b37.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4f76b37133bc4350b0f8fc070516bdf1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.4f76b37133bc4350b0f8fc070516bdf1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:14:03.286808+00:00",
+  "updated_at": "2026-10-30T08:24:46.439050+00:00"
+}

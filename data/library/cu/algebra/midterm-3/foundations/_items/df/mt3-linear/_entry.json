@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "dbdba3cf5208460ea56f40d93a5f40ce",
+  "title": "Linear algebra vocabulary used in these group proofs",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote §§4.4,5.2,5.5; elementary vector-space definitions.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4d3c0970c51b4a42879bb85f48a4805e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4d3c0970c51b4a42879bb85f48a4805e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:48.884409+00:00",
+  "updated_at": "2026-10-30T08:24:38.547927+00:00"
+}

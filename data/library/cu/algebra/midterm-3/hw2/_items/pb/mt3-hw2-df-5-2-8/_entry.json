@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2ee90cba74c34e0ba81af66b281cd2e1",
+  "title": "D&F 5.2.8 — p-torsion, pth powers, and counting subgroups",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, 3rd ed., §5.2, Exercise 8, printed p. 166 (PDF p. 180).\n\nPrerequisites: @mt3-linear, @mt3-abelian.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aafab7ab37404a55a01a6b6ee9f41f3f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aafab7ab37404a55a01a6b6ee9f41f3f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5971c9484a1b4f0cbd3f196d395a4781",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.5971c9484a1b4f0cbd3f196d395a4781.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:28.825581+00:00",
+  "updated_at": "2026-10-30T08:24:42.304976+00:00"
+}

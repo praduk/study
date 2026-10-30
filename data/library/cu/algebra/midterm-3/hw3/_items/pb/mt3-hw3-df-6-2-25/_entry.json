@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3e95401defc7449687198c0407c37861",
+  "title": "D&F 6.2.25 — Simple order p²qr forces 60",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote, §6.2, exercise 25, printed p. 214 (PDF p. 228). Feit–Thompson is stated in §6.1, Theorem 11(3), printed p. 196; its use here is explicitly permitted by the assignment.\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d261b196ab104477bf6e84bb4ef90511",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d261b196ab104477bf6e84bb4ef90511.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "36b8f92079dc4d1680c5d1f82f2bd4cb",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.36b8f92079dc4d1680c5d1f82f2bd4cb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:58.323387+00:00",
+  "updated_at": "2026-10-30T08:24:45.831315+00:00"
+}

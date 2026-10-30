@@ -1,0 +1,7 @@
+**Definitions and results used:** @[abelian power maps, p-torsion, and pth powers]mt3-abelian; @[first isomorphism theorem and subgroup correspondence]mt3-foundations; @[elementary abelian groups, lines, hyperplanes, and linear functionals]mt3-linear.
+
+**Technique:** Convert the power map into linear algebra: kernel/quotient have equal size; count lines and hyperplanes.
+
+**(a)** The power map $f(a)=a^p$ is a homomorphism because $A$ is abelian. Its kernel is $A_p$ and its image is $A^p$, so $|A_p|=|A|/|A^p|=|A/A^p|$. Both $A_p$ and $A/A^p$ are abelian of exponent dividing $p$, hence finite-dimensional vector spaces over $\F_p$. Equal cardinality gives equal dimension and therefore an isomorphism. It is not asserted to be canonical.
+
+**(b)** Every subgroup of order $p$ lies in $A_p$, so these are precisely its one-dimensional subspaces. Every index-$p$ subgroup $H$ contains $A^p$, since $A/H$ has order $p$; correspondence identifies these subgroups with the hyperplanes of $A/A^p$. If the common dimension in (a) is $r$, the number of lines is $(p^r-1)/(p-1)$. The same number counts hyperplanes: each is the kernel of a nonzero linear functional, and exactly $p-1$ nonzero scalar multiples have the same kernel. Both counts are $0$ if $r=0$.

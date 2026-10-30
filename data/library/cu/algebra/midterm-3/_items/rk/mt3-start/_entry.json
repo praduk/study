@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "450800704e6e44a0b8edeffb0aeeeb5d",
+  "title": "Start here: nine hours, prerequisites, and exam strategy",
+  "rank": 4611686018427387904,
+  "header": "User-provided exam structure and assignments; locally inspected textbook and lecture PDFs.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1a7e6460bc184acf851347d6bc4fabc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1a7e6460bc184acf851347d6bc4fabc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:48.526912+00:00",
+  "updated_at": "2026-10-30T08:23:26.144994+00:00"
+}

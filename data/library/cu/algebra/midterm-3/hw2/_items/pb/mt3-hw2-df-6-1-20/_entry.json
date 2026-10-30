@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "879deb78d7124717868b573304f02e19",
+  "title": "D&F 6.1.20(a,b) — Normalizers and centralizers modulo a p′-group",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 20(a,b), printed p. 198 (PDF p. 212).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b7f3a7c2e8e14953bf18bed98059d633",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b7f3a7c2e8e14953bf18bed98059d633.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "196c2c71e26946309bc8829ccef81107",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.196c2c71e26946309bc8829ccef81107.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:35.380586+00:00",
+  "updated_at": "2026-10-30T08:24:43.078590+00:00"
+}

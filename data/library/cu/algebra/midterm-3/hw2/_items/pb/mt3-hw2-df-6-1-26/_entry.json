@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "7dee98fabad44430a57ecd908484af2c",
+  "title": "D&F 6.1.26(a–f) — Frattini quotient and Burnside’s basis theorem",
+  "rank": 9221120237041090560,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 26(a–f), printed p. 199 (PDF p. 213).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "46b0d1de755a4c8eb802492855d3c387",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.46b0d1de755a4c8eb802492855d3c387.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "17f712f218fd451e9a8ccfe21e6e0bc5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.17f712f218fd451e9a8ccfe21e6e0bc5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:40.241819+00:00",
+  "updated_at": "2026-10-30T08:24:43.695212+00:00"
+}

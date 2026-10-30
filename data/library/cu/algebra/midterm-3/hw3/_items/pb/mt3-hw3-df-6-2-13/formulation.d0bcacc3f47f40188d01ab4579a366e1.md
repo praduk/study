@@ -1,0 +1,1 @@
+Let the finite group $G$ have more than one Sylow $p$-subgroup. Choose distinct $P,Q\in\Syl_p(G)$ maximizing $|P\cap Q|$, and put $D=P\cap Q$. Prove that $N_G(D)$ has more than one Sylow $p$-subgroup and that any two distinct Sylow $p$-subgroups of $N_G(D)$ intersect exactly in $D$. Deduce the stated divisibility consequences.

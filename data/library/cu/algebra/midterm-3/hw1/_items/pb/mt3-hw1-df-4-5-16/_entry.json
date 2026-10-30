@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "72534ae89ccf401caa667da603c02bcd",
+  "title": "D&F 4.5.16 — Three distinct prime factors",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 16, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c93603027de645b5bc84a8bf84b85e0b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c93603027de645b5bc84a8bf84b85e0b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4d8a9f966860441aba77b4d8d08eee9a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.4d8a9f966860441aba77b4d8d08eee9a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:08.485393+00:00",
+  "updated_at": "2026-10-30T08:24:39.710754+00:00"
+}

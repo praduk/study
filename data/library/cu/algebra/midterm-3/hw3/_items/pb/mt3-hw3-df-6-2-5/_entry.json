@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "1ca2b28618fd44cda8fdddebef0650e1",
+  "title": "D&F 6.2.5 — A normal complement from solvability",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, §6.2, exercise 5, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8c8e3f235f434cdfa7916391af6bedd6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8c8e3f235f434cdfa7916391af6bedd6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2acec8d3c25046bcbf598333bf918e6a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.2acec8d3c25046bcbf598333bf918e6a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:46.773306+00:00",
+  "updated_at": "2026-10-30T08:24:44.494582+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c801411f7793416989f8f87baaf3b1c0",
+  "title": "D&F 4.5.15 — Order 351",
+  "rank": 6917529027641081856,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 15, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fe7e1838e2194153bb1c0b0bdb4a92f8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fe7e1838e2194153bb1c0b0bdb4a92f8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e0f471b1043445629671ef727b740884",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e0f471b1043445629671ef727b740884.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:06.964450+00:00",
+  "updated_at": "2026-10-30T08:24:39.544985+00:00"
+}

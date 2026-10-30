@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "25674acadce042ca897cb41eda87860e",
+  "title": "Priority: the corollary and the normalizer it produces",
+  "rank": 8935141660703064064,
+  "header": "Week 8 PDF p.10; Week 9 PDF p.2; Dummit–Foote §6.2 Lemma 13.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "85e7e3e4ff964932a92de1fc2bf140a3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.85e7e3e4ff964932a92de1fc2bf140a3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bb53e56296434c2298cb576f76d0c361",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bb53e56296434c2298cb576f76d0c361.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:57.010190+00:00",
+  "updated_at": "2026-10-30T08:24:47.626868+00:00"
+}

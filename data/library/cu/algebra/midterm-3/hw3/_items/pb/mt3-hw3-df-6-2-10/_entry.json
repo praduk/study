@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d0499b3d0cd74d08b2ba9ed735048215",
+  "title": "D&F 6.2.10 — Play different primes against one another",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, §6.2, exercise 10, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b3456748925b44bb8cc6dd77955824ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b3456748925b44bb8cc6dd77955824ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "67dd36d5eb6047eb970d83e4c491feb2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.67dd36d5eb6047eb970d83e4c491feb2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:51.702989+00:00",
+  "updated_at": "2026-10-30T08:24:45.038941+00:00"
+}

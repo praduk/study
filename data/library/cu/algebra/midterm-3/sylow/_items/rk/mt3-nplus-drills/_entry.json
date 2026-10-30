@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "240b5eb0691a4556a31ee454374ed859",
+  "title": "(N)+ applications: orders 48, 80, 96, and a maximal intersection",
+  "rank": 9151314442816847872,
+  "header": "Internal applications of the verified lecture lemma; Dummit–Foote §6.2, Exercises 4,13,21,22.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a2ab87c9c2f8470db1effa84478f9f42",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a2ab87c9c2f8470db1effa84478f9f42.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:00.044905+00:00",
+  "updated_at": "2026-10-30T08:13:00.044912+00:00"
+}

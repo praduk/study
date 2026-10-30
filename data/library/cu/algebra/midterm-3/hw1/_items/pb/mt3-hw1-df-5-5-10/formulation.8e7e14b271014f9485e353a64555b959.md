@@ -1,0 +1,3 @@
+Classify groups of order $147=3\cdot7^2$.
+
+(a) Find the two abelian types. (b) Prove the Sylow $7$-subgroup is normal. (c) Classify the nonabelian case with cyclic Sylow $7$-subgroup. (d) For $t_1=\diag{2,1}$ and $t_2=\diag{1,2}$ in $\GL_2(\F_7)$, show $T=\langle t_1,t_2\rangle$ is a Sylow $3$-subgroup, and every order-$3$ subgroup is conjugate into $T$. (e) Use its four order-$3$ subgroups $\langle t_1\rangle,\langle t_2\rangle,\langle t_1t_2\rangle,\langle t_1t_2^2\rangle$ to give presentations of the associated semidirect products $G_1,G_2,G_3,G_4$ and show $G_1\cong G_2$. (f) Distinguish $G_1$ from $G_3,G_4$ using centers. (g) Distinguish $G_3$ from $G_4$ using order-$7$ subgroups. (h) Prove the list is complete.

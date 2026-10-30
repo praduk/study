@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "82ddaca1aaa0407d869c03844c9b3185",
+  "title": "D&F 6.1.31 — Minimal normal subgroups of solvable groups",
+  "rank": 9222246136947933184,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 31, printed p. 200 (PDF p. 214).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "709e42af4b8149bda240cb87acbbc6de",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.709e42af4b8149bda240cb87acbbc6de.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "533ce1924d7c4f66ba5660726739a32d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.533ce1924d7c4f66ba5660726739a32d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:41.854035+00:00",
+  "updated_at": "2026-10-30T08:24:43.856763+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3cbebb5b543d436da5b2e8c9d707d0cf",
+  "title": "Finite abelian groups, powers, and character groups",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote §5.2 Theorems3,5 and Exercises8,14; §6.1.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "434892c72ee34ab5b82e5b96686e6469",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.434892c72ee34ab5b82e5b96686e6469.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:12:49.101651+00:00",
+  "updated_at": "2026-10-30T08:18:49.256803+00:00"
+}

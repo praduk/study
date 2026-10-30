@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c7831439f42842fcac5e8d57f477bc0d",
+  "title": "D&F 5.5.11 — All four groups of order 28",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 11, printed p. 186 (PDF p. 200).\n\nPrerequisites: @mt3-linear, @mt3-pgroups, @mt3-semidirect, @mt3-classify.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "104cc5fad97e4bfda3f92205ec3dce88",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.104cc5fad97e4bfda3f92205ec3dce88.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "76650c0060c44d33a721cace5becb728",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.76650c0060c44d33a721cace5becb728.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:13.121325+00:00",
+  "updated_at": "2026-10-30T08:24:40.333633+00:00"
+}

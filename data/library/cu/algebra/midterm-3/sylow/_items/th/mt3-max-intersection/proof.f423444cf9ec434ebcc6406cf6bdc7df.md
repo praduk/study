@@ -1,0 +1,5 @@
+**Definitions and results used:** @[Strict normalizer growth in finite p-groups]mt3-pgroups; @[Sylow containment and normal p-subgroups in Sylow subgroups]mt3-sylow; @[Normalizer and subgroup intersection definitions]mt3-foundations.
+
+The subgroup $H$ is proper in $P,Q$. Thus $N_P(H)>H$ and $N_Q(H)>H$. Choose Sylow subgroups $A,B$ of $N$ containing them. If $A=B$, embed it in a Sylow subgroup $T$ of $G$. Then $T\cap P$ contains $N_P(H)>H$, so maximality forces $T=P$. Similarly $T=Q$, contradiction. Hence $A\ne B$.
+
+Since $H\trianglelefteq N$ is a $p$-subgroup, it lies in every Sylow subgroup of $N$. For distinct Sylow subgroups $A_1,A_2$ of $N$, embed them in Sylow subgroups $T_1,T_2$ of $G$. These $T_i$ are distinct: otherwise both $A_i$ would lie in the $p$-group $T_1\cap N$, contradicting maximality of their orders. Thus $H\le A_1\cap A_2\le T_1\cap T_2$ and maximality of $H$ forces equality. Since $A>H$, $p|H|\mid|N|$. A $p$-group has only one Sylow $p$-subgroup, whereas $N$ has at least two.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0023e9058dbe43c1bcaba8ea502f1193",
+  "title": "D&F 4.5.35 — Intersecting a conjugate Sylow subgroup with H",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 35, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b6a06045bd824aee963e7d38d4015ef9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b6a06045bd824aee963e7d38d4015ef9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6a11d42db21b4bebb7971ed329751e59",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.6a11d42db21b4bebb7971ed329751e59.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:25.635657+00:00",
+  "updated_at": "2026-10-30T08:24:41.898787+00:00"
+}

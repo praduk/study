@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "34098dd8f2bc4199bc4d5b1f9598549d",
+  "title": "D&F 6.2.7 — Normalizers inside a symmetric group",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, §6.2, exercise 7, printed p. 213 (PDF p. 227); normalizer formula discussed on printed p. 204.\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "87863092fa4a49e9991831054198da30",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.87863092fa4a49e9991831054198da30.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a3e34cb09bc9439baab43183d81f84d6",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a3e34cb09bc9439baab43183d81f84d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:50.085322+00:00",
+  "updated_at": "2026-10-30T08:24:44.877962+00:00"
+}

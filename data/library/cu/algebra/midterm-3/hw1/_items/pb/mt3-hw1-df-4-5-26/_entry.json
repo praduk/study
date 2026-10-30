@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "7a2cc96042c6471ea1645048c9adf726",
+  "title": "D&F 4.5.26 — A normal Sylow 3-subgroup at order 105",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, 3rd ed., §4.5, Exercise 26, printed p. 147 (PDF p. 161).\n\nPrerequisites: @mt3-foundations, @mt3-actions, @mt3-sylow.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5f52206e56d341c395bf02dafbf2369a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5f52206e56d341c395bf02dafbf2369a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dba30bde820e4bcd9086670ac2afa2a5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.dba30bde820e4bcd9086670ac2afa2a5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:10.025038+00:00",
+  "updated_at": "2026-10-30T08:24:39.945137+00:00"
+}

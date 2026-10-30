@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "f86cf9c77334488d89c695b219b17a6a",
+  "title": "D&F 6.1.25 — The Frattini subgroup of a finite group is nilpotent",
+  "rank": 9218868437227405312,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 25, printed p. 199 (PDF p. 213).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c20fda45d9bb4befaf3f0f7cb6a2726a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c20fda45d9bb4befaf3f0f7cb6a2726a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "447278c0549949e5b44cc4c8cf94eed1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.447278c0549949e5b44cc4c8cf94eed1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:38.624559+00:00",
+  "updated_at": "2026-10-30T08:24:43.476597+00:00"
+}

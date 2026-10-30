@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "acd119bcfda84d6e82f9756cc1b43fc0",
+  "title": "Which technique should I use? Triggers, first moves, and examples",
+  "rank": 8070450532247928832,
+  "header": "Decision guide synthesized from the assigned problems and the linked, source-checked definitions and theorems.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d619bc61c34424bbc5a2d8dc0a29753",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d619bc61c34424bbc5a2d8dc0a29753.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:23:25.902053+00:00",
+  "updated_at": "2026-10-30T08:27:15.692120+00:00"
+}

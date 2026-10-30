@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b5e346b67b9d497bba6766db93faccb8",
+  "title": "D&F 6.1.7 — Nilpotence passes to subgroups and quotients, not extensions",
+  "rank": 9151314442816847872,
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 7, printed p. 198 (PDF p. 212).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ffca5ef8bd5b4c56bc889573eee5d19f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ffca5ef8bd5b4c56bc889573eee5d19f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0aace555cf5847d7bf5ea5b373803877",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.0aace555cf5847d7bf5ea5b373803877.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T08:13:32.081585+00:00",
+  "updated_at": "2026-10-30T08:24:42.688675+00:00"
+}
