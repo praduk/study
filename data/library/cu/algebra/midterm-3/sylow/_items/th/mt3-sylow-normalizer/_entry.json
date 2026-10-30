@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a86c421d49d043e8a554cdc74d2e7d87",
+  "title": "Sylow normalizer lemma",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote §4.5, Lemma19, printed p.140. This is the normalizer lemma used in the lecture proof of (N)+.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a81a1a76547b4cb18f9298d09a9b7332",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a81a1a76547b4cb18f9298d09a9b7332.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ca4b45a3449e4ac79b0e41dec9a3a9ba",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ca4b45a3449e4ac79b0e41dec9a3a9ba.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:48.005672+00:00",
+  "updated_at": "2026-10-30T09:31:48.252438+00:00"
+}

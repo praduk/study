@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "15b06fb8abd14c75abf80dca8bcc09e1",
+  "title": "Elementary abelian p-group",
+  "rank": 9223372036854775296,
+  "header": "Dummit–Foote §§5.2,6.1; elementary group/vector-space equivalence verified directly.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "79fade1bb86f48d9a5c4c263f432769e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.79fade1bb86f48d9a5c4c263f432769e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:11.643258+00:00",
+  "updated_at": "2026-10-30T09:32:11.643265+00:00"
+}

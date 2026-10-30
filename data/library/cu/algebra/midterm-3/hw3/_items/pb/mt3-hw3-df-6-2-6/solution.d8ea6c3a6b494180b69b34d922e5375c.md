@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow numbers and the normalizer index formula]mt3-sylow; @[Faithful actions of simple groups and prime powers in factorials]mt3-actions; @[Normalizers and subgroup-order divisibility]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Faithful actions of simple groups and the alternating-group obstruction]cu:algebra:midterm-3:foundations:th:mt3-simple-actions; @[The exponent of a prime in a factorial]cu:algebra:midterm-3:foundations:th:mt3-factorial-valuation; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Convert a small Sylow number to a faithful permutation representation; compare prime powers in the factorial.
 

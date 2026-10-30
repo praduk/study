@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Free-group universal property and uniqueness on generators]mt3-free; @[Lower-central indexing and preservation under homomorphisms]mt3-series; @[Nilpotence characterized by termination of the lower central series]mt3-nilpotent; @[Factoring a homomorphism through a quotient]mt3-foundations.
+**Definitions and results used:** @[Free group on a set]cu:algebra:midterm-3:advanced:df:mt3-free; @[Universal mapping property of free and presented groups]cu:algebra:midterm-3:advanced:th:mt3-free-maps; @[Lower central series]cu:algebra:midterm-3:foundations:df:mt3-lower-central; @[Characteristic terms and functoriality of the three series]cu:algebra:midterm-3:foundations:th:mt3-series-functorial; @[Equivalence of the upper and lower nilpotence criteria]cu:algebra:midterm-3:central:th:mt3-central-series-equivalence; @[Factoring a homomorphism through a quotient]cu:algebra:midterm-3:foundations:th:mt3-factor-quotient.
 
 **Technique:** Start with a free group, quotient by exactly the relations needed, and prove every target map kills those relations.
 

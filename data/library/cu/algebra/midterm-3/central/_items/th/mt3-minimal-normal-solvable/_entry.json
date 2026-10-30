@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0097e286b177401a83ddaee39a9d1d74",
+  "title": "Minimal normal subgroups of finite solvable groups",
+  "rank": 9187343239835811840,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e84bc9a153334250950b197bf960e507",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e84bc9a153334250950b197bf960e507.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "85cea3d88e5d48c8ab70a3ba4c47c269",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.85cea3d88e5d48c8ab70a3ba4c47c269.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:29.718460+00:00",
+  "updated_at": "2026-10-30T09:32:29.901843+00:00"
+}

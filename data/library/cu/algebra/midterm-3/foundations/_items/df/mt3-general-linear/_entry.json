@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a82b51e9038b42ecb752fab23f8c4d71",
+  "title": "General linear group and change of basis",
+  "rank": 9223372036854775552,
+  "header": "Dummit–Foote §§4.4,5.5; linear-algebra notation used in the assigned classification.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4901d4ddbe1046eabd793699f83fd26b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4901d4ddbe1046eabd793699f83fd26b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:11.898711+00:00",
+  "updated_at": "2026-10-30T09:32:11.898717+00:00"
+}

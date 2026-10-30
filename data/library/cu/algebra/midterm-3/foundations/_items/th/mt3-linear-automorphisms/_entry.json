@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "63f6557253c1429d9763ba35c2af7e9c",
+  "title": "Automorphisms and order of an elementary abelian group",
+  "rank": 9223372036854775680,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b576e04f2f7649c2b0090f734f16f4c7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b576e04f2f7649c2b0090f734f16f4c7.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "95ce089a6a8644bdb13a38336c999faa",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.95ce089a6a8644bdb13a38336c999faa.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:12.079113+00:00",
+  "updated_at": "2026-10-30T09:32:12.332929+00:00"
+}

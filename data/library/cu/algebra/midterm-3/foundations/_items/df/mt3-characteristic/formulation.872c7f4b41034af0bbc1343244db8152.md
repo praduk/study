@@ -1,0 +1,1 @@
+A subgroup $H\le G$ is **characteristic**, written $H\operatorname{char}G$, if $\alpha(H)=H$ for every $\alpha\in\Aut(G)$. This quantifies over all automorphisms, whereas normality only requires invariance under inner automorphisms. See @mt3-automorphism and @mt3-characteristic-normal.

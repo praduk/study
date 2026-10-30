@@ -1,4 +1,4 @@
-**Definitions and results used:** @[lower central series and preservation of commutators]mt3-series; @[equivalence of upper and lower nilpotence criteria]mt3-nilpotent; @[normal subgroups, quotient maps, and centers]mt3-foundations.
+**Definitions and results used:** @[Lower central series]cu:algebra:midterm-3:foundations:df:mt3-lower-central; @[Upper central series]cu:algebra:midterm-3:foundations:df:mt3-upper-central; @[Characteristic terms and functoriality of the three series]cu:algebra:midterm-3:foundations:th:mt3-series-functorial; @[Equivalence of the upper and lower nilpotence criteria]cu:algebra:midterm-3:central:th:mt3-central-series-equivalence; @[Quotient group]cu:algebra:midterm-3:foundations:df:mt3-quotient; @[The symmetric group has trivial center]cu:algebra:midterm-3:foundations:th:mt3-symmetric-center.
 
 **Technique:** Pass commutators through inclusion and surjection; use S₃ as the standard extension counterexample.
 

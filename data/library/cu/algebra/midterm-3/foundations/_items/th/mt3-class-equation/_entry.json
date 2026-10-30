@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e6595b535ed74cb98a564ade36c96b3e",
+  "title": "Class equation",
+  "rank": 9223372036810036564,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63400c9b02e043f19505e3afe672b457",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63400c9b02e043f19505e3afe672b457.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0fc2ba8be9424ee1b6a0e29c83d15044",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0fc2ba8be9424ee1b6a0e29c83d15044.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:35.464382+00:00",
+  "updated_at": "2026-10-30T09:31:35.715905+00:00"
+}

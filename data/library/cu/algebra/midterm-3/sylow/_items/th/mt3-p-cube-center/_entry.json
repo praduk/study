@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6ff37185d3a044ccaf68a11de3f37640",
+  "title": "Center and central quotient of a nonabelian group of order p³",
+  "rank": 9223363240761753600,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2f0e46b6976a41e1b134914bb2dec609",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2f0e46b6976a41e1b134914bb2dec609.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "40efec0029da4297b59de74b5806255c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.40efec0029da4297b59de74b5806255c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:07.027262+00:00",
+  "updated_at": "2026-10-30T09:32:07.281612+00:00"
+}

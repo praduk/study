@@ -1,0 +1,1 @@
+A **maximal subgroup** of $G$ is a proper subgroup $M<G$ for which no subgroup $H$ satisfies $M<H<G$. It need not have largest possible order among proper subgroups. Every proper subgroup of a finite group lies in a maximal subgroup: among the finitely many proper subgroups containing it, choose one of largest order.

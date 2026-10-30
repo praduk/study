@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2737e55adbff45f2ae3b9db4b56494d3",
+  "title": "Actions of one finite cyclic group on another",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "05eb55950a0e404ca59c7f20eac6fff0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.05eb55950a0e404ca59c7f20eac6fff0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "325648d304834491a1d22c9483298035",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.325648d304834491a1d22c9483298035.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:34.173738+00:00",
+  "updated_at": "2026-10-30T09:32:34.425072+00:00"
+}

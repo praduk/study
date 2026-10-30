@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "8436171a86cd4604bff7a13fae9758cb",
+  "title": "Quotient group",
+  "rank": 9223266483738509312,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "45442d1baead45f4a4fc48ca8f961583",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.45442d1baead45f4a4fc48ca8f961583.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:16.134966+00:00",
+  "updated_at": "2026-10-30T09:31:16.134971+00:00"
+}

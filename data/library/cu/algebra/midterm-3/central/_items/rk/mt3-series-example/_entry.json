@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "88fa5b4f6c0c4268ba2cc6ae771b760a",
+  "title": "Compare the three series in S_3",
+  "rank": 9196350439090552832,
+  "header": "Internal calculation using the lecture commutator convention; compare Dummit–Foote §6.1, printed pp. 194–195.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd9468bbf80c4e67b0254817867af36d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd9468bbf80c4e67b0254817867af36d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:31.943405+00:00",
+  "updated_at": "2026-10-30T09:32:31.943414+00:00"
+}

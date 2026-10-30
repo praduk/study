@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2fb419c15b814d6fb9106b619bd15761",
+  "title": "Presentation of S_n by adjacent transpositions",
+  "rank": 9214364837600034816,
+  "header": "Dummit–Foote §6.3, presentation used in Exercise 10; completeness proved here by elementary coset rewriting.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a84d80530f740929f8ca71f76d49506",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a84d80530f740929f8ca71f76d49506.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6abf3ac3f55f45c99236258ebd3cfa3c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6abf3ac3f55f45c99236258ebd3cfa3c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:43.769400+00:00",
+  "updated_at": "2026-10-30T09:32:44.018724+00:00"
+}

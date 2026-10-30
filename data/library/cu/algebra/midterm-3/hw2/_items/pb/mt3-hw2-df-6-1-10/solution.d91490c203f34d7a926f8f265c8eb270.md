@@ -1,4 +1,4 @@
-**Definitions and results used:** @[finite p-groups are nilpotent]mt3-pgroups; @[finite nilpotent groups are direct products of Sylow subgroups]mt3-nilpotent; @[dihedral relations and commuting normal factors]mt3-foundations.
+**Definitions and results used:** @[Notation and conventions]cu:algebra:midterm-3:foundations:rk:mt3-notation; @[Finite p-groups are nilpotent]cu:algebra:midterm-3:sylow:th:mt3-pgroup-nilpotent; @[Equivalent criteria for finite nilpotent groups]cu:algebra:midterm-3:central:th:mt3-nilpotent; @[Disjoint normal subgroups commute]cu:algebra:midterm-3:foundations:th:mt3-normal-commute; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Test coprime-order commutation using a reflection and an odd-order rotation.
 

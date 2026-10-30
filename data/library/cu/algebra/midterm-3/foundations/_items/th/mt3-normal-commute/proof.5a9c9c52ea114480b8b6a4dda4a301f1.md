@@ -1,0 +1,1 @@
+Normality of $K$ puts $(hkh^{-1})k^{-1}$ in $K$. Normality of $H$ puts $h(kh^{-1}k^{-1})$ in $H$. These are the same element. If the intersection is trivial, every such commutator equals $1$. See @mt3-normal-subgroup.

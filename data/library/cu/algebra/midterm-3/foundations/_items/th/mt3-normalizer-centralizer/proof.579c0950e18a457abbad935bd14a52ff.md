@@ -1,0 +1,1 @@
+By @mt3-normalizer, conjugation by $g\in N_G(H)$ is an automorphism of $H$. The map sending $g$ to this automorphism is a homomorphism because conjugations compose in the same order. Its kernel is precisely @mt3-centralizer. Now apply @mt3-first-isomorphism. **Use when:** normality lets you turn conjugation into a homomorphism with a known finite target order.

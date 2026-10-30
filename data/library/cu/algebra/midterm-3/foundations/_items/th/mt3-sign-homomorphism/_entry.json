@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a77affaa609e440bb5d94eca274cc525",
+  "title": "Sign is a homomorphism",
+  "rank": 9223372036854775752,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "03caa44032574d91a6d748af81a27ebc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.03caa44032574d91a6d748af81a27ebc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e5109ba0eecd44e6a42669539e8f8575",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e5109ba0eecd44e6a42669539e8f8575.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:39.092972+00:00",
+  "updated_at": "2026-10-30T09:31:39.272771+00:00"
+}

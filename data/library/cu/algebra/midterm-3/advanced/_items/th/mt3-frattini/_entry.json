@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "e3f74a071c974b1fb5dc0aea50b3c7b9",
-  "title": "Frattini argument, Frattini subgroup, and Burnside basis",
-  "rank": 4611686018427387904,
+  "title": "Burnside’s basis theorem for finite p-groups",
+  "rank": 9115285645797883904,
   "header": "Dummit–Foote §6.1 Proposition6 and Exercises24–26; Week8 p.8.",
   "problem_family": "",
   "confusable_with": [],
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:03.717697+00:00",
-  "updated_at": "2026-10-30T08:24:48.412490+00:00"
+  "updated_at": "2026-10-30T09:32:57.999252+00:00"
 }

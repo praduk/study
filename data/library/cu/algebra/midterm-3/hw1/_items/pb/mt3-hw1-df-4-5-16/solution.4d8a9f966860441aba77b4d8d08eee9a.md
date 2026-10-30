@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow divisibility and congruence; uniqueness iff normal]mt3-sylow; @[Disjoint counting for subgroups of prime order]mt3-sylow; @[Element orders and Lagrange theorem]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Counting distinct prime-order subgroups]cu:algebra:midterm-3:sylow:th:mt3-prime-order-intersections; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Assume two largest-prime Sylows are nonnormal and count disjoint prime-order elements.
 

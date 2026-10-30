@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow containment, number restrictions, and normalizer indices]mt3-sylow; @[Groups of prime-square order are abelian]mt3-pgroups; @[Faithful small-index coset actions of simple groups]mt3-actions; @[Normalizers and Lagrange's theorem]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Groups of order p² are abelian]cu:algebra:midterm-3:sylow:th:mt3-p-square-abelian; @[Faithful actions of simple groups and the alternating-group obstruction]cu:algebra:midterm-3:foundations:th:mt3-simple-actions; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Use a small normalizer to find P, enlarge through a Sylow group containing P, then force the original Q to be normal in the enlarged normalizer.
 

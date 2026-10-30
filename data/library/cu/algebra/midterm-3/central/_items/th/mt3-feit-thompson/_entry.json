@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "8f81872a47ef496cac02c9eebb713b54",
+  "title": "Feit–Thompson odd-order theorem",
+  "rank": 9214364837600034816,
+  "header": "Inspected source: Dummit–Foote §6.1, Theorem 11(3), printed p. 196; permitted/forbidden uses are from the user’s assignment.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "47beeda3347a4d27b03a5395557235ed",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.47beeda3347a4d27b03a5395557235ed.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:31.757083+00:00",
+  "updated_at": "2026-10-30T09:32:31.757091+00:00"
+}

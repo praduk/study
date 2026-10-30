@@ -1,4 +1,4 @@
-**Definitions and results used:** @[a normal Sylow subgroup is unique and characteristic]mt3-sylow; @[normalizers and characteristic-in-normal]mt3-foundations.
+**Definitions and results used:** @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Characteristic subgroups and normality]cu:algebra:midterm-3:foundations:th:mt3-characteristic-normal; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer.
 
 **Technique:** Replace a normal Sylow subgroup by a characteristic subgroup; apply the result inside the next normalizer.
 

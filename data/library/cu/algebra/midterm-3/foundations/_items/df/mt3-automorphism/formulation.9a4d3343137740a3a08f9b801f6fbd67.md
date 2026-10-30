@@ -1,0 +1,1 @@
+An **automorphism** of a group $G$ is a bijective homomorphism $G\to G$. These form the group $\Aut(G)$ under composition. An **inner automorphism** is $x\mapsto gxg^{-1}$ for some fixed $g\in G$. An automorphism is **outer** if it is not inner. “Outer” here describes an automorphism, not a chosen element of the quotient group of automorphisms by inner automorphisms.

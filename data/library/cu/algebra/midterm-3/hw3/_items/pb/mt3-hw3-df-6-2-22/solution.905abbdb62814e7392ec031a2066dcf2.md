@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Strict normalizer growth in a finite p-group]mt3-pgroups; @[Every p-subgroup lies in a Sylow p-subgroup]mt3-sylow; @[Normalizer definition]mt3-foundations.
+**Definitions and results used:** @[Strict normalizer growth in finite p-groups]cu:algebra:midterm-3:sylow:th:mt3-pgroup-normalizer; @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer.
 
 **Technique:** Assume the normalizer is a p-group and place it inside one Sylow subgroup; maximality forces two distinct Sylow groups to be equal.
 

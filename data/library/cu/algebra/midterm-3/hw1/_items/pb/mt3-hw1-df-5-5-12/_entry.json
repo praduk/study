@@ -3,7 +3,7 @@
   "id": "c00acb5db7ae43408c2cbd74ae43e28d",
   "title": "D&F 5.5.12 — All five groups of order 20",
   "rank": 9151314442816847872,
-  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 12, printed p. 186 (PDF p. 200).\n\nPrerequisites: @mt3-linear, @mt3-pgroups, @mt3-semidirect, @mt3-classify.",
+  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 12, printed p. 186 (PDF p. 200).\n\nPrerequisites: @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Groups of order p² are abelian]cu:algebra:midterm-3:sylow:th:mt3-p-square-abelian; @[Fundamental theorem of finite abelian groups]cu:algebra:midterm-3:foundations:th:mt3-abelian-classification; @[Semidirect product construction and internal recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition; @[Automorphisms of a finite cyclic group]cu:algebra:midterm-3:foundations:th:mt3-cyclic-automorphisms; @[Actions of one finite cyclic group on another]cu:algebra:midterm-3:semidirect:th:mt3-cyclic-actions; @[Center of a group]cu:algebra:midterm-3:foundations:df:mt3-center.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:14.753658+00:00",
-  "updated_at": "2026-10-30T08:24:40.493621+00:00"
+  "updated_at": "2026-10-30T09:34:13.692060+00:00"
 }

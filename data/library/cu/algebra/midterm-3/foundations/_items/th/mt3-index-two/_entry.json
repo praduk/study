@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0474f619171847a0a61e5e64c18f6460",
+  "title": "Every index-two subgroup is normal",
+  "rank": 9223372036854251520,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b0aa8e030dc5400baa1864f0e583436b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b0aa8e030dc5400baa1864f0e583436b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b8ddca0cc88545d4ad2c83122179421d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b8ddca0cc88545d4ad2c83122179421d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:42.484785+00:00",
+  "updated_at": "2026-10-30T09:31:42.735378+00:00"
+}

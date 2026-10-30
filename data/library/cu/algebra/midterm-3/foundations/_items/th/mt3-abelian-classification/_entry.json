@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8fb571acb5d8411fbaae5f989705df2d",
+  "title": "Fundamental theorem of finite abelian groups",
+  "rank": 9223372036854775776,
+  "header": "Dummit–Foote §5.2, Theorems 3 and 5; finite existence/uniqueness independently reconstructed using a cyclic-factor splitting argument.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3072e0a3b89449a79f2ffb707260ff3f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3072e0a3b89449a79f2ffb707260ff3f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4c2e0fa50c7845d2b4fe9a1efb758d52",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4c2e0fa50c7845d2b4fe9a1efb758d52.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:15.615099+00:00",
+  "updated_at": "2026-10-30T09:39:23.088873+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a8143a391b344eca8149984732850131",
+  "title": "Lower central series",
+  "rank": 9223372036854775803,
+  "header": "Dummit–Foote §6.1, printed p. 193; lecture indexing written as L_i to avoid ambiguity.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c53f41c94d564b18ab781ffb44218edd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c53f41c94d564b18ab781ffb44218edd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:09.014196+00:00",
+  "updated_at": "2026-10-30T09:32:09.014208+00:00"
+}

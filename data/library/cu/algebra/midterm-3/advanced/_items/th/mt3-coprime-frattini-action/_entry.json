@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "828b58c135b24954b5cb3a6fe1271211",
+  "title": "Coprime automorphisms act faithfully on the Frattini quotient",
+  "rank": 9151314442816847872,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "543d4af73e54477e8b4a4b4d1a44dd1f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.543d4af73e54477e8b4a4b4d1a44dd1f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f26f601b65124cf4b952614b7dffb3f6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f26f601b65124cf4b952614b7dffb3f6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:39.956632+00:00",
+  "updated_at": "2026-10-30T09:32:40.205232+00:00"
+}

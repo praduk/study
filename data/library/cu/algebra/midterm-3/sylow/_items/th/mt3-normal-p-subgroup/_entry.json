@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8bbdbcb7e8d84b8da0ed7bec1639677d",
+  "title": "A normal p-subgroup lies in every Sylow p-subgroup",
+  "rank": 9218868437227405312,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "904f484214ea436da846e22d82a373c2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.904f484214ea436da846e22d82a373c2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0c2c3330171e410bbc83e12e3a5e0f62",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0c2c3330171e410bbc83e12e3a5e0f62.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:51.421242+00:00",
+  "updated_at": "2026-10-30T09:31:51.673775+00:00"
+}

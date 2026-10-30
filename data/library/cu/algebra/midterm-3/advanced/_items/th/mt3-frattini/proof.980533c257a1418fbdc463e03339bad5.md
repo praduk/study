@@ -1,7 +1,7 @@
-**Definitions and results used:** @[Maximal subgroups of finite p-groups]mt3-pgroups; @[Hyperplanes, spanning sets, and bases]mt3-linear; @[Quotient correspondence and the normalizer definition]mt3-foundations.
+**Results used:** @mt3-frattini-quotient, @mt3-frattini-nongenerators; basis definitions in @mt3-linear.
 
-For $g\in G$, the subgroups $P$ and $gPg^{-1}$ are Sylow in $N$. Conjugacy inside $N$ supplies $n\in N$ with $gPg^{-1}=nPn^{-1}$. Thus $n^{-1}g\in N_G(P)$, proving $G=NN_G(P)$.
+Put $H=\langle x_1,\ldots,x_s\rangle$. Their images span $P/\Phi(P)$ exactly when $H\Phi(P)=P$. By the nongenerator theorem this is equivalent to $H=P$. Thus generation in $P$ is exactly spanning in the quotient.
 
-Every maximal subgroup $M$ of a finite $p$-group is normal of index $p$, so $P/M$ is abelian of exponent $p$. Therefore $P'P^p\le\Phi(P)$. Put $V=P/(P'P^p)$, an elementary abelian group. Any nonzero vector in $V$ is excluded by some hyperplane: extend it to a basis and set its coordinate to zero. The preimage is a maximal subgroup of $P$. Hence any element outside $P'P^p$ is outside some maximal subgroup, proving equality.
+A spanning set is inclusion-minimal exactly when it is a basis: if dependent, one vector can be removed without changing its span; if independent, removing any vector changes the span. The same deletion criterion therefore holds for the generators and their images. Every basis of an $r$-dimensional space has $r$ elements, while every spanning set has at least $r$.
 
-A set generates $P$ iff its cosets span $V=P/\Phi(P)$: spanning gives $\langle X\rangle\Phi(P)=P$, and the finite nongenerator property gives $\langle X\rangle=P$. Minimal generation is therefore exactly minimal spanning, i.e. a basis. The coprime-automorphism assertion is proved in HW2 §6.1.26(e)(f); its essential move is finding fixed representatives for a quotient basis using prime-order orbits, then lifting the basis.
+If the elementary abelian quotient is cyclic, it has dimension at most $1$, so basis lifts give at most one generator of $P$. Finally $P'\le\Phi(P)$ means $P/\Phi(P)$ is a quotient of $P/P'$, so cyclicity of the latter implies the former.

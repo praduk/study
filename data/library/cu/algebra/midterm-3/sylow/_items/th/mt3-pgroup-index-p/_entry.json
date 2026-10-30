@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e34d8e35e6764a9cb65031f04866c903",
+  "title": "Index-p subgroups of a finite p-group are normal",
+  "rank": 9223231299366420480,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "857d10cba6e04990a1f12fffc427f591",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.857d10cba6e04990a1f12fffc427f591.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9ac77c9470584173ba09ea470e2074b5",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9ac77c9470584173ba09ea470e2074b5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:00.059342+00:00",
+  "updated_at": "2026-10-30T09:32:00.301927+00:00"
+}

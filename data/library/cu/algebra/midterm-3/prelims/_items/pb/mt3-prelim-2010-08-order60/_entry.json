@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9825f313970d48d396f645b74e790610",
+  "title": "CU prelim August 2010, Problem 1(b) — Recognize a simple group of order 60",
+  "rank": 8070450532247928832,
+  "header": "Official CU Boulder Algebra prelim, August 2010, Problem 1(b), paraphrased. The solution deliberately practices the Sylow-intersection method.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "caf5ffea4e06401b87863fb63d1a27a1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.caf5ffea4e06401b87863fb63d1a27a1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8cea91acff2749abaf895029a42d2799",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.8cea91acff2749abaf895029a42d2799.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:50.883732+00:00",
+  "updated_at": "2026-10-30T09:32:51.141278+00:00"
+}

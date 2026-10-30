@@ -1,11 +1,13 @@
-**Definitions and results used:** @[Upper and lower central series; commutators under quotients]mt3-series; @[Nilpotence of finite p-groups]mt3-pgroups; @[Unique Sylow subgroups are characteristic]mt3-sylow; @[Frattini factorization]mt3-frattini-argument.
+**Definitions and results used:** @mt3-nilpotent-definition, @mt3-upper-central, @mt3-pgroup-nilpotent, @mt3-sylow-normality, @mt3-frattini-argument.
 
-For the central-series equivalence, induct on $c$. If $Z_c(G)=G$, the quotient by $Z(G)$ has class at most $c-1$, so $L_{c-1}(G)\le Z(G)$ and $L_c(G)=1$. Conversely, $L_c(G)=1$ implies $L_{c-1}(G)\le Z(G)$, so the quotient has lower term $c-1$ trivial; induction makes its upper term $c-1$ the whole quotient, hence $Z_c(G)=G$. The case $c=0$ is $G=1$. Commutators descend under surjections, as required in both directions.
+**1⇒2.** For $H<G$, choose the least $i$ with $Z_i(G)\nleq H$. If $z\in Z_i(G)\setminus H$, then the commutators of both $z$ and $z^{-1}$ with $H$ lie in $Z_{i-1}(G)\le H$. Thus $zHz^{-1}=H$, so $z\in N_G(H)\setminus H$.
 
-For a nilpotent group, choose the least $i$ with $Z_i(G)\nleq H$ for a proper subgroup $H$. An element of $Z_i(G)\setminus H$ normalizes $H$ because its commutators with $H$ lie in $Z_{i-1}(G)\le H$. This proves strict normalizer growth.
+**2⇒3.** Put $N=N_G(P)$ for a Sylow subgroup $P$. It is the unique Sylow $p$-subgroup of $N$, hence characteristic in $N$. Therefore every element normalizing $N$ normalizes $P$, giving $N_G(N)=N$. Criterion 2 forces $N=G$.
 
-In a finite group satisfying strict normalizer growth, put $N=N_G(P)$ for Sylow $P$. Since $P$ is the unique Sylow $p$-subgroup of $N$, it is characteristic there. Every element normalizing $N$ therefore normalizes $P$, so $N_G(N)=N$. Strict growth forces $N=G$, hence $P\trianglelefteq G$. Distinct normal Sylow factors have trivial intersection and commute; their product has full order, giving the direct product. Conversely each Sylow factor is nilpotent, and the center of a direct product is the product of the centers, so the product is nilpotent.
+**3⇒4.** Normal Sylow subgroups of different prime orders commute: their commutators lie in their trivial intersection. The product of all factors has order $|G|$, and successive intersections are trivial by coprimality, giving the direct product.
 
-Strict growth makes maximal subgroups normal. Conversely, if all maximal subgroups are normal and $N_G(P)<G$, choose a maximal $M$ containing it. Frattini's argument applied to $M\trianglelefteq G$ gives $G=M N_G(P)=M$, contradiction (here $P$ is Sylow in $M$).
+**4⇒1.** Each Sylow factor is nilpotent. Centers and successive upper centers of a finite direct product are the products of the corresponding centers, so the product is nilpotent.
 
-Subgroup and quotient closure follow from the lower-series inclusions/equalities in @mt3-series. The same quotient argument gives $G/Z(G)$ nilpotent ⇒ $G$ nilpotent.
+**2⇒5.** Maximality and strict normalizer growth give $N_G(M)=G$ for each maximal $M$.
+
+**5⇒3.** If $N_G(P)<G$, put it inside a maximal subgroup $M$. By hypothesis $M\trianglelefteq G$, and $P$ is Sylow in $M$. Frattini gives $G=M N_G(P)=M$, contradiction.

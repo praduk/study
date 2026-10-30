@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow counts, Sylow subgroup order, and uniqueness iff normal]mt3-sylow; @[Lagrange theorem and orders of subgroup elements]mt3-foundations; @[Distinct prime-order subgroups intersect trivially]mt3-sylow.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Counting distinct prime-order subgroups]cu:algebra:midterm-3:sylow:th:mt3-prime-order-intersections; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** When the largest-prime Sylow count is maximal, count its nonidentity elements and inspect the remaining capacity.
 

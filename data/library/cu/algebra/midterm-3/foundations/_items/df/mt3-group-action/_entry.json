@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "b42c17cdfe5b46b1b937b4c532f782cb",
+  "title": "Group action, orbit, and stabilizer",
+  "rank": 9223372036787666944,
+  "header": "Definition. The action vocabulary used by Sylow theory and all permutation-action arguments.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "892b25a78ec846a0801892e45fd3d022",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.892b25a78ec846a0801892e45fd3d022.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:33.530858+00:00",
+  "updated_at": "2026-10-30T09:31:33.530866+00:00"
+}

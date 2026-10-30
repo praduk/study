@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e4b8978fdb96438aacb09d377e15e181",
+  "title": "Complement to a normal subgroup",
+  "rank": 8070450532247928832,
+  "header": "Dummit–Foote §5.5; course Week 7.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5897f82cf280419c86d727cc1e868960",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5897f82cf280419c86d727cc1e868960.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:32.192801+00:00",
+  "updated_at": "2026-10-30T09:32:32.192807+00:00"
+}

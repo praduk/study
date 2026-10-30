@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Frattini subgroup, nongenerators, and Zorn’s lemma]mt3-frattini; @[maximal subgroups and generated subgroups]mt3-foundations.
+**Definitions and results used:** @[Frattini subgroup and nongenerators]cu:algebra:midterm-3:advanced:df:mt3-frattini-subgroup; @[Maximal subgroup]cu:algebra:midterm-3:foundations:df:mt3-maximal-subgroup; @[Generated subgroup and minimal generating set]cu:algebra:midterm-3:foundations:df:mt3-generated-subgroup; @[Zorn's lemma]math:set:axiom-choice:th:zorn-choice.
 
 **Technique:** Outside Φ, a maximal subgroup witnesses generation; inside Φ, maximality forbids generation.
 

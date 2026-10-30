@@ -1,0 +1,1 @@
+Every integer from $1$ to $n$ contributes one factor of $p$ for each positive $j$ such that it is divisible by $p^j$. Count the contributions in the opposite order: there are $\lfloor n/p^j\rfloor$ multiples of $p^j$. Adding these counts gives the formula. For example $v_p((p^2)!)=p+1$, the order exponent used in the wreath-product Sylow construction.

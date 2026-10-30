@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "76e998a572dc4fb789cc8856622820d6",
+  "title": "A cyclic central quotient forces abelianity",
+  "rank": 9223336852482686976,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba7a99d9c698483087c2a84e97382409",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba7a99d9c698483087c2a84e97382409.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d55d67eeae8a4735af4a6650e9bb40f3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d55d67eeae8a4735af4a6650e9bb40f3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:03.509053+00:00",
+  "updated_at": "2026-10-30T09:32:03.765506+00:00"
+}

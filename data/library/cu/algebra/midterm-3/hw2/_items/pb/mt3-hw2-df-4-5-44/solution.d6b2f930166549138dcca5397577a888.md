@@ -1,4 +1,4 @@
-**Definitions and results used:** @[normalizer–centralizer theorem and automorphisms of a cyclic p-group]mt3-foundations; @[Sylow subgroup order and index divisibility]mt3-sylow.
+**Definitions and results used:** @[Normalizer–centralizer theorem]cu:algebra:midterm-3:foundations:th:mt3-normalizer-centralizer; @[Automorphisms of a finite cyclic group]cu:algebra:midterm-3:foundations:th:mt3-cyclic-automorphisms; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Use N/C ↪ Aut(P), remove the p-part using P ≤ C, and compare prime divisors.
 

@@ -1,0 +1,1 @@
+If $H$ normalizes $K$, then $(h_1k_1)(h_2k_2)=h_1h_2(h_2^{-1}k_1h_2)k_2\in HK$, and $(hk)^{-1}=h^{-1}(hk^{-1}h^{-1})\in HK$. The other case is symmetric. For the count, each $hk$ has exactly $|H\cap K|$ representations: all pairs are $(ht,t^{-1}k)$ for $t\in H\cap K$. Divide the number $|H||K|$ of pairs by that common fiber size.

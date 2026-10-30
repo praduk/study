@@ -1,0 +1,1 @@
+Let $\pi:G\to G/N$ be the quotient map from @mt3-quotient. Images and inverse images here are subgroups. Since $N\le H$, $\pi^{-1}(\pi(H))=H$; surjectivity gives $\pi(\pi^{-1}(J))=J$. Conjugation commutes with $\pi$, so normality corresponds. The map $gH\mapsto(gN)(H/N)$ is a bijection of coset sets, giving the index equality.

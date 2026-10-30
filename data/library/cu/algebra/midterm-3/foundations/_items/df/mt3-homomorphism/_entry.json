@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "178a98d0c4454e4ea72f90ae73e4f41e",
+  "title": "Homomorphism, kernel, and image",
+  "rank": 9169328841326329856,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "66caa66c650c4f6f81edca83775ab1c0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.66caa66c650c4f6f81edca83775ab1c0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:15.940454+00:00",
+  "updated_at": "2026-10-30T09:31:15.940461+00:00"
+}

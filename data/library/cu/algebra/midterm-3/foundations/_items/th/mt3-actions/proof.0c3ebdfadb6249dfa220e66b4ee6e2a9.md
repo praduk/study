@@ -1,5 +1,3 @@
-**Definitions and results used:** @[Actions through permutations, kernels, simple groups, and Lagrange]mt3-foundations.
+**Definitions and results used:** @[Group actions, orbits, and stabilizers]mt3-group-action; @[Lagrange theorem]mt3-lagrange.
 
-The $P$-orbits partition $X$. Each orbit size divides $|P|$, hence is a power of $p$. The singleton orbits are exactly $X^P$; all other sizes vanish modulo $p$.
-
-For the coset action, $g$ fixes every coset $xH$ precisely when $x^{-1}gx\in H$ for every $x$, giving the stated kernel. A simple group's kernel is $1$ or $G$; transitivity on more than one point excludes $G$. For nonabelian simple $G$, a nontrivial sign map would embed $G$ into $C_2$, impossible. Lagrange gives the divisibility conditions.
+Two elements $g,h$ send $x$ to the same point exactly when $h^{-1}g\in G_x$, which is equivalent to $gG_x=hG_x$. This proves both well-definedness and injectivity of the displayed map. Every point of the orbit has the form $g\cdot x$, so the map is surjective. Counting cosets gives the formula.

@@ -1,0 +1,1 @@
+If $G$ is finite and $H\le G$, then $|G|=|H|[G:H]$. In particular, $|H|$ divides $|G|$, and each element order divides $|G|$. More generally, for any group $G$ and $K\le H\le G$ with both indices on the right finite, $[G:K]=[G:H][H:K]$.

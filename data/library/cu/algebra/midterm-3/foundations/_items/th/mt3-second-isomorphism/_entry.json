@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "eca428fe909f497b9514aceb2634d473",
+  "title": "Second isomorphism theorem",
+  "rank": 9223372019674906624,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9f25ef780a34cd5bfe29de9c883b8d2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9f25ef780a34cd5bfe29de9c883b8d2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e36c727d52764af0afe49e8972af8d67",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e36c727d52764af0afe49e8972af8d67.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:23.044314+00:00",
+  "updated_at": "2026-10-30T09:31:23.295451+00:00"
+}

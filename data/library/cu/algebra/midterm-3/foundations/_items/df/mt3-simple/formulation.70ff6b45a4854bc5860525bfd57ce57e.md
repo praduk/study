@@ -1,0 +1,1 @@
+A group $G$ is **simple** if $G\ne1$ and its only normal subgroups are $1$ and $G$. To disprove simplicity it suffices to exhibit one proper nontrivial normal subgroup, often the kernel of an action. Finite abelian simple groups are identified in @mt3-abelian-simple.

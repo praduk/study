@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Wreath products as factor-permuting semidirect products]mt3-semidirect; @[Left regular action, disjoint p-cycles, and prime exponent in a factorial]mt3-actions; @[A Sylow subgroup has the full prime-power part of the group order]mt3-sylow; @[Internal semidirect recognition and nontrivial actions]mt3-semidirect.
+**Definitions and results used:** @[Permutation and regular wreath products]cu:algebra:midterm-3:semidirect:df:mt3-wreath-product; @[Regular action]cu:algebra:midterm-3:foundations:df:mt3-regular-action; @[Cycle structure of a prime-order permutation]cu:algebra:midterm-3:foundations:th:mt3-prime-order-cycles; @[The exponent of a prime in a factorial]cu:algebra:midterm-3:foundations:th:mt3-factorial-valuation; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup; @[Semidirect product construction and internal recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition.
 
 **Technique:** Build disjoint cycles inside blocks, then a cycle of blocks; compare the resulting order with the p-part of the factorial.
 

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "6e3d7eed32974828a20edcf0bef8fd66",
+  "title": "Burnside’s p^a q^b theorem",
+  "rank": 9205357638345293824,
+  "header": "Inspected source: Dummit–Foote §6.1, Theorem 11(1), printed p. 196. Proof deliberately not reproduced.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da20e411b26e4347b479cd058da189f0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da20e411b26e4347b479cd058da189f0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:31.503273+00:00",
+  "updated_at": "2026-10-30T09:32:31.503281+00:00"
+}

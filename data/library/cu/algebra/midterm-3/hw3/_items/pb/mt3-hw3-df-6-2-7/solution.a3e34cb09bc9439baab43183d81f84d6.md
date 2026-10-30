@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow numbers and the normalizer index formula]mt3-sylow; @[Faithful Sylow actions and permutations of prime order]mt3-actions; @[Normalizer–centralizer homomorphism and automorphisms of Cq]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Faithful actions of simple groups and the alternating-group obstruction]cu:algebra:midterm-3:foundations:th:mt3-simple-actions; @[Cycle structure of a prime-order permutation]cu:algebra:midterm-3:foundations:th:mt3-prime-order-cycles; @[Normalizer–centralizer theorem]cu:algebra:midterm-3:foundations:th:mt3-normalizer-centralizer; @[Automorphisms of a finite cyclic group]cu:algebra:midterm-3:foundations:th:mt3-cyclic-automorphisms; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** After embedding, compare normalizers, not just the order of the whole symmetric group.
 

@@ -3,7 +3,7 @@
   "id": "cfd75648a04543a6996ad883deea3601",
   "title": "D&F 6.3.10 — An outer automorphism of S6",
   "rank": 9214364837600034816,
-  "header": "Dummit–Foote, §6.3, exercise 10, printed p. 221 (PDF p. 235); Coxeter presentation in Example 5, printed p. 219. Week 9 lecture notes, PDF pp. 10–11, discuss presentations and Coxeter groups.\n\nPrerequisites: @mt3-series, @mt3-free.",
+  "header": "Dummit–Foote, §6.3, exercise 10, printed p. 221 (PDF p. 235); Coxeter presentation in Example 5, printed p. 219. Week 9 lecture notes, PDF pp. 10–11, discuss presentations and Coxeter groups.\n\nPrerequisites: @[Presentation of S_n by adjacent transpositions]cu:algebra:midterm-3:advanced:th:mt3-symmetric-presentation; @[Group presentation and defining relations]cu:algebra:midterm-3:advanced:df:mt3-presentations; @[Universal mapping property of free and presented groups]cu:algebra:midterm-3:advanced:th:mt3-free-maps; @[Simplicity of alternating groups]cu:algebra:midterm-3:foundations:th:mt3-alternating-simple; @[The symmetric group has trivial center]cu:algebra:midterm-3:foundations:th:mt3-symmetric-center; @[Sign is a homomorphism]cu:algebra:midterm-3:foundations:th:mt3-sign-homomorphism; @[Homomorphism, kernel, and image]cu:algebra:midterm-3:foundations:df:mt3-homomorphism; @[Automorphisms of a finite cyclic group]cu:algebra:midterm-3:foundations:th:mt3-cyclic-automorphisms.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:59.974984+00:00",
-  "updated_at": "2026-10-30T08:24:46.054355+00:00"
+  "updated_at": "2026-10-30T09:34:19.524797+00:00"
 }

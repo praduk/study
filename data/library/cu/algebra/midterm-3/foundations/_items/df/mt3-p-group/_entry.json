@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3d8e2c26f1cf441d89474c4a3c58325a",
+  "title": "Finite p-group and p-subgroup",
+  "rank": 9223328056389664768,
+  "header": "Definition. This guide includes the trivial group as a p-group.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c641219160164465a1d8b2b1e1249bde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c641219160164465a1d8b2b1e1249bde.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:33.355726+00:00",
+  "updated_at": "2026-10-30T09:31:33.355734+00:00"
+}

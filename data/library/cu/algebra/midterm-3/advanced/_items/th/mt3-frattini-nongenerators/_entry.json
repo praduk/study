@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "148d1b1a5fa74532a3d51a2b6c9d3a62",
+  "title": "Nongenerator characterization of the Frattini subgroup",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "edc4141e6535405bbd3f7efd4535c2bf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.edc4141e6535405bbd3f7efd4535c2bf.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4e359989a831446ebb9fc38f64c165da",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4e359989a831446ebb9fc38f64c165da.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:36.431788+00:00",
+  "updated_at": "2026-10-30T09:32:36.614852+00:00"
+}

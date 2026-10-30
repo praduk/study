@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "7076039e97f14f0b8ad912b635742535",
+  "title": "Upper central series",
+  "rank": 9223372036854775802,
+  "header": "Dummit–Foote §6.1, definition of the upper central series; course Week 8.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1fdbd81614f8492bb6fd1f1873cc001d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1fdbd81614f8492bb6fd1f1873cc001d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:08.767780+00:00",
+  "updated_at": "2026-10-30T09:32:08.767787+00:00"
+}

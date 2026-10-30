@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow divisibility and congruence; uniqueness iff normal]mt3-sylow; @[Lagrange theorem and normal subgroup definition]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Normal subgroup]cu:algebra:midterm-3:foundations:df:mt3-normal-subgroup.
 
 **Technique:** List divisors of the complementary factor; apply the congruence before trying a longer argument.
 

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d7618a5f9b004f72a6231e78f60acba0",
+  "title": "Third isomorphism theorem",
+  "rank": 9223372028264841216,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2801ff3ea7cb4ae08c620f6432bae6be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2801ff3ea7cb4ae08c620f6432bae6be.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "67b88f54ee6a40169e2fd3dd6d679fb0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.67b88f54ee6a40169e2fd3dd6d679fb0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:24.714447+00:00",
+  "updated_at": "2026-10-30T09:31:24.958951+00:00"
+}

@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Frattini argument inside the normalizer of PN]mt3-frattini-argument; @[normalizers, centralizers, subgroup correspondence, and coprime intersections]mt3-foundations; @[recognizing P as a Sylow subgroup of PN]mt3-sylow.
+**Definitions and results used:** @[Frattini argument: lift conjugacy from a normal subgroup]cu:algebra:midterm-3:sylow:th:mt3-frattini-argument; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Centralizer]cu:algebra:midterm-3:foundations:df:mt3-centralizer; @[Subgroup correspondence for a quotient]cu:algebra:midterm-3:foundations:th:mt3-quotient-correspondence; @[Subgroup products and their orders]cu:algebra:midterm-3:foundations:th:mt3-subgroup-product; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup.
 
 **Technique:** Apply Frattini to PN inside its normalizer; then a commutator lies in both P and N.
 

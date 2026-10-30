@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8e767c5967f84f7ea544742fdbcfa662",
+  "title": "Equivalence of the upper and lower nilpotence criteria",
+  "rank": 2305843009213693952,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "40543b066aa84d1285bb6d250fb03039",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.40543b066aa84d1285bb6d250fb03039.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c210fdac7e2b41be976f2445f2badc72",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c210fdac7e2b41be976f2445f2badc72.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:20.907389+00:00",
+  "updated_at": "2026-10-30T09:32:21.158535+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "dae623eda63c421da7bbac22dbf08b6f",
+  "title": "Subgroup correspondence for a quotient",
+  "rank": 9223371968135299072,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b4067012b193406989cab2a2f49c8642",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b4067012b193406989cab2a2f49c8642.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "885c6466bfb7450aab400e3aef5fe6fb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.885c6466bfb7450aab400e3aef5fe6fb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:19.705130+00:00",
+  "updated_at": "2026-10-30T09:31:19.951310+00:00"
+}

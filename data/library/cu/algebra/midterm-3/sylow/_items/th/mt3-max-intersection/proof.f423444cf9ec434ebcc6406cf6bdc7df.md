@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Strict normalizer growth in finite p-groups]mt3-pgroups; @[Sylow containment and normal p-subgroups in Sylow subgroups]mt3-sylow; @[Normalizer and subgroup intersection definitions]mt3-foundations.
+**Definitions and results used:** @[Strict normalizer growth in finite p-groups]cu:algebra:midterm-3:sylow:th:mt3-pgroup-normalizer; @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[A normal p-subgroup lies in every Sylow p-subgroup]cu:algebra:midterm-3:sylow:th:mt3-normal-p-subgroup; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 The subgroup $H$ is proper in $P,Q$. Thus $N_P(H)>H$ and $N_Q(H)>H$. Choose Sylow subgroups $A,B$ of $N$ containing them. If $A=B$, embed it in a Sylow subgroup $T$ of $G$. Then $T\cap P$ contains $N_P(H)>H$, so maximality forces $T=P$. Similarly $T=Q$, contradiction. Hence $A\ne B$.
 

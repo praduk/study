@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "d950deee303140d1b9cb7aa26d2ece85",
-  "title": "Finite p-groups: the proof toolkit",
-  "rank": 6917529027641081856,
+  "title": "A nontrivial finite p-group has nontrivial center",
+  "rank": 9221683186994511872,
   "header": "Dummit–Foote §6.1 Theorem1 and Proposition2; Week8 pp.3,6.",
   "problem_family": "",
   "confusable_with": [],
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:12:52.465672+00:00",
-  "updated_at": "2026-10-30T08:24:47.007190+00:00"
+  "updated_at": "2026-10-30T09:32:54.676662+00:00"
 }

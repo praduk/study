@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d36c80d699f44883ade0b1bcb69656b7",
+  "title": "The symmetric group has trivial center",
+  "rank": 9223372036854775760,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ff59ca220089422b9ccbf64f35b8b7ca",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ff59ca220089422b9ccbf64f35b8b7ca.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6bf064e1b6384ab2b7884ddc910512c8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6bf064e1b6384ab2b7884ddc910512c8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:31.669650+00:00",
+  "updated_at": "2026-10-30T09:31:31.845448+00:00"
+}

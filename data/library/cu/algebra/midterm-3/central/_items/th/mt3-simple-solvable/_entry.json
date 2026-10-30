@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "69648ceb72e24cbf935f777ca2d94551",
+  "title": "A finite simple solvable group has prime order",
+  "rank": 9151314442816847872,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "53e171d066434cb9a99d48e426d396a0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.53e171d066434cb9a99d48e426d396a0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f91d6fa27aa147cc8ab7c1bd5b53e8ea",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.f91d6fa27aa147cc8ab7c1bd5b53e8ea.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:27.904732+00:00",
+  "updated_at": "2026-10-30T09:32:28.156694+00:00"
+}

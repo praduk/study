@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4706faae08fd4572bc03f1b06b988060",
+  "title": "Every nilpotent group is solvable",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a0de6e2433940e8a315690dfcc61333",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a0de6e2433940e8a315690dfcc61333.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d298a9989e7240089bedfd271f646497",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d298a9989e7240089bedfd271f646497.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:26.157988+00:00",
+  "updated_at": "2026-10-30T09:32:26.406632+00:00"
+}

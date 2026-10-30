@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "79996c97fc7c4369811fb00ab7ae1d9c",
+  "title": "Factoring a homomorphism through a quotient",
+  "rank": 9223371899415822336,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "77474b783dfd4995ac312225e6594c10",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.77474b783dfd4995ac312225e6594c10.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "807f7317eb2d4b389c6fdf77ba85b98f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.807f7317eb2d4b389c6fdf77ba85b98f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:18.025366+00:00",
+  "updated_at": "2026-10-30T09:31:18.197696+00:00"
+}

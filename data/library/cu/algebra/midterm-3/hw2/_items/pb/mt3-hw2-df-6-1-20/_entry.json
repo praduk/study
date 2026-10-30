@@ -3,7 +3,7 @@
   "id": "879deb78d7124717868b573304f02e19",
   "title": "D&F 6.1.20(a,b) — Normalizers and centralizers modulo a p′-group",
   "rank": 9205357638345293824,
-  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 20(a,b), printed p. 198 (PDF p. 212).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 20(a,b), printed p. 198 (PDF p. 212).\n\nPrerequisites: @[Frattini argument: lift conjugacy from a normal subgroup]cu:algebra:midterm-3:sylow:th:mt3-frattini-argument; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Centralizer]cu:algebra:midterm-3:foundations:df:mt3-centralizer; @[Subgroup correspondence for a quotient]cu:algebra:midterm-3:foundations:th:mt3-quotient-correspondence; @[Subgroup products and their orders]cu:algebra:midterm-3:foundations:th:mt3-subgroup-product; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:35.380586+00:00",
-  "updated_at": "2026-10-30T08:24:43.078590+00:00"
+  "updated_at": "2026-10-30T09:34:07.065950+00:00"
 }

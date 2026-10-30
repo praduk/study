@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "88c38d79def143bbbbeb5d2cc752317f",
+  "title": "Semidirect product construction and internal recognition",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ba6e06492a8d4b18b9db4e37b5ad46dc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ba6e06492a8d4b18b9db4e37b5ad46dc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "63fcc8429b75412ab7a4aa3eb57825ee",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.63fcc8429b75412ab7a4aa3eb57825ee.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:32.373653+00:00",
+  "updated_at": "2026-10-30T09:32:32.629457+00:00"
+}

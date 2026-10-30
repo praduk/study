@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "3cbebb5b543d436da5b2e8c9d707d0cf",
-  "title": "Finite abelian groups, powers, and character groups",
-  "rank": 8070450532247928832,
+  "title": "Characters and the dual group",
+  "rank": 9223372036854775796,
   "header": "Dummit–Foote §5.2 Theorems3,5 and Exercises8,14; §6.1.",
   "problem_family": "",
   "confusable_with": [],
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:12:49.101651+00:00",
-  "updated_at": "2026-10-30T08:18:49.256803+00:00"
+  "updated_at": "2026-10-30T09:32:55.846770+00:00"
 }

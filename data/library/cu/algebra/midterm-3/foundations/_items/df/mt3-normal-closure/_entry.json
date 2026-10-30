@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bf5263875e904d0f9e40c54358a33743",
+  "title": "Normal closure",
+  "rank": 9221120237041090560,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f3a187db880437998822d511b8928f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f3a187db880437998822d511b8928f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:09.227759+00:00",
+  "updated_at": "2026-10-30T09:31:09.227764+00:00"
+}

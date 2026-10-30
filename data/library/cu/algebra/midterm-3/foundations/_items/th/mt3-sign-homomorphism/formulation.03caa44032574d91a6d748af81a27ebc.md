@@ -1,0 +1,1 @@
+The map $\sgn:S_m\to\{1,-1\}\cong C_2$ is a homomorphism. A transposition has sign $-1$, and a product of $k$ transpositions has sign $(-1)^k$. For $m\ge2$, $A_m\trianglelefteq S_m$ has index $2$ and order $m!/2$.

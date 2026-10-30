@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6c6434b69a78404fbd7a75b592f9fec1",
+  "title": "Disjoint normal subgroups commute",
+  "rank": 9223371120595085994,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1b827b27dff14baa801e75db3d0b13d9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1b827b27dff14baa801e75db3d0b13d9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5a9c9c52ea114480b8b6a4dda4a301f1",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.5a9c9c52ea114480b8b6a4dda4a301f1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:26.396468+00:00",
+  "updated_at": "2026-10-30T09:31:26.647015+00:00"
+}

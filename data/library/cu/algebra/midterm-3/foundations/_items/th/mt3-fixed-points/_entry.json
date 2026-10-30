@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "94f434083b5e40b68cf646dd706e3f3a",
+  "title": "Fixed-point congruence for p-group actions",
+  "rank": 9223372036821221376,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c370b3377ecb42f8a158c5bb760a67bb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c370b3377ecb42f8a158c5bb760a67bb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "57864556a1cd4fb88ead2f1fe3200412",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.57864556a1cd4fb88ead2f1fe3200412.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:33.774154+00:00",
+  "updated_at": "2026-10-30T09:31:34.022121+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "942551058c974380bb9a73f93cb9c030",
+  "title": "Solvable group and derived length",
+  "rank": 9223372036854775806,
+  "header": "Dummit–Foote §6.1, printed p. 195; this guide uses the derived-series definition.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "215875e527a643e69d917b3382d1c5b2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.215875e527a643e69d917b3382d1c5b2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:09.684432+00:00",
+  "updated_at": "2026-10-30T09:32:09.684437+00:00"
+}

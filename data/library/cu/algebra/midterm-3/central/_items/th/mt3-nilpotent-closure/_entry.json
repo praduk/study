@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "14d67e43ba37457ba9f88006df4432a6",
+  "title": "Subgroups, quotients, products, and central extensions of nilpotent groups",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "238fc20f9a62487f967d9eae3a23554e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.238fc20f9a62487f967d9eae3a23554e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fce77091e15b45879dfa3f05b2002292",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.fce77091e15b45879dfa3f05b2002292.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:22.655700+00:00",
+  "updated_at": "2026-10-30T09:32:22.906343+00:00"
+}

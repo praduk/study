@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow numbers, uniqueness, and normalizer indices]mt3-sylow; @[Normality as containment in a normalizer; Lagrange's theorem]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** A Sylow subgroup unique in one normalizer forces inclusion in another normalizer; compare their orders.
 

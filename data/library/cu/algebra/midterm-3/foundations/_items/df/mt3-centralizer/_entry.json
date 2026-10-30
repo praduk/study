@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5853d00ad0114131bdbc90404e682970",
+  "title": "Centralizer",
+  "rank": 9222809086901354496,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34a54bf185c846eaab5cb39b3226cf7c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34a54bf185c846eaab5cb39b3226cf7c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:09.642598+00:00",
+  "updated_at": "2026-10-30T09:31:09.642605+00:00"
+}

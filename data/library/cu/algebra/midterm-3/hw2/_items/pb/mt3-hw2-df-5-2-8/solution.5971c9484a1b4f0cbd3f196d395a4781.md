@@ -1,4 +1,4 @@
-**Definitions and results used:** @[abelian power maps, p-torsion, and pth powers]mt3-abelian; @[first isomorphism theorem and subgroup correspondence]mt3-foundations; @[elementary abelian groups, lines, hyperplanes, and linear functionals]mt3-linear.
+**Definitions and results used:** @[The power map in a finite abelian group]cu:algebra:midterm-3:foundations:th:mt3-abelian-powers; @[First isomorphism theorem]cu:algebra:midterm-3:foundations:th:mt3-first-isomorphism; @[Subgroup correspondence for a quotient]cu:algebra:midterm-3:foundations:th:mt3-quotient-correspondence; @[Elementary abelian p-group]cu:algebra:midterm-3:foundations:df:mt3-elementary-abelian; @[Vector spaces, bases, and linear maps over F_p]cu:algebra:midterm-3:foundations:df:mt3-linear; @[Counting lines and hyperplanes over F_p]cu:algebra:midterm-3:foundations:th:mt3-lines-hyperplanes.
 
 **Technique:** Convert the power map into linear algebra: kernel/quotient have equal size; count lines and hyperplanes.
 

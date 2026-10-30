@@ -1,0 +1,1 @@
+For $H\le G$, the left coset containing $g$ is $gH=\{gh:h\in H\}$. Left cosets partition $G$. The **index** $[G:H]=|G:H|$ is the number of left cosets. If $H$ is not normal, the set of cosets is still an action set, but is not a quotient group with the usual coset multiplication. See @mt3-quotient and @mt3-coset-action.

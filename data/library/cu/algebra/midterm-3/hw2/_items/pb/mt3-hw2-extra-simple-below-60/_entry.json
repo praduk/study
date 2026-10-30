@@ -3,7 +3,7 @@
   "id": "2c1778aaf756434089effd0d491dafb8",
   "title": "Homework 2 extra — Every simple group of order below 60 is abelian",
   "rank": 9222809086901354496,
-  "header": "Professor-supplied extra problem in the assignment; independent elementary derivation using Sylow theory and permutation actions.\n\nPrerequisites: @mt3-actions, @mt3-sylow, @mt3-intersection.",
+  "header": "Professor-supplied extra problem in the assignment; independent elementary derivation using Sylow theory and permutation actions.\n\nPrerequisites: @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Counting distinct prime-order subgroups]cu:algebra:midterm-3:sylow:th:mt3-prime-order-intersections; @[Faithful actions of simple groups and the alternating-group obstruction]cu:algebra:midterm-3:foundations:th:mt3-simple-actions; @[A nontrivial finite p-group has nontrivial center]cu:algebra:midterm-3:sylow:th:mt3-pgroups; @[Abelian simple groups have prime order]cu:algebra:midterm-3:foundations:th:mt3-abelian-simple; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:43.490069+00:00",
-  "updated_at": "2026-10-30T08:24:44.087251+00:00"
+  "updated_at": "2026-10-30T09:34:07.439308+00:00"
 }

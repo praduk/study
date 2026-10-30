@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d03f50f444bf454795e8763f591c5aa2",
+  "title": "Automorphisms, inner automorphisms, and outer automorphisms",
+  "rank": 9187343239835811840,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a4d3343137740a3a08f9b801f6fbd67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a4d3343137740a3a08f9b801f6fbd67.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:06.913372+00:00",
+  "updated_at": "2026-10-30T09:31:06.913377+00:00"
+}

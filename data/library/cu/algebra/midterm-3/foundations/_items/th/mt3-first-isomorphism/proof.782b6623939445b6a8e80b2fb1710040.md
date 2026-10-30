@@ -1,0 +1,1 @@
+Use @mt3-homomorphism and @mt3-quotient. Equality of cosets means $y^{-1}x\in\ker f$, which is equivalent to $f(x)=f(y)$; hence the map is well-defined and injective. It preserves products and is onto the image by definition. For finite $G$, @mt3-lagrange gives $|G|=|\ker f||\operatorname{im}f|$.

@@ -1,0 +1,1 @@
+A subgroup $N\le G$ is **normal**, written $N\trianglelefteq G$, if $gNg^{-1}=N$ for every $g\in G$. Equivalently, every conjugation by an element of $G$ preserves $N$ setwise. Normality need not pass through a chain of normal subgroups; use @mt3-characteristic-normal when its stronger hypothesis is available.

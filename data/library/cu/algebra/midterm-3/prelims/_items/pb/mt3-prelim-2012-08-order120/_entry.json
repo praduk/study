@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "60e918e544aa42f69f9613e7ca29c314",
+  "title": "CU prelim August 2012, Problem 1 — Order 120, four-part adaptation",
+  "rank": 6917529027641081856,
+  "header": "Four-part practice adaptation of the official CU Boulder order-120 problem. The original is a single question; these subparts are newly written.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da06e7d8ea18478a9245d9013dc95c1d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da06e7d8ea18478a9245d9013dc95c1d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "73e1c113a090494582ea49ef90cdcac1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.73e1c113a090494582ea49ef90cdcac1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:49.091743+00:00",
+  "updated_at": "2026-10-30T09:32:49.347068+00:00"
+}

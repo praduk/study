@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "dcc83c0cb2ce48b993b9d3d2331e8d05",
+  "title": "Strict normalizer growth in finite p-groups",
+  "rank": 9222809086901354496,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a3352d3dbdd14755b55f612934e757de",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a3352d3dbdd14755b55f612934e757de.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "88ed5a132d6b4bc09bc53f414b1869f8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.88ed5a132d6b4bc09bc53f414b1869f8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:56.637382+00:00",
+  "updated_at": "2026-10-30T09:31:56.814743+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0071e90548014de59df0d24c53385fc2",
+  "title": "Sign and the alternating group",
+  "rank": 9223372036854775748,
+  "header": "Definition. Determinants are taken over the real numbers here, so 1 and −1 are distinct.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3a432bbca5dc40bf9a2ea279341fe085",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3a432bbca5dc40bf9a2ea279341fe085.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:38.848266+00:00",
+  "updated_at": "2026-10-30T09:31:38.848273+00:00"
+}

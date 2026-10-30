@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fcefba7365604a73b4a593dc10647cc0",
+  "title": "Frattini quotient of a finite p-group",
+  "rank": 9079256848778919936,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4a4e51ac588b48728ef2b3f8acd16460",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4a4e51ac588b48728ef2b3f8acd16460.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "60c4b0ccec3f49679f3ecaaa3ed83381",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.60c4b0ccec3f49679f3ecaaa3ed83381.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:38.191255+00:00",
+  "updated_at": "2026-10-30T09:32:38.373080+00:00"
+}

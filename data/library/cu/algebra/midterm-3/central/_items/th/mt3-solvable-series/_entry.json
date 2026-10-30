@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "aeb219ac85d94b1982ee72cb52142a93",
+  "title": "Solvability is equivalent to a finite series with abelian factors",
+  "rank": 8935141660703064064,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "36b7ae785f584b61b318fe9c9cd9dd9f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.36b7ae785f584b61b318fe9c9cd9dd9f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "94413b2856d4419ab5e4597c5ea562fb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.94413b2856d4419ab5e4597c5ea562fb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:24.410900+00:00",
+  "updated_at": "2026-10-30T09:32:24.661334+00:00"
+}

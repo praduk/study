@@ -3,7 +3,7 @@
   "id": "b5e346b67b9d497bba6766db93faccb8",
   "title": "D&F 6.1.7 — Nilpotence passes to subgroups and quotients, not extensions",
   "rank": 9151314442816847872,
-  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 7, printed p. 198 (PDF p. 212).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 7, printed p. 198 (PDF p. 212).\n\nPrerequisites: @[Lower central series]cu:algebra:midterm-3:foundations:df:mt3-lower-central; @[Upper central series]cu:algebra:midterm-3:foundations:df:mt3-upper-central; @[Characteristic terms and functoriality of the three series]cu:algebra:midterm-3:foundations:th:mt3-series-functorial; @[Equivalence of the upper and lower nilpotence criteria]cu:algebra:midterm-3:central:th:mt3-central-series-equivalence; @[Quotient group]cu:algebra:midterm-3:foundations:df:mt3-quotient; @[The symmetric group has trivial center]cu:algebra:midterm-3:foundations:th:mt3-symmetric-center.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:32.081585+00:00",
-  "updated_at": "2026-10-30T08:24:42.688675+00:00"
+  "updated_at": "2026-10-30T09:34:16.375293+00:00"
 }

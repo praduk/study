@@ -1,4 +1,4 @@
-**Definitions and results used:** @[finite abelian decomposition and characters of cyclic groups]mt3-abelian; @[homomorphisms and direct products]mt3-foundations.
+**Definitions and results used:** @[Characters and the dual group]cu:algebra:midterm-3:foundations:df:mt3-abelian; @[Fundamental theorem of finite abelian groups]cu:algebra:midterm-3:foundations:th:mt3-abelian-classification; @[Homomorphism, kernel, and image]cu:algebra:midterm-3:foundations:df:mt3-homomorphism.
 
 **Technique:** Choose cyclic factors; define one coordinate character per factor and evaluate at generators to prove independence.
 

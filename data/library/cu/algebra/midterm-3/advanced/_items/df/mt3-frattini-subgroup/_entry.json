@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0cd8b95386d145398b438f1f66f14654",
+  "title": "Frattini subgroup and nongenerators",
+  "rank": 8646911284551352320,
+  "header": "Dummit–Foote §6.1, definition before Exercise 21 and Exercise 24.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c5ebb3a7b2ad401b86c0cb32e03a8402",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c5ebb3a7b2ad401b86c0cb32e03a8402.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:36.186096+00:00",
+  "updated_at": "2026-10-30T09:32:36.186102+00:00"
+}

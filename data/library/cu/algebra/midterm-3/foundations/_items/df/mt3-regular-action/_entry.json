@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d51f1c88a7144f959e8ca83d40963f0f",
+  "title": "Regular action",
+  "rank": 9223372036854513664,
+  "header": "Definition. Used in the assigned wreath-product problem.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dc06d89524924789a274f1e19c8e56f0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dc06d89524924789a274f1e19c8e56f0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:44.200303+00:00",
+  "updated_at": "2026-10-30T09:31:44.200310+00:00"
+}

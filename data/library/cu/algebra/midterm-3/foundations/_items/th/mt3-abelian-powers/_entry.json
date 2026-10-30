@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "303c3c6f97f540c78992ff6a59ef69b8",
+  "title": "The power map in a finite abelian group",
+  "rank": 9223372036854775792,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e03d3086abd1494a8742a0eec5e6c1fc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e03d3086abd1494a8742a0eec5e6c1fc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "400dac262c0b4f88816997e06e871040",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.400dac262c0b4f88816997e06e871040.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:17.414283+00:00",
+  "updated_at": "2026-10-30T09:32:17.595174+00:00"
+}

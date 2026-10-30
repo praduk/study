@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "00da9bf48f5c4248acc596143e7215ab",
+  "title": "Coset action and its kernel",
+  "rank": 9223372036846387200,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bcf04a646eed48e4a97c5862f99dacde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bcf04a646eed48e4a97c5862f99dacde.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cc7bbe1af9d144f7b4b390cb10afb24a",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cc7bbe1af9d144f7b4b390cb10afb24a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:37.153030+00:00",
+  "updated_at": "2026-10-30T09:31:37.412488+00:00"
+}

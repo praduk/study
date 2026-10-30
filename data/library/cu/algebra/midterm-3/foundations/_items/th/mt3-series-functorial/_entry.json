@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fa7bd80053cf4fa2870db8101f51d784",
+  "title": "Characteristic terms and functoriality of the three series",
+  "rank": 9223372036854775807,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "674eda88c06046b3bb6387a6e702c244",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.674eda88c06046b3bb6387a6e702c244.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b6762d6b5de943348150edb5685ade03",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b6762d6b5de943348150edb5685ade03.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:09.868024+00:00",
+  "updated_at": "2026-10-30T09:32:10.120761+00:00"
+}

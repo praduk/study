@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "014e3c80b01c477bba4e429d7db05d90",
+  "title": "CU prelim August 2025, Problem 1 — Normal subgroups at order 24",
+  "rank": 4611686018427387904,
+  "header": "Official CU Boulder Algebra prelim, August 2025, Problem 1. Original single-part problem, paraphrased.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "21a33c22ff5543148020ec7d19cb2740",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.21a33c22ff5543148020ec7d19cb2740.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d4024ae239e9457f8b95a239a9487f2d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d4024ae239e9457f8b95a239a9487f2d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:47.305895+00:00",
+  "updated_at": "2026-10-30T09:32:47.571695+00:00"
+}

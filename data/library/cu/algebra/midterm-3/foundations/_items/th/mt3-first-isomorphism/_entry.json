@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6da25ae047ef484facc615353349ccd4",
+  "title": "First isomorphism theorem",
+  "rank": 9223371761976868864,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e9a8bf35759d4e20a5c84a4a55a24deb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e9a8bf35759d4e20a5c84a4a55a24deb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "782b6623939445b6a8e80b2fb1710040",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.782b6623939445b6a8e80b2fb1710040.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:16.380713+00:00",
+  "updated_at": "2026-10-30T09:31:16.555248+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ecc2d46609904083babf1b80d1a55695",
+  "title": "Counting distinct prime-order subgroups",
+  "rank": 9221120237041090560,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b951b030f1dd4f53b9705bf62fa65d8d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b951b030f1dd4f53b9705bf62fa65d8d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8d7747c008bb4e15a566949695487371",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8d7747c008bb4e15a566949695487371.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:53.136577+00:00",
+  "updated_at": "2026-10-30T09:31:53.385268+00:00"
+}

@@ -1,0 +1,1 @@
+The subgroup assertion follows from @mt3-subgroup-product. Restrict the quotient homomorphism $G\to G/N$ to $H$. Its kernel is $H\cap N$ and its image is $HN/N$, so @mt3-first-isomorphism gives the result.

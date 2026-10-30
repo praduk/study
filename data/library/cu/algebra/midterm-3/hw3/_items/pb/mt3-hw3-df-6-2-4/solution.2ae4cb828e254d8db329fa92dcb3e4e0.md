@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow number restrictions, uniqueness, and prime-order element counting]mt3-sylow; @[Simple groups and Lagrange's theorem]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Counting distinct prime-order subgroups]cu:algebra:midterm-3:sylow:th:mt3-prime-order-intersections; @[Simple group]cu:algebra:midterm-3:foundations:df:mt3-simple; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Count elements of prime order; if the remainder has exactly the order of another Sylow subgroup, that Sylow subgroup is unique.
 

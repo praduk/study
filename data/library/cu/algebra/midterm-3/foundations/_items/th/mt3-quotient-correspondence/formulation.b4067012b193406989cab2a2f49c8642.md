@@ -1,0 +1,1 @@
+For $N\trianglelefteq G$, subgroups of $G/N$ correspond bijectively to subgroups of $G$ containing $N$, via $H\mapsto H/N$ and inverse image under the quotient map. Normality is preserved in both directions. If $N\le H\le G$, then $[G:H]=[G/N:H/N]$.

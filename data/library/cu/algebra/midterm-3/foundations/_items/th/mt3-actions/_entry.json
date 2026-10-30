@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "22edb755746c4af3a1c2c19102cf23dc",
-  "title": "Actions, fixed points, and small-index contradictions",
-  "rank": 8646911284551352320,
+  "title": "Orbit–stabilizer theorem",
+  "rank": 9223372036798851754,
   "header": "Dummit–Foote §§4.1,4.3,4.5,6.2; Week 7 pp.4–8; Week 9 pp.3–4.",
   "problem_family": "",
   "confusable_with": [],
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:12:49.267766+00:00",
-  "updated_at": "2026-10-30T08:24:46.612995+00:00"
+  "updated_at": "2026-10-30T09:32:53.503385+00:00"
 }

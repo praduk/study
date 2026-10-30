@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "215d67af12294e02888aafbdd041d542",
-  "title": "Nilpotence: equivalent tests and closure properties",
+  "title": "Equivalent criteria for finite nilpotent groups",
   "rank": 4611686018427387904,
   "header": "Dummit–Foote §6.1 Theorems3,8 and Proposition7; Week8 pp.5,7–8.",
   "problem_family": "",
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:00.623826+00:00",
-  "updated_at": "2026-10-30T08:24:48.030909+00:00"
+  "updated_at": "2026-10-30T09:32:56.472456+00:00"
 }

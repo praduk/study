@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5780e80fa65d434481e8be5d3d6b9348",
+  "title": "Groups of order p² are abelian",
+  "rank": 9223354444668731392,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d34ad4b46244d9fa630d717c12dd384",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d34ad4b46244d9fa630d717c12dd384.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "69387f9dbf244e16a43b2b21fb15994d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.69387f9dbf244e16a43b2b21fb15994d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:05.240280+00:00",
+  "updated_at": "2026-10-30T09:32:05.489421+00:00"
+}

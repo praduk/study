@@ -1,4 +1,4 @@
-**Definitions and results used:** @[A central semidirect factor gives a direct product]mt3-semidirect; @[Every nontrivial finite p-group has nontrivial center]mt3-pgroups; @[Center definition and subgroup element orders]mt3-foundations.
+**Definitions and results used:** @[Complement to a normal subgroup]cu:algebra:midterm-3:semidirect:df:mt3-complement; @[Semidirect product construction and internal recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition; @[A nontrivial finite p-group has nontrivial center]cu:algebra:midterm-3:sylow:th:mt3-pgroups; @[Center of a group]cu:algebra:midterm-3:foundations:df:mt3-center; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** A central semidirect factor makes the product direct; the other p-group factor contributes an unavoidable center.
 

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "07371844ee1b4284b9c61a08150eaf99",
+  "title": "Unique, normal, and characteristic Sylow subgroups",
+  "rank": 6908521828386340864,
+  "header": "Dummit–Foote §4.5, Corollary20, printed p.142.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a88f530c6a804c50a840a8d3c98854ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a88f530c6a804c50a840a8d3c98854ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cca9500cf85945be919d40074472f17d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cca9500cf85945be919d40074472f17d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:49.699752+00:00",
+  "updated_at": "2026-10-30T09:31:49.947393+00:00"
+}

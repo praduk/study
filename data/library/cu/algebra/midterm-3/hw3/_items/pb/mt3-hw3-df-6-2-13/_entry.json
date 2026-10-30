@@ -3,7 +3,7 @@
   "id": "b23efcf0b24349ed8286f25797dabdc2",
   "title": "D&F 6.2.13 — A maximal Sylow intersection",
   "rank": 9151314442816847872,
-  "header": "Dummit–Foote, §6.2, exercise 13, printed pp. 213–214 (PDF pp. 227–228).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "header": "Dummit–Foote, §6.2, exercise 13, printed pp. 213–214 (PDF pp. 227–228).\n\nPrerequisites: @[Strict normalizer growth in finite p-groups]cu:algebra:midterm-3:sylow:th:mt3-pgroup-normalizer; @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[A normal p-subgroup lies in every Sylow p-subgroup]cu:algebra:midterm-3:sylow:th:mt3-normal-p-subgroup; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:54.995146+00:00",
-  "updated_at": "2026-10-30T08:24:45.449884+00:00"
+  "updated_at": "2026-10-30T09:34:09.823062+00:00"
 }

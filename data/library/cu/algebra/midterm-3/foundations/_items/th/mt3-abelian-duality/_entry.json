@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d7ac1a85b7c44842a6ad5f7e935a50a5",
+  "title": "Self-duality of finite abelian groups",
+  "rank": 9223372036854775800,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3553973e746349dcb0428be922b93c61",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3553973e746349dcb0428be922b93c61.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "7ec2190ef50f43a0a3d707e4626cf111",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.7ec2190ef50f43a0a3d707e4626cf111.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:19.142399+00:00",
+  "updated_at": "2026-10-30T09:32:19.327301+00:00"
+}

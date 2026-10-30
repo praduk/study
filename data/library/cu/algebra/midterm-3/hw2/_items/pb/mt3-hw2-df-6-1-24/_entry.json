@@ -3,7 +3,7 @@
   "id": "1f50f1020f454e70a8de0b413038157d",
   "title": "D&F 6.1.24 — Frattini subgroup equals the nongenerators",
   "rank": 9214364837600034816,
-  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 24, printed p. 199 (PDF p. 213).\n\nPrerequisites: @mt3-series, @mt3-pgroups, @mt3-frattini-argument, @mt3-nilpotent, @mt3-solvable, @mt3-frattini.",
+  "header": "Dummit–Foote, 3rd ed., §6.1, Exercise 24, printed p. 199 (PDF p. 213).\n\nPrerequisites: @[Frattini subgroup and nongenerators]cu:algebra:midterm-3:advanced:df:mt3-frattini-subgroup; @[Maximal subgroup]cu:algebra:midterm-3:foundations:df:mt3-maximal-subgroup; @[Generated subgroup and minimal generating set]cu:algebra:midterm-3:foundations:df:mt3-generated-subgroup; @[Zorn's lemma]math:set:axiom-choice:th:zorn-choice.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:37.003222+00:00",
-  "updated_at": "2026-10-30T08:24:43.314773+00:00"
+  "updated_at": "2026-10-30T09:34:17.151233+00:00"
 }

@@ -1,0 +1,1 @@
+A **minimal normal subgroup** of $G$ is a nontrivial subgroup $M\trianglelefteq G$ containing no smaller nontrivial subgroup normal in $G$. The condition concerns normality in $G$, not merely normality in $M$. Thus $M$ need not be simple as an abstract group.

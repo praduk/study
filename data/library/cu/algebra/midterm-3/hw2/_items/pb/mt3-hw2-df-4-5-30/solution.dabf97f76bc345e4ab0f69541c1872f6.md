@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow counting and prime-order intersection counting]mt3-sylow; @[simple groups and Lagrange’s theorem]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Counting distinct prime-order subgroups]cu:algebra:midterm-3:sylow:th:mt3-prime-order-intersections; @[Simple group]cu:algebra:midterm-3:foundations:df:mt3-simple.
 
 **Technique:** Count prime-order Sylow subgroups, then multiply by p−1; justify disjointness.
 

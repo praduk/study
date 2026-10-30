@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ac77d77f3c334482958a402333792d21",
+  "title": "Normal subgroups of every prime-power order",
+  "rank": 9223301668110598144,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "63ef47a7e4db4b6a8252a01199b1d468",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.63ef47a7e4db4b6a8252a01199b1d468.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "811a7931b71a413db6b373cc5dea2b95",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.811a7931b71a413db6b373cc5dea2b95.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:01.783845+00:00",
+  "updated_at": "2026-10-30T09:32:02.031607+00:00"
+}

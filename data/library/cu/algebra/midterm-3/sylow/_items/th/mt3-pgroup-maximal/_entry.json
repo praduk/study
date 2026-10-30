@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4cb0a301297747b382054cbb3f534537",
+  "title": "Maximal subgroups of a finite p-group",
+  "rank": 9223090561878065152,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3593d4ed5d34421ea9e54909dcbe50f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3593d4ed5d34421ea9e54909dcbe50f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1404437e055c4b259f6a94d38b339de9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1404437e055c4b259f6a94d38b339de9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:58.350570+00:00",
+  "updated_at": "2026-10-30T09:31:58.528870+00:00"
+}

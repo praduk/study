@@ -3,7 +3,7 @@
   "id": "eb2d3edc7fa94cddbc0a344772390317",
   "title": "D&F 5.5.23 — Wreath products and a Sylow subgroup of the symmetric group",
   "rank": 9205357638345293824,
-  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 23(a)–(b), printed p. 187 (PDF p. 201).\n\nPrerequisites: @mt3-linear, @mt3-pgroups, @mt3-semidirect, @mt3-classify.",
+  "header": "Dummit–Foote, 3rd ed., §5.5, Exercise 23(a)–(b), printed p. 187 (PDF p. 201).\n\nPrerequisites: @[Permutation and regular wreath products]cu:algebra:midterm-3:semidirect:df:mt3-wreath-product; @[Regular action]cu:algebra:midterm-3:foundations:df:mt3-regular-action; @[Cycle structure of a prime-order permutation]cu:algebra:midterm-3:foundations:th:mt3-prime-order-cycles; @[The exponent of a prime in a factorial]cu:algebra:midterm-3:foundations:th:mt3-factorial-valuation; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup; @[Semidirect product construction and internal recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:17.846377+00:00",
-  "updated_at": "2026-10-30T08:24:40.885719+00:00"
+  "updated_at": "2026-10-30T09:34:14.455369+00:00"
 }

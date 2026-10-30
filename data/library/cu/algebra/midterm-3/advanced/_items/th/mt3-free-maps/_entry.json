@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9283e0720c80495192b520cd7ad0be7f",
+  "title": "Universal mapping property of free and presented groups",
+  "rank": 9205357638345293824,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c7630837f304ad59863640bd3c9b994",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c7630837f304ad59863640bd3c9b994.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4118b41438d545f583edc227fbf4f6be",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4118b41438d545f583edc227fbf4f6be.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:41.989521+00:00",
+  "updated_at": "2026-10-30T09:32:42.173534+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f4521cee59f5425ca0e626f6d9484f92",
+  "title": "Notation and conventions",
+  "rank": 2305843009213693952,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6aab124942f74e6a81c7bd34068749cc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6aab124942f74e6a81c7bd34068749cc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:06.505519+00:00",
+  "updated_at": "2026-10-30T09:31:06.505525+00:00"
+}

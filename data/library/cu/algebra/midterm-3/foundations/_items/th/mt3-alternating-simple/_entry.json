@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5c87a448cbf4497286a42e399fa70132",
+  "title": "Simplicity of alternating groups",
+  "rank": 9223372036854775764,
+  "header": "Source: supplied Dummit–Foote, §4.6, Theorem 24; a prior theorem, stated without proof in this focused guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9234d6453b8b4f4aa232243274dd2ab6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9234d6453b8b4f4aa232243274dd2ab6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:31.425842+00:00",
+  "updated_at": "2026-10-30T09:31:31.425850+00:00"
+}

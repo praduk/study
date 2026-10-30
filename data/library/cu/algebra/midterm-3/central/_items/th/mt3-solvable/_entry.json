@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "2523d47863344f4b8705c44857765255",
-  "title": "Solvability, extensions, and minimal normal subgroups",
-  "rank": 6917529027641081856,
+  "title": "Subgroups, quotients, and extensions of solvable groups",
+  "rank": 9007199254740992000,
   "header": "Dummit–Foote §6.1 Theorems9,11 and Exercise31; §5.2; Week8/9 elementary abelian notes.",
   "problem_family": "",
   "confusable_with": [],
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:02.154997+00:00",
-  "updated_at": "2026-10-30T08:24:48.192873+00:00"
+  "updated_at": "2026-10-30T09:32:57.073049+00:00"
 }

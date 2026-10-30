@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Strict normalizer growth in a finite p-group]mt3-pgroups; @[Sylow containment and containment of normal p-subgroups]mt3-sylow; @[Normalizer definition and subgroup-order divisibility]mt3-foundations.
+**Definitions and results used:** @[Strict normalizer growth in finite p-groups]cu:algebra:midterm-3:sylow:th:mt3-pgroup-normalizer; @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[A normal p-subgroup lies in every Sylow p-subgroup]cu:algebra:midterm-3:sylow:th:mt3-normal-p-subgroup; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Maximize an intersection, use strict normalizer growth, and turn any larger intersection into a contradiction.
 

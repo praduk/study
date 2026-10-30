@@ -1,0 +1,1 @@
+If $N\trianglelefteq G$, the **quotient group** $G/N$ consists of cosets $gN$, with $(gN)(hN)=ghN$. Normality makes multiplication independent of representatives: $(gn)(hm)=gh(h^{-1}nh)m\in ghN$. The quotient map $\pi:G\to G/N$, $g\mapsto gN$, is a surjective homomorphism with kernel $N$.

@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Sylow existence, containment, and maximal order]mt3-sylow; @[conjugation, intersections, and subgroup order]mt3-foundations.
+**Definitions and results used:** @[Sylow theorem]cu:algebra:midterm-3:sylow:th:mt3-sylow; @[Sylow p-subgroup]cu:algebra:midterm-3:sylow:df:mt3-sylow-subgroup; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 **Technique:** Start with a Sylow subgroup of H, embed it in a conjugate of P, then squeeze the intersection.
 

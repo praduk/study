@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Conjugation orbits and orbit-stabilizer]mt3-actions; @[The Sylow normalizer lemma]mt3-sylow.
+**Definitions and results used:** @[Group action, orbit, and stabilizer]cu:algebra:midterm-3:foundations:df:mt3-group-action; @[Orbit–stabilizer theorem]cu:algebra:midterm-3:foundations:th:mt3-actions; @[Sylow normalizer lemma]cu:algebra:midterm-3:sylow:th:mt3-sylow-normalizer; @[Lagrange’s theorem and the index formula]cu:algebra:midterm-3:foundations:th:mt3-lagrange.
 
 Fix $P\in\Syl_p(G)$ and let it act on $\Syl_p(G)$ by conjugation. For each $Q$, its stabilizer is $N_P(Q)=P\cap N_G(Q)$.
 

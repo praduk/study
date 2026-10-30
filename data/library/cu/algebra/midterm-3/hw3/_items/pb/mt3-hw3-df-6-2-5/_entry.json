@@ -3,7 +3,7 @@
   "id": "1ca2b28618fd44cda8fdddebef0650e1",
   "title": "D&F 6.2.5 — A normal complement from solvability",
   "rank": 6917529027641081856,
-  "header": "Dummit–Foote, §6.2, exercise 5, printed p. 213 (PDF p. 227).\n\nPrerequisites: @mt3-sylow, @mt3-actions, @mt3-nplus, @mt3-intersection, @mt3-max-intersection.",
+  "header": "Dummit–Foote, §6.2, exercise 5, printed p. 213 (PDF p. 227).\n\nPrerequisites: @[Derived series]cu:algebra:midterm-3:foundations:df:mt3-derived-series; @[Characteristic terms and functoriality of the three series]cu:algebra:midterm-3:foundations:th:mt3-series-functorial; @[Subgroups, quotients, and extensions of solvable groups]cu:algebra:midterm-3:central:th:mt3-solvable; @[Unique, normal, and characteristic Sylow subgroups]cu:algebra:midterm-3:sylow:th:mt3-sylow-normality; @[Frattini argument: lift conjugacy from a normal subgroup]cu:algebra:midterm-3:sylow:th:mt3-frattini-argument; @[Characteristic subgroups and normality]cu:algebra:midterm-3:foundations:th:mt3-characteristic-normal; @[Subgroup correspondence for a quotient]cu:algebra:midterm-3:foundations:th:mt3-quotient-correspondence.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-10-30T08:13:46.773306+00:00",
-  "updated_at": "2026-10-30T08:24:44.494582+00:00"
+  "updated_at": "2026-10-30T09:34:18.754932+00:00"
 }

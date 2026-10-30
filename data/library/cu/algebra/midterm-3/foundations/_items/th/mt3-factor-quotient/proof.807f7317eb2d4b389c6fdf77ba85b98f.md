@@ -1,0 +1,1 @@
+Changing $g$ to $gn$ with $n\in N$ does not change $f(g)$, so the formula is well-defined. It preserves products by @mt3-homomorphism. Every coset has a representative, so the displayed formula forces uniqueness. See @mt3-quotient.

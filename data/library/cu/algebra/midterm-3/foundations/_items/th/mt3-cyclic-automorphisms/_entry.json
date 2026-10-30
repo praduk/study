@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "998f998b85af4d3fbaae26b79d439db3",
+  "title": "Automorphisms of a finite cyclic group",
+  "rank": 9223372036854775768,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e176afa4612f4ecabedca72aa4118e0f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e176afa4612f4ecabedca72aa4118e0f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c77fbe5fc066430abc5d54de31308498",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c77fbe5fc066430abc5d54de31308498.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:29.730216+00:00",
+  "updated_at": "2026-10-30T09:31:29.979938+00:00"
+}

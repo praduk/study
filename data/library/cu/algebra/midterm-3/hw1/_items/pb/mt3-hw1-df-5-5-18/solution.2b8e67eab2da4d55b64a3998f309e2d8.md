@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Automorphism group and normality of homomorphism kernels]mt3-foundations; @[External semidirect multiplication, inverses, and its normal factor]mt3-semidirect.
+**Definitions and results used:** @[Automorphisms, inner automorphisms, and outer automorphisms]cu:algebra:midterm-3:foundations:df:mt3-automorphism; @[Homomorphism, kernel, and image]cu:algebra:midterm-3:foundations:df:mt3-homomorphism; @[External semidirect product]cu:algebra:midterm-3:semidirect:df:mt3-semidirect; @[Semidirect product construction and internal recognition]cu:algebra:midterm-3:semidirect:th:mt3-semidirect-recognition.
 
 **Technique:** If the desired conjugations are prescribed automorphisms, adjoin the automorphism group as a semidirect factor.
 

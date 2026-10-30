@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "17c09b4a887d479c94a6ee8d16531319",
+  "title": "The exponent of a prime in a factorial",
+  "rank": 9223372036854710272,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1e2e2e9ba0694582b51883e73d7e256b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1e2e2e9ba0694582b51883e73d7e256b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a184fab46d8946079498e227fab4d414",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a184fab46d8946079498e227fab4d414.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:46.135630+00:00",
+  "updated_at": "2026-10-30T09:31:46.312450+00:00"
+}

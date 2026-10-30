@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3210242c8bb14bdeadd83b831953a96d",
+  "title": "Cycle structure of a prime-order permutation",
+  "rank": 9223372036854644736,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3cbc7d2c860d456c9e28f22d4a12f630",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3cbc7d2c860d456c9e28f22d4a12f630.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4dd921dc05934be986b286a63ca6008b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.4dd921dc05934be986b286a63ca6008b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:44.445341+00:00",
+  "updated_at": "2026-10-30T09:31:44.620838+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "05379879ecb74198ba712228c0eaa0ed",
+  "title": "Subgroup products and their orders",
+  "rank": 9223370479213303125,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d515ffc2a2424f01886b0500c4dcb100",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d515ffc2a2424f01886b0500c4dcb100.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "bd2da6d43cbe4158963bea7603d942f2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.bd2da6d43cbe4158963bea7603d942f2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:21.370535+00:00",
+  "updated_at": "2026-10-30T09:31:21.614657+00:00"
+}

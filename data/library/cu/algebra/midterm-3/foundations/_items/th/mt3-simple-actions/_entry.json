@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "05363e0a3b46405c99b636b8359a35b8",
+  "title": "Faithful actions of simple groups and the alternating-group obstruction",
+  "rank": 9223372036854775756,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a5f33851ceeb4169ae36cb5e597be4d9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a5f33851ceeb4169ae36cb5e597be4d9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff9c1b74f7664a9ebcc73df75d743148",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ff9c1b74f7664a9ebcc73df75d743148.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:40.790482+00:00",
+  "updated_at": "2026-10-30T09:31:41.030194+00:00"
+}

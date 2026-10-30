@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "459a77f61b74429b842f8e0bd191efd8",
+  "title": "Characteristic subgroup",
+  "rank": 9205357638345293824,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "872c7f4b41034af0bbc1343244db8152",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.872c7f4b41034af0bbc1343244db8152.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:07.168990+00:00",
+  "updated_at": "2026-10-30T09:31:07.168998+00:00"
+}

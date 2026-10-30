@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "169dfd170b1d4da5bd6c6e4f51bbe328",
+  "title": "Counting lines and hyperplanes over F_p",
+  "rank": 9223372036854775744,
+  "header": "Dummit–Foote, third edition, supplied text; statement checked and elementary proof reconstructed for this guide.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "602ab5659f1d43c2994f287f552685d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.602ab5659f1d43c2994f287f552685d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "47d178593e8447648f3232d102a381b3",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.47d178593e8447648f3232d102a381b3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:32:13.855612+00:00",
+  "updated_at": "2026-10-30T09:32:14.125577+00:00"
+}

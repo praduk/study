@@ -1,0 +1,1 @@
+Let $P$ be a finite $p$-group. A nonidentity automorphism of order prime to $p$ induces a nonidentity automorphism on $P/\Phi(P)$. Consequently any subgroup $A\le\Aut(P)$ of order prime to $p$ embeds in $\GL_r(\F_p)$, where $r=\dim P/\Phi(P)$.

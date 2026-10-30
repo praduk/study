@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "abfafa9a7d5a4738accd7c6951297cd9",
+  "title": "Cauchy’s theorem",
+  "rank": 9223372036833804288,
+  "header": "Prerequisite separated from the original midterm guide. Elementary arguments below are independently derived.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "35046ea791af45be9d16eb7fc1c8bc1a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.35046ea791af45be9d16eb7fc1c8bc1a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cf99373f50b54e9ab441f0675dc81819",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.cf99373f50b54e9ab441f0675dc81819.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:12.010414+00:00",
+  "updated_at": "2026-10-30T09:31:12.182677+00:00"
+}

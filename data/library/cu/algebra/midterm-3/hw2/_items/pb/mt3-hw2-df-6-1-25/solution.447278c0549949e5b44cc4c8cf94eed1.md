@@ -1,4 +1,4 @@
-**Definitions and results used:** @[Frattini subgroup and its characteristicity]mt3-frattini; @[Frattini argument]mt3-frattini-argument; @[finite nilpotence criterion: all Sylow subgroups normal]mt3-nilpotent; @[characteristic-in-normal and maximal subgroups]mt3-foundations.
+**Definitions and results used:** @[Frattini subgroup and nongenerators]cu:algebra:midterm-3:advanced:df:mt3-frattini-subgroup; @[Maximal subgroup]cu:algebra:midterm-3:foundations:df:mt3-maximal-subgroup; @[Characteristic subgroups and normality]cu:algebra:midterm-3:foundations:th:mt3-characteristic-normal; @[Frattini argument: lift conjugacy from a normal subgroup]cu:algebra:midterm-3:sylow:th:mt3-frattini-argument; @[Equivalent criteria for finite nilpotent groups]cu:algebra:midterm-3:central:th:mt3-nilpotent; @[Normalizer]cu:algebra:midterm-3:foundations:df:mt3-normalizer.
 
 **Technique:** Frattini argument gives G = Φ(G)N_G(P); a proper normalizer would lie in a maximal subgroup already containing Φ(G).
 

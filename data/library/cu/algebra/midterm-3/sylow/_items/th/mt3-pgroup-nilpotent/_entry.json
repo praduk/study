@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "253f0c8dc54b4ff89d974643731271da",
+  "title": "Finite p-groups are nilpotent",
+  "rank": 9222246136947933184,
+  "header": "Midterm 3 prerequisite; proof is an elementary derivation.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0f4dbab301aa4f9887714b96c4e5eed6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0f4dbab301aa4f9887714b96c4e5eed6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b3e8705733454f5f9e39cb02401c6ae2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.b3e8705733454f5f9e39cb02401c6ae2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-30T09:31:54.851904+00:00",
+  "updated_at": "2026-10-30T09:31:55.100256+00:00"
+}
