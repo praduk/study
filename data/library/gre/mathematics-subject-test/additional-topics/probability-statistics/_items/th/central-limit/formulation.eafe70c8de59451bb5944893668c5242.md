@@ -1,0 +1,3 @@
+For iid variables with finite mean $\mu$ and variance $0<\sigma^2<\infty$, $\sqrt n(\overline X-\mu)/\sigma$ converges in distribution to $N(0,1)$. For large $n$ this can approximate probabilities, but there is no universal cutoff that guarantees accuracy for every underlying distribution. The CLT describes fluctuations at scale $1/\sqrt n$; the law of large numbers describes convergence of the average itself.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:clt-normalization; @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:clt-probability.

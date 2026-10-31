@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d5c291d8fcc543fab63f2f51135ea2de",
+  "title": "A nonunit raised to a large power",
+  "rank": 128849018880,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Enough prime factors force divisibility",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c5aa1ddfdf704241a4d6b424514a8388",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c5aa1ddfdf704241a4d6b424514a8388.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "61969e8a7bbd460daf1bb9f85b468299",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.61969e8a7bbd460daf1bb9f85b468299.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

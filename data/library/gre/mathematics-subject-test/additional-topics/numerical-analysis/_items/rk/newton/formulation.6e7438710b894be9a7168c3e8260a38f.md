@@ -1,0 +1,3 @@
+Newton iteration is $x_{n+1}=x_n-f(x_n)/f'(x_n)$, requiring a nonzero denominator. For a sufficiently smooth function near a simple root, sufficiently close initial values give quadratic convergence. A distant starting value, a zero derivative, or a multiple root can destroy that behavior. Newton is not guaranteed to stay in a given bracket.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:one-newton-step-sqrt-three; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:newton-multiple-root; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:two-newton-iterations.

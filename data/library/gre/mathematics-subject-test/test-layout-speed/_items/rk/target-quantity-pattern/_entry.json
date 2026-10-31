@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "45836ed7907042b3ab90d771d51e0a72",
+  "title": "Compute only the requested quantity",
+  "rank": 21474836480,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall how to avoid solving for unnecessary intermediate unknowns.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c38d1012d9d4a69a48e730e33be3aca",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c38d1012d9d4a69a48e730e33be3aca.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "075d07a1c51f49eaa336ff871ea0047a",
+  "title": "Width of a Mean Confidence Interval",
+  "rank": 279172874240,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-confidence-width",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8527b886d68e44e6b5e3816632fc91fe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8527b886d68e44e6b5e3816632fc91fe.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c1a3310d216f413f9c4be4f6647c5ba9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c1a3310d216f413f9c4be4f6647c5ba9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

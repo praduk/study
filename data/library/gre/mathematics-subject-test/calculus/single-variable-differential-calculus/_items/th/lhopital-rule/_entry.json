@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "34ea718e38584e3080afa0a46fc07191",
+  "title": "L’Hopital rule: eligible quotient and hypotheses",
+  "rank": 322122547200,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "53f4ea6dc56c487480abd2603eff40bb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.53f4ea6dc56c487480abd2603eff40bb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

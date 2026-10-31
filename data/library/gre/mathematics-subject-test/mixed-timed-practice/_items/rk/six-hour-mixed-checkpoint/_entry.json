@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "da836acaed7346b587b0cd6bb5d2d424",
+  "title": "Six-hour mixed checkpoint — 16 questions",
+  "rank": 9221120237041090560,
+  "header": "Six-hour priority A — 41-minute timed attempt, then 24-minute repair. No overlap with the fixed six-hour drills; no calculator.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c40b0019a93248e0bc59d9169e84d13e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c40b0019a93248e0bc59d9169e84d13e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T08:06:03.780102+00:00",
+  "updated_at": "2026-10-31T08:06:03.780107+00:00"
+}

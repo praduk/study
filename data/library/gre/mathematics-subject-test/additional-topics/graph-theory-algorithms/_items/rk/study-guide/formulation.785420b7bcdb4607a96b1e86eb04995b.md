@@ -1,30 +1,20 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-For a finite undirected graph, the handshake lemma says
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-$$
-\sum_{v\in V}\deg(v)=2|E|.
-$$
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-A tree is equivalently a connected acyclic graph; a tree with $n$ vertices has $n-1$ edges, and adding one edge creates exactly one cycle. A graph is bipartite exactly when it has no odd cycle. An undirected connected graph has an Euler circuit exactly when every vertex has even degree, and it has an Euler trail with distinct endpoints exactly when precisely two vertices have odd degree. These are statements about using every edge, not every vertex.
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-For a connected planar embedding, Euler's formula is $|V|-|E|+|F|=2$. With $c$ components it becomes $|V|-|E|+|F|=1+c$. A simple planar graph with at least three vertices satisfies $|E|\le3|V|-6$; a simple bipartite planar graph with at least three vertices satisfies the sharper $|E|\le2|V|-4$. These bounds are necessary, not sufficient, for planarity.
-
-Breadth-first search explores an unweighted graph by distance layers and finds minimum-edge paths from its source. Depth-first search is useful for components, cycle detection, and topological ordering, but its search-tree paths need not be shortest. With adjacency lists, both run in $O(|V|+|E|)$ time.
-
-Dijkstra's algorithm requires nonnegative edge weights. Bellman--Ford accommodates negative weights and detects reachable negative cycles. Kruskal's and Prim's algorithms produce minimum spanning trees, not shortest-path trees. Binary search is $O(\log n)$ on indexed sorted data; comparison sorting requires $\Omega(n\log n)$ comparisons in the worst case. Know basic recurrence growth and the distinction among best, average, and worst case.
-
-## Recognition cues
-
-- “Fewest edges” in an unweighted graph signals breadth-first search.
-- Degree sums turn local information into the edge count.
-- For planar questions, determine connectedness and face-length restrictions before applying a formula.
-- Distinguish visiting all edges, visiting all vertices, shortest paths, and minimum total tree weight.
-
-## Edge cases and traps
-
-- A disconnected acyclic graph is a forest, not a tree.
-- A graph can satisfy $|E|\le3|V|-6$ and still be nonplanar.
-- Negative edges invalidate Dijkstra's guarantee even when a particular run happens to succeed.
-- Big-$O$ is an upper-bound class, not automatically a tight bound.
-- Adjacency-matrix traversal may cost $\Theta(|V|^2)$ even when the graph is sparse.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:handshaking — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:degree-sum-fifteen-edges, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:regular-graph-order.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:trees-forests — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:connected-nine-edges-ten-vertices, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:forest-components.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:euler-trails — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:euler-degree-pattern, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:two-triangles-vertex.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:bipartite — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:complete-bipartite-edge-count, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:cycle-with-chord.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:planar-euler — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:planar-euler-face-count, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:disconnected-planar-faces.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:planar-bounds — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:complete-graph-planarity, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:bipartite-planarity.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:rk:bfs-dfs — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:graph-traversal-guarantee, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:bfs-distance.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:rk:weighted-paths — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:weighted-triangle, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:negative-edge-choice.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:th:topological-order — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:dag-orders, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:directed-cycle-order.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:df:asymptotic-bounds — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:growth-comparison, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:loose-upper-bound.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:rk:search-sort — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:binary-search-comparisons, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:insertion-sort-order.
+- @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:rk:runtime-recurrences — practice @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:divide-conquer-recurrence, @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:constant-branch-work.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c0e71376e50d4a54b016570750b014b5",
+  "title": "Elimination, Pivoting, and Reused Factorizations",
+  "rank": 184683593728,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–4 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6ec32779b5f449caa856da64cd79b274",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6ec32779b5f449caa856da64cd79b274.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

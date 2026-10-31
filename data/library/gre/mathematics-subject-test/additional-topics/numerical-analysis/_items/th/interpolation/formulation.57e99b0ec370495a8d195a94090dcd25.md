@@ -1,0 +1,3 @@
+At $n+1$ distinct nodes $x_j$, exactly one polynomial of degree at most $n$ takes prescribed values $y_j$. Its Lagrange form is $p(x)=\sum_j y_j\prod_{k\ne j}(x-x_k)/(x_j-x_k)$. Uniqueness follows because the difference of two candidates has too many zeros. Higher degree at equally spaced nodes need not improve accuracy between nodes; piecewise interpolation can avoid large oscillations.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:linear-interpolation-midpoint; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:quadratic-interpolant.

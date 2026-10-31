@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "75cf656c8b7d433a8e6f36308f4ef7a6",
+  "title": "A Density with an Unknown Constant",
+  "rank": 73014444032,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-normalize-density",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f05458126754482c96f5249f24d9f2c1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f05458126754482c96f5249f24d9f2c1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1711f6ab5e704f0880ab22d232d921e4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.1711f6ab5e704f0880ab22d232d921e4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

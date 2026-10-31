@@ -1,30 +1,27 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-In Euclidean geometry, use congruence and similarity before coordinates when ratios dominate. Know the Pythagorean theorem, triangle inequality, angle sums, special right triangles, and area formulas. For side lengths $a,b,c$ and semiperimeter $s=(a+b+c)/2$, Heron's formula is
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-$$
-K=\sqrt{s(s-a)(s-b)(s-c)}.
-$$
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-The same area satisfies $K=rs$ for inradius $r$ and $K=abc/(4R)$ for circumradius $R$. Inscribed angles subtending the same chord from the same side agree; more generally, an inscribed angle is half the measure of its intercepted arc. Power-of-a-point formulas organize secants and tangents.
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-In analytic geometry, know point-to-point and point-to-line distance, slopes, projections, and standard forms for circles, parabolas, ellipses, and hyperbolas. Completing the square identifies translated conics. Parametric equations and polar coordinates often simplify curves with symmetry; remember the polar area factor $1/2$.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:triangle-lengths — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:possible-third-side, @gre:mathematics-subject-test:additional-topics:geometry:pb:special-triangle-length.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:triangle-area — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:triangle-inradius, @gre:mathematics-subject-test:additional-topics:geometry:pb:included-angle-area.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:triangle-radii — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:right-triangle-radii, @gre:mathematics-subject-test:additional-topics:geometry:pb:triangle-from-area-radius.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:similarity — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:similar-triangle-area-scale, @gre:mathematics-subject-test:additional-topics:geometry:pb:volume-to-length-scale.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:circle-sector — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:sector-data, @gre:mathematics-subject-test:additional-topics:geometry:pb:arc-to-area.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:circle-angles — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:diameter-angle, @gre:mathematics-subject-test:additional-topics:geometry:pb:tangent-distance.
+- @gre:mathematics-subject-test:additional-topics:geometry:th:power-point — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:tangent-secant-power, @gre:mathematics-subject-test:additional-topics:geometry:pb:intersecting-chords.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:distances — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:point-line-distance, @gre:mathematics-subject-test:additional-topics:geometry:pb:parallel-line-distance.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:dot-projection — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:orthogonal-vector-angle, @gre:mathematics-subject-test:additional-topics:geometry:pb:vector-projection.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:cross-triple — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:coordinate-triangle, @gre:mathematics-subject-test:additional-topics:geometry:pb:triple-volume.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:circle-equation — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:translated-circle, @gre:mathematics-subject-test:additional-topics:geometry:pb:circle-empty-locus.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:parabola-equation — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:parabola-focus, @gre:mathematics-subject-test:additional-topics:geometry:pb:parabola-locus.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:ellipse-equation — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:ellipse-focus, @gre:mathematics-subject-test:additional-topics:geometry:pb:ellipse-distance-sum.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:hyperbola-equation — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:hyperbola-data, @gre:mathematics-subject-test:additional-topics:geometry:pb:hyperbola-distance-difference.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:polar-geometry — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:polar-disk, @gre:mathematics-subject-test:additional-topics:geometry:pb:polar-sector-integral.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:solid-measures — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:sphere-area-to-volume, @gre:mathematics-subject-test:additional-topics:geometry:pb:cone-measures.
+- @gre:mathematics-subject-test:additional-topics:geometry:rk:affine-geometry — practice @gre:mathematics-subject-test:additional-topics:geometry:pb:affine-rectangle, @gre:mathematics-subject-test:additional-topics:geometry:pb:affine-midpoint.
 
-Vectors encode length, angle, and area. The dot product gives orthogonality and projections. In $\mathbb R^3$, the magnitude of a cross product is parallelogram area, and the scalar triple product gives signed volume. Lines and planes are most efficiently handled with direction and normal vectors.
-
-Rigid motions preserve distance and angle. Similarities also allow a uniform scale factor, multiplying areas by its square and volumes by its cube. Affine transformations preserve lines, parallelism, and ratios along a line, but not generally angles or lengths. For solids, know prism, cylinder, cone, sphere, and surface-area formulas, while checking whether slant height or perpendicular height is intended.
-
-## Recognition cues
-
-- Three side lengths suggest Heron's formula; a right angle suggests Pythagoras first.
-- Tangency to a circle suggests a radius perpendicular to the tangent.
-- A locus defined by a sum or difference of distances suggests an ellipse or hyperbola.
-- Dot and cross products can replace lengthy coordinate geometry in two or three dimensions.
-
-## Edge cases and traps
-
-- Similar figures preserve angles, not lengths; apply the correct power of the scale factor.
-- A diagram is not evidence that an angle is right or that lengths are equal.
-- Squaring a distance equation can introduce extraneous branches.
-- Degenerate triangles violate the strict triangle inequality and have zero area.
-- In polar coordinates, different pairs $(r,\theta)$ can represent the same point.
+**Spatial geometry.** Continue with @gre:mathematics-subject-test:additional-topics:geometry:rk:lines-three-dimensions and @gre:mathematics-subject-test:additional-topics:geometry:rk:planes-three-dimensions. Each is followed by two exercises.

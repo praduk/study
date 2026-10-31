@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a2f6ece21e3e4b19943781df87405f57",
+  "title": "The range of a changed function",
+  "rank": 60129542144,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Map the endpoint values through the output transformation.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e6583652519c485ebcdbb273aacde8c6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e6583652519c485ebcdbb273aacde8c6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "362f4653abeb41e486afd33b48d3f05f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.362f4653abeb41e486afd33b48d3f05f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

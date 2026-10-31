@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d0eefc442e664cb09ec90e107c249a04",
+  "title": "Implicit differentiation",
+  "rank": 141733920768,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1880da261a304f19962390ff7ef5c44a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1880da261a304f19962390ff7ef5c44a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

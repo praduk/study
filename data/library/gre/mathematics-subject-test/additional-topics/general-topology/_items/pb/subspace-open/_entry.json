@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "f982273947d64079936407db89e460b7",
+  "title": "Openness in an Interval",
+  "rank": 55834574848,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-general-topology-subspace-open",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f8126892d73145cea49b30ec045389b5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f8126892d73145cea49b30ec045389b5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "cc5a46ea947f4a539d71694bd8b4646f",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.cc5a46ea947f4a539d71694bd8b4646f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

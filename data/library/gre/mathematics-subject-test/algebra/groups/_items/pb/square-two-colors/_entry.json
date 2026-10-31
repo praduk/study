@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "084ae6031d3d4aa4bb6f1b14399e4449",
+  "title": "Colorings of a square up to rotation",
+  "rank": 171798691840,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Separate the half-turn from quarter-turns",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da40f1829808424389fd9b237acf411b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da40f1829808424389fd9b237acf411b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b5f5f7d7d8674540b68c42036f759eb4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b5f5f7d7d8674540b68c42036f759eb4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

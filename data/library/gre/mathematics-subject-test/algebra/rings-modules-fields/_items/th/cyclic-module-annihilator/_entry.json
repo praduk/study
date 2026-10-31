@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "cc421ec58cab4b10a76aae6fbcfd0acf",
+  "title": "Cyclic modules and annihilators",
+  "rank": 154618822656,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–4 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2d473adc705947baa6d2fb1539e37ec7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2d473adc705947baa6d2fb1539e37ec7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

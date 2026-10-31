@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4d64168f65c44618ad787281614a9c23",
+  "title": "Separable first-order differential equations",
+  "rank": 188978561024,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "08f18bf7d582451193ae507d29c60557",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.08f18bf7d582451193ae507d29c60557.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

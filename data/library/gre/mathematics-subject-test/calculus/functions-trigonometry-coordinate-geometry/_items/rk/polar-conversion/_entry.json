@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a60b5256898f470085b4d78ad374982d",
+  "title": "Polar and Cartesian coordinates",
+  "rank": 231928233984,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e85f2d9a73f641329c2e97b73ac92bea",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e85f2d9a73f641329c2e97b73ac92bea.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

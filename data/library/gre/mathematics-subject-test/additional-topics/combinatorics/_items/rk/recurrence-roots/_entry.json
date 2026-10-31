@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "04381b1b0b7542e6bb5cc4f97a8a25a7",
+  "title": "Constant-Coefficient Linear Recurrences",
+  "rank": 128849018880,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–4 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da3b482d4f124454bf890df42147239b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da3b482d4f124454bf890df42147239b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "98e90e9508594299bc249d44003ab17f",
+  "title": "Subspace Topology",
+  "rank": 51539607552,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8fc8d517293b40aebe5d989ef68ac3e4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8fc8d517293b40aebe5d989ef68ac3e4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

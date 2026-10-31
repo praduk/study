@@ -1,26 +1,26 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-A sequence $(a_n)$ converges to $L$ when every tolerance $\varepsilon>0$ eventually contains all terms: there is $N$ such that $n\ge N$ implies $|a_n-L|<\varepsilon$. Convergent sequences are bounded and have unique limits. Every bounded sequence in $\mathbb{R}^d$ has a convergent subsequence. A monotone bounded real sequence converges, and its limit is the appropriate supremum or infimum.
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-For a series $\sum a_n$, first test whether $a_n\to0$; failure forces divergence, but success proves nothing by itself. Know comparison and limit comparison, ratio and root tests, the integral test, alternating-series convergence, and absolute versus conditional convergence. Absolute convergence implies convergence. A power series converges inside its radius and diverges outside; endpoints require separate tests.
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-Pointwise convergence allows the index needed for a given accuracy to depend on $x$. Uniform convergence requires one index to work for every $x$ in the domain, equivalently $\sup_x|f_n(x)-f(x)|\to0$ when the supremum is meaningful. A uniform limit of continuous functions is continuous. Uniform convergence permits termwise integration on a compact interval; termwise differentiation needs additional hypotheses and is not automatic.
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-For continuous real functions, use the intermediate and extreme value theorems. A continuous function on a compact set is bounded, attains its extrema, and is uniformly continuous. Differentiability implies continuity, not conversely. The mean value theorem controls monotonicity and gives many inequalities. Continuous functions on closed bounded intervals are Riemann integrable; changing finitely many values does not change the integral.
-
-In $\mathbb{R}^d$, compactness is equivalent to closedness and boundedness. Closed subsets contain their limit points; open sets contain a ball about each point. Completeness concerns Cauchy sequences, while compactness also forces convergent subsequences. Connected subsets of $\mathbb{R}$ are intervals.
-
-## Recognition cues
-
-- Look for monotonicity plus a bound before trying to compute a sequence explicitly.
-- For uniform convergence, maximize the error or use continuity of the proposed limit as a quick obstruction.
-- On a compact domain, reach first for extrema, uniform continuity, and convergent subsequences.
-- At a power-series endpoint, discard the radius-of-convergence calculation and test the resulting numerical series directly.
-
-## Edge cases and traps
-
-- A bounded sequence need not converge; it only has a convergent subsequence in finite-dimensional Euclidean space.
-- Pointwise limits of continuous functions can be discontinuous.
-- Closed does not imply compact in $\mathbb{R}^d$ without boundedness.
-- A derivative need not be continuous, but it has the intermediate value property.
-- The alternating-series error estimate requires decreasing magnitudes tending to zero.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:df:supremum — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:supremum-rational-square, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:supremum-sequence-set.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:sequence-convergence — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:cauchy-alternating-over-n, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:rational-cauchy-limit.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:monotone-sequences — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:monotone-recursion, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:bounded-oscillation.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:df:open-closed — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:mixed-endpoints, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:integer-set-topology.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:heine-borel — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:compact-subset-choice, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:compact-reciprocals.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:continuous-compact — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:continuous-on-compact-guarantee, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:open-interval-function.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:df:uniform-convergence — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:classify-function-sequence, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-convergence-geometric-functions.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:uniform-limit-continuity — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-sine-limit, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-limit-epsilon.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:uniform-integration — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:integral-uniform-bound, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:moving-spike-integral.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:uniform-differentiation — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-limit-failure, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-uniform-given.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:m-test — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-trig-series, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:geometric-function-series.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:differentiability — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:absolute-value-origin, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-jump.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:riemann-integrability — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:finite-point-change, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:rational-indicator.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:th:intermediate-mean-values — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:unique-cubic-root, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-distance-bound.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:rk:series-comparison — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:series-rational-tail, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:series-term-test.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:rk:ratio-root — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:factorial-series, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:nth-power-series.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:rk:alternating-series — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:classify-numerical-series, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:alternating-error-count.
+- @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:rk:power-series-endpoints — practice @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:log-power-endpoints, @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:geometric-endpoints.

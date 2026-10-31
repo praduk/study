@@ -1,39 +1,19 @@
-## Topology and bases
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-A topology contains $\varnothing$ and $X$, is closed under arbitrary unions, and is closed under finite intersections. A basis $\mathcal B$ covers $X$ and refines intersections: if $x\in B_1\cap B_2$, some $B_3\in\mathcal B$ satisfies $x\in B_3\subseteq B_1\cap B_2$.
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-Closure, interior, and boundary:
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-$$
-\overline A=\bigcap\{F:F\text{ closed and }A\subseteq F\},
-$$
-
-$$
-A^\circ=\bigcup\{U:U\text{ open and }U\subseteq A\},
-\qquad
-\partial A=\overline A\setminus A^\circ.
-$$
-
-$x\in\overline A$ iff every neighborhood of $x$ meets $A$.
-
-## Continuity and constructions
-
-$f:X\to Y$ is continuous iff preimages of open sets are open. A homeomorphism is a bijection whose map and inverse are continuous. Subspace topology uses intersections with the ambient open sets; product topology has basis $U\times V$; quotient topology declares $U$ open when its full preimage is open.
-
-## Compactness and separation
-
-Compact means every open cover has a finite subcover. Continuous images of compact spaces are compact. Closed subsets of compact spaces are compact. Compact subsets of Hausdorff spaces are closed.
-
-$T_1$ means singletons are closed. Hausdorff means distinct points have disjoint neighborhoods. A continuous bijection from compact to Hausdorff is a homeomorphism.
-
-## Connectedness
-
-A connected space has no separation into two disjoint nonempty open sets. Continuous images of connected spaces are connected. Connected subsets of $\mathbb R$ are intervals. Path connected implies connected, but not conversely in general.
-
-## Metric-space equivalences
-
-In metric spaces, compactness, sequential compactness, and complete plus totally bounded are equivalent. Closed and bounded is equivalent to compact only in special settings such as finite-dimensional Euclidean space.
-
-## Counterexample habit
-
-Test broad claims against the discrete topology, indiscrete topology, cofinite topology, an open interval, and an infinite set with the discrete metric. These examples separate properties that coincide in $\mathbb R^n$ but not generally.
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:topology-basis
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:closure-interior-boundary
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:continuity-homeomorphism
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:subspace-topology
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:product-topology
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:quotient-topology
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:compactness
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:separation
+- @gre:mathematics-subject-test:additional-topics:general-topology:th:compact-bijection
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:connectedness
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:path-connectedness
+- @gre:mathematics-subject-test:additional-topics:general-topology:th:metric-compactness
+- @gre:mathematics-subject-test:additional-topics:general-topology:df:countability

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a830750f5591411eb7adb996c4331fd1",
+  "title": "Second Countability and Separability",
+  "rank": 167503724544,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 3–5 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb6615c677cc4523aefa02e53fd53894",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb6615c677cc4523aefa02e53fd53894.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

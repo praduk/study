@@ -1,68 +1,23 @@
-## Systems, matrices, and determinants
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-Row reduction preserves the solution set. Pivot columns in the original matrix form a basis for the column space; nonzero rows of row-echelon form give a basis for the row space.
+Use the separate entries below for targeted recall. Recall the conditions as well as the formula; then attempt the problems placed immediately after that concept.
 
-$$
-(AB)^T=B^TA^T,\qquad (AB)^{-1}=B^{-1}A^{-1},\qquad
-\det(AB)=\det A\det B.
-$$
+- @gre:mathematics-subject-test:algebra:linear-algebra:df:subspace-test: @gre:mathematics-subject-test:algebra:linear-algebra:pb:subspace-selection, @gre:mathematics-subject-test:algebra:linear-algebra:pb:union-of-two-lines
+- @gre:mathematics-subject-test:algebra:linear-algebra:rk:basis-pivot-columns: @gre:mathematics-subject-test:algebra:linear-algebra:pb:column-space-basis, @gre:mathematics-subject-test:algebra:linear-algebra:pb:basis-extension-count
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:system-rank-test: @gre:mathematics-subject-test:algebra:linear-algebra:pb:parameter-system, @gre:mathematics-subject-test:algebra:linear-algebra:pb:overdetermined-system
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:rank-nullity: @gre:mathematics-subject-test:algebra:linear-algebra:pb:rank-nullity-polynomial-space, @gre:mathematics-subject-test:algebra:linear-algebra:pb:composition-rank-bound
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:subspace-dimensions: @gre:mathematics-subject-test:algebra:linear-algebra:pb:dimension-sum-intersection, @gre:mathematics-subject-test:algebra:linear-algebra:pb:intersection-lower-bound
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:matrix-product-identities: @gre:mathematics-subject-test:algebra:linear-algebra:pb:two-sided-matrix-equation, @gre:mathematics-subject-test:algebra:linear-algebra:pb:transpose-entry
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:determinant-rules: @gre:mathematics-subject-test:algebra:linear-algebra:pb:determinant-two-row-operations, @gre:mathematics-subject-test:algebra:linear-algebra:pb:scaled-inverse-determinant, @gre:mathematics-subject-test:algebra:linear-algebra:pb:matrix-equation-determinant
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:two-by-two-inverse: @gre:mathematics-subject-test:algebra:linear-algebra:pb:inverse-entry, @gre:mathematics-subject-test:algebra:linear-algebra:pb:two-variable-system-inverse
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:invertibility-equivalences: @gre:mathematics-subject-test:algebra:linear-algebra:pb:singular-parameter, @gre:mathematics-subject-test:algebra:linear-algebra:pb:polynomial-matrix-inverse
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:transformation-columns: @gre:mathematics-subject-test:algebra:linear-algebra:pb:transformation-matrix-basis-images, @gre:mathematics-subject-test:algebra:linear-algebra:pb:transformation-nonstandard-output
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:basis-change: @gre:mathematics-subject-test:algebra:linear-algebra:pb:coordinates-in-nonstandard-basis, @gre:mathematics-subject-test:algebra:linear-algebra:pb:change-basis-diagonal
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:eigenvalue-invariants: @gre:mathematics-subject-test:algebra:linear-algebra:pb:trace-determinant-from-eigenvalues, @gre:mathematics-subject-test:algebra:linear-algebra:pb:missing-eigenvalue, @gre:mathematics-subject-test:algebra:linear-algebra:pb:characteristic-geometric-multiplicity
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:diagonalizability: @gre:mathematics-subject-test:algebra:linear-algebra:pb:jordan-block-diagonalizability, @gre:mathematics-subject-test:algebra:linear-algebra:pb:repeated-diagonal-eigenvalue
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:orthogonal-projections: @gre:mathematics-subject-test:algebra:linear-algebra:pb:orthogonal-projection-diagonal-line, @gre:mathematics-subject-test:algebra:linear-algebra:pb:distance-to-plane
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:symmetric-spectral-theorem: @gre:mathematics-subject-test:algebra:linear-algebra:pb:quadratic-form-extreme, @gre:mathematics-subject-test:algebra:linear-algebra:pb:symmetric-eigenvector-dot
+- @gre:mathematics-subject-test:algebra:linear-algebra:th:orthogonal-matrices: @gre:mathematics-subject-test:algebra:linear-algebra:pb:orthogonal-invariant, @gre:mathematics-subject-test:algebra:linear-algebra:pb:rotation-diagonalization
+- @gre:mathematics-subject-test:algebra:linear-algebra:rk:matrix-polynomial-reduction: @gre:mathematics-subject-test:algebra:linear-algebra:pb:idempotent-power, @gre:mathematics-subject-test:algebra:linear-algebra:pb:nilpotent-binomial-power
 
-For $A\in M_n$, $\det(cA)=c^n\det A$. A row swap changes determinant sign, row scaling scales it, and row replacement leaves it unchanged.
-
-For $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$,
-
-$$
-\det A=ad-bc,\qquad
-A^{-1}=\frac1{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
-$$
-
-## Vector spaces and dimension
-
-A basis is linearly independent and spanning. Every basis of a finite-dimensional space has the same size. For $T:V\to W$,
-
-$$
-\dim V=\dim\ker T+\dim\operatorname{im}T.
-$$
-
-For finite-dimensional subspaces,
-
-$$
-\dim(U+W)=\dim U+\dim W-\dim(U\cap W).
-$$
-
-For an $m\times n$ matrix, rank plus nullity equals $n$. The invertible-matrix theorem ties together nonzero determinant, full rank, independent columns, spanning columns, unique solutions, and $0$ not being an eigenvalue.
-
-## Eigenvalues and diagonalization
-
-$$
-Av=\lambda v,\qquad \chi_A(\lambda)=\det(\lambda I-A).
-$$
-
-Counting algebraic multiplicity,
-
-$$
-\operatorname{tr}A=\sum\lambda_i,\qquad \det A=\prod\lambda_i.
-$$
-
-Triangular matrices reveal eigenvalues on the diagonal. Similar matrices have the same characteristic polynomial, determinant, trace, and eigenvalues.
-
-$A$ is diagonalizable iff it has a basis of eigenvectors. Distinct eigenvalues guarantee diagonalizability. For each eigenvalue, geometric multiplicity is at most algebraic multiplicity; equality for every eigenvalue is equivalent to diagonalizability.
-
-## Inner products and orthogonality
-
-$$
-\operatorname{proj}_{\mathbf u}\mathbf v=
-\frac{\mathbf v\cdot\mathbf u}{\mathbf u\cdot\mathbf u}\mathbf u.
-$$
-
-For an orthonormal basis $u_1,\dots,u_k$ of $W$,
-
-$$
-\operatorname{proj}_Wv=\sum_{j=1}^k\langle v,u_j\rangle u_j.
-$$
-
-Real symmetric matrices have real eigenvalues and an orthonormal eigenbasis. Orthogonal matrices satisfy $Q^{-1}=Q^T$, preserve norms and angles, and have complex eigenvalues of modulus $1$.
-
-## Fast recognition
-
-Use trace and determinant before expanding a characteristic polynomial, rank-nullity before solving a full kernel, and columns of the images of basis vectors to build a transformation matrix. Watch whether a change-of-basis matrix maps old coordinates to new or the reverse.
+The suggested problem times are adjustable practice targets, not validated mastery thresholds. If an answer is wrong or slow, identify whether the issue was recall, choosing the method, algebra, or a missing condition. Revisit with a different problem before treating the pattern as transferable.

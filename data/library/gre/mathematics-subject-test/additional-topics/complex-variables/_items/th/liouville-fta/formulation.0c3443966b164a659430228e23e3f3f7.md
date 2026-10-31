@@ -1,0 +1,3 @@
+A bounded entire function is constant. Consequently every nonconstant complex polynomial has a zero: if a polynomial $p$ had none, $1/p$ would be entire, bounded outside a large disk because $|p(z)|\to\infty$, and bounded on the disk by continuity; Liouville would make it constant. This is the fundamental theorem of algebra; repeated factorization gives the degree many roots counted with multiplicity.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:complex-variables:pb:bounded-entire; @gre:mathematics-subject-test:additional-topics:complex-variables:pb:polynomial-root-count.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "01e3ee1820464feea6738366e0ff06b3",
+  "title": "A limit with a quadratic input",
+  "rank": 266287972352,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Substitute into the exponential series before choosing the surviving order.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b2019adeb37b4a449692b3f5ab833824",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b2019adeb37b4a449692b3f5ab833824.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d0fff7fc95894dba8bc715358e79ff94",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d0fff7fc95894dba8bc715358e79ff94.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

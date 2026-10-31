@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0305d34db77443bdacbe9907c0955aef",
+  "title": "Product Topology",
+  "rank": 64424509440,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 3–5 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4eb3d9198c9e4a3e8c46321256858da4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4eb3d9198c9e4a3e8c46321256858da4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

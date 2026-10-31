@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c106a7ba09a948a9bb0ddcdf4f775553",
+  "title": "Orthogonal projection onto a line or subspace",
+  "rank": 188978561024,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–3 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "07c0419da4a644bc85694f53d2231df1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.07c0419da4a644bc85694f53d2231df1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

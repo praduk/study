@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "82079236c16643fc8cac451ced506150",
+  "title": "A Wait That Has Already Lasted",
+  "rank": 137438953472,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-geometric-memory",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9bc91de2925f4ef5971eb50702ee3c0d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9bc91de2925f4ef5971eb50702ee3c0d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "5d4457bbe6ff4008bc4ba4a9497edf8a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.5d4457bbe6ff4008bc4ba4a9497edf8a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,3 @@
+For integers $n\ge1$ and $0\le k\le n$, an ordered selection of $k$ distinct objects without replacement has $n!/(n-k)!$ outcomes; an unordered selection has $\binom nk=n!/[k!(n-k)!]$. With replacement, $k$ ordered choices from $n$ types give $n^k$ outcomes. Use the product rule for successive choices and the sum rule only for disjoint alternatives. Divide by $k!$ only when every unordered outcome was counted exactly $k!$ times.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:combinatorics:pb:code-versus-subset; @gre:mathematics-subject-test:additional-topics:combinatorics:pb:nonempty-committees.

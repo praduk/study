@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "380c18070b654ab490c5a4eeb7de07fe",
+  "title": "Secant Method",
+  "rank": 94489280512,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–4 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "30d9f3ab4a0e4fe1ad29779b9769b7fd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.30d9f3ab4a0e4fe1ad29779b9769b7fd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

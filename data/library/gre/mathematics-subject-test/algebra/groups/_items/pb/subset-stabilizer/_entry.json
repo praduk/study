@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "91848c95837f4332bef594af8785b4fe",
+  "title": "A stabilizer of a two-element subset",
+  "rank": 158913789952,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Count internal permutations or divide by orbit size",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b7cf05fea5ad4ce4a1c1bacebe29324d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b7cf05fea5ad4ce4a1c1bacebe29324d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fa6b2c7e9acb409db7902356ea0d57ce",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.fa6b2c7e9acb409db7902356ea0d57ce.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "8e9136b5e8ef4153bb347b4a180217fa",
+  "title": "Fermat exponent reduction",
+  "rank": 94489280512,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "858682aaf2744b1fb65169fc71e79727",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.858682aaf2744b1fb65169fc71e79727.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,11 +1,21 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- Use the Euclidean algorithm for $\gcd(a,b)$ and back-substitution for Bezout coefficients. The equation $ax+by=c$ has integer solutions exactly when $\gcd(a,b)$ divides $c$.
-- Congruences support addition and multiplication. Cancellation by $c$ modulo $n$ is valid without changing the modulus only when $\gcd(c,n)=1$.
-- The Chinese remainder theorem gives a unique class modulo the product for pairwise coprime moduli. First look for a shared simple residue such as $-1$ before constructing inverses.
-- Unique prime factorization drives divisor counts: if $n=\prod p_i^{a_i}$, then the number of positive divisors is $\prod(a_i+1)$ and $\varphi(n)=n\prod_{p\mid n}(1-1/p)$.
-- Fermat gives $a^{p-1}\equiv1\pmod p$ when $p\nmid a$; Euler gives $a^{\varphi(n)}\equiv1\pmod n$ when $\gcd(a,n)=1$. The actual power cycle may be shorter.
+Each concept below is a separate recall entry. Its assigned practice problems follow it in authored order. The concept body links additional applications; the solution identifies the recognition cue, a short justified route, and a trap.
 
-## Recognition cues and traps
+- @gre:mathematics-subject-test:algebra:number-theory:th:gcd-euclidean
+- @gre:mathematics-subject-test:algebra:number-theory:th:bezout-identity
+- @gre:mathematics-subject-test:algebra:number-theory:th:linear-diophantine
+- @gre:mathematics-subject-test:algebra:number-theory:th:modular-cancellation
+- @gre:mathematics-subject-test:algebra:number-theory:th:modular-inverse
+- @gre:mathematics-subject-test:algebra:number-theory:th:linear-congruence
+- @gre:mathematics-subject-test:algebra:number-theory:th:fermat-power
+- @gre:mathematics-subject-test:algebra:number-theory:th:totient-formula
+- @gre:mathematics-subject-test:algebra:number-theory:th:euler-power
+- @gre:mathematics-subject-test:algebra:number-theory:th:short-power-cycle
+- @gre:mathematics-subject-test:algebra:number-theory:th:chinese-remainders
+- @gre:mathematics-subject-test:algebra:number-theory:th:divisor-count
+- @gre:mathematics-subject-test:algebra:number-theory:th:divisor-sum
+- @gre:mathematics-subject-test:algebra:number-theory:th:factorial-prime-exponent
+- @gre:mathematics-subject-test:algebra:number-theory:rk:modular-obstructions
 
-Reduce early, seek short cycles, factor the modulus when useful, and test gcd solvability before solving a congruence or Diophantine equation. Do not divide in modular arithmetic without checking invertibility, apply Euler when the base is not coprime to the modulus, or assume separate congruences are compatible when moduli share factors.
+For mixed practice, choose problems from several concepts without rereading the formulas first. Solve through Review when you want the solution hidden; the ordinary reader can display the solution immediately.

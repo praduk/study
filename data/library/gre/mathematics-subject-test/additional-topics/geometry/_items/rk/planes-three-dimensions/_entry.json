@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5cffec3abec14c2285bfb4044b1f3e25",
+  "title": "Planes and Point-to-Plane Distance",
+  "rank": 8646911298778431488,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Focused recall: state the representation, its assumptions, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2edbbb8e65584567ad28ae970b01d9ad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2edbbb8e65584567ad28ae970b01d9ad.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:49:01.242373+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

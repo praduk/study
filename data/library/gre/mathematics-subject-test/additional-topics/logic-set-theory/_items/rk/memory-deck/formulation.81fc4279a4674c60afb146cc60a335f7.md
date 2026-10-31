@@ -1,58 +1,18 @@
-## Logic
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-$P\Rightarrow Q$ is equivalent to $\neg Q\Rightarrow\neg P$, not to its converse. Also
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-$$
-P\Rightarrow Q\equiv\neg P\lor Q.
-$$
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-De Morgan and quantifier negation:
-
-$$
-\neg(P\land Q)\equiv\neg P\lor\neg Q,
-\quad
-\neg(P\lor Q)\equiv\neg P\land\neg Q,
-$$
-
-$$
-\neg\forall x\,P(x)\equiv\exists x\,\neg P(x),
-\quad
-\neg\exists x\,P(x)\equiv\forall x\,\neg P(x).
-$$
-
-When negating nested statements, reverse every quantifier and negate the final predicate.
-
-## Sets, functions, and relations
-
-$$
-(A\cup B)^c=A^c\cap B^c,\qquad
-(A\cap B)^c=A^c\cup B^c.
-$$
-
-For finite $A$, $|\mathcal P(A)|=2^{|A|}$. A function $A\to B$ is injective when equal outputs force equal inputs, surjective when every element of $B$ is hit, and bijective when both.
-
-For $|A|=m$ and $|B|=n$, there are $n^m$ functions $A\to B$ and
-
-$$
-n(n-1)\cdots(n-m+1)
-$$
-
-injections when $m\le n$.
-
-An equivalence relation is reflexive, symmetric, and transitive. Its equivalence classes partition the set, and every partition determines an equivalence relation.
-
-A partial order is reflexive, antisymmetric, and transitive. Do not confuse antisymmetric with "not symmetric."
-
-## Cardinality
-
-A set is countable if it is finite or bijective with a subset of $\mathbb N$. Countable unions of countable sets are countable. $\mathbb Z$ and $\mathbb Q$ are countable; $\mathbb R$ and $\mathcal P(\mathbb N)$ are uncountable. Cantor's theorem gives
-
-$$
-|A|<|\mathcal P(A)|.
-$$
-
-Use Cantor-Bernstein when injections exist in both directions.
-
-## Proof triggers
-
-Use contrapositive for divisibility implications, contradiction for impossibility or irrationality, induction for recursively built integer statements, and a counterexample to disprove a universal claim. One example never proves a universal statement.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:implication
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:quantifier-negation
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:quantifier-order
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:set-operations
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:injections-surjections
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:one-sided-inverses
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:images-preimages
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:equivalence-relations
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:partial-orders
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:countable-sets
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:cantor-theorems
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:proof-patterns

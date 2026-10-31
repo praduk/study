@@ -1,9 +1,9 @@
 {
   "version": 1,
   "id": "e928d2f78dda45f5b7701f588fc83ab4",
-  "title": "Linear Algebra Memory Deck",
-  "rank": 5764607523034234880,
-  "header": "High-density recall deck based on the supplied preliminary guide, corrected and expanded. Derive when possible; memorize only the anchors and conditions.",
+  "title": "Linear Algebra: Recall and Practice Index",
+  "rank": 8589934592,
+  "header": "Six-hour priority B — next if rusty. Navigation estimate: 1–2 min. Navigation for focused recall entries and their immediately following practice problems.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -18,5 +18,5 @@
   "supplements": [],
   "assets": [],
   "created_at": "2026-09-06T07:15:08.187009+00:00",
-  "updated_at": "2026-09-06T07:15:08.187016+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

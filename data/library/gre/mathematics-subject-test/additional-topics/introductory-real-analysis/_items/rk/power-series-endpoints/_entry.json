@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c52e286629a444e8820aa0878b733da2",
+  "title": "Power-Series Radius and Endpoints",
+  "rank": 231928233984,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1db1f1ee20b74e9cb5d55a6b105a7dd2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1db1f1ee20b74e9cb5d55a6b105a7dd2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

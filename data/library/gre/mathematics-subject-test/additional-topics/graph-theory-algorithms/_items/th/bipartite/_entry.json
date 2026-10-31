@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "cf64c663d4c1496ca5fe66b096a46e86",
+  "title": "Bipartite Graphs",
+  "rank": 51539607552,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "390b9cf2ee1c4a6cbb8c17845ea76dbe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.390b9cf2ee1c4a6cbb8c17845ea76dbe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

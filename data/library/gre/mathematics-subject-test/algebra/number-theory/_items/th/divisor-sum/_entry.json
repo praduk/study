@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3dc4193c879d4c52a113fed293257f79",
+  "title": "Sum of positive divisors",
+  "rank": 180388626432,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "358c7e00e7c644a7bf29f7ae55560162",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.358c7e00e7c644a7bf29f7ae55560162.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

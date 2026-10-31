@@ -1,105 +1,28 @@
-## Differential calculus in several variables
+For the six-hour session, use @gre:mathematics-subject-test:calculus:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-$$
-\nabla f=(f_x,f_y,f_z),\qquad D_{\mathbf u}f=\nabla f\cdot\mathbf u
-$$
+Recall one target at a time. The ordered entries below this map alternate focused recall targets with their practice problems. Use Review after enabling the desired items to attempt problems before revealing solutions; the ordinary reader may display solutions immediately.
 
-for a **unit** direction $\mathbf u$. The maximum directional derivative is $\|\nabla f\|$, attained in the gradient direction.
+Each link is a separate recall target. Retrieve the rule and its conditions, then use the adjacent exercises to choose and apply a method.
 
-Chain rule along a path $\mathbf r(t)$:
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:partial-mixed-derivatives
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:gradient-directional
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:path-chain-rule
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:graph-tangent-plane
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:level-set-tangent-plane
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:hessian-test
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:lagrange-multipliers
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:multiple-integral-region
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:change-of-variables
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:polar-cylindrical-measure
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:spherical-measure
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:df:divergence-operator
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:df:curl-operator
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:df:scalar-line-integral
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:df:vector-line-integral
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:conservative-fields
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:rk:surface-integrals
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:greens-theorem
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:stokes-theorem
+- @gre:mathematics-subject-test:calculus:multivariable-vector-calculus:th:divergence-theorem
 
-$$
-\frac d{dt}f(\mathbf r(t))=\nabla f(\mathbf r(t))\cdot\mathbf r'(t).
-$$
-
-Tangent plane to $z=f(x,y)$ at $(a,b)$:
-
-$$
-z=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b).
-$$
-
-For a level surface $F(x,y,z)=k$, the gradient is normal:
-
-$$
-\nabla F(a,b,c)\cdot\langle x-a,y-b,z-c\rangle=0.
-$$
-
-At a critical point of $f(x,y)$, let $D=f_{xx}f_{yy}-f_{xy}^2$. Then $D>0$ with $f_{xx}>0$ gives a minimum, $D>0$ with $f_{xx}<0$ a maximum, $D<0$ a saddle, and $D=0$ no conclusion.
-
-For a constraint $g=k$, solve $\nabla f=\lambda\nabla g$ plus the constraint, while separately checking points where $\nabla g=0$ and any boundary cases.
-
-## Multiple integrals and coordinates
-
-Reverse integration order by drawing the region, not by merely swapping symbols. For a change of variables,
-
-$$
-dA=\left|\frac{\partial(x,y)}{\partial(u,v)}\right|du\,dv.
-$$
-
-Coordinate Jacobians:
-
-$$
-dA=r\,dr\,d\theta,
-$$
-
-$$
-dV=r\,dr\,d\theta\,dz\quad\text{(cylindrical)},
-$$
-
-$$
-dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\quad\text{(spherical)}.
-$$
-
-The missing Jacobian factor is among the most common fast-test errors.
-
-## Vector fields and line integrals
-
-For $\mathbf F=\langle P,Q,R\rangle$,
-
-$$
-\nabla\cdot\mathbf F=P_x+Q_y+R_z,
-$$
-
-$$
-\nabla\times\mathbf F=
-\begin{vmatrix}
-\mathbf i&\mathbf j&\mathbf k\\
-\partial_x&\partial_y&\partial_z\\
-P&Q&R
-\end{vmatrix}.
-$$
-
-$$
-\int_C f\,ds=\int_a^b f(\mathbf r(t))\|\mathbf r'(t)\|\,dt,
-$$
-
-$$
-\int_C\mathbf F\cdot d\mathbf r=
-\int_a^b\mathbf F(\mathbf r(t))\cdot\mathbf r'(t)\,dt.
-$$
-
-If $\mathbf F=\nabla\phi$, then the vector line integral is $\phi(B)-\phi(A)$. In the plane, $P_y=Q_x$ is sufficient on a simply connected domain when $P,Q$ have continuous first partial derivatives; holes and singularities matter.
-
-## Three integral theorems
-
-$$
-\oint_{\partial D}P\,dx+Q\,dy=\iint_D(Q_x-P_y)\,dA
-$$
-
-for positive counterclockwise orientation.
-
-$$
-\oint_{\partial S}\mathbf F\cdot d\mathbf r=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS
-$$
-
-with the boundary orientation induced by $\mathbf n$.
-
-$$
-\iint_{\partial E}\mathbf F\cdot\mathbf n\,dS=\iiint_E\nabla\cdot\mathbf F\,dV
-$$
-
-with outward orientation.
-
-## Selection rule
-
-Closed plane curve and $P\,dx+Q\,dy$: consider Green. Boundary of a surface and curl: Stokes. Closed surface and flux: divergence. Before computing, state the orientation.
+These formulas and worked solutions are internally checked mathematical derivations, not quotations or official ETS questions. Suggested times are adjustable practice goals, not validated performance thresholds.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "22846c10e5834465ae32b3d71c205d4e",
+  "title": "Series, partial sums, and the term test",
+  "rank": 38654705664,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34aefe4487834b85baa439d5064371d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34aefe4487834b85baa439d5064371d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

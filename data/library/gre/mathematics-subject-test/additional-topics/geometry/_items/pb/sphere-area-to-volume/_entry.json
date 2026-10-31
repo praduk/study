@@ -2,8 +2,8 @@
   "version": 1,
   "id": "0f62ad235abe4406a6a3cb578ae9ff4e",
   "title": "Recover Sphere Volume from Surface Area",
-  "rank": 8935141660703064064,
-  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "rank": 210453397504,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T07:32:31.350668+00:00",
-  "updated_at": "2026-09-06T07:43:19.538048+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

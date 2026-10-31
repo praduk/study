@@ -1,3 +1,5 @@
+**Only six hours today?** Follow @gre:mathematics-subject-test:test-layout-speed:rk:course-map-how-to-use-guide. Its 41-minute mixed checkpoint and 24-minute repair replace the full-length simulations suggested below for a longer preparation horizon.
+
 # Status of this recommendation
 
 ETS advises test takers to work rapidly without becoming careless, answer confident questions first, return to questions requiring more thought, leave the hardest questions until last, and answer every question. The schedule below is an independently derived implementation of that advice. **ETS does not prescribe these time limits, and no single split is proven optimal for every test taker.** Calibrate it with timed practice.
@@ -45,7 +47,7 @@ If practice shows that Pass 1 is skipping many questions you could solve reliabl
 - Write only enough scratch work to preserve the setup, critical transformations, and error checks.
 - Train exact symbolic and mental arithmetic because no calculator is available.
 
-# Practice protocol
+# Longer preparation protocol — outside today’s six-hour budget
 
 1. Take the official ETS practice test under a single 170-minute clock, with no calculator, no planned break, and the same kind of scratch surface you expect on test day.
 2. For every missed or slow item, record the cause: missing knowledge, slow recognition, poor setup, algebra or arithmetic error, misreading, or failure to leave a time sink.

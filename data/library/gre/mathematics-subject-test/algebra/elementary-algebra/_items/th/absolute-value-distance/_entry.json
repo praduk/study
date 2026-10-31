@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "51a7ab70f5fa44a0b5b6e95be1690d3b",
+  "title": "Absolute value as distance",
+  "rank": 103079215104,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3f00ad9b1b21468fb5aace5ad7bacb16",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3f00ad9b1b21468fb5aace5ad7bacb16.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

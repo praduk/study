@@ -1,0 +1,1 @@
+An integer being divisible by six is sufficient for it to be divisible by three. Which statement is equivalent: (i) not divisible by three implies not divisible by six; (ii) divisible by three implies divisible by six?

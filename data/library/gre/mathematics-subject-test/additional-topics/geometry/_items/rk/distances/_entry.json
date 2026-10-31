@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "96e6906d04914cd8acb7a7c455642742",
+  "title": "Coordinate Distances and Lines",
+  "rank": 103079215104,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c1503bf25e3143d9af50e4ff6b2359ba",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c1503bf25e3143d9af50e4ff6b2359ba.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

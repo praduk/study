@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "6f7553a20ca14b9e8e533cc3aa0efeb0",
+  "title": "First-order linear integrating factor",
+  "rank": 201863462912,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fd771799b06b418eac4bd2c150e6d1fa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fd771799b06b418eac4bd2c150e6d1fa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

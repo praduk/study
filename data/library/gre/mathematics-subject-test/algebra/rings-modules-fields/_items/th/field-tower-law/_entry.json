@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e6ce28c9797d4ecd8fd426c6a499764e",
+  "title": "Multiplication of finite extension degrees",
+  "rank": 180388626432,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c501477b19dc47b5b18643fa12bb7295",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c501477b19dc47b5b18643fa12bb7295.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

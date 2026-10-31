@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "86bd1f449ae145648f7149dd62a2a97a",
+  "title": "Distance between Parallel Lines",
+  "rank": 111669149696,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-geometry-parallel-line-distance",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "253842eb073f4b37bc6169ce89bee6a1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.253842eb073f4b37bc6169ce89bee6a1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "637aaa1f3c3841d68ffbd499d1b2b9e0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.637aaa1f3c3841d68ffbd499d1b2b9e0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

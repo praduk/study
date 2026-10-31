@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "27cc0f15c1b446afa900b29e256e158f",
+  "title": "An operator in a different basis",
+  "rank": 154618822656,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Basis vectors that already are eigenvectors",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3d81b9873bd44be2a75df0366e66c32e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3d81b9873bd44be2a75df0366e66c32e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c5e169b7b4f24cf7a5c9088f6210efe4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c5e169b7b4f24cf7a5c9088f6210efe4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

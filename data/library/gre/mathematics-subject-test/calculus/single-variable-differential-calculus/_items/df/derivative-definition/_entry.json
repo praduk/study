@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e482e69aa299429d9964ba3e3f4298ff",
+  "title": "Derivative and one-sided derivative tests",
+  "rank": 77309411328,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "018fa93f381142ed9fab2c9182ceead1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.018fa93f381142ed9fab2c9182ceead1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

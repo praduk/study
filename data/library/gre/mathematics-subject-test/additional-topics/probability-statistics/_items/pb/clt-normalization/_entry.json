@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "f26623a159b043ae981e2309323f0408",
+  "title": "Normalizing a Sum",
+  "rank": 223338299392,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-clt-normalization",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f339d5b257a04e8292709ddf6b09a48d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f339d5b257a04e8292709ddf6b09a48d.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "4dee97bee05e40cf9b7d4d26ebf28911",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.4dee97bee05e40cf9b7d4d26ebf28911.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

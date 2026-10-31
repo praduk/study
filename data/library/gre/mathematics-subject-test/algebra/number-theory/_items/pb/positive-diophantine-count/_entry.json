@@ -2,8 +2,8 @@
   "version": 1,
   "id": "818f5a936fb242cfa00a7a5fa249ff0e",
   "title": "Count Positive Diophantine Solutions",
-  "rank": 9218868437227405312,
-  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "rank": 42949672960,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T07:27:20.965188+00:00",
-  "updated_at": "2026-09-06T07:42:31.396263+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

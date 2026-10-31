@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "18d5a976d48f46b3ab722a27340477e7",
+  "title": "Central Limit Theorem",
+  "rank": 219043332096,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eafe70c8de59451bb5944893668c5242",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eafe70c8de59451bb5944893668c5242.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

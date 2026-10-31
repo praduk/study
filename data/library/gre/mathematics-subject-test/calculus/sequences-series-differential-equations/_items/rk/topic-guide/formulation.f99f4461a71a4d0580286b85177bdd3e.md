@@ -1,12 +1,28 @@
-## What to know
+For the six-hour session, use @gre:mathematics-subject-test:calculus:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- Sequence limits; geometric, telescoping, $p$-, alternating, and power series.
-- Comparison, limit comparison, ratio, root, and integral tests; absolute versus conditional convergence.
-- Radius and interval of convergence, endpoint checks, and standard Taylor expansions.
-- Separable and first-order linear ODEs; constant-coefficient second-order equations, initial conditions, and elementary qualitative behavior.
+Practice directly after each concept. The ordered entries below this map alternate focused recall targets with their practice problems. Use Review after enabling the desired items to attempt problems before revealing solutions; the ordinary reader may display solutions immediately.
 
-The Additional Topics branch treats the proof-oriented real-analysis side of convergence, including uniform convergence of function sequences. This branch emphasizes the faster computational tools normally learned in calculus.
+For an initial attempt, prioritize a correct setup. Then repeat with an adjustable time target and record which cue you missed: domain, formula, method choice, algebra, or endpoint/orientation check. A fast familiar answer alone does not establish transfer; use the different linked variants.
 
-## Fast recognition and traps
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:df:sequence-limit: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:monotone-sequence: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:df:series-term-test: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:geometric-series: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:telescoping-series: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:positive-series-comparison: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:ratio-test: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:root-test: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:integral-series-test: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:alternating-series-test: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:df:absolute-conditional-convergence: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:power-series-radius: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:th:termwise-power-series: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:separable-equations: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:first-order-linear: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:constant-coefficient-odes: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:forced-ode-resonance: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:linear-system-modes: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:autonomous-phase-line: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:sequences-series-differential-equations:rk:power-series-coefficient-pattern: followed by its practice problems.
 
-First compare a positive series with a familiar power of $n$. For a power series, find the radius and then test each endpoint separately. In a first-order linear ODE, recognize the integrating factor before guessing. Never infer convergence merely because terms approach zero.
+These formulas and worked solutions are internally checked mathematical derivations, not quotations or official ETS questions. Suggested times are adjustable practice goals, not validated performance thresholds.

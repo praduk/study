@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9ee90b4493514262a9e2fc3a71334bdc",
+  "title": "A logarithmic-series coefficient",
+  "rank": 300647710720,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Substitute the entire inner expression into the series.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "150bc25b611b42cd92f75a5138630036",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.150bc25b611b42cd92f75a5138630036.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3afa8f97a8e42fe9a76760b64dbf8e3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d3afa8f97a8e42fe9a76760b64dbf8e3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

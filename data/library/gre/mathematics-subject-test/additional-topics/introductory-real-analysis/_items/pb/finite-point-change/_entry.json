@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d9951c7f615d48d3b81afe936b856a09",
+  "title": "Changing One Integrand Value",
+  "rank": 171798691840,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-introductory-real-analysis-finite-point-change",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "de328b52de75492cb9d6e9f1a1aad49c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.de328b52de75492cb9d6e9f1a1aad49c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3de0ed39867241b9abae052021a9eac8",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.3de0ed39867241b9abae052021a9eac8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

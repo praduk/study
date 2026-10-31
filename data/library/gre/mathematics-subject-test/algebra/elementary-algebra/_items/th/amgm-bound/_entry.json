@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "893ec5c7cfee40cdba5dd03535767f70",
+  "title": "AM–GM and its equality condition",
+  "rank": 154618822656,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fb867973791a4b8e83a6454cc3ca6dbf",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fb867973791a4b8e83a6454cc3ca6dbf.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

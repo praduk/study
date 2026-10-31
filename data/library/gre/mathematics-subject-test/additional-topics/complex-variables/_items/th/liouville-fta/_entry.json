@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "8b897d1f43844dd9a67fd4c66c171d7b",
+  "title": "Liouville’s Theorem and Polynomial Roots",
+  "rank": 154618822656,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0c3443966b164a659430228e23e3f3f7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0c3443966b164a659430228e23e3f3f7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

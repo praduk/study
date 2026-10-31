@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5a5e493274ee4f17b7d28fb4d14cda3f",
+  "title": "Cauchy–Riemann Equations",
+  "rank": 51539607552,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fc848c6f8d6f4331abd10932a766dc88",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fc848c6f8d6f4331abd10932a766dc88.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

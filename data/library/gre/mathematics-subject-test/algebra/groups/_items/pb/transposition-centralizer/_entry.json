@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "019fcb3a4e4c4588ba3659304789444e",
+  "title": "A centralizer in a symmetric group",
+  "rank": 180388626432,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Conjugacy class size determines the centralizer index",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cb59488c41ea43879752be89454376d8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cb59488c41ea43879752be89454376d8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f9da7390f17e4866b5a0173cd5990ad3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f9da7390f17e4866b5a0173cd5990ad3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "7275bcdd381d4e1cac7f6859c460dd7c",
+  "title": "Polynomial evaluation, factors, and remainders",
+  "rank": 64424509440,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7d0671b0864a4ee1a0a095a329dca2e0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7d0671b0864a4ee1a0a095a329dca2e0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

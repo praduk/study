@@ -1,69 +1,22 @@
-## Ring hierarchy
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-For the usual commutative-with-unity conventions:
+Use the separate entries below for targeted recall. Recall the conditions as well as the formula; then attempt the problems placed immediately after that concept.
 
-$$
-\text{field}\Longrightarrow\text{integral domain}\Longrightarrow\text{commutative ring with }1.
-$$
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:ring-domain-field: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:ring-classification, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:finite-domain-map
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:residue-units: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:units-modulo-twelve, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:quotient-ring-unit-count
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:residue-zero-divisors: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:zero-divisor-modulo-fifteen, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:zero-divisor-count
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:ideals-quotients: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:quotient-of-z-thirty, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:ideal-versus-subring
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:prime-ideal-test: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:prime-not-maximal, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:integer-ideal-classification
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:maximal-ideal-test: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:maximal-ideal-polynomial-ring, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:evaluation-ideal
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:ring-first-isomorphism: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:integer-quotient-map, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:two-generator-quotient
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:polynomial-euclidean-algorithm: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:polynomial-gcd-factor, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:polynomial-gcd-remainder
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:low-degree-irreducibility: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:irreducible-quadratic-over-f2, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:quartic-no-real-roots
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:polynomial-quotient-field: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:polynomial-quotient-inverse, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:polynomial-quotient-size
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:module-submodule: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:module-basis-obstruction, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:module-quotient-order
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:cyclic-module-annihilator: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:annihilator-six-mod-fifteen, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:cyclic-submodule-annihilator
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:pid-module-structure: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:abelian-direct-product, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:free-and-torsion
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:field-tower-law: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:tower-law-degree, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:impossible-intermediate-degree
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:minimal-polynomial-degree: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:quadratic-extension-degree, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:cube-root-extension-degree
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:finite-field-orders: @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:possible-field-cardinality, @gre:mathematics-subject-test:algebra:rings-modules-fields:pb:finite-field-equation-count
 
-Every finite integral domain is a field. The converses fail. In $\mathbb Z/n\mathbb Z$, $[a]$ is a unit iff $\gcd(a,n)=1$; it is a nonzero zero divisor iff $1<\gcd(a,n)<n$.
-
-## Ideals and quotients
-
-Kernels of ring homomorphisms are ideals, and
-
-$$
-R/\ker\phi\cong\operatorname{im}\phi.
-$$
-
-For a commutative ring with $1$ and a proper ideal $I$,
-
-$$
-I\text{ prime}\iff R/I\text{ is an integral domain},
-$$
-
-$$
-I\text{ maximal}\iff R/I\text{ is a field}.
-$$
-
-Every maximal ideal is prime; the converse need not hold.
-
-In $\mathbb Z$, every ideal is $n\mathbb Z$. In $F[x]$, ideals are principal and Euclidean division gives $f=qg+r$ with $\deg r<\deg g$.
-
-## Polynomial recognition
-
-The remainder on division by $x-a$ is $f(a)$, and $f(a)=0$ iff $x-a$ divides $f$. Over a field, a polynomial of degree $2$ or $3$ is reducible iff it has a root. For higher degree, no-root does not imply irreducible.
-
-If $p(x)$ is irreducible over $F$, then $F[x]/(p)$ is a field with $|F|^{\deg p}$ elements when $F$ is finite.
-
-## Modules
-
-An $R$-module generalizes a vector space by allowing scalars from a ring. A submodule is an additive subgroup closed under scalar multiplication. For $m\in M$,
-
-$$
-\operatorname{Ann}_R(m)=\{r\in R:rm=0\}
-$$
-
-is an ideal. A cyclic module has form $Rm$ and is isomorphic to $R/\operatorname{Ann}(m)$.
-
-Over a PID, finitely generated modules split into a free part and cyclic torsion parts; for GRE-speed questions, recognize $\mathbb Z$-modules as abelian groups and compute orders or annihilators directly.
-
-## Fields and extensions
-
-For $F\subseteq K\subseteq L$ with finite degrees,
-
-$$
-[L:F]=[L:K][K:F].
-$$
-
-If $m_\alpha$ is the minimal polynomial of $\alpha$ over $F$, then
-
-$$
-[F(\alpha):F]=\deg m_\alpha.
-$$
-
-A finite field has order $p^n$, and $\mathbb F_q^\times$ is cyclic of order $q-1$.
-
-## Traps
-
-State whether rings require unity and commutativity. A quotient $R/I$ needs $I$ an ideal, not merely a subring. Irreducibility depends on the base field.
+The suggested problem times are adjustable practice targets, not validated mastery thresholds. If an answer is wrong or slow, identify whether the issue was recall, choosing the method, algebra, or a missing condition. Revisit with a different problem before treating the pattern as transferable.

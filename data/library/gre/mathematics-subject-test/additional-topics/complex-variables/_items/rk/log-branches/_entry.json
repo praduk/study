@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0e9432715a7341768179708b716930be",
+  "title": "Branches of the Complex Logarithm",
+  "rank": 38654705664,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 3–5 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bf063e8fba21443897ca68be0223e87f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bf063e8fba21443897ca68be0223e87f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

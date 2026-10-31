@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "973ddbbc86d64b83ac168c2531b3bf44",
+  "title": "Convergence with square-root terms",
+  "rank": 154618822656,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Test the alternating series and its absolute values separately.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e0e103fc1f84635b3e77c0bc2d5e5ad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e0e103fc1f84635b3e77c0bc2d5e5ad.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "51b66440f952474cb25e326df065b0be",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.51b66440f952474cb25e326df065b0be.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

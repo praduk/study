@@ -2,8 +2,8 @@
   "version": 1,
   "id": "962708eaa64444a9bf003800771d2aa5",
   "title": "Find a Kernel in Cyclic Groups",
-  "rank": 8070450532247928832,
-  "header": "GRE-style group homomorphism practice. Target: 75 seconds.",
+  "rank": 103079215104,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T04:36:58.926362+00:00",
-  "updated_at": "2026-09-06T04:36:59.498333+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

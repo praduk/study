@@ -1,0 +1,1 @@
+Box A contains three gold and one silver coin; box B contains one gold and three silver coins. A box is chosen uniformly and one coin is drawn uniformly from it. Given a gold coin, what is the probability that box A was chosen?

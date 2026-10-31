@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "dff5ae128f384067970c855ab9eaf4e7",
+  "title": "Inverse function and its domain",
+  "rank": 25769803776,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b32f0e06da7476ebdf1ccb880633084",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b32f0e06da7476ebdf1ccb880633084.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

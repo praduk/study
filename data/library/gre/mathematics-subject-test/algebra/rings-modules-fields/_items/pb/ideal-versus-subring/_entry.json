@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "7de588cdf4ea466eb1f53b6d5fb35701",
+  "title": "A subring of the rational numbers",
+  "rank": 60129542144,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Test absorption by ambient scalars",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c3fafd3ac9d249fa848197d744627555",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c3fafd3ac9d249fa848197d744627555.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "772e659e1f544401b2c9e8c4686c6442",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.772e659e1f544401b2c9e8c4686c6442.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

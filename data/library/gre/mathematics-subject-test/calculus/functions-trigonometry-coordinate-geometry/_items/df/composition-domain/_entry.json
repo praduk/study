@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2cb264abdf234474a0aa11af6e4e34c8",
+  "title": "Domain of a composition",
+  "rank": 12884901888,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c77655e800244e7fb5f553f033d6512b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c77655e800244e7fb5f553f033d6512b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2bf7d04ba7e047d88a9b795d9f7757eb",
+  "title": "A Sum on the Unit Circle",
+  "rank": 21474836480,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-complex-variables-unit-circle-sum",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fcc5be349083451897ca06d8559b0a12",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fcc5be349083451897ca06d8559b0a12.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "dde50b907e234fa49aa7f500fe8bd612",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.dde50b907e234fa49aa7f500fe8bd612.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

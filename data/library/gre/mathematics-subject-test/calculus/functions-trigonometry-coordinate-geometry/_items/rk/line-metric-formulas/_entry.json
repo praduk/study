@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "10280f7bc2da44629f65ad6b589c3c79",
+  "title": "Slope and distance in the plane",
+  "rank": 180388626432,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "06f88182dcd94e56b14acf5022b16801",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.06f88182dcd94e56b14acf5022b16801.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

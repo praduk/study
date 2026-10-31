@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "bb4ac9362f7d4204a4b778d212e4abde",
+  "title": "Repeated values and derivatives",
+  "rank": 201863462912,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Apply Rolle repeatedly on disjoint intervals.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "555b37d32e8447eb9ae01d70e228296c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.555b37d32e8447eb9ae01d70e228296c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0c2fa7fec5804eab98030204d1ebb890",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0c2fa7fec5804eab98030204d1ebb890.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

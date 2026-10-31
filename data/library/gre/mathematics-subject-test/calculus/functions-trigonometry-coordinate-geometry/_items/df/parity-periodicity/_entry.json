@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "afa20bd447b34a9db62b20836e14b330",
+  "title": "Parity and periodicity",
+  "rank": 64424509440,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8767fea769a44ec1bf2c422c60547c11",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8767fea769a44ec1bf2c422c60547c11.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

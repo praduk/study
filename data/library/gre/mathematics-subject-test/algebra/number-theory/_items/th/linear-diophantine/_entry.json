@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "de4c747ae3d541ed80d40cd47f048c27",
+  "title": "Linear Diophantine equations",
+  "rank": 38654705664,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–4 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e44c0752c69547329d6d111ff5ee880e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e44c0752c69547329d6d111ff5ee880e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

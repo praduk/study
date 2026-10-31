@@ -1,41 +1,30 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-For equally likely finite outcomes, probability is favorable outcomes divided by total outcomes. In general,
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-$$
-P(A\cup B)=P(A)+P(B)-P(A\cap B),\qquad
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}.
-$$
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-Events are independent when $P(A\cap B)=P(A)P(B)$, equivalently $P(A\mid B)=P(A)$ when defined. Bayes' rule reverses conditioning by combining conditional probabilities with prior probabilities. Sampling without replacement usually creates dependence; a complement often simplifies “at least one” events.
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-A discrete random variable has a probability mass function; a continuous one has a density whose integral gives probability. A cumulative distribution function is always nondecreasing and right-continuous. Linearity of expectation does not require independence:
-
-$$
-E[aX+bY+c]=aE[X]+bE[Y]+c.
-$$
-
-Variance satisfies $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$. For two variables,
-
-$$
-\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y),
-$$
-
-so variances add when covariance is zero, in particular under independence. Know the Bernoulli, binomial, geometric, Poisson, uniform, exponential, and normal families, including their means and variances.
-
-In statistics, distinguish a population parameter from a sample statistic. The sample mean is unbiased for the population mean under independent identically distributed sampling. Its variance is $\sigma^2/n$. The law of large numbers concerns convergence of averages; the central limit theorem gives an approximate normalized distribution. Confidence level is a repeated-procedure property, not the posterior probability that a fixed parameter lies in one realized interval. Correlation measures linear association and does not establish causation.
-
-## Recognition cues
-
-- “Given that” calls for conditional probability and a reduced sample space.
-- For expectations of sums, use linearity before finding a full distribution.
-- For variances, check covariance or independence before adding.
-- A binomial count requires a fixed number of independent trials with common success probability.
-
-## Edge cases and traps
-
-- Mutually exclusive positive-probability events are not independent.
-- A density value can exceed $1$; its integral over the domain must equal $1$.
-- In general, $E[g(X)]\ne g(E[X])$.
-- Pairwise independence need not imply mutual independence.
-- A small $p$-value is not the probability that the null hypothesis is true.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:probability-rules — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:at-least-one-six, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:overlap-events.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:df:conditional-probability — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:conditional-urn-sampling, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:two-dice-given.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:bayes — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:bayes-medical-test, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:two-boxes-bayes.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:df:independence — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:disjoint-events, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:pairwise-not-mutual.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:df:distribution-functions — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:continuous-density-two-x, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:normalize-density.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:expectation — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:indicator-fixed-points, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:nonlinear-expectation.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:variance — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:affine-random-variable-moments, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:variance-from-moments.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:covariance — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:linear-combination-moments, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:dependent-variance.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:bernoulli-binomial — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:binomial-four-fair-exactly-two, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:binomial-at-least-one.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:geometric — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:geometric-tail, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:geometric-memory.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:poisson — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:poisson-ratio, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:poisson-sum.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:uniform-distribution — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:uniform-interval, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:uniform-transform.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:exponential — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:exponential-tail, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:exponential-memory.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:normal-standardization — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:normal-threshold, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:normal-symmetry.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:sample-mean — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:mean-standard-error, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:sample-size-fourfold.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:large-numbers — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:chebyshev-average, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:large-numbers-meaning.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:th:central-limit — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:clt-normalization, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:clt-probability.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:sample-variance — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:sample-variance-data, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:population-variance-data.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:mean-median — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:outlier-mean-median, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:even-sample-median.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:df:correlation — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:correlation-sign, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:uncorrelated-dependent.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:confidence-interval — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:confidence-meaning, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:confidence-width.
+- @gre:mathematics-subject-test:additional-topics:probability-statistics:rk:p-value — practice @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:p-value-meaning, @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:p-value-rejection.

@@ -1,16 +1,22 @@
-## Rings and fields
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- In $\mathbb Z/n\mathbb Z$, $[a]$ is a unit exactly when $\gcd(a,n)=1$. A nonzero class with nontrivial gcd is a zero divisor when $n$ is composite.
-- Ideals are kernels of ring homomorphisms. The quotient $R/I$ is a field exactly when $I$ is maximal, and is an integral domain exactly when $I$ is prime, for commutative rings with identity.
-- Over a field $F$, $F[x]/(p)$ is a field exactly when $p$ is irreducible. A quadratic or cubic over $F$ is irreducible exactly when it has no root in $F$.
-- In a polynomial ring over a field, division, gcd calculations, and the Euclidean algorithm work much as they do for integers.
+Each concept below is a separate recall entry. Its assigned practice problems follow it in authored order. The concept body links additional applications; the solution identifies the recognition cue, a short justified route, and a trap.
 
-## Modules
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:ring-domain-field
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:residue-units
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:residue-zero-divisors
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:ideals-quotients
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:prime-ideal-test
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:maximal-ideal-test
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:ring-first-isomorphism
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:polynomial-euclidean-algorithm
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:low-degree-irreducibility
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:polynomial-quotient-field
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:df:module-submodule
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:cyclic-module-annihilator
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:pid-module-structure
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:field-tower-law
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:minimal-polynomial-degree
+- @gre:mathematics-subject-test:algebra:rings-modules-fields:th:finite-field-orders
 
-- An $R$-module is an abelian group with compatible scalar multiplication by $R$. Vector spaces are precisely modules over a field, but modules over general rings need not have bases.
-- A submodule must contain zero and be closed under addition and scalar multiplication. For an element $m$, its cyclic submodule is $Rm$, and its annihilator is the ideal $\operatorname{Ann}_R(m)=\{r\in R:rm=0\}$.
-- Quotient modules use submodules just as quotient groups use normal subgroups. Homomorphism kernel/image and isomorphism theorems carry over.
-
-## Recognition cues and traps
-
-In finite quotient problems, reduce coefficients immediately and exploit gcds. In $F[x]/(p)$, replace powers using the defining relation before solving for an inverse. Do not call a quotient a field merely because it is finite, and do not import vector-space basis claims into arbitrary modules.
+For mixed practice, choose problems from several concepts without rereading the formulas first. Solve through Review when you want the solution hidden; the ordinary reader can display the solution immediately.

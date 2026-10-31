@@ -1,57 +1,21 @@
-## Error and conditioning
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-Absolute error is $|\widehat x-x|$; relative error is $|\widehat x-x|/|x|$ when $x\ne0$. Forward error measures the answer error; backward error asks how much the input must change to make the computed answer exact. A small residual need not imply small forward error for an ill-conditioned problem.
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-Cancellation from subtracting nearly equal numbers can destroy significant digits. Condition number measures sensitivity of the mathematical problem; stability measures sensitivity of the algorithm.
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-## Root finding
-
-Bisection requires continuity and a sign change. After $n$ bisections the bracket length is
-
-$$
-\frac{b-a}{2^n}.
-$$
-
-Newton's method:
-
-$$
-x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.
-$$
-
-Near a simple root it is typically quadratically convergent, but it can diverge or encounter $f'=0$. Fixed-point iteration $x_{n+1}=g(x_n)$ is locally attractive when $|g'(r)|<1$.
-
-## Interpolation and approximation
-
-The unique polynomial of degree at most $n$ through $n+1$ distinct nodes can be written in Lagrange form:
-
-$$
-p(x)=\sum_{j=0}^ny_j\prod_{k\ne j}\frac{x-x_k}{x_j-x_k}.
-$$
-
-Interpolation passes through data; least squares minimizes residual size and generally does not interpolate every point.
-
-Finite differences:
-
-$$
-f'(x)\approx\frac{f(x+h)-f(x)}h\quad\text{has truncation error }O(h),
-$$
-
-$$
-f'(x)\approx\frac{f(x+h)-f(x-h)}{2h}\quad\text{has truncation error }O(h^2).
-$$
-
-## Quadrature
-
-$$
-T=\frac{b-a}{2}[f(a)+f(b)],
-$$
-
-$$
-S=\frac{b-a}{6}\left[f(a)+4f\left(\frac{a+b}{2}\right)+f(b)\right].
-$$
-
-The one-panel trapezoid rule is exact for degree $1$; Simpson's is exact through degree $3$. Composite Simpson requires an even number of subintervals.
-
-## Linear systems
-
-Gaussian elimination with pivoting is the default direct method. Factoring one matrix and reusing the factorization is efficient for repeated right-hand sides. Never form an explicit inverse merely to solve $Ax=b$ unless the problem specifically asks for it.
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:df:absolute-relative-error
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:df:forward-backward-error
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:df:conditioning-stability
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:cancellation
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:th:bisection
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:newton
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:secant
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:th:fixed-point
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:th:interpolation
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:least-squares
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:finite-differences
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:trapezoid
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:simpson
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:linear-solves
+- @gre:mathematics-subject-test:additional-topics:numerical-analysis:rk:euler-step

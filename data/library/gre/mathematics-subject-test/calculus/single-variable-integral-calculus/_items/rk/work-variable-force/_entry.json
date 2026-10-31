@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "00ad447623d046a99e3714d90167c40d",
+  "title": "Work from a variable force",
+  "rank": 253403070464,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3e3d574247a44cc1b579f5c0000ca3f9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3e3d574247a44cc1b579f5c0000ca3f9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

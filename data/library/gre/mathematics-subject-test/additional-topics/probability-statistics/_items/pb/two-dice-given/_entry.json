@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b1bd38b4a39543b79c01a46103866419",
+  "title": "A Conditional Dice Event",
+  "rank": 34359738368,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-two-dice-given",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c876fc349454f7b9ca29fb2cc3f274b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c876fc349454f7b9ca29fb2cc3f274b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ca87a95581ab44e1a11e7636a28e3f43",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ca87a95581ab44e1a11e7636a28e3f43.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2bc6bd31b0aa4b658145cd3a3c26fca3",
+  "title": "Degree Sums and Parity",
+  "rank": 12884901888,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7b4057ffee28441f88c369fed8d5e47c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7b4057ffee28441f88c369fed8d5e47c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3b1e4f59fca442c5bc8f195ff1d475d6",
+  "title": "Runtime Recurrences by Levels",
+  "rank": 154618822656,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 3–5 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9b84311961d546a7ae40e79d169a8a81",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9b84311961d546a7ae40e79d169a8a81.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

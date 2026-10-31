@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3ebff04fb14e445c802595725b196633",
+  "title": "Ideals and quotient rings",
+  "rank": 51539607552,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–4 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ab89c7d8bd2a4461b8952cfa45d8ef3f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ab89c7d8bd2a4461b8952cfa45d8ef3f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

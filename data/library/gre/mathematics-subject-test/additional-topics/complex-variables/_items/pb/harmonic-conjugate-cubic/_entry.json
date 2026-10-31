@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "3988af45d87d4481af69b66867b33c19",
+  "title": "An Imaginary Part for a Cubic Real Part",
+  "rank": 73014444032,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-complex-variables-harmonic-conjugate-cubic",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8e5bf15197bc47e099b4d13bdeb58247",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8e5bf15197bc47e099b4d13bdeb58247.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a1a4c8995b3c4dd8bb84a2f4360b635d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a1a4c8995b3c4dd8bb84a2f4360b635d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

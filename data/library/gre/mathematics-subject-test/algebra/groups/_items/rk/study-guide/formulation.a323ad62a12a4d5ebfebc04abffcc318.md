@@ -1,12 +1,19 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- A group has an associative operation, identity, and inverses. For a nonempty subset $H\subseteq G$, the one-step subgroup test $ab^{-1}\in H$ for all $a,b\in H$ is often fastest.
-- In a cyclic group of order $n$, there is one subgroup for each divisor $d$ of $n$, and exactly $\varphi(d)$ elements of order $d$. The order of $g^k$ is $n/\gcd(n,k)$ when $g$ has order $n$.
-- Lagrange gives $|G|=[G:H]|H|$ for finite $G$. Element orders and subgroup orders divide $|G|$, but the converses need not hold without extra hypotheses.
-- Left cosets partition $G$. A subgroup is normal exactly when left and right cosets agree; kernels are always normal, and quotient groups require normality.
-- For a homomorphism $\phi$, use $G/\ker\phi\cong\operatorname{im}\phi$ and, in the finite case, $|G|=|\ker\phi|\,|\operatorname{im}\phi|$.
-- In permutation groups, compose in the stated order, decompose into disjoint cycles, and use the least common multiple of cycle lengths for the order.
+Each concept below is a separate recall entry. Its assigned practice problems follow it in authored order. The concept body links additional applications; the solution identifies the recognition cue, a short justified route, and a trap.
 
-## Recognition cues and traps
+- @gre:mathematics-subject-test:algebra:groups:df:group-axioms
+- @gre:mathematics-subject-test:algebra:groups:th:subgroup-tests
+- @gre:mathematics-subject-test:algebra:groups:th:cyclic-element-order
+- @gre:mathematics-subject-test:algebra:groups:th:cyclic-subgroups
+- @gre:mathematics-subject-test:algebra:groups:th:lagrange-cosets
+- @gre:mathematics-subject-test:algebra:groups:th:normal-subgroups
+- @gre:mathematics-subject-test:algebra:groups:th:group-first-isomorphism
+- @gre:mathematics-subject-test:algebra:groups:th:cyclic-homomorphisms
+- @gre:mathematics-subject-test:algebra:groups:th:permutation-order
+- @gre:mathematics-subject-test:algebra:groups:th:permutation-sign
+- @gre:mathematics-subject-test:algebra:groups:th:orbit-stabilizer
+- @gre:mathematics-subject-test:algebra:groups:th:burnside-count
+- @gre:mathematics-subject-test:algebra:groups:th:class-equation
 
-List a few powers before invoking heavy theory in a small cyclic or permutation group. For maps between quotient groups, check well-definedness before computing a kernel. Do not assume every subgroup is normal or cancel elements across a noncommutative product as though order did not matter.
+For mixed practice, choose problems from several concepts without rereading the formulas first. Solve through Review when you want the solution hidden; the ordinary reader can display the solution immediately.

@@ -1,10 +1,12 @@
 For
 
-$$A=\begin{pmatrix}
+$$
+A=\begin{pmatrix}
 2&1&0\\
 0&2&0\\
 1&0&-1
-\end{pmatrix},$$
+\end{pmatrix},
+$$
 
 use the convention $\chi_A(\lambda)=\det(\lambda I-A)$. Which statement is true?
 

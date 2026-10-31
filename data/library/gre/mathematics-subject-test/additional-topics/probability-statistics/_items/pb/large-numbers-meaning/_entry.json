@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d2acee2e621a4e68a2e920742f21fd58",
+  "title": "What Converges under Averaging?",
+  "rank": 214748364800,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-large-numbers-meaning",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cfa68724fac547d28f80245d50f47824",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cfa68724fac547d28f80245d50f47824.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f25c1504a7104e5da27d544331f0039a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f25c1504a7104e5da27d544331f0039a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

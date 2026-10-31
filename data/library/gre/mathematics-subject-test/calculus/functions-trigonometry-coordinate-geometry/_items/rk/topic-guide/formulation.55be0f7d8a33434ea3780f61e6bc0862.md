@@ -1,14 +1,29 @@
-## What to know
+For the six-hour session, use @gre:mathematics-subject-test:calculus:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- Domains and ranges of rational, radical, exponential, logarithmic, trigonometric, and inverse trigonometric functions.
-- Composition and inverses; graph translations, reflections, scaling, parity, periodicity, zeros, and asymptotes.
-- Core identities such as $\sin^2 x+\cos^2 x=1$, angle addition, double-angle formulas, and exact unit-circle values.
-- Lines, circles, conics, parametric curves, polar coordinates, and distance or slope calculations.
+Practice directly after each concept. The ordered entries below this map alternate focused recall targets with their practice problems. Use Review after enabling the desired items to attempt problems before revealing solutions; the ordinary reader may display solutions immediately.
 
-## Fast recognition
+For an initial attempt, prioritize a correct setup. Then repeat with an adjustable time target and record which cue you missed: domain, formula, method choice, algebra, or endpoint/orientation check. A fast familiar answer alone does not establish transfer; use the different linked variants.
 
-Factor before solving a trigonometric equation, and then check for overlapping solution families. Complete the square before doing anything elaborate with a circle. For a composition, impose the inner function's domain and the outer function's input restrictions separately. On parametric curves, compute $\frac{dy}{dx}=(dy/dt)/(dx/dt)$ only where $dx/dt\ne0$.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:df:composition-domain: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:df:inverse-function-range: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:df:principal-inverse-trig: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:graph-transformations: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:df:parity-periodicity: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:trig-quotient-pythagorean: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:unit-circle-values: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:cofunctions-supplements: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:angle-addition: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:double-angle-power-reduction: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:half-angle-sign: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:product-to-sum: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:sum-to-product: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:line-metric-formulas: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:circle-standard-form: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:ellipse-standard-form: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:hyperbola-standard-form: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:polar-conversion: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:polar-sector-area: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:parametric-derivatives: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:functions-trigonometry-coordinate-geometry:rk:equation-substitution: followed by its practice problems.
 
-## Common traps
-
-Squaring can create extraneous roots. Inverse trigonometric functions return principal values. A denominator restriction remains even if an algebraic expression later cancels. A displayed geometric figure need not justify an unstated symmetry.
+These formulas and worked solutions are internally checked mathematical derivations, not quotations or official ETS questions. Suggested times are adjustable practice goals, not validated performance thresholds.

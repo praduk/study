@@ -1,4 +1,4 @@
-If $S=\sum_{n=1}^{\infty}(-1)^{n+1}/n$ and $S_4$ is its fourth partial sum, which bound is guaranteed?
+If $S=\sum_{n=1}^{\infty}(-1)^{n+1}/n$ and $S_4$ is its fourth partial sum, which is the smallest of the listed error bounds guaranteed by the alternating-series remainder theorem?
 
 **(A)** $|S-S_4|\le\dfrac15$
 

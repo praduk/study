@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a6476e83ed3c4141b3c04042e307287d",
+  "title": "Product-to-sum identities",
+  "rank": 154618822656,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1a77793316d047708e4872caf0af5b19",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1a77793316d047708e4872caf0af5b19.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

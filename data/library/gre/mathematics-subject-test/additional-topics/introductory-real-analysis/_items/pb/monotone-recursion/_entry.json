@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "114883c0b958481fb159dd7472c1cb98",
+  "title": "A Bounded Recursive Sequence",
+  "rank": 42949672960,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-introductory-real-analysis-monotone-recursion",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "33eb8de1567c4c51acffd6ec0e0a7362",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.33eb8de1567c4c51acffd6ec0e0a7362.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "009fb108ebf74f80b71fcc1d95a0dbe3",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.009fb108ebf74f80b71fcc1d95a0dbe3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

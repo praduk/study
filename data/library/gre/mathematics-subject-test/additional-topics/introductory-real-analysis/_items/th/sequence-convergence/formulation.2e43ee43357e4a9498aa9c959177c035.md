@@ -1,0 +1,3 @@
+A sequence $a_n$ in $\R^d$ converges to $L$ iff for every $\varepsilon>0$ there is $N$ such that $n\ge N$ implies $\|a_n-L\|<\varepsilon$. It is Cauchy iff for every $\varepsilon>0$, sufficiently large $m,n$ satisfy $\|a_m-a_n\|<\varepsilon$. In $\R^d$, Cauchy and convergent are equivalent. Convergent sequences are bounded and have unique limits; completeness is essential to the converse Cauchy implication.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:cauchy-alternating-over-n; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:rational-cauchy-limit.

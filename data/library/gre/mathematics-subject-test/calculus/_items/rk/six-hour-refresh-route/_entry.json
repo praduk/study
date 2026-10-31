@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0e6c2fe3a5e84e2eb04c613cb3ed3a60",
+  "title": "Six-hour route: Calculus — 120 minutes",
+  "rank": 4611686018427387904,
+  "header": "Six-hour priority A — session navigation. Skim each block as you reach it; its reading time is included in the 120-minute practice budget.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f1465a2563b141d3b5a9169557fe3555",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f1465a2563b141d3b5a9169557fe3555.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T08:06:02.902562+00:00",
+  "updated_at": "2026-10-31T08:06:02.902569+00:00"
+}

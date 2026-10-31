@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a69239e74f8c44b9b9aa4b4563ded9a7",
+  "title": "A Claim about Integer Squares",
+  "rank": 21474836480,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-logic-set-theory-divisibility-converse",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a42e3c0dfb12451ba6da3ea94341da9c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a42e3c0dfb12451ba6da3ea94341da9c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff06e2a1112d43609267bb55c500f20e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ff06e2a1112d43609267bb55c500f20e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

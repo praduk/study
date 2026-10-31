@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "ba26ace8acc4483087dddc7762753cd7",
+  "title": "Sum of the first cubes",
+  "rank": 206158430208,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "332e647e91284bbb8830b5b4972f2378",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.332e647e91284bbb8830b5b4972f2378.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

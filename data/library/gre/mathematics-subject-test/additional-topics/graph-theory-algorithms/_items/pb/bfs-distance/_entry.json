@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6955bc446b77466ea8040dabfa61d5f8",
+  "title": "Distance in an Unweighted Graph",
+  "rank": 98784247808,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-graph-theory-algorithms-bfs-distance",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f4e2e769665247f2a4fff1e270e2889a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f4e2e769665247f2a4fff1e270e2889a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f50de11828bc412a9e990c5767582c5d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f50de11828bc412a9e990c5767582c5d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

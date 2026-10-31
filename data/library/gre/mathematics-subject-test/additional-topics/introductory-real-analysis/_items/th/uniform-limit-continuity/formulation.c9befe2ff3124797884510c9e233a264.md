@@ -1,0 +1,3 @@
+If continuous functions $f_n:E\to\R$ converge uniformly to $f$ on a metric space $E$, then $f$ is continuous. Given a tolerance, choose one $f_N$ uniformly close to $f$, then use continuity of that fixed $f_N$ and the triangle inequality. A discontinuous pointwise limit therefore rules out uniform convergence.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:classify-function-sequence; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-sine-limit; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:uniform-limit-epsilon.

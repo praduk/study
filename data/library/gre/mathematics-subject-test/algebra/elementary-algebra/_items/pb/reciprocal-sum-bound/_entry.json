@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8274b7b2b44f4c2996c7b9e9e32e494f",
+  "title": "A reciprocal sum",
+  "rank": 176093659136,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "A reciprocal sum paired with its original sum",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f635c92e63a483bac8abbee2b5f82e4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f635c92e63a483bac8abbee2b5f82e4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ae3235888d61493c939ebc895460584d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ae3235888d61493c939ebc895460584d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "32ae80df08144d15b21001bbf2a539a7",
+  "title": "Telescoping through partial fractions",
+  "rank": 64424509440,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c5c26b48bf67434d8f8c0e070686b06c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c5c26b48bf67434d8f8c0e070686b06c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

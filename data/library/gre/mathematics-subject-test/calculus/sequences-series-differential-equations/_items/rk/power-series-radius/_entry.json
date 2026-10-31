@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e90571d22b444b499d54c405083e2372",
+  "title": "Power-series radius and endpoints",
+  "rank": 158913789952,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e35f287b45fd4522a8cf720b01bea569",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e35f287b45fd4522a8cf720b01bea569.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

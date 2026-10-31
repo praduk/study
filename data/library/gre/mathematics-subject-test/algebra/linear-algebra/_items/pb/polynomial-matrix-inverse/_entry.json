@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "89dce926edbb474dba7277fe45275342",
+  "title": "An inverse from an identity",
+  "rank": 128849018880,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Rearrange a polynomial identity into a product equal to identity",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "109b8c71919c4f629d8fa8231122206c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.109b8c71919c4f629d8fa8231122206c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a528facd419648f1b26f209f79b0ba58",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a528facd419648f1b26f209f79b0ba58.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

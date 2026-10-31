@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "980c012e1cda4cd49cdb6798248983d7",
+  "title": "Use invariants under a change of representation",
+  "rank": 47244640256,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall what to check before computing transformed coordinates or matrix entries.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f0a489b17c314aa9be3188f7e80128be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f0a489b17c314aa9be3188f7e80128be.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

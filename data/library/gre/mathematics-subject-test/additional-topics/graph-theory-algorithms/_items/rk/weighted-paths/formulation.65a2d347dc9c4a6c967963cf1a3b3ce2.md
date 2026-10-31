@@ -1,0 +1,3 @@
+Dijkstra's shortest-path algorithm is guaranteed for nonnegative edge weights. Bellman–Ford permits negative edges and detects negative cycles reachable from the source; vertices reachable from such cycles may have no finite shortest-path distance. Prim and Kruskal minimize total spanning-tree weight in connected undirected weighted graphs, a different objective from source-to-vertex distances.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:weighted-triangle; @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:negative-edge-choice.

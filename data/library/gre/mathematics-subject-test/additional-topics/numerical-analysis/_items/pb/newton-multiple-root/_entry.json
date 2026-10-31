@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "feb7db4523ba40e997213182ffec087d",
+  "title": "Iteration at a Double Root",
+  "rank": 85899345920,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 60–120 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-numerical-analysis-newton-multiple-root",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dab7d762daa642df96dbc8a5b6b70c53",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dab7d762daa642df96dbc8a5b6b70c53.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0cfb3c82c67b417099c966392c7293d0",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.0cfb3c82c67b417099c966392c7293d0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

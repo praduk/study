@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d75a01ef3219442da4ac5f6db39be391",
+  "title": "A rational-function coefficient",
+  "rank": 287762808832,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Convert the denominator to a geometric series and shift exponents.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4f5ec90bc00047f89208fea02b5687b4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4f5ec90bc00047f89208fea02b5687b4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "efc98c829405438882eb78710e8b1f7e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.efc98c829405438882eb78710e8b1f7e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

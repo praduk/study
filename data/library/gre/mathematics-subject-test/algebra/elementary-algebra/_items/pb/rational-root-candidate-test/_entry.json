@@ -2,8 +2,8 @@
   "version": 1,
   "id": "2ac8d61e7e1c405d84bbdfbe36d765ab",
   "title": "Test a Rational Root Efficiently",
-  "rank": 8935141660703064064,
-  "header": "GRE-style original practice. Suggested target: 60 seconds. Choose one answer.",
+  "rank": 55834574848,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T07:26:22.124277+00:00",
-  "updated_at": "2026-09-06T07:41:22.349300+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d45f2881cc5b43b8b303d692dc952b2a",
+  "title": "Contour Integral ML Bound",
+  "rank": 103079215104,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b43898749f2f4a43826fdc36a3b251f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b43898749f2f4a43826fdc36a3b251f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

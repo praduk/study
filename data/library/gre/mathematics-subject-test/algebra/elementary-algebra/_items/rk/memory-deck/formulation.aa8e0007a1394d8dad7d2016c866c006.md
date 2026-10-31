@@ -1,97 +1,26 @@
-## Algebraic anchors
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-$$
-(a\pm b)^2=a^2\pm2ab+b^2,\qquad
-(a+b)(a-b)=a^2-b^2,
-$$
+Use the separate entries below for targeted recall. Recall the conditions as well as the formula; then attempt the problems placed immediately after that concept.
 
-$$
-a^3-b^3=(a-b)(a^2+ab+b^2),
-$$
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:factor-identities: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:power-quotient, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:factored-cubic-value
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:quadratic-roots: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:quadratic-parameter, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:quadratic-root-gap
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:vieta-relations: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:vieta-sum-of-squares, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:roots-without-solving-cubic
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:rational-root-test: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:rational-root-candidate-test, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:integer-root-count
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:factor-remainder-test: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:remainder-theorem-at-two, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:quadratic-remainder
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:positive-base-powers: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:exponential-equation, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:exponential-inequality
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:logarithm-laws: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:log-base-two-equation, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:two-log-equation
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:absolute-value-distance: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:absolute-linear-inequality, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:distance-sum-minimizers
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:triangle-bounds: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:vector-length-range, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:distance-equality-set
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:rational-sign-chart: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:rational-inequality-integer-count, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:canceled-rational-inequality
+- @gre:mathematics-subject-test:algebra:elementary-algebra:rk:equation-domain-checks: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:radical-equation, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:division-lost-root
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:amgm-bound: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:am-gm-rational-minimum, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:fixed-sum-product
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:cauchy-schwarz-bound: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:linear-on-circle, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:reciprocal-sum-bound
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:arithmetic-sum: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:sum-first-odd-numbers, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:arithmetic-subsequence-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:square-sum: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:square-range-sum, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:shifted-square-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:cube-sum: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:cube-range-sum, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:cube-sum-ratio
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:finite-geometric-sum: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:finite-geometric-value, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:geometric-alternating-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:binomial-expansion: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:binomial-coefficient-scaled, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:product-coefficient
+- @gre:mathematics-subject-test:algebra:elementary-algebra:df:inverse-function-domain: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:restricted-quadratic-inverse, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:composition-domain
+- @gre:mathematics-subject-test:algebra:elementary-algebra:rk:graph-structure: @gre:mathematics-subject-test:algebra:elementary-algebra:pb:even-function-injectivity, @gre:mathematics-subject-test:algebra:elementary-algebra:pb:periodic-function-injectivity
 
-$$
-a^3+b^3=(a+b)(a^2-ab+b^2).
-$$
-
-For odd $n$, $x^n+y^n$ is divisible by $x+y$. For every positive $n$, $x^n-y^n$ is divisible by $x-y$.
-
-Quadratic roots:
-
-$$
-x=\frac{-b\pm\sqrt{b^2-4ac}}{2a},\qquad
-r_1+r_2=-\frac ba,\quad r_1r_2=\frac ca.
-$$
-
-For $a_nx^n+\cdots+a_0$, roots counted with multiplicity satisfy
-
-$$
-\sum r_i=-\frac{a_{n-1}}{a_n},\qquad
-\prod r_i=(-1)^n\frac{a_0}{a_n}.
-$$
-
-Rational-root candidates $p/q$ in lowest terms have $p\mid a_0$ and $q\mid a_n$.
-
-## Exponents, logarithms, and domains
-
-$$
-a^xa^y=a^{x+y},\quad (a^x)^y=a^{xy},\quad
-\log_a(xy)=\log_a x+\log_a y,
-$$
-
-$$
-\log_a(x^r)=r\log_a x,\qquad
-\log_a x=\frac{\ln x}{\ln a}.
-$$
-
-For real logarithms, $a>0$, $a\ne1$, and every logarithm argument is positive. Squaring, exponentiating, and multiplying by an expression of unknown sign can introduce or lose cases; check solutions in the original equation.
-
-## Inequality tools
-
-$$
-|x|<a\iff-a<x<a\quad(a>0),
-$$
-
-$$
-|x+y|\le|x|+|y|,\qquad
-\bigl||x|-|y|\bigr|\le|x-y|.
-$$
-
-If multiplying or dividing an inequality by a negative quantity, reverse the sign. For rational inequalities, move everything to one side and use a sign chart at zeros and poles.
-
-For nonnegative $x_i$,
-
-$$
-\frac{x_1+\cdots+x_n}{n}\ge(x_1\cdots x_n)^{1/n},
-$$
-
-with equality exactly when all $x_i$ are equal. Cauchy-Schwarz:
-
-$$
-\left(\sum a_ib_i\right)^2\le\left(\sum a_i^2\right)\left(\sum b_i^2\right).
-$$
-
-## Finite sums and binomial coefficients
-
-$$
-\sum_{k=1}^n k=\frac{n(n+1)}2,
-$$
-
-$$
-\sum_{k=1}^n k^2=\frac{n(n+1)(2n+1)}6,
-\qquad
-\sum_{k=1}^n k^3=\left(\frac{n(n+1)}2\right)^2.
-$$
-
-$$
-1+r+\cdots+r^n=\frac{1-r^{n+1}}{1-r}\quad(r\ne1).
-$$
-
-$$
-(x+y)^n=\sum_{k=0}^n\binom nkx^{n-k}y^k,
-\qquad
-\binom nk=\binom n{n-k}.
-$$
-
-## Function and graph speed checks
-
-Before solving, inspect parity, monotonicity, periodicity, intercepts, asymptotes, and domain. For polynomial equations, test structure—Vieta, factor theorem, symmetry, or substitution—before using a general formula.
+The suggested problem times are adjustable practice targets, not validated mastery thresholds. If an answer is wrong or slow, identify whether the issue was recall, choosing the method, algebra, or a missing condition. Revisit with a different problem before treating the pattern as transferable.

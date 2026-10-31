@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fa88f1611cd64b79a51a8a4a8b0412a4",
+  "title": "A Proposed Derivative",
+  "rank": 163208757248,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-introductory-real-analysis-derivative-jump",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f61b06da268844ea83f0887c9fb58185",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f61b06da268844ea83f0887c9fb58185.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c6def08308ab425ebd29813fbed72acc",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c6def08308ab425ebd29813fbed72acc.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -2,8 +2,8 @@
   "version": 1,
   "id": "a48327dc896d4b1db4b829d712007fe2",
   "title": "Read Characteristic and Geometric Multiplicity",
-  "rank": 8646911284551352320,
-  "header": "GRE-style characteristic polynomial and eigenstructure practice. Target: 105 seconds.",
+  "rank": 171798691840,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T04:36:55.850250+00:00",
-  "updated_at": "2026-09-06T04:36:56.405268+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

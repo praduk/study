@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "730bbb9bb7524eee98c10c6c73ca9931",
+  "title": "Factoring and rationalizing limits",
+  "rank": 12884901888,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "17dfcaf7373d49589688ce67c6a1b5f9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.17dfcaf7373d49589688ce67c6a1b5f9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

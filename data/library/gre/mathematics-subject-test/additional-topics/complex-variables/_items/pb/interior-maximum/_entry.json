@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c329c0675ae24fb891a152d7e04332ee",
+  "title": "Equality at an Interior Point",
+  "rank": 176093659136,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-complex-variables-interior-maximum",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0577312321de4718a19329c6ed8477fa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0577312321de4718a19329c6ed8477fa.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ae299e466f0c49fbad01d5acae3949b5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ae299e466f0c49fbad01d5acae3949b5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

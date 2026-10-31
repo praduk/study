@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "15a9a1a7702740e6ad49c50d98919ceb",
+  "title": "Derangements",
+  "rank": 103079215104,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–4 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b841e335cde1460db495c8e8cda82897",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b841e335cde1460db495c8e8cda82897.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

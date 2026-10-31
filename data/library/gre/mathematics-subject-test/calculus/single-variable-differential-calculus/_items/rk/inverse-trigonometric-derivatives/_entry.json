@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "eb6af3f5a2e043e1a30b52376dad5b2a",
+  "title": "Inverse trigonometric derivatives",
+  "rank": 335007449088,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e27490cf14904468b0526dffb3172b01",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e27490cf14904468b0526dffb3172b01.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

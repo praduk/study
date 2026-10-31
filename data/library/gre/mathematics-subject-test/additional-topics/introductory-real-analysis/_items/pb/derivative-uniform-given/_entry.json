@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5bb63ca6ce5146929a5625bb3ce70c51",
+  "title": "Recovering a Limit from Its Derivatives",
+  "rank": 137438953472,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 45–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-introductory-real-analysis-derivative-uniform-given",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0b1782dab1974d4b8e4820ebaee68dc3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0b1782dab1974d4b8e4820ebaee68dc3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "30bfdf12f60645bfbb9d498674a5bf0a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.30bfdf12f60645bfbb9d498674a5bf0a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

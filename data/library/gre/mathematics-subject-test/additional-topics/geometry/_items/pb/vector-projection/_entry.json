@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "9a31243ac5b84fa69fdb6f3ae9b0585c",
+  "title": "A Projection in the Plane",
+  "rank": 124554051584,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-geometry-vector-projection",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8defabf45fc04ed3b2d2fad1a4fd7f2b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8defabf45fc04ed3b2d2fad1a4fd7f2b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c1eb2fab10464c5598653e1eb997f5c9",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c1eb2fab10464c5598653e1eb997f5c9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

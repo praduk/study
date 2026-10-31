@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "cf41ae54793f4a06bd7920a61def4bf5",
+  "title": "A Rational Integral on a Larger Circle",
+  "rank": 150323855360,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-complex-variables-two-enclosed-residues",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cc2054db257f41e89200ca83c505df9b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cc2054db257f41e89200ca83c505df9b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "017e87bf2c9e4922aed2308a4e1dd78d",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.017e87bf2c9e4922aed2308a4e1dd78d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ad7e7e2c41c24ef1860db204f1fbadb7",
+  "title": "Volume from Three Edge Vectors",
+  "rank": 137438953472,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-geometry-triple-volume",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3797dfd1ca8a4ccea921256392849fc2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3797dfd1ca8a4ccea921256392849fc2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3a718338dff240a28aa59b7695216987",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.3a718338dff240a28aa59b7695216987.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

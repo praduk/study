@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a1c9acf54de947c8b792df7eb65f10cc",
+  "title": "A sum of shifted squares",
+  "rank": 201863462912,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Reindexing versus expansion",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5e57cf5d48b24708b6ae5025507a7781",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5e57cf5d48b24708b6ae5025507a7781.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b20a0a05d8f84c2882964ee9f4167f54",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b20a0a05d8f84c2882964ee9f4167f54.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6576fd07d26946cfbbd49977d807f658",
+  "title": "A Quadratic Locus",
+  "rank": 146028888064,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-geometry-translated-circle",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "83c46c9ff6534410a7cc5fbf51004724",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.83c46c9ff6534410a7cc5fbf51004724.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "54cd7d6d4d55445f88bd0a75ca75b5cf",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.54cd7d6d4d55445f88bd0a75ca75b5cf.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6358a9691a634b18824fc674f3e9d1ed",
+  "title": "An exponential approximation with a bound",
+  "rank": 317827579904,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Use the next derivative bound and the next factorial.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d1dedcd5786945e7a292e5b6fbec808f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d1dedcd5786945e7a292e5b6fbec808f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c36c4367e75449f8bc4211c053c8d801",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c36c4367e75449f8bc4211c053c8d801.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

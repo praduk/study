@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "56156ff24af54dda9acb0e51c131b75c",
+  "title": "A squared logarithmic denominator",
+  "rank": 128849018880,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Use the integral test and $u=\\ln x$.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "27cb84911d854a43a5c3d7ca935d8fa1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.27cb84911d854a43a5c3d7ca935d8fa1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e8328ca90ee345449fef26f8de340594",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e8328ca90ee345449fef26f8de340594.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d932ac43382b46afbffa183253cc9728",
+  "title": "Real symmetric matrices",
+  "rank": 201863462912,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0e020e3f87204c6a82300a1866f1eb67",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0e020e3f87204c6a82300a1866f1eb67.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

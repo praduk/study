@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4d59d727c07a4f52971069793d9af602",
+  "title": "A Normal Approximation for an Average",
+  "rank": 227633266688,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-clt-probability",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9a59e0ce6fd74e9db66d49421eaba88b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9a59e0ce6fd74e9db66d49421eaba88b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6001b3c2be834ff2aff19ec8e9479646",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6001b3c2be834ff2aff19ec8e9479646.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

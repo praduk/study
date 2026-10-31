@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "45f648a937354f068ff71fb8e7f075d1",
+  "title": "A length under a matrix transformation",
+  "rank": 219043332096,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Insert the defining identity $Q^TQ=I$",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1c4955228a4f43dc97d8328c21cadfa1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1c4955228a4f43dc97d8328c21cadfa1.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8c28d678467443069b9b7b5c63b1ff29",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.8c28d678467443069b9b7b5c63b1ff29.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

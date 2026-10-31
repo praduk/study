@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "cf9317bbc7354ab7b7bc99e706eb8600",
+  "title": "A product of two frequencies",
+  "rank": 163208757248,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Use product-to-sum to reveal the difference and sum frequencies.",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "631a38a2ddd543e5999fb839178b9d77",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.631a38a2ddd543e5999fb839178b9d77.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b778286022724f88920bb1c9483103f5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.b778286022724f88920bb1c9483103f5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

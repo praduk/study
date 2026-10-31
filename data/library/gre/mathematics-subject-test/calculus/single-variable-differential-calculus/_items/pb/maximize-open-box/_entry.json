@@ -2,8 +2,8 @@
   "version": 1,
   "id": "99e9805f1c904cb782176a56d89743ee",
   "title": "Maximize an Open Box",
-  "rank": 8646911284551352320,
-  "header": "GRE-style original practice. Suggested target: 150 seconds. Choose one answer.",
+  "rank": 214748364800,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "optimization",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T04:44:59.237418+00:00",
-  "updated_at": "2026-09-06T04:45:00.532737+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

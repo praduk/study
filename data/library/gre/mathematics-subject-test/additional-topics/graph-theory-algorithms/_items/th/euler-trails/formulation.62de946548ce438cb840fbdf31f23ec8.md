@@ -1,0 +1,3 @@
+In a finite undirected graph with at least one edge whose nonisolated vertices lie in one connected component, an Euler circuit exists iff all degrees are even; an Euler trail with distinct endpoints exists iff exactly two vertices have odd degree. The endpoints of an open trail are the two odd-degree vertices. Euler traversals use each edge once; Hamiltonian paths visit each vertex once and have different criteria.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:euler-degree-pattern; @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:two-triangles-vertex.

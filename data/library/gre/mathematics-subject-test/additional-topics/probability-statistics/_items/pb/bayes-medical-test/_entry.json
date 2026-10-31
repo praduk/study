@@ -2,8 +2,8 @@
   "version": 1,
   "id": "b005d49512f9445998b8a6a821d17538",
   "title": "Bayes' Theorem for a Diagnostic Test",
-  "rank": 8646911284551352320,
-  "header": "GRE-style original practice. Suggested target: 90 seconds. Choose one answer.",
+  "rank": 42949672960,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T07:32:42.121113+00:00",
-  "updated_at": "2026-09-06T07:43:31.127787+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

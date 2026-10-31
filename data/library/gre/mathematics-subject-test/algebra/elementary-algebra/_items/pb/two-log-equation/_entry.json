@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "e772817e8e8a4a48a0ab022f27a1e731",
+  "title": "An equation with two logarithms",
+  "rank": 98784247808,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Product conversion with original domain",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "328c2dc04a144412875877b015bf6424",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.328c2dc04a144412875877b015bf6424.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2890491b836c417893471bf739a200b4",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2890491b836c417893471bf739a200b4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

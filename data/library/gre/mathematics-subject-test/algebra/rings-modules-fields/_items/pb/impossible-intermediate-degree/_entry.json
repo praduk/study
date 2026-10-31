@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "cac56128bae04a79844227e93f276bc8",
+  "title": "An intermediate field degree",
+  "rank": 188978561024,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Divisibility forced by a tower",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "23f4850f76d1403ab928c6b28a2a98b8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.23f4850f76d1403ab928c6b28a2a98b8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "428f0ca74ddf4c29843b8bf7412e9616",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.428f0ca74ddf4c29843b8bf7412e9616.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

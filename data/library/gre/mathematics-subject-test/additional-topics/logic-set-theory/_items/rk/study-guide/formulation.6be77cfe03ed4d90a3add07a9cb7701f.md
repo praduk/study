@@ -1,33 +1,20 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-In propositional logic, an implication $P\Rightarrow Q$ is false only when $P$ is true and $Q$ is false. It is equivalent to $\neg P\lor Q$ and to its contrapositive $\neg Q\Rightarrow\neg P$, but not to its converse. De Morgan's laws interchange conjunction and disjunction while negating every component.
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-Negating quantifiers also interchanges them:
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-$$
-\neg(\forall x\,P(x))\equiv\exists x\,\neg P(x),\qquad
-\neg(\exists x\,P(x))\equiv\forall x\,\neg P(x).
-$$
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-Quantifier order matters: $\forall x\exists y$ generally differs from $\exists y\forall x$. A universal statement over an empty set is vacuously true, while an existential statement over an empty set is false.
-
-For sets, translate $A\subseteq B$ as $\forall x(x\in A\Rightarrow x\in B)$. Know union, intersection, complement, difference, Cartesian product, power set, and symmetric difference. Set equality is normally proved by double inclusion or elementwise equivalence. De Morgan's laws apply to arbitrary indexed unions and intersections.
-
-A relation may be reflexive, symmetric, antisymmetric, or transitive. Equivalence relations correspond to partitions. Partial orders are reflexive, antisymmetric, and transitive; a total order also compares every pair. For functions, keep injective, surjective, and bijective distinct. A left inverse implies injectivity, a right inverse implies surjectivity, and a two-sided inverse gives bijectivity.
-
-The integers and finite strings over a finite alphabet are countable. Countable unions of countable sets are countable under the usual choice assumptions used in undergraduate mathematics. The real numbers and $\mathcal P(\mathbb N)$ are uncountable, and Cantor's theorem gives $|A|<|\mathcal P(A)|$ for every set $A$.
-
-## Recognition cues
-
-- Translate prose into quantifiers before negating or taking a converse.
-- For subset identities, test membership of an arbitrary element.
-- To refute a universal claim, seek one small counterexample, often involving $\varnothing$ or a singleton.
-- For cardinality, look for an explicit enumeration, injection, surjection, or diagonal argument.
-
-## Edge cases and traps
-
-- Necessary and sufficient conditions point in opposite directions.
-- $A\in B$ and $A\subseteq B$ are different statements.
-- Pairwise disjoint events or sets need not be independent in a probabilistic sense.
-- Antisymmetric does not mean “not symmetric.”
-- The image of an intersection need not equal the intersection of the images unless injectivity supplies the missing implication.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:implication — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:necessary-condition, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:divisibility-converse.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:quantifier-negation — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:negate-nested-quantifiers, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:negate-indexed-inclusion.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:quantifier-order — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:one-y-for-all, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:empty-domain-truth.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:set-operations — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:symmetric-difference, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:element-versus-subset.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:injections-surjections — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:count-injections-three-to-five, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:infinite-shift.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:one-sided-inverses — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:composition-injective, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:right-inverse-example.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:images-preimages — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:intersection-images, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:preimage-complement.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:equivalence-relations — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:equivalence-relation-pair-count, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:mod-three-classes.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:df:partial-orders — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:divisibility-order, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:symmetric-antisymmetric.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:countable-sets — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:identify-uncountable-set, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:rational-polynomials.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:th:cantor-theorems — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:diagonal-set, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:interval-cardinality.
+- @gre:mathematics-subject-test:additional-topics:logic-set-theory:rk:proof-patterns — practice @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:induction-gap, @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:parity-contrapositive.

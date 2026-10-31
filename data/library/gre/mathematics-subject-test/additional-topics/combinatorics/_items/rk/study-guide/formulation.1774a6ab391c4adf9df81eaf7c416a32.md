@@ -1,42 +1,19 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:additional-topics:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-Use the sum rule for disjoint alternatives and the product rule for sequential choices. There are $n!$ permutations of $n$ distinct objects, $n!/(n_1!\cdots n_k!)$ permutations with repeated types, and $\binom nk$ unordered $k$-subsets. For ordered samples, decide whether repetition is allowed before writing a power or falling factorial.
+Each concept below has its own recall entry, followed in authored order by at least two practice problems. Use the concept entries for formula recall and the problems to practice recognizing which method applies.
 
-Stars and bars counts nonnegative integer solutions of
+For a concealed solution, use **Review** after enabling the entries you want. In the ordinary reader, collapse **Solutions** before attempting a problem. Suggested times are adjustable practice targets, not evidence of mastery.
 
-$$
-x_1+\cdots+x_k=n
-$$
+Start untimed until you can give a correct solution and explain the key cue. Then time a fresh problem, check the solution, and record whether the delay came from recall, choosing a method, or arithmetic. Return to the relevant concept before retrying; repeat later with mixed topics so the folder name does not supply the method.
 
-as $\binom{n+k-1}{k-1}$. Positive solutions reduce to nonnegative ones by setting $y_i=x_i-1$. Upper bounds require inclusion-exclusion, generating functions, or a complement substitution; plain stars and bars does not enforce caps.
-
-Inclusion-exclusion for three sets begins
-
-$$
-|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|.
-$$
-
-The number of onto functions from an $n$-element set to a $k$-element set is
-
-$$
-\sum_{j=0}^{k}(-1)^j\binom kj(k-j)^n.
-$$
-
-The pigeonhole principle forces some box to contain at least $\lceil n/k\rceil$ objects when $n$ objects enter $k$ boxes. Binomial and multinomial expansions encode selection counts. The coefficient of $x^n$ in a product of generating functions counts ways to obtain total $n$ subject to the choices represented by each factor.
-
-Linear recurrences are solved from their characteristic roots, with repeated roots gaining powers of $n$. Combinatorial proofs establish identities by counting the same set in two ways. For circular arrangements of distinct objects, rotations usually identify arrangements, giving $(n-1)!$ before any reflection symmetry is imposed.
-
-## Recognition cues
-
-- Write down what is labeled, what is identical, whether order matters, and whether repetition is allowed.
-- For “at least one,” the complement is often faster.
-- For “onto” or “none empty,” expect inclusion-exclusion.
-- For small remaining distance from a maximum, complement each bounded variable.
-
-## Edge cases and traps
-
-- Dividing by $k!$ is valid only when every unordered outcome was counted exactly $k!$ times.
-- Stars and bars distinguishes boxes; it does not distinguish identical objects.
-- Inclusion-exclusion signs alternate and intersections are added back at the next level.
-- Circular arrangements with reflections identified require an additional symmetry analysis; blindly dividing by two can fail when stabilizers occur.
-- Check whether endpoints, empty selections, and zero parts are permitted.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:rk:counting-model — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:code-versus-subset, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:nonempty-committees.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:repeated-permutations — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:mississippi-arrangements, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:two-a-adjacent.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:circular-arrangements — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:circular-seven-people, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:labeled-necklace.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:binomial-multinomial — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:weighted-coefficient, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:pascal-subset-sum.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:stars-bars — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:shifted-boxes, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:stars-bars-upper-bound.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:inclusion-exclusion — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:inclusion-exclusion-divisibility-hundred, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:forbidden-boxes.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:surjection-count — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:count-onto-functions, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:onto-four-to-three.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:derangement-count — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:derange-four, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:exactly-one-fixed.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:th:pigeonhole — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:same-residue, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:pair-sum-eleven.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:rk:recurrence-roots — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:simple-recurrence-fifth-term, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:repeated-root-sequence.
+- @gre:mathematics-subject-test:additional-topics:combinatorics:rk:generating-functions — practice @gre:mathematics-subject-test:additional-topics:combinatorics:pb:bounded-choice-coefficient, @gre:mathematics-subject-test:additional-topics:combinatorics:pb:generating-recurrence.

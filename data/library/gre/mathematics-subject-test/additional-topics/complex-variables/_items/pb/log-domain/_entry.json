@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "46f9c18c586a42c29d0bb4a95927c1c1",
+  "title": "A Function on a Punctured Plane",
+  "rank": 42949672960,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-complex-variables-log-domain",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "85411b930ef148418290f2ba395f64d6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.85411b930ef148418290f2ba395f64d6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "57f4f7a246404a628dd7f7df88900910",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.57f4f7a246404a628dd7f7df88900910.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,3 @@
+For a series, $a_n\to0$ is necessary but not sufficient for convergence. For eventually nonnegative terms, $a_n\le b_n$ and convergence of $\sum b_n$ imply convergence of $\sum a_n$; divergence of the smaller series implies divergence of the larger. If $a_n/b_n\to c\in(0,\infty)$, the two positive series share convergence behavior. The $p$-series $\sum n^{-p}$ converges iff $p>1$.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:series-rational-tail; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:series-term-test.

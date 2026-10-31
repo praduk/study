@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "46844f73910c4817a0ee9d68ac2268e3",
+  "title": "Second-order constant-coefficient equations",
+  "rank": 214748364800,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a17a3b55e07349e0bea92109a8828bb8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a17a3b55e07349e0bea92109a8828bb8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

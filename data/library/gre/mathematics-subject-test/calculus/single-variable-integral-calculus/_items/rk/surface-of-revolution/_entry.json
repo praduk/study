@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "279a4494be354bdba7ec4720c7e45b3d",
+  "title": "Surface area of revolution",
+  "rank": 227633266688,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f4532ec0a6d044029bbead1fc2ed4fde",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f4532ec0a6d044029bbead1fc2ed4fde.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

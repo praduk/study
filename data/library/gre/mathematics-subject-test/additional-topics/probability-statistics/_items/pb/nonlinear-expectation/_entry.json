@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "5215337bdd8b489396a28efcdbe57f21",
+  "title": "A Squared Random Variable",
+  "rank": 85899345920,
+  "header": "Six-hour priority A — core refresh. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-nonlinear-expectation",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2b36378468b4460893f21542b0deef38",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2b36378468b4460893f21542b0deef38.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c38fbb3ca35b439293b1c015f176dcc5",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.c38fbb3ca35b439293b1c015f176dcc5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

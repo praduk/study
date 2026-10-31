@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2ef5e7d79f7640efa0b160f6d6a185c2",
+  "title": "Complex Conjugation and Division",
+  "rank": 12884901888,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d7522f94df5046b9a5e9cc0374984901",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d7522f94df5046b9a5e9cc0374984901.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

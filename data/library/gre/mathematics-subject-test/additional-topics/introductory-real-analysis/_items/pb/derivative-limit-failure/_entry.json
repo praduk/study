@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "343ddf4204b74e9292a034723cc3e99f",
+  "title": "A Uniform Limit with Nonconvergent Derivatives",
+  "rank": 133143986176,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-introductory-real-analysis-derivative-limit-failure",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "521610128b5b40dfa426c57a1a98163a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.521610128b5b40dfa426c57a1a98163a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2091d41795a54b4ea1cf406d9c5c1a25",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.2091d41795a54b4ea1cf406d9c5c1a25.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

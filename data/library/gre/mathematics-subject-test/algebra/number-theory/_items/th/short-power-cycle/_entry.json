@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "397be5d4c04442b2b7cffe0b3f3edd08",
+  "title": "Short cycles in modular powers",
+  "rank": 133143986176,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ed0ed0a461274698a5def6e109afe074",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ed0ed0a461274698a5def6e109afe074.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

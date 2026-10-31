@@ -1,0 +1,3 @@
+A space is second countable if its topology has a countable basis, and separable if it has a countable dense subset. Second countability implies separability under the usual choice assumptions: choose one point from each nonempty basic set. For metric spaces the converse also holds, using balls with rational radii about a countable dense set. Without a metric hypothesis, do not infer second countability merely from separability.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:general-topology:pb:rational-interval-basis; @gre:mathematics-subject-test:additional-topics:general-topology:pb:countable-discrete-basis; @gre:mathematics-subject-test:additional-topics:general-topology:pb:dense-countable-example.

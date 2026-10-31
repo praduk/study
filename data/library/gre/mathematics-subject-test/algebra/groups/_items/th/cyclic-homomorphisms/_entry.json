@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2bc3278bda0a42b0a3051a820be23caf",
+  "title": "Maps out of a cyclic group",
+  "rank": 111669149696,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "48cbeadea66c4a1aa86536a21bccec3c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.48cbeadea66c4a1aa86536a21bccec3c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

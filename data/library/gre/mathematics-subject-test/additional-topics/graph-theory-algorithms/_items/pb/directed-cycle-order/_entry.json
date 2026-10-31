@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "fa6f652bf6024a95b6b404ff1b1e331e",
+  "title": "An Ordering around Three Arrows",
+  "rank": 124554051584,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-graph-theory-algorithms-directed-cycle-order",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34b304e3e8624a08a8c15b81ed4ef4cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34b304e3e8624a08a8c15b81ed4ef4cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6a8341fed6f54b908aec6e2379992928",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.6a8341fed6f54b908aec6e2379992928.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

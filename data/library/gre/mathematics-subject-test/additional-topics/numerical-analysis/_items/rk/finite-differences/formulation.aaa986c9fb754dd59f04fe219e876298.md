@@ -1,0 +1,3 @@
+For sufficiently smooth $f$, the forward difference $[f(x+h)-f(x)]/h$ has truncation error $O(h)$, while the centered difference $[f(x+h)-f(x-h)]/(2h)$ has $O(h^2)$ error. Taylor expansions show cancellation of even or odd terms. Roundoff in function values is amplified by division by $h$, so arbitrarily small $h$ can worsen total error.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:centered-cubic; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:difference-step-balance; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:forward-quadratic.

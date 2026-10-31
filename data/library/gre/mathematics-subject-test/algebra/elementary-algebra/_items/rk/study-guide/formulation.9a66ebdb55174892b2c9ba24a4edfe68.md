@@ -1,19 +1,26 @@
-## Core facts
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- For a polynomial, move quickly among expanded, factored, and root forms. The factor theorem says $p(a)=0$ exactly when $x-a$ is a factor; the remainder on division by $x-a$ is $p(a)$.
-- For $x^3-s_1x^2+s_2x-s_3$ with roots $r_1,r_2,r_3$, Vieta gives $r_1+r_2+r_3=s_1$, $r_1r_2+r_1r_3+r_2r_3=s_2$, and $r_1r_2r_3=s_3$. Use the analogous coefficient relations in other degrees.
-- State domain restrictions before canceling rational expressions. For rational inequalities, put everything over one denominator and make a sign chart using every zero and excluded point.
-- Preserve inequality direction except when multiplying or dividing by a known negative quantity. Squaring can add extraneous solutions unless signs are controlled.
-- For positive bases, exponentials turn products into sums through logarithms. Check that every logarithm argument is positive and that its base is positive and not $1$.
-- For compositions and inverses, track domains and ranges. A formula for $f^{-1}$ is valid only on a domain where $f$ is one-to-one.
+Each concept below is a separate recall entry. Its assigned practice problems follow it in authored order. The concept body links additional applications; the solution identifies the recognition cue, a short justified route, and a trap.
 
-## Recognition cues
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:factor-identities
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:quadratic-roots
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:vieta-relations
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:rational-root-test
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:factor-remainder-test
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:positive-base-powers
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:logarithm-laws
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:absolute-value-distance
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:triangle-bounds
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:rational-sign-chart
+- @gre:mathematics-subject-test:algebra:elementary-algebra:rk:equation-domain-checks
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:amgm-bound
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:cauchy-schwarz-bound
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:arithmetic-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:square-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:cube-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:finite-geometric-sum
+- @gre:mathematics-subject-test:algebra:elementary-algebra:th:binomial-expansion
+- @gre:mathematics-subject-test:algebra:elementary-algebra:df:inverse-function-domain
+- @gre:mathematics-subject-test:algebra:elementary-algebra:rk:graph-structure
 
-- Symmetric expressions in unknown roots usually call for Vieta, not explicit root solving.
-- Repeated powers suggest factoring, substitution such as $u=x^2$, or a short residue cycle.
-- Absolute values encode distance: split at the relevant centers or use interval geometry.
-- If answer choices are widely separated, estimate or substitute choices before doing long symbolic work.
-
-## Common traps
-
-Do not cancel terms across addition, cross-multiply through an expression of unknown sign, forget excluded denominator values, or accept roots introduced by squaring. A ten-second domain and sign check is often cheaper than repairing a full solution.
+For mixed practice, choose problems from several concepts without rereading the formulas first. Solve through Review when you want the solution hidden; the ordinary reader can display the solution immediately.

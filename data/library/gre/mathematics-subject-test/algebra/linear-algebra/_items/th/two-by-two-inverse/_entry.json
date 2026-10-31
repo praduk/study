@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4e10bf91a178487c821fb47a2d8e5582",
+  "title": "The two-by-two inverse",
+  "rank": 107374182400,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4a1a7c9678dd4369b2cb2ea5e822470f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4a1a7c9678dd4369b2cb2ea5e822470f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

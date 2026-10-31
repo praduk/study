@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "d9a6ee5b54b4443996ae0f9a1aa79f85",
+  "title": "Burnside counting for finite actions",
+  "rank": 163208757248,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 3–5 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb68531b1649483889cec1f286443a0f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb68531b1649483889cec1f286443a0f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

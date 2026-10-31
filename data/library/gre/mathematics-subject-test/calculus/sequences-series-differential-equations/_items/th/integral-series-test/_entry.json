@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "739a71a858fb45f190bc1f9847bb964e",
+  "title": "Integral test for positive series",
+  "rank": 120259084288,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f61a0368b9244c8988a5083a9165633f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f61a0368b9244c8988a5083a9165633f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

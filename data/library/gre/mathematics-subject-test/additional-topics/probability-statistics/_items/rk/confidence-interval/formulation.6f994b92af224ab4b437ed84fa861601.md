@@ -1,0 +1,3 @@
+A confidence procedure with exact coverage level $1-\alpha$ produces intervals that cover the fixed true parameter with probability $1-\alpha$ under repeated sampling, subject to its model assumptions. After an interval is realized, the parameter is fixed and coverage is true or false; the confidence level is not automatically a posterior probability assigned to that interval. A Bayesian credible interval uses a different probability model.
+
+**Pattern practice.** @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:confidence-meaning; @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:confidence-width.

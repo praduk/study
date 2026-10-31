@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9c3c2a5dc65f4340a27a7ca2cea8530e",
+  "title": "Uniform Limits and Integration",
+  "rank": 115964116992,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–4 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2a0c447306454cbfb76e43077b20b60f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2a0c447306454cbfb76e43077b20b60f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

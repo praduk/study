@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "92635385986340328f0b2f9a9fdee335",
+  "title": "Circle, Arc, and Sector Measures",
+  "rank": 64424509440,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99f4ef5238a74a18a58471d036f1d782",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99f4ef5238a74a18a58471d036f1d782.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

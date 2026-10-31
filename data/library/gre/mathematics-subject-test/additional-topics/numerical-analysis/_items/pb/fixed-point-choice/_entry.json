@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "811da8f55f95426289ba047d2ee17e74",
+  "title": "Two Rearrangements of One Equation",
+  "rank": 111669149696,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-numerical-analysis-fixed-point-choice",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2415a6aacb4941508dff9711ec57b843",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2415a6aacb4941508dff9711ec57b843.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ee017bfc8ac347f7b41fd8d623daec92",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ee017bfc8ac347f7b41fd8d623daec92.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

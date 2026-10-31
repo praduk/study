@@ -1,14 +1,27 @@
-## What to know
+For the six-hour session, use @gre:mathematics-subject-test:calculus:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-- Antiderivatives and definite integrals; the Fundamental Theorem of Calculus in both directions.
-- Substitution, integration by parts, partial fractions, trigonometric identities and substitutions.
-- Improper integrals and comparison; area, volume, arc length, surface area, work, and average value.
-- Symmetry: an odd integrand integrates to zero on $[-a,a]$, while an even one doubles the integral on $[0,a]$.
+Practice directly after each concept. The ordered entries below this map alternate focused recall targets with their practice problems. Use Review after enabling the desired items to attempt problems before revealing solutions; the ordinary reader may display solutions immediately.
 
-## Fast recognition
+For an initial attempt, prioritize a correct setup. Then repeat with an adjustable time target and record which cue you missed: domain, formula, method choice, algebra, or endpoint/orientation check. A fast familiar answer alone does not establish transfer; use the different linked variants.
 
-Inspect bounds and symmetry before integrating. Look for a derivative already present next to a composition. For a variable-limit integral, apply the chain rule to each bound. In a volume problem, sketch the radius and write the geometric cross-section before expanding algebra.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:th:fundamental-theorem: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:moving-integral-bounds: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:integral-symmetry: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:power-log-antiderivatives: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:elementary-antiderivatives: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:trig-antiderivative-pairs: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:th:substitution-rule: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:th:integration-by-parts: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:rational-partial-fractions: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:trig-power-integrals: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:radical-trig-substitution: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:df:improper-integral-definition: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:th:p-integral-tests: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:area-between-curves: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:washers-shells: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:arc-length: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:surface-of-revolution: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:average-value-integral: followed by its practice problems.
+- @gre:mathematics-subject-test:calculus:single-variable-integral-calculus:rk:work-variable-force: followed by its practice problems.
 
-## Common traps
-
-A definite integral is signed area, not always geometric area. An improper integral must be defined by a limit. When substituting in a definite integral, change the limits or substitute back, but do not mix the two methods.
+These formulas and worked solutions are internally checked mathematical derivations, not quotations or official ETS questions. Suggested times are adjustable practice goals, not validated performance thresholds.

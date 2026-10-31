@@ -1,65 +1,21 @@
-## Divisibility and the Euclidean algorithm
+For the six-hour session, use @gre:mathematics-subject-test:algebra:rk:six-hour-refresh-route. Each item shows its refresh priority and an estimated time; practice follows its concept. **A:** core refresh; **B:** next if rusty; **C:** defer today. These are planning judgments for familiar material, not official question-frequency rankings.
 
-$a\mid b$ means $b=ak$ for some integer $k$. The greatest common divisor is a linear combination:
+Use the separate entries below for targeted recall. Recall the conditions as well as the formula; then attempt the problems placed immediately after that concept.
 
-$$
-\gcd(a,b)=ax+by.
-$$
+- @gre:mathematics-subject-test:algebra:number-theory:th:gcd-euclidean: @gre:mathematics-subject-test:algebra:number-theory:pb:gcd-large-pair, @gre:mathematics-subject-test:algebra:number-theory:pb:gcd-lcm-product
+- @gre:mathematics-subject-test:algebra:number-theory:th:bezout-identity: @gre:mathematics-subject-test:algebra:number-theory:pb:bezout-two-hundred-fifty-two, @gre:mathematics-subject-test:algebra:number-theory:pb:coprime-consecutive-expressions
+- @gre:mathematics-subject-test:algebra:number-theory:th:linear-diophantine: @gre:mathematics-subject-test:algebra:number-theory:pb:positive-diophantine-count, @gre:mathematics-subject-test:algebra:number-theory:pb:diophantine-family, @gre:mathematics-subject-test:algebra:number-theory:pb:diophantine-impossible
+- @gre:mathematics-subject-test:algebra:number-theory:th:modular-cancellation: @gre:mathematics-subject-test:algebra:number-theory:pb:cancellation-modulus, @gre:mathematics-subject-test:algebra:number-theory:pb:modular-substitution
+- @gre:mathematics-subject-test:algebra:number-theory:th:modular-inverse: @gre:mathematics-subject-test:algebra:number-theory:pb:inverse-seventeen-mod-forty-three, @gre:mathematics-subject-test:algebra:number-theory:pb:inverse-product
+- @gre:mathematics-subject-test:algebra:number-theory:th:linear-congruence: @gre:mathematics-subject-test:algebra:number-theory:pb:linear-congruence-solution-count, @gre:mathematics-subject-test:algebra:number-theory:pb:linear-congruence-list
+- @gre:mathematics-subject-test:algebra:number-theory:th:fermat-power: @gre:mathematics-subject-test:algebra:number-theory:pb:fermat-power-three-mod-seven, @gre:mathematics-subject-test:algebra:number-theory:pb:fermat-divisible-base
+- @gre:mathematics-subject-test:algebra:number-theory:th:totient-formula: @gre:mathematics-subject-test:algebra:number-theory:pb:euler-phi-eighty-four, @gre:mathematics-subject-test:algebra:number-theory:pb:totient-prime-power
+- @gre:mathematics-subject-test:algebra:number-theory:th:euler-power: @gre:mathematics-subject-test:algebra:number-theory:pb:euler-composite-power, @gre:mathematics-subject-test:algebra:number-theory:pb:nonunit-power-reduction
+- @gre:mathematics-subject-test:algebra:number-theory:th:short-power-cycle: @gre:mathematics-subject-test:algebra:number-theory:pb:short-modular-power-cycle, @gre:mathematics-subject-test:algebra:number-theory:pb:minus-one-power
+- @gre:mathematics-subject-test:algebra:number-theory:th:chinese-remainders: @gre:mathematics-subject-test:algebra:number-theory:pb:chinese-remainder-minus-one, @gre:mathematics-subject-test:algebra:number-theory:pb:crt-five-seven, @gre:mathematics-subject-test:algebra:number-theory:pb:noncoprime-crt, @gre:mathematics-subject-test:algebra:number-theory:pb:incompatible-crt
+- @gre:mathematics-subject-test:algebra:number-theory:th:divisor-count: @gre:mathematics-subject-test:algebra:number-theory:pb:divisor-count-three-sixty, @gre:mathematics-subject-test:algebra:number-theory:pb:square-divisor-count
+- @gre:mathematics-subject-test:algebra:number-theory:th:divisor-sum: @gre:mathematics-subject-test:algebra:number-theory:pb:divisor-sum-sixty, @gre:mathematics-subject-test:algebra:number-theory:pb:perfect-number-check
+- @gre:mathematics-subject-test:algebra:number-theory:th:factorial-prime-exponent: @gre:mathematics-subject-test:algebra:number-theory:pb:factorial-trailing-zeros, @gre:mathematics-subject-test:algebra:number-theory:pb:binomial-prime-exponent
+- @gre:mathematics-subject-test:algebra:number-theory:rk:modular-obstructions: @gre:mathematics-subject-test:algebra:number-theory:pb:square-sum-obstruction, @gre:mathematics-subject-test:algebra:number-theory:pb:consecutive-product-divisibility
 
-Thus $ax+by=c$ has integer solutions iff $\gcd(a,b)\mid c$. If $d=\gcd(a,b)$ and $(x_0,y_0)$ is one solution, all solutions are
-
-$$
-x=x_0+\frac bd t,\qquad y=y_0-\frac ad t,\qquad t\in\mathbb Z.
-$$
-
-## Congruences
-
-$a\equiv b\pmod n$ iff $n\mid a-b$. The class of $a$ is invertible modulo $n$ iff $\gcd(a,n)=1$. The congruence $ax\equiv b\pmod n$ has solutions iff $\gcd(a,n)\mid b$; when it does, there are $\gcd(a,n)$ incongruent solutions modulo $n$.
-
-## Exponent reduction
-
-If $p\nmid a$ and $p$ is prime,
-
-$$
-a^{p-1}\equiv1\pmod p.
-$$
-
-If $\gcd(a,n)=1$,
-
-$$
-a^{\varphi(n)}\equiv1\pmod n.
-$$
-
-For $n=\prod p_i^{e_i}$,
-
-$$
-\varphi(n)=n\prod_{p\mid n}\left(1-\frac1p\right).
-$$
-
-Check coprimality before reducing an exponent. A shorter observed cycle can beat Euler's exponent.
-
-## Chinese remainder theorem
-
-For pairwise coprime moduli $n_i$, a system $x\equiv a_i\pmod{n_i}$ has one solution modulo $\prod n_i$. For non-coprime moduli, solutions exist only when residues agree modulo every pairwise gcd.
-
-## Prime factorization arithmetic
-
-If $n=\prod p_i^{e_i}$, then
-
-$$
-\tau(n)=\prod(e_i+1),
-$$
-
-$$
-\sigma(n)=\prod_i\frac{p_i^{e_i+1}-1}{p_i-1}.
-$$
-
-The exponent of a prime $p$ in $n!$ is
-
-$$
-v_p(n!)=\sum_{k\ge1}\left\lfloor\frac n{p^k}\right\rfloor.
-$$
-
-## Fast recognition
-
-Use gcd for linear congruences, factor the modulus before using $\varphi$, combine $-1$ residues immediately, and exploit parity or residues modulo small integers before attempting a long Diophantine search.
+The suggested problem times are adjustable practice targets, not validated mastery thresholds. If an answer is wrong or slow, identify whether the issue was recall, choosing the method, algebra, or a missing condition. Revisit with a different problem before treating the pattern as transferable.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "51a6ce3402514e0092bdb79862223e0f",
+  "title": "A subgroup of index two",
+  "rank": 94489280512,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Only one coset remains outside the subgroup",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f2bfee9b8eb44226974d1d48d87062c4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f2bfee9b8eb44226974d1d48d87062c4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a135521c9f794c8ea3f98ccd87500814",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.a135521c9f794c8ea3f98ccd87500814.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

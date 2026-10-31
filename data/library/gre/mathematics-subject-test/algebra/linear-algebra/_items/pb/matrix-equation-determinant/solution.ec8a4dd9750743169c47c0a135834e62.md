@@ -1,12 +1,13 @@
-**Fastest valid route.** Notice that $A^2=2I$, so $A^{-1}=\frac12A$. Therefore
+**Correct choice: (B).**
 
-$$X=A^{-1}B
-=\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}
-\begin{pmatrix}4&2\\2&6\end{pmatrix}
-=\begin{pmatrix}3&4\\1&-2\end{pmatrix}.$$
+**Pattern cue.** Only $\det X$ is requested; avoid solving for all entries of $X$.
 
-Hence
+**Fast route.** Here $\det A=-2\ne0$ and $\det B=4\cdot6-2\cdot2=20$. Taking determinants of $AX=B$ gives
 
-$$\det X=3(-2)-4(1)=-10.$$
+$$
+\det X=\frac{\det B}{\det A}=\frac{20}{-2}=-10.
+$$
 
-The answer is **(B)**. This simultaneously solves the two column systems represented by $AX=B$.
+**Check.** The matrix $X=\begin{pmatrix}3&4\\1&-2\end{pmatrix}$ satisfies $AX=B$ and has determinant $-10$. Computing it is unnecessary for the requested scalar.
+
+**Trap.** Division by $\det A$ requires it to be nonzero. The determinant of a matrix product is the product of determinants, not their sum.

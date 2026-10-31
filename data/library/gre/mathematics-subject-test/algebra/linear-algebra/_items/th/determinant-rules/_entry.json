@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "15c05009388e42bfa1519ea12e5291ec",
+  "title": "Determinant products and row operations",
+  "rank": 90194313216,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–3 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6d002101947e49c1acd444d8f6d96ef2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6d002101947e49c1acd444d8f6d96ef2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

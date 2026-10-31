@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "174030c153594c63bda1bee220068120",
+  "title": "Classifying a familiar ring",
+  "rank": 17179869184,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–60 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "Separate zero divisors from invertibility",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "21b43bb0f1064073b64e3d38a0dde85a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.21b43bb0f1064073b64e3d38a0dde85a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "601fc8e3f0ed4e19910e96fc1097b5c2",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.601fc8e3f0ed4e19910e96fc1097b5c2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

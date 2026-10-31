@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "93b1ae42a76e4cc4a01ed068034fa751",
+  "title": "Classifying Isolated Singularities",
+  "rank": 128849018880,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a432aed1fa354762b98b8200da0b799d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a432aed1fa354762b98b8200da0b799d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

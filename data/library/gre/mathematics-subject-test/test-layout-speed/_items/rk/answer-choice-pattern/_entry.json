@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5947a1584cbf4ffc8edbf931dfb81ce0",
+  "title": "Substitute answer choices with domain checks",
+  "rank": 73014444032,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall when testing choices is shorter than solving forward, and what validates a candidate.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7a2f8e9c98c640789b802f091136ad4b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7a2f8e9c98c640789b802f091136ad4b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f169ae7daaab49b89b539e792f33dde0",
+  "title": "Order in matrix products, transposes, and inverses",
+  "rank": 77309411328,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7ad0b42138e54f8886593480c17d848e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7ad0b42138e54f8886593480c17d848e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

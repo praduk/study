@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c44c1044c9bb4840a131c3d4e0b873f8",
+  "title": "A Recurrence with Constant Work per Node",
+  "rank": 163208757248,
+  "header": "Six-hour priority C — defer in this six-hour session. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-graph-theory-algorithms-constant-branch-work",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3bbe76db0e734e41bbd2fe9400ef9b3c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3bbe76db0e734e41bbd2fe9400ef9b3c.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e6b40f034a1245a9b46b6c10cd2561eb",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.e6b40f034a1245a9b46b6c10cd2561eb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

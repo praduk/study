@@ -2,8 +2,8 @@
   "version": 1,
   "id": "07a842eb5e724fb38bf5625f27ae8e11",
   "title": "Volume by Cylindrical Shells",
-  "rank": 9223301668110598144,
-  "header": "GRE-style original practice. Suggested target: 75 seconds. Choose one answer.",
+  "rank": 206158430208,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–90 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T07:22:20.476145+00:00",
-  "updated_at": "2026-09-06T07:40:12.462197+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

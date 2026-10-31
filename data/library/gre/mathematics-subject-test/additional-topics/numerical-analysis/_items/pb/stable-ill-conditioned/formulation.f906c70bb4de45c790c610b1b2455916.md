@@ -1,0 +1,1 @@
+An algorithm returns the exact solution for a nearby input whose relative perturbation is at most $10^{-12}$, yet its relative forward error is $10^{-4}$. Does this alone contradict backward stability?

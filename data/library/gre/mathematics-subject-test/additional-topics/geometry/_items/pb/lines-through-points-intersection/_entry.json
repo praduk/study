@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b822dddb696a471699a493723e8b2214",
+  "title": "Two Lines Specified in Different Forms",
+  "rank": 6917529084549398528,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-geometry-lines-through-points-intersection",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b13ecd875d1c422f98f1b67bdd6163cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b13ecd875d1c422f98f1b67bdd6163cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "f97e94e008c445b9bab6dd61f0aba59a",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.f97e94e008c445b9bab6dd61f0aba59a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:48:54.526324+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

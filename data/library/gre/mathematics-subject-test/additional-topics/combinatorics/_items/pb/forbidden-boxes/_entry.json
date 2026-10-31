@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "78b6a1022513492692df04b200036abb",
+  "title": "Four Bounded Parts",
+  "rank": 85899345920,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-combinatorics-forbidden-boxes",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bb903b0967e84526976bd46853bf79f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bb903b0967e84526976bd46853bf79f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d63f6d779fe341379a0314dbeaa38114",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.d63f6d779fe341379a0314dbeaa38114.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

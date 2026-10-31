@@ -3,7 +3,7 @@
 - Set a timer for **41 minutes**.
 - The timing is **derived practice guidance, not an ETS timing rule**: $16\times170/66\approx41.2$ minutes, rounded to 41 minutes.
 - Work without a calculator.
-- Open each linked problem, but do not open or read its solution until the timer ends. Record one choice, A through E, for every item before checking any solution.
+- The ordinary reader expands the main solution by default. For the listed question order, use the reader and collapse the main solution under **Solutions** without reading it, then return to the prompt. Do not read solutions until the timer ends. Record one choice, A through E, for every item before checking any solution.
 - If a problem stalls, record a provisional choice, mark it, and continue. Use remaining time for a second pass.
 
 ## Problems

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0906732a7e29482e92139c9b90900ba2",
+  "title": "Roots and irreducibility in degrees two and three",
+  "rank": 115964116992,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4a3179175fea4e39ab8870283f444fa7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4a3179175fea4e39ab8870283f444fa7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

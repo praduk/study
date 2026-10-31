@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "902bc052d44f440585248c721befe66a",
+  "title": "Second-derivative test in two variables",
+  "rank": 77309411328,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 2–3 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "26b00b781d59439c9126e608c5b7588f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.26b00b781d59439c9126e608c5b7588f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

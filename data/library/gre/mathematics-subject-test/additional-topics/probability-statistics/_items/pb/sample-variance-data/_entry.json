@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "444d2e936a4b4e57bfe567e61f0b182e",
+  "title": "Variance Estimated from Three Observations",
+  "rank": 236223201280,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 45–90 sec; solution check: 0.5–1.5 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-probability-statistics-sample-variance-data",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b7883ed1cd5a48a4943a21846add3b49",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b7883ed1cd5a48a4943a21846add3b49.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ad8766ec69224955888d18266b079977",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.ad8766ec69224955888d18266b079977.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

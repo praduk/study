@@ -2,8 +2,8 @@
   "version": 1,
   "id": "94e1f8701a0d4645baf8e428d43c695b",
   "title": "Recognize a Power in a Cyclic Permutation Subgroup",
-  "rank": 6917529027641081856,
-  "header": "GRE-style elementary group theory practice. Target: 60 seconds.",
+  "rank": 64424509440,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 30–90 sec; solution check: 0.5–1 min. Original GRE-style practice; attempt before revealing the solution.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -27,5 +27,5 @@
   ],
   "assets": [],
   "created_at": "2026-09-06T04:36:58.030865+00:00",
-  "updated_at": "2026-09-06T04:36:58.605386+00:00"
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
 }

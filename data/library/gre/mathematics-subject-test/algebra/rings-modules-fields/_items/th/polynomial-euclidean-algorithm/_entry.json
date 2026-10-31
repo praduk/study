@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "51e037b1942140d7b0ec51b9b37d50ed",
+  "title": "Division and gcd in a polynomial ring over a field",
+  "rank": 103079215104,
+  "header": "Six-hour priority C — defer in this six-hour session. Refresh estimate: 2–4 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "688317ac6e284eb1ae19bb74e38da148",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.688317ac6e284eb1ae19bb74e38da148.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

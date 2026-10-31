@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "6043a00e8be04b8d93f2aa93131fb131",
+  "title": "A Sequence with Two Initial Values",
+  "rank": 137438953472,
+  "header": "Six-hour priority B — next if rusty. Attempt estimate: 60–120 sec; solution check: 1–2 min. Original GRE-style practice; attempt before revealing the solution.",
+  "problem_family": "gre-combinatorics-repeated-root-sequence",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c8c6e81d9439466c8524a05e42fd6803",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c8c6e81d9439466c8524a05e42fd6803.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "018ddfa3efc3405db56a07aa6a73090e",
+      "kind": "sl",
+      "label": "Main",
+      "subtag": null,
+      "file": "solution.018ddfa3efc3405db56a07aa6a73090e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

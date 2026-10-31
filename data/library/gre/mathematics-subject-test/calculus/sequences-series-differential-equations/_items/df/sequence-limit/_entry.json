@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bf5252383c3d49b49221fb6b5414291c",
+  "title": "Convergence of a real sequence",
+  "rank": 12884901888,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the stated rule, its conditions, and the main failure case before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f0f1da1532fc42cd9d738960082d5d98",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f0f1da1532fc42cd9d738960082d5d98.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

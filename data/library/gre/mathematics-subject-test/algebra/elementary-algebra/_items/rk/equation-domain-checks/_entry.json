@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3b5044a9724c4aacadef20204176d704",
+  "title": "Reversible equation steps and extraneous roots",
+  "rank": 141733920768,
+  "header": "Six-hour priority A — core refresh. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5ade51e00ddd480594882f792d2fcdaa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5ade51e00ddd480594882f792d2fcdaa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

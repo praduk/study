@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "5b510e77d78444e0a50e46eef850778f",
+  "title": "Counting positive divisors",
+  "rank": 167503724544,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Recall the statement, its conditions, and when it applies.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f418d09551784ca8b19f28e64d4226fa",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f418d09551784ca8b19f28e64d4226fa.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}

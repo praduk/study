@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "31b6db5dbbab431d93775975132d7051",
+  "title": "Triangle Inequality and Right Triangles",
+  "rank": 12884901888,
+  "header": "Six-hour priority B — next if rusty. Refresh estimate: 1–2 min; exercises extra. Focused recall: state the rule, its hypotheses, and the main trap before revealing.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "befca0c94b7b4d59a291b7c44771308b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.befca0c94b7b4d59a291b7c44771308b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-10-31T07:45:21.428247+00:00",
+  "updated_at": "2026-10-31T08:06:00.897974+00:00"
+}
