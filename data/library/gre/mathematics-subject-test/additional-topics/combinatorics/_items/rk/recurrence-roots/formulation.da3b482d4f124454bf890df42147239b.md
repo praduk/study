@@ -1,3 +1,0 @@
-For a homogeneous recurrence $a_n=c_1a_{n-1}+\cdots+c_da_{n-d}$, substitute $a_n=r^n$ to obtain $r^d-c_1r^{d-1}-\cdots-c_d=0$. A nonzero characteristic root $r$ of multiplicity $m$ contributes $(A_0+A_1n+\cdots+A_{m-1}n^{m-1})r^n$. Determine coefficients from the initial values. For just a few terms, direct iteration may be faster; nonhomogeneous recurrences also need a particular solution.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:combinatorics:pb:simple-recurrence-fifth-term; @gre:mathematics-subject-test:additional-topics:combinatorics:pb:repeated-root-sequence.

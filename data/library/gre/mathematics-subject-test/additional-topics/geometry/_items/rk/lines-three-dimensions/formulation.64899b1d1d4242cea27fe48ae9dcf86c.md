@@ -1,3 +1,0 @@
-A line in $\R^3$ has form $\mathbf x=\mathbf p+t\mathbf v$, $t\in\R$, with direction $\mathbf v\ne0$. Through distinct points $P,Q$, take direction $Q-P$. Two lines with proportional directions are either identical or distinct parallel lines; test whether a point of one lies on the other. With nonproportional directions, solve the coordinate equations for intersection: if no common point exists, the lines are skew. Perpendicular lines intersect and have directions with dot product zero. Orthogonal directions alone do not rule out skew lines.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:geometry:pb:lines-through-points-intersection; @gre:mathematics-subject-test:additional-topics:geometry:pb:classify-spatial-lines.

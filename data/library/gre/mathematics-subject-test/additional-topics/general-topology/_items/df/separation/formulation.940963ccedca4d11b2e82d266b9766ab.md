@@ -1,3 +1,0 @@
-A space is $T_1$ iff every singleton is closed. It is Hausdorff iff distinct points have disjoint neighborhoods. Hausdorff implies $T_1$, and every metric space is Hausdorff. The converse $T_1\Rightarrow$ Hausdorff fails. A compact subset of a Hausdorff space is closed; compact subsets of arbitrary spaces need not be closed.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:general-topology:pb:classify-cofinite-topology; @gre:mathematics-subject-test:additional-topics:general-topology:pb:indiscrete-pair; @gre:mathematics-subject-test:additional-topics:general-topology:pb:finite-t1.

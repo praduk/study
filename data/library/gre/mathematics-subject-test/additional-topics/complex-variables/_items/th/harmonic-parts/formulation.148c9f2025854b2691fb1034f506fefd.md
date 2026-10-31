@@ -1,3 +1,0 @@
-The real and imaginary parts of a holomorphic function satisfy the Laplace equation $u_{xx}+u_{yy}=0$ and $v_{xx}+v_{yy}=0$. To construct a conjugate, integrate one Cauchy–Riemann equation and enforce the other to determine the integration function. A harmonic function has local harmonic conjugates; a global one is guaranteed on a simply connected domain, but need not exist on a punctured domain.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:complex-variables:pb:harmonic-conjugate-quadratic; @gre:mathematics-subject-test:additional-topics:complex-variables:pb:harmonic-candidate; @gre:mathematics-subject-test:additional-topics:complex-variables:pb:harmonic-conjugate-cubic.

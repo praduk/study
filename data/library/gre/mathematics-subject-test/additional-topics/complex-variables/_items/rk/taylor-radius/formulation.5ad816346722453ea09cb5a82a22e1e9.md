@@ -1,3 +1,0 @@
-A holomorphic function equals its Taylor series near its center $a$. Its radius is the radius of the largest disk centered at $a$ on which that local analytic function extends holomorphically. For a rational function after cancellation, this is the distance to the nearest nonremovable pole, or infinity if no such pole exists. Real-axis smoothness does not rule out nearby complex singularities.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:complex-variables:pb:taylor-nearest-pole; @gre:mathematics-subject-test:additional-topics:complex-variables:pb:canceled-pole-radius.

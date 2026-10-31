@@ -1,3 +1,0 @@
-For a nonnegative integer $n$, $(x+y)^n=\sum_{k=0}^n\binom nkx^{n-k}y^k$. In $(x_1+\cdots+x_r)^n$, the coefficient of $x_1^{a_1}\cdots x_r^{a_r}$ is $n!/(a_1!\cdots a_r!)$ when the nonnegative exponents sum to $n$. For $n\ge1$ and $0\le k\le n$, Pascal's identity $\binom nk=\binom{n-1}k+\binom{n-1}{k-1}$ separates subsets according to whether a fixed object is included; out-of-range binomial coefficients are zero.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:combinatorics:pb:weighted-coefficient; @gre:mathematics-subject-test:additional-topics:combinatorics:pb:nonempty-committees; @gre:mathematics-subject-test:additional-topics:combinatorics:pb:pascal-subset-sum.

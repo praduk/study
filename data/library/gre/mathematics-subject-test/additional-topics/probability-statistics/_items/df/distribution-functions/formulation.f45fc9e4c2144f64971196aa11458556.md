@@ -1,3 +1,0 @@
-A probability mass function assigns nonnegative point probabilities summing to one. A density $f\ge0$ integrates to one and gives interval probabilities by integration; a density value may exceed one. A cumulative distribution function $F(x)=P(X\le x)$ is nondecreasing and right-continuous, with limits zero and one at the two infinities. For a continuous density, singleton probabilities are zero.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:continuous-density-two-x; @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:normalize-density.

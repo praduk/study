@@ -1,3 +1,0 @@
-Let $f_n$ be continuously differentiable on $[a,b]$. If $f_n(x_0)$ converges at one point and $f_n'$ converges uniformly to $g$, then $f_n$ converges uniformly to a differentiable $f$ with $f'=g$ on the interval interior. Uniform convergence of $f_n$ alone does not imply convergence of derivatives. The identity $f_n(x)=f_n(x_0)+\int_{x_0}^xf_n'$ explains the extra hypothesis.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-limit-failure; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-uniform-given.

@@ -1,3 +1,0 @@
-To refute a universal statement, one counterexample suffices. A contrapositive can turn an implication into an easier parity or divisibility claim. For induction, prove a base case and a step covering every subsequent index; a valid step without a base proves nothing. Contradiction assumes the negation and derives an impossibility. Examples alone cannot prove a universal claim.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:divisibility-converse; @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:induction-gap; @gre:mathematics-subject-test:additional-topics:logic-set-theory:pb:parity-contrapositive.

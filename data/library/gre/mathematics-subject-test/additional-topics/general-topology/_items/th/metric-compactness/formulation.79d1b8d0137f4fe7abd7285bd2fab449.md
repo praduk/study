@@ -1,3 +1,0 @@
-For metric spaces, compactness is equivalent to sequential compactness and to completeness plus total boundedness. Totally bounded means that for every $\varepsilon>0$, finitely many radius-$\varepsilon$ balls cover the space. In $\R^n$ with its usual metric, compactness is also equivalent to closed and bounded. An infinite set equipped with the discrete metric $d(x,y)=1$ for $x\ne y$ is bounded and complete but not totally bounded.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:general-topology:pb:discrete-metric; @gre:mathematics-subject-test:additional-topics:general-topology:pb:open-interval-cover.

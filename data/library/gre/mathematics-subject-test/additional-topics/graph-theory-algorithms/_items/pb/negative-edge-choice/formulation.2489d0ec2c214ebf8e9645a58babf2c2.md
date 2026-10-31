@@ -1,1 +1,0 @@
-A directed weighted graph has some negative edges and no negative cycles reachable from source $s$. Which general algorithm is guaranteed to find all finite distances from $s$: BFS, Dijkstra, or Bellman–Ford?

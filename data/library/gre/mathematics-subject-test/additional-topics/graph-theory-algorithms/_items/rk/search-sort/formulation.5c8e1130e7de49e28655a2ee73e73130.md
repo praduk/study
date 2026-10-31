@@ -1,3 +1,0 @@
-Binary search in a sorted randomly indexed array takes $O(\log n)$ comparisons. Any comparison sort needs $\Omega(n\log n)$ comparisons in the worst case because a binary decision tree must distinguish $n!$ permutations. Mergesort attains $O(n\log n)$; insertion sort has $\Theta(n^2)$ worst case and $\Theta(n)$ on already sorted input. Separate representation, cost model, and best/worst cases.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:binary-search-comparisons; @gre:mathematics-subject-test:additional-topics:graph-theory-algorithms:pb:insertion-sort-order.

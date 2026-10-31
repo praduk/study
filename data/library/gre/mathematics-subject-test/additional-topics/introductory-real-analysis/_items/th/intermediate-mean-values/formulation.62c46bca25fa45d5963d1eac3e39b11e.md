@@ -1,3 +1,0 @@
-A continuous real function on $[a,b]$ takes every value between $f(a)$ and $f(b)$. If it is also differentiable on $(a,b)$ with $a<b$, then some $c\in(a,b)$ satisfies $f'(c)=[f(b)-f(a)]/(b-a)$. Consequently a derivative bound $|f'|\le M$ gives $|f(y)-f(x)|\le M|y-x|$ on an interval. Existence of a root does not imply uniqueness; a strict derivative sign can supply uniqueness.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:unique-cubic-root; @gre:mathematics-subject-test:additional-topics:introductory-real-analysis:pb:derivative-distance-bound.

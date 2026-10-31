@@ -1,3 +1,0 @@
-For iid variables with finite mean $\mu$ and finite variance $\sigma^2$, the sample mean converges in probability to $\mu$. Chebyshev gives $P(|\overline X-\mu|\ge\varepsilon)\le\sigma^2/(n\varepsilon^2)$. This is a sufficient elementary version of the law, not a claim that finite variance is necessary. The theorem concerns averages approaching a parameter, not the shape of normalized fluctuations.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:chebyshev-average; @gre:mathematics-subject-test:additional-topics:probability-statistics:pb:large-numbers-meaning.

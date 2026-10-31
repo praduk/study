@@ -1,3 +1,0 @@
-The residue at $a$ is the coefficient of $(z-a)^{-1}$ in the Laurent expansion. Let $C$ be a counterclockwise simple closed piecewise smooth contour, with no singularity on it. If $f$ is holomorphic on a neighborhood of $C$ and its interior except for finitely many isolated singularities inside, then $\oint_Cf=2\pi i$ times their residue sum. If $g,h$ are holomorphic near $a$, $h(a)=0$, and $h'(a)\ne0$, then the residue of $g/h$ is $g(a)/h'(a)$. A zero numerator may remove the pole.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:complex-variables:pb:residue-two-poles-one-inside; @gre:mathematics-subject-test:additional-topics:complex-variables:pb:two-enclosed-residues.

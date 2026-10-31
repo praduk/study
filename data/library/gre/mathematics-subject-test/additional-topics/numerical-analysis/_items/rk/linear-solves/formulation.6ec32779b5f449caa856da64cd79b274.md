@@ -1,3 +1,0 @@
-Dense Gaussian elimination costs $O(n^3)$ arithmetic operations; solving triangular systems after a factorization costs $O(n^2)$ per right-hand side. Pivoting avoids zero or unnecessarily small pivots and generally improves numerical stability, though it cannot remove inherent ill-conditioning. For many systems with the same matrix, factor once and reuse; forming an inverse is unnecessary for ordinary solves.
-
-**Pattern practice.** @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:reused-factorization; @gre:mathematics-subject-test:additional-topics:numerical-analysis:pb:zero-leading-pivot.
