@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "0eeefcfbfd2c44cab45b2dcdb9061f9b",
+  "title": "Absolute-value bound for an integral",
+  "rank": 201863462912,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall which side of the inequality puts the absolute value inside.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e8503d85c0894e67a3dfeeafed3aeec7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e8503d85c0894e67a3dfeeafed3aeec7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

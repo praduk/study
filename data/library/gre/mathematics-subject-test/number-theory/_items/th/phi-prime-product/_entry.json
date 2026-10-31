@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "cd6a1b8c859c4aa9bb2f1a248d07ea69",
+  "title": "Totient from prime factorization",
+  "rank": 38654705664,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall totient from prime factorization, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f15330c34e264589ab2c7d5f322bee5f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f15330c34e264589ab2c7d5f322bee5f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

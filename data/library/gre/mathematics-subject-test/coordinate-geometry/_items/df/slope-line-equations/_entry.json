@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "48c62c7d47164399af33c93b275de25f",
+  "title": "Slope and equations of a nonvertical line",
+  "rank": 4294967296,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall slope, point-slope form, and slope-intercept form.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f11310049fe84da196ebb10e14845510",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f11310049fe84da196ebb10e14845510.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

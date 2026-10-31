@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "0c0403803420480d876f11edf5358237",
+  "title": "Antiderivatives of sine and cosine",
+  "rank": 231928233984,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the signs when reversing the sine/cosine derivative cycle.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "09f75c84fe074475b2ab74efade83dce",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.09f75c84fe074475b2ab74efade83dce.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

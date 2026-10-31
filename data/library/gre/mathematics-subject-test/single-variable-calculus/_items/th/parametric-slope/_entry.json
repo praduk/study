@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "36f1d7e79e8f49dabfbfff210081f544",
+  "title": "Slope of a parametric curve",
+  "rank": 313532612608,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the derivative ratio and the denominator restriction.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3d8c5b4939284f27b5b13fef3eaafcd7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3d8c5b4939284f27b5b13fef3eaafcd7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

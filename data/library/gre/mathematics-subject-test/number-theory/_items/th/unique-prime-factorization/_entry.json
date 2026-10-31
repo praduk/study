@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "a1aa91e1a91f4dbb8306916212b08135",
+  "title": "Unique prime factorization",
+  "rank": 60129542144,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall unique prime factorization, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c9e168a8d52d44bfa71d08878e55f57d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c9e168a8d52d44bfa71d08878e55f57d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

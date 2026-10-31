@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "381b946fb8cb473eb41b6c1776c11c33",
+  "title": "Congruence modulo an integer",
+  "rank": 25769803776,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall congruence modulo an integer, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f42e6c6e25394dc6b3ce13d09082b708",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f42e6c6e25394dc6b3ce13d09082b708.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

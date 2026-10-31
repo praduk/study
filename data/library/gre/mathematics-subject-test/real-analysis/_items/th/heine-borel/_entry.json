@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "b2b19e34f044466da9006c6feaf82a64",
+  "title": "Heine–Borel theorem",
+  "rank": 55834574848,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall heine–borel theorem, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f1fe24a3b4c94f469ce5daa85b146fdb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f1fe24a3b4c94f469ce5daa85b146fdb.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

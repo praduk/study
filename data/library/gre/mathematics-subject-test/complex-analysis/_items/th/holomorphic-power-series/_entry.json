@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "3e275b5936014e90bc456a71c9644098",
+  "title": "Local power series of a holomorphic function",
+  "rank": 77309411328,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall local power series of a holomorphic function, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2fdb43dd9acc4796a0d00bc3d18374e2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2fdb43dd9acc4796a0d00bc3d18374e2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

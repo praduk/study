@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2adddf4465c2449fab47fcd82b8f1a17",
+  "title": "Logical implication",
+  "rank": 4294967296,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall logical implication, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a7d9962891d249eabafb76fdf5bc33be",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a7d9962891d249eabafb76fdf5bc33be.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

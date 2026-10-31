@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "dacbea3937574f42a638f6976dd3eb48",
+  "title": "Lagrange multipliers: two constraints",
+  "rank": 42949672960,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall lagrange multipliers: two constraints and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "261ff928c62442d78e25a53f2672de98",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.261ff928c62442d78e25a53f2672de98.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

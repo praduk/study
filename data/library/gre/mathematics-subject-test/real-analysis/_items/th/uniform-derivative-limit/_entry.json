@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "f0ced9f8102b4aaa81e54273917cd11c",
+  "title": "Uniform convergence of derivatives",
+  "rank": 94489280512,
+  "header": "Familiar-refresh estimate: 60–120 sec. Recall uniform convergence of derivatives, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0f8a1b887fb04b1aa15ac0a2c278eae0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0f8a1b887fb04b1aa15ac0a2c278eae0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

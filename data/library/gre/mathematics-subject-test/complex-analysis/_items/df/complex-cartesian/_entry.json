@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "eff7de25f97143a3a8a4ac7290a2c8dc",
+  "title": "Real and imaginary parts",
+  "rank": 4294967296,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall real and imaginary parts, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f510cd4d99894286a89a72d73ac0c076",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f510cd4d99894286a89a72d73ac0c076.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "7633fa1e19bb4c7eb3098edfac539acb",
+  "title": "Weierstrass M-test",
+  "rank": 98784247808,
+  "header": "Familiar-refresh estimate: 45–90 sec. Recall weierstrass m-test, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8494dd6718fb469280e624c17fdf93e6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8494dd6718fb469280e624c17fdf93e6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

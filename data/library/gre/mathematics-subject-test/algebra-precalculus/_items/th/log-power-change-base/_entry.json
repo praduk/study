@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "c40c46aec57c420fb71da89646b603d5",
+  "title": "Logarithm power rule and change of base",
+  "rank": 60129542144,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the exponent rule and the order in the change-of-base quotient.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "448535df30d2464aa8504b7d6aa95e75",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.448535df30d2464aa8504b7d6aa95e75.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

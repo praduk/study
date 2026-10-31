@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "c6f258df5fb045c6870a07d5d223d5d3",
+  "title": "Antiderivatives of squared secant and cosecant",
+  "rank": 236223201280,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the tangent/cotangent answers and their signs.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "81c365ba9ed74ce3a8715d41935936ee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.81c365ba9ed74ce3a8715d41935936ee.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

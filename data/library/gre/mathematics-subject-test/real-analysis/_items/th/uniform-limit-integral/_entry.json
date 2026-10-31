@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "cd9784dd307448fa9677aafcf666dc7b",
+  "title": "Uniform limits and integration",
+  "rank": 90194313216,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall uniform limits and integration, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "55b83ff22b5c4c53a623eeb22654d8ef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.55b83ff22b5c4c53a623eeb22654d8ef.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

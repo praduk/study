@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "1cbf81dff8014f4d99f42024f1aa53a7",
+  "title": "The p-series threshold",
+  "rank": 30064771072,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the p-series threshold and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "262a834f6eb9434fbbbe09133642fd3c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.262a834f6eb9434fbbbe09133642fd3c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

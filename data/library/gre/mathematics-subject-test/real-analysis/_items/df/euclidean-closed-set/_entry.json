@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "200022ddff624983b32aaaa9aeeaecfd",
+  "title": "Closed subset of Euclidean space",
+  "rank": 47244640256,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall closed subset of euclidean space, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "839c75fcbe5c44ada5cc2abdc21540ee",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.839c75fcbe5c44ada5cc2abdc21540ee.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "222a8f6cb71e4dc29e25d62714bd9046",
+  "title": "Volume below a nonnegative graph",
+  "rank": 55834574848,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall volume below a nonnegative graph and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "74a28ba403ba4c7889bd68a0e7eff03d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.74a28ba403ba4c7889bd68a0e7eff03d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

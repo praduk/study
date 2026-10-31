@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "1130dc99bf3c44dda14fe17eae0e01d1",
+  "title": "Ratio test",
+  "rank": 47244640256,
+  "header": "Familiar-refresh estimate: 45–75 sec. Recall ratio test and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "184d67509e104c7586d4597a16e6ad5d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.184d67509e104c7586d4597a16e6ad5d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

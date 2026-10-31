@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "8c381cabe47f47ac8cf80a42d0a6c0d6",
+  "title": "Invertibility and row or column bases",
+  "rank": 68719476736,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall invertibility and row or column bases and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "903d7272255b4dc695cee68cc6f0833b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.903d7272255b4dc695cee68cc6f0833b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

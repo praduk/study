@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "a59eb48d0fa549c1be47f14f6d7c88e8",
+  "title": "Transpose of a product",
+  "rank": 30064771072,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall transpose of a product and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "262a003284d54e928a2dcc3ac1852ea5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.262a003284d54e928a2dcc3ac1852ea5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

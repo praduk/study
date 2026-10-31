@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "ccba8988e1c64f608beeb5e7fe5f3ff8",
+  "title": "Stars and bars: nonnegative solutions",
+  "rank": 64424509440,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall stars and bars: nonnegative solutions, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0427aae9247c44dbac3548b876a92443",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0427aae9247c44dbac3548b876a92443.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

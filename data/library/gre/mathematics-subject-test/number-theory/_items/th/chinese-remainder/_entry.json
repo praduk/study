@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "64fac9a41bba43159961587f7aeed2cb",
+  "title": "Chinese remainder theorem",
+  "rank": 51539607552,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall chinese remainder theorem, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0e2ff8cfe8a492dbbbbda1a9b9de760",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0e2ff8cfe8a492dbbbbda1a9b9de760.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

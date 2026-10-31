@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "7383ffce9dde4af7a8c7410687b5e13d",
+  "title": "Connected space",
+  "rank": 42949672960,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall connected space, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0bb4a212b2b44c7691641a8dea968ef7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0bb4a212b2b44c7691641a8dea968ef7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

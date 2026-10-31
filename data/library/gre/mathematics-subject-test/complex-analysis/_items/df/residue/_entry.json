@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "185d544fc1de4146b479b2e7c0de9c3a",
+  "title": "Residue as a Laurent coefficient",
+  "rank": 85899345920,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall residue as a laurent coefficient, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7c2406a7c80042b2a6b360856a2f8662",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7c2406a7c80042b2a6b360856a2f8662.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

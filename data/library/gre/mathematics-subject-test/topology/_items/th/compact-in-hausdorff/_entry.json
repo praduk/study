@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "7c964bba0a1b489b8453049402882089",
+  "title": "Compact subsets of Hausdorff spaces",
+  "rank": 77309411328,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall compact subsets of hausdorff spaces, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e5bab87e2c0548d99ba3058eec0a4e5d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e5bab87e2c0548d99ba3058eec0a4e5d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

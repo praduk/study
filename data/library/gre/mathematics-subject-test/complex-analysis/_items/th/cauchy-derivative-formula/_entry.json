@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "d81e4ee0100d4a88a19364d5b0d655c6",
+  "title": "Cauchy formula for derivatives",
+  "rank": 73014444032,
+  "header": "Familiar-refresh estimate: 45–90 sec. Recall cauchy formula for derivatives, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c31f471395534af996d4a1ea8837730a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c31f471395534af996d4a1ea8837730a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

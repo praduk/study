@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "46373dd9d482486381e6fcdc7fafd02a",
+  "title": "Spectral theorem for real symmetric matrices",
+  "rank": 128849018880,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall spectral theorem for real symmetric matrices and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "aff43ea0656f44afa70a079b9292c09b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.aff43ea0656f44afa70a079b9292c09b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

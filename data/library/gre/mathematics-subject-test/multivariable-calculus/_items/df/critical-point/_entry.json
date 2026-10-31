@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "ffe01d63dc41441a8d8b1b6d92f12a7b",
+  "title": "Critical points in several variables",
+  "rank": 30064771072,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall critical points in several variables and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "33cff230cf5848c08beb996a174ad4c8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.33cff230cf5848c08beb996a174ad4c8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

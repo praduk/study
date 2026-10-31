@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "c3d17ea69ba9401a89728440e69b02c7",
+  "title": "Reduce squared tangent",
+  "rank": 81604378624,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the quotient obtained from the two power-reduction identities.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "10394f4369fa465bbfa8e40aedfca4a1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.10394f4369fa465bbfa8e40aedfca4a1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

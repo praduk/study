@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "ff6553e5be8c4b1599392e7582050554",
+  "title": "Residue theorem",
+  "rank": 90194313216,
+  "header": "Familiar-refresh estimate: 45–90 sec. Recall residue theorem, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a666a827515243c6af294ccb1e3598e0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a666a827515243c6af294ccb1e3598e0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

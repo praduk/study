@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "3172f4b20df248b7afecdd461b496f80",
+  "title": "Power-integral test at infinity",
+  "rank": 283467841536,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall which side of the critical exponent gives convergence.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ebcf67d6df9c48a29d2360c8e303f7af",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ebcf67d6df9c48a29d2360c8e303f7af.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

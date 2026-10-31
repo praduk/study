@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f129a091791d428e8e9b18bf62ac4754",
+  "title": "Circle equations and completing the square",
+  "rank": 25769803776,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the standard equation and how the general coefficients determine the circle.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f6c7355ee80342dfbdfb9ac2aa606cd8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f6c7355ee80342dfbdfb9ac2aa606cd8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

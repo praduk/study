@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "eeac151113e7474fa84f8c4fdee2f4fe",
+  "title": "Vertex and focus forms of a vertical parabola",
+  "rank": 30064771072,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the vertex form and the focus–directrix form.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "90aa3b0bc2644200a555f429f32995ae",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.90aa3b0bc2644200a555f429f32995ae.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

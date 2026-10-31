@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a0b8cdaf7e524a609cfbf210642d11ac",
+  "title": "Uniform convergence of functions",
+  "rank": 81604378624,
+  "header": "Familiar-refresh estimate: 45–90 sec. Recall uniform convergence of functions, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ffb71570fa8a45a0a8ec52b00dabe3d1",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ffb71570fa8a45a0a8ec52b00dabe3d1.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

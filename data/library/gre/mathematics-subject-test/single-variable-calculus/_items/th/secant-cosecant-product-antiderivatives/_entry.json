@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "f6bfc13a8c83463eb7c89dd34d6b6670",
+  "title": "Antiderivatives of secant–tangent and cosecant–cotangent",
+  "rank": 240518168576,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the remaining reciprocal-trigonometric antiderivatives.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7c923aaa216b4fbebd5b41cd71a94bce",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7c923aaa216b4fbebd5b41cd71a94bce.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "e722b4dee97d4ba495399459fa6ba817",
+  "title": "Supplement identities",
+  "rank": 25769803776,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the signs at a supplementary angle.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "23bf7ee6cfbd49108eaea2b5b64e7565",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.23bf7ee6cfbd49108eaea2b5b64e7565.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

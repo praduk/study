@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "036685728fef42409686ed655b10ef67",
+  "title": "Prime ideal and quotient domain",
+  "rank": 163208757248,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall prime ideal and quotient domain and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c72c3b5e25024c02b70704e0b2af7880",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c72c3b5e25024c02b70704e0b2af7880.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9a6d168eb8524335af8d37b997c586a4",
+  "title": "When undetermined coefficients applies",
+  "rank": 34359738368,
+  "header": "Familiar-refresh estimate: 45–75 sec. Recall when undetermined coefficients applies and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "05b23b51293b4eca8d43badba3edd552",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.05b23b51293b4eca8d43badba3edd552.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

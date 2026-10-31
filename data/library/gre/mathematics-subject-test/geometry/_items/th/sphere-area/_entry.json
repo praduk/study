@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "c0f1f502c2c9451a8ffd749a1ce7a830",
+  "title": "Surface area of a sphere",
+  "rank": 51539607552,
+  "header": "Familiar-refresh estimate: 20–45 sec. Recall the formula and the meanings of its quantities.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d6453345716b48feba8e12432b11f66c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d6453345716b48feba8e12432b11f66c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

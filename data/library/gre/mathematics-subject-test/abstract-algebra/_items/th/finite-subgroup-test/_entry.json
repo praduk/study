@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "f37f579e311d4cec8e2dc0c50f5a4ac2",
+  "title": "The finite subgroup shortcut",
+  "rank": 21474836480,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the finite subgroup shortcut and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a433f38b719845248753c6eb30e21c6d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a433f38b719845248753c6eb30e21c6d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

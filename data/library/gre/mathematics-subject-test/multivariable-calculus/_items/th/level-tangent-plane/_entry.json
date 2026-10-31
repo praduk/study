@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "41ea139bdf4149d3816560b00a4401aa",
+  "title": "Tangent plane to a level surface",
+  "rank": 25769803776,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall tangent plane to a level surface and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1dcdf242a37a4ce4a648cf3627d71d3f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1dcdf242a37a4ce4a648cf3627d71d3f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

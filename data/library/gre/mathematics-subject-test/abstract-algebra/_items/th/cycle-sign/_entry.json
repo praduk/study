@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "7463dc3908804bb9bb77211b632fb47b",
+  "title": "Sign of a cycle",
+  "rank": 103079215104,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall sign of a cycle and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "38356365d79d44c8bcaa3a92192e17f0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.38356365d79d44c8bcaa3a92192e17f0.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

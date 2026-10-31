@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "fcec3b5b479c4f6bbad74ca223878018",
+  "title": "Bernoulli distribution",
+  "rank": 51539607552,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall bernoulli distribution, including the conditions that make the statement valid.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ed2f8ff6648649bd82802eb29aa49696",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ed2f8ff6648649bd82802eb29aa49696.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00"
+}

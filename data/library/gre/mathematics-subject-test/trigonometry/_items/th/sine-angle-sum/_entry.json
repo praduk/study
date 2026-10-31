@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "48370ee180bc468f83d481c5a62d1d2e",
+  "title": "Sine of a sum or difference",
+  "rank": 47244640256,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the two cross-products and the middle sign.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9148ed341e2741c2b8c776cef6689f9c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9148ed341e2741c2b8c776cef6689f9c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

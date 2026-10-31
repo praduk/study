@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "c39a621ba1f74b168c27e8e98e40f9c4",
+  "title": "Maclaurin series for cosine",
+  "rank": 150323855360,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the parity, first term, factorials, and domain.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c0e41f3588114cf9a1bba4d73e37f160",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c0e41f3588114cf9a1bba4d73e37f160.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

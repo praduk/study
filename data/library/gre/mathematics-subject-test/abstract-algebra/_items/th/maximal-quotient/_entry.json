@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "627540c387974926ade16c9bb3b782aa",
+  "title": "Maximal ideal and quotient field",
+  "rank": 171798691840,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall maximal ideal and quotient field and the conditions needed.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e170b087247340058d07dde147832f06",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e170b087247340058d07dde147832f06.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}

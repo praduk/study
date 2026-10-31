@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "f6e7bf6f6d834509a2f69318f28af30b",
+  "title": "Volume by washers",
+  "rank": 300647710720,
+  "header": "Familiar-refresh estimate: 30–60 sec. Recall the squared radii and their order.",
+  "review_enabled": false,
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "564b4c2430f74d1eb271f047458a1e53",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.564b4c2430f74d1eb271f047458a1e53.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "created_at": "2026-10-31T09:28:38.477433+00:00",
+  "updated_at": "2026-10-31T09:28:38.477433+00:00",
+  "proof_review_enabled": false
+}
