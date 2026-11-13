@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "0eb53f7f589e45afbabfaec1395ac76a",
+  "title": "Zero Divisor",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "be671a06127c44dc9e9c2947b82be8cd",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.be671a06127c44dc9e9c2947b82be8cd.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-02T15:58:19.073996+00:00",
+  "updated_at": "2026-11-02T15:58:19.074060+00:00"
+}

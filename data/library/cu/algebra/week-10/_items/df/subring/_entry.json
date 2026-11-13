@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4304ed6189f94b2d9a3a5ba75a621210",
+  "title": "Subring",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e816bd9a3ef4475a90d912ce05ce6a8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e816bd9a3ef4475a90d912ce05ce6a8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-02T16:02:23.538369+00:00",
+  "updated_at": "2026-11-02T16:02:23.538403+00:00"
+}

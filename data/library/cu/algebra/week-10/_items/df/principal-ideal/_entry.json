@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "7382edfcb9a74134b455db2febc6ea0e",
+  "title": "Principal Ideal",
+  "rank": 9205357638345293824,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2b7516db8323421da599a230f843c796",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2b7516db8323421da599a230f843c796.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-02T16:13:37.463363+00:00",
+  "updated_at": "2026-11-02T16:13:37.463420+00:00"
+}

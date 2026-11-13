@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c04d32b251b44d9fbeb3b54c04c2fb41",
+  "title": "Ideals",
+  "rank": 9079256848778919936,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5e77cb85b5324ae5bdf4f2403782fe94",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5e77cb85b5324ae5bdf4f2403782fe94.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-02T16:06:29.150386+00:00",
+  "updated_at": "2026-11-02T16:06:29.150427+00:00"
+}

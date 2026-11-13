@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "dd852be137ef4bf6bfee1cb973a6497c",
+  "title": "Ring Homomorphism Kernel",
+  "rank": 8935141660703064064,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ad738d7060546b1b7336435b97f5355",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ad738d7060546b1b7336435b97f5355.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-02T16:04:22.922158+00:00",
+  "updated_at": "2026-11-02T16:04:22.922179+00:00"
+}

@@ -1,24 +1,33 @@
 {
   "version": 1,
-  "id": "f6b6218f23db449dba26aa8eaa635cf6",
-  "title": "Rational root theorem",
+  "id": "9b8c760a15b34f758990dc44b59f545c",
+  "title": "Rational Root Theorem",
   "rank": 47244640256,
-  "header": "Familiar-refresh estimate: 30–60 sec. Recall the divisibility conditions for a rational root in lowest terms.",
-  "review_enabled": false,
+  "header": "",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
     {
-      "id": "a3afc9cf3c9f41fa9f0a1c559c313b74",
+      "id": "be2ad1bd97904d41a213e02ef6055940",
       "label": "Main",
       "subtag": null,
-      "file": "formulation.a3afc9cf3c9f41fa9f0a1c559c313b74.md",
+      "file": "formulation.be2ad1bd97904d41a213e02ef6055940.md",
       "main": true
     }
   ],
-  "supplements": [],
+  "supplements": [
+    {
+      "id": "a522ae0f005342b0883664a0af2f8925",
+      "kind": "pf",
+      "label": "Main",
+      "subtag": null,
+      "file": "proof.a522ae0f005342b0883664a0af2f8925.md",
+      "main": true
+    }
+  ],
   "assets": [],
-  "created_at": "2026-10-31T09:28:38.477433+00:00",
-  "updated_at": "2026-10-31T09:28:38.477433+00:00",
-  "proof_review_enabled": false
+  "review_enabled": true,
+  "proof_review_enabled": true,
+  "created_at": "2026-10-31T09:51:53.464922+00:00",
+  "updated_at": "2026-10-31T09:59:57.156796+00:00"
 }
