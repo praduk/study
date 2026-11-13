@@ -90,6 +90,49 @@ def test_static_revalidation_returns_no_body_for_unchanged_vendor_asset(settings
     assert changed.content == asset.content
 
 
+def test_static_brotli_respects_encoding_weights_validators_and_ranges(settings_factory):
+    settings = settings_factory()
+    url = "/vendor/mathjax/tex-svg.js"
+    source = settings.frontend_public / url.lstrip("/")
+    compressed = source.with_suffix(".js.br").read_bytes()
+    with _client(create_app(settings, local_mode=True)) as client:
+        with client.stream("GET", url, headers=[("accept-encoding", "gzip"), ("accept-encoding", "br")]) as brotli:
+            assert brotli.status_code == 200
+            assert brotli.headers["content-encoding"] == "br"
+            assert brotli.headers["content-type"].split(";")[0] in {"application/javascript", "text/javascript"}
+            assert brotli.headers["vary"] == "Accept-Encoding"
+            assert b"".join(brotli.iter_raw()) == compressed
+            tag = brotli.headers["etag"]
+
+        unchanged = client.get(url, headers={"accept-encoding": "br", "if-none-match": tag})
+        assert unchanged.status_code == 304
+        assert unchanged.headers["vary"] == "Accept-Encoding"
+        assert not unchanged.content
+
+        gzip = client.get(url, headers={"accept-encoding": "br;q=0.2, GZip;q=0.7", "if-none-match": tag})
+        assert gzip.status_code == 200
+        assert gzip.headers["content-encoding"] == "gzip"
+        assert gzip.content == source.read_bytes()
+
+        unchanged_gzip = client.get(url, headers={"accept-encoding": "gzip", "if-none-match": gzip.headers["etag"]})
+        assert unchanged_gzip.status_code == 304
+        assert unchanged_gzip.headers["vary"] == "Accept-Encoding"
+
+        identity = client.get(url, headers={
+            "accept-encoding": "br;q=0.4, gzip;q=0, identity;q=0.9",
+            "if-none-match": gzip.headers["etag"],
+        })
+        assert identity.status_code == 200
+        assert "content-encoding" not in identity.headers
+        assert identity.headers["vary"] == "Accept-Encoding"
+        assert len({identity.headers["etag"], gzip.headers["etag"], tag}) == 3
+
+        partial = client.get(url, headers={"accept-encoding": "br, gzip", "range": "bytes=0-19"})
+        assert partial.status_code == 206
+        assert "content-encoding" not in partial.headers
+        assert partial.content == identity.content[:20]
+
+
 def test_every_local_css_asset_is_shipped(settings_factory):
     public = settings_factory().frontend_public
     missing: list[tuple[Path, str]] = []

@@ -34,6 +34,55 @@ def test_navigation_bootstrap_keeps_links_and_stats_without_editor_metadata(sett
     assert detail["formulations"][0]["content"] == "Body\n"
 
 
+def test_startup_matches_reader_library_and_opens_root_and_variant_paths(settings_factory):
+    app = create_app(settings_factory(), local_mode=True)
+    store = app.state.store
+    with _client(app) as client:
+        empty = client.get("/api/startup").json()
+        assert empty["entry"] is None
+        assert empty["library"]["entries"] == []
+        folder = store.create_folder("Algebra", "algebra", None)
+        entry = store.create_entry(folder["id"], "th", "Theorem", "theorem", "", "Statement")
+        store.add_formulation(entry["id"], {"label": "Alt", "subtag": "alt", "content": "Alternate"})
+        store.add_supplement(entry["id"], {"kind": "pf", "label": "Proof", "content": "Proof"})
+        detail = client.get(f"/api/entries/{entry['id']}").json()
+        library = client.get("/api/bootstrap?reader=true").json()
+        summary, = library["entries"]
+        assert "canonical_tag" not in summary
+        assert [variant["subtag"] for variant in summary["formulations"]] == ["alt"]
+
+        for query in ({}, {"tag": "algebra:th:theorem:alt"}, {"tag": "algebra:th:theorem:pf"}):
+            response = client.get("/api/startup", params=query)
+            assert response.headers["cache-control"] == "no-store"
+            assert response.json() == {
+                "session": empty["session"], "library": library, "entry": detail,
+            }
+        for tag in ("", "bad Path", "algebra:th:theorem:missing"):
+            assert client.get("/api/startup", params={"tag": tag}).json()["entry"] is None
+
+
+def test_reader_routes_defer_git_status(settings_factory, monkeypatch):
+    app = create_app(settings_factory(), local_mode=True)
+    store = app.state.store
+    folder = store.create_folder("Algebra", "algebra", None)
+    entry = store.create_entry(folder["id"], "df", "Group", "group", "", "Statement")
+
+    def forbidden(*args):
+        pytest.fail("reader routes should leave Git status to the repository dialog")
+
+    monkeypatch.setattr(app_module.GitRepository, "status", forbidden)
+    with _client(app) as client:
+        assert "git" not in client.get("/api/startup").json()["library"]
+        assert "git" not in client.get("/api/bootstrap?reader=true").json()
+        response = client.patch(
+            f"/api/entries/{entry['id']}?include_review_stats=true&include_git=false",
+            headers=LOCAL_HEADERS, json={"review_enabled": False},
+        )
+        assert response.status_code == 200
+        assert set(response.json()) == {"entry", "review"}
+        assert response.json()["review"]["due"] == 0
+
+
 def test_interactive_authored_writes_do_not_back_up_the_whole_library(settings_factory, monkeypatch):
     app = create_app(settings_factory(), local_mode=True)
     store = app.state.store

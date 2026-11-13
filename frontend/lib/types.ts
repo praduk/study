@@ -105,11 +105,21 @@ export interface Bootstrap {
   tree: FolderNode[];
   macros: Record<string, string | (string | number)[]>;
   review: ReviewStats;
-  git: GitStatus;
+  git?: GitStatus;
   capabilities: Record<string, boolean>;
 }
 
 export type BootstrapPayload = Omit<Bootstrap, 'tree'> & { tree?: FolderNode[] };
+
+export type ReaderLibraryPayload = Omit<BootstrapPayload, 'entries' | 'tree' | 'git'> & {
+  entries: Omit<EntrySummary, 'canonical_tag'>[];
+};
+
+export interface StartupPayload {
+  session: { authenticated: boolean; auth_required: boolean; csrf: string | null };
+  library?: ReaderLibraryPayload;
+  entry?: EntryDetail | null;
+}
 
 export interface ReviewCard {
   id: string;

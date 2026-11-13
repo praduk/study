@@ -115,7 +115,7 @@ def test_packaged_proof_review_control_desktop_and_phone(settings_factory, tmp_p
                         body=json.dumps({"detail": "Simulated proof preference failure"}),
                     )
 
-                route_pattern = "**/api/entries/*?include_review_stats=true"
+                route_pattern = "**/api/entries/*?include_review_stats=true&include_git=false"
                 await page.route(route_pattern, fail_save)
                 try:
                     await proof.click()

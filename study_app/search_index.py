@@ -12,7 +12,6 @@ from typing import Any
 from .markdown_references import markdown_references
 
 REFERENCE_RE = re.compile(r"^[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*$")
-SPACE_RE = re.compile(r"\s+")
 
 
 class SearchIndexError(ValueError):
@@ -21,7 +20,7 @@ class SearchIndexError(ValueError):
 
 def normalize_search_text(value: str) -> str:
     """Normalize without changing the source retained by Study."""
-    return SPACE_RE.sub(" ", unicodedata.normalize("NFKC", value).casefold()).strip()
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
 def normalize_reference(value: str) -> str:
@@ -63,7 +62,9 @@ class ReferenceTarget:
     main_content: str
     authored_order: int
 
-    def compact(self, resolution_status: str | None = None) -> dict[str, Any]:
+    def compact(
+        self, resolution_status: str | None = None, *, include_header: bool = True
+    ) -> dict[str, Any]:
         value: dict[str, Any] = {
             "entry_id": self.entry_id,
             "variant_id": self.variant_id,
@@ -74,11 +75,12 @@ class ReferenceTarget:
             "tag": self.raw_tag,
             "reference_tag": self.local_reference,
             "canonical_tag": self.canonical_tag,
-            "header": self.header,
             "target_type": self.target_type,
             "label": self.label,
             "main": self.main,
         }
+        if include_header:
+            value["header"] = self.header
         if resolution_status is not None:
             value["resolution_status"] = resolution_status
         return value
@@ -621,28 +623,35 @@ class LibrarySearchIndex:
         matched_folder_id: str | None,
         scope_distance: int | None,
         targets: tuple[ReferenceTarget, ...],
+        *,
+        preview: bool,
     ) -> dict[str, Any]:
         status = "resolved" if len(targets) == 1 else "ambiguous" if targets else "missing"
+        match = None
+        if status == "resolved":
+            match = targets[0].preview() if preview else targets[0].compact(include_header=False)
         return {
             "status": status,
             "reference": f"@{reference}",
             "resolution": resolution,
             "matched_folder_id": matched_folder_id,
             "scope_distance": scope_distance,
-            "match": targets[0].preview() if len(targets) == 1 else None,
-            "candidates": [target.compact("ambiguous") for target in targets]
+            "match": match,
+            "candidates": [
+                target.compact("ambiguous", include_header=preview) for target in targets
+            ]
             if len(targets) > 1
             else [],
         }
 
-    def resolve(self, folder_id: str, value: str) -> dict[str, Any]:
+    def resolve(self, folder_id: str, value: str, *, preview: bool = True) -> dict[str, Any]:
         if folder_id not in self.folder_by_id:
             raise SearchIndexError("folder not found")
         reference = normalize_reference(value)
         exact = self.canonical_buckets.get(reference)
         if exact is not None:
             targets = tuple(self.targets[key] for key in exact)
-            return self._result(reference, "canonical", None, None, targets)
+            return self._result(reference, "canonical", None, None, targets, preview=preview)
         group = self._cached_visible_group(folder_id, reference)
         if group is not None:
             targets = tuple(self.targets[key] for key in group.target_keys)
@@ -652,8 +661,9 @@ class LibrarySearchIndex:
                 group.matched_folder_id,
                 group.scope_distance,
                 targets,
+                preview=preview,
             )
-        return self._result(reference, "scoped", None, None, ())
+        return self._result(reference, "scoped", None, None, (), preview=preview)
 
     @staticmethod
     def _match_rank(

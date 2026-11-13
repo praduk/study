@@ -30,6 +30,29 @@ const LazyExcalidraw = lazy(async () => {
 
 const LazyExcaliMathTools = lazy(() => import('@/components/ExcaliMathTools'));
 
+function ExcaliMathToolbar({ drawingApi, dark }: { drawingApi: ExcalidrawImperativeAPI; dark: boolean }) {
+  const [activation, setActivation] = useState<'button' | 'selection' | null>(null);
+
+  useEffect(() => {
+    if (activation) return;
+    return drawingApi.onChange((elements, state) => {
+      const selected = Object.keys(state.selectedElementIds).filter((id) => state.selectedElementIds[id]);
+      if (selected.length !== 1) return;
+      const data = elements.find((element) => element.id === selected[0])?.customData;
+      if (typeof (data?.excalimath_latex ?? data?.studyLatex) === 'string'
+        || (data?.excalimath_type === 'graph' && typeof data.excalimath_graph_config === 'string')) {
+        setActivation('selection');
+      }
+    });
+  }, [activation, drawingApi]);
+
+  if (!activation) return <Button size="sm" variant="outline" aria-expanded={false}
+    onClick={() => setActivation('button')}>∑ ExcaliMath</Button>;
+  return <Suspense fallback={<output>Loading math tools…</output>}>
+    <LazyExcaliMathTools drawingApi={drawingApi} dark={dark} openEquation={activation === 'button'} />
+  </Suspense>;
+}
+
 interface Props {
   open: boolean;
   entryId: string;
@@ -107,9 +130,7 @@ export function ExcalidrawDialog({ open, entryId, dark, onClose, onInsert }: Pro
             <LazyExcalidraw
               theme={dark ? 'dark' : 'light'}
               initialData={{ appState: { currentItemRoughness: 0, currentItemRoundness: 'sharp', currentItemFontFamily: 2, currentItemFillStyle: 'solid' } }}
-              renderTopRightUI={() => drawingApi && <Suspense fallback={<span>Loading math tools…</span>}>
-                <LazyExcaliMathTools drawingApi={drawingApi} dark={dark} />
-              </Suspense>}
+              renderTopRightUI={() => drawingApi && <ExcaliMathToolbar drawingApi={drawingApi} dark={dark} />}
               excalidrawAPI={(drawingApi) => {
                 apiRef.current = drawingApi;
                 setDrawingApi(drawingApi);

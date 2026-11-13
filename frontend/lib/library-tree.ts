@@ -4,6 +4,7 @@ import type {
   EntrySummary,
   Folder,
   FolderNode,
+  ReaderLibraryPayload,
 } from '@/lib/types';
 
 function compareCodePoints(left: string, right: string) {
@@ -58,6 +59,15 @@ export function hydrateBootstrap(payload: BootstrapPayload): Bootstrap {
     ...payload,
     tree: payload.tree ?? buildLibraryTree(payload.folders, payload.entries),
   };
+}
+
+export function hydrateReaderLibrary(payload: ReaderLibraryPayload): Bootstrap {
+  const namespaces = new Map(payload.folders.map((folder) => [folder.id, folder.namespace]));
+  const entries = payload.entries.map((entry) => ({
+    ...entry,
+    canonical_tag: `${namespaces.get(entry.folder_id)}:${entry.kind}:${entry.tag}`,
+  }));
+  return hydrateBootstrap({ ...payload, entries });
 }
 
 function replaceTreeFolder(nodes: FolderNode[], folder: Folder): FolderNode[] {

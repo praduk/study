@@ -2,6 +2,7 @@ import type { EntrySummary, Folder, VariantSummary } from '@/lib/types';
 
 const LIBRARY_PREFIX = '/library/';
 const PATH_SEGMENT = /^[a-z][a-z0-9-]*$/;
+const MAX_LIBRARY_TAG_LENGTH = 8192;
 
 export type LibraryPathResolution =
   | { kind: 'root' }
@@ -41,23 +42,31 @@ export function libraryPathForEntry(entry: EntrySummary, variantId: string | nul
   return canonicalPath(variantCanonicalTag(entry, variantId));
 }
 
-export function resolveLibraryPath(
-  pathname: string,
-  entries: EntrySummary[],
-): LibraryPathResolution {
-  if (pathname === '' || pathname === '/') return { kind: 'root' };
-  if (!pathname.startsWith(LIBRARY_PREFIX)) return { kind: 'missing' };
+/** A null tag selects the first entry; an empty tag represents an invalid URL. */
+export function tagFromLibraryPath(pathname: string): string | null {
+  if (pathname === '' || pathname === '/') return null;
+  if (!pathname.startsWith(LIBRARY_PREFIX)) return '';
 
   const relative = pathname.slice(LIBRARY_PREFIX.length).replace(/\/$/, '');
-  if (!relative) return { kind: 'missing' };
+  if (!relative) return '';
   let segments: string[];
   try {
     segments = relative.split('/').map(decodeURIComponent);
   } catch {
-    return { kind: 'missing' };
+    return '';
   }
-  if (segments.some((segment) => !PATH_SEGMENT.test(segment))) return { kind: 'missing' };
-  const requestedTag = segments.join(':');
+  if (segments.some((segment) => !PATH_SEGMENT.test(segment))) return '';
+  const tag = segments.join(':');
+  return tag.length <= MAX_LIBRARY_TAG_LENGTH ? tag : '';
+}
+
+export function resolveLibraryPath(
+  pathname: string,
+  entries: EntrySummary[],
+): LibraryPathResolution {
+  const requestedTag = tagFromLibraryPath(pathname);
+  if (requestedTag === null) return { kind: 'root' };
+  if (!requestedTag) return { kind: 'missing' };
 
   for (const entry of entries) {
     if (entry.canonical_tag === requestedTag) {

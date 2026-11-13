@@ -38,7 +38,9 @@ alter `@` characters inside prose, code, or mathematics.
   leaves `matched_folder_id` and `scope_distance` null because it has no single ancestor scope.
 - `GET /api/references/resolve-batch?folder_id=...&tag=@group&tag=@field` resolves
   1–100 tags against one snapshot and returns `{revision, results: [{tag, result}]}` in
-  input order. Each `result` has the single-resolution shape. Individual tags retain the
+  input order. Each `result` defaults to the single-resolution shape. The reader sends
+  `preview=false` to resolve link labels and identities without Markdown, then fetches the full
+  single resolution when a preview opens. Individual tags retain the
   8,192-character limit; a batch is bounded at 65,536 tag characters. The reader groups
   simultaneous same-folder requests and deduplicates requests already in flight. It does
   not retain completed results across page visits, so client caches cannot mask disk edits.
@@ -105,10 +107,11 @@ approach a full scan; the result cap bounds response size, not that honest worst
 
 Markdown files are read once for the first snapshot, not once per query. Later v2 builds reuse
 unchanged Markdown strings from the previous completed build only when both their validated
-absolute paths and five-part file signatures match the complete pre-build tree scan. New or
-changed files go through the normal guarded reads. Full library/tree signatures must still match
-before and after loading, and only successful index construction publishes the replacement content
-cache, pruning removed paths. This cache contains at most the Markdown paths in one completed
+absolute paths and five-part file signatures match the validated metadata snapshot. New or changed
+files go through the normal guarded reads. The full validated v2 signature set, including
+directories that reveal added or removed paths, must still match after loading. Only successful
+index construction publishes the replacement content cache and prunes removed paths.
+This cache contains at most the Markdown paths in one completed
 library snapshot; v1 builds retain full reads and clear it. A metadata-only edit therefore rereads
 no unchanged Markdown, while an edit to one body rereads that file. Every rebuild still creates new
 metadata, ranking, scope-resolution, and incoming-reference indexes so title, namespace, and link
@@ -146,13 +149,16 @@ complete parse. Moves invalidate search immediately, while the frontend batches 
 until the library and selected entry are updated. Navigation-only bootstrap responses omit headers,
 asset records, and variant file paths; entry-detail and legacy bootstrap responses remain complete.
 
-Interactive v2 creation and folder changes similarly retain validated metadata after checking the
+Interactive v2 creation, reordering, and folder changes similarly retain validated metadata after checking the
 folder graph, new record IDs/tags, new entry contents, exact written bytes, and the complete resulting
 tree signatures. Folder moves relocate existing directories and remap the cached paths of their
 descendants. Unchanged files retain their prior signatures; only planned metadata writes and affected
 directory timestamps may differ. These operations invalidate search immediately so canonical tags,
 lexical scope, and incoming references are rebuilt. Unexpected disk changes require full validation;
 special deep-folder layout transitions and recovery-enabled stores keep the general write path.
+Interactive v2 uploads validate the owning entry and the new files before committing its sidecar.
+Study reuses the validated snapshot when the sidecar, file identities, and remaining tree signatures
+match the upload.
 
 Snapshot, entry, and search-index reads inspect the validated metadata without copying the whole
 library before copying their returned entries. Compact bootstrap and review snapshots omit the derived

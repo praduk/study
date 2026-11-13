@@ -509,7 +509,7 @@ class LibraryStore:
     def _write_v2_structure(
         self, library: dict[str, Any], contents: dict[Path, str] | None = None,
     ) -> bool:
-        """Persist creation/folder changes against a validated snapshot.
+        """Persist creation, folder changes, and reordering from a validated snapshot.
 
         Existing entries may only change their derived order here. Whole-folder
         renames preserve local files; deep-path layout transitions use the general
@@ -612,6 +612,8 @@ class LibraryStore:
                 writes[entry_paths[entry_id] / V2_ENTRY_METADATA] = json.dumps(metadata, ensure_ascii=False, indent=2) + "\n"
         if not self._library_cache_is_current():
             raise StoreError("library changed while planning the write; retry")
+        if not writes and not relocations:
+            return True
         before = dict(self._library_signatures)
         expected = {relocated(path): signature for path, signature in before.items()}
         created_dirs: set[Path] = set()
@@ -1451,6 +1453,8 @@ class LibraryStore:
         path: Path,
         value: dict[str, Any],
         expected_signature: tuple[int, int, int, int, int] | None,
+        *,
+        conflict: str = "folder metadata changed before saving its review preference",
     ) -> None:
         """Replace one JSON file only if it is still the version we validated."""
         encoded = json.dumps(value, ensure_ascii=False, indent=2) + "\n"
@@ -1463,7 +1467,7 @@ class LibraryStore:
                 raise StoreError(f"cannot inspect metadata before writing: {path.name}") from exc
             after = self._file_signature(path)
             if before != expected_signature or after != expected_signature:
-                raise StoreError("folder metadata changed before saving its review preference")
+                raise StoreError(conflict)
             if current == encoded:
                 return
             with temporary.open("x", encoding="utf-8") as stream:
@@ -1471,7 +1475,7 @@ class LibraryStore:
                 stream.flush()
                 os.fsync(stream.fileno())
             if self._file_signature(path) != expected_signature:
-                raise StoreError("folder metadata changed before saving its review preference")
+                raise StoreError(conflict)
             os.replace(temporary, path)
         finally:
             temporary.unlink(missing_ok=True)
@@ -1910,10 +1914,13 @@ class LibraryStore:
         library: dict[str, Any],
         replacements: dict[Path, str],
         prior_signatures: dict[Path, tuple[int, int, int, int, int] | None],
+        *,
+        added_files: dict[Path, tuple[int, int, int, int, int] | None] | None = None,
+        added_dirs: dict[Path, tuple[int, int]] | None = None,
     ) -> bool:
         """Publish only signatures verified against our writes and unchanged neighbors."""
         try:
-            written_signatures = {}
+            written_signatures = dict(added_files or {})
             for path, text in replacements.items():
                 before = self._file_signature(path)
                 actual = path.read_text(encoding="utf-8")
@@ -1930,9 +1937,21 @@ class LibraryStore:
                 path: self._file_signature(path)
                 for path in self._v2_signature_paths if path not in signatures
             })
-            changed_paths = {*replacements, *(path.parent for path in replacements)}
+            changed_paths = {*written_signatures, *(path.parent for path in written_signatures)}
+            new_dirs = added_dirs or {}
+            expected_paths = set(prior_signatures) | set(written_signatures) | set(new_dirs)
             if (
-                set(signatures) != set(prior_signatures)
+                set(signatures) != expected_paths
+                or any(path.is_symlink() for path in (*written_signatures, *new_dirs))
+                or any(
+                    signatures[path] is None or signatures[path][:2] != identity
+                    for path, identity in new_dirs.items()
+                )
+                or any(
+                    signatures[path] is None or signatures[path][:2] != signature[:2]
+                    for path, signature in prior_signatures.items()
+                    if path in changed_paths and path not in written_signatures
+                )
                 or any(signatures[path] != signature for path, signature in written_signatures.items())
                 or any(
                     signatures[path] != signature
@@ -2105,39 +2124,71 @@ class LibraryStore:
         result["review_modes"] = self.review_modes_for_entry(result)
         result["canonical_tag"] = self._entry_tag(library, entry, namespaces)
         if full:
-            for formulation in result.get("formulations", []):
-                formulation["content"] = self._read_content(formulation["file"])
-                formulation["canonical_tag"] = result["canonical_tag"] + (
-                    f":{formulation['subtag']}" if formulation.get("subtag") else ""
-                )
-            for supplement in result.get("supplements", []):
-                supplement["content"] = self._read_content(supplement["file"])
-                supplement["canonical_tag"] = f"{result['canonical_tag']}:{supplement['kind']}" + (
-                    f":{supplement['subtag']}" if supplement.get("subtag") else ""
-                )
+            for group in ("formulations", "supplements"):
+                for variant in result.get(group, []):
+                    variant.update(self._variant_content(
+                        variant, result["canonical_tag"], supplement=group == "supplements"
+                    ))
         return result
+
+    def _variant_content(
+        self, variant: dict[str, Any], entry_tag: str, *, supplement: bool
+    ) -> dict[str, str]:
+        canonical_tag = entry_tag
+        if supplement:
+            canonical_tag += f":{variant['kind']}"
+        if variant.get("subtag"):
+            canonical_tag += f":{variant['subtag']}"
+        return {"content": self._read_content(variant["file"]), "canonical_tag": canonical_tag}
 
     def snapshot(self, *, include_tree: bool = True, navigation_only: bool = False) -> dict[str, Any]:
         with self._lock:
             library = self._read_view()
             namespaces = self._folder_namespaces(library)
-            folders = copy.deepcopy(library["folders"])
-            entries = [
-                self._navigation_entry(library, entry, namespaces) if navigation_only
-                else self._decorate_entry(library, entry, False, namespaces)
-                for entry in library["entries"]
-            ]
-            for folder in folders:
-                folder["namespace"] = namespaces[folder["id"]]
-            result = {
-                "version": library["version"],
-                "folders": folders,
-                "entries": entries,
-                "macros": self.get_macros(),
-            }
+            result = self._snapshot(library, namespaces, navigation_only=navigation_only)
             if include_tree:
                 result["tree"] = self._tree(library, namespaces)
             return result
+
+    def _snapshot(
+        self, library: dict[str, Any], namespaces: dict[str, str], *, navigation_only: bool,
+    ) -> dict[str, Any]:
+        folders = copy.deepcopy(library["folders"])
+        for folder in folders:
+            folder["namespace"] = namespaces[folder["id"]]
+        return {
+            "version": library["version"],
+            "folders": folders,
+            "entries": [
+                self._navigation_entry(library, entry, namespaces) if navigation_only
+                else self._decorate_entry(library, entry, False, namespaces)
+                for entry in library["entries"]
+            ],
+            "macros": self.get_macros(),
+        }
+
+    def startup_snapshot(self, canonical_tag: str | None) -> tuple[dict[str, Any], dict | None]:
+        """Get navigation and the initial entry from the same validated library view."""
+        with self._lock:
+            library = self._read_view()
+            namespaces = self._folder_namespaces(library)
+            snapshot = self._snapshot(library, namespaces, navigation_only=True)
+            selected = None
+            for entry, summary in zip(library["entries"], snapshot["entries"]):
+                entry_tag = summary["canonical_tag"]
+                if canonical_tag is None or entry_tag == canonical_tag:
+                    selected = entry
+                    break
+                if canonical_tag.startswith(f"{entry_tag}:"):
+                    suffix = canonical_tag[len(entry_tag) + 1:]
+                    if any(variant.get("subtag") == suffix for variant in entry["formulations"]) or any(
+                        ":".join(filter(None, (variant["kind"], variant.get("subtag")))) == suffix
+                        for variant in entry["supplements"]
+                    ):
+                        selected = entry
+                        break
+            detail = self._decorate_entry(library, selected, True, namespaces) if selected else None
+            return snapshot, detail
 
     def _navigation_entry(
         self, library: dict[str, Any], entry: dict[str, Any], namespaces: dict[str, str],
@@ -3355,7 +3406,8 @@ class LibraryStore:
             lookup = {entry["id"]: entry for entry in library["entries"]}
             for order, entry_id in enumerate(entry_ids):
                 lookup[entry_id]["order"] = order
-            self._write(library)
+            if not self._write_v2_structure(library):
+                self._write(library)
 
     def get_macros(self) -> dict[str, str | list[str | int]]:
         with self._lock:
@@ -3545,6 +3597,15 @@ class LibraryStore:
                 raise StoreError("asset file contents do not match its metadata")
             if any(not isinstance(value, bytes) for value in contents.values()):
                 raise StoreError("asset file contents must be bytes")
+            asset_fields = {
+                "image": {"path"}, "excalidraw": {"path", "source"}, "commutative": {"source"}
+            }.get(stored_asset.get("kind"))
+            if (
+                version == 2 and not self.recovery_backups
+                and asset_fields == set(targets) == set(contents)
+            ):
+                self._register_v2_asset(library, entry, stored_asset, targets, contents)
+                return copy.deepcopy(stored_asset)
 
             created: list[Path] = []
             try:
@@ -3581,6 +3642,94 @@ class LibraryStore:
                 raise
             return copy.deepcopy(stored_asset)
 
+    def _register_v2_asset(
+        self,
+        library: dict[str, Any],
+        entry: dict[str, Any],
+        asset: dict[str, Any],
+        targets: dict[str, Path],
+        contents: dict[str, bytes],
+    ) -> None:
+        if any(
+            item["id"] == asset.get("id")
+            for owner in library["entries"] if owner is not entry
+            for item in owner["assets"]
+        ):
+            raise StoreError(f"duplicate asset id: {asset['id']}")
+        entry_path = self._v2_entry_paths[entry["id"]]
+        assets_dir = entry_path / V2_ASSETS_DIRECTORY
+        metadata_path = entry_path / V2_ENTRY_METADATA
+        prior_signatures = self._library_signatures
+        created_dir_identity = None
+        created: dict[Path, tuple[int, int, int, int, int] | None] = {}
+        try:
+            with self._v2_write_transaction():
+                if (
+                    assets_dir.resolve() != assets_dir
+                    or self._file_signature(assets_dir) != prior_signatures.get(assets_dir)
+                ):
+                    raise StoreError("asset directory is unsafe")
+                if contents and assets_dir not in prior_signatures:
+                    assets_dir.mkdir()
+                    directory_signature = self._file_signature(assets_dir)
+                    if directory_signature is None:
+                        raise StoreError("asset directory disappeared while saving")
+                    created_dir_identity = directory_signature[:2]
+                for field, body in contents.items():
+                    target = targets[field]
+                    signature = self._file_signature(target)
+                    if target.is_symlink() or signature != prior_signatures.get(target):
+                        raise StoreError(f"asset destination changed or is unsafe: {target.name}")
+                    if signature is not None:
+                        if not target.is_file() or target.read_bytes() != body:
+                            raise StoreError(f"asset filename collides with different content: {target.name}")
+                        continue
+                    self._v2_data_relative(target)
+                    _atomic_bytes(target, body)
+                    created[target] = self._file_signature(target)
+                entry["assets"].append(asset)
+                entry["updated_at"] = _now()
+                validate_library(
+                    {"version": 2, "folders": library["folders"], "entries": [entry]},
+                    self.data_dir, self.library_dir, self.media_dir, self.diagram_dir,
+                )
+                if any(
+                    signature is None or self._file_signature(path) != signature
+                    for path, signature in created.items()
+                ):
+                    raise StoreError("asset file changed while saving")
+                if assets_dir.resolve() != assets_dir or any(path.is_symlink() for path in created):
+                    raise StoreError("asset destination became unsafe while saving")
+                metadata = self._v2_entry_metadata(entry, self._v2_entry_ranks[entry["id"]], entry_path)
+                self._write_json_if_signature_matches(
+                    metadata_path, metadata, prior_signatures[metadata_path],
+                    conflict="entry metadata changed before saving its asset",
+                )
+        except (StoreError, LibraryValidationError, OSError) as exc:
+            # A concurrent direct edit may already have registered one of
+            # these paths. Remove only our own files if the sidecar still
+            # matches the pre-upload snapshot.
+            if (
+                assets_dir.resolve() == assets_dir
+                and self._file_signature(metadata_path) == prior_signatures[metadata_path]
+            ):
+                for path, signature in created.items():
+                    if signature is not None and self._file_signature(path) == signature:
+                        path.unlink(missing_ok=True)
+                directory_signature = self._file_signature(assets_dir)
+                if (directory_signature is not None
+                        and directory_signature[:2] == created_dir_identity
+                        and not any(assets_dir.iterdir())):
+                    assets_dir.rmdir()
+            raise StoreError(str(exc)) from exc
+        self._invalidate_search_index()
+        text = json.dumps(metadata, ensure_ascii=False, indent=2) + "\n"
+        self._refresh_v2_entry_cache(
+            library, {metadata_path: text}, prior_signatures,
+            added_files=created,
+            added_dirs={assets_dir: created_dir_identity} if created_dir_identity else None,
+        )
+
     def _resolve_asset_file(
         self,
         *,
@@ -3600,7 +3749,7 @@ class LibraryStore:
         if pattern is None or pattern.fullmatch(relative) is None:
             return None
         with self._lock:
-            library = self._read()
+            library = self._read_view()
             if library["version"] == 1:
                 try:
                     return self._safe_owned_file(relative, global_root, suffixes)
@@ -3645,7 +3794,7 @@ class LibraryStore:
     @staticmethod
     def _file_signature(path: Path) -> tuple[int, int, int, int, int] | None:
         try:
-            status = path.stat()
+            status = os.stat(str(path))
         except FileNotFoundError:
             return None
         except OSError as exc:
@@ -3762,12 +3911,13 @@ class LibraryStore:
     def _build_search_index(self) -> LibrarySearchIndex:
         # A Git/manual replacement can race a read. Retry once rather than
         # attaching fresh signatures to an older metadata/content snapshot.
-        v2_tree_after: dict[Path, tuple[int, int, int, int, int] | None] = {}
         for attempt in range(2):
             library_before = self._file_signature(self.library_path)
-            version_before = self._format_version()
-            v2_tree_before = self._v2_tree_signatures() if version_before == 2 else {}
             library = self._read_view()
+            # V2's validated metadata already carries the complete signature
+            # set. Its directories detect added/removed paths, so check these
+            # same signatures after reading instead of rebuilding the tree.
+            v2_signatures = self._library_signatures if library["version"] == 2 else {}
             relative_paths = sorted(
                 {
                     variant["file"]
@@ -3789,10 +3939,10 @@ class LibraryStore:
                     library["version"] == 2
                     and cached is not None
                     and cached[1] == self.data_dir / relative
-                    and v2_tree_before.get(cached[1]) == cached[2]
+                    and v2_signatures.get(cached[1]) == cached[2]
                 ):
                     # Reuse only previously validated bytes at the same path.
-                    # The full before/after tree checks below still cover
+                    # The signature checks bracketing this read still cover
                     # replacement files, directory changes, and concurrent edits.
                     content, path, signature = cached
                 else:
@@ -3802,10 +3952,10 @@ class LibraryStore:
                 if library["version"] == 2 and signature is not None:
                     next_content_cache[relative] = (content, path, signature)
             library_after = self._file_signature(self.library_path)
-            v2_tree_after = (
-                self._v2_tree_signatures() if library.get("version") == 2 else {}
-            )
-            if library_before == library_after and v2_tree_before == v2_tree_after:
+            if library_before == library_after and all(
+                self._file_signature(path) == signature
+                for path, signature in v2_signatures.items()
+            ):
                 break
             if attempt == 1:
                 raise StoreError("library changed repeatedly while the search index was loading")
@@ -3820,7 +3970,7 @@ class LibraryStore:
         self._search_index = index
         self._search_signatures = {
             self.library_path: library_after,
-            **v2_tree_after,
+            **v2_signatures,
             **indexed_paths,
         }
         # Publish only a completed, coherent build; replacing the dictionary
@@ -3878,7 +4028,9 @@ class LibraryStore:
             except SearchIndexError as exc:
                 raise StoreError(str(exc)) from exc
 
-    def resolve_references(self, folder_id: str, references: list[str]) -> dict[str, Any]:
+    def resolve_references(
+        self, folder_id: str, references: list[str], *, preview: bool = True
+    ) -> dict[str, Any]:
         if not 1 <= len(references) <= 100 or sum(map(len, references)) > 65536:
             raise StoreError("a reference batch requires 1 to 100 tags and at most 65536 characters")
         with self._lock:
@@ -3887,7 +4039,10 @@ class LibraryStore:
                 return {
                     "revision": index.revision,
                     "results": [
-                        {"tag": reference, "result": index.resolve(folder_id, reference)}
+                        {
+                            "tag": reference,
+                            "result": index.resolve(folder_id, reference, preview=preview),
+                        }
                         for reference in references
                     ],
                 }

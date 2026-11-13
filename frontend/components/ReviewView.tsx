@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AlertTriangle, ArrowLeft, Brain, Check, ChevronRight, Eye, Pencil, RotateCcw } from 'lucide-react';
 
+import { DeferredDetails } from '@/components/DeferredDetails';
 import { MathMarkdown } from '@/components/MathMarkdown';
 import { Button } from '@/components/ui/button';
 import { api } from '@/lib/api';
@@ -218,7 +219,10 @@ export function ReviewView({ initialDue, isMobile, onExit }: Props) {
               <div><div className="answer-label">Your attempt</div>{submittedAttempt?.overt ? <MathMarkdown content={submittedAttempt.attempt} folderId={card.folder_id} interactive={false} /> : <em>Think-only attempt</em>}</div>
               <div><div className="answer-label">Canonical answer</div><MathMarkdown content={revealed.answer.primary.content || ''} folderId={card.folder_id} /></div>
             </div>
-            {revealed.answer.alternatives.map((item) => <details className="review-supplement" key={item.id}><summary>Alternative {card.mode === 'proof-plan' ? 'proof' : card.mode === 'solve' ? 'solution' : 'formulation'}: {item.label}</summary><MathMarkdown content={item.content || ''} folderId={card.folder_id} /></details>)}
+            {revealed.answer.alternatives.map((item) => <DeferredDetails key={item.id} className="review-supplement"
+              summary={`Alternative ${card.mode === 'proof-plan' ? 'proof' : card.mode === 'solve' ? 'solution' : 'formulation'}: ${item.label}`}>
+              <MathMarkdown content={item.content || ''} folderId={card.folder_id} />
+            </DeferredDetails>)}
             <div className="feedback-checklist">{revealed.feedback_cues.map((cue) => <p key={cue}><ChevronRight size={14} /> {cue}</p>)}</div>
             <div className="grade-prompt">Grade the retrieval, not familiarity after seeing the answer.</div>
             <div className="grade-grid">{GRADES.map((item) => <button key={item.grade} className={item.className} onClick={() => void grade(item.grade)} disabled={pendingAction !== null} aria-busy={pendingAction === 'grade'}><kbd>{item.key}</kbd><strong>{item.label}</strong><span>{item.note}</span></button>)}</div>

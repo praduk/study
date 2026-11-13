@@ -11,10 +11,12 @@ Server mode is password-protected and stores revocable sessions.
 
 ## Performance priorities
 
-Study prioritizes fast interaction and low bandwidth. The reader requests a small navigation
-snapshot and fetches entry bodies only when opened; drawing code and styles load only when needed.
+Study prioritizes fast interaction and low bandwidth. The reader opens with one authenticated
+request for navigation and the selected entry. Other entry bodies, repository status, reference
+previews, and drawing tools load on demand. MathJax starts when a view needs math. Large static
+scripts and styles support browser caching, conditional requests, and prebuilt Brotli transfers.
 Content-changing actions batch reader refreshes, and move responses omit unused library copies.
-Static assets support browser caching and conditional requests.
+See the [November 2026 performance measurements](docs/performance/2026-11-13.md).
 
 The interactive app does not copy the whole library for rollback before a multi-file write.
 Individual metadata and Markdown files are still written atomically, but interrupted multi-file
@@ -24,7 +26,8 @@ is skipped when the moved entry validates and disk signatures confirm that other
 Direct `LibraryStore` callers retain the optional conservative backup default; the web app explicitly
 uses `recovery_backups=False`. Existing deletion guards and review semantics remain in effect.
 
-Routine entry/folder creation and folder renaming/moving also write only affected sidecars.
+Routine entry/folder creation, entry reordering, and folder renaming/moving write affected sidecars.
+An ordinary upload validates the owning entry and its new asset files before committing the sidecar.
 Folder moves rename the directory as a unit, retaining descendant Markdown and assets. Validated
 metadata is reused only when the resulting tree matches the planned changes; outside edits trigger
 a full reload. Moves that change the special deep-folder storage layout retain the general writer.

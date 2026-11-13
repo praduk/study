@@ -182,6 +182,47 @@ function kindLabel(kind: string | undefined): string | undefined {
   );
 }
 
+function ReferencePreviewBody({ folderId, tag, target, renderPreview, fetchPreview }: {
+  folderId: string;
+  tag: string;
+  target: StudyReferenceTarget;
+  renderPreview: StudyReferenceProps['renderPreview'];
+  fetchPreview: boolean;
+}) {
+  const [body, setBody] = useState<StudyReferenceTarget | null>(null);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (!fetchPreview) return;
+    const controller = new AbortController();
+    const query = new URLSearchParams({ folder_id: folderId, tag });
+    void api<unknown>(`/api/references/resolve?${query}`, { signal: controller.signal })
+      .then((payload) => {
+        if (controller.signal.aborted) return;
+        const result = normalizeStudyReferenceResolution(payload);
+        if (result.status !== 'resolved' || !result.target
+          || result.target.entryId !== target.entryId || result.target.variantId !== target.variantId
+          || result.target.canonicalTag !== target.canonicalTag) {
+          setError('This reference changed. Reopen the entry to refresh it.');
+          return;
+        }
+        setBody(result.target);
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setError('Reference preview could not be loaded.');
+      });
+    return () => controller.abort();
+  }, [fetchPreview, folderId, tag, target]);
+
+  const preview = fetchPreview ? body : target;
+  if (!preview) return <output className="m-0 text-sm text-muted-foreground">{error || 'Loading preview…'}</output>;
+  return <div className="reference-preview-content">
+    {preview.header && (renderPreview ? renderPreview(preview.header, preview) : <p>{preview.header}</p>)}
+    {preview.preview && (renderPreview ? renderPreview(preview.preview, preview) : <p>{preview.preview}</p>)}
+    {!preview.preview && !preview.title && <p className="m-0 text-sm text-muted-foreground">Resolved reference</p>}
+  </div>;
+}
+
 export function StudyReference({
   literalTag,
   sourceText = literalTag,
@@ -313,7 +354,6 @@ export function StudyReference({
 
   const target = displayedResolution.target ?? {};
   const label = kindLabel(target.kind);
-  const preview = target.preview;
   const displayText = referenceDisplayText(
     literalTag,
     target.title,
@@ -357,17 +397,8 @@ export function StudyReference({
             </PopoverDescription>
           )}
         </PopoverHeader>
-        <div className="reference-preview-content">
-          {target.header && renderPreview?.(target.header, target)}
-          {preview && renderPreview?.(preview, target)}
-          {target.header && !renderPreview && <p>{target.header}</p>}
-          {preview && !renderPreview && <p>{preview}</p>}
-        </div>
-        {!preview && !target.title && (
-          <p className="m-0 text-sm text-muted-foreground">
-            Resolved reference
-          </p>
-        )}
+        <ReferencePreviewBody folderId={currentFolderId} tag={queryTag} target={target}
+          renderPreview={renderPreview} fetchPreview={resolveReference === resolveStudyReference} />
         {onActivate && (
           <button
             type="button"

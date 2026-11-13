@@ -7,6 +7,7 @@ import os
 import stat
 import uuid
 from collections.abc import Callable
+from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -592,20 +593,19 @@ class ReviewEngine:
             self._calibration_verified = True
             return calibration_summary(calibration)
 
-    def _current_card_ids(self, snapshot: dict[str, Any] | None = None) -> set[str]:
-        current: set[str] = set()
-        for entry in (snapshot or self.store.snapshot(include_tree=False))["entries"]:
-            for mode in entry.get("review_modes", []):
-                if self.store.review_mode_available(entry, mode):
-                    current.add(self.card_id(entry["id"], mode))
-        return current
+    def _current_card_ids(self, library: dict[str, Any]) -> set[str]:
+        return {
+            self.card_id(entry["id"], mode)
+            for entry in library["entries"]
+            for mode in self.store.review_modes_for_entry(entry)
+        }
 
-    def _prune_if_library_changed(self, snapshot: dict[str, Any] | None = None) -> None:
+    def _prune_if_library_changed(self, library: dict[str, Any]) -> frozenset[str]:
         """Compact stale review data after a live direct library edit."""
-        with self._lock:
-            current_cards = frozenset(self._current_card_ids(snapshot))
-            if current_cards != self._known_current_cards or self.store.pending_deletions():
-                self.prune_to_current_library(snapshot)
+        current_cards = frozenset(self._current_card_ids(library))
+        if current_cards != self._known_current_cards or self.store.pending_deletions():
+            self.prune_to_current_library(library)
+        return current_cards
 
     def prune_to_current_library(
         self, snapshot: dict[str, Any] | None = None
@@ -624,7 +624,8 @@ class ReviewEngine:
                 record_visitor=records.append,
             )
             validated_log_signature = self._log_signature()
-            current_cards = self._current_card_ids(snapshot)
+            library = snapshot if snapshot is not None else self.store._read_view()
+            current_cards = self._current_card_ids(library)
             # A committed deletion also clears historical state if the same
             # authored ID was restored before cleanup could finish. A durable
             # acknowledgment below retires that intent before new grading.
@@ -755,7 +756,7 @@ class ReviewEngine:
             raise StoreError("invalid review mode")
         return entry_id, mode
 
-    def _prompt(self, entry: dict[str, Any], mode: str) -> dict[str, Any]:
+    def _prompt(self, entry: dict[str, Any], mode: str, canonical_tag: str) -> dict[str, Any]:
         title = entry["title"]
         statement_prompt = (
             f"Define {title}."
@@ -779,7 +780,7 @@ class ReviewEngine:
                 (item for item in entry["formulations"] if item.get("main")),
                 entry["formulations"][0],
             )
-            prompt_body = main.get("content", "")
+            prompt_body = self.store._read_content(main["file"])
         return {
             "id": self.card_id(entry["id"], mode),
             "entry_id": entry["id"],
@@ -788,7 +789,7 @@ class ReviewEngine:
             "mode_label": MODE_LABELS[mode],
             "title": title,
             "kind": entry["kind"],
-            "canonical_tag": entry["canonical_tag"],
+            "canonical_tag": canonical_tag,
             "header": entry.get("header", ""),
             "prompt": prompts[mode],
             "prompt_body": prompt_body,
@@ -798,8 +799,8 @@ class ReviewEngine:
         now = _now()
         limit = max(1, limit)
         with self._lock:
-            snapshot = self.store.snapshot(include_tree=False)
-            self._prune_if_library_changed(snapshot)
+            library = self.store._read_view()
+            self._prune_if_library_changed(library)
             state = self._read()
             _, _, changed = self._sync_state_with_log(state)
             if changed:
@@ -808,10 +809,8 @@ class ReviewEngine:
                 self._write(state)
             self._calibration_verified = True
             selected: list[tuple[dict[str, Any], str, dict[str, Any]]] = []
-            for entry in self._snapshot_ordered_entries(snapshot, review_only=True):
-                for mode in entry.get("review_modes") or self.store.default_review_modes(
-                    entry["kind"]
-                ):
+            for entry in self._snapshot_ordered_entries(library, review_only=True):
+                for mode in self.store.review_modes_for_entry(entry):
                     if not self.store.review_mode_enabled(entry, mode):
                         continue
                     card_id = self.card_id(entry["id"], mode)
@@ -825,16 +824,13 @@ class ReviewEngine:
                 if len(selected) >= limit:
                     break
 
-            # Statement recall needs only metadata. Read prompt bodies for the
-            # selected theorem-proof and problem cards in one library lookup.
-            prompt_entries = self.store.get_entries(
-                entry["id"]
-                for entry, mode, _ in selected
-                if mode in {"solve", "proof-plan"}
-            )
+            # Only selected theorem-proof and problem prompts need Markdown.
+            namespaces = self.store._folder_namespaces(library)
             queue: list[dict[str, Any]] = []
             for entry, mode, card_state in selected:
-                prompt = self._prompt(prompt_entries.get(entry["id"], entry), mode)
+                prompt = self._prompt(
+                    entry, mode, self.store._entry_tag(library, entry, namespaces)
+                )
                 prompt["due_at"] = card_state.get("due_at")
                 prompt["new"] = card_state.get("due_at") is None
                 prompt["repetitions"] = int(card_state.get("repetitions", 0))
@@ -973,28 +969,22 @@ class ReviewEngine:
                     bucket["again_lapses"] += 1
 
         with self._lock:
-            snapshot = self.store.snapshot(include_tree=False)
-            self._prune_if_library_changed(snapshot)
-            all_entries = self._snapshot_ordered_entries(snapshot)
-            active_entries = self._snapshot_ordered_entries(snapshot, review_only=True)
+            library = self.store._read_view()
+            current_cards = self._prune_if_library_changed(library)
+            all_entries = self._snapshot_ordered_entries(library)
+            active_entries = self._snapshot_ordered_entries(library, review_only=True)
             entry_by_id = {entry["id"]: entry for entry in all_entries}
             active_entry_ids = {entry["id"] for entry in active_entries}
+            namespaces = self.store._folder_namespaces(library)
             authored_order = {
                 entry["id"]: index for index, entry in enumerate(all_entries)
             }
 
-            current_cards: set[str] = set()
             active_cards: set[str] = set()
             mode_order: dict[str, int] = {}
             for entry in all_entries:
-                modes = entry.get("review_modes") or self.store.default_review_modes(
-                    entry["kind"]
-                )
-                for index, mode in enumerate(modes):
-                    if not self.store.review_mode_available(entry, mode):
-                        continue
+                for index, mode in enumerate(self.store.review_modes_for_entry(entry)):
                     card_id = self.card_id(entry["id"], mode)
-                    current_cards.add(card_id)
                     mode_order[card_id] = index
                     if (entry["id"] in active_entry_ids
                             and self.store.review_mode_enabled(entry, mode)):
@@ -1056,7 +1046,7 @@ class ReviewEngine:
                     "entry_id": entry_id,
                     "folder_id": entry["folder_id"],
                     "title": entry["title"],
-                    "canonical_tag": entry["canonical_tag"],
+                    "canonical_tag": self.store._entry_tag(library, entry, namespaces),
                     "kind": entry["kind"],
                     "mode": mode,
                     "mode_label": MODE_LABELS[mode],
@@ -1127,8 +1117,8 @@ class ReviewEngine:
 
     def stats(self, snapshot: dict[str, Any] | None = None) -> dict[str, Any]:
         with self._lock:
-            snapshot = snapshot or self.store.snapshot(include_tree=False)
-            self._prune_if_library_changed(snapshot)
+            library = snapshot if snapshot is not None else self.store._read_view()
+            current_cards = self._prune_if_library_changed(library)
             state = self._read()
             _, calibration, changed = self._sync_state_with_log(state)
             if changed:
@@ -1136,11 +1126,8 @@ class ReviewEngine:
             self._calibration_verified = True
             now = _now()
             due = 0
-            for entry in self._snapshot_ordered_entries(snapshot, review_only=True):
-                modes = entry.get("review_modes") or self.store.default_review_modes(
-                    entry["kind"]
-                )
-                for mode in modes:
+            for entry in self._snapshot_ordered_entries(library, review_only=True):
+                for mode in self.store.review_modes_for_entry(entry):
                     if not self.store.review_mode_enabled(entry, mode):
                         continue
                     due_text = state["cards"].get(
@@ -1148,42 +1135,44 @@ class ReviewEngine:
                     ).get("due_at")
                     if due_text is None or datetime.fromisoformat(due_text) <= now:
                         due += 1
-            current_cards = self._current_card_ids(snapshot)
-            today = _now().date().isoformat()
-            completed_today = sum(
-                1
-                for card_id, card in state["cards"].items()
-                if card_id in current_cards
-                and str(card.get("last_reviewed_at", "")).startswith(today)
-            )
-            minutes = round(
-                sum(
-                    int(card.get("last_elapsed_ms", 0))
-                    for card_id, card in state["cards"].items()
-                    if card_id in current_cards
+            today = now.date().isoformat()
+            completed_today = 0
+            elapsed_today = 0
+            for card_id, card in state["cards"].items():
+                if (
+                    card_id in current_cards
                     and str(card.get("last_reviewed_at", "")).startswith(today)
-                )
-                / 60_000
-            )
+                ):
+                    completed_today += 1
+                    elapsed_today += int(card.get("last_elapsed_ms", 0))
         return {
             "due": due,
             "completed_today": completed_today,
-            "minutes_today": minutes,
+            "minutes_today": round(elapsed_today / 60_000),
             "calibration": calibration_summary(calibration),
         }
 
     def reveal(self, card_id: str, attempt: dict[str, Any]) -> dict[str, Any]:
         entry_id, mode = self.split_card_id(card_id)
         with self._lock:
-            self._prune_if_library_changed()
+            library = self.store._read_view()
+            self._prune_if_library_changed(library)
             # Entry lookup and pending-attempt persistence share the library
             # mutation lock with deletion, so a reveal cannot recreate review
             # state after its entry has been removed.
-            entry = self.store.get_entry(entry_id)
-            if mode not in entry.get(
-                "review_modes", []
-            ) or not self.store.review_mode_enabled(entry, mode):
+            entry = self.store._entry(library, entry_id)
+            if not self.store.review_mode_enabled(entry, mode):
                 raise StoreError("this review mode is not enabled for the entry")
+            supplement = mode != "statement"
+            variants = entry["supplements"] if supplement else entry["formulations"]
+            canonical_tag = self.store._entry_tag(library, entry)
+            answer_variants = [
+                {
+                    **deepcopy(item),
+                    **self.store._variant_content(item, canonical_tag, supplement=supplement),
+                }
+                for item in variants
+            ]
             attempt_id = uuid.uuid4().hex
             created = {
                 "id": attempt_id,
@@ -1198,15 +1187,6 @@ class ReviewEngine:
             state["pending_attempts"][attempt_id] = created
             self._write(state)
             self._calibration_verified = True
-        if mode == "statement":
-            answer_variants = entry["formulations"]
-        else:
-            supplement_kind = "pf" if mode == "proof-plan" else "sl"
-            answer_variants = [
-                item
-                for item in entry.get("supplements", [])
-                if item.get("kind") == supplement_kind
-            ]
         main = next(
             (item for item in answer_variants if item.get("main")), answer_variants[0]
         )
@@ -1232,7 +1212,7 @@ class ReviewEngine:
             raise StoreError("review grade is outside its valid range")
         now = _now()
         with self._lock:
-            self._prune_if_library_changed()
+            self._prune_if_library_changed(self.store._read_view())
             state = self._read()
             logged, model_calibration, changed = self._sync_state_with_log(
                 state, attempt_id

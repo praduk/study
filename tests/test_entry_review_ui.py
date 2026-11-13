@@ -68,7 +68,7 @@ def test_packaged_entry_review_controls_desktop_and_phone(settings_factory, tmp_
                     await route.fulfill(status=503, content_type="application/json",
                                         body=json.dumps({"detail": "Simulated preference failure"}))
 
-                route_pattern = "**/api/entries/*?include_review_stats=true"
+                route_pattern = "**/api/entries/*?include_review_stats=true&include_git=false"
                 await page.route(route_pattern, fail_save)
                 await control.click()
                 await expect(page.locator(".toast-error")).to_contain_text("Simulated preference failure")

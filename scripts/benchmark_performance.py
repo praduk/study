@@ -40,7 +40,7 @@ def main():
     )
     parser.add_argument("--samples", type=int, default=7)
     parser.add_argument("--interactive", action="store_true",
-                        help="Use the current UI's navigation bootstrap and small move responses")
+                        help="Use the navigation bootstrap and small move responses")
     parser.add_argument("--pdf", action="store_true")
     args = parser.parse_args()
     if args.samples < 1:
@@ -139,6 +139,18 @@ def main():
                     "calendar",
                 }:
                     record(name + "_after_idle", lambda url=url: request("GET", url), 5, 0.3)
+
+            startup = client.get("/api/startup")
+            if startup.is_success:
+                for name, url in {
+                    "startup": f"/api/startup?tag={target['canonical_tag']}",
+                    "reader_bootstrap": "/api/bootstrap?reader=true",
+                }.items():
+                    response = record(name, lambda url=url: request("GET", url))
+                    results[name + "_bytes"] = {
+                        "decoded": len(response.content),
+                        "gzip": int(response.headers.get("content-length", 0)),
+                    }
 
             for kind, identifier in (("folders", folder_id), ("entries", entry_id)):
                 current = next(item for item in snapshot[kind] if item["id"] == identifier)[

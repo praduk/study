@@ -63,7 +63,7 @@ def test_read_only_stats_do_not_persist_derived_calibration(tmp_path):
     assert review.state_path.read_bytes() == before
 
 
-def test_calendar_uses_one_metadata_snapshot_without_reading_markdown(
+def test_calendar_uses_one_metadata_view_without_reading_markdown(
     tmp_path, monkeypatch: pytest.MonkeyPatch
 ):
     current = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
@@ -83,19 +83,21 @@ def test_calendar_uses_one_metadata_snapshot_without_reading_markdown(
     def reject_answer_read(*_args, **_kwargs):
         pytest.fail("review calendar must use metadata without loading Markdown answers")
 
-    snapshot = store.snapshot
-    calls: list[bool] = []
+    read_view = store._read_view
+    calls = 0
 
-    def record_snapshot(*, include_tree=True):
-        calls.append(include_tree)
-        return snapshot(include_tree=include_tree)
+    def record_view():
+        nonlocal calls
+        calls += 1
+        return read_view()
 
     monkeypatch.setattr(store, "_read_content", reject_answer_read)
     monkeypatch.setattr(store, "ordered_entries", reject_answer_read)
-    monkeypatch.setattr(store, "snapshot", record_snapshot)
+    monkeypatch.setattr(store, "snapshot", reject_answer_read)
+    monkeypatch.setattr(store, "_read_view", record_view)
     actual = review.calendar(start=current, end=current + timedelta(days=10))
     assert actual == expected
-    assert calls == [False]
+    assert calls == 1
 
 
 def test_calendar_api_reports_schedules_repeated_attempts_and_bayesian_diagnostics(
@@ -539,16 +541,16 @@ def test_concurrent_reveal_cannot_leave_pending_state_for_a_deleted_entry(
     deletion_started = threading.Event()
     deletion_finished = threading.Event()
     failures: list[Exception] = []
-    original_get_entry = store.get_entry
+    original_variant_content = store._variant_content
 
-    def paused_get_entry(entry_id: str):
-        value = original_get_entry(entry_id)
+    def paused_variant_content(*args, **kwargs):
+        value = original_variant_content(*args, **kwargs)
         reveal_inside_lock.set()
         if not allow_reveal_to_finish.wait(timeout=5):
             raise RuntimeError("test timed out while holding the reveal lock")
         return value
 
-    monkeypatch.setattr(store, "get_entry", paused_get_entry)
+    monkeypatch.setattr(store, "_variant_content", paused_variant_content)
 
     def reveal() -> None:
         try:

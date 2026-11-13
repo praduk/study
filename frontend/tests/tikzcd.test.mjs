@@ -60,11 +60,13 @@ test('MathJax extension configuration stays local and preserves explicit compati
   const config = mathJaxOptions(macros);
   assert.equal(config.tex.macros, macros);
   assert.deepEqual(config.tex.packages['[+]'], extensions.enabled);
-  assert.ok(config.loader.load.includes('[tex]/amscd'));
-  assert.ok(config.loader.load.includes('[tex]/mathtools'));
-  assert.ok(config.loader.load.includes('[tex]/mhchem'));
+  assert.deepEqual(config.loader.load, ['study-extensions']);
+  assert.match(config.loader.source['study-extensions'], /^\/vendor\/mathjax\/study-extensions\.js\?v=[a-f0-9]{16}$/);
+  const components = config.loader.provides['study-extensions'];
+  assert.ok(components.includes('ui/safe'));
+  for (const name of extensions.enabled) assert.ok(components.includes(`[tex]/${name}`));
   for (const name of [...extensions.disabled, ...extensions.explicit]) {
-    assert.ok(!config.loader.load.includes(`[tex]/${name}`));
+    assert.ok(!components.includes(`[tex]/${name}`));
   }
   assert.ok(Object.values(config.loader.paths).every(path => path.startsWith('/vendor/')));
 });

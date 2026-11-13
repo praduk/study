@@ -29,6 +29,13 @@ def test_server_mode_enforces_host_origin_csrf_and_server_side_sessions(settings
         client=("192.0.2.10", 50000),
     ) as client:
         assert client.get("/healthz", headers={"host": "evil.test"}).status_code == 400
+        client.cookies.set(COOKIE_NAME, "expired", domain="study.test", path="/")
+        startup = client.get("/api/startup")
+        assert startup.headers["cache-control"] == "no-store"
+        assert "Max-Age=0" in startup.headers["set-cookie"]
+        assert startup.json() == {"session": {
+            "authenticated": False, "auth_required": True, "csrf": None, "local_mode": False,
+        }}
         assert (
             client.post("/api/login", json={"password": "correct horse battery staple"}).status_code
             == 403
@@ -52,6 +59,7 @@ def test_server_mode_enforces_host_origin_csrf_and_server_side_sessions(settings
         csrf = logged_in.json()["csrf"]
         token = client.cookies.get(COOKIE_NAME)
         assert token
+        assert client.get("/api/startup").json()["session"]["csrf"] == csrf
 
         with sqlite3.connect(settings.data_dir / "runtime" / "sessions.sqlite3") as connection:
             stored = connection.execute("SELECT token_hash FROM sessions").fetchone()[0]

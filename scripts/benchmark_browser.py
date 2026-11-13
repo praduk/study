@@ -91,8 +91,17 @@ def main():
         # Select a real theorem with a proof, mathematics, and actual references.
         candidates = sorted((item for item in snapshot["entries"] if item["kind"] == "th" and item["supplements"]),
                             key=lambda item: item["canonical_tag"])
+        siblings = {}
+        for item in snapshot["entries"]:
+            siblings.setdefault(item["folder_id"], []).append(item)
+        with_next_sibling = {
+            item["id"] for group in siblings.values()
+            for item in sorted(group, key=lambda entry: (entry["order"], entry["title"].lower()))[:-1]
+        }
         target = None
         for candidate in candidates:
+            if candidate["id"] not in with_next_sibling:
+                continue
             detail = store.get_entry(candidate["id"])
             content = "\n".join(item.get("content", "") for item in detail["formulations"] + detail["supplements"])
             if "@" in content and "$" in content:
@@ -224,7 +233,6 @@ def main():
 
                         async def settled():
                             await visible(".document-heading h1")
-                            await visible('.linked-items[aria-busy="false"]')
                             await missing('.reading-pane [data-study-reference-status="loading"]')
                             await math_ready()
                             await api_idle()
@@ -319,6 +327,11 @@ def main():
                                 await page.reload(wait_until="domcontentloaded")
                                 await settled()
                             await measure("warm_reload_settled", reload)
+
+                            async def linked_items():
+                                await page.locator(".linked-items").scroll_into_view_if_needed()
+                                await visible(".linked-items .linked-items-count")
+                            await measure("linked_items_in_view", linked_items)
 
                             active_index = await page.locator(".entry-row").evaluate_all(
                                 "rows => rows.findIndex(row => row.classList.contains('active'))")

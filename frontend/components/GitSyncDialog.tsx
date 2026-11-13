@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GitCommit, GitPullRequest, RefreshCw } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -11,31 +11,41 @@ import type { GitStatus } from '@/lib/types';
 
 interface Props {
   open: boolean;
-  initial: GitStatus;
   onClose: () => void;
-  onChanged: (status: GitStatus) => void;
-  onPulled: (status: GitStatus) => Promise<void>;
+  onPulled: () => Promise<void>;
 }
 
-function GitSyncDialogSession({ open, initial, onClose, onChanged, onPulled }: Props) {
-  const [status, setStatus] = useState(initial);
+function GitSyncDialogSession({ open, onClose, onPulled }: Props) {
+  const [status, setStatus] = useState<GitStatus | null>(null);
   const [message, setMessage] = useState('Update study notes');
   const [busy, setBusy] = useState('');
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    if (!open) return;
+    const controller = new AbortController();
+    api<GitStatus>('/api/git/status', { signal: controller.signal }).then(setStatus).catch((reason: Error) => {
+      if (!controller.signal.aborted) setError(reason.message);
+    });
+    return () => controller.abort();
+  }, [open]);
+
   if (!open) return null;
 
   const refresh = async () => {
-    const next = await api<GitStatus>('/api/git/status');
-    setStatus(next); onChanged(next);
+    setBusy('refresh'); setError('');
+    try {
+      setStatus(await api<GitStatus>('/api/git/status'));
+    } catch (reason) { setError((reason as Error).message); }
+    finally { setBusy(''); }
   };
 
   const commit = async () => {
     setBusy('commit'); setError(''); setNotice('');
     try {
       const result = await api<{ revision: string; status: GitStatus }>('/api/git/commit', { method: 'POST', body: JSON.stringify({ message }) });
-      setStatus(result.status); onChanged(result.status); setNotice(`Committed content as ${result.revision}.`);
+      setStatus(result.status); setNotice(`Committed content as ${result.revision}.`);
     } catch (reason) { setError((reason as Error).message); }
     finally { setBusy(''); }
   };
@@ -46,8 +56,7 @@ function GitSyncDialogSession({ open, initial, onClose, onChanged, onPulled }: P
     try {
       const result = await api<{ summary: string; status: GitStatus }>('/api/git/pull', { method: 'POST' });
       setStatus(result.status);
-      onChanged(result.status);
-      await onPulled(result.status);
+      await onPulled();
       setNotice(result.summary || 'Already up to date.');
     } catch (reason) { setError((reason as Error).message); }
     finally { setBusy(''); }
@@ -57,7 +66,9 @@ function GitSyncDialogSession({ open, initial, onClose, onChanged, onPulled }: P
     <Dialog open={open} onOpenChange={(value) => !value && onClose()}>
       <DialogContent className="git-dialog" showCloseButton>
         <DialogHeader><DialogTitle>Repository</DialogTitle><p className="dialog-subtitle">Commit authored data locally or pull a safe fast-forward from the associated repository.</p></DialogHeader>
-        {!status.available ? <div className="form-error">{status.message || 'Git is unavailable.'}</div> : <>
+        {!status && !error && <output>Reading repository status…</output>}
+        {status && !status.available && <div className="form-error">{status.message || 'Git is unavailable.'}</div>}
+        {status?.available && <>
           <div className="repo-summary"><div><span>Branch</span><strong>{status.branch}</strong></div><div><span>Ahead</span><strong>{status.ahead ?? '—'}</strong></div><div><span>Behind</span><strong>{status.behind ?? '—'}</strong></div></div>
           <section className="git-section">
             <h3>Authored content</h3>
@@ -70,7 +81,7 @@ function GitSyncDialogSession({ open, initial, onClose, onChanged, onPulled }: P
         </>}
         {notice && <div className="success-note">{notice}</div>}
         {error && <div className="form-error" role="alert">{error}</div>}
-        <div className="dialog-actions"><Button variant="ghost" onClick={() => void refresh()}><RefreshCw /> Refresh</Button><Button variant="outline" onClick={onClose}>Done</Button></div>
+        <div className="dialog-actions"><Button variant="ghost" disabled={Boolean(busy) || (!status && !error)} onClick={() => void refresh()}><RefreshCw /> Refresh</Button><Button variant="outline" onClick={onClose}>Done</Button></div>
       </DialogContent>
     </Dialog>
   );

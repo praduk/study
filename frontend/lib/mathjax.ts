@@ -4,30 +4,36 @@ let sharedMacros: Record<string, string | (string | number)[]> = {};
 export function getSharedMathMacros() { return sharedMacros; }
 
 let typesetChain = Promise.resolve<unknown>(undefined);
-let markMathJaxReady: () => void;
-let markMathJaxFailed: (reason: unknown) => void;
-const mathJaxReady = new Promise<void>((resolve, reject) => {
-  markMathJaxReady = resolve;
-  markMathJaxFailed = reject;
-});
+let mathJaxReady: Promise<void> | undefined;
 
-async function finishMathJaxStartup() {
-  try {
-    await window.MathJax?.startup?.promise;
-    markMathJaxReady();
-  } catch (reason) {
-    markMathJaxFailed(reason);
-  }
+/** Set macros before the first typeset, including for the separate TikZ renderer. */
+export function configureMathJax(macros: Record<string, string | (string | number)[]>) {
+  if (!mathJaxReady) sharedMacros = macros;
 }
 
-export async function waitForMathJax() {
-  await mathJaxReady;
+function waitForMathJax() {
+  mathJaxReady ??= new Promise<void>((resolve, reject) => {
+    if (window.MathJax?.startup?.promise) {
+      resolve(window.MathJax.startup.promise.then(() => undefined));
+      return;
+    }
+    window.MathJax = mathJaxOptions(sharedMacros);
+    const script = document.createElement('script');
+    script.id = 'study-mathjax';
+    script.src = '/vendor/mathjax/tex-svg.js';
+    script.async = true;
+    script.addEventListener('load', () => resolve(window.MathJax?.startup?.promise?.then(() => undefined)), { once: true });
+    script.addEventListener('error', () => reject(new Error('The local MathJax bundle could not be loaded.')), { once: true });
+    document.head.appendChild(script);
+  });
+  return mathJaxReady;
 }
 
 export function typesetWithMathJax(element: HTMLElement) {
   typesetChain = typesetChain
     .catch(() => undefined)
     .then(async () => {
+      if (!element.isConnected) return;
       await waitForMathJax();
       if (!element.isConnected) return;
       window.MathJax?.typesetClear?.([element]);
@@ -40,7 +46,8 @@ export function clearMathJax(element: HTMLElement) {
   typesetChain = typesetChain
     .catch(() => undefined)
     .then(async () => {
-      await waitForMathJax();
+      if (!mathJaxReady) return;
+      await mathJaxReady;
       window.MathJax?.typesetClear?.([element]);
     });
   return typesetChain;
@@ -72,23 +79,4 @@ export function renderEquationSvg(latex: string) {
   });
   typesetChain = result;
   return result;
-}
-
-export function configureMathJax(macros: Record<string, string | (string | number)[]>) {
-  if (typeof window === 'undefined') return;
-  const existing = document.getElementById('study-mathjax') as HTMLScriptElement | null;
-  if (existing) {
-    if (window.MathJax?.startup?.promise) void finishMathJaxStartup();
-    else existing.addEventListener('load', () => void finishMathJaxStartup(), { once: true });
-    return;
-  }
-  sharedMacros = macros;
-  window.MathJax = mathJaxOptions(macros);
-  const script = document.createElement('script');
-  script.id = 'study-mathjax';
-  script.src = '/vendor/mathjax/tex-svg.js';
-  script.async = true;
-  script.addEventListener('load', () => void finishMathJaxStartup(), { once: true });
-  script.addEventListener('error', () => markMathJaxFailed(new Error('The local MathJax bundle could not be loaded.')), { once: true });
-  document.head.appendChild(script);
 }

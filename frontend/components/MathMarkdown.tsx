@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useEffect, useMemo, useRef, useSyncExternalStore } from 'react';
+import { memo, useEffect, useMemo, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
@@ -24,16 +24,6 @@ import { remarkStudyReferences } from '@/lib/remark-study-references';
 
 type OpenReference = (entryId: string, variantId?: string) => void;
 
-function subscribeTheme(onChange: () => void) {
-  const observer = new MutationObserver(onChange);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-  return () => observer.disconnect();
-}
-
-function getThemeSnapshot() {
-  return document.documentElement.classList.contains('dark');
-}
-
 interface MarkdownBlockProps {
   content: string;
   className?: string;
@@ -44,7 +34,6 @@ interface MarkdownBlockProps {
 
 function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, interactive = true }: MarkdownBlockProps) {
   const container = useRef<HTMLDivElement>(null);
-  const dark = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => false);
   const normalizedContent = useMemo(() => normalizeMathJaxDelimiters(content), [content]);
   const remarkPlugins = useMemo(
     () => interactive
@@ -54,14 +43,16 @@ function MarkdownBlock({ content, className = '', folderId = '', onOpenEntry, in
   );
   useEffect(() => {
     const element = container.current;
-    if (!element) return;
+    // The DOM check also recognizes delimiters introduced by Markdown entities
+    // and bare TeX environments or references handled by MathJax itself.
+    if (!element || !/[$\\]/.test(element.textContent ?? '')) return;
     void typesetWithMathJax(element).catch(() => undefined);
     return () => { void clearMathJax(element).catch(() => undefined); };
-  }, [content, dark, folderId, interactive, onOpenEntry]);
+  }, [normalizedContent, folderId, interactive, onOpenEntry]);
 
   return (
     <div
-      key={`${dark ? 'dark' : 'light'}:${interactive ? 'interactive' : 'static'}:${folderId}:${normalizedContent}`}
+      key={`${interactive ? 'interactive' : 'static'}:${folderId}:${normalizedContent}`}
       ref={container}
       className={className}
     >

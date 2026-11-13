@@ -13,6 +13,7 @@ import uuid
 import warnings
 from datetime import datetime
 from functools import lru_cache
+from mimetypes import guess_type
 from pathlib import Path
 from typing import Annotated, Any
 from urllib.parse import urlsplit
@@ -78,6 +79,29 @@ _PRECOMPRESSED_SUFFIXES = {
     ".woff2",
     ".zip",
 }
+_BROTLI_SUFFIXES = {".css", ".js", ".mjs"}
+_ENCODING_WEIGHT = re.compile(r"(?:0(?:\.\d{0,3})?|1(?:\.0{0,3})?)\Z")
+_GZIP_MINIMUM_SIZE = 1000
+_DYNAMIC_GZIP_ETAG_SUFFIX = '-gzip"'
+
+
+def _encoding_preferences(values: list[str]) -> dict[str, float]:
+    preferences = {}
+    for value in values:
+        for item in value.split(","):
+            name, separator, weight = item.strip().lower().partition(";")
+            name = name.strip()
+            if not separator:
+                preferences[name] = 1.0
+                continue
+            parameter, _, quality = weight.strip().partition("=")
+            quality = quality.strip()
+            preferences[name] = (
+                float(quality)
+                if parameter.strip() == "q" and _ENCODING_WEIGHT.fullmatch(quality)
+                else 0.0
+            )
+    return preferences
 
 
 class _SelectiveGZipMiddleware:
@@ -95,17 +119,29 @@ class _SelectiveGZipMiddleware:
         if scope["type"] != "http":
             await self.app(scope, receive, send)
             return
-        headers = {key.lower(): value for key, value in scope.get("headers", [])}
+        headers = scope.get("headers", [])
         path = str(scope.get("path", ""))
         if (
-            b"range" in headers
+            any(key == b"range" for key, _ in headers)
             or path == "/api/export/pdf"
             or path.startswith("/media/")
             or Path(path).suffix.casefold() in _PRECOMPRESSED_SUFFIXES
         ):
             await self.app(scope, receive, send)
             return
-        await self.gzip(scope, receive, send)
+        values = [value.decode("latin-1") for key, value in headers if key == b"accept-encoding"]
+        preferences = _encoding_preferences(values)
+        gzip_weight = preferences.get("gzip", preferences.get("*", 0))
+        use_gzip = gzip_weight > 0 and gzip_weight >= preferences.get("identity", 0)
+        # Starlette only checks whether the header contains the string "gzip".
+        # Preserve the full preferences for the static route's Brotli selection.
+        scope.setdefault("state", {})["encoding_preferences"] = preferences
+        scope["state"]["use_gzip"] = use_gzip
+        negotiated = [
+            *((key, value) for key, value in headers if key != b"accept-encoding"),
+            (b"accept-encoding", b"gzip" if use_gzip else b"identity"),
+        ]
+        await self.gzip({**scope, "headers": negotiated}, receive, send)
 
 
 SAFE_FILE = re.compile(r"^[a-f0-9]{64}\.(?:png|jpe?g|webp)$")
@@ -117,6 +153,7 @@ INLINE_SCRIPT = re.compile(
 )
 SCRIPT_SRC = re.compile(r"(?:^|\s)src\s*=", flags=re.IGNORECASE)
 LOOPBACK_HOSTS = ("127.0.0.1", "localhost", "::1")
+LIBRARY_PATH = re.compile(r"[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*")
 ALLOWED_IMAGE_FORMATS = {"JPEG", "PNG", "WEBP"}
 _IMAGE_DECODE_LOCK = IMAGE_DECODE_LOCK
 
@@ -345,7 +382,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     git = GitRepository(settings.root, settings.data_dir, store.mutation_lock)
     throttle = LoginThrottle()
     app = FastAPI(title="Study", version="0.1.0", docs_url=None, redoc_url=None)
-    app.add_middleware(_SelectiveGZipMiddleware, minimum_size=1000, compresslevel=5)
+    app.add_middleware(_SelectiveGZipMiddleware, minimum_size=_GZIP_MINIMUM_SIZE, compresslevel=5)
     allowed_hosts = {
         _configured_host(host)
         for host in (LOOPBACK_HOSTS if local_mode else settings.allowed_hosts)
@@ -417,7 +454,6 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
     def health() -> dict[str, str]:
         return {"status": "ok"}
 
-    @app.get("/api/session")
     def session_info(request: Request, response: Response) -> dict[str, Any]:
         if local_mode:
             return {
@@ -442,6 +478,10 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             "csrf": session.csrf if session else None,
             "local_mode": False,
         }
+
+    @app.get("/api/session")
+    def get_session(request: Request, response: Response) -> dict[str, Any]:
+        return session_info(request, response)
 
     @app.post("/api/login")
     def login(request: Request, payload: LoginRequest, response: Response) -> dict[str, Any]:
@@ -488,19 +528,10 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         )
         return {"authenticated": False}
 
-    @app.get("/api/bootstrap")
-    def bootstrap(
-        _session: Auth,
-        compact: Annotated[bool, Query()] = False,
-        navigation: Annotated[bool, Query()] = False,
-    ) -> dict[str, Any]:
-        with store.mutation_lock:
-            library = store.snapshot(include_tree=not (compact or navigation), navigation_only=navigation)
-            review_stats = review.stats(library)
+    def bootstrap_payload(library: dict[str, Any], review_stats: dict[str, Any]) -> dict[str, Any]:
         return {
             **library,
             "review": review_stats,
-            "git": git.status(),
             "capabilities": {
                 "editing": True,
                 "pdf_export": _pdf_export_available(),
@@ -509,6 +540,54 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                 "local_mode": local_mode,
             },
         }
+
+    def compact_reader_library(library: dict[str, Any]) -> None:
+        for entry in library["entries"]:
+            # The folder already carries its namespace. Only alternate
+            # formulation IDs are needed to resolve a URL before opening it.
+            del entry["canonical_tag"]
+            entry["formulations"] = [variant for variant in entry["formulations"] if not variant["main"]]
+
+    @app.get("/api/bootstrap")
+    def bootstrap(
+        _session: Auth,
+        compact: Annotated[bool, Query()] = False,
+        navigation: Annotated[bool, Query()] = False,
+        reader: Annotated[bool, Query()] = False,
+    ) -> JSONResponse:
+        with store.mutation_lock:
+            library = store.snapshot(
+                include_tree=not (compact or navigation or reader), navigation_only=navigation or reader,
+            )
+            review_stats = review.stats(library)
+        if reader:
+            compact_reader_library(library)
+        payload = bootstrap_payload(library, review_stats)
+        if not reader:
+            payload["git"] = git.status()
+        return JSONResponse(payload)
+
+    @app.get("/api/startup")
+    def startup(
+        request: Request,
+        tag: Annotated[str | None, Query(max_length=MAX_REFERENCE_QUERY_LENGTH)] = None,
+    ) -> JSONResponse:
+        response = Response()
+        session = session_info(request, response)
+        if not session["authenticated"]:
+            payload = JSONResponse({"session": session})
+            if cookie := response.headers.get("set-cookie"):
+                payload.headers["set-cookie"] = cookie
+            return payload
+        if tag is not None and LIBRARY_PATH.fullmatch(tag) is None:
+            tag = ""
+        with store.mutation_lock:
+            library, entry = store.startup_snapshot(tag)
+            review_stats = review.stats(library)
+        compact_reader_library(library)
+        return JSONResponse({
+            "session": session, "library": bootstrap_payload(library, review_stats), "entry": entry,
+        })
 
     @app.get("/api/entries/{entry_id}")
     def get_entry(entry_id: str, _session: Auth) -> dict[str, Any]:
@@ -548,8 +627,9 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
             Query(min_length=1, max_length=100),
         ],
         _session: Auth,
+        preview: Annotated[bool, Query()] = True,
     ) -> dict[str, Any]:
-        return store.resolve_references(folder_id, tag)
+        return store.resolve_references(folder_id, tag, preview=preview)
 
     @app.get("/api/references/candidates")
     def reference_candidates(
@@ -570,16 +650,15 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         payload: FolderUpdate,
         _session: Mutation,
         include_review_stats: Annotated[bool, Query()] = False,
+        include_git: Annotated[bool, Query()] = True,
     ) -> dict[str, Any]:
         updates = payload.model_dump(exclude_unset=True)
         if not include_review_stats:
             return store.update_folder(folder_id, updates)
         with store.mutation_lock:
             folder = store.update_folder(folder_id, updates)
-            snapshot = store.snapshot(include_tree=False)
-            folder = next(item for item in snapshot["folders"] if item["id"] == folder_id)
-            review_stats = review.stats(snapshot)
-        return {"folder": folder, "review": review_stats, "git": git.status()}
+            review_stats = review.stats()
+        return {"folder": folder, "review": review_stats, **({"git": git.status()} if include_git else {})}
 
     @app.delete("/api/folders/{folder_id}")
     def delete_folder(
@@ -623,6 +702,7 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
         payload: EntryUpdate,
         _session: Mutation,
         include_review_stats: Annotated[bool, Query()] = False,
+        include_git: Annotated[bool, Query()] = True,
     ) -> dict[str, Any]:
         updates = payload.model_dump(exclude_unset=True)
         with store.mutation_lock:
@@ -633,8 +713,8 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                 review.prune_to_current_library()
             if not include_review_stats:
                 return updated
-            review_stats = review.stats(store.snapshot(include_tree=False))
-        return {"entry": updated, "review": review_stats, "git": git.status()}
+            review_stats = review.stats()
+        return {"entry": updated, "review": review_stats, **({"git": git.status()} if include_git else {})}
 
     @app.delete("/api/entries/{entry_id}")
     def delete_entry(
@@ -1023,14 +1103,39 @@ def create_app(settings: Settings, local_mode: bool = False) -> FastAPI:
                 if path.startswith("vendor/")
                 else "no-cache"
             )
-            response = FileResponse(candidate, stat_result=candidate.stat(),
-                                    headers={"Cache-Control": cache_control})
+            stat_result = candidate.stat()
+            headers = {"Cache-Control": cache_control}
+            media_type = None
+            vary_encoding = candidate.suffix in _BROTLI_SUFFIXES and stat_result.st_size >= _GZIP_MINIMUM_SIZE
+            use_gzip = getattr(request.state, "use_gzip", False) and vary_encoding
+            if vary_encoding and "range" not in request.headers:
+                compressed = _safe_existing_file(root, f"{path}.br")
+                if compressed is not None:
+                    compressed_stat = compressed.stat()
+                    preferences = request.state.encoding_preferences
+                    brotli = preferences.get("br", preferences.get("*", 0))
+                    gzip = preferences.get("gzip", preferences.get("*", 0))
+                    if (compressed_stat.st_mtime_ns >= stat_result.st_mtime_ns
+                            and brotli > 0 and brotli >= max(gzip, preferences.get("identity", 0))):
+                        media_type = guess_type(candidate)[0]
+                        candidate, stat_result = compressed, compressed_stat
+                        headers["Content-Encoding"] = "br"
+                        headers["Vary"] = "Accept-Encoding"
+                        headers["Accept-Ranges"] = "none"
+                        use_gzip = False
+            response = FileResponse(candidate, stat_result=stat_result, media_type=media_type,
+                                    headers=headers)
+            if use_gzip:
+                response.headers["ETag"] = response.headers["etag"][:-1] + _DYNAMIC_GZIP_ETAG_SUFFIX
             validators = request.headers.get("if-none-match", "")
             if any(value.strip().removeprefix("W/") in {"*", response.headers["etag"]}
                    for value in validators.split(",")):
-                return Response(status_code=304, headers={
+                revalidation_headers = {
                     key: response.headers[key] for key in ("etag", "last-modified", "cache-control")
-                })
+                }
+                if vary_encoding:
+                    revalidation_headers["Vary"] = "Accept-Encoding"
+                return Response(status_code=304, headers=revalidation_headers)
             return response
         if path in {"_next", "vendor"} or path.startswith(("_next/", "vendor/")):
             raise HTTPException(status_code=404, detail="Frontend asset not found")

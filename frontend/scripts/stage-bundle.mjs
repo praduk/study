@@ -1,6 +1,7 @@
-import { cpSync, existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync } from 'node:fs';
+import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { brotliCompressSync, constants } from 'node:zlib';
 
 const frontend = dirname(dirname(fileURLToPath(import.meta.url)));
 const source = join(frontend, 'dist', 'client');
@@ -9,6 +10,30 @@ const target = join(packageRoot, 'web');
 const staging = join(packageRoot, `.web-stage-${process.pid}`);
 const backup = join(packageRoot, `.web-backup-${process.pid}`);
 const required = ['index.html', '_next', 'vendor', 'favicon.svg'];
+const compressibleRoots = [
+  '_next/static',
+  'vendor/excalidraw',
+  'vendor/mathjax/tex-svg.js',
+  'vendor/mathjax/study-extensions.js',
+  'vendor/mathjax-fonts',
+  'vendor/mathjax-newcm-font/svg/dynamic',
+  'vendor/quiver',
+  'vendor/tikzjax',
+];
+
+function precompress(path, highQuality = false) {
+  const stat = lstatSync(path);
+  if (stat.isDirectory()) {
+    for (const name of readdirSync(path)) precompress(join(path, name), highQuality);
+    return;
+  }
+  if (!stat.isFile() || stat.size < 32 * 1024 || !/\.(?:css|m?js)$/.test(path)) return;
+  const sourceBytes = readFileSync(path);
+  const compressed = brotliCompressSync(sourceBytes, {
+    params: { [constants.BROTLI_PARAM_QUALITY]: highQuality ? 11 : 9 },
+  });
+  if (compressed.length < sourceBytes.length) writeFileSync(`${path}.br`, compressed);
+}
 
 const transient = readdirSync(packageRoot, { withFileTypes: true });
 for (const item of transient) {
@@ -40,6 +65,10 @@ for (const name of required) {
 
 let backedUp = false;
 try {
+  for (const path of compressibleRoots) {
+    // These two scripts dominate transfer to the ordinary math reader.
+    precompress(join(staging, path), path.startsWith('vendor/mathjax/'));
+  }
   if (existsSync(target)) {
     renameSync(target, backup);
     backedUp = true;

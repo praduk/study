@@ -156,6 +156,26 @@ def test_read_apis_batch_once_with_bounded_authenticated_results(settings_factor
         payload = response.json()
         assert [row["tag"] for row in payload["results"]] == ["@target", "@missing"]
         assert [row["result"]["status"] for row in payload["results"]] == ["resolved", "missing"]
+        compact = client.get(
+            "/api/references/resolve-batch",
+            params=[
+                ("folder_id", folder["id"]),
+                ("tag", "@target"),
+                ("tag", "@missing"),
+                ("preview", "false"),
+            ],
+        )
+        assert compact.status_code == 200
+        assert calls == 2
+        compact_payload = compact.json()
+        full_match = payload["results"][0]["result"]["match"]
+        assert full_match["content"] == "A definition\n"
+        assert compact_payload["results"][0]["result"]["match"] == {
+            key: value for key, value in full_match.items()
+            if key not in {"header", "content", "main_formulation"}
+        }
+        assert compact_payload["revision"] == payload["revision"]
+        assert compact_payload["results"][1] == payload["results"][1]
         linked = client.get(f"/api/entries/{target['id']}/linked-items").json()
         assert linked["revision"] == payload["revision"]
         assert linked["items"][0]["entry_id"] == source["id"]

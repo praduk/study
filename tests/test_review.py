@@ -126,9 +126,7 @@ def test_review_queue_reads_only_prompt_entries_in_the_selected_batch(
     batch = review.queue(limit=3)
     assert [card["mode"] for card in batch] == ["statement", "statement", "proof-plan"]
     assert batch[-1]["prompt_body"] == "Theorem statement\n"
-    assert set(read_files) == {
-        variant["file"] for variant in theorem["formulations"] + theorem["supplements"]
-    }
+    assert read_files == [theorem["formulations"][0]["file"]]
 
     # Grading the proof leaves its statement card due, but the queue should no
     # longer load that theorem's answer family to emit its statement prompt.
@@ -142,9 +140,7 @@ def test_review_queue_reads_only_prompt_entries_in_the_selected_batch(
         definition["id"], theorem["id"], problem["id"]
     ]
     assert batch[-1]["prompt_body"] == "Problem statement\n"
-    assert set(read_files) == {
-        variant["file"] for variant in problem["formulations"] + problem["supplements"]
-    }
+    assert read_files == [problem["formulations"][0]["file"]]
 
 
 @pytest.mark.parametrize("version", [1, 2])
@@ -201,7 +197,9 @@ def test_statement_prompts_name_the_definition_axiom_or_theorem(tmp_path: Path):
     assert all(card["prompt_body"] == "" for card in cards.values())
 
 
-def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Path):
+def test_theorem_and_problem_cards_reveal_only_the_matching_answer(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
     store = LibraryStore(tmp_path / "data")
     folder = store.create_folder("Algebra", "algebra", None)
     theorem = store.create_entry(
@@ -246,6 +244,14 @@ def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Pat
     assert cards[1]["prompt_body"] == "Main statement\n"
     assert cards[2]["prompt"] == "Solve the following problem."
     assert cards[2]["prompt_body"] == "Problem statement\n"
+    read_files: list[str] = []
+    read_content = store._read_content
+
+    def record_read(relative: str) -> str:
+        read_files.append(relative)
+        return read_content(relative)
+
+    monkeypatch.setattr(store, "_read_content", record_read)
     statement = review.reveal(
         cards[0]["id"], {"attempt": "statement", "confidence": 2, "overt": True}
     )
@@ -266,6 +272,10 @@ def test_theorem_and_problem_cards_reveal_only_the_matching_answer(tmp_path: Pat
     ]
     assert solution["answer"]["primary"]["content"] == "Solution body\n"
     assert solution["answer"]["alternatives"] == []
+    assert read_files == [
+        variant["file"]
+        for variant in theorem["formulations"] + theorem["supplements"] + problem["supplements"]
+    ]
 
 
 def test_legacy_review_modes_load_without_reentering_the_queue(tmp_path: Path):

@@ -22,9 +22,11 @@ function LinkedItemsList({ entryId, onOpenEntry }: {
 }) {
   const [page, setPage] = useState<LinkedItemsPage | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activated, setActivated] = useState(false);
   const [error, setError] = useState('');
   const [refreshed, setRefreshed] = useState(false);
   const currentRequest = useRef<AbortController | null>(null);
+  const section = useRef<HTMLElement>(null);
 
   const load = useCallback(async (offset: number, current: LinkedItemsPage | null): Promise<void> => {
     currentRequest.current?.abort();
@@ -57,16 +59,26 @@ function LinkedItemsList({ entryId, onOpenEntry }: {
   }
 
   useEffect(() => {
-    const controller = new AbortController();
-    currentRequest.current = controller;
-    api<LinkedItemsPage>(`/api/entries/${entryId}/linked-items?offset=0&limit=40`, { signal: controller.signal })
-      .then((result) => { if (!controller.signal.aborted) setPage(result); })
-      .catch((reason: Error) => { if (!controller.signal.aborted) setError(reason.message); })
-      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
-    return () => currentRequest.current?.abort();
-  }, [entryId]);
+    const element = section.current;
+    if (!element) return;
+    const start = () => {
+      setActivated(true);
+      void load(0, null);
+    };
+    if (typeof IntersectionObserver === 'undefined') {
+      const timer = window.setTimeout(start, 0);
+      return () => { window.clearTimeout(timer); currentRequest.current?.abort(); };
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (!element.isConnected || !entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      start();
+    }, { rootMargin: '120px' });
+    observer.observe(element);
+    return () => { observer.disconnect(); currentRequest.current?.abort(); };
+  }, [load]);
 
-  return <section className="linked-items" aria-labelledby={`linked-items-${entryId}`} aria-busy={loading}>
+  return <section ref={section} className="linked-items" aria-labelledby={`linked-items-${entryId}`} aria-busy={activated && loading}>
     <div className="linked-items-heading">
       <h2 id={`linked-items-${entryId}`}><Link2 aria-hidden="true" /> Linked items {page && <span className="linked-items-count">{page.total}</span>}</h2>
     </div>
@@ -82,7 +94,7 @@ function LinkedItemsList({ entryId, onOpenEntry }: {
       </a>
     </li>)}</ul>}
     <output className="linked-items-status" aria-live="polite">
-      {loading && <span><LoaderCircle className="spin" aria-hidden="true" /> Loading linked items…</span>}
+      {activated && loading && <span><LoaderCircle className="spin" aria-hidden="true" /> Loading linked items…</span>}
       {!loading && refreshed && <p>The library changed. The list has been refreshed.</p>}
       {!loading && page && page.next_offset !== null && <span>Showing {page.items.length} of {page.total} items.</span>}
     </output>

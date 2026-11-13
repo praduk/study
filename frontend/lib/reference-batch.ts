@@ -6,7 +6,7 @@ interface PendingReference<T> {
 }
 
 export function referenceBatchPath(folderId: string, tags: string[]) {
-  const parameters = new URLSearchParams({ folder_id: folderId });
+  const parameters = new URLSearchParams({ folder_id: folderId, preview: 'false' });
   tags.forEach((tag) => parameters.append('tag', tag));
   return `/api/references/resolve-batch?${parameters}`;
 }

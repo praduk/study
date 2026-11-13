@@ -251,6 +251,10 @@ export function transformStudyReferences(
       children.push(child);
       continue;
     }
+    if (!child.value.includes('@')) {
+      children.push(child);
+      continue;
+    }
 
     const start = child.position?.start.offset;
     const end = child.position?.end.offset;

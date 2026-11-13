@@ -82,6 +82,7 @@ function delimiterEnd(
 
 /** Convert MathJax's slash delimiters into remark-math syntax outside code. */
 export function normalizeMathJaxDelimiters(source: string) {
+  if (!source.includes('\\(') && !source.includes('\\[')) return source;
   const protectedRanges = codeRanges(source);
   let result = '';
   let index = 0;

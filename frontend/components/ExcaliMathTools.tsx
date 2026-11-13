@@ -15,11 +15,12 @@ type Tab = 'equation' | 'graph' | 'library';
 type Preview = Awaited<ReturnType<typeof renderEquationSvg>>;
 
 /** ExcaliMath panels and metadata, with Study's MathJax equation renderer. */
-export default function ExcaliMathTools({ drawingApi, dark }: {
+export default function ExcaliMathTools({ drawingApi, dark, openEquation }: {
   drawingApi: ExcalidrawImperativeAPI;
   dark: boolean;
+  openEquation: boolean;
 }) {
-  const [tab, setTab] = useState<Tab | null>(null);
+  const [tab, setTab] = useState<Tab | null>(openEquation ? 'equation' : null);
   const [latex, setLatex] = useState('\\varphi: A \\to B');
   const [graph, setGraph] = useState<GraphConfig | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -28,28 +29,32 @@ export default function ExcaliMathTools({ drawingApi, dark }: {
   const [error, setError] = useState('');
   const selectedRef = useRef<string | null>(null);
 
-  useEffect(() => drawingApi.onChange((elements, state) => {
-    const ids = Object.keys(state.selectedElementIds).filter((id) => state.selectedElementIds[id]);
-    const id = ids.length === 1 ? ids[0] : null;
-    if (id === selectedRef.current) return;
-    selectedRef.current = id;
-    setEditingId(null);
-    setGraph(null);
-    const selected = elements.find((element) => element.id === id);
-    const data = selected?.customData;
-    const source = data?.excalimath_latex ?? data?.studyLatex;
-    if (typeof source === 'string') {
-      setLatex(source);
-      setEditingId(id);
-      setTab('equation');
-    } else if (data?.excalimath_type === 'graph' && typeof data.excalimath_graph_config === 'string') {
-      try {
-        setGraph(JSON.parse(data.excalimath_graph_config));
+  useEffect(() => {
+    const syncSelection: Parameters<ExcalidrawImperativeAPI['onChange']>[0] = (elements, state) => {
+      const ids = Object.keys(state.selectedElementIds).filter((id) => state.selectedElementIds[id]);
+      const id = ids.length === 1 ? ids[0] : null;
+      if (id === selectedRef.current) return;
+      selectedRef.current = id;
+      setEditingId(null);
+      setGraph(null);
+      const selected = elements.find((element) => element.id === id);
+      const data = selected?.customData;
+      const source = data?.excalimath_latex ?? data?.studyLatex;
+      if (typeof source === 'string') {
+        setLatex(source);
         setEditingId(id);
-        setTab('graph');
-      } catch { setError('This graph has invalid saved settings.'); }
-    }
-  }), [drawingApi]);
+        setTab('equation');
+      } else if (data?.excalimath_type === 'graph' && typeof data.excalimath_graph_config === 'string') {
+        try {
+          setGraph(JSON.parse(data.excalimath_graph_config));
+          setEditingId(id);
+          setTab('graph');
+        } catch { setError('This graph has invalid saved settings.'); }
+      }
+    };
+    syncSelection(drawingApi.getSceneElements(), drawingApi.getAppState(), drawingApi.getFiles());
+    return drawingApi.onChange(syncSelection);
+  }, [drawingApi]);
 
   useEffect(() => {
     if (tab !== 'equation') return;

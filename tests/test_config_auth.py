@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import sqlite3
 import stat
+from contextlib import closing
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -127,3 +130,25 @@ def test_same_session_generation_survives_store_restart(tmp_path: Path):
     first = SessionStore(path, 30, "unchanged")
     session = first.create()
     assert SessionStore(path, 30, "unchanged").get(session.token) is not None
+
+
+def test_session_activity_writes_are_bounded_and_revocation_is_immediate(tmp_path: Path):
+    path = tmp_path / "sessions.sqlite3"
+    store = SessionStore(path, 30)
+    session = store.create()
+
+    with closing(sqlite3.connect(path)) as connection:
+        def last_seen():
+            return connection.execute("SELECT last_seen_at FROM sessions").fetchone()[0]
+
+        original = last_seen()
+        assert store.get(session.token) == session
+        assert last_seen() == original
+        old = (datetime.now(timezone.utc) - timedelta(minutes=2)).isoformat()
+        with connection:
+            connection.execute("UPDATE sessions SET last_seen_at = ?", (old,))
+        assert store.get(session.token) == session
+        assert last_seen() > old
+
+    SessionStore(path, 30).revoke(session.token)
+    assert store.get(session.token) is None

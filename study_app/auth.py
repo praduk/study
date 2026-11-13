@@ -6,6 +6,7 @@ import sqlite3
 import threading
 import time
 from collections import defaultdict, deque
+from contextlib import closing
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -99,10 +100,12 @@ class SessionStore:
         if not token or len(token) > 128 or not token.isascii():
             return None
         now = datetime.now(timezone.utc)
+        last_seen_cutoff = (now - timedelta(minutes=1)).isoformat()
         token_hash = self._hash(token)
-        with self._lock, self._connect() as connection:
+        with self._lock, closing(self._connect()) as connection, connection:
             row = connection.execute(
-                "SELECT csrf, expires_at FROM sessions WHERE token_hash = ?", (token_hash,)
+                "SELECT csrf, expires_at, last_seen_at FROM sessions WHERE token_hash = ?",
+                (token_hash,),
             ).fetchone()
             if row is None:
                 return None
@@ -110,10 +113,13 @@ class SessionStore:
             if expires <= now:
                 connection.execute("DELETE FROM sessions WHERE token_hash = ?", (token_hash,))
                 return None
-            connection.execute(
-                "UPDATE sessions SET last_seen_at = ? WHERE token_hash = ?",
-                (now.isoformat(), token_hash),
-            )
+            # Keep activity timestamps without a durable write for every API request.
+            # Authentication and revocation still consult SQLite every time.
+            if row["last_seen_at"] <= last_seen_cutoff:
+                connection.execute(
+                    "UPDATE sessions SET last_seen_at = ? WHERE token_hash = ? AND last_seen_at <= ?",
+                    (now.isoformat(), token_hash, last_seen_cutoff),
+                )
         return Session(token=token, csrf=row["csrf"], expires_at=expires)
 
     def revoke(self, token: str | None) -> None:

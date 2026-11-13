@@ -48,14 +48,38 @@ copyFileSync(
   join(publicVendor, 'mathjax-newcm-font', 'LICENSE'),
 );
 
-for (const name of ['bbm', 'bboldx', 'dsfont', 'mhchem']) {
+const fontExtensions = ['bbm', 'bboldx', 'dsfont', 'mhchem'];
+const fontComponents = [];
+for (const name of fontExtensions) {
   const packageName = `mathjax-${name}-font-extension`;
   const target = join(publicVendor, 'mathjax-fonts', packageName);
   mkdirSync(target, { recursive: true });
-  copyFileSync(join(frontend, 'node_modules', '@mathjax', packageName, 'svg.js'), join(target, 'svg.js'));
+  const source = join(frontend, 'node_modules', '@mathjax', packageName, 'svg.js');
+  copyFileSync(source, join(target, 'svg.js'));
+  fontComponents.push(readFileSync(source, 'utf8'));
 }
-copyFileSync(join(frontend, '..', 'study_app', 'mathjax_extensions.json'),
-  join(publicVendor, 'mathjax', 'study-extensions.json'));
+const mathJaxPublic = join(publicVendor, 'mathjax');
+const mathJaxExtensions = join(frontend, '..', 'study_app', 'mathjax_extensions.json');
+copyFileSync(mathJaxExtensions, join(mathJaxPublic, 'study-extensions.json'));
+
+// Combine the enabled extensions and their four SVG font extensions into one
+// local MathJax component. The first entries are dependencies of other enabled
+// extensions. The standard TeX input component supplies the rest of the dependencies.
+const { enabled } = JSON.parse(readFileSync(mathJaxExtensions, 'utf8'));
+const dependencies = ['enclose', 'color', 'empheq', 'boldsymbol'];
+const texComponents = [...new Set([...dependencies.filter((name) => enabled.includes(name)), ...enabled])];
+const mathJaxBundle = [
+  readFileSync(join(mathJaxPublic, 'ui', 'safe.js'), 'utf8'),
+  ...texComponents.map((name) => readFileSync(join(mathJaxPublic, 'input', 'tex', 'extensions', `${name}.js`), 'utf8')),
+  ...fontComponents,
+  'MathJax.loader.saveVersion("study-extensions");',
+].join('\n');
+const mathJaxVersion = createHash('sha256').update(mathJaxBundle).digest('hex').slice(0, 16);
+writeFileSync(join(mathJaxPublic, 'study-extensions.js'), mathJaxBundle);
+writeFileSync(join(frontend, 'lib', 'mathjax-runtime.json'), JSON.stringify({
+  extensionsVersion: mathJaxVersion,
+  fontComponents: fontExtensions.map((name) => `[${name}-extension]/svg`),
+}) + '\n');
 
 // Pin the upstream sources and build the tiny Study bridge without a CDN or service worker.
 const quiver = join(publicVendor, 'quiver');
