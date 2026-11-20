@@ -1,5 +1,26 @@
-Use the @[annihilator definitions]mt4-annihilator and the @[ideal tests]mt4-ideal.
+**Strategy.** Use the @[ideal tests]mt4-ideal. Each @[annihilator]mt4-annihilator must contain zero and be closed under subtraction. Then test multiplication on the indicated side in (a) and on both sides in (b), keeping the order of factors fixed.
 
-**(a)** Both sets contain zero by the @[zero product identities]mt4-ring-arithmetic. Use @[distributivity and associativity]mt4-ring to check closure. If $ax=ay=0$, then $a(x-y)=0$, and $a(xr)=(ax)r=0$ for every $r$. This proves the right ideal claim. If $xa=ya=0$, then $(x-y)a=0$, and $(rx)a=r(xa)=0$, giving the left ideal claim.
+**(a) The right annihilator is a right ideal.** Write $A_r=\{x\in R:ax=0\}$. It contains zero since @[multiplication by zero]mt4-ring-arithmetic gives $a0=0$. If $x,y\in A_r$ and $r\in R$, @[distributivity and associativity]mt4-ring give
 
-**(b)** Write $A$ for the left annihilator of $L$. It contains zero, and for $x,y\in A$ and $a\in L$, $(x-y)a=xa-ya=0$. For $x\in A$ and $r\in R$, both products annihilate $L$ on the left. Indeed, $(rx)a=r(xa)=0$, while $(xr)a=x(ra)=0$ because $ra\in L$. This last step is where the left ideal hypothesis is used.
+$$
+a(x-y)=ax-ay=0,\qquad a(xr)=(ax)r=0.
+$$
+
+Thus $x-y$ and $xr$ lie in $A_r$, as required.
+
+**(a) The left annihilator is a left ideal.** Write $A_\ell=\{x\in R:xa=0\}$. Again $0\in A_\ell$. For $x,y\in A_\ell$ and $r\in R$,
+
+$$
+(x-y)a=xa-ya=0,\qquad (rx)a=r(xa)=0.
+$$
+
+Here the elements that remain in $A_\ell$ are $x-y$ and $rx$.
+
+**(b) The left annihilator of a left ideal is two-sided.** Let $A=\{x\in R:xa=0\text{ for all }a\in L\}$. It contains zero, and for $x,y\in A$ and every $a\in L$, $(x-y)a=xa-ya=0$. Thus $x-y\in A$.
+
+To check both sides, take $x\in A$, $r\in R$, and any $a\in L$.
+
+- **Left multiplication.** $(rx)a=r(xa)=0$, so $rx\in A$.
+- **Right multiplication.** Since $L$ is a left ideal, $ra\in L$. Therefore $(xr)a=x(ra)=0$, so $xr\in A$.
+
+This proves two-sided absorption. The right multiplication check is precisely where the left ideal property of $L$ enters.

@@ -1,4 +1,6 @@
-**Euclidean algorithm.** Use @[polynomial division]mt4-division-polynomials. Write $q=x^2-4x+15$ and $c=10x^2+9x-19$. The divisions yield the following identities with denominators cleared:
+**Strategy.** Run the Euclidean algorithm forward to find the monic gcd. Then read the remainder equations backward to express the gcd as $Aa+Bb$.
+
+**1. Find the last nonzero remainder.** Use @[polynomial division]mt4-division-polynomials and set $q=x^2-4x+15$, $c=10x^2+9x-19$. With denominators cleared, the successive divisions give
 
 $$
 \begin{aligned}
@@ -8,18 +10,21 @@ c&=(10x+19)(x-1).
 \end{aligned}
 $$
 
-Nonzero rational constants are @[units in the polynomial ring]mt4-polynomial-domains, so rescaling these remainders preserves their common divisors. The @[Euclidean algorithm]mt4-euclidean-gcd gives $x-1$ as the last nonzero remainder after @[monic normalization]mt4-polynomial-ring.
+The last line has zero remainder. The preceding remainder is a nonzero rational multiple of $x-1$. Since nonzero rational constants are @[units]mt4-polynomial-domains, the rescalings preserve divisibility. By the @[Euclidean algorithm]mt4-euclidean-gcd, the @[monic]mt4-polynomial-ring gcd is $x-1$.
 
-**Bézout identity.** Substitute $5c=qa-b$ into the second line:
-
-$$
-55(x-1)=\bigl(500-(10x+31)q\bigr)a+(10x+31)b.
-$$
-
-Consequently $Aa+Bb=x-1$ for
+**2. Recover the Bézout coefficients.** Solve the first line for $5c=qa-b$. Multiply the second line by $5$ and substitute to obtain
 
 $$
-A=\frac{-10x^3+9x^2-26x+35}{55},\qquad B=\frac{10x+31}{55}.
+55(x-1)=500a-(10x+31)(qa-b).
 $$
 
-As a check, $a(1)=b(1)=0$, so $x-1$ divides both by @[the factor theorem]gre:mathematics-subject-test:abstract-algebra:th:remainder-factor. Every common divisor divides $Aa+Bb=x-1$, which verifies the @[defining property of the gcd]mt4-divisibility-gcd.
+Collect the coefficients of $a$ and $b$, expand $q$, and divide by $55$. This gives $Aa+Bb=x-1$ with
+
+$$
+\begin{aligned}
+A&=\frac{-10x^3+9x^2-26x+35}{55},\\
+B&=\frac{10x+31}{55}.
+\end{aligned}
+$$
+
+**3. Verify the gcd in both directions.** Since $a(1)=b(1)=0$, the @[factor theorem]gre:mathematics-subject-test:abstract-algebra:th:remainder-factor shows $x-1$ divides both polynomials. Conversely, every common divisor of $a$ and $b$ divides $Aa+Bb=x-1$. These are exactly the two requirements in the @[definition of a gcd]mt4-divisibility-gcd.

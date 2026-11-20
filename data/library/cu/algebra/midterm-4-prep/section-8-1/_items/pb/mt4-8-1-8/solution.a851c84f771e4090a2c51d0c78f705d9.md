@@ -1,7 +1,24 @@
-**(a)** Write $d=|D|$. In the complex plane $N(z)=|z|^2$ by @[the field norm formula]mt4-quadratic-integers-norm. For $\alpha,\beta\in\mathcal O$ with $\beta\ne0$, it suffices to approximate $z=\alpha/\beta$ by $q\in\mathcal O$ with $|z-q|^2<1$. Then $r=\alpha-q\beta$ satisfies $N(r)<N(\beta)$ by @[multiplicativity of the norm]mt4-quadratic-norm-units, as required by @[the Euclidean condition]mt4-euclidean-domain.
+**Strategy.** For (a), approximate each quotient by a quadratic integer with error strictly less than $1$. For (b), use a necessary condition for *any* Euclidean norm and show that the ring fails it.
 
-For $d=1,2$ the lattice has basis $1,i\sqrt d$. Round each basis coefficient of $z$ to the nearest integer. The squared error is at most $(1+d)/4<1$.
+**(a) Turn the remainder bound into a distance bound.** Set $d=|D|$. In the complex plane the @[field norm]mt4-quadratic-integers-norm is $N(z)=|z|^2$. Given $\alpha,\beta\in\mathcal O$ with $\beta\ne0$, put $z=\alpha/\beta$. If $q\in\mathcal O$ satisfies $|z-q|^2<1$, put $r=\alpha-q\beta$. By @[multiplicativity]mt4-quadratic-norm-units, the remainder satisfies the @[Euclidean condition]mt4-euclidean-domain because
 
-For $d=3,7,11$ the lattice has basis $1,\omega=(1+i\sqrt d)/2$. First choose the nearest horizontal lattice row, whose height is a multiple of $\sqrt d/2$. On that row, choose the lattice point nearest in real coordinate. The vertical error is at most $\sqrt d/4$ and the horizontal error at most $1/2$. Their squared sum is at most $(4+d)/16\le15/16<1$.
+$$
+N(r)=N(\beta)|z-q|^2<N(\beta).
+$$
 
-**(b)** Use the same half-integer basis for $d=43,67,163$. If $z=a+b\omega$ with $b\ne0$, its norm is $(a+b/2)^2+db^2/4\ge d/4>9$. Thus all elements of norm at most $9$ are ordinary integers. By the @[norm criterion for units]mt4-quadratic-norm-units, the units have norm $1$ and so are precisely $\pm1$. If $u$ were a @[universal side divisor]mt4-universal-side-divisor, then $2=qu+z$ with $z=0$ or $\pm1$. Thus $u$ would divide one of $1,2,3$. It is a nonunit, so it divides $2$ or $3$. In any such factorization both factors have positive integral norms at most $9$, so both are integers. Consequently $u\in\{\pm2,\pm3\}$. Taking $x=\omega$ in the same condition would now force $u$ to divide one of $\omega,\omega+1,\omega-1$. Each has $\omega$-coefficient $1$, impossible for a multiple of $\pm2$ or $\pm3$. The ring has nonunits (for instance $2$), so @[the universal side divisor criterion]mt4-euclidean-side-divisor excludes every Euclidean norm.
+- **For $d=1,2$**, the lattice basis is $1,i\sqrt d$. Round each coefficient of $z$ in this basis to a nearest integer. The horizontal error is at most $1/2$ and the vertical error at most $\sqrt d/2$, so $|z-q|^2\le(1+d)/4<1$.
+- **For $d=3,7,11$**, the basis is $1,\omega$ with $\omega=(1+i\sqrt d)/2$. Adjacent horizontal lattice rows are $\sqrt d/2$ apart. Pick a nearest row, then a nearest lattice point on that row, where the horizontal spacing is $1$. The vertical error is at most $\sqrt d/4$ and the horizontal error at most $1/2$, so $|z-q|^2\le(4+d)/16\le15/16<1$.
+
+This produces the required quotient for all five values of $D$.
+
+**(b) Find the possible universal side divisors.** For $d=43,67,163$ use the same basis $1,\omega$. An element $a+b\omega$ with $a,b\in\Z$ and $b\ne0$ has norm
+
+$$
+(a+b/2)^2+db^2/4\ge d/4>9.
+$$
+
+Thus every element of norm at most $9$ is an ordinary integer. By the @[unit criterion]mt4-quadratic-norm-units, the only units are $1$ and $-1$.
+
+If $u$ is a @[universal side divisor]mt4-universal-side-divisor, every $x$ has the form $x=qu+z$ with $z\in\{0,1,-1\}$. Take $x=2$. Then $u$ divides $1$, $2$, or $3$. A side divisor is a nonunit, so only $2$ and $3$ are possible dividends. In a factorization of either, the factors have positive integer norms with product $4$ or $9$. Both factors therefore have norm at most $9$ and are ordinary integers. This leaves $u=\pm2$ or $\pm3$.
+
+**Rule out those four candidates.** Take $x=\omega$. Now $u$ would have to divide one of $\omega,\omega-1,\omega+1$. Each has $\omega$-coefficient $1$, whereas every multiple of $u$ in $\mathcal O$ has $\omega$-coefficient divisible by $2$ or $3$. This is impossible. Since $2$ is a nonzero nonunit, $\mathcal O$ is not a field. The @[universal side divisor criterion]mt4-euclidean-side-divisor now rules out every Euclidean norm.

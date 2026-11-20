@@ -1,4 +1,6 @@
-Use @[Gaussian division]mt4-gaussian-division with the @[quadratic norm]mt4-quadratic-integers-norm $N(a+bi)=a^2+b^2$. For the first pair,
+**Strategy.** Use @[Gaussian division]mt4-gaussian-division on each pair. Round the real and imaginary parts of the quotient to obtain a Gaussian integer, then subtract to get a remainder. By @[the Euclidean algorithm]mt4-euclidean-gcd, the last nonzero remainder generates the original ideal.
+
+**The pair $85,1+13i$.** The first quotient before rounding is $85/(1+13i)=\tfrac12-\tfrac{13}{2}i$. Choosing $1-6i$ at the two ties gives
 
 $$
 \begin{aligned}
@@ -7,9 +9,9 @@ $$
 \end{aligned}
 $$
 
-The nonzero divisor norms decrease from $170$ to $85$. By @[the Euclidean algorithm]mt4-euclidean-gcd, the ideal is $(6-7i)$.
+The @[Gaussian norm]mt4-quadratic-integers-norm $N(a+bi)=a^2+b^2$ drops from $170$ to $85$ and the next remainder is zero. Hence $(85,1+13i)=(6-7i)$.
 
-For the second pair start with the larger norm. The divisions are
+**The pair $47-13i,53+56i$.** Start with $53+56i$, which has the larger norm. Successive divisions give
 
 $$
 \begin{aligned}
@@ -19,4 +21,4 @@ $$
 \end{aligned}
 $$
 
-The divisor norms are $2378,533,41$. Thus the last nonzero divisor $-4-5i$ generates the second ideal. Multiplication by the unit $-1$ gives the @[associate generator]mt4-associates $4+5i$.
+The divisor norms decrease from $2378$ to $533$ to $41$. The last nonzero remainder is $-4-5i$. Multiplying by the unit $-1$ gives the @[associate generator]mt4-associates $4+5i$, so $(47-13i,53+56i)=(4+5i)$.

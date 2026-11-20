@@ -1,7 +1,15 @@
-By @[the quadratic norm formula]mt4-quadratic-integers-norm and @[the unit criterion]mt4-quadratic-norm-units, $H(0)=0$, $H$ takes positive integer values on nonzero elements, is multiplicative, and $H(t)=1$ exactly for units. Take $\alpha,\beta\ne0$ with $\beta\nmid\alpha$. In a @[PID]mt4-pid write $(\alpha,\beta)=(\gamma)$, with $\gamma\ne0$. By @[Bézout’s identity]mt4-pid-bezout, this generator is a linear combination of the two inputs. Write $\beta=t\gamma$. If $t$ were a unit, $\beta$ and $\gamma$ would be @[associates]mt4-associates and $(\beta)=(\gamma)$ would contain $\alpha$, contradicting $\beta\nmid\alpha$. Since $t\ne0$ is a nonunit, $H(t)$ is an integer at least $2$. Therefore
+**Strategy.** When $\beta$ does not divide $\alpha$, the Dedekind–Hasse condition asks for a nonzero element of $(\alpha,\beta)$ with smaller norm than $\beta$. Try a generator $\gamma$ of this ideal. Show that the quotient $\beta/\gamma$ is a nonunit, then use multiplicativity to get the strict decrease.
+
+**Check the norm properties.** The @[quadratic norm formula]mt4-quadratic-integers-norm and the @[quadratic norm and unit criterion]mt4-quadratic-norm-units show that $H=|N|$ vanishes at $0$, takes positive integer values on nonzero elements, and is multiplicative. In particular a nonzero nonunit has $H$-value at least $2$.
+
+**Produce the smaller element.** Let $\alpha,\beta\ne0$ with $\beta\nmid\alpha$. Since $\mathcal O$ is a @[PID]mt4-pid, write $(\alpha,\beta)=(\gamma)$. Then $\gamma\ne0$, and @[Bézout’s identity]mt4-pid-bezout expresses $\gamma$ as a linear combination of $\alpha$ and $\beta$.
+
+Since $\beta\in(\gamma)$, write $\beta=t\gamma$. If $t$ were a unit, $\beta$ and $\gamma$ would be @[associates]mt4-associates, so $\alpha\in(\gamma)=(\beta)$. This contradicts $\beta\nmid\alpha$. Thus $t$ is a nonzero nonunit, and hence
 
 $$
-0<H(\gamma)<H(t)H(\gamma)=H(\beta).
+H(\beta)=H(t)H(\gamma)\ge 2H(\gamma)>H(\gamma)>0.
 $$
 
-The element $\gamma\in(\alpha,\beta)$ meets the defining condition for @[a Dedekind–Hasse norm]mt4-dedekind-hasse. Finally, any Dedekind–Hasse norm makes $\mathcal O$ a PID by @[the Dedekind–Hasse criterion]mt4-dedekind-hasse-pid, so the same argument applies to $H$.
+This is exactly the required smaller element. When $\beta\mid\alpha$, the other clause of the @[Dedekind–Hasse definition]mt4-dedekind-hasse already holds. Thus $H$ works for every pair.
+
+**Deduce the last assertion.** If $\mathcal O$ admits any Dedekind–Hasse norm, the @[Dedekind–Hasse criterion]mt4-dedekind-hasse-pid makes it a PID. The argument above then shows that its particular norm $H=|N|$ works.

@@ -1,5 +1,9 @@
-Write $f_i=\sum_{j=0}^{d}a_{ij}x^j$ using @[the coefficient representation of a polynomial]mt4-polynomial-ring. For pairwise @[coprime]math:num:divisibility:df:divisibility-gcd moduli, @[Bézout’s identity]math:num:divisibility:th:bezout-euclid gives $(n_i)+(n_h)=\Z$ for each pair $i\ne h$. Hence the integer ideals are pairwise @[comaximal]mt4-comaximal.
+**Strategy.** Solve one integer congruence problem for each coefficient. Then check the leading coefficient separately so that the resulting polynomial has degree exactly $d$ and is monic when requested.
 
-For each $j$, apply @[the Chinese remainder theorem]mt4-chinese-remainder in $\Z$ to choose $c_j$ with $c_j-a_{ij}\in(n_i)$ for all $i$. This is exactly the required @[coefficient congruence]mt4-quotient-ring. If all moduli are nonzero, the positive integer $N=|n_1\cdots n_k|$ is divisible by every $n_i$. Thus, if $c_d=0$, replacing it by $N$ preserves those congruences and gives $f=\sum_{j=0}^{d}c_jx^j$ degree exactly $d$. When the $f_i$ are monic, all $a_{id}=1$, so we can take $c_d=1$ from the outset.
+**1. Handle a zero modulus.** If $n_s=0$, congruence modulo $(0)$ forces equality with $f_s$. Every other modulus is $\pm1$, since $\gcd(0,n_i)=|n_i|=1$ for $i\ne s$. Those congruences impose no restriction, so $f=f_s$ has all the required properties. Now assume every modulus is nonzero.
 
-If some $n_s=0$, congruence modulo $(0)$ is equality. Every other modulus is $\pm1$ since $\gcd(0,n_i)=|n_i|=1$. Then $f=f_s$ works, with the prescribed degree and with leading coefficient $1$ in the monic case.
+**2. Choose each coefficient.** Use @[the coefficient representation of a polynomial]mt4-polynomial-ring to write $f_i=\sum_{j=0}^d a_{ij}x^j$. The moduli are pairwise @[coprime]math:num:divisibility:df:divisibility-gcd. By @[Bézout’s identity]math:num:divisibility:th:bezout-euclid, their ideals are pairwise @[comaximal]mt4-comaximal, since $(n_i)+(n_h)=\Z$ whenever $i\ne h$.
+
+For each fixed $j$, @[the Chinese remainder theorem]mt4-chinese-remainder gives an integer $c_j$ with $c_j-a_{ij}\in(n_i)$ for every $i$. Thus $f=\sum_{j=0}^d c_jx^j$ satisfies every required @[coefficient congruence]mt4-quotient-ring.
+
+**3. Ensure degree $d$ and handle the monic case.** If $c_d=0$, replace it by $N=|n_1\cdots n_k|$. This number is positive and divisible by every $n_i$, so the leading coefficient becomes nonzero while keeping the same residues. Hence $\deg f=d$. If all the $f_i$ are monic, their leading coefficients are all $1$, so choose $c_d=1$ from the start. Then $f$ is monic of degree $d$.

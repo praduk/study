@@ -1,3 +1,12 @@
-Write each nonnegative integer $m$ as the ring element $m\,1_R$, the sum of $m$ copies of $1_R$, with $0\,1_R=0$. By the @[ring axioms]mt4-ring, these coefficients distribute over sums and commute with all elements.
+**Strategy.** Use @[induction on the exponent]math:set:naturals-recursion:th:natural-induction. When multiplying by $a+b$, track which two terms contribute to the same power of $a$. Their multiplicities combine by Pascal’s identity.
 
-At $n=0$ both sides are $1_R$. Suppose the formula holds at $n$ and multiply by $a+b$. Using commutativity, the terms contributing to $a^k b^{n+1-k}$ come from multiplying the old $(k-1)$st term by $a$ or the old $k$th term by $b$. For $1\le k\le n$ their integer multiplicities combine by @[Pascal’s identity]gre:mathematics-subject-test:discrete-mathematics:th:pascal-identity to give $\binom n{k-1}+\binom nk=\binom{n+1}k$ (split the $k$-element subsets according to whether they contain the last element). The two end terms have multiplicity $1$. This proves the formula at $n+1$, so @[induction on the natural numbers]math:set:naturals-recursion:th:natural-induction completes the proof.
+**Interpret the coefficients.** Regard each nonnegative integer $m$ as the ring element $m\,1_R$, the sum of $m$ copies of $1_R$, with $0\,1_R=0$. By the @[ring laws]mt4-ring, multiplying by $m\,1_R$ adds an element to itself $m$ times. This is how $\binom nk$ acts in $R$.
+
+**Start at $n=0$.** The left side is $1_R$. The only term on the right is $\binom00 a^0 b^0=1_R$.
+
+**Pass from $n$ to $n+1$.** Assume the formula at $n$. Multiply that expansion by $a+b$ and distribute. Since $a$ and $b$ commute, for each $1\le k\le n$ the term $a^k b^{n+1-k}$ receives exactly two contributions, indexed by how many copies of $a$ were present before multiplication.
+
+- Multiplying an old $a^{k-1}b^{n+1-k}$ term by $a$ contributes $\binom n{k-1}$ copies.
+- Multiplying an old $a^k b^{n-k}$ term by $b$ contributes $\binom nk$ copies.
+
+The combined multiplicity is $\binom n{k-1}+\binom nk=\binom{n+1}k$ by @[Pascal’s identity]gre:mathematics-subject-test:discrete-mathematics:th:pascal-identity. The end terms $b^{n+1}$ and $a^{n+1}$ each occur once. We have obtained every term of the claimed expansion at $n+1$, completing the induction.

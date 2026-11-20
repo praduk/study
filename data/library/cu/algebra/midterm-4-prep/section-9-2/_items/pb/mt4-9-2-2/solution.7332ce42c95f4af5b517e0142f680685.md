@@ -1,3 +1,5 @@
-Associate to $(c_0,\ldots,c_{n-1})\in F^n$ the class of $\sum_{i=0}^{n-1}c_ix^i$. By @[polynomial division]mt4-division-polynomials and @[the unique representatives in Exercise 1]mt4-9-2-1, this map is onto and two tuples give the same class only if their coefficients agree. The resulting @[bijection preserves cardinality]math:set:cardinality-countability:df:equinumerosity.
+**Strategy.** Count the possible remainders of degree less than $n$, including the zero polynomial. To count classes this way, first check that each class is counted exactly once.
 
-Each of the $n$ coefficient positions has $q$ choices, including zero, regardless of earlier choices. The @[multiplication principle]gre:mathematics-subject-test:discrete-mathematics:th:multiplication-counting therefore gives $|F[x]/(f)|=|F^n|=q^n$. The same count applies when $f$ is reducible.
+**1. Match each class to a coefficient tuple.** Send $(c_0,\ldots,c_{n-1})\in F^n$ to the class of $c_0+c_1x+\cdots+c_{n-1}x^{n-1}$. By @[polynomial division]mt4-division-polynomials every class occurs. By @[uniqueness of the remainder in Exercise 1]mt4-9-2-1, two tuples give the same class only if all their coefficients agree. This is a @[bijection]math:set:cardinality-countability:df:equinumerosity.
+
+**2. Count the tuples.** Each of the $n$ positions has $q$ independent choices, including zero. The @[multiplication principle]gre:mathematics-subject-test:discrete-mathematics:th:multiplication-counting gives $|F[x]/(f)|=|F^n|=q^n$. This count also applies when $f$ is reducible.
