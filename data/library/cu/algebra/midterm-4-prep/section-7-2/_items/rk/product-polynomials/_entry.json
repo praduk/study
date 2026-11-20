@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f72fcaf0ba0e48bb80830376abbbde95",
+  "title": "Product of Polynomials",
+  "rank": 9169328841326329856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "34bda8ce3c974b7b856f1196a4d2da4a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.34bda8ce3c974b7b856f1196a4d2da4a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-20T05:42:34.610614+00:00",
+  "updated_at": "2026-11-20T05:43:40.562819+00:00"
+}

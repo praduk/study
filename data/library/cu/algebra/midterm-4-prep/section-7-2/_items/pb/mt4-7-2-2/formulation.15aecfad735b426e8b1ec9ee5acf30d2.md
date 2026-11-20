@@ -1,3 +1,3 @@
 > Let $R$ be a @[commutative ring]mt4-ring with $1$.
 
-Let $p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ be an element of the @[polynomial ring]mt4-polynomial-ring $R[x]$. Prove that $p(x)$ is a @[zero divisor]mt4-zero-divisor in $R[x]$ if and only if there is a nonzero $b\in R$ such that $bp(x)=0$. [Let $g(x)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_0$ be a nonzero polynomial of minimal degree such that $g(x)p(x)=0$. Show that $b_ma_n=0$ and so $a_ng(x)$ is a polynomial of degree less than $m$ that also gives $0$ when multiplied by $p(x)$. Conclude that $a_ng(x)=0$. Apply a similar argument to show by induction on $i$ that $a_{n-i}g(x)=0$ for $i=0,1,\ldots,n$, and show that this implies $b_mp(x)=0$.]
+Let $p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ be an element of the @[polynomial ring]mt4-polynomial-ring $R[x]$. Prove that $p(x)$ is a @[zero divisor]mt4-zero-divisor in $R[x]$ if and only if there is a nonzero $b\in R$ such that $bp(x)=0$.

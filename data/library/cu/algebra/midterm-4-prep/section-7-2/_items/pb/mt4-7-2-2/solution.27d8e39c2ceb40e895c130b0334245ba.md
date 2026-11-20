@@ -1,15 +1,47 @@
-**Strategy.** First check the zero polynomial against the definition. For a nonzero polynomial $p$, a scalar that kills $p$ gives one direction immediately. For the converse, choose a polynomial of least degree that kills $p$ and show that its leading coefficient already kills $p$.
+Let $R$ be a @[commutative ring]mt4-ring with $1$.
 
-**The zero polynomial is exceptional.** The @[zero-divisor definition]mt4-zero-divisor excludes zero. For example, in $\Z[x]$ the scalar $1$ kills $p=0$, although $0$ is not a zero divisor. From now on assume $p\ne0$.
+Prove that $p(x)$ is a @[zero divisor]mt4-zero-divisor in $R[x]$ if and only if there is a nonzero $b\in R$ such that $bp(x)=0$.
 
-**A nonzero scalar annihilator makes $p$ a zero divisor.** If $b\ne0$ in $R$ and $bp=0$, then the constant polynomial $b$ is a nonzero element of $R[x]$ whose product with $p$ vanishes.
+ 
+Let $p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ be an element of the @[polynomial ring]mt4-polynomial-ring $R[x]$.
 
-**Conversely, choose an annihilator of least degree.** Suppose $p=\sum_{j=0}^n a_jx^j$ is a zero divisor. Its @[annihilator]mt4-annihilator contains a nonzero polynomial. By @[well-ordering]math:set:orders-well-orders:df:well-order, choose such a $g$ of least degree $m$. Let $b_m\ne0$ be its leading coefficient. We need $a_k b_m=0$ for every $k$.
+-----
+$\impliedby$
 
-**Remove one coefficient of $p$ at a time.** Work downwards from $k=n$ to $k=0$ by @[induction]math:set:naturals-recursion:th:natural-induction. Write $p_k=\sum_{j=0}^k a_jx^j$. At the start of each step, $p_kg=0$. This holds initially because $p_n=p$.
+Let $p\neq 0$.  Suppose there exists a nonzero $b\in R$ such that $bp(x)=0$.  $b\in R[x]$ so $p(x)$ is a zero-divisor.  $p$ is not a unit because if it was, then there would exist a $q(x)\neq 0$ so that $bp(x)q(x) = b = 0$, but $b\neq 0$.
 
-1. The @[polynomial coefficient formula]mt4-polynomial-ring gives $a_kb_m=0$ by comparing coefficients of $x^{k+m}$ in $p_kg=0$.
-2. Consequently $a_kg$ is zero or has degree less than $m$. It still annihilates $p$, since $(a_kg)p=a_k(gp)=0$. By minimality of $m$, it must be zero.
-3. If $k>0$, subtract $a_kx^kg=0$ from $p_kg=0$ to obtain $p_{k-1}g=0$. This establishes the starting equation for the next step.
+-----
+$\implies$
 
-The first line of each step gives $a_kb_m=0$ for that $k$. Thus every coefficient of $b_mp$ is zero. The element $b_m\in R$ is the required nonzero scalar.
+Let
+$$
+p_k = \sum_{j=0}^k a_j x^j.
+$$
+and we have $p_n=p$.
+
+Suppose $p_k$ is a zero divisor in $R[x]$.  Then there exists a $g\in R[x]$
+$$
+g(x)=b_mx^m+b_{m-1}x^{m-1}+\cdots+b_0
+$$
+of least degree so that $g(x)p(x) = 0$.
+
+Writing
+$$
+g(x)p(x) = \sum_{i=0}^{m+n} (gp)_i x^i,
+$$
+
+We have
+$$
+(gp)_{m+n} = \sum_{k=0}^{m+n} b_k a_{m+n-k} = 0.
+$$
+
+If $k>m$, then \(b_k=0\). If $k<m$, then $m+n-k>n$, so $a_{m+n-k}=0$.  So only one term survives,
+$$
+(gp)_{m+n} = b_m a_n = 0.
+$$
+
+So then $a_n g=0$ or has degree less than $m$.  By minimality of $g$, it must be zero.  Because $a_n g=0$, we have that 
+$$
+g(x)(a_{n-1}x^{n-1}+\cdots+a_1x+a_0)=0.
+$$
+With a similar argument to the above polynomial and applying induction we get that $b_m a_j=0$ for all $0 \le j \le n$.  But then this means $b_mp(x) = 0$.

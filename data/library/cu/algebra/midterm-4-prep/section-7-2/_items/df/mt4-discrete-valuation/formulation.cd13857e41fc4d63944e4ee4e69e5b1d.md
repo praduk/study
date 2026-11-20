@@ -2,6 +2,6 @@ For a field $K$, a discrete valuation is a surjective map $v:K^\times\to\Z$ such
 
 (1) Group Homomorphism: $v(ab)=v(a)+v(b)$.
 
-(2) If $a+b\ne0$, the ultrametric inequality gives $v(a+b)\ge\min\{v(a),v(b)\}$.
+(2) If $a,b\in K^\times$ with $a+b\neq 0$, the ultrametric inequality gives $v(a+b)\ge\min\{v(a),v(b)\}$.
 
-Its valuation ring is $K_v = \{0\}\cup\{a\in K^\times:v(a)\ge0\}$
+Its valuation ring is $K_v = \{0\}\cup\{a\in K^\times:v(a)\ge0\}$.  An element in $K_v$ is a unit iff its valuation is zero.
