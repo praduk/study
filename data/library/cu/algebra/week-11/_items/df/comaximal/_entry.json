@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9bb0206ffafc4ad8a77823b75763d454",
+  "title": "Comaximal",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ab521d8f48b6441e89009d3fab0bcb3a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ab521d8f48b6441e89009d3fab0bcb3a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-16T17:40:10.032283+00:00",
+  "updated_at": "2026-11-16T17:40:19.700934+00:00"
+}

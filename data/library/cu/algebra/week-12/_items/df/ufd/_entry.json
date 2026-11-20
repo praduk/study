@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "edfc4c71087a4d52a42226c08605b83b",
+  "title": "Unique Factorization Domain",
+  "rank": 8646911284551352320,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "db475818ea6641159d0ae932a908a576",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.db475818ea6641159d0ae932a908a576.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-16T17:59:41.461230+00:00",
+  "updated_at": "2026-11-16T18:00:06.967515+00:00"
+}

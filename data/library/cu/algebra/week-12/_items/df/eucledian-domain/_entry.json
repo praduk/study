@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2f36ff0387424a139c6f40a579b2175f",
+  "title": "Eucledian Domain",
+  "rank": 6917529027641081856,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "e8aea64f9c23484bba2334b8b220fbb8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.e8aea64f9c23484bba2334b8b220fbb8.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-16T17:44:49.232530+00:00",
+  "updated_at": "2026-11-16T17:44:49.232592+00:00"
+}

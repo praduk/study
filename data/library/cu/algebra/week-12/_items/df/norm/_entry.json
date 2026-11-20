@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "2f4d96908b7d49299d59ed34f4cc47f7",
+  "title": "Norm",
+  "rank": 4611686018427387904,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4eb6f20b87224a74a148b0ccd18aba06",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4eb6f20b87224a74a148b0ccd18aba06.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-16T17:42:38.651144+00:00",
+  "updated_at": "2026-11-16T17:42:38.651162+00:00"
+}

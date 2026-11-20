@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "027f5bec46904e0c8d40c70c95d09f7e",
+  "title": "Irreducible",
+  "rank": 8070450532247928832,
+  "header": "",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c8085ae777a64a01a818a5acc62d5976",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c8085ae777a64a01a818a5acc62d5976.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": true,
+  "created_at": "2026-11-16T17:58:37.289846+00:00",
+  "updated_at": "2026-11-16T17:58:37.289971+00:00"
+}
