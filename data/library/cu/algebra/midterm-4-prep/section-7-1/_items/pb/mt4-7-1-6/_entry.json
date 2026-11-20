@@ -3,7 +3,7 @@
   "id": "880c0fb7e68e4e65a51c155b974518b6",
   "title": "7.1 #6 · Subrings of a function ring",
   "rank": 9222246136947933184,
-  "header": "Dummit and Foote, §7.1, Exercise 6, p. 231.",
+  "header": "**Must know.** Practice making a yes-or-no decision and justifying it for an unfamiliar subset.\n\nDummit and Foote, §7.1, Exercise 6, p. 231.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -28,5 +28,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:20:01.364004+00:00",
-  "updated_at": "2026-11-20T02:23:45.850832+00:00"
+  "updated_at": "2026-11-20T02:51:37.117788+00:00"
 }

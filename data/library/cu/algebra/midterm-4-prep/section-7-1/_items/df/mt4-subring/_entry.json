@@ -3,7 +3,7 @@
   "id": "d46b03abdc2a45f6bc656f99cc8e650f",
   "title": "Subring and the subring test",
   "rank": 9214364837600034816,
-  "header": "Dummit and Foote, §7.1, p. 228.",
+  "header": "**Must know.** Be ready to verify a proposed subring or give a counterexample to closure.\n\nDummit and Foote, §7.1, p. 228.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:20:00.731566+00:00",
-  "updated_at": "2026-11-20T02:20:00.731572+00:00"
+  "updated_at": "2026-11-20T02:51:36.858530+00:00"
 }

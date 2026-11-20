@@ -3,7 +3,7 @@
   "id": "91e3cf16a79b4c1d836a17a16fc778eb",
   "title": "Ring, commutativity, and identity",
   "rank": 4611686018427387904,
-  "header": "Dummit and Foote, §7.1, p. 223.",
+  "header": "**Must know.** Know which axioms you can use in a general ring and which require extra hypotheses.\n\nDummit and Foote, §7.1, p. 223.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:19:55.373172+00:00",
-  "updated_at": "2026-11-20T02:23:45.425784+00:00"
+  "updated_at": "2026-11-20T02:51:35.773013+00:00"
 }

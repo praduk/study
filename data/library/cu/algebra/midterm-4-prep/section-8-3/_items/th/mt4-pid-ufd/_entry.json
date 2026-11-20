@@ -3,7 +3,7 @@
   "id": "d2ab35ee14704cfe864f4e7aca50d13a",
   "title": "Every PID is a UFD",
   "rank": 9187343239835811840,
-  "header": "Dummit and Foote, §8.3, Theorem 14, pp. 287–289.",
+  "header": "**Must know.** Be ready to explain existence and uniqueness of factorizations separately.\n\nDummit and Foote, §8.3, Theorem 14, pp. 287–289.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:23:03.725283+00:00",
-  "updated_at": "2026-11-20T02:28:32.698753+00:00"
+  "updated_at": "2026-11-20T02:51:45.131984+00:00"
 }

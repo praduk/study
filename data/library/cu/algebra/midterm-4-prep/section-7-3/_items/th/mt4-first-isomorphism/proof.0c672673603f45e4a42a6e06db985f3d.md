@@ -1,1 +1,5 @@
-By the @[kernel and image properties]mt4-kernel-image the quotient ring and image subring are defined. We have $\varphi(a)=\varphi(b)$ precisely when $a-b\in\ker\varphi$, so the displayed map is well-defined and injective. It is onto by the definition of image. It preserves both operations by the @[quotient formulas]mt4-quotient-ring and the homomorphism identities for $\varphi$.
+Set $K=\ker\varphi$. By the @[kernel and image properties]mt4-kernel-image, $K$ is a two-sided ideal and $\im\varphi$ is a subring of $S$. Define $\bar\varphi:R/K\to\im\varphi$ by $\bar\varphi(a+K)=\varphi(a)$.
+
+By @[equality of quotient classes]mt4-quotient-ring, $a+K=b+K$ exactly when $a-b\in K$. By @[additivity and the kernel definition]mt4-ring-homomorphism, this last condition says $\varphi(a)-\varphi(b)=0$. In one direction this proves that $\bar\varphi$ is well-defined; in the other it proves injectivity.
+
+Every element of $\im\varphi$ has the form $\varphi(a)$, so $\bar\varphi$ is onto. It preserves sums because $\varphi(a+b)=\varphi(a)+\varphi(b)$ and products because $\varphi(ab)=\varphi(a)\varphi(b)$. Thus it is a @[ring isomorphism]mt4-ring-isomorphism.

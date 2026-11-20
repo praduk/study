@@ -3,7 +3,7 @@
   "id": "321f1089fe48437dab9a44206f4780ce",
   "title": "Maximal ideals and field quotients",
   "rank": 9151314442816847872,
-  "header": "Dummit and Foote, §7.4, Proposition 12, p. 254.",
+  "header": "**Must know.** Know both directions of this criterion for the quotient problems in Chapters 8 and 9.\n\nDummit and Foote, §7.4, Proposition 12, p. 254.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:21:29.875801+00:00",
-  "updated_at": "2026-11-20T02:28:23.554781+00:00"
+  "updated_at": "2026-11-20T02:51:40.149114+00:00"
 }

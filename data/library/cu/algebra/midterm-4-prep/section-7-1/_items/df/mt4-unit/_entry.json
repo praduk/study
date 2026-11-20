@@ -3,7 +3,7 @@
   "id": "c4682133a2b34041a5da75da14752a4d",
   "title": "Unit and group of units",
   "rank": 9151314442816847872,
-  "header": "Dummit and Foote, §7.1, p. 226.",
+  "header": "**Must know.** Be able to recognize and justify invertibility in different rings.\n\nDummit and Foote, §7.1, p. 226.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:19:58.471342+00:00",
-  "updated_at": "2026-11-20T02:19:58.471348+00:00"
+  "updated_at": "2026-11-20T02:51:36.439991+00:00"
 }

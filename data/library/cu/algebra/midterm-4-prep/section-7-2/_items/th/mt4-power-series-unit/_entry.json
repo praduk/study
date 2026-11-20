@@ -3,7 +3,7 @@
   "id": "43860009fd064d7f937cf5f7b6d228a9",
   "title": "Units in a formal power series ring",
   "rank": 8935141660703064064,
-  "header": "Dummit and Foote, §7.2, Exercise 3(c), p. 238.",
+  "header": "**Must know.** This criterion underlies both §7.2 #5 and §7.5 #5.\n\nDummit and Foote, §7.2, Exercise 3(c), p. 238.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:21:13.746056+00:00",
-  "updated_at": "2026-11-20T02:23:46.096055+00:00"
+  "updated_at": "2026-11-20T02:51:38.014098+00:00"
 }

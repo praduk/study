@@ -1,3 +1,3 @@
-By @[the description of principal ideals]mt4-principal-ideal, equality gives $a=rb$ and $b=sa$ for some $r,s\in R$. If $a=0$, then $b=0$ and we may take $u=1$. Otherwise $a=rsa$ and @[cancellation]mt4-cancellation in the integral domain gives $rs=1$. Thus $r$ is a @[unit]mt4-unit and $a=rb$ has the required form.
+By @[the description of principal ideals]mt4-principal-ideal, equality gives $a=rb$ and $b=sa$ for some $r,s\in R$. If $a=0$, then $b=sa=0$ and $u=1$ works. Otherwise $a=rsa$. Since $R$ is an @[integral domain]mt4-integral-domain, @[cancelling]mt4-cancellation the nonzero factor $a$ gives $rs=1$. Commutativity gives $sr=1$ as well, so $r$ is a @[unit]mt4-unit and $a=rb$.
 
-Conversely, suppose $a=ub$ with $u$ a unit. Every multiple of $a$ is a multiple of $b$. Since $b=u^{-1}a$, every multiple of $b$ is also a multiple of $a$. Hence $(a)=(b)$.
+Conversely, suppose $a=ub$ with $u$ a unit. Every multiple of $a$ is a multiple of $b$, and $b=u^{-1}a$ gives the reverse inclusion. Hence $(a)=(b)$.

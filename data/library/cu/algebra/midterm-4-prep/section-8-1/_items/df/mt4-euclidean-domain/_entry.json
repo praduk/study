@@ -3,7 +3,7 @@
   "id": "b9c4f5bf37e742ce9eea22062165ba3a",
   "title": "Euclidean domain and division with remainder",
   "rank": 6917529027641081856,
-  "header": "Dummit and Foote, §8.1, p. 270.",
+  "header": "**Must know.** Know exactly what a norm must accomplish for division with remainder.\n\nDummit and Foote, §8.1, p. 270.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:20:09.252850+00:00",
-  "updated_at": "2026-11-20T02:28:26.699143+00:00"
+  "updated_at": "2026-11-20T02:51:42.067215+00:00"
 }

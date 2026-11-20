@@ -3,7 +3,7 @@
   "id": "bc14a0f7efe544fab26db61c10bfd910",
   "title": "Group ring and its basis",
   "rank": 8070450532247928832,
-  "header": "Dummit and Foote, §7.2, pp. 236–237.",
+  "header": "**Must know.** Week 9 covers group rings, and §7.2 #13 asks you to reason about their elements.\n\nDummit and Foote, §7.2, pp. 236–237.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:13.266065+00:00",
-  "updated_at": "2026-11-20T02:21:13.266071+00:00"
+  "updated_at": "2026-11-20T02:51:37.774093+00:00"
 }

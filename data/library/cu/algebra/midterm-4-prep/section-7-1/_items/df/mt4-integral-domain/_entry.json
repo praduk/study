@@ -3,7 +3,7 @@
   "id": "68f671c73c5543ebb9032cbab2df98a0",
   "title": "Integral domain",
   "rank": 9187343239835811840,
-  "header": "Dummit and Foote, §7.1, p. 228.",
+  "header": "**Must know.** Be able to identify exactly where an argument needs the domain hypothesis.\n\nDummit and Foote, §7.1, p. 228.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:19:58.716042+00:00",
-  "updated_at": "2026-11-20T02:19:58.716049+00:00"
+  "updated_at": "2026-11-20T02:51:36.684771+00:00"
 }

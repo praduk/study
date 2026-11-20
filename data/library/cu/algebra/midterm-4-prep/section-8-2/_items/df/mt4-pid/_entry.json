@@ -3,7 +3,7 @@
   "id": "d4df27bbf7e64650830e8d38f44c65e5",
   "title": "Principal ideal domain",
   "rank": 4611686018427387904,
-  "header": "Dummit and Foote, §8.2, p. 279.",
+  "header": "**Must know.** Be able to use principality for an arbitrary ideal, including the zero ideal.\n\nDummit and Foote, §8.2, p. 279.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:56.856233+00:00",
-  "updated_at": "2026-11-20T02:28:29.159092+00:00"
+  "updated_at": "2026-11-20T02:51:42.972925+00:00"
 }

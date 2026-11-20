@@ -3,7 +3,7 @@
   "id": "af16f29369b34f79b97bb89b1b3fc0eb",
   "title": "Polynomial division over a field",
   "rank": 4611686018427387904,
-  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.2, Theorem 3, pp. 299–300.",
+  "header": "**Must know.** Know the hypotheses, the remainder bound, and the uniqueness argument.\n\nDummit and Foote, Abstract Algebra, 3rd ed., §9.2, Theorem 3, pp. 299–300.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:20:38.136910+00:00",
-  "updated_at": "2026-11-20T02:28:34.936292+00:00"
+  "updated_at": "2026-11-20T02:51:46.038423+00:00"
 }

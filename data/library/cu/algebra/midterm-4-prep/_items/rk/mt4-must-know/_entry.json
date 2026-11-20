@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "01ddc70162c349e1957032f958ae9b58",
+  "title": "Midterm 4 · Must know",
+  "rank": 4611686018427387904,
+  "header": "Study priorities inferred from the assigned homework and the Week 9–12 course notes. All 40 assigned exercises remain in scope.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cbd67a34d6154fca94c7eaa9e25fce45",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cbd67a34d6154fca94c7eaa9e25fce45.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:51:46.693865+00:00",
+  "updated_at": "2026-11-20T02:52:20.420365+00:00"
+}

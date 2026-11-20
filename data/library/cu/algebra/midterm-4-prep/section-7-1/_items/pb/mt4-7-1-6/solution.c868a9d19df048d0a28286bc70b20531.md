@@ -2,15 +2,15 @@ Use the @[subring test]mt4-subring with the @[pointwise operations]mt4-function-
 
 **(a) Yes.** Zero belongs. At each rational point, the difference and product of two functions that vanish there also vanish.
 
-**(b) Yes.** The zero polynomial, differences of polynomials, and products of polynomials all restrict to functions of the required kind.
+**(b) Yes.** If $f,g$ are restrictions of $p,q\in\R[x]$, then $f-g$ and $fg$ are the restrictions of $p-q$ and $pq$ in the @[polynomial ring]mt4-polynomial-ring. The zero polynomial supplies zero.
 
-**(c) No.** Let $h$ equal $1$ at irrational points and $0$ at rational points. Both $1+h$ and $1$ are nowhere zero. Their difference $h$ has infinitely many zeros and takes the value $1$ somewhere.
+**(c) No.** Let $h$ be zero on $[0,1/2]$ and one on $(1/2,1]$. Both $1+h$ and $1$ are nowhere zero. Their difference $h$ has infinitely many zeros and satisfies $h(1)=1$.
 
-**(d) No.** With the same $h$, both $h$ and $1-h$ have infinitely many zeros. Their sum is the constant function $1$.
+**(d) No.** The same $h$ vanishes on $[0,1/2]$, while $1-h$ vanishes on $(1/2,1]$. Both zero sets are infinite, but their sum is the constant function $1$.
 
-**(e) Yes.** The zero function qualifies. The difference and product limit laws give left limits $0-0$ and $0\cdot0$. The functions' values at $1$ do not affect this test.
+**(e) Yes.** The zero function qualifies. The @[arithmetic laws for finite limits]gre:mathematics-subject-test:single-variable-calculus:th:limit-arithmetic give left limits $0-0$ and $0\cdot0$. The functions' values at $1$ do not affect this test.
 
-**(f) Yes.** The rational span contains zero and is closed under subtraction. For $u=nx$, $v=mx$, the product-to-sum identities give
+**(f) Yes.** The @[rational span]math:algebra:linear-foundations:df:basis-dimension contains zero and is closed under subtraction. For $u=nx$ and $v=mx$, apply the product formulas for @[two sines]gre:mathematics-subject-test:trigonometry:th:sine-sine-product, @[two cosines]gre:mathematics-subject-test:trigonometry:th:cosine-cosine-product, and @[a sine and a cosine]gre:mathematics-subject-test:trigonometry:th:sine-cosine-product.
 
 $$
 \begin{aligned}
@@ -20,4 +20,4 @@ $$
 \end{aligned}
 $$
 
-All coefficients are rational. A negative frequency can be replaced by a nonnegative one because cosine is even and sine is odd. Distributing proves product closure for the entire span.
+All coefficients are rational. @[The parity identities]gre:mathematics-subject-test:trigonometry:th:trig-parity turn any negative frequency into a nonnegative one. Distributing proves product closure for the entire span.

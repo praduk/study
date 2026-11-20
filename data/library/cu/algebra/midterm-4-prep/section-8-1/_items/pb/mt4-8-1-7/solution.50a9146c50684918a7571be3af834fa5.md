@@ -1,4 +1,4 @@
-Use @[Gaussian division]mt4-gaussian-division with $N(a+bi)=a^2+b^2$. For the first pair,
+Use @[Gaussian division]mt4-gaussian-division with the @[quadratic norm]mt4-quadratic-integers-norm $N(a+bi)=a^2+b^2$. For the first pair,
 
 $$
 \begin{aligned}
@@ -19,4 +19,4 @@ $$
 \end{aligned}
 $$
 
-The divisor norms are $2378,533,41$. Hence a generator is $-4-5i$, equivalently $4+5i$.
+The divisor norms are $2378,533,41$. Thus the last nonzero divisor $-4-5i$ generates the second ideal. Multiplication by the unit $-1$ gives the @[associate generator]mt4-associates $4+5i$.

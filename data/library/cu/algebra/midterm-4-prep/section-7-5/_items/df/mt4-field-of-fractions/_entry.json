@@ -3,7 +3,7 @@
   "id": "d562a0b8dce349f88d316bf4f0cd874c",
   "title": "Field of fractions of an integral domain",
   "rank": 6917529027641081856,
-  "header": "Dummit and Foote, §7.5, p. 263.",
+  "header": "**Must know.** Know how the construction represents elements and how to recognize the field it produces.\n\nDummit and Foote, §7.5, p. 263.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:42.103427+00:00",
-  "updated_at": "2026-11-20T02:21:42.103433+00:00"
+  "updated_at": "2026-11-20T02:51:40.988540+00:00"
 }

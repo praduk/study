@@ -3,7 +3,7 @@
   "id": "bcf1eb639e2d4f5a804f249308404de7",
   "title": "Quotient ring",
   "rank": 9079256848778919936,
-  "header": "Dummit and Foote, §7.3, pp. 241–243.",
+  "header": "**Must know.** Be able to reason with classes and representatives in an unfamiliar quotient.\n\nDummit and Foote, §7.3, pp. 241–243.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:22:34.758006+00:00",
-  "updated_at": "2026-11-20T02:22:34.758011+00:00"
+  "updated_at": "2026-11-20T02:51:38.835724+00:00"
 }

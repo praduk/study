@@ -3,7 +3,7 @@
   "id": "bc6a9cd6b72a4d94a1ca8870dde55046",
   "title": "Comaximal ideals",
   "rank": 6917529027641081856,
-  "header": "Dummit and Foote, §7.6, p. 265.",
+  "header": "**Must know.** This Week 11 definition supplies the hypothesis for two different CRT exercises.\n\nDummit and Foote, §7.6, p. 265.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:50.598075+00:00",
-  "updated_at": "2026-11-20T02:21:50.598083+00:00"
+  "updated_at": "2026-11-20T02:51:41.485509+00:00"
 }

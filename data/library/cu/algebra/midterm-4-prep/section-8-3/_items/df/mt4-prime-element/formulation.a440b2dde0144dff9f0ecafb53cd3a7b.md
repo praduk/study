@@ -1,1 +1,3 @@
-A **prime element** of an integral domain $R$ is a nonzero nonunit $p$ such that $p\mid ab$ implies $p\mid a$ or $p\mid b$, for every $a,b\in R$. Equivalently $(p)$ is a @[prime ideal]mt4-prime-ideal.
+A **prime element** of an @[integral domain]mt4-integral-domain $R$ is a nonzero nonunit $p$ such that $p\mid ab$ implies $p\mid a$ or $p\mid b$, for every $a,b\in R$.
+
+For **nonzero** $p$, this is equivalent to $(p)$ being a @[prime ideal]mt4-prime-ideal. Indeed, $(p)$ is proper precisely when $p$ is a nonunit by @[the unit ideal criterion]mt4-unit-ideal-test. By @[divisibility]mt4-divisibility-gcd, the condition $ab\in(p)\implies a\in(p)\text{ or }b\in(p)$ is exactly the divisibility condition above. The nonzero hypothesis matters: $(0)$ is a prime ideal in a domain, although $0$ is excluded from the definition of prime element.

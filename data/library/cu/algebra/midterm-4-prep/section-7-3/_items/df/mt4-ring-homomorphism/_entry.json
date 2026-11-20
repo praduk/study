@@ -3,7 +3,7 @@
   "id": "ea08ec121d0643abb0ddab98b0d40863",
   "title": "Ring homomorphism and kernel",
   "rank": 4611686018427387904,
-  "header": "Dummit and Foote, §7.3, pp. 239–240.",
+  "header": "**Must know.** Be able to check a proposed map and compute its kernel.\n\nDummit and Foote, §7.3, pp. 239–240.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:22:30.243045+00:00",
-  "updated_at": "2026-11-20T02:22:30.243051+00:00"
+  "updated_at": "2026-11-20T02:51:38.432963+00:00"
 }

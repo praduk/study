@@ -4,4 +4,4 @@ $$
 (a)=\{ra:r\in R\}.
 $$
 
-Indeed these multiples form an ideal containing $a$, and every ideal containing $a$ contains all its multiples. More generally, $(a_1,\ldots,a_k)$ consists of all sums $r_1a_1+\cdots+r_ka_k$ with $r_i\in R$.
+Indeed, the multiples contain $a=1a$, are closed under differences, and absorb multiplication by ring elements. Thus they form an @[ideal]mt4-ideal. Every ideal containing $a$ must contain these multiples. More generally, $(a_1,\ldots,a_k)$ consists of all sums $r_1a_1+\cdots+r_ka_k$ with $r_i\in R$.

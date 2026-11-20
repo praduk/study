@@ -3,7 +3,7 @@
   "id": "6c1dea5b9ce642b2a10b83496a5e3e1b",
   "title": "Maximal ideal",
   "rank": 8646911284551352320,
-  "header": "Dummit and Foote, §7.4, p. 253.",
+  "header": "**Must know.** Be able to test maximality and distinguish it from primality.\n\nDummit and Foote, §7.4, p. 253.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:25.851861+00:00",
-  "updated_at": "2026-11-20T02:21:25.851867+00:00"
+  "updated_at": "2026-11-20T02:51:39.737160+00:00"
 }

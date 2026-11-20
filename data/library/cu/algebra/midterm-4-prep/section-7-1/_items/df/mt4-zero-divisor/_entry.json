@@ -3,7 +3,7 @@
   "id": "c035cc2df2c84404a6f079cdfc729483",
   "title": "Zero divisor",
   "rank": 9079256848778919936,
-  "header": "Dummit and Foote, §7.1, p. 226.",
+  "header": "**Must know.** The convention on zero matters in both Chapters 7 and 9.\n\nDummit and Foote, §7.1, p. 226.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:19:58.228220+00:00",
-  "updated_at": "2026-11-20T02:19:58.228226+00:00"
+  "updated_at": "2026-11-20T02:51:36.269435+00:00"
 }

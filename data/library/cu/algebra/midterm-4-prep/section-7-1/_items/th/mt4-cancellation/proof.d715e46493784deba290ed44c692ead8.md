@@ -1,1 +1,1 @@
-Subtracting gives $a(b-c)=0$. If $b-c\ne0$, then the nonzero factors $a,b-c$ make $a$ a zero divisor. Hence $b-c=0$. In an integral domain every nonzero factor satisfies the hypothesis.
+The @[distributive law]mt4-ring and @[ring sign rule]mt4-ring-arithmetic give $a(b-c)=ab-ac=0$. If $b-c\ne0$, this product of two nonzero factors would make $a$ a @[zero divisor]mt4-zero-divisor. Hence $b-c=0$, so $b=c$. By the @[definition of an integral domain]mt4-integral-domain, its nonzero elements all satisfy the hypothesis.

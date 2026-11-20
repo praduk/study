@@ -3,7 +3,7 @@
   "id": "c3e6829b74894256909c4ce7d8782dfb",
   "title": "First isomorphism theorem for rings",
   "rank": 9205357638345293824,
-  "header": "Dummit and Foote, §7.3, Theorem 7(1), p. 243.",
+  "header": "**Must know.** Know the hypotheses and be ready to identify each ring and map in an application.\n\nDummit and Foote, §7.3, Theorem 7(1), p. 243.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:22:38.767060+00:00",
-  "updated_at": "2026-11-20T02:23:46.277358+00:00"
+  "updated_at": "2026-11-20T02:51:39.079235+00:00"
 }

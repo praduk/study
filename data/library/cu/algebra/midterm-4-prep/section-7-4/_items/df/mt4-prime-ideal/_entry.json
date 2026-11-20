@@ -3,7 +3,7 @@
   "id": "6d709e3b7fd543aaa71a91396e6d8bf7",
   "title": "Prime ideal",
   "rank": 9187343239835811840,
-  "header": "Dummit and Foote, §7.4, p. 255.",
+  "header": "**Must know.** Be able to use the definition on a product and check the properness condition.\n\nDummit and Foote, §7.4, p. 255.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -19,5 +19,5 @@
   "assets": [],
   "review_enabled": false,
   "created_at": "2026-11-20T02:21:31.727813+00:00",
-  "updated_at": "2026-11-20T02:23:47.424462+00:00"
+  "updated_at": "2026-11-20T02:51:39.906926+00:00"
 }

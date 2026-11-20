@@ -3,7 +3,7 @@
   "id": "881454cb9d4b4a7595e69d70231e5e57",
   "title": "Gcd and Bézout identity in a PID",
   "rank": 6917529027641081856,
-  "header": "Dummit and Foote, §8.2, Proposition 6, p. 280.",
+  "header": "**Must know.** Connect gcds, linear combinations, and generators of two-generated ideals.\n\nDummit and Foote, §8.2, Proposition 6, p. 280.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:21:57.121930+00:00",
-  "updated_at": "2026-11-20T02:28:29.332916+00:00"
+  "updated_at": "2026-11-20T02:51:43.208649+00:00"
 }

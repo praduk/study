@@ -3,7 +3,7 @@
   "id": "b48393b6936044feb29cde86a56c677f",
   "title": "Every ideal of a Euclidean domain is principal",
   "rank": 9187343239835811840,
-  "header": "Dummit and Foote, §8.1, Proposition 1, p. 273.",
+  "header": "**Must know.** Know the proof and the direction of this implication in the domain hierarchy.\n\nDummit and Foote, §8.1, Proposition 1, p. 273.",
   "problem_family": "",
   "confusable_with": [],
   "formulations": [
@@ -29,5 +29,5 @@
   "review_enabled": false,
   "proof_review_enabled": true,
   "created_at": "2026-11-20T02:20:15.386591+00:00",
-  "updated_at": "2026-11-20T02:28:27.573751+00:00"
+  "updated_at": "2026-11-20T02:51:42.311836+00:00"
 }
