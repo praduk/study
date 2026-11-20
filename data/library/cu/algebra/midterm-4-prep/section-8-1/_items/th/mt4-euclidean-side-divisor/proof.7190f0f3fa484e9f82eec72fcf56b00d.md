@@ -1,0 +1,1 @@
+Choose $u$ of minimum norm among the nonzero nonunits, a nonempty set. Divide any $x$ by $u$ using @[Euclidean division]mt4-euclidean-domain. A nonzero remainder of smaller norm cannot be a nonunit. Thus every remainder is zero or a unit, as required by @[the definition of a universal side divisor]mt4-universal-side-divisor.

@@ -1,0 +1,1 @@
+Ideals $A,B$ of a commutative ring $R$ with identity are **comaximal** if $A+B=R$. Equivalently there exist $a\in A$ and $b\in B$ with $a+b=1$: an ideal containing $1$ equals the whole ring. For integer ideals $m\Z,n\Z$, this is equivalent to $\gcd(m,n)=1$ by Bézout’s identity.

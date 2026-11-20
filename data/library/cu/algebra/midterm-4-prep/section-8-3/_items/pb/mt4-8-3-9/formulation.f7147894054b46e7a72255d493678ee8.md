@@ -1,0 +1,1 @@
+Let $\mathcal O$ be a quadratic integer ring with field norm $N$. Assuming $\mathcal O$ is a PID, prove that $H(z)=|N(z)|$ is a Dedekind–Hasse norm. Deduce that the existence of any Dedekind–Hasse norm already guarantees that $H$ works.

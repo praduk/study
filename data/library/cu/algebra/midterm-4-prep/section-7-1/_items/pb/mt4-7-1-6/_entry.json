@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "880c0fb7e68e4e65a51c155b974518b6",
+  "title": "7.1 #6 · Subrings of a function ring",
+  "rank": 9222246136947933184,
+  "header": "Dummit and Foote, §7.1, Exercise 6, p. 231.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6db126c04fde4da29d82d9ad9028780e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6db126c04fde4da29d82d9ad9028780e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c868a9d19df048d0a28286bc70b20531",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c868a9d19df048d0a28286bc70b20531.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:01.364004+00:00",
+  "updated_at": "2026-11-20T02:23:45.850832+00:00"
+}

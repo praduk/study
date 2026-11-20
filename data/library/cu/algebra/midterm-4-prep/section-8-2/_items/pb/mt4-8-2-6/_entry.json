@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "1a7923d6cf634a17af70d1d429e18334",
+  "title": "8.2 #6 · Principal prime ideals force every ideal to be principal",
+  "rank": 9187343239835811840,
+  "header": "Dummit and Foote, §8.2, Exercise 6, p. 283.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "008df7a969d847b1aad65992762332b9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.008df7a969d847b1aad65992762332b9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e99a9b19cf4e45dc92399faf53169cb2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e99a9b19cf4e45dc92399faf53169cb2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:05.297321+00:00",
+  "updated_at": "2026-11-20T02:28:30.664776+00:00"
+}

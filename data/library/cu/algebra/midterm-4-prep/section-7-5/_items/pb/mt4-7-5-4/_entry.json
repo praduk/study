@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "1517d4f4cd264a2bb532ccc4d718f2fa",
+  "title": "7.5 #4 · Subfields of the real numbers",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.5, Exercise 4, p. 264.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bd8e07ed6281475e878d7cdbe6a17c34",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bd8e07ed6281475e878d7cdbe6a17c34.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3750bf70cfb046aab7bdcac492ecff95",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.3750bf70cfb046aab7bdcac492ecff95.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:46.489013+00:00",
+  "updated_at": "2026-11-20T02:28:25.339718+00:00"
+}

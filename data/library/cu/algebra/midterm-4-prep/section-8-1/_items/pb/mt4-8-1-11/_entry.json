@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d2bd429d787a42f3a757be01d450f745",
+  "title": "8.1 #11 · Least common multiples and principal ideals",
+  "rank": 9223231299366420480,
+  "header": "Dummit and Foote, §8.1, Exercise 11, p. 279.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "16c1ad46b7e649849ff510c3ba6e2110",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.16c1ad46b7e649849ff510c3ba6e2110.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a18002c94b1844d4baac2638c2a9162a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a18002c94b1844d4baac2638c2a9162a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:26.656546+00:00",
+  "updated_at": "2026-11-20T02:28:28.914152+00:00"
+}

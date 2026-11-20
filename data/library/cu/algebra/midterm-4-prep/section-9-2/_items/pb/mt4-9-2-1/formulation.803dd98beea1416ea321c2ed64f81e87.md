@@ -1,0 +1,1 @@
+Let $F$ be a field and $f\in F[x]$ have degree $n\ge1$. Prove that every class in $F[x]/(f)$ has a unique representative that is zero or has degree less than $n$. Identify an $F$-basis and the dimension of the quotient.

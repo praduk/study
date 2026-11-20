@@ -1,0 +1,1 @@
+The two coordinates of $a/b-q$ have absolute value at most $1/2$, so their squares sum to at most $1/2$. By @[multiplicativity of the norm]mt4-quadratic-norm-units, $N(r)=N(b)N(a/b-q)\le N(b)/2<N(b)$. This is the required @[Euclidean division]mt4-euclidean-domain.

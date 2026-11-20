@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "004e8774ee8d4a7c9ee3cd6d4bcedb3c",
+  "title": "Image subring and kernel ideal",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §7.3, Proposition 5, pp. 240, 242.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f08d8bcb7c2f4e799b21ce830337316b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f08d8bcb7c2f4e799b21ce830337316b.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "121af4fe697a49ccb5ec4b3052423a8b",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.121af4fe697a49ccb5ec4b3052423a8b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:22:32.905508+00:00",
+  "updated_at": "2026-11-20T02:22:33.104064+00:00"
+}

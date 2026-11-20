@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "bbe439fb61a944d192ac110d5343a367",
+  "title": "Euclidean algorithm and Bézout identity",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §8.1, Theorem 4, p. 275.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b6f588984f1e4274b1710a4f18f06e57",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b6f588984f1e4274b1710a4f18f06e57.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c0d850aac52544c2b7ce80d20488d20f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c0d850aac52544c2b7ce80d20488d20f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:17.161757+00:00",
+  "updated_at": "2026-11-20T02:28:27.822395+00:00"
+}

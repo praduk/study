@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "2b869004f00b4e35a528f1c4b42ed24e",
+  "title": "7.3 #25 · Proving the binomial formula in a ring",
+  "rank": 9223336852482686976,
+  "header": "Dummit and Foote, §7.3, Exercise 25, pp. 249–250.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4feff31fde0041faa3953b8a72b22605",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4feff31fde0041faa3953b8a72b22605.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "296c1a082ad641e182503148824f967e",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.296c1a082ad641e182503148824f967e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:50.970017+00:00",
+  "updated_at": "2026-11-20T02:23:46.969083+00:00"
+}

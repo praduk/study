@@ -1,0 +1,1 @@
+Choose $x\ne0$ with $N(x)=m$. Divide $1$ by $x$ using @[Euclidean division]mt4-euclidean-domain to get $1=qx+r$. A nonzero $r$ would satisfy $N(r)<m$, contrary to minimality. Thus $qx=1$, so $x$ is a @[unit]mt4-unit. Since a @[norm]mt4-euclidean-norm takes nonnegative values, any nonzero element of norm $0$ attains this minimum.

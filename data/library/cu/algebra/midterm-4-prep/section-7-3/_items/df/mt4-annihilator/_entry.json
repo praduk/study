@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "4076cf8abdd4481d9f5abcdee4dbdc03",
+  "title": "Left and right annihilators",
+  "rank": 9221120237041090560,
+  "header": "Dummit and Foote, §7.3, Exercise 22, p. 249.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cdd1e80c2fed4231b6bb36a21c56d78d",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cdd1e80c2fed4231b6bb36a21c56d78d.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:42.850776+00:00",
+  "updated_at": "2026-11-20T02:22:42.850782+00:00"
+}

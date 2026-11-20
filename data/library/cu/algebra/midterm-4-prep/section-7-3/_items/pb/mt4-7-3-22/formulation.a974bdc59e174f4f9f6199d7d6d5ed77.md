@@ -1,0 +1,1 @@
+Let $a$ belong to a ring $R$ with $1\ne0$. (a) Show that the right annihilator $\{x:ax=0\}$ is a right ideal and the left annihilator $\{y:ya=0\}$ is a left ideal. (b) If $L$ is a left ideal of $R$, show that its left annihilator $\{x:xa=0\text{ for all }a\in L\}$ is a two-sided ideal of $R$.

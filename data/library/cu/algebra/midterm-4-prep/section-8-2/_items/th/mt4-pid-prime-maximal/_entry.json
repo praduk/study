@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "f2815cd06983468c9daf3c0a9275f8bd",
+  "title": "A nonzero prime ideal in a PID is maximal",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §8.2, Proposition 7, p. 280.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d8b7f784b3914f14b0da71a84e6dc627",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d8b7f784b3914f14b0da71a84e6dc627.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ef9147629e6e42feb256f350e90b73d2",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ef9147629e6e42feb256f350e90b73d2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:59.005838+00:00",
+  "updated_at": "2026-11-20T02:28:29.578110+00:00"
+}

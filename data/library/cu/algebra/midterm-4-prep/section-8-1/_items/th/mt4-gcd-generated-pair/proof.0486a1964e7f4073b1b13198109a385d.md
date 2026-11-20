@@ -1,0 +1,1 @@
+The first equality puts $a,b$ in $(d)$ and $d$ in $(a,b)$. Thus $d$ divides both and is a linear combination of them. Every common divisor divides that combination, as required by @[the definition of a gcd]mt4-divisibility-gcd. Two gcds $d,d'$ divide one another. Write $d=sd'$ and $d'=td$. In a domain, cancellation of $d\ne0$ in $d=std$ gives $st=1$.

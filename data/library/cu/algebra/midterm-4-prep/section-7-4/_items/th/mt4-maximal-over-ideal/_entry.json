@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "a9fde51b6608425e95129aecec4fb7e4",
+  "title": "Every proper ideal lies in a maximal ideal",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.4, Proposition 11, p. 254.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7191584c1c6449f4bbf232725fb3850e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7191584c1c6449f4bbf232725fb3850e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "1533e783f8f6433cbf7793cb94d2af38",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.1533e783f8f6433cbf7793cb94d2af38.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:27.968649+00:00",
+  "updated_at": "2026-11-20T02:28:23.380258+00:00"
+}

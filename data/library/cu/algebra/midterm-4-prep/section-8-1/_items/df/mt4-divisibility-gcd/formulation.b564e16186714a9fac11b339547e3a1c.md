@@ -1,0 +1,1 @@
+In a commutative ring with identity, $d\mid a$ means $a=dx$ for some $x$ in the ring, equivalently $(a)\subseteq(d)$. For $a,b$ not both zero, a **greatest common divisor** is a nonzero $d$ such that $d\mid a$, $d\mid b$, and every common divisor of $a,b$ divides $d$. The pair is **relatively prime** if $1$ is a gcd.

@@ -1,0 +1,5 @@
+By the @[zero-divisor definition]mt4-zero-divisor, zero is excluded. Thus for $R=\Z$ and $p=0$, $b=1$ satisfies $bp=0$ although $p$ is not a zero divisor. The criterion requires $p\ne0$ over a nonzero ring.
+
+Fix $p=\sum_{j=0}^n a_jx^j\ne0$. Any nonzero scalar $b$ with $bp=0$ is itself a nonzero constant polynomial, proving one implication. Conversely, suppose $p$ is a zero divisor. Among its nonzero polynomial annihilators choose $g$ of least degree $m$, with leading coefficient $b_m\ne0$.
+
+Prove $a_k g=0$ by descending induction from $k=n$. After all higher terms have been removed, $p_k g=0$ for $p_k=\sum_{j=0}^k a_j x^j$. At $k=n$ this is just $pg=0$. By the @[coefficient formula]mt4-polynomial-ring the coefficient of $x^{k+m}$ is $a_kb_m=0$. Thus $a_kg$ is zero or has degree less than $m$. It also annihilates $p$, since $(a_kg)p=a_k(gp)=0$. Minimality forces $a_k g=0$. Subtracting $a_kx^kg$ leaves $p_{k-1}g=0$ for the next step. In particular $a_k b_m=0$ for every $k$, so $b_m p=0$. This is the required nonzero scalar.

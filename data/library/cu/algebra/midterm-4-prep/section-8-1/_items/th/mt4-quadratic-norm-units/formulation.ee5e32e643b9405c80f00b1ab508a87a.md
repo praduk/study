@@ -1,0 +1,1 @@
+Let $K$ be a quadratic field with ring of integers $\mathcal O$. Its field norm satisfies $N(zw)=N(z)N(w)$ for $z,w\in K$. It is integral on $\mathcal O$, and $z\in\mathcal O$ is a unit exactly when $|N(z)|=1$.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "403e9459e9a947c9b7e3152431a250c6",
+  "title": "Irreducible element",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §8.3, p. 284.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "727d08828faf4b84805ecac82d572270",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.727d08828faf4b84805ecac82d572270.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:56.981793+00:00",
+  "updated_at": "2026-11-20T02:22:56.981801+00:00"
+}

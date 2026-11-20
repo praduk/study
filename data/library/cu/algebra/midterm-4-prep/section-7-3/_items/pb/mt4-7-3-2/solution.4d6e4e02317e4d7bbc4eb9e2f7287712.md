@@ -1,0 +1,1 @@
+Both coefficient rings are @[integral domains]mt4-integral-domain. By the @[polynomial unit theorem]mt4-polynomial-degree-product, $\Z[x]^\times=\{1,-1\}$, whereas $\Q[x]^\times=\Q^\times$ is infinite. Any @[ring isomorphism]mt4-ring-isomorphism would induce a bijection of their @[unit groups]mt4-units-under-isomorphism. Their different sizes rule out such a map.

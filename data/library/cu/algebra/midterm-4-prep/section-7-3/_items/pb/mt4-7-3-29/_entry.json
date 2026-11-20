@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "570076713783441685802023dc268325",
+  "title": "7.3 #29 · The nilpotent elements form an ideal",
+  "rank": 9223354444668731392,
+  "header": "Dummit and Foote, §7.3, Exercise 29, p. 250.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "71da75e212c646d6b505c6decfea1477",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.71da75e212c646d6b505c6decfea1477.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9c92873e035d4c14a1030ad56a5ad80d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9c92873e035d4c14a1030ad56a5ad80d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:52.917790+00:00",
+  "updated_at": "2026-11-20T02:22:53.117302+00:00"
+}

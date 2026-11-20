@@ -1,0 +1,1 @@
+For a nonempty set $X$ and a ring $A$, the functions $X\to A$ form a ring with operations $(f+g)(t)=f(t)+g(t)$ and $(fg)(t)=f(t)g(t)$ for each $t\in X$. Its zero is the constant zero function. If $A$ has an identity, the constant $1_A$ is the identity function for multiplication in this ring.

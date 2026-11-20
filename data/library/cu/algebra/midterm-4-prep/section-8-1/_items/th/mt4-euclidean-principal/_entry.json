@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "b48393b6936044feb29cde86a56c677f",
+  "title": "Every ideal of a Euclidean domain is principal",
+  "rank": 9187343239835811840,
+  "header": "Dummit and Foote, §8.1, Proposition 1, p. 273.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "65c24e8c1bca4ae1991cb6a37aff5278",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.65c24e8c1bca4ae1991cb6a37aff5278.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "de1bdb0c24ff40c2a19e568777907e29",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.de1bdb0c24ff40c2a19e568777907e29.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:15.386591+00:00",
+  "updated_at": "2026-11-20T02:28:27.573751+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "228670b284204c2189297ba29e23543c",
+  "title": "Prime ideals and quotient domains",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §7.4, Proposition 13, pp. 255–256.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6ff1aa933ced4999a8cd8a6a7c19e782",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6ff1aa933ced4999a8cd8a6a7c19e782.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ac45d5959ef4427386a7dad5ee3b0bc0",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.ac45d5959ef4427386a7dad5ee3b0bc0.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:31.989340+00:00",
+  "updated_at": "2026-11-20T02:28:23.806061+00:00"
+}

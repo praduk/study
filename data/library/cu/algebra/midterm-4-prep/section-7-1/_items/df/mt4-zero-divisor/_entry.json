@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "c035cc2df2c84404a6f079cdfc729483",
+  "title": "Zero divisor",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.1, p. 226.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d7b20a37eef949bfacd137d69e6c9dca",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d7b20a37eef949bfacd137d69e6c9dca.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:19:58.228220+00:00",
+  "updated_at": "2026-11-20T02:19:58.228226+00:00"
+}

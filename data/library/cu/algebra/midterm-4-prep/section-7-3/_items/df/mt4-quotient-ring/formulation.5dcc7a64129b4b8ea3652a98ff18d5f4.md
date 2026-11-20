@@ -1,0 +1,1 @@
+For a ring $R$ and a two-sided ideal $I$, $R/I$ consists of the additive cosets $r+I$. Two representatives determine the same coset exactly when their difference lies in $I$. Writing $\bar r=r+I$, the ring operations are $\bar r+\bar s=\overline{r+s}$ and $\bar r\,\bar s=\overline{rs}$. Its zero is $I$, and $\bar r=0$ exactly when $r\in I$.

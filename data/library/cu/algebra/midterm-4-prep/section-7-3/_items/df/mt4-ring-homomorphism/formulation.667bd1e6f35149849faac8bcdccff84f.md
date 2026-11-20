@@ -1,0 +1,1 @@
+A ring homomorphism $\varphi:R\to S$ satisfies $\varphi(a+b)=\varphi(a)+\varphi(b)$ and $\varphi(ab)=\varphi(a)\varphi(b)$ for every $a,b\in R$. Its kernel is $\ker\varphi=\{a\in R:\varphi(a)=0_S\}$, and its image is $\im\varphi=\{\varphi(a):a\in R\}$. Under the book's convention preservation of a multiplicative identity is an additional condition.

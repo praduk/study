@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "445786cb1a0a4a59adf02d6dc0ee2b55",
+  "title": "Ring isomorphism",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §7.3, pp. 239–240.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "8c9dba4432634f3ab5631c3d58c44fdc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.8c9dba4432634f3ab5631c3d58c44fdc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:30.511022+00:00",
+  "updated_at": "2026-11-20T02:22:30.511030+00:00"
+}

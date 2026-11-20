@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "6dc0a58742484ea082100b70b9c0ca03",
+  "title": "Multiplicativity and units of quadratic norm",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, §7.1, p. 230, used in §8.1 and §8.3.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "ee5e32e643b9405c80f00b1ab508a87a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.ee5e32e643b9405c80f00b1ab508a87a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "82feecb64a5f4b0296533036f112f72e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.82feecb64a5f4b0296533036f112f72e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:09.688157+00:00",
+  "updated_at": "2026-11-20T02:28:26.947351+00:00"
+}

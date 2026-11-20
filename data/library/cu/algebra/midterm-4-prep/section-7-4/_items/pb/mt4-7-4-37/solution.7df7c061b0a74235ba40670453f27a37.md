@@ -1,0 +1,3 @@
+Suppose $R$ is a @[local ring]mt4-local-ring. If $a$ is a nonunit, the @[unit ideal test]mt4-unit-ideal-test makes $(a)$ proper. By @[the maximal ideal existence theorem]mt4-maximal-over-ideal, $(a)$ lies in some maximal ideal, necessarily $M$. Hence every $a\notin M$ is a unit. Since $M$ is proper, the same unit test also excludes all units from $M$.
+
+Conversely, suppose the nonunits form an ideal $M$. Since $1$ is a unit, $M$ is proper. Every proper ideal consists entirely of nonunits by @[the unit ideal test]mt4-unit-ideal-test, so every proper ideal lies in $M$. This proves that $M$ is a @[maximal ideal]mt4-maximal-ideal and that no other maximal ideal exists.

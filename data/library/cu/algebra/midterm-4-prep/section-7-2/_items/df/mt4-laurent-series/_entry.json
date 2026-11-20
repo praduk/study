@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "acb0bf428e204b06b19184b5fdc7ac7c",
+  "title": "Formal Laurent series",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.2, Exercise 5, p. 238.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cdf6b72648324d488bf15eb753c94484",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cdf6b72648324d488bf15eb753c94484.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:15.749332+00:00",
+  "updated_at": "2026-11-20T02:21:15.749339+00:00"
+}

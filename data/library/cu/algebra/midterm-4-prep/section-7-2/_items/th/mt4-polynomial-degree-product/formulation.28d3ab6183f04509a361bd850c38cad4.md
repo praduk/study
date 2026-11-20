@@ -1,0 +1,1 @@
+If $D$ is an integral domain and $f,g\in D[x]$ are nonzero, then $fg\ne0$ and $\deg(fg)=\deg f+\deg g$. Consequently $D[x]$ is an integral domain, and its units are exactly the constant polynomials whose values are units of $D$.

@@ -1,0 +1,1 @@
+In a ring $R$, an element $e$ is **idempotent** if $e^2=e$. It is a **central idempotent** if in addition $er=re$ for every $r\in R$. When $R$ has identity, $0$ and $1$ are always central idempotents.

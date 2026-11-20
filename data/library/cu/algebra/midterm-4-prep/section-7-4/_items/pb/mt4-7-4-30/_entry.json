@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "32ee6a7dbf93448eb957a31d2256f1e8",
+  "title": "7.4 #30 · The radical and the nilradical of a quotient",
+  "rank": 9222809086901354496,
+  "header": "Dummit and Foote, §7.4, Exercise 30, p. 258.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "eb0511c042d84e4aabb667a196285247",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.eb0511c042d84e4aabb667a196285247.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "b822a2c219874e8fb8269688adb3fdf1",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.b822a2c219874e8fb8269688adb3fdf1.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:38.100116+00:00",
+  "updated_at": "2026-11-20T02:28:24.491799+00:00"
+}

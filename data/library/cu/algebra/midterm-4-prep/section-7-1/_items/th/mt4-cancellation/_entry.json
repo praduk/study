@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "560794cba7414eff9451ae3f8ae09ef2",
+  "title": "Cancellation of a nonzero factor",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §7.1, Proposition 2, p. 228.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c41e8eebfefd4a3a85686c4bf5e73694",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c41e8eebfefd4a3a85686c4bf5e73694.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d715e46493784deba290ed44c692ead8",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.d715e46493784deba290ed44c692ead8.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:19:58.904088+00:00",
+  "updated_at": "2026-11-20T02:19:59.151017+00:00"
+}

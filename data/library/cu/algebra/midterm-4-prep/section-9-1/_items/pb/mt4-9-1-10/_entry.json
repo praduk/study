@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d4b644d8819c43c29e8ea363808bed46",
+  "title": "9.1 #10 · Minimal primes from disjoint pairs of variables",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.1, Exercise 10, p. 298.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f1b09a506e0d4cb3b51ad554844e6a38",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f1b09a506e0d4cb3b51ad554844e6a38.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d3c9edb2c6524056b7ba6be51f5a8814",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d3c9edb2c6524056b7ba6be51f5a8814.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:34.455477+00:00",
+  "updated_at": "2026-11-20T02:28:34.509282+00:00"
+}

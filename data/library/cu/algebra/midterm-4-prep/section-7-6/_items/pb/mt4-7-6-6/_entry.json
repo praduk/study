@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4fa7047c139f46079920513ef74a268a",
+  "title": "7.6 #6 · Simultaneous polynomial congruences",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.6, Exercise 6, p. 268.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "05373574cc1d4647be4e00f0cde89d80",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.05373574cc1d4647be4e00f0cde89d80.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "97da324451004f899f21ade50ecdb92c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.97da324451004f899f21ade50ecdb92c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:54.961418+00:00",
+  "updated_at": "2026-11-20T02:28:26.261966+00:00"
+}

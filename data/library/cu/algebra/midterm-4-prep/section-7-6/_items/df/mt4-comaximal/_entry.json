@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bc6a9cd6b72a4d94a1ca8870dde55046",
+  "title": "Comaximal ideals",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §7.6, p. 265.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ea7f408b014404ea12d78caa52ac9f6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ea7f408b014404ea12d78caa52ac9f6.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:50.598075+00:00",
+  "updated_at": "2026-11-20T02:21:50.598083+00:00"
+}

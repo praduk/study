@@ -1,0 +1,3 @@
+Apply @[polynomial division]mt4-division-polynomials to $g$ with divisor $f$: write $g=qf+r$ with $r=0$ or $\deg r<n$. Since $g-r\in(f)$, $r$ represents the same class by @[the definition of quotient classes]mt4-quotient-ring. If another such $s$ represents the class, then $r-s\in(f)$. A nonzero multiple of $f$ has degree at least $n$ by @[the degree formula]mt4-polynomial-domains, whereas $r-s$ is zero or has degree less than $n$. Hence $r=s$.
+
+The coefficients of this unique remainder express every class uniquely as $c_0\bar 1+c_1\bar x+\cdots+c_{n-1}\overline{x^{n-1}}$. Existence gives spanning and uniqueness gives linear independence. Those $n$ classes form a basis, so the dimension is $n$.

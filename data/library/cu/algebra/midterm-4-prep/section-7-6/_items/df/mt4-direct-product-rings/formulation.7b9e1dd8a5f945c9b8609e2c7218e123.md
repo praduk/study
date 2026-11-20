@@ -1,0 +1,1 @@
+Given rings $R_1,\ldots,R_k$, their direct product has underlying set $\prod_{i=1}^k R_i$. For tuples $a=(a_i)$ and $b=(b_i)$, define $a+b=(a_i+b_i)$ and $ab=(a_i b_i)$. If every $R_i$ has identity $1_i$, the product identity is $(1_1,\ldots,1_k)$. A map from a ring into this product preserves sums and products precisely when each coordinate map does.

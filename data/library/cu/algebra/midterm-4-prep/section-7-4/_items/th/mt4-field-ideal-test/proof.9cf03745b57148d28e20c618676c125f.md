@@ -1,0 +1,1 @@
+In a field a nonzero ideal contains a nonzero element, hence a unit. It equals $R$ by @[the unit ideal test]mt4-unit-ideal-test. Conversely, if these are the only ideals, then for every nonzero $a\in R$, $(a)$ is nonzero and must equal $R$. The same test makes $a$ a unit.

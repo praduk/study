@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "cc0ed2eaf2854d4c84825b827fe47a16",
+  "title": "Extending an embedding to fractions",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §7.5, Theorem 15, pp. 261–263.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a3d3cce7115e449db39cf5a56ed52bd3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a3d3cce7115e449db39cf5a56ed52bd3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8d011976ed724a3b8cd4cc51e7aeaca4",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.8d011976ed724a3b8cd4cc51e7aeaca4.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:42.382220+00:00",
+  "updated_at": "2026-11-20T02:28:24.910234+00:00"
+}

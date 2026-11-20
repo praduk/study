@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bfe1f36e8846450aa307aab54f920604",
+  "title": "Universal side divisor",
+  "rank": 9214364837600034816,
+  "header": "Dummit and Foote, §8.1, pp. 276–277.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "649952638f6b4a78a0921a0c66369f36",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.649952638f6b4a78a0921a0c66369f36.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:19.006471+00:00",
+  "updated_at": "2026-11-20T02:20:19.006477+00:00"
+}

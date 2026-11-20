@@ -1,0 +1,1 @@
+For a finite group $G$ and a commutative ring $R$ with $1\ne0$, the group ring $RG$ consists of formal sums $\sum_{g\in G}a_g g$, one coefficient $a_g\in R$ for each $g$. Sums and equality are coefficientwise. Multiplication extends $(ag)(bh)=(ab)(gh)$ by distributivity. The identity of $G$ represents the identity of $RG$. Scalar coefficients commute with every group element.

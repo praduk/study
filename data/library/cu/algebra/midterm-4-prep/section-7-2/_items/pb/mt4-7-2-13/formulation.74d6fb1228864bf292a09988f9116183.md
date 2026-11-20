@@ -1,0 +1,1 @@
+Let $G$ be a finite group and $R$ a commutative ring with $1\ne0$. For each conjugacy class $K$ set $s_K=\sum_{h\in K}h\in RG$. Prove (a) $s_K$ is central and (b) the central elements of $RG$ are precisely the $R$-linear combinations of these class sums.

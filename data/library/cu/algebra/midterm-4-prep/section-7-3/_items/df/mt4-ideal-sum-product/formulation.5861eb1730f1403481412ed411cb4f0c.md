@@ -1,0 +1,1 @@
+For two-sided ideals $I,J$ of $R$, their sum is $I+J=\{i+j:i\in I,\ j\in J\}$. Their product $IJ$ consists of all finite sums $\sum_k i_kj_k$ with $i_k\in I,\ j_k\in J$. The order of the factors matters in general. A single product need not represent every element of $IJ$.

@@ -1,0 +1,1 @@
+Let $N$ be a Euclidean norm on $R$ and let $m$ be the minimum of $N(x)$ over all nonzero $x\in R$. Show that every element of norm $m$ that is nonzero is invertible. Deduce what happens if a nonzero element has norm $0$.

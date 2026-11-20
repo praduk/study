@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "82b08816896f4ccd956da6ab49deabc9",
+  "title": "Nilradical of a commutative ring",
+  "rank": 9222809086901354496,
+  "header": "Dummit and Foote, §7.3, Exercise 29, p. 250.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "537e140ad1db47f99708b565ce3cd5f2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.537e140ad1db47f99708b565ce3cd5f2.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:45.021175+00:00",
+  "updated_at": "2026-11-20T02:22:45.021182+00:00"
+}

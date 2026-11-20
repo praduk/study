@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "e00d693da9b54523ac0f3a24b00f0f89",
+  "title": "Generated ideals and principal ideals",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §7.4, pp. 251–252.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "679ce5e17f7049c09a8ac86c5eb163af",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.679ce5e17f7049c09a8ac86c5eb163af.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:21.876909+00:00",
+  "updated_at": "2026-11-20T02:23:47.235219+00:00"
+}

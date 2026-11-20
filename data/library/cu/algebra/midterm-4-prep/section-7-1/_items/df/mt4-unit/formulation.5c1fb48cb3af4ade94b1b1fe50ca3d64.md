@@ -1,0 +1,1 @@
+In a ring $R$ with $1\ne0$, an element $u$ is a unit if there exists $v\in R$ with $uv=vu=1$. Then $v=u^{-1}$. The units form a group $R^\times$ under multiplication. In particular, $(uw)^{-1}=w^{-1}u^{-1}$ for units $u,w$.

@@ -1,0 +1,1 @@
+By the @[kernel and image properties]mt4-kernel-image the quotient ring and image subring are defined. We have $\varphi(a)=\varphi(b)$ precisely when $a-b\in\ker\varphi$, so the displayed map is well-defined and injective. It is onto by the definition of image. It preserves both operations by the @[quotient formulas]mt4-quotient-ring and the homomorphism identities for $\varphi$.

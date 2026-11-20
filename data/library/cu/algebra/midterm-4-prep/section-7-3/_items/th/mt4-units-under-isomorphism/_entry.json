@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "20ed6d2693ae46efa8efd912b82f3a1f",
+  "title": "Images of units under an identity-preserving map",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §7.3, Exercise 17(b), p. 249, with the isomorphism consequence derived here.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "321ecfaf10c843c19207158986594d29",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.321ecfaf10c843c19207158986594d29.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "186c82be6ce54be5bdbcac87b47fecc7",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.186c82be6ce54be5bdbcac87b47fecc7.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:22:30.777076+00:00",
+  "updated_at": "2026-11-20T02:22:30.974263+00:00"
+}

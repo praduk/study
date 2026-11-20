@@ -1,0 +1,1 @@
+For a field $K$, a discrete valuation is a surjective map $v:K^\times\to\Z$ satisfying $v(ab)=v(a)+v(b)$ and, whenever $a,b,a+b$ are nonzero, $v(a+b)\ge\min\{v(a),v(b)\}$. Its valuation ring is $\{0\}\cup\{a\in K^\times:v(a)\ge0\}$. This uses the normalization in which the image is all of $\Z$.

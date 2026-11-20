@@ -1,0 +1,1 @@
+For a field $F$, form $F((x))$ from formal series with coefficients in $F$ and exponents bounded below. (a) Prove that $F((x))$ is a field. (b) For nonzero $f$, let $v(f)$ be the least exponent with nonzero coefficient. Prove that $v$ is a discrete valuation and identify its valuation ring as $F[[x]]$.

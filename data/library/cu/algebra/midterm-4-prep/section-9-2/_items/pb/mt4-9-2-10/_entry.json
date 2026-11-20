@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0bd5ba2c64004e248cdd7ec6ec98906e",
+  "title": "9.2 #10 · A monic gcd and an explicit Bézout identity",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.2, Exercise 10, p. 301.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0a1217fa987c4a4994f4ebc1ff2147a5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0a1217fa987c4a4994f4ebc1ff2147a5.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c42008e8cf8b49dc8ed5cf014ebc1ab2",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c42008e8cf8b49dc8ed5cf014ebc1ab2.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:47.334020+00:00",
+  "updated_at": "2026-11-20T02:23:50.416556+00:00"
+}

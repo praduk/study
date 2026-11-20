@@ -1,0 +1,1 @@
+Suppose $\varphi:R\to S$ is a ring homomorphism of nonzero rings with identity. If $\varphi(1_R)=1_S$, then $\varphi$ takes each unit to a unit and $\varphi(u^{-1})=\varphi(u)^{-1}$. In particular, a ring isomorphism induces an isomorphism $R^\times\to S^\times$.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f2ec577b06594b449e3edffe03515491",
+  "title": "Ring of fractions with regular denominators",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §7.5, Theorem 15 and definition, pp. 261–263.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "af3c924849a445feb78703c78584f139",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.af3c924849a445feb78703c78584f139.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:41.905891+00:00",
+  "updated_at": "2026-11-20T02:23:48.106888+00:00"
+}

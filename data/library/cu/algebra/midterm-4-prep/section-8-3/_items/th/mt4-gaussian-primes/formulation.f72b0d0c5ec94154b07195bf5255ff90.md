@@ -1,0 +1,1 @@
+In $\Z[i]$, $2=-i(1+i)^2$; an ordinary prime $q\equiv3\pmod4$ remains irreducible; and each prime $p\equiv1\pmod4$ factors as $p=\pi\bar\pi$, where $\pi,\bar\pi$ are nonassociate irreducibles of norm $p$. Up to associates these give all Gaussian irreducibles.

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "c3d5c11b422a4eb4987640c5e9c0104f",
+  "title": "Degrees, units, and domains in polynomial rings",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.1, Proposition 1 and its extension on p. 298.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b3ef709af9cf44be91375e109409149e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b3ef709af9cf44be91375e109409149e.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e5d9973b128847f89906d0191a9badae",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.e5d9973b128847f89906d0191a9badae.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:28.706500+00:00",
+  "updated_at": "2026-11-20T02:20:28.953333+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "8514499706364a0e9c2869b5d5fa049e",
+  "title": "9.1 #4 · Two prime ideals in a polynomial ring",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.1, Exercise 4, p. 298.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3b7f743b1a804a23b3dc90db6a88bfb3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3b7f743b1a804a23b3dc90db6a88bfb3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "ff3696d86e194cc38dd932e6501439d6",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.ff3696d86e194cc38dd932e6501439d6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:32.647827+00:00",
+  "updated_at": "2026-11-20T02:28:34.258614+00:00"
+}

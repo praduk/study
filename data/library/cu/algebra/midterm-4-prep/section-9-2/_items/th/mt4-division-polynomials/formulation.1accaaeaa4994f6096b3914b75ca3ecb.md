@@ -1,0 +1,1 @@
+For $a,b\in F[x]$ over a field $F$, with $b\ne0$, there is a unique pair $q,r\in F[x]$ with $a=qb+r$ and either $r=0$ or $\deg r<\deg b$. Thus $F[x]$ is a Euclidean domain with degree as the Euclidean function on nonzero polynomials.

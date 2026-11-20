@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "ac2e685c34924190bbe7a40777ccb67c",
+  "title": "8.3 #2 · Least common multiples from prime exponents",
+  "rank": 9214364837600034816,
+  "header": "Dummit and Foote, §8.3, Exercise 2, p. 293.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3ed01bd596e14de3a9b6e06312442381",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3ed01bd596e14de3a9b6e06312442381.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8907228b166747249f21c0b5414a6860",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.8907228b166747249f21c0b5414a6860.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:23:07.662212+00:00",
+  "updated_at": "2026-11-20T02:28:33.131520+00:00"
+}

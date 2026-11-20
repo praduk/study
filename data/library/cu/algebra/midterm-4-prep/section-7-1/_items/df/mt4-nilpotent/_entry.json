@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "28d4e2d3167b4b5a949bfeb0cfb35944",
+  "title": "Nilpotent element",
+  "rank": 9221120237041090560,
+  "header": "Dummit and Foote, §7.1, Exercise 13, p. 231.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2cec27efb5ec4fceb8cc3d523d9b04dc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2cec27efb5ec4fceb8cc3d523d9b04dc.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:01.178455+00:00",
+  "updated_at": "2026-11-20T02:20:01.178464+00:00"
+}

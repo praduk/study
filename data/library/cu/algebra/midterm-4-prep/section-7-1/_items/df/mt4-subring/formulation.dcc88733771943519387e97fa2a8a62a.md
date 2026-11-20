@@ -1,0 +1,1 @@
+A subring $S$ of a ring $R$ is an additive subgroup closed under the multiplication of $R$. Equivalently, $S$ is nonempty and $a-b,ab\in S$ whenever $a,b\in S$. This convention allows a subring to omit $1_R$.

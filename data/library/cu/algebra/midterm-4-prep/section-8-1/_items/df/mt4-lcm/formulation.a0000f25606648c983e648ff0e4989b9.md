@@ -1,0 +1,1 @@
+In a commutative ring with identity, $e$ is a **least common multiple** of $a,b\ne0$ if $e$ is a multiple of both and $e$ divides every common multiple of $a,b$. Here divisibility means membership in the principal ideal of the divisor, so $0$ is a multiple of each element. Least refers to divisibility.

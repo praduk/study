@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f7f6bdbe18dd4bb58912c93e88350caa",
+  "title": "Radical of an ideal",
+  "rank": 9214364837600034816,
+  "header": "Dummit and Foote, §7.4, Exercise 30, p. 258.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a4c75e3936b0477285da960507271af7",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a4c75e3936b0477285da960507271af7.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:33.856289+00:00",
+  "updated_at": "2026-11-20T02:23:47.683240+00:00"
+}

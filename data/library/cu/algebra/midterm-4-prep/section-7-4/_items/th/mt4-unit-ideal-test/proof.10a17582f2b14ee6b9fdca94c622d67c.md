@@ -1,0 +1,1 @@
+If $I=R$, it contains $1$. If $u\in I$ is a @[unit]mt4-unit, then $1=u^{-1}u\in I$ by the absorption property of an @[ideal]mt4-ideal. Now $r=r1\in I$ for every $r\in R$. In the commutative case, $1\in(a)$ means precisely that $ra=1$ for some $r\in R$, by @[the description of a principal ideal]mt4-principal-ideal.

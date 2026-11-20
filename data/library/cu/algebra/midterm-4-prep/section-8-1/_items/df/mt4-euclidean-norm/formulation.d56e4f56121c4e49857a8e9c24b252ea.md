@@ -1,0 +1,1 @@
+A norm on an @[integral domain]mt4-integral-domain $R$ is a function $N:R\to\Z_{\ge 0}$ with $N(0)=0$. It is **positive** if $N(a)>0$ for every $a\ne0$. A norm in this sense can vanish at a nonzero element. Multiplicativity is an additional property.

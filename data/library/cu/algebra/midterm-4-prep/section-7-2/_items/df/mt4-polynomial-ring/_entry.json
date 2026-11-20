@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "3ca3f37584d741c8ba9c4ed67d7b5858",
+  "title": "Polynomial ring, degree, and leading coefficient",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §7.2, p. 234.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3c185e502efe42e492c141731cb533f5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3c185e502efe42e492c141731cb533f5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:11.067988+00:00",
+  "updated_at": "2026-11-20T02:23:34.492483+00:00"
+}

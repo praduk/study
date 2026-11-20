@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "517854203dcd4005b3f61c94244b5d54",
+  "title": "When coset multiplication is well-defined",
+  "rank": 9151314442816847872,
+  "header": "Dummit and Foote, §7.3, Proposition 6, pp. 241–242.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "cd9668bc8d544dd183eac4dc11b94842",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.cd9668bc8d544dd183eac4dc11b94842.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "088dd297a81d4b34988c5059672bd8b9",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.088dd297a81d4b34988c5059672bd8b9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:22:35.027303+00:00",
+  "updated_at": "2026-11-20T02:22:35.230880+00:00"
+}

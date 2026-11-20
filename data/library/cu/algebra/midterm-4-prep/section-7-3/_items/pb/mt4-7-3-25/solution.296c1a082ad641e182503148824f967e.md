@@ -1,0 +1,3 @@
+Write each nonnegative integer $m$ as the ring element $m\,1_R$, the sum of $m$ copies of $1_R$, with $0\,1_R=0$. By the @[ring axioms]mt4-ring, these coefficients distribute over sums and commute with all elements.
+
+At $n=0$ both sides are $1_R$. Suppose the formula holds at $n$ and multiply by $a+b$. Using commutativity, the terms contributing to $a^k b^{n+1-k}$ come from multiplying the old $(k-1)$st term by $a$ or the old $k$th term by $b$. For $1\le k\le n$ their integer multiplicities add to $\binom n{k-1}+\binom nk=\binom{n+1}k$ (split the $k$-element subsets according to whether they contain the last element). The two end terms have multiplicity $1$. This gives the formula at $n+1$, proving the @[binomial theorem]mt4-binomial-theorem in $R$.

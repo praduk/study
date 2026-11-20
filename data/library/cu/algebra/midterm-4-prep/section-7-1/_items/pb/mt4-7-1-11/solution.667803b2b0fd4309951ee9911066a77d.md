@@ -1,0 +1,1 @@
+The @[ring sign rules]mt4-ring-arithmetic give $(x-1)(x+1)=x^2-1=0$. If $x-1=0$, then $x=1$. Otherwise the @[integral domain]mt4-integral-domain allows @[cancellation]mt4-cancellation of $x-1$ from $(x-1)(x+1)=(x-1)0$. Hence $x+1=0$. These two answers coincide when $1=-1$.

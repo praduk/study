@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "caafcc76370c49c7a2fce1ccd8f2090d",
+  "title": "Direct product of rings",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §7.6, p. 265.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7b9e1dd8a5f945c9b8609e2c7218e123",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7b9e1dd8a5f945c9b8609e2c7218e123.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:50.338106+00:00",
+  "updated_at": "2026-11-20T02:21:50.338113+00:00"
+}

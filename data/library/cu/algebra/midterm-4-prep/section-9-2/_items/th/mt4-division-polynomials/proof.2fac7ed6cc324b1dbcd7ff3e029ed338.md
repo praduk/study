@@ -1,0 +1,3 @@
+If $a=0$ or $\deg a<\deg b$, take $q=0$ and $r=a$. Otherwise put $k=\deg a-\deg b$ and let $c$ be the leading coefficient of $a$ divided by that of $b$. Subtract $cx^kb$ from $a$ to cancel its leading term. The result is zero or has smaller degree. Iterating terminates, and collecting the subtracted terms yields $q$.
+
+If $qb+r=q'b+r'$, then $(q-q')b=r'-r$. If $q\ne q'$, the left side has degree at least $\deg b$ by @[the degree formula]mt4-polynomial-domains, whereas the right side is zero or has smaller degree. Thus $q=q'$ and $r=r'$. This division property is exactly the one required of a @[Euclidean domain]mt4-euclidean-domain.

@@ -1,0 +1,1 @@
+If $F$ is a field, then $F[x]$ is a principal ideal domain and a unique factorization domain. In particular, a nonconstant polynomial has a factorization into irreducibles, and each irreducible is prime.

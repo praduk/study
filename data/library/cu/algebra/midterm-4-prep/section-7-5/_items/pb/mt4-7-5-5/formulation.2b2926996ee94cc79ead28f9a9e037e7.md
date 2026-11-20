@@ -1,0 +1,1 @@
+For a field $F$, identify the field of fractions of the formal power series ring $F[[x]]$ with the formal Laurent series field $F((x))$. Then show that, under the natural inclusion, $\operatorname{Frac}(\Z[[x]])$ is a proper subfield of $\Q((x))$.

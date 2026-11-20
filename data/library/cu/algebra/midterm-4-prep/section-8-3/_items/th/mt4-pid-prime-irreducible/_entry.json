@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "e57492e0e907447599810fc1e5f0f72c",
+  "title": "Prime and irreducible elements in a PID",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §8.3, Propositions 10–11, p. 284.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "da289ad2620b49aca68d32200c4f7ab8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.da289ad2620b49aca68d32200c4f7ab8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6ddc81854a1b4c8b87c84fefc1b5f04f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.6ddc81854a1b4c8b87c84fefc1b5f04f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:22:57.755197+00:00",
+  "updated_at": "2026-11-20T02:28:32.032620+00:00"
+}

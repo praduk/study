@@ -1,0 +1,1 @@
+For a commutative ring $R$ with identity, $R[[x]]$ consists of all formal series $\sum_{i\ge0}a_i x^i$, $a_i\in R$. Equality and addition are coefficientwise, and the coefficient of $x^k$ in a product is $\sum_{i=0}^k a_i b_{k-i}$. Each such sum is finite. The multiplicative identity is the constant series $1$.

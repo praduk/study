@@ -1,0 +1,1 @@
+Let $f_1,\ldots,f_k\in\Z[x]$ all have degree $d$, and let $n_1,\ldots,n_k$ be pairwise relatively prime integers. Prove that some $f\in\Z[x]$ of degree exactly $d$ is congruent coefficient by coefficient to $f_i$ modulo $n_i$ for every $i$. If the $f_i$ are all monic, prove that $f$ can be chosen monic.

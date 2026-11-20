@@ -1,0 +1,1 @@
+Let $R$ be a commutative ring with $1\ne0$. If $R$ is local with maximal ideal $M$, show that every $a\notin M$ is invertible. Conversely, if the nonunits of $R$ form an ideal $M$, show that $R$ is local with unique maximal ideal $M$.

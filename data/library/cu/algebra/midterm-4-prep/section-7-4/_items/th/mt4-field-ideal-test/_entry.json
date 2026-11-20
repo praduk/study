@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "98ec20efeef54a409b73221290baffe3",
+  "title": "Fields and their ideals",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §7.4, Proposition 9(2), p. 253.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4e5ad17593ac4222824d2e938b2048c6",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4e5ad17593ac4222824d2e938b2048c6.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9cf03745b57148d28e20c618676c125f",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.9cf03745b57148d28e20c618676c125f.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:23.998323+00:00",
+  "updated_at": "2026-11-20T02:28:23.135273+00:00"
+}

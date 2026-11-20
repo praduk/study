@@ -1,0 +1,1 @@
+A minimal prime of a commutative ring $R$ is a @[prime ideal]mt4-prime-ideal $P$ for which every prime ideal $Q\subseteq P$ satisfies $Q=P$. More generally, a prime minimal over $I$ is minimal among the prime ideals containing $I$. Distinct minimal primes can be incomparable.

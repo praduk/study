@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "40aedd19ef1e47958449daa803b302b6",
+  "title": "7.2 #5 · Laurent series and the order valuation",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §7.2, Exercise 5, p. 238.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2a448b6636784fd6a75db2d992683803",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2a448b6636784fd6a75db2d992683803.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "8b93de8e451b4273a9ab90c36da00afb",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.8b93de8e451b4273a9ab90c36da00afb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:18.095151+00:00",
+  "updated_at": "2026-11-20T02:21:18.372049+00:00"
+}

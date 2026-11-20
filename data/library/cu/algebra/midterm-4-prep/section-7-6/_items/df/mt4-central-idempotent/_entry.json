@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "00315a59de5743a4a4147dbc36b6b01b",
+  "title": "Idempotents and central idempotents",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, §7.6, Exercise 1, p. 267.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7cdac558630b4e388a10d165cdcef7ef",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7cdac558630b4e388a10d165cdcef7ef.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:52.796082+00:00",
+  "updated_at": "2026-11-20T02:21:52.796087+00:00"
+}

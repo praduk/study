@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "57b4536fe76b4bfcb59757dfa78f3d31",
+  "title": "9.2 #1 · Representatives and a basis modulo a polynomial",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.2, Exercise 1, p. 301.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "803dd98beea1416ea321c2ed64f81e87",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.803dd98beea1416ea321c2ed64f81e87.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "3948660a98a74883a4fbbcdcabcda0b3",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.3948660a98a74883a4fbbcdcabcda0b3.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:41.779373+00:00",
+  "updated_at": "2026-11-20T02:28:35.378278+00:00"
+}

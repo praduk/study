@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "49effe6b30084667b82aeda1cc8353ee",
+  "title": "8.1 #7 · Two Gaussian greatest common divisors",
+  "rank": 9222809086901354496,
+  "header": "Dummit and Foote, §8.1, Exercise 7, p. 278.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3e4a7e9035f34b7da90865719d9cd017",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3e4a7e9035f34b7da90865719d9cd017.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "50a9146c50684918a7571be3af834fa5",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.50a9146c50684918a7571be3af834fa5.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:23.081222+00:00",
+  "updated_at": "2026-11-20T02:28:28.489258+00:00"
+}

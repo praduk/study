@@ -1,0 +1,1 @@
+In a Euclidean domain let $a,b\ne0$. Repeatedly divide the preceding element by the current one until the remainder is zero. The last nonzero divisor $d$ generates $(a,b)$, is a gcd, and equals $ax+by$ for some $x,y\in R$.

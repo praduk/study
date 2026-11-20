@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b268985d10d24754b5234746671fb586",
+  "title": "8.2 #8 · Localization preserves principal ideal domains",
+  "rank": 9214364837600034816,
+  "header": "Dummit and Foote, §8.2, Exercise 8, p. 283.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "db7fdfd39b2744b3b73373f591c4ffeb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.db7fdfd39b2744b3b73373f591c4ffeb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "fed04185e07b468fafd3f8db5dadd62d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.fed04185e07b468fafd3f8db5dadd62d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:09.193462+00:00",
+  "updated_at": "2026-11-20T02:28:31.093521+00:00"
+}

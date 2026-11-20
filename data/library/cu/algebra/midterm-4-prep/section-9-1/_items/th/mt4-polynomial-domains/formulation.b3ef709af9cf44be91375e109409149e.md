@@ -1,0 +1,1 @@
+Let $D$ be an integral domain. For nonzero $f,g\in D[x]$, $\deg(fg)=\deg f+\deg g$. Hence $D[x]$ is an integral domain and its units are precisely the constant polynomials in $D^\times$. The domain and unit assertions extend to any set of indeterminates.

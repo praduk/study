@@ -1,0 +1,1 @@
+The @[quotient operations]mt4-quotient-operations show that the sum and product of the images are the images of the sum and the product. Every coset has a representative, proving surjectivity. The zero coset is $I$, so $\pi(r)=0$ if and only if $r\in I$.

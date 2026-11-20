@@ -1,0 +1,1 @@
+By @[polynomial division]mt4-division-polynomials and the @[unique representatives proved in Exercise 1]mt4-9-2-1, the map from $F^n$ sending $(c_0,\ldots,c_{n-1})$ to the class of $\sum_{i=0}^{n-1}c_i x^i$ is a bijection. Each of the $n$ positions has $q$ independent choices, including zero. Therefore $|F[x]/(f)|=q^n$. The argument applies to reducible $f$ as well.

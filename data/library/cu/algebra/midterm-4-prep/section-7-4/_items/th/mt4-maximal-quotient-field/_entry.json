@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "321f1089fe48437dab9a44206f4780ce",
+  "title": "Maximal ideals and field quotients",
+  "rank": 9151314442816847872,
+  "header": "Dummit and Foote, §7.4, Proposition 12, p. 254.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "fde9c978dbe04f3fb16eb4697db52f66",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.fde9c978dbe04f3fb16eb4697db52f66.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a2261fb33a094cec920ba02d2295ed6e",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.a2261fb33a094cec920ba02d2295ed6e.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:29.875801+00:00",
+  "updated_at": "2026-11-20T02:28:23.554781+00:00"
+}

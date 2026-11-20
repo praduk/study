@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "0759231c268244f0a6c5b9167ee6fe6e",
+  "title": "A generator of a two-generated ideal is a gcd",
+  "rank": 9151314442816847872,
+  "header": "Dummit and Foote, §8.1, Propositions 2–3, p. 274.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3bbee9ed506346638149fe1c8d0fa9ad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3bbee9ed506346638149fe1c8d0fa9ad.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0486a1964e7f4073b1b13198109a385d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0486a1964e7f4073b1b13198109a385d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:13.618416+00:00",
+  "updated_at": "2026-11-20T02:28:27.385582+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "b9c4f5bf37e742ce9eea22062165ba3a",
+  "title": "Euclidean domain and division with remainder",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §8.1, p. 270.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "bd7b57b0dc38437584c997af90d2318c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.bd7b57b0dc38437584c997af90d2318c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:09.252850+00:00",
+  "updated_at": "2026-11-20T02:28:26.699143+00:00"
+}

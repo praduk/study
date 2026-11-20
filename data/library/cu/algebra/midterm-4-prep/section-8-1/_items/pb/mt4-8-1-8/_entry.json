@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "704a5f2bd10745c4b59df194ba0b72a1",
+  "title": "8.1 #8 · Euclidean and non-Euclidean imaginary quadratic rings",
+  "rank": 9223090561878065152,
+  "header": "Dummit and Foote, §8.1, Exercise 8, p. 278.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "83dd1eca22064f0c81cc16befaa7cbad",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.83dd1eca22064f0c81cc16befaa7cbad.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a851c84f771e4090a2c51d0c78f705d9",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a851c84f771e4090a2c51d0c78f705d9.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:24.871164+00:00",
+  "updated_at": "2026-11-20T02:28:28.740581+00:00"
+}

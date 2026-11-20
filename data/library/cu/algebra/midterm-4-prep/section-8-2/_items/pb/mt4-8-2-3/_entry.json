@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "34a289807d3f4b3db83a7ada7c65dab2",
+  "title": "8.2 #3 · Quotient of a PID by a prime ideal",
+  "rank": 9151314442816847872,
+  "header": "Dummit and Foote, §8.2, Exercise 3, p. 282.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f2a56f0b096e4e168d9d2e8afd642d7a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f2a56f0b096e4e168d9d2e8afd642d7a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "438b0d77a2824c74ba78222e639d4078",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.438b0d77a2824c74ba78222e639d4078.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:03.360229+00:00",
+  "updated_at": "2026-11-20T02:28:30.490673+00:00"
+}

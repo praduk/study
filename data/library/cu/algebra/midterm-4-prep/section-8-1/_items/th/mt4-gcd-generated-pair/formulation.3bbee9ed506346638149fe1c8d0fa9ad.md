@@ -1,0 +1,1 @@
+Let $R$ be a commutative ring with identity. If $(a,b)=(d)$ and $a,b$ are not both zero, then $d$ is a gcd and $d=ax+by$ for some $x,y\in R$. In an integral domain, gcds of the same pair differ by a unit.

@@ -1,0 +1,1 @@
+A left ideal of a ring $R$ is an additive subgroup $I$ with $ri\in I$ for all $r\in R,i\in I$. A right ideal satisfies $ir\in I$ for all such pairs. A two-sided ideal satisfies both conditions. In a commutative ring the three conditions coincide. To check the additive subgroup condition it suffices to check that $I$ is nonempty and closed under subtraction.

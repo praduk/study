@@ -1,0 +1,3 @@
+Given such a norm, choose $b$ of least norm among the nonzero elements of a nonzero ideal $I$. If some nonzero $a\in I$ were outside $(b)$, @[the Dedekind–Hasse condition]mt4-dedekind-hasse would produce a nonzero element of $(a,b)\subseteq I$ of smaller norm. Thus $I=(b)$; the zero ideal is also principal.
+
+Conversely, a PID is a UFD by @[Theorem 14]mt4-pid-ufd. For nonzero $x$ let $\ell(x)$ count irreducible factors with multiplicity, using $\ell(u)=0$ for units. Unique factorization makes $H(x)=2^{\ell(x)}$ multiplicative and well-defined; set $H(0)=0$. For nonzero $a,b$ with $b\nmid a$, let $c$ generate $(a,b)$. In $b=ct$ the factor $t$ is a nonunit, for otherwise $(b)=(c)$ would contain $a$. Hence $0<H(c)<H(b)$.

@@ -1,0 +1,1 @@
+For an integral domain $A$, its **field of fractions**, or **quotient field**, is $\operatorname{Frac}(A)=(A\setminus\{0\})^{-1}A$. Its elements are fractions $a/b$ with $a,b\in A$ and $b\ne0$. Two fractions $a/b$ and $c/d$ agree exactly when $ad=bc$. The domain embeds by $a\mapsto a/1$, and a nonzero $a/b$ has inverse $b/a$.

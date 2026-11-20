@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "91e3cf16a79b4c1d836a17a16fc778eb",
+  "title": "Ring, commutativity, and identity",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §7.1, p. 223.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6e869c61cb274fb5b64a1ec89614418e",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6e869c61cb274fb5b64a1ec89614418e.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:19:55.373172+00:00",
+  "updated_at": "2026-11-20T02:23:45.425784+00:00"
+}

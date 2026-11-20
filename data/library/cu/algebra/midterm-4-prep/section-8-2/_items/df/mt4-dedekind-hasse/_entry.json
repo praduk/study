@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f91713b278104573a5f963c9b5991175",
+  "title": "Dedekind–Hasse norm",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §8.2, p. 281.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0334ab38c85e4b468d22c575053533fe",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0334ab38c85e4b468d22c575053533fe.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:01.167307+00:00",
+  "updated_at": "2026-11-20T02:28:30.007235+00:00"
+}

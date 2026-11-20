@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b585e4a487aa4881a0231baf0d27b520",
+  "title": "7.6 #1 · Direct product from a central idempotent",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §7.6, Exercise 1, p. 267.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "946c5c0428be46e78609ba51cd7fed2a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.946c5c0428be46e78609ba51cd7fed2a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c42ade60d9194dd68671e7fff1ea9026",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.c42ade60d9194dd68671e7fff1ea9026.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:53.006449+00:00",
+  "updated_at": "2026-11-20T02:28:26.002291+00:00"
+}

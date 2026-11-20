@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "bf573856fa3940ba90c518a9f0c79da4",
+  "title": "Zero and negative signs in ring products",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §7.1, Proposition 1, p. 226.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "124986ca8aa643f9b11c1f24357bf0cc",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.124986ca8aa643f9b11c1f24357bf0cc.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "c04b046182984edfa657ab0fe5dccd08",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.c04b046182984edfa657ab0fe5dccd08.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:19:56.268914+00:00",
+  "updated_at": "2026-11-20T02:23:45.612537+00:00"
+}

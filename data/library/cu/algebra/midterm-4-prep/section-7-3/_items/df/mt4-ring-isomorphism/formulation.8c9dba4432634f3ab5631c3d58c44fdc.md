@@ -1,0 +1,1 @@
+A ring isomorphism $R\to S$ is a bijective @[ring homomorphism]mt4-ring-homomorphism. Rings $R,S$ are isomorphic if at least one such map exists. Its inverse also preserves both operations, as one sees by applying the original bijection to a sum or a product of preimages.

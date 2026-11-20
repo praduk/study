@@ -1,0 +1,1 @@
+Let $I$ be an ideal in a commutative ring $R$ with $1\ne0$, and put $\sqrt I=\{r\in R:r^n\in I\text{ for some }n\ge1\}$. Show that $\sqrt I$ is an ideal containing $I$, and identify $(\sqrt I)/I$ with the nilradical of $R/I$.

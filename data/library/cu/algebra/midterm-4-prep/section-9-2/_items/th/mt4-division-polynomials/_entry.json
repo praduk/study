@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "af16f29369b34f79b97bb89b1b3fc0eb",
+  "title": "Polynomial division over a field",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.2, Theorem 3, pp. 299–300.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1accaaeaa4994f6096b3914b75ca3ecb",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1accaaeaa4994f6096b3914b75ca3ecb.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2fac7ed6cc324b1dbcd7ff3e029ed338",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2fac7ed6cc324b1dbcd7ff3e029ed338.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:38.136910+00:00",
+  "updated_at": "2026-11-20T02:28:34.936292+00:00"
+}

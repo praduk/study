@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "497e0986cc064ef7869358038bced3a8",
+  "title": "Division ring",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §7.1, p. 224.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "063cb9140d134e2cbb1c3575e92c71d4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.063cb9140d134e2cbb1c3575e92c71d4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:19:55.577901+00:00",
+  "updated_at": "2026-11-20T02:19:55.577907+00:00"
+}

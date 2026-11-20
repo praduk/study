@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "18e78a8314d1437f9843c387051cca7b",
+  "title": "Norm and positive norm on a domain",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §8.1, p. 270.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d56e4f56121c4e49857a8e9c24b252ea",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d56e4f56121c4e49857a8e9c24b252ea.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:09.064598+00:00",
+  "updated_at": "2026-11-20T02:28:26.447804+00:00"
+}

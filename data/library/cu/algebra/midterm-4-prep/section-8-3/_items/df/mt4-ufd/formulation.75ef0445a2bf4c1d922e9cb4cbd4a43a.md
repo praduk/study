@@ -1,0 +1,1 @@
+A **unique factorization domain** (UFD) is an integral domain in which every nonzero nonunit is a finite product of @[irreducible]mt4-irreducible elements and all such factorizations agree up to order and @[associates]mt4-associates. Explicitly, after reordering, the lists of factors have the same length and corresponding factors differ by a unit. A unit has factor count zero.

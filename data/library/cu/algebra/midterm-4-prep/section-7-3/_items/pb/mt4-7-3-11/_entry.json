@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c388c22a26374098b1b3f7144393eb75",
+  "title": "7.3 #11 · Integration as a map of rings",
+  "rank": 9223231299366420480,
+  "header": "Dummit and Foote, §7.3, Exercise 11, p. 248.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "2e87bf94ee424a62af06fb0b204ba4b0",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.2e87bf94ee424a62af06fb0b204ba4b0.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "997714007fe345edbe6aa2163830838b",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.997714007fe345edbe6aa2163830838b.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:47.206574+00:00",
+  "updated_at": "2026-11-20T02:23:46.774436+00:00"
+}

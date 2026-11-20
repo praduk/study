@@ -1,0 +1,1 @@
+By @[the PID hypothesis]mt4-pid, a generator exists. The first three conclusions follow from @[the gcd generator criterion]mt4-gcd-generated-pair. Any other gcd is a unit multiple of this generator and hence generates the same ideal.

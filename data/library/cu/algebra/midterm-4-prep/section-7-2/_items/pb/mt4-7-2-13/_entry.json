@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "0d016a1df37c4598a510d2ada4497157",
+  "title": "7.2 #13 · Class sums in the center of a group ring",
+  "rank": 9214364837600034816,
+  "header": "Dummit and Foote, §7.2, Exercise 13, p. 239.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "74d6fb1228864bf292a09988f9116183",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.74d6fb1228864bf292a09988f9116183.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d0962782f86a4850afc31d2f300115ef",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d0962782f86a4850afc31d2f300115ef.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:20.042223+00:00",
+  "updated_at": "2026-11-20T02:21:20.237630+00:00"
+}

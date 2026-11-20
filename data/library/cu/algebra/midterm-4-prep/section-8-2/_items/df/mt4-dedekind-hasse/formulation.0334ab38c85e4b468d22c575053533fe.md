@@ -1,0 +1,1 @@
+A **Dedekind–Hasse norm** on an integral domain $R$ is a positive @[norm]mt4-euclidean-norm $H$ such that for all nonzero $a,b\in R$, either $b\mid a$ or there is $c\in(a,b)$ with $0<H(c)<H(b)$. Since $(a,b)=Ra+Rb$, one can write $c=sa-tb$ with $s,t\in R$.

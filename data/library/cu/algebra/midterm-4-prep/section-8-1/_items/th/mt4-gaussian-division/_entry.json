@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "ccc363f0bc51467c87ac8df3cbb087aa",
+  "title": "Division in the Gaussian integers",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §8.1, Example 3, pp. 271–272.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "280867070658406db2afa3513a2a7b0a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.280867070658406db2afa3513a2a7b0a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "71037e26a0564d37b3097592442298ac",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.71037e26a0564d37b3097592442298ac.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:11.551926+00:00",
+  "updated_at": "2026-11-20T02:28:27.122519+00:00"
+}

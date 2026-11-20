@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bc14a0f7efe544fab26db61c10bfd910",
+  "title": "Group ring and its basis",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §7.2, pp. 236–237.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "d9797c0ce1f74792ab8108b310da0f4c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.d9797c0ce1f74792ab8108b310da0f4c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:13.266065+00:00",
+  "updated_at": "2026-11-20T02:21:13.266071+00:00"
+}

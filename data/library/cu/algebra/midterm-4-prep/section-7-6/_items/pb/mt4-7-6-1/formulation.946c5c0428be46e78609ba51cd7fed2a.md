@@ -1,0 +1,1 @@
+Let $R$ be a ring with $1\ne0$, and let $e^2=e$ with $er=re$ for every $r\in R$. Prove that $Re$ and $R(1-e)$ are two-sided ideals, give a ring isomorphism $R\isoto Re\times R(1-e)$, and determine the identities of both factors.

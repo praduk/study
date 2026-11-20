@@ -1,0 +1,1 @@
+The image contains zero. If $s=\varphi(a)$ and $t=\varphi(b)$, then $s-t=\varphi(a-b)$ and $st=\varphi(ab)$ lie in the image. The @[subring test]mt4-subring applies. The kernel contains zero and is closed under subtraction. If $\varphi(i)=0$ then $\varphi(ri)=\varphi(r)0=0$ and $\varphi(ir)=0\varphi(r)=0$. This is the @[two-sided ideal condition]mt4-ideal.

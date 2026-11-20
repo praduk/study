@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "493f9e842556467fa013502bfb30ad28",
+  "title": "7.1 #14 · Nilpotents, zero divisors, and units",
+  "rank": 9223231299366420480,
+  "header": "Dummit and Foote, §7.1, Exercise 14, p. 231.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "9ddc2174862d41438e22bd65a0fb7758",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.9ddc2174862d41438e22bd65a0fb7758.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "a78edcb74cde409bb9df726797e0d93a",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.a78edcb74cde409bb9df726797e0d93a.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:07.016533+00:00",
+  "updated_at": "2026-11-20T02:20:07.289447+00:00"
+}

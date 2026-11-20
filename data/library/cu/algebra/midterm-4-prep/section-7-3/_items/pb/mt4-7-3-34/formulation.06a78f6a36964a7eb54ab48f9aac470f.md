@@ -1,0 +1,1 @@
+Let $I,J$ be two-sided ideals of a ring $R$ with $1\ne0$. Prove (a) $I+J$ is the least ideal containing both, and (b) $IJ$ is an ideal contained in $I\cap J$. (c) Give an example of strict containment. (d) Assume further that $R$ is commutative and $I+J=R$. Prove $IJ=I\cap J$.

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "4c370924c0a749c6bf3d7966fd3fbf09",
+  "title": "9.2 #4 · Infinitely many polynomial primes",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.2, Exercise 4, p. 301.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "321944d406ec4c68abf92bd441b982f3",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.321944d406ec4c68abf92bd441b982f3.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "41f7c89c2a994f8d9b49cddc737acaac",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.41f7c89c2a994f8d9b49cddc737acaac.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:45.499099+00:00",
+  "updated_at": "2026-11-20T02:28:35.644806+00:00"
+}

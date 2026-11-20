@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "9e0e63d2884a4d57a5230d5acb8efe55",
+  "title": "Associate elements",
+  "rank": 4611686018427387904,
+  "header": "Dummit and Foote, §8.3, p. 284.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5c4f69b50c9f43a6b102b5a86d945195",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5c4f69b50c9f43a6b102b5a86d945195.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:56.712518+00:00",
+  "updated_at": "2026-11-20T02:28:31.339564+00:00"
+}

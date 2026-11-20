@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "c04c14c63e594d63b624289d91e825a0",
+  "title": "8.3 #6 · Gaussian residue fields and splitting modulo a prime",
+  "rank": 9218868437227405312,
+  "header": "Dummit and Foote, §8.3, Exercise 6, p. 293.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c598cde2c0f44c669d4c6eba9e3367c9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c598cde2c0f44c669d4c6eba9e3367c9.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "74cdd8b83d2641cf8c2a857d6a2242cd",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.74cdd8b83d2641cf8c2a857d6a2242cd.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:23:09.595810+00:00",
+  "updated_at": "2026-11-20T02:28:33.377153+00:00"
+}

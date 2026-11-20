@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "147a9c8739884583818df2bb68a997df",
+  "title": "Reducing polynomial coefficients modulo an ideal",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.1, Proposition 2, p. 296.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "4e7e7ba6885a411e9188bcfae8669f91",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.4e7e7ba6885a411e9188bcfae8669f91.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "481862ee74cd46c5b0b425f405ba2293",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.481862ee74cd46c5b0b425f405ba2293.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:20:30.584275+00:00",
+  "updated_at": "2026-11-20T02:28:34.075379+00:00"
+}

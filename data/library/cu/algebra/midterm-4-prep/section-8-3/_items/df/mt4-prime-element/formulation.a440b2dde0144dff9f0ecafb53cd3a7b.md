@@ -1,0 +1,1 @@
+A **prime element** of an integral domain $R$ is a nonzero nonunit $p$ such that $p\mid ab$ implies $p\mid a$ or $p\mid b$, for every $a,b\in R$. Equivalently $(p)$ is a @[prime ideal]mt4-prime-ideal.

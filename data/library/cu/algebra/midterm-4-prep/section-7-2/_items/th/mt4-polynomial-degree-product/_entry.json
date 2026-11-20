@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "da7ac230d3bc424e8ae2f0e9298d5563",
+  "title": "Degree, units, and zero divisors over a domain",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §7.2, Proposition 4, p. 235.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "28d3ab6183f04509a361bd850c38cad4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.28d3ab6183f04509a361bd850c38cad4.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "2d9c1aa60f0e44d19e291168e2a310b6",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.2d9c1aa60f0e44d19e291168e2a310b6.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:11.377457+00:00",
+  "updated_at": "2026-11-20T02:21:11.567397+00:00"
+}

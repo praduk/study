@@ -1,0 +1,1 @@
+The case $n=0$ gives $1_R$. For $n>0$, distribute the product of $n$ copies of $a+b$. Choosing $a$ from exactly $k$ factors contributes $a^k b^{n-k}$, independent of the positions since the ring is commutative. There are $\binom{n}{k}$ such choices. Adding over $k$ gives the formula in every characteristic.

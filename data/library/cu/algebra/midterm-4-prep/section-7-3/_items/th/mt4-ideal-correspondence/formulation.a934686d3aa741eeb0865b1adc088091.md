@@ -1,0 +1,1 @@
+For a two-sided ideal $I$ of $R$, the assignment $A\mapsto A/I$ is an inclusion-preserving bijection between the subrings of $R$ containing $I$ and the subrings of $R/I$. Its inverse is inverse image under $\pi:R\to R/I$. This bijection restricts to the two-sided ideals on both sides.

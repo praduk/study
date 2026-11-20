@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "a9406ff1cb7b4aa89cbbf85e6a00d547",
+  "title": "7.4 #8 · Equality of principal ideals",
+  "rank": 9221120237041090560,
+  "header": "Dummit and Foote, §7.4, Exercise 8, p. 256.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "3a95904427614a48b1e9712d7ba9afb2",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.3a95904427614a48b1e9712d7ba9afb2.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "6c74b2575f07451584e99370c2329202",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.6c74b2575f07451584e99370c2329202.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:34.315297+00:00",
+  "updated_at": "2026-11-20T02:28:23.995891+00:00"
+}

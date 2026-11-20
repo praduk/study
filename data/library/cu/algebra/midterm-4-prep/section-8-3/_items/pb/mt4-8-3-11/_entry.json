@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "b6914613712a4d66a6cc4b9be315b11c",
+  "title": "8.3 #11 · Characterizing PIDs among Bézout domains",
+  "rank": 9222246136947933184,
+  "header": "Dummit and Foote, §8.3, Exercise 11, p. 294.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b5a4287b38e94c4fafa4b1d034ae8e99",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b5a4287b38e94c4fafa4b1d034ae8e99.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "df9eeb7f539840e8b096d8ec53086f86",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.df9eeb7f539840e8b096d8ec53086f86.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:23:13.552754+00:00",
+  "updated_at": "2026-11-20T02:28:33.820382+00:00"
+}

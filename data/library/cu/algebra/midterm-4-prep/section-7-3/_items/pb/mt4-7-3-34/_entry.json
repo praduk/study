@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "04779dde234e4f8a9f21bcd3d1e5ed77",
+  "title": "7.3 #34 · Sums, products, and intersections of ideals",
+  "rank": 9223363240761753600,
+  "header": "Dummit and Foote, §7.3, Exercise 34, p. 250.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "06a78f6a36964a7eb54ab48f9aac470f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.06a78f6a36964a7eb54ab48f9aac470f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "e88fac21d462472a9790813c1d4d4b65",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.e88fac21d462472a9790813c1d4d4b65.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:54.800764+00:00",
+  "updated_at": "2026-11-20T02:22:55.074188+00:00"
+}

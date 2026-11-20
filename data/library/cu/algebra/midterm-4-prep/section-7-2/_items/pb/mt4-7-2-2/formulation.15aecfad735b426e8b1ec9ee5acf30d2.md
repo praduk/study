@@ -1,0 +1,1 @@
+Let $R$ be a commutative ring with identity. Exercise 2 asks whether $p\in R[x]$ is a zero divisor precisely when some $0\ne b\in R$ satisfies $bp=0$. Check $p=0$ against the section's definition, and prove the criterion for nonzero $p$.

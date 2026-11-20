@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "fead73ca8b7f474ebf133b4a1e405925",
+  "title": "When an ideal contains a unit",
+  "rank": 6917529027641081856,
+  "header": "Dummit and Foote, §7.4, Proposition 9(1), p. 253.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "7020622408554a5dae32554ea03d8c1a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.7020622408554a5dae32554ea03d8c1a.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "10a17582f2b14ee6b9fdca94c622d67c",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.10a17582f2b14ee6b9fdca94c622d67c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:22.139591+00:00",
+  "updated_at": "2026-11-20T02:28:22.892756+00:00"
+}

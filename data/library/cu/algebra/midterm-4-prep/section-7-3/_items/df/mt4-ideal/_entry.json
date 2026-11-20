@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "33700b18d6ac444ebdefc4dde2962d8f",
+  "title": "Left, right, and two-sided ideals",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, §7.3, p. 242.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "47a5d93beb744b7f8539ebbf5e878dc9",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.47a5d93beb744b7f8539ebbf5e878dc9.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:32.638833+00:00",
+  "updated_at": "2026-11-20T02:22:32.638840+00:00"
+}

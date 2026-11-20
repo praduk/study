@@ -1,0 +1,3 @@
+The coefficient of $x^{\deg f+\deg g}$ in $fg$ is the product of the leading coefficients, which is nonzero in $D$. This proves the degree identity and precludes a zero product of two nonzero polynomials. If $fg=1$, both degrees are zero, so the two constant coefficients are inverses in $D$. Conversely each unit of $D$ is already invertible in $D[x]$. This is @[Proposition 4 of §7.2]mt4-polynomial-degree-product.
+
+For finitely many variables, apply the one-variable result to one coefficient ring after another. For any two given polynomials in an infinite set of variables, @[the definition of the ring]mt4-polynomials-several-variables puts them together in a finite-variable subring. This also applies to a prospective inverse.

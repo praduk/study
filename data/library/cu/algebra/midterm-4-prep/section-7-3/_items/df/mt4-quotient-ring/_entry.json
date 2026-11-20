@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "bcf1eb639e2d4f5a804f249308404de7",
+  "title": "Quotient ring",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §7.3, pp. 241–243.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5dcc7a64129b4b8ea3652a98ff18d5f4",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5dcc7a64129b4b8ea3652a98ff18d5f4.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:34.758006+00:00",
+  "updated_at": "2026-11-20T02:22:34.758011+00:00"
+}

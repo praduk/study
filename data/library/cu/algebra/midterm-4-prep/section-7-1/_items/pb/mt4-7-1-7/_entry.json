@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "d72a681a5ae841f2894e8cc6bb40a93d",
+  "title": "7.1 #7 · The center of a ring and of a division ring",
+  "rank": 9222809086901354496,
+  "header": "Dummit and Foote, §7.1, Exercise 7, p. 231.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "c6c9f21b470349bb8dc8ca63a1fa5a0f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.c6c9f21b470349bb8dc8ca63a1fa5a0f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "13a90dc24c214e57bfe4d4cf664fa24d",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.13a90dc24c214e57bfe4d4cf664fa24d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:03.285064+00:00",
+  "updated_at": "2026-11-20T02:20:03.497922+00:00"
+}

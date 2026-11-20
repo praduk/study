@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "639d701a791545d4b62f23bdacd20b78",
+  "title": "8.3 #9 · The quadratic field norm as a Dedekind–Hasse norm",
+  "rank": 9221120237041090560,
+  "header": "Dummit and Foote, §8.3, Exercise 9, p. 294.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "f7147894054b46e7a72255d493678ee8",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.f7147894054b46e7a72255d493678ee8.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "9dac258a0b184e52a63bec9833b1a231",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.9dac258a0b184e52a63bec9833b1a231.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:23:11.527243+00:00",
+  "updated_at": "2026-11-20T02:28:33.561973+00:00"
+}

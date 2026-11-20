@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "68f671c73c5543ebb9032cbab2df98a0",
+  "title": "Integral domain",
+  "rank": 9187343239835811840,
+  "header": "Dummit and Foote, §7.1, p. 228.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "6941c70aeb6940caa0ee55af4fb20f8f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.6941c70aeb6940caa0ee55af4fb20f8f.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:19:58.716042+00:00",
+  "updated_at": "2026-11-20T02:19:58.716049+00:00"
+}

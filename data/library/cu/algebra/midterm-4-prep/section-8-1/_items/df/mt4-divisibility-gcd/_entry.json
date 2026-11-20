@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "f9e63e9213cd4c48b061da2782e85973",
+  "title": "Divisibility and greatest common divisor",
+  "rank": 9079256848778919936,
+  "header": "Dummit and Foote, §8.1, p. 274.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b564e16186714a9fac11b339547e3a1c",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b564e16186714a9fac11b339547e3a1c.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:13.368609+00:00",
+  "updated_at": "2026-11-20T02:20:13.368618+00:00"
+}

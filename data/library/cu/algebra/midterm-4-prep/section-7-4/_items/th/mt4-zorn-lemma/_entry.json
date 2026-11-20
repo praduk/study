@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "5ef5f102dddc413aaae594d3f56b0974",
+  "title": "Zorn’s lemma",
+  "rank": 8935141660703064064,
+  "header": "Dummit and Foote, §7.4, Proposition 11, p. 254, invoking Appendix I, §2, p. 909.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "54afe6d931694232a8930f4457459285",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.54afe6d931694232a8930f4457459285.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "712850999ec841f9b07f69e1ae1b7868",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.712850999ec841f9b07f69e1ae1b7868.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:21:26.111826+00:00",
+  "updated_at": "2026-11-20T02:21:26.369153+00:00"
+}

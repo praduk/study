@@ -1,0 +1,1 @@
+Let $R$ be the ring of continuous real functions on $[0,1]$, and let $\varphi(f)=\int_0^1 f(t)\,dt$. Prove that $\varphi:R\to\R$ is a homomorphism of additive groups and determine why it fails to be a ring homomorphism.

@@ -1,0 +1,1 @@
+Suppose $ab=0$ for nonzero $a,b\in R$. Then both $a$ and $b$ are zero divisors by @[definition]mt4-zero-divisor. Since $0\in P$, @[primality]mt4-prime-ideal forces $a\in P$ or $b\in P$, contradicting the hypothesis on $P$. Hence a zero product always has a zero factor. Together with commutativity and $1\ne0$, this is @[the definition of an integral domain]mt4-integral-domain.

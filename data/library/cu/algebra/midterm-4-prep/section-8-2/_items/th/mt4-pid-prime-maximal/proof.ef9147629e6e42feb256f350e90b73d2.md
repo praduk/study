@@ -1,0 +1,1 @@
+Write the nonzero prime ideal as $(p)$ by @[the PID hypothesis]mt4-pid. If $(p)\subseteq(m)$, write $p=mr$. By @[primality]mt4-prime-ideal, either $m\in(p)$, giving equality, or $r=ps$ for some $s$. In the latter case $p=mps$, so @[cancellation]mt4-cancellation gives $ms=1$ and $(m)=R$. Thus $(p)$ is a @[maximal ideal]mt4-maximal-ideal.

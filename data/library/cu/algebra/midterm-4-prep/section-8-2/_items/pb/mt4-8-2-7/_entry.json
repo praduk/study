@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "id": "08aa6c2e435b42d784c4b19d8d38ff40",
+  "title": "8.2 #7 · Bézout domains, finite generation, and reduced fractions",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §8.2, Exercise 7, p. 283.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "99c0241902f4483c8723a01151199381",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.99c0241902f4483c8723a01151199381.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "d8f9cb8d67b04b43b6a8dc216c6c6d7c",
+      "kind": "sl",
+      "label": "Solution",
+      "subtag": null,
+      "file": "solution.d8f9cb8d67b04b43b6a8dc216c6c6d7c.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:07.284190+00:00",
+  "updated_at": "2026-11-20T02:28:30.919259+00:00"
+}

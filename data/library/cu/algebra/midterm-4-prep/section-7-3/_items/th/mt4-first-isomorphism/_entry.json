@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "c3e6829b74894256909c4ce7d8782dfb",
+  "title": "First isomorphism theorem for rings",
+  "rank": 9205357638345293824,
+  "header": "Dummit and Foote, §7.3, Theorem 7(1), p. 243.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "0280e9aefc6c43c2bcdc048e90e71815",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.0280e9aefc6c43c2bcdc048e90e71815.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "0c672673603f45e4a42a6e06db985f3d",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.0c672673603f45e4a42a6e06db985f3d.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:22:38.767060+00:00",
+  "updated_at": "2026-11-20T02:23:46.277358+00:00"
+}

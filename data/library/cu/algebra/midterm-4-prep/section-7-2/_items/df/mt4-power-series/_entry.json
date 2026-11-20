@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "410ec50d71ff4828b26662a648e71ce0",
+  "title": "Formal power series",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, §7.2, Exercise 3, p. 238.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "b195bb1abb284720b3060cc64e8ae32a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.b195bb1abb284720b3060cc64e8ae32a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:21:13.543604+00:00",
+  "updated_at": "2026-11-20T02:21:13.543610+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "ec642a47a8ad4ccba8454f94658df21b",
+  "title": "Prime element",
+  "rank": 8070450532247928832,
+  "header": "Dummit and Foote, §8.3, p. 284.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "a440b2dde0144dff9f0ecafb53cd3a7b",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.a440b2dde0144dff9f0ecafb53cd3a7b.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:22:57.250699+00:00",
+  "updated_at": "2026-11-20T02:28:31.591498+00:00"
+}

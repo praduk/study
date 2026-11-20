@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "704064a2828e4d139b7c05879a2e8d7e",
+  "title": "Ring of functions with pointwise operations",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, §7.1, Example 6, p. 225.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "1ad285b6ff1f46ee8e86a53628c6c7b5",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.1ad285b6ff1f46ee8e86a53628c6c7b5.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:19:56.024771+00:00",
+  "updated_at": "2026-11-20T02:19:56.024778+00:00"
+}

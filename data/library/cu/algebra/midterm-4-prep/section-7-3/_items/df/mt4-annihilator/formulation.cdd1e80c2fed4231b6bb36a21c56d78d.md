@@ -1,0 +1,1 @@
+For a subset $A$ of a ring $R$, its right annihilator consists of all $r$ such that $ar=0$ for every $a\in A$. Its left annihilator consists of all $r$ such that $ra=0$ for every $a\in A$. For a single element $a$, take $A=\{a\}$. The side in the name describes where the annihilating element is placed.

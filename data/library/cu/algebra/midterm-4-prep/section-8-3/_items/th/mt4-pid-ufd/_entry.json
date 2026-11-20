@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "d2ab35ee14704cfe864f4e7aca50d13a",
+  "title": "Every PID is a UFD",
+  "rank": 9187343239835811840,
+  "header": "Dummit and Foote, §8.3, Theorem 14, pp. 287–289.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "5869b0d7b0bf4853a4eb27258481103f",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.5869b0d7b0bf4853a4eb27258481103f.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "21e97fba987b4fefa9e2b05b06e4fe81",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.21e97fba987b4fefa9e2b05b06e4fe81.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:23:03.725283+00:00",
+  "updated_at": "2026-11-20T02:28:32.698753+00:00"
+}

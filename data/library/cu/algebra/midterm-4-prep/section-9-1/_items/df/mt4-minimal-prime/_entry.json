@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "id": "a0cb858521e046b184568752ba9adecf",
+  "title": "Minimal prime ideal",
+  "rank": 8646911284551352320,
+  "header": "Dummit and Foote, Abstract Algebra, 3rd ed., §9.1, Exercise 10, p. 298, referring to §7.4, Exercise 36.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "007aa842f35a4a6e8ebaff48b60bed9a",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.007aa842f35a4a6e8ebaff48b60bed9a.md",
+      "main": true
+    }
+  ],
+  "supplements": [],
+  "assets": [],
+  "review_enabled": false,
+  "created_at": "2026-11-20T02:20:32.394068+00:00",
+  "updated_at": "2026-11-20T02:20:32.394075+00:00"
+}

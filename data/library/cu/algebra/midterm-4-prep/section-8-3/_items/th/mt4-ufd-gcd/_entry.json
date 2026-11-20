@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "b23440f7ba9a45aa83ccff1f0e3dcbdc",
+  "title": "Prime exponents and greatest common divisors",
+  "rank": 9151314442816847872,
+  "header": "Dummit and Foote, §8.3, Proposition 13, p. 287.",
+  "problem_family": "",
+  "confusable_with": [],
+  "formulations": [
+    {
+      "id": "dedcb25a53e14a5eba84c3199d0a3783",
+      "label": "Main",
+      "subtag": null,
+      "file": "formulation.dedcb25a53e14a5eba84c3199d0a3783.md",
+      "main": true
+    }
+  ],
+  "supplements": [
+    {
+      "id": "00654c5abc6c4cdfb0fe054cb98231bb",
+      "kind": "pf",
+      "label": "Proof",
+      "subtag": null,
+      "file": "proof.00654c5abc6c4cdfb0fe054cb98231bb.md",
+      "main": true
+    }
+  ],
+  "assets": [],
+  "review_enabled": false,
+  "proof_review_enabled": true,
+  "created_at": "2026-11-20T02:23:01.691307+00:00",
+  "updated_at": "2026-11-20T02:28:32.455163+00:00"
+}

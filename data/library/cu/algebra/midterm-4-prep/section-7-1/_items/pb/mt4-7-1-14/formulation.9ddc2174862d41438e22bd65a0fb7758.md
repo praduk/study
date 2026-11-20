@@ -1,0 +1,1 @@
+Let $x$ be nilpotent in a commutative ring $R$ with $1\ne0$. Show that (a) $x$ is zero or a zero divisor, (b) $rx$ is nilpotent for every $r\in R$, (c) $1+x$ is a unit, and (d) $u+x$ is a unit whenever $u$ is a unit.

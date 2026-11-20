@@ -1,0 +1,1 @@
+Let $a,b\ne0$ in a UFD. For each prime associate class choose one representative $p$ and let $v_p(a),v_p(b)$ count its occurrences, taking zero for missing factors. Then $a\mid b$ exactly when $v_p(a)\le v_p(b)$ for every $p$. A gcd is the finite product of $p^{\min(v_p(a),v_p(b))}$ over the primes occurring in either factorization.

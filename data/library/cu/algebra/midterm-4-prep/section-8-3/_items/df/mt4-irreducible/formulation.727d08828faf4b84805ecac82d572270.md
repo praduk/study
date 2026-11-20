@@ -1,0 +1,1 @@
+A nonzero nonunit $r$ of an integral domain is **irreducible** if each factorization $r=ab$ in the domain has a unit among $a,b$. A nonzero nonunit with a factorization into two nonunits is **reducible**.
