@@ -1,1 +1,1 @@
-Let $N$ be a Euclidean norm on $R$ and let $m$ be the minimum of $N(x)$ over all nonzero $x\in R$. Show that every element of norm $m$ that is nonzero is invertible. Deduce what happens if a nonzero element has norm $0$.
+Let $R$ be a @[Euclidean Domain]mt4-euclidean-domain. Let $m$ be the minimum integer in the set of @[norms]mt4-euclidean-norm of nonzero elements of $R$. Prove that every nonzero element of $R$ of norm $m$ is a @[unit]mt4-unit. Deduce that a nonzero element of norm zero (if such an element exists) is a unit.

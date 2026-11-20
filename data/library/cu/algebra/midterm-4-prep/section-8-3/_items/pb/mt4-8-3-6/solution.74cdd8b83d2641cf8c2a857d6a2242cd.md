@@ -1,4 +1,4 @@
-**Strategy.** For $(1+i)$, construct a map to $\F_2$ and identify its kernel. For a rational prime, use its Gaussian factorization to determine whether the quotient is a field or a product of fields. Count classes by reducing the real and imaginary coefficients separately.
+**Strategy.** Write $G=\Z[i]$. For $(1+i)$, construct a map to $\F_2$ and identify its kernel. For a rational prime, use its Gaussian factorization to determine whether the quotient is a field or a product of fields. Count classes by reducing the real and imaginary coefficients separately.
 
 **(a) Identify the quotient by $(1+i)$.** Send $a+bi$ to $a+b\bmod 2$. Substituting $1$ for $i$ respects $i^2=-1$ because $1=-1$ in $\F_2$, so this is a @[ring homomorphism]mt4-ring-homomorphism. Both $0$ and $1$ occur, making it surjective.
 

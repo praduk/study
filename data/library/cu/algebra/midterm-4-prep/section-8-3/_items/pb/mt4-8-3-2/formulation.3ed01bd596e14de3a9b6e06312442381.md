@@ -1,1 +1,1 @@
-Given nonzero $a,b$ in a UFD, prove they have a least common multiple, and express it directly in terms of their prime factorizations.
+Let $a$ and $b$ be nonzero elements of the @[Unique Factorization Domain]mt4-ufd $R$. Prove that $a$ and $b$ have a @[least common multiple]mt4-lcm (cf. @[Exercise 11 of Section 1]mt4-8-1-11) and describe it in terms of the prime factorizations of $a$ and $b$ in the same fashion that @[Proposition 13]mt4-ufd-gcd describes their @[greatest common divisor]mt4-divisibility-gcd.

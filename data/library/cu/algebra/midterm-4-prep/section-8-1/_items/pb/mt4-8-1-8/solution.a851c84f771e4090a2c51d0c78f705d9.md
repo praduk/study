@@ -7,9 +7,18 @@ N(r)=N(\beta)|z-q|^2<N(\beta).
 $$
 
 - **For $d=1,2$**, the lattice basis is $1,i\sqrt d$. Round each coefficient of $z$ in this basis to a nearest integer. The horizontal error is at most $1/2$ and the vertical error at most $\sqrt d/2$, so $|z-q|^2\le(1+d)/4<1$.
-- **For $d=3,7,11$**, the basis is $1,\omega$ with $\omega=(1+i\sqrt d)/2$. Adjacent horizontal lattice rows are $\sqrt d/2$ apart. Pick a nearest row, then a nearest lattice point on that row, where the horizontal spacing is $1$. The vertical error is at most $\sqrt d/4$ and the horizontal error at most $1/2$, so $|z-q|^2\le(4+d)/16\le15/16<1$.
+- **For $d=3,7,11$**, the basis is $1,\omega$ with $\omega=(1+i\sqrt d)/2$. Each lattice parallelogram splits along the diagonal joining $1$ to $\omega$ (or its translate) into two congruent triangles. Thus $z$ lies in a triangle congruent to the one with vertices $0,1,\omega$.
 
-This produces the required quotient for all five values of $D$.
+**Get the bound in the hint.** The circumcenter of the triangle $0,1,\omega$ is on the perpendicular bisector of $[0,1]$, so write it as $1/2+it$. Equating its squared distances to $0$ and $\omega$ gives $1/4+t^2=(\sqrt d/2-t)^2$. Hence $t=(d-1)/(4\sqrt d)$ and the squared circumradius is
+$$
+\rho^2=\tfrac14+t^2=\frac{(1+d)^2}{16d}.
+$$
+
+To see why this radius suffices, let $v_1,v_2,v_3$ be the vertices of the triangle containing $z$ and let $c$ be its circumcenter. Since $z$ is in the triangle, write $z=\sum_j\lambda_jv_j$ with $\lambda_j\ge0$ and $\sum_j\lambda_j=1$. Expanding the squares and using $|v_j-c|=\rho$ gives
+$$
+\sum_j\lambda_j |z-v_j|^2=\rho^2-|z-c|^2\le\rho^2.
+$$
+At least one vertex $q$ therefore has $|z-q|^2\le\rho^2$. For $d=3,7,11$ the bound is respectively $1/3,4/7,9/11$, all less than $1$. This supplies the required quotient in the remaining three cases.
 
 **(b) Find the possible universal side divisors.** For $d=43,67,163$ use the same basis $1,\omega$. An element $a+b\omega$ with $a,b\in\Z$ and $b\ne0$ has norm
 

@@ -1,1 +1,1 @@
-Let $R$ be the ring of continuous real functions on $[0,1]$, and let $\varphi(f)=\int_0^1 f(t)\,dt$. Prove that $\varphi:R\to\R$ is a homomorphism of additive groups and determine why it fails to be a ring homomorphism.
+Let $R$ be the ring of all @[continuous]math:uganalysis:continuity:df:continuity real valued functions on the closed interval $[0,1]$. Prove that the map $\varphi:R\to\R$ defined by $\varphi(f)=\int_0^1 f(t)dt$ is a @[homomorphism of additive groups]cu:algebra:wk1:df:mt-homomorphism but not a @[ring homomorphism]mt4-ring-homomorphism.

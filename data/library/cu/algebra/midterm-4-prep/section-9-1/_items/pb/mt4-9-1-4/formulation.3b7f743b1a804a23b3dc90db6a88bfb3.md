@@ -1,1 +1,1 @@
-In $\Q[x,y]$, determine which of $(x)$ and $(x,y)$ are prime and which are maximal. Prove each assertion.
+Prove that the @[ideals]mt4-ideal $(x)$ and $(x,y)$ are @[prime ideals]mt4-prime-ideal in $\Q[x,y]$ but only the latter ideal is a @[maximal ideal]mt4-maximal-ideal.

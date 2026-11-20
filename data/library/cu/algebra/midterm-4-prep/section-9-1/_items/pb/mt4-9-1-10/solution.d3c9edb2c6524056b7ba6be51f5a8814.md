@@ -1,6 +1,6 @@
 **Strategy.** In the quotient, the product of each pair of variables is zero. A prime ideal must contain at least one variable from each pair. Choose exactly one from each pair, prove that the resulting ideal is prime and minimal, then vary the choices.
 
-**1. Construct a candidate.** Write bars for classes in $A/I$. From each pair $\{x_{2i-1},x_{2i}\}$ choose $s_i$ and call its partner $t_i$. Let $P$ be the @[ideal generated]mt4-principal-ideal by all the $\bar s_i$. Setting every $s_i$ to zero and fixing the $t_i$ defines a @[ring homomorphism]mt4-ring-homomorphism on $A$. It kills every generator $s_it_i$ of $I$, so it induces a surjection from the @[quotient ring]mt4-quotient-ring,
+**1. Construct a candidate.** Put $A=\Z[x_1,x_2,x_3,\ldots]$ and $I=(x_1x_2,x_3x_4,x_5x_6,\ldots)$. Write bars for classes in $A/I$. From each pair $\{x_{2i-1},x_{2i}\}$ choose $s_i$ and call its partner $t_i$. Let $P$ be the @[ideal generated]mt4-principal-ideal by all the $\bar s_i$. Setting every $s_i$ to zero and fixing the $t_i$ defines a @[ring homomorphism]mt4-ring-homomorphism on $A$. It kills every generator $s_it_i$ of $I$, so it induces a surjection from the @[quotient ring]mt4-quotient-ring,
 
 $$
 \varphi\colon A/I\longrightarrow\Z[t_1,t_2,\ldots].

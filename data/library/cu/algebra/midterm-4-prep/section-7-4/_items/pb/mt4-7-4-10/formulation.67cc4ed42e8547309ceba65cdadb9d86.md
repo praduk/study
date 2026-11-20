@@ -1,1 +1,3 @@
-Let $R$ be a commutative ring with $1\ne0$. Suppose a prime ideal $P$ of $R$ contains no zero divisors of $R$. Prove that $R$ is an integral domain.
+> Let $R$ be a @[ring with identity]mt4-ring $1\ne0$.
+
+Assume $R$ is @[commutative]mt4-ring. Prove that if $P$ is a @[prime ideal]mt4-prime-ideal of $R$ and $P$ contains no @[zero divisors]mt4-zero-divisor then $R$ is an @[integral domain]mt4-integral-domain.

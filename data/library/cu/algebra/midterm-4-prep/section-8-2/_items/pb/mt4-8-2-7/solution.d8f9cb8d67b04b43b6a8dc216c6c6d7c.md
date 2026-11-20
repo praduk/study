@@ -3,7 +3,7 @@
 **(a) Prove the equivalence.**
 
 - **From Bézout to a gcd identity.** In a @[Bézout domain]mt4-bezout-domain write $(a,b)=(d)$. For $a,b$ not both zero, the @[gcd generator criterion]mt4-gcd-generated-pair shows $d$ is a gcd. Since $d\in(a,b)$, it has the required form $ax+by$.
-- **From a gcd identity to Bézout.** Suppose a gcd $d$ satisfies $d=ax+by$. Because $d$ divides $a$ and $b$, we have $(a,b)\subseteq(d)$. The identity places $d$ in $(a,b)$, giving the reverse inclusion. Thus $(a,b)$ is principal. For $a=b=0$, the ideal is $(0)$ and the identity holds with the stated convention $d=0$.
+- **From a gcd identity to Bézout.** Suppose a gcd $d$ satisfies $d=ax+by$. Because $d$ divides $a$ and $b$, we have $(a,b)\subseteq(d)$. The identity places $d$ in $(a,b)$, giving the reverse inclusion. Thus $(a,b)$ is principal. For $a=b=0$, the ideal is $(0)$. The gcd definition in §8.1 assumes at least one nonzero input. If we extend it by $\gcd(0,0)=0$, the Bézout identity also holds for this pair, since $0=0x+0y$.
 
 **(b) Reduce a finite list to one generator.** By the definition of a @[generated ideal]mt4-principal-ideal, the empty list generates $(0)$ and a one-element list already gives a principal ideal. If the first $n$ generators give $(d)$, adjoining a generator $c$ gives $(d,c)$, which is principal by the Bézout property. @[Induction]math:set:naturals-recursion:th:natural-induction covers every finite list.
 

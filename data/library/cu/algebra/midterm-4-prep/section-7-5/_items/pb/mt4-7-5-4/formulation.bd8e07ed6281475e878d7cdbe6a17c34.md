@@ -1,1 +1,1 @@
-Prove that every subfield of $\R$ contains $\Q$.
+Prove that any @[subfield]mt4-generated-subfield of $\R$ must contain $\Q$.

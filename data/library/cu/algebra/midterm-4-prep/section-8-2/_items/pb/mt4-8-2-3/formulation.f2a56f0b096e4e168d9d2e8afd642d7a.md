@@ -1,1 +1,1 @@
-Let $P$ be a prime ideal of a principal ideal domain $R$. Prove that $R/P$ is a principal ideal domain.
+Prove that a @[quotient]mt4-quotient-ring of a @[P.I.D.]mt4-pid by a @[prime ideal]mt4-prime-ideal is again a P.I.D.

@@ -1,1 +1,1 @@
-Use the Euclidean algorithm in $\Z[i]$ to find one generator of each ideal $(85,1+13i)$ and $(47-13i,53+56i)$.
+Find a @[generator for the ideal]mt4-principal-ideal $(85,1+13i)$ in $\Z[i]$, i.e., a @[greatest common divisor]mt4-divisibility-gcd for $85$ and $1+13i$, by the @[Euclidean Algorithm]mt4-euclidean-gcd. Do the same for the ideal $(47-13i,53+56i)$.
