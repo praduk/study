@@ -3,6 +3,7 @@
   "id": "fc770d696546487799c1ae515dc0fc4a",
   "name": "Week 10",
   "rank": 9214364837608423424,
-  "review_enabled": true,
-  "created_at": "2026-11-02T15:52:22.110446+00:00"
+  "review_enabled": false,
+  "created_at": "2026-11-02T15:52:22.110446+00:00",
+  "updated_at": "2026-11-20T02:31:56.939126+00:00"
 }
